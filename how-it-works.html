@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brikito · How it works</title>
+<meta name="description" content="Scroll through five real Brikito workflows: chat to approval, ask Brik AI, CCTV intelligence, drawing takeoff and the recovery dashboard." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="bkt-hiw.css" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#0A0A0A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666;--muted-2:#999;}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--ink);color:var(--paper);}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 28px;}
+  @media (max-width:720px){.wrap{padding:0 20px;}}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .logo{font-weight:600;letter-spacing:-.02em;font-size:16px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;}
+  .btn .arrow{display:inline-block;transition:transform .2s ease;}
+  .btn:hover .arrow{transform:translate(2px,-2px);}
+  .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .btn-solid:hover{background:#222;}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px;}
+  .ico{width:14px;height:14px;display:inline-block;flex-shrink:0;}
+  section.s{padding:96px 0 80px;}
+  .s-head{max-width:780px;margin:0 auto 56px;text-align:center;}
+  .s-head .eyebrow{display:inline-block;margin-bottom:18px;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .s-head h2{font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-.035em;font-weight:500;text-wrap:balance;}
+  .s-head h2 .quiet{color:var(--muted-2);}
+  .s-head p{margin-top:18px;font-size:17px;line-height:1.55;color:var(--muted);max-width:58ch;margin-left:auto;margin-right:auto;text-wrap:pretty;}
+  .grad-ink{background:linear-gradient(120deg,#0A0A0A 8%,oklch(0.5 0.16 250) 52%,oklch(0.45 0.18 285) 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  footer.mini{border-top:1px solid var(--hair);padding:28px 0;}
+  footer.mini .row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);}
+
+  /* ---- module theme override: white / black / blue ---- */
+  .bkt-hiw{--bp:#FAFAFA;--bi:#0A0A0A;--bc:#3E5BD8;--bn:#15224A;--bh:#E8E8EC;--bmut:#666;}
+  .bkt-hiw .bchip{background:#EDF1FC;border-color:#D8DFF8;}
+  .bkt-hiw .dk-item.hot{background:#F2F5FD;}
+  .bkt-hiw .kscan{background:linear-gradient(180deg,transparent,rgba(94,122,235,.14),transparent);}
+  .bkt-hiw .b-scan{background:linear-gradient(180deg,transparent,rgba(94,122,235,.22),transparent);}
+  .bkt-hiw .kt{color:#9FB1F5;}
+  .bkt-hiw .fgen i{background:linear-gradient(90deg,#E8E8EC 30%,#D8DCEA 50%,#E8E8EC 70%);background-size:200% 100%;}
+  .bkt-hiw .heat i{background:#E6E8F0;}
+  @keyframes bktPulse{0%{box-shadow:0 0 0 0 rgba(62,91,216,.35);}100%{box-shadow:0 0 0 16px rgba(62,91,216,0);}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">Brikito</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a class="btn btn-ghost btn-sm" href="index.html">Back to site</a>
+      <a class="btn btn-solid btn-sm" href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- =========================== HOW IT WORKS (interactive scroll demo) =========================== -->
+<section class="s bkt-hiw" id="how">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Scroll, <span class="quiet">and watch a site run itself.</span></h2>
+      <p>Five real workflows, played out inside the app. Scroll forward and back, you control the pace.</p>
+    </div>
+  </div>
+
+  <!-- SCENE 1 · CHAT TO APPROVAL -->
+  <div class="bkt-sc bkt-s1" data-scene="1" data-beats="7" data-screen-label="How it works · Scene 1 · Chat to approval">
+    <div class="bkt-pin">
+      <div class="wrap bkt-grid">
+        <div class="bkt-copy">
+          <div class="bkt-tag">SCENE 01 · CHAT TO APPROVAL</div>
+          <h3>One message becomes a record.</h3>
+          <div class="bkt-beats">
+            <span class="bb bb-a">Suresh types what he needs, in plain chat.</span>
+            <span class="bb bb-b">Brik detects the indent and structures it.</span>
+            <span class="bb bb-c">The office sees the card the same second.</span>
+            <span class="bb bb-d">One click. Approved, PO drafted.</span>
+          </div>
+          <div class="bkt-cap">From chat chaos to an audit trail, in one message.</div>
+        </div>
+        <div class="bkt-stage st1">
+          <div class="bkt-phone">
+            <div class="ph-chrome"><span class="ph-dot"></span>brikito</div>
+            <div class="ph-head"><span class="ph-av">S</span><div><b>Tower B · Site Team</b><span>Suresh · Site Engineer</span></div></div>
+            <div class="ph-body">
+              <div class="bub typing b-typing" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="bub me b-msg">Need 50 bags of cement for Tower B slab by Friday.<span class="bt">9:18</span></div>
+              <div class="bchip b-chip">Indent detected</div>
+              <div class="icard b-card">
+                <div class="ic-head"><span>INDENT #142</span><span class="ic-st"><i class="stp">Pending</i><i class="sta">Approved</i></span></div>
+                <div class="ic-row"><span>Material</span><b>OPC 53 cement</b></div>
+                <div class="ic-row"><span>Qty</span><b>50 bags</b></div>
+                <div class="ic-row"><span>Site</span><b>Tower B · slab</b></div>
+                <div class="ic-row"><span>Need by</span><b>Friday</b></div>
+              </div>
+            </div>
+            <div class="b-toast">Indent #142 approved · PO drafted</div>
+          </div>
+          <div class="bkt-desk b-desk">
+            <div class="dk-bar"><i></i><i></i><i></i><span>APPROVALS · PROJECT HEAD</span></div>
+            <div class="dk-body">
+              <div class="dk-item dim"><span>IND #140 · Steel 8 mm · 1.2 t</span><em>CLEARED</em></div>
+              <div class="dk-item hot">
+                <div class="dk-line"><b>IND #142 · OPC 53 · 50 bags</b><span class="dk-st"><i class="stp">Pending</i><i class="sta">Approved</i></span></div>
+                <div class="dk-sub">Tower B slab · need by Friday · raised by Suresh</div>
+                <button class="dk-approve" type="button"><span>Approve</span></button>
+              </div>
+              <div class="dk-item dim"><span>IND #139 · Binding wire · 40 kg</span><em>CLEARED</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 2 · ASK BRIK -->
+  <div class="bkt-sc bkt-s2" data-scene="2" data-beats="6" data-screen-label="How it works · Scene 2 · Ask Brik">
+    <div class="bkt-pin">
+      <div class="wrap bkt-grid">
+        <div class="bkt-copy">
+          <div class="bkt-tag">SCENE 02 · ASK BRIK AI ANYTHING</div>
+          <h3>The site answers back.</h3>
+          <div class="bkt-beats">
+            <span class="bb bb-a">Ask in plain language.</span>
+            <span class="bb bb-b">Progress, counted and flagged.</span>
+            <span class="bb bb-c">Follow up like you would with a person.</span>
+            <span class="bb bb-d">A month of attendance, in one glance.</span>
+          </div>
+          <div class="bkt-cap">Your site's memory, on demand.</div>
+        </div>
+        <div class="bkt-stage">
+          <div class="bkt-phone">
+            <div class="ph-chrome"><span class="ph-dot"></span>brikito</div>
+            <div class="ph-head"><span class="ph-av bk">B</span><div><b>Brik AI</b><span>online · always on</span></div></div>
+            <div class="ph-body">
+              <div class="bub me b-q1">What was my progress last week?<span class="bt">18:02</span></div>
+              <div class="acard b-rep">
+                <div class="ac-top">
+                  <svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle class="rbg" cx="32" cy="32" r="26"></circle><circle class="rfg" id="bkRing" cx="32" cy="32" r="26"></circle></svg>
+                  <div class="ac-pct"><b><span id="bkRingPct">0</span>%</b><span>of week's plan done</span></div>
+                </div>
+                <ul class="ac-list">
+                  <li>L7 slab shuttering finished</li>
+                  <li>Column cages C4 to C9 tied</li>
+                  <li>Block B plumbing first fix started</li>
+                </ul>
+                <div class="ac-flag">Waterproofing crew 2 days behind</div>
+              </div>
+              <div class="bub me b-q2">And my attendance last month?<span class="bt">18:03</span></div>
+              <div class="acard b-att">
+                <div class="ac-cap"><b>24 / 26</b> days present</div>
+                <div class="heat" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 3 · CCTV INTELLIGENCE -->
+  <div class="bkt-sc bkt-s3" data-scene="3" data-beats="6" data-screen-label="How it works · Scene 3 · CCTV intelligence">
+    <div class="bkt-pin">
+      <div class="wrap bkt-grid s3g">
+        <div class="bkt-copy">
+          <div class="bkt-tag">SCENE 03 · CCTV INTELLIGENCE</div>
+          <h3>Four feeds. One sentence each.</h3>
+          <div class="bkt-beats">
+            <span class="bb bb-a">The cameras you already have, watched 24/7.</span>
+            <span class="bb bb-b">Progress and people, read from the frame.</span>
+            <span class="bb bb-c">Stock counted on the shelf.</span>
+            <span class="bb bb-d">Idle time flagged, to the minute.</span>
+          </div>
+          <div class="bkt-cap">Cameras you already have. Eyes you never did.</div>
+        </div>
+        <div class="bkt-stage">
+          <div class="s3-wrap">
+            <div class="bkt-cams">
+              <div class="kcam k1">
+                <svg viewBox="0 0 240 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <line x1="0" y1="124" x2="240" y2="124" stroke="rgba(255,255,255,.2)" stroke-width="1"></line>
+                  <rect x="16" y="82" width="34" height="42" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2"></rect>
+                  <line x1="50" y1="94" x2="164" y2="89" stroke="rgba(255,255,255,.5)" stroke-width="2.5"></line>
+                  <circle cx="50" cy="94" r="3" fill="rgba(255,255,255,.5)"></circle>
+                  <g class="wk wk1">
+                    <rect x="-10" y="84" width="22" height="42" fill="none" stroke="#3E5BD8" stroke-width="1" stroke-dasharray="3 3"></rect>
+                    <text x="-10" y="80" font-size="7" fill="#3E5BD8" font-family="monospace">person 0.97</text>
+                    <circle cx="1" cy="92" r="4.5" fill="rgba(250,248,244,.9)"></circle>
+                    <rect x="-3.5" y="98" width="9" height="17" rx="3.5" fill="rgba(250,248,244,.9)"></rect>
+                    <line x1="-1" y1="115" x2="-5" y2="125" stroke="rgba(250,248,244,.9)" stroke-width="2.4"></line>
+                    <line x1="3" y1="115" x2="7" y2="125" stroke="rgba(250,248,244,.9)" stroke-width="2.4"></line>
+                  </g>
+                  <g class="wk wk2">
+                    <circle cx="1" cy="96" r="4" fill="rgba(250,248,244,.65)"></circle>
+                    <rect x="-3" y="101" width="8" height="15" rx="3" fill="rgba(250,248,244,.65)"></rect>
+                    <line x1="-1" y1="116" x2="-4" y2="125" stroke="rgba(250,248,244,.65)" stroke-width="2.2"></line>
+                    <line x1="3" y1="116" x2="6" y2="125" stroke="rgba(250,248,244,.65)" stroke-width="2.2"></line>
+                  </g>
+                </svg>
+                <span class="kl">CAM 01 · GATE</span><span class="ks">SIMULATED FEED</span><span class="kt">in 42 · out 9</span><span class="kscan"></span>
+              </div>
+              <div class="kcam k2">
+                <svg viewBox="0 0 240 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <line x1="0" y1="126" x2="240" y2="126" stroke="rgba(255,255,255,.2)" stroke-width="1"></line>
+                  <rect x="44" y="46" width="10" height="80" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.2"></rect>
+                  <rect x="96" y="46" width="10" height="80" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.2"></rect>
+                  <rect x="148" y="46" width="10" height="80" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.2"></rect>
+                  <rect x="200" y="46" width="10" height="80" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.2"></rect>
+                  <line x1="30" y1="58" x2="230" y2="58" stroke="rgba(255,255,255,.25)" stroke-width="1" stroke-dasharray="5 4"></line>
+                  <line x1="30" y1="70" x2="230" y2="70" stroke="rgba(255,255,255,.25)" stroke-width="1" stroke-dasharray="5 4"></line>
+                  <g class="wk wk3">
+                    <rect x="-10" y="86" width="22" height="40" fill="none" stroke="#3E5BD8" stroke-width="1" stroke-dasharray="3 3"></rect>
+                    <text x="-10" y="82" font-size="7" fill="#3E5BD8" font-family="monospace">person 0.94</text>
+                    <circle cx="1" cy="94" r="4.5" fill="rgba(250,248,244,.9)"></circle>
+                    <rect x="-3.5" y="100" width="9" height="16" rx="3.5" fill="rgba(250,248,244,.9)"></rect>
+                    <line x1="-1" y1="116" x2="-5" y2="126" stroke="rgba(250,248,244,.9)" stroke-width="2.4"></line>
+                    <line x1="3" y1="116" x2="7" y2="126" stroke="rgba(250,248,244,.9)" stroke-width="2.4"></line>
+                  </g>
+                </svg>
+                <span class="kl">CAM 02 · L7 SLAB</span><span class="ks">SIMULATED FEED</span><span class="kt">crew · 14</span><span class="kscan"></span>
+              </div>
+              <div class="kcam k3">
+                <svg viewBox="0 0 240 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <line x1="0" y1="126" x2="240" y2="126" stroke="rgba(255,255,255,.2)" stroke-width="1"></line>
+                  <rect x="56" y="38" width="130" height="88" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="1.4"></rect>
+                  <line x1="56" y1="66" x2="186" y2="66" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <line x1="56" y1="96" x2="186" y2="96" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <g fill="rgba(250,248,244,.5)">
+                    <rect x="66" y="52" width="14" height="10" rx="1.5"></rect><rect x="84" y="52" width="14" height="10" rx="1.5"></rect><rect x="102" y="52" width="14" height="10" rx="1.5"></rect><rect x="120" y="52" width="14" height="10" rx="1.5"></rect>
+                    <rect x="66" y="82" width="14" height="10" rx="1.5"></rect><rect x="84" y="82" width="14" height="10" rx="1.5"></rect><rect x="102" y="82" width="14" height="10" rx="1.5"></rect>
+                  </g>
+                  <rect x="60" y="46" width="80" height="22" fill="none" stroke="#3E5BD8" stroke-width="1" stroke-dasharray="3 3"></rect>
+                  <text x="60" y="42" font-size="7" fill="#3E5BD8" font-family="monospace">stock 0.94</text>
+                </svg>
+                <span class="kl">CAM 03 · STORE</span><span class="ks">SIMULATED FEED</span><span class="kt">cement · 134 bags</span><span class="kscan"></span>
+              </div>
+              <div class="kcam k4">
+                <svg viewBox="0 0 240 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <line x1="0" y1="126" x2="240" y2="126" stroke="rgba(255,255,255,.2)" stroke-width="1"></line>
+                  <line x1="196" y1="10" x2="196" y2="126" stroke="rgba(255,255,255,.45)" stroke-width="2"></line>
+                  <line x1="206" y1="10" x2="206" y2="126" stroke="rgba(255,255,255,.45)" stroke-width="2"></line>
+                  <line x1="196" y1="26" x2="206" y2="40" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <line x1="206" y1="26" x2="196" y2="40" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <line x1="196" y1="56" x2="206" y2="70" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <line x1="206" y1="56" x2="196" y2="70" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <line x1="196" y1="86" x2="206" y2="100" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <line x1="206" y1="86" x2="196" y2="100" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+                  <g class="cage">
+                    <rect x="160" y="18" width="32" height="30" fill="none" stroke="#3E5BD8" stroke-width="1.4"></rect>
+                    <line x1="160" y1="33" x2="192" y2="33" stroke="#3E5BD8" stroke-width="1" opacity=".6"></line>
+                  </g>
+                  <g class="wk wk2">
+                    <circle cx="1" cy="96" r="4" fill="rgba(250,248,244,.7)"></circle>
+                    <rect x="-3" y="101" width="8" height="15" rx="3" fill="rgba(250,248,244,.7)"></rect>
+                    <line x1="-1" y1="116" x2="-4" y2="125" stroke="rgba(250,248,244,.7)" stroke-width="2.2"></line>
+                    <line x1="3" y1="116" x2="6" y2="125" stroke="rgba(250,248,244,.7)" stroke-width="2.2"></line>
+                  </g>
+                </svg>
+                <span class="kl">CAM 04 · HOIST</span><span class="ks">SIMULATED FEED</span><span class="kt">cage · active</span><span class="kscan"></span>
+              </div>
+            </div>
+            <div class="s3-sum">
+              <div class="sm-h">SITE SUMMARY · LIVE</div>
+              <div class="ln l1"><span class="k">PROGRESS</span>slab shuttering ~60% · Tower B</div>
+              <div class="ln l2"><span class="k">ON SITE</span>42 labour · 3 engineers · gate cam</div>
+              <div class="ln l3"><span class="k">STORE</span>cement 134 bags · steel 2.1 t</div>
+              <div class="ln l4"><span class="k">CREW</span>pour active 6.2/8 hrs · idle 14:10 to 14:40</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 4 · DRAWING TO PAPERWORK -->
+  <div class="bkt-sc bkt-s4" data-scene="4" data-beats="7" data-screen-label="How it works · Scene 4 · Drawing to BOQ">
+    <div class="bkt-pin">
+      <div class="wrap bkt-grid s4g">
+        <div class="bkt-copy">
+          <div class="bkt-tag">SCENE 04 · DRAWING TO PAPERWORK</div>
+          <h3>Drop a drawing. Get the takeoff.</h3>
+          <div class="bkt-beats">
+            <span class="bb bb-a">Drag the structural drawing in.</span>
+            <span class="bb bb-b">Pick what you need. BOQ, BBS or fabrication.</span>
+            <span class="bb bb-c">Brik reads the dimensions off the sheet.</span>
+            <span class="bb bb-d">Quantities, bar schedule, bending sheet. Done.</span>
+          </div>
+          <div class="bkt-cap">Upload the drawing. The paperwork builds itself.</div>
+        </div>
+        <div class="bkt-stage">
+          <div class="s4-wrap">
+            <div class="s4-left">
+              <div class="dwg-card">
+                <svg class="dwg" viewBox="0 0 260 190" aria-hidden="true">
+                  <rect x="26" y="22" width="208" height="96" fill="none" stroke="#1A3A5C" stroke-width="1.5"></rect>
+                  <rect x="40" y="34" width="180" height="72" fill="none" stroke="#1A3A5C" stroke-width=".8" opacity=".7"></rect>
+                  <line x1="26" y1="22" x2="40" y2="34" stroke="#1A3A5C" stroke-width=".6" opacity=".5"></line>
+                  <line x1="234" y1="22" x2="220" y2="34" stroke="#1A3A5C" stroke-width=".6" opacity=".5"></line>
+                  <line x1="26" y1="118" x2="40" y2="106" stroke="#1A3A5C" stroke-width=".6" opacity=".5"></line>
+                  <line x1="234" y1="118" x2="220" y2="106" stroke="#1A3A5C" stroke-width=".6" opacity=".5"></line>
+                  <line x1="26" y1="132" x2="234" y2="132" stroke="#1A3A5C" stroke-width=".7"></line>
+                  <line x1="26" y1="128" x2="26" y2="136" stroke="#1A3A5C" stroke-width=".7"></line>
+                  <line x1="234" y1="128" x2="234" y2="136" stroke="#1A3A5C" stroke-width=".7"></line>
+                  <g class="co co1"><rect x="108" y="124" width="44" height="15" rx="3" fill="#FAFAFA" stroke="#3E5BD8" stroke-width=".8"></rect><text x="130" y="135" font-size="9" fill="#3E5BD8" font-family="monospace" text-anchor="middle">15'-4"</text></g>
+                  <g class="co co2"><rect x="6" y="58" width="46" height="15" rx="3" fill="#FAFAFA" stroke="#3E5BD8" stroke-width=".8"></rect><text x="29" y="69" font-size="8.5" fill="#3E5BD8" font-family="monospace" text-anchor="middle">8" wall</text></g>
+                  <g opacity=".75"><circle cx="56" cy="152" r="2.2" fill="none" stroke="#1A3A5C" stroke-width=".8"></circle><circle cx="72" cy="152" r="2.2" fill="none" stroke="#1A3A5C" stroke-width=".8"></circle><circle cx="88" cy="152" r="2.2" fill="none" stroke="#1A3A5C" stroke-width=".8"></circle><circle cx="104" cy="152" r="2.2" fill="none" stroke="#1A3A5C" stroke-width=".8"></circle><line x1="48" y1="160" x2="112" y2="160" stroke="#1A3A5C" stroke-width=".7"></line></g>
+                  <g class="co co3"><rect x="120" y="146" width="86" height="15" rx="3" fill="#FAFAFA" stroke="#3E5BD8" stroke-width=".8"></rect><text x="163" y="157" font-size="8.5" fill="#3E5BD8" font-family="monospace" text-anchor="middle">10mm @ 6" c/c</text></g>
+                  <rect x="168" y="168" width="66" height="16" fill="none" stroke="#1A3A5C" stroke-width=".7" opacity=".7"></rect>
+                  <text x="201" y="179" font-size="6.5" fill="#1A3A5C" font-family="monospace" text-anchor="middle" opacity=".8">SEPTIC TANK · STR-104</text>
+                </svg>
+                <div class="b-scan"></div>
+              </div>
+              <div class="s4-btns b-btns">
+                <button class="tb tb-boq" type="button">BOQ</button>
+                <button class="tb" type="button">BBS</button>
+                <button class="tb" type="button">FABRICATION</button>
+              </div>
+              <div class="b-thumb"><svg viewBox="0 0 40 30" aria-hidden="true"><rect x="3" y="3" width="34" height="24" fill="none" stroke="#1A3A5C" stroke-width="1.5"></rect><rect x="9" y="8" width="22" height="14" fill="none" stroke="#1A3A5C" stroke-width=".8"></rect></svg><span>STR-104.pdf</span></div>
+              <div class="b-cur" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2 1l11 5.5-4.6 1.4L13 13l-2 2-4.4-5.2L4 14z" fill="#17150F"></path></svg></div>
+            </div>
+            <div class="s4-panel b-panel">
+              <div class="pt-row"><span class="pt pt-boq">BOQ</span><span class="pt pt-bbs">BBS</span><span class="pt pt-fab">FABRICATION</span></div>
+              <div class="panes">
+                <div class="pane pane-boq">
+                  <div class="pr ph"><span>ITEM</span><span>QTY</span></div>
+                  <div class="pr"><span>Cement OPC 53</span><b>80 bags</b></div>
+                  <div class="pr"><span>Steel Fe550 · 10 mm</span><b>752 kg</b></div>
+                  <div class="pr"><span>RCC M25</span><b>8.56 m³</b></div>
+                  <div class="pr"><span>Shuttering</span><b>64 m²</b></div>
+                  <div class="pr"><span>Excavation</span><b>22 m³</b></div>
+                </div>
+                <div class="pane pane-bbs">
+                  <div class="pr ph"><span>BAR · SHAPE</span><span>NOS</span></div>
+                  <div class="pr"><span><svg class="bs" viewBox="0 0 30 12"><path d="M3 10h8V2h16"></path></svg>10 mm stirrup · 6" c/c</span><b>412</b></div>
+                  <div class="pr"><span><svg class="bs" viewBox="0 0 30 12"><path d="M2 6h26"></path></svg>12 mm straight · 4.8 m</span><b>96</b></div>
+                  <div class="pr"><span><svg class="bs" viewBox="0 0 30 12"><path d="M3 10V2h25"></path></svg>10 mm L-bend · 1.85 m</span><b>124</b></div>
+                  <div class="pr"><span><svg class="bs" viewBox="0 0 30 12"><path d="M3 10h6l4-8h8l4 8h3"></path></svg>8 mm crank · 2.1 m</span><b>64</b></div>
+                </div>
+                <div class="pane pane-fab">
+                  <div class="fab-sheet">
+                    <div class="fr"><svg viewBox="0 0 60 16" aria-hidden="true"><path class="fbl" d="M4 12h16V4h26"></path></svg><span>cut 1.85 · bend 90°</span></div>
+                    <div class="fr"><svg viewBox="0 0 60 16" aria-hidden="true"><path class="fbl" d="M4 8h52"></path></svg><span>cut 4.80 · straight</span></div>
+                    <div class="fr"><svg viewBox="0 0 60 16" aria-hidden="true"><path class="fbl" d="M6 12h10V4h20v8h14"></path></svg><span>cut 2.10 · crank</span></div>
+                    <div class="fgen"><i></i>GENERATING CUTTING PLAN</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 5 · DASHBOARD -->
+  <div class="bkt-sc bkt-s5" data-scene="5" data-beats="6" data-screen-label="How it works · Scene 5 · Dashboard catch-up">
+    <div class="bkt-pin">
+      <div class="wrap bkt-grid">
+        <div class="bkt-copy">
+          <div class="bkt-tag">SCENE 05 · COST · TIME · PROGRESS</div>
+          <h3>It sees the slip. Then it plans the save.</h3>
+          <div class="bkt-beats">
+            <span class="bb bb-a">Planned, earned and spent, on one curve.</span>
+            <span class="bb bb-b">The gap is money. The bracket is time.</span>
+            <span class="bb bb-c">Brik drafts a recovery plan.</span>
+            <span class="bb bb-d">Handover pulled back six weeks.</span>
+          </div>
+          <div class="bkt-cap">It doesn't just show the slip. It plans the catch-up.</div>
+        </div>
+        <div class="bkt-stage">
+          <div class="s5-card">
+            <div class="s5-legend"><span class="lg p">planned</span><span class="lg e">earned</span><span class="lg c">spent</span></div>
+            <svg class="s5-chart" viewBox="0 0 520 270" aria-hidden="true">
+              <line class="ax" x1="44" y1="16" x2="44" y2="240"></line>
+              <line class="ax" x1="44" y1="240" x2="500" y2="240"></line>
+              <path class="gp" d="M300,146 C364,116 428,87 492,58 L492,118 C428,160 364,180 300,194 Z"></path>
+              <path class="pl pl-plan" pathLength="1" d="M44,238 C170,232 300,146 492,58"></path>
+              <path class="pl pl-earn" pathLength="1" d="M44,238 C160,234 292,194 492,118"></path>
+              <path class="pl pl-cost" pathLength="1" d="M44,238 C150,226 286,148 492,84"></path>
+              <g class="brk"><path d="M498,58 h8 v60 h-8"></path></g>
+            </svg>
+            <div class="b-stamp">~10 wks behind</div>
+            <div class="b-banner"><span class="bdot"></span>Recovery plan ready</div>
+            <div class="b-gantt">
+              <div class="gr"><span>Finishing trades re-sequenced</span><i style="--w:72%"></i></div>
+              <div class="gr"><span>Night pour added · L8 slab</span><i style="--w:46%"></i></div>
+              <div class="gr"><span>Steel and cement pre-ordered</span><i style="--w:58%"></i></div>
+              <div class="gdate"><span class="d-old">Handover · 14 Mar</span><span class="d-new">31 Jan</span><span class="d-chip">back <b id="bkWks">0</b> wks</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVERYTHING ELSE + CTA -->
+  <div class="wrap bkt-tail">
+    <div class="bkt-tag">AND EVERYTHING ELSE</div>
+    <h3 class="bkt-tail-h">The rest of the toolbelt.</h3>
+    <div class="bkt-mosaic">
+      <div class="bkt-mcard"><div class="mi mi-att"><span class="pinp"></span><span class="ringp"></span></div><b>Selfie attendance</b><span>Geofenced check-in, straight to payroll.</span></div>
+      <div class="bkt-mcard"><div class="mi mi-rev"><span class="sh"></span><span class="sh s2"></span><span class="badge">Rev C</span></div><b>Revision control</b><span>“You're on Rev C” before the wrong wall goes up.</span></div>
+      <div class="bkt-mcard"><div class="mi mi-mom"><i></i><i></i><i></i></div><b>AI meeting minutes</b><span>Decisions and owners, drafted as you hang up.</span></div>
+      <div class="bkt-mcard"><div class="mi mi-dpr"><span class="phf"></span><span class="docf"><i></i><i></i><i></i></span></div><b>Auto DPR</b><span>Daily progress reports drafted from site photos.</span></div>
+      <div class="bkt-mcard"><div class="mi mi-safe"><span class="flg"></span></div><b>Safety flags</b><span>Missing PPE and edge risks, raised instantly.</span></div>
+      <div class="bkt-mcard"><div class="mi mi-multi"><span class="cha">Skyline</span><span class="chb">Metro D2</span></div><b>Multi-project</b><span>Switch workspaces without switching apps.</span></div>
+      <div class="bkt-mcard"><div class="mi mi-share"><span class="pn"></span><span class="pn p2"></span><span class="bl"></span></div><b>Shared workspace</b><span>Developer and contractor on the same record.</span></div>
+      <div class="bkt-mcard"><div class="mi mi-voice"><span class="wv"><i></i><i></i><i></i><i></i><i></i></span><span class="rws"><i></i><i></i></span></div><b>Voice to update</b><span>Hindi or Tamil voice note in, structured update out.</span></div>
+    </div>
+    <div class="bkt-cta-row">
+      <a class="btn btn-solid" href="mailto:hey@brikito.com?subject=Brikito%20pilot%20request">Book a pilot
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="mini">
+  <div class="wrap row">
+    <div>© 2026 Brikito · Built in India</div>
+    <div><a href="index.html" style="text-decoration:underline;text-underline-offset:3px;">brikito.com</a></div>
+  </div>
+</footer>
+
+<script src="bkt-hiw.js"></script>
+</body>
+</html>

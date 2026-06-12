@@ -1,0 +1,1942 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brikito, One app for the whole construction site</title>
+<meta name="description" content="Brikito puts chat, attendance, drawings, meetings, mail and a live project dashboard into one app your site team actually uses, with Brik AI built into every screen." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#0A0A0A;
+    --ink-2:#1A1A1A;
+    --paper:#FFFFFF;
+    --paper-2:#FAFAFA;
+    --hair:#EAEAEA;
+    --hair-2:#D4D4D4;
+    --muted:#666666;
+    --muted-2:#999999;
+    --live:#10B981;
+    --tap: 1px;
+  }
+  html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+  ::selection{background:var(--ink);color:var(--paper);}
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- TOKENS ---------- */
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .num-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 28px;}
+  @media (max-width:720px){.wrap{padding:0 20px;}}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;}
+  .btn .arrow{display:inline-block;transition:transform .2s ease;}
+  .btn:hover .arrow{transform:translate(2px,-2px);}
+  .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .btn-solid:hover{background:#222;}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px;}
+
+  /* ---------- NAV ---------- */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;}
+  .logo-mark{width:22px;height:22px;display:inline-block;color:var(--ink);flex-shrink:0;}
+  .logo-mark svg{display:block;width:100%;height:100%;}
+  .logo-mark rect{fill:currentColor;}
+  /* Tiny pulse on the topmost square, subtle, not distracting */
+  .logo-mark .r-top{transform-origin:center;animation:logo-tip 3.6s ease-in-out infinite;}
+  @keyframes logo-tip{0%,100%{opacity:1;transform:translateY(0);}50%{opacity:.55;transform:translateY(-.5px);}}
+  .nav-links{display:flex;align-items:center;gap:22px;}
+  .nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;}
+  .nav-links a.lnk:hover{color:var(--ink);}
+  .nav-cta{display:flex;align-items:center;gap:10px;}
+  @media (max-width:960px){.nav-links{display:none;} .nav-cta .btn-ghost.login{display:none;}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:96px 0 56px;position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 64px,
+    linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/64px 100%;
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);
+    opacity:.55;pointer-events:none;}
+  .hero-inner{position:relative;text-align:center;max-width:920px;margin:0 auto;}
+  .hero-pill{display:inline-flex;align-items:center;gap:10px;padding:5px 5px 5px 14px;border:1px solid var(--hair-2);border-radius:999px;font-size:12.5px;color:var(--ink);background:var(--paper);}
+  .hero-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--live);box-shadow:0 0 0 3px rgba(16,185,129,.15);}
+  .hero-pill .tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:3px 9px;border-radius:999px;background:var(--paper-2);border:1px solid var(--hair);color:var(--muted);letter-spacing:.04em;}
+  .hero h1{font-size:clamp(44px,7.2vw,84px);line-height:1.02;letter-spacing:-.04em;font-weight:500;margin-top:28px;text-wrap:balance;}
+  .hero h1 .quiet{color:var(--muted-2);}
+  .hero p.deck{margin:26px auto 0;font-size:18.5px;line-height:1.5;color:var(--muted);max-width:60ch;text-wrap:pretty;}
+  .hero-actions{display:flex;gap:10px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+  .kbd{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:2px 6px;border-radius:5px;border:1px solid var(--hair-2);background:var(--paper-2);color:var(--muted);}
+
+  /* ---------- PRODUCT ARTIFACT ---------- */
+  .artifact{margin:64px auto 0;max-width:1080px;position:relative;}
+  .artifact-frame{
+    border:1px solid var(--hair);border-radius:14px;background:var(--paper);
+    box-shadow:0 1px 0 rgba(0,0,0,.02),0 30px 80px -30px rgba(0,0,0,.16),0 12px 28px -12px rgba(0,0,0,.06);
+    overflow:hidden;
+  }
+  .artifact-bar{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--hair);background:var(--paper-2);}
+  .artifact-bar .dots{display:flex;gap:6px;}
+  .artifact-bar .dots span{width:10px;height:10px;border-radius:50%;background:#E1E1E1;}
+  .artifact-bar .label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin:0 auto;display:flex;align-items:center;gap:8px;}
+  .artifact-bar .label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live);}
+  .artifact-bar .meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted-2);}
+  .artifact-grid{display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch;}
+  .panel{padding:22px 22px 24px;min-height:380px;}
+  .panel + .panel{border-left:1px solid var(--hair);}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+  .panel-head .h{font-size:12.5px;font-weight:500;color:var(--ink);display:flex;align-items:center;gap:8px;}
+  .panel-head .h::before{content:"";width:18px;height:18px;border-radius:5px;background:var(--paper-2);border:1px solid var(--hair);display:inline-block;}
+  .panel-head .t{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted-2);}
+  /* WhatsApp side */
+  .wa-thread{display:flex;flex-direction:column;gap:10px;}
+  .msg{max-width:84%;font-size:13.5px;line-height:1.45;padding:9px 12px;border-radius:14px;border:1px solid var(--hair);background:var(--paper-2);color:var(--ink);position:relative;}
+  .msg .name{display:block;font-size:10.5px;color:var(--muted-2);font-family:'JetBrains Mono',monospace;margin-bottom:3px;letter-spacing:.02em;}
+  .msg .time{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted-2);margin-top:4px;}
+  .msg.me{align-self:flex-end;background:#0A0A0A;color:#FAFAFA;border-color:#0A0A0A;}
+  .msg.me .name,.msg.me .time{color:rgba(250,250,250,.55);}
+  .msg.voice{display:flex;align-items:center;gap:10px;padding:10px 12px;}
+  .msg.voice .play{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;}
+  .msg.voice .wave{display:flex;gap:2px;align-items:center;flex:1;height:18px;}
+  .msg.voice .wave i{display:block;width:2px;background:var(--muted-2);border-radius:1px;}
+  .msg.attach{display:flex;gap:10px;align-items:center;}
+  .msg.attach .thumb{width:38px;height:38px;border-radius:6px;background:linear-gradient(135deg,#ddd 25%,#eee 25%,#eee 50%,#ddd 50%,#ddd 75%,#eee 75%);background-size:6px 6px;flex-shrink:0;border:1px solid var(--hair);}
+  .msg.attach .info{display:flex;flex-direction:column;font-size:12px;}
+  .msg.attach .info b{font-weight:500;}
+  .msg.attach .info span{color:var(--muted);font-size:11px;}
+
+  /* Bridge */
+  .bridge{display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:1px solid var(--hair);border-right:1px solid var(--hair);background:var(--paper-2);position:relative;}
+  .bridge::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:repeating-linear-gradient(to bottom,var(--hair-2) 0 4px,transparent 4px 8px);transform:translateX(-.5px);}
+  .bridge .arrow-pill{position:relative;background:var(--paper);border:1px solid var(--hair);border-radius:999px;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);display:flex;align-items:center;gap:6px;}
+  .bridge .arrow-pill .live-dot{width:5px;height:5px;background:var(--live);border-radius:50%;}
+
+  /* Ticket side */
+  .ticket{border:1px solid var(--hair);border-radius:10px;overflow:hidden;}
+  .ticket-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--paper-2);border-bottom:1px solid var(--hair);}
+  .ticket-head .id{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink);}
+  .ticket-head .status{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink);padding:2px 8px;border-radius:999px;background:#FEF3C7;border:1px solid #FDE68A;}
+  .ticket-head .status::before{content:"";width:5px;height:5px;border-radius:50%;background:#F59E0B;}
+  .ticket-body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:8px;}
+  .ticket-title{font-size:13.5px;font-weight:500;letter-spacing:-.005em;line-height:1.35;}
+  .ticket-row{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);border-top:1px dashed var(--hair);padding-top:8px;}
+  .ticket-row b{color:var(--ink);font-weight:500;font-family:'JetBrains Mono',monospace;font-size:11.5px;}
+  .ticket-row.over b{color:#B91C1C;}
+  .ticket-cite{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted-2);background:var(--paper-2);border:1px dashed var(--hair-2);border-radius:6px;padding:6px 8px;}
+  .ticket-actions{display:flex;gap:6px;padding:10px 12px;border-top:1px solid var(--hair);background:var(--paper);}
+  .ticket-actions button{flex:1;font-size:11.5px;height:28px;border-radius:6px;border:1px solid var(--hair-2);background:var(--paper);font-family:inherit;color:var(--ink);cursor:pointer;}
+  .ticket-actions button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
+  @media (max-width:820px){
+    .artifact-grid{grid-template-columns:1fr;}
+    .panel + .panel{border-left:none;border-top:1px solid var(--hair);}
+    .bridge{border-left:none;border-right:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:14px;}
+    .bridge::before{display:none;}
+  }
+
+  /* ---------- LOGO STRIP ---------- */
+  .logos{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:36px 0;margin-top:96px;}
+  .logos-inner{display:grid;grid-template-columns:auto repeat(5,1fr);gap:48px;align-items:center;}
+  .logos-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.04em;max-width:22ch;line-height:1.5;}
+  .ph-logo{height:22px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;font-size:14px;letter-spacing:-.01em;opacity:.85;}
+  .ph-logo .glyph{display:inline-block;width:14px;height:14px;border:1.5px solid var(--muted);margin-right:8px;}
+  .ph-logo.l2 .glyph{border-radius:50%;}
+  .ph-logo.l3 .glyph{transform:rotate(45deg);}
+  .ph-logo.l4 .glyph{border-radius:3px;border-style:dashed;}
+  .ph-logo.l5 .glyph{border-bottom:none;border-right:none;}
+  @media (max-width:900px){.logos-inner{grid-template-columns:1fr 1fr;gap:24px;}.logos-label{grid-column:1/-1;}}
+
+  /* ---------- SECTIONS ---------- */
+  section.s{padding:128px 0;border-bottom:1px solid var(--hair);}
+  .s-head{max-width:780px;margin:0 auto 64px;text-align:center;}
+  .s-head .eyebrow{display:inline-block;margin-bottom:18px;}
+  .s-head h2{font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-.035em;font-weight:500;text-wrap:balance;}
+  .s-head h2 .quiet{color:var(--muted-2);}
+  .s-head p{margin-top:18px;font-size:17px;line-height:1.55;color:var(--muted);max-width:58ch;margin-left:auto;margin-right:auto;text-wrap:pretty;}
+
+  /* ---------- FEATURES ---------- */
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:var(--paper);}
+  .feature{padding:36px 32px;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--paper);position:relative;}
+  .feature:nth-child(3n){border-right:none;}
+  .feature:nth-last-child(-n+3){border-bottom:none;}
+  .feature .icon{width:34px;height:34px;border-radius:8px;border:1px solid var(--hair);background:var(--paper-2);display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--ink);}
+  .feature h3{font-size:17px;font-weight:500;letter-spacing:-.015em;margin-bottom:8px;}
+  .feature p{font-size:14px;line-height:1.55;color:var(--muted);}
+  .feature .feature-key{margin-top:24px;display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted-2);letter-spacing:.06em;text-transform:uppercase;}
+  .feature .feature-key::before{content:"";width:14px;height:1px;background:var(--hair-2);}
+  @media (max-width:900px){.features{grid-template-columns:1fr 1fr;} .feature:nth-child(3n){border-right:1px solid var(--hair);} .feature:nth-child(2n){border-right:none;} .feature:nth-last-child(-n+3){border-bottom:1px solid var(--hair);} .feature:nth-last-child(-n+2){border-bottom:none;}}
+  @media (max-width:620px){.features{grid-template-columns:1fr;} .feature{border-right:none!important;border-bottom:1px solid var(--hair)!important;} .feature:last-child{border-bottom:none!important;}}
+
+  /* ---------- HOW (steps) ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .step{padding:32px 28px;border:1px solid var(--hair);border-radius:14px;background:var(--paper);}
+  .step .step-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;}
+  .step .step-num b{color:var(--ink);font-weight:500;font-size:13px;}
+  .step h3{font-size:19px;font-weight:500;letter-spacing:-.015em;margin-bottom:10px;}
+  .step p{font-size:14px;line-height:1.55;color:var(--muted);margin-bottom:22px;}
+  .step .step-meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--hair);display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px;}
+  .step .step-meta .r{display:flex;justify-content:space-between;gap:10px;color:var(--ink);}
+  .step .step-meta .r span:first-child{color:var(--muted);}
+  @media (max-width:900px){.steps{grid-template-columns:1fr;}}
+
+  /* ---------- USE CASES (compact list) ---------- */
+  .cases-table{border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:var(--paper);}
+  .cases-row{display:grid;grid-template-columns:80px 1fr 1fr 110px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--hair);font-size:14px;transition:background .15s ease;}
+  .cases-row:last-child{border-bottom:none;}
+  .cases-row:hover{background:var(--paper-2);}
+  .cases-row .id{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);}
+  .cases-row .ttl{font-weight:500;letter-spacing:-.005em;}
+  .cases-row .ttl em{font-style:normal;color:var(--muted);font-weight:400;}
+  .cases-row .desc{color:var(--muted);font-size:13px;line-height:1.4;padding-right:24px;}
+  .cases-row .tag{justify-self:end;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink);padding:3px 9px;border-radius:999px;border:1px solid var(--hair-2);background:var(--paper);}
+  .cases-row.head{background:var(--paper-2);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
+  .cases-row.head .ttl,.cases-row.head .id,.cases-row.head .desc,.cases-row.head .tag{color:var(--muted);font-weight:400;border:none;background:transparent;padding:0;}
+  @media (max-width:820px){.cases-row{grid-template-columns:1fr;gap:6px;padding:18px 20px;} .cases-row.head{display:none;} .cases-row .tag{justify-self:start;margin-top:6px;}}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--hair);border-radius:14px;overflow:hidden;}
+  .stat{padding:40px 32px;border-right:1px solid var(--hair);}
+  .stat:last-child{border-right:none;}
+  .stat .n{font-size:54px;line-height:1;letter-spacing:-.035em;font-weight:500;}
+  .stat .n small{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--muted);font-weight:400;margin-left:3px;letter-spacing:0;vertical-align:top;}
+  .stat .l{margin-top:14px;font-size:13px;line-height:1.45;color:var(--muted);max-width:24ch;}
+  @media (max-width:820px){.stats{grid-template-columns:1fr 1fr;} .stat:nth-child(2n){border-right:none;} .stat:nth-child(-n+2){border-bottom:1px solid var(--hair);}}
+
+  /* ---------- QUOTE ---------- */
+  .quote-wrap{background:var(--ink);color:var(--paper);border-radius:18px;padding:80px 64px;position:relative;overflow:hidden;}
+  .quote-wrap::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/100% 56px,
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/56px 100%;
+    mask-image:radial-gradient(ellipse 70% 70% at 100% 100%,#000 0%,transparent 65%);
+    -webkit-mask-image:radial-gradient(ellipse 70% 70% at 100% 100%,#000 0%,transparent 65%);
+    pointer-events:none;}
+  .quote-wrap blockquote{font-size:clamp(24px,3vw,36px);line-height:1.25;letter-spacing:-.022em;font-weight:400;max-width:30ch;position:relative;text-wrap:balance;}
+  .quote-wrap .attr{margin-top:42px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;}
+  .quote-wrap .who{font-size:14px;}
+  .quote-wrap .role{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:rgba(250,250,250,.55);letter-spacing:.02em;margin-top:4px;}
+  .quote-wrap .stamp{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:rgba(250,250,250,.55);align-self:end;}
+  @media (max-width:720px){.quote-wrap{padding:48px 28px;}}
+
+  /* ---------- PRINCIPLES ---------- */
+  .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--hair);border-radius:14px;overflow:hidden;}
+  .principle{padding:40px 36px;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--paper);}
+  .principle:nth-child(2n){border-right:none;}
+  .principle:nth-last-child(-n+2){border-bottom:none;}
+  .principle .pn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:18px;}
+  .principle h3{font-size:20px;font-weight:500;letter-spacing:-.018em;margin-bottom:10px;}
+  .principle p{font-size:14.5px;line-height:1.55;color:var(--muted);max-width:50ch;}
+  @media (max-width:820px){.principles{grid-template-columns:1fr;} .principle{border-right:none;} .principle:nth-last-child(-n+2){border-bottom:1px solid var(--hair);} .principle:last-child{border-bottom:none;}}
+
+  /* ---------- CTA ---------- */
+  .cta{padding:140px 0;text-align:center;position:relative;border-bottom:1px solid var(--hair);}
+  .cta::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 56px,
+    linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/56px 100%;
+    mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,#000 30%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,#000 30%,transparent 75%);
+    opacity:.6;pointer-events:none;}
+  .cta-inner{position:relative;}
+  .cta h2{font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.04em;font-weight:500;max-width:18ch;margin:0 auto;text-wrap:balance;}
+  .cta h2 .quiet{color:var(--muted-2);}
+  .cta p{margin:22px auto 0;font-size:16.5px;line-height:1.5;color:var(--muted);max-width:48ch;}
+  .cta-actions{display:flex;gap:10px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:80px 0 36px;}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px;}
+  .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;}
+  .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace;}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .foot-col a{font-size:13.5px;color:var(--ink);}
+  .foot-col a:hover{color:var(--muted);}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px;}
+  .foot-bottom .badges{display:flex;gap:14px;}
+  .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;}
+  .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live);}
+  @media (max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px;}}
+
+  /* ---------- ANIM ---------- */
+  /* Only hide reveal targets once JS has confirmed it can manage them. */
+  html.js-reveal .reveal{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease;}
+  html.js-reveal .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    html.js-reveal .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  }
+  @keyframes wavey{0%,100%{height:4px;}50%{height:14px;}}
+  .msg.voice .wave i{animation:wavey 1.3s ease-in-out infinite;}
+  .msg.voice .wave i:nth-child(2){animation-delay:.1s;}
+  .msg.voice .wave i:nth-child(3){animation-delay:.2s;}
+  .msg.voice .wave i:nth-child(4){animation-delay:.3s;}
+  .msg.voice .wave i:nth-child(5){animation-delay:.4s;}
+  .msg.voice .wave i:nth-child(6){animation-delay:.5s;}
+  .msg.voice .wave i:nth-child(7){animation-delay:.6s;}
+  .msg.voice .wave i:nth-child(8){animation-delay:.7s;}
+  .msg.voice .wave i:nth-child(9){animation-delay:.8s;}
+  .msg.voice .wave i:nth-child(10){animation-delay:.9s;}
+  .msg.voice .wave i:nth-child(11){animation-delay:1s;}
+  .msg.voice .wave i:nth-child(12){animation-delay:1.1s;}
+
+  /* ---------- INTELLIGENT SITES ---------- */
+  .intel{padding:128px 0;border-bottom:1px solid var(--hair);}
+  .intel-head{max-width:780px;margin:0 auto 48px;text-align:center;}
+  .intel-head .eyebrow{display:inline-block;margin-bottom:18px;}
+  .intel-head h2{font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-.035em;font-weight:500;text-wrap:balance;}
+  .intel-head h2 .quiet{color:var(--muted-2);}
+  .intel-head p{margin-top:18px;font-size:17px;line-height:1.55;color:var(--muted);max-width:60ch;margin-left:auto;margin-right:auto;text-wrap:pretty;}
+  .intel-visual{margin:0 auto;max-width:1080px;border:1px solid var(--hair);border-radius:16px;background:var(--paper);padding:24px;position:relative;overflow:hidden;}
+  .intel-svg{width:100%;height:auto;display:block;}
+  .intel-strip{margin-top:28px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--hair);border-radius:12px;overflow:hidden;}
+  .intel-strip > div{padding:18px 16px;border-right:1px solid var(--hair);display:flex;flex-direction:column;gap:4px;}
+  .intel-strip > div:last-child{border-right:none;}
+  .intel-strip b{font-size:13px;font-weight:500;letter-spacing:-.005em;}
+  .intel-strip span{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.02em;}
+  @media (max-width:820px){.intel-strip{grid-template-columns:1fr 1fr;} .intel-strip > div:nth-child(2n){border-right:none;} .intel-strip > div{border-bottom:1px solid var(--hair);}}
+
+  /* Building elevation animation */
+  @keyframes pulseGreen{0%,100%{opacity:1;}50%{opacity:.35;}}
+  @keyframes flowDash{to{stroke-dashoffset:-80;}}
+  @keyframes nodeBob{0%,100%{r:3;}50%{r:5;}}
+  @keyframes windowGlow{0%,100%{fill:#FAFAFA;}50%{fill:#FFE9A8;}}
+  .intel-svg .live-dot{animation:pulseGreen 1.6s ease-in-out infinite;}
+  .intel-svg .flow-line{stroke-dasharray:4 6;animation:flowDash 5s linear infinite;}
+  .intel-svg .pulse-node{animation:nodeBob 2.4s ease-in-out infinite;}
+  .intel-svg .pulse-node.n2{animation-delay:.4s;}
+  .intel-svg .pulse-node.n3{animation-delay:.8s;}
+  .intel-svg .pulse-node.n4{animation-delay:1.2s;}
+  .intel-svg .pulse-node.n5{animation-delay:1.6s;}
+  .intel-svg .glow{animation:windowGlow 3.4s ease-in-out infinite;}
+  .intel-svg .glow.g2{animation-delay:.7s;}
+  .intel-svg .glow.g3{animation-delay:1.4s;}
+  .intel-svg .glow.g4{animation-delay:2.1s;}
+
+  /* ---------- BRIKCHAT 1.0 SECTION ---------- */
+  .feature-tag-row{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+  .feature-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--ink);padding:5px 11px;border:1px solid var(--ink);border-radius:999px;background:var(--paper);}
+  .feature-tag.shipped{display:inline-flex;align-items:center;gap:8px;}
+  .feature-tag.shipped::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live);}
+  .feature-version{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.06em;}
+  .bc-intro{max-width:820px;margin-bottom:64px;}
+  .bc-intro h2{font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-.035em;font-weight:500;text-wrap:balance;}
+  .bc-intro h2 .quiet{color:var(--muted-2);}
+  .bc-intro p{margin-top:18px;font-size:17px;line-height:1.55;color:var(--muted);max-width:62ch;text-wrap:pretty;}
+
+  .bc-modes{display:flex;flex-direction:column;gap:80px;}
+  .bc-mode{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;}
+  .bc-mode:nth-child(2n){grid-template-columns:1.2fr 1fr;}
+  .bc-mode:nth-child(2n) .bc-text{order:2;}
+  .bc-mode:nth-child(2n) .bc-visual{order:1;}
+  .bc-text .bc-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:14px;letter-spacing:.06em;}
+  .bc-text .bc-num b{color:var(--ink);font-weight:500;font-size:13px;margin-right:8px;}
+  .bc-text h3{font-size:30px;font-weight:500;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;text-wrap:balance;}
+  .bc-text h3 em{font-style:normal;color:var(--muted-2);}
+  .bc-text > p{font-size:16px;line-height:1.55;color:var(--muted);margin-bottom:28px;max-width:48ch;text-wrap:pretty;}
+  .bc-bullets{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--hair);}
+  .bc-bullets > div{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--hair);align-items:baseline;}
+  .bc-bullets b{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
+  .bc-bullets span{font-size:14px;line-height:1.45;color:var(--ink);}
+  .bc-bullets span code{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);background:var(--paper-2);padding:2px 6px;border-radius:5px;border:1px solid var(--hair);}
+  @media (max-width:900px){
+    .bc-mode,.bc-mode:nth-child(2n){grid-template-columns:1fr;gap:40px;}
+    .bc-mode:nth-child(2n) .bc-text{order:1;}
+    .bc-mode:nth-child(2n) .bc-visual{order:2;}
+  }
+
+  /* Capture Stream visual */
+  .bc-stream{border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:var(--paper);box-shadow:0 1px 0 rgba(0,0,0,.02),0 24px 60px -28px rgba(0,0,0,.14);}
+  .bc-stream-head{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--hair);background:var(--paper-2);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);}
+  .bc-stream-head .dot{width:6px;height:6px;border-radius:50%;background:var(--live);animation:pulseGreen 1.6s ease-in-out infinite;}
+  .bc-stream-head .grow{flex:1;}
+  .bc-stream-rows .row{display:grid;grid-template-columns:48px 96px 78px 110px 1fr;gap:12px;padding:11px 14px;border-bottom:1px dashed var(--hair);align-items:center;font-size:12.5px;line-height:1.35;}
+  .bc-stream-rows .row:last-child{border-bottom:none;}
+  .bc-stream-rows .t{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);}
+  .bc-stream-rows .from{font-weight:500;color:var(--ink);}
+  .bc-stream-rows .kind{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted-2);padding:2px 6px;background:var(--paper-2);border:1px solid var(--hair);border-radius:5px;justify-self:start;letter-spacing:.04em;}
+  .bc-stream-rows .intent{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--paper);border:1px solid var(--hair-2);color:var(--ink);justify-self:start;display:inline-flex;align-items:center;gap:6px;}
+  .bc-stream-rows .intent::before{content:"";width:5px;height:5px;border-radius:50%;background:#0A0A0A;}
+  .bc-stream-rows .intent.billing::before{background:oklch(0.65 0.13 80);}
+  .bc-stream-rows .intent.progress::before{background:oklch(0.62 0.13 240);}
+  .bc-stream-rows .intent.quality::before{background:oklch(0.62 0.16 20);}
+  .bc-stream-rows .intent.indent::before{background:oklch(0.6 0.04 260);}
+  .bc-stream-rows .intent.attendance::before{background:oklch(0.62 0.12 150);}
+  .bc-stream-rows .intent.safety::before{background:oklch(0.55 0.2 25);}
+  .bc-stream-rows .extract{color:var(--ink);font-size:13px;letter-spacing:-.005em;}
+  .bc-stream-rows .extract em{font-style:normal;color:var(--muted);}
+  .bc-stream-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-top:1px solid var(--hair);background:var(--paper-2);font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);}
+  @media (max-width:720px){
+    .bc-stream-rows .row{grid-template-columns:1fr 1fr;}
+    .bc-stream-rows .extract{grid-column:1/-1;}
+  }
+
+  /* Private Phone DM */
+  .phone{width:100%;max-width:360px;margin:0 auto;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:#0D0D0D;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.02),0 30px 60px -28px rgba(0,0,0,.5);transition:filter .35s ease, box-shadow .35s ease, transform .35s ease;filter:brightness(.84) saturate(.9);}
+  .phone:hover{filter:brightness(1.06) saturate(1.05);transform:translateY(-3px);box-shadow:0 1px 0 rgba(0,0,0,.02),0 46px 90px -34px rgba(60,80,200,.42),0 0 0 1px rgba(120,140,255,.18);}
+  .phone-bar{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);background:#141414;}
+  .phone-bar .pic{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,oklch(0.55 0.16 262),oklch(0.45 0.18 285));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;letter-spacing:-.02em;}
+  .phone-bar .who b{display:block;font-size:14px;font-weight:500;letter-spacing:-.005em;color:#FAFAFA;}
+  .phone-bar .who span{display:flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(250,250,250,.5);}
+  .phone-bar .who span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--live);}
+  .phone-thread{padding:18px 14px;display:flex;flex-direction:column;gap:8px;background:#0D0D0D;min-height:480px;background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0);background-size:18px 18px;}
+  .bubble{max-width:84%;font-size:13.5px;line-height:1.4;padding:9px 12px;border-radius:14px;}
+  .bubble.in{align-self:flex-end;background:linear-gradient(135deg,oklch(0.5 0.15 262),oklch(0.43 0.17 282));border:1px solid rgba(140,160,255,.28);color:#fff;}
+  .bubble.out{align-self:flex-start;background:#1A1A1A;border:1px solid rgba(255,255,255,.1);color:#EDEDED;}
+  .bubble.out b{display:block;font-weight:500;font-size:11px;font-family:'JetBrains Mono',monospace;color:rgba(250,250,250,.5);letter-spacing:.04em;margin-bottom:6px;text-transform:uppercase;}
+  .bubble.out .line{display:block;font-size:13px;padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.1);}
+  .bubble.out .line:last-child{border-bottom:none;}
+  .bubble.out .line strong{font-family:'JetBrains Mono',monospace;font-weight:500;color:#fff;}
+  .bubble .time{display:block;font-family:'JetBrains Mono',monospace;font-size:9.5px;color:rgba(250,250,250,.4);margin-top:4px;text-align:right;}
+  .bubble.in .time{color:rgba(255,255,255,.6);}
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap{padding:128px 0;border-bottom:1px solid var(--hair);background:var(--paper-2);}
+  .roadmap-head{max-width:780px;margin:0 auto 56px;text-align:center;}
+  .roadmap-head .eyebrow{display:inline-block;margin-bottom:18px;}
+  .roadmap-head h2{font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-.035em;font-weight:500;}
+  .roadmap-head h2 .quiet{color:var(--muted-2);}
+  .roadmap-track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:var(--paper);}
+  .rm-item{padding:32px 26px 36px;border-right:1px solid var(--hair);display:flex;flex-direction:column;gap:14px;position:relative;}
+  .rm-item:last-child{border-right:none;}
+  .rm-item .rm-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted-2);}
+  .rm-item .rm-status{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.06em;display:inline-flex;align-items:center;gap:6px;}
+  .rm-item.shipped .rm-status,.rm-item.pilot .rm-status{color:var(--ink);}
+  .rm-item.shipped .rm-status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live);}
+  .rm-item.pilot .rm-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#F59E0B;}
+  .rm-item h4{font-size:18px;font-weight:500;letter-spacing:-.018em;}
+  .rm-item p{font-size:13px;line-height:1.5;color:var(--muted);}
+  .rm-item.shipped{background:var(--paper);}
+  .rm-item:not(.shipped):not(.pilot){opacity:.65;}
+  @media (max-width:900px){.roadmap-track{grid-template-columns:1fr 1fr;} .rm-item{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);} .rm-item:nth-child(2n){border-right:none;} .rm-item:last-child{border-bottom:none;}}
+  @media (max-width:560px){.roadmap-track{grid-template-columns:1fr;} .rm-item{border-right:none!important;border-bottom:1px solid var(--hair)!important;} .rm-item:last-child{border-bottom:none!important;}}
+
+  /* ---------- INLINE SVG ---------- */
+  .ico{width:14px;height:14px;display:inline-block;flex-shrink:0;}
+
+  /* ---------- LIQUID AI HERO ---------- */
+  .liquid{position:relative;padding:140px 0 120px;border-bottom:1px solid var(--hair);overflow:hidden;background:var(--paper);}
+  .liquid::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 64px,
+    linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/64px 100%;
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 20%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 20%,transparent 75%);
+    opacity:.45;pointer-events:none;}
+  .liquid-inner{position:relative;max-width:1080px;margin:0 auto;padding:0 28px;display:flex;flex-direction:column;align-items:center;gap:56px;text-align:center;}
+  .liquid-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:5px 5px 5px 14px;border:1px solid var(--hair-2);border-radius:999px;font-size:12.5px;color:var(--ink);background:var(--paper);}
+  .liquid-eyebrow .tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:3px 9px;border-radius:999px;background:var(--ink);color:var(--paper);letter-spacing:.06em;}
+
+  .liquid-stage{position:relative;width:min(440px,86vw);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;}
+  .liquid-blob{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;will-change:transform;}
+  .liquid-blob.b1{width:80%;height:80%;left:10%;top:10%;
+    background:conic-gradient(from 0deg,
+      oklch(0.88 0.08 70),
+      oklch(0.72 0.07 240),
+      oklch(0.92 0.03 80),
+      oklch(0.78 0.09 30),
+      oklch(0.85 0.05 200),
+      oklch(0.88 0.08 70));
+    animation:blob-spin 16s linear infinite, blob-scale 7s ease-in-out infinite;opacity:.85;}
+  .liquid-blob.b2{width:56%;height:56%;left:22%;top:22%;
+    background:conic-gradient(from 200deg,
+      oklch(0.95 0 0),
+      oklch(0.72 0.1 220),
+      oklch(0.88 0.06 110),
+      oklch(0.95 0 0));
+    animation:blob-spin 24s linear infinite reverse, blob-scale 9s ease-in-out infinite;opacity:.7;mix-blend-mode:multiply;}
+  .liquid-blob.b3{width:34%;height:34%;left:33%;top:33%;
+    background:conic-gradient(from 90deg, oklch(0.2 0 0), oklch(0.3 0.05 250), oklch(0.15 0 0), oklch(0.2 0 0));
+    animation:blob-spin 18s linear infinite, blob-scale 6s ease-in-out infinite;opacity:.5;}
+  @keyframes blob-spin{to{transform:rotate(360deg);}}
+  @keyframes blob-scale{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+
+  .liquid-mark{position:relative;z-index:3;width:128px;height:128px;display:flex;align-items:center;justify-content:center;
+    background:var(--paper);border:1px solid var(--hair-2);border-radius:28px;
+    box-shadow:0 1px 0 rgba(0,0,0,.04),0 30px 60px -22px rgba(0,0,0,.16),0 0 0 8px rgba(255,255,255,.5);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  }
+  .liquid-mark svg{width:72%;height:72%;color:var(--ink);}
+  .liquid-mark svg rect{fill:currentColor;}
+  .liquid-mark .r-top{animation:logo-tip 2.6s ease-in-out infinite;}
+  .liquid-mark::after{content:"BRIK · v1.0";position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--muted);white-space:nowrap;}
+
+  .orbit-chip{position:absolute;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;padding:6px 11px;background:rgba(255,255,255,.92);border:1px solid var(--hair-2);border-radius:999px;white-space:nowrap;color:var(--ink);box-shadow:0 6px 14px -6px rgba(0,0,0,.12);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px;}
+  .orbit-chip::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:#0A0A0A;}
+  .orbit-chip.o1{top:2%;left:8%;animation:float 5.4s ease-in-out infinite;}
+  .orbit-chip.o2{top:10%;right:-2%;animation:float 6.2s ease-in-out infinite .4s;}
+  .orbit-chip.o3{top:46%;left:-6%;animation:float 5.8s ease-in-out infinite 1s;}
+  .orbit-chip.o4{top:56%;right:-8%;animation:float 5.2s ease-in-out infinite 1.4s;}
+  .orbit-chip.o5{bottom:6%;left:12%;animation:float 6s ease-in-out infinite .8s;}
+  .orbit-chip.o6{bottom:14%;right:8%;animation:float 5.6s ease-in-out infinite 1.8s;}
+  .orbit-chip.o1::before{background:oklch(0.62 0.13 240);}
+  .orbit-chip.o2::before{background:oklch(0.65 0.13 80);}
+  .orbit-chip.o3::before{background:oklch(0.62 0.16 20);}
+  .orbit-chip.o4::before{background:oklch(0.6 0.04 260);}
+  .orbit-chip.o5::before{background:oklch(0.62 0.12 150);}
+  .orbit-chip.o6::before{background:oklch(0.55 0.2 25);}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+  .liquid-copy{max-width:820px;}
+  .liquid-copy h2{font-size:clamp(38px,5.5vw,68px);line-height:1.04;letter-spacing:-.038em;font-weight:500;text-wrap:balance;}
+  .liquid-copy h2 .ai-grad{
+    background:linear-gradient(120deg, #0A0A0A 10%, oklch(0.5 0.16 250) 50%, oklch(0.45 0.18 285) 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-style:normal;
+  }
+  .liquid-copy p{margin-top:22px;font-size:17.5px;line-height:1.55;color:var(--muted);max-width:62ch;margin-left:auto;margin-right:auto;text-wrap:pretty;}
+
+  @media (max-width:720px){
+    .liquid{padding:96px 0 80px;}
+    .liquid-mark{width:104px;height:104px;border-radius:24px;}
+    .orbit-chip{font-size:10px;padding:5px 9px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .liquid-blob,.orbit-chip,.logo-mark .r-top,.liquid-mark .r-top{animation:none!important;}
+  }
+
+  /* ---------- INTEL VISUAL LIQUID WASH ---------- */
+  .intel-visual{position:relative;isolation:isolate;}
+  .intel-visual::before{
+    content:"";position:absolute;z-index:0;top:-120px;right:-120px;width:480px;height:480px;border-radius:50%;
+    background:conic-gradient(from 0deg, transparent, oklch(0.85 0.07 240) 20%, transparent 50%, oklch(0.88 0.05 30) 75%, transparent);
+    filter:blur(90px);opacity:.5;animation:blob-spin 28s linear infinite;pointer-events:none;
+  }
+  .intel-visual::after{
+    content:"";position:absolute;z-index:0;bottom:-100px;left:-80px;width:380px;height:380px;border-radius:50%;
+    background:conic-gradient(from 180deg, transparent, oklch(0.82 0.08 80) 30%, transparent 60%);
+    filter:blur(80px);opacity:.4;animation:blob-spin 36s linear infinite reverse;pointer-events:none;
+  }
+  .intel-visual > *{position:relative;z-index:1;}
+
+  /* ---------- POLISH ---------- */
+  .feature,.step,.principle,.rm-item,.cases-row{transition:transform .25s ease, background .2s ease, border-color .2s ease, box-shadow .25s ease;}
+  .step:hover,.principle:hover,.rm-item.shipped:hover,.rm-item.pilot:hover{transform:translateY(-2px);box-shadow:0 18px 40px -22px rgba(0,0,0,.15);}
+  .feature:hover{background:var(--paper-2);}
+
+  .btn-solid{position:relative;overflow:hidden;}
+  .btn-solid::after{
+    content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+    transform:translateX(-120%);transition:transform .8s ease;pointer-events:none;
+  }
+  .btn-solid:hover::after{transform:translateX(120%);}
+
+  /* Artifact bar, show a tiny Brik mark next to label */
+  .artifact-bar .label .mini-mark{width:12px;height:12px;display:inline-block;color:var(--ink);margin-right:6px;vertical-align:-2px;}
+  .artifact-bar .label .mini-mark rect{fill:currentColor;}
+
+  /* ---------- SHARED GRADIENT ACCENT ---------- */
+  .grad-ink{
+    background:linear-gradient(120deg, #0A0A0A 8%, oklch(0.5 0.16 250) 52%, oklch(0.45 0.18 285) 92%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  /* ---------- STATEMENT BAND ---------- */
+  .statement{padding:128px 0;border-bottom:1px solid var(--hair);text-align:center;position:relative;overflow:hidden;}
+  .statement::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 60px,
+    linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/60px 100%;
+    mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,#000 25%,transparent 78%);
+    -webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,#000 25%,transparent 78%);
+    opacity:.4;pointer-events:none;}
+  .statement .wrap{max-width:960px;position:relative;}
+  .statement .eyebrow{display:inline-block;margin-bottom:22px;}
+  .statement h2{font-size:clamp(36px,5.4vw,64px);line-height:1.04;letter-spacing:-.038em;font-weight:500;text-wrap:balance;}
+  .statement .tagline{margin:30px auto 0;display:flex;gap:10px 26px;justify-content:center;flex-wrap:wrap;}
+  .statement .tagline span{font-size:clamp(18px,2.5vw,25px);line-height:1.3;letter-spacing:-.015em;color:var(--ink);font-weight:500;display:inline-flex;align-items:center;gap:12px;}
+  .statement .tagline span::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ink);flex-shrink:0;}
+  .statement .tagline .b::before{background:oklch(0.5 0.16 250);}
+  .statement .sub{margin:26px auto 0;font-size:16.5px;line-height:1.55;color:var(--muted);max-width:54ch;text-wrap:pretty;}
+
+  /* ---------- REPORTS ---------- */
+  .reports{padding:128px 0;border-bottom:1px solid var(--hair);}
+  .reports .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .reports .report-left h2{font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:-.032em;font-weight:500;text-wrap:balance;}
+  .reports .report-left h2 .quiet{color:var(--muted-2);}
+  .reports .report-left p{margin-top:18px;font-size:16.5px;line-height:1.55;color:var(--muted);max-width:44ch;text-wrap:pretty;}
+  .reports .report-left .tap{margin-top:24px;display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--ink);padding:9px 14px;border:1px solid var(--hair-2);border-radius:99px;}
+  .reports .report-left .tap .pulse{width:7px;height:7px;border-radius:50%;background:var(--live);box-shadow:0 0 0 3px rgba(16,185,129,.16);}
+  .report-chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .report-chip{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.02em;padding:11px 15px;border:1px solid var(--hair);border-radius:11px;background:var(--paper);color:var(--ink);display:inline-flex;align-items:center;gap:9px;transition:transform .2s ease, background .2s ease, border-color .2s ease;}
+  .report-chip::before{content:"";width:8px;height:10px;border:1.4px solid var(--ink);border-radius:1.5px;flex-shrink:0;}
+  .report-chip:hover{transform:translateY(-2px);background:var(--paper-2);border-color:var(--hair-2);}
+  @media (max-width:820px){.reports .report-grid{grid-template-columns:1fr;gap:36px;}}
+
+  /* ---------- BRIKLIVE (dark flagship) ---------- */
+  .briklive{padding:128px 0;background:var(--ink);color:var(--paper);position:relative;overflow:hidden;border-bottom:1px solid var(--ink);}
+  .briklive::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px) 0 0/100% 56px,
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px) 0 0/56px 100%;
+    mask-image:radial-gradient(ellipse 80% 80% at 80% 20%,#000 0%,transparent 62%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 80% at 80% 20%,#000 0%,transparent 62%);
+    pointer-events:none;}
+  .bl-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center;position:relative;}
+  .bl-copy .eyebrow{color:var(--muted-2);display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;}
+  .bl-copy .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--live);box-shadow:0 0 0 3px rgba(16,185,129,.22);}
+  .bl-copy h2{font-size:clamp(34px,4.6vw,56px);line-height:1.04;letter-spacing:-.034em;font-weight:500;text-wrap:balance;}
+  .bl-copy h2 .quiet{color:var(--muted-2);}
+  /* light gradient variant for dark background */
+  .briklive .grad-ink{background:linear-gradient(120deg, #FAFAFA 8%, oklch(0.8 0.1 250) 50%, oklch(0.74 0.13 285) 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .bl-copy p{margin-top:20px;font-size:17px;line-height:1.55;color:rgba(250,250,250,.72);max-width:46ch;text-wrap:pretty;}
+  .bl-watch{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;max-width:430px;}
+  .bl-watch .w{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--paper);padding:9px 0;border-top:1px solid rgba(255,255,255,.1);}
+  .bl-watch .w svg{width:16px;height:16px;color:var(--live);flex-shrink:0;}
+  .bl-stat{margin-top:34px;display:flex;align-items:baseline;gap:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:24px;}
+  .bl-stat .big{font-size:64px;font-weight:600;letter-spacing:-.04em;line-height:1;}
+  .bl-stat .big small{font-size:26px;font-weight:500;color:var(--muted-2);margin-left:2px;}
+  .bl-stat .cap{font-size:14px;line-height:1.4;color:rgba(250,250,250,.72);max-width:24ch;}
+
+  /* monitor wall */
+  .bl-wall{border:1px solid rgba(255,255,255,.14);border-radius:16px;background:#0D0D0D;padding:14px;box-shadow:0 40px 90px -40px rgba(0,0,0,.6);}
+  .bl-wall-bar{display:flex;align-items:center;gap:8px;padding:2px 4px 12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted-2);letter-spacing:.06em;}
+  .bl-wall-bar .live{display:inline-flex;align-items:center;gap:6px;color:var(--paper);}
+  .bl-wall-bar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#EF4444;animation:bl-blink 1.4s steps(1) infinite;}
+  .bl-wall-bar .grow{flex:1;}
+  .bl-cams{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .bl-cam{position:relative;aspect-ratio:16/10;border-radius:9px;overflow:hidden;background:
+    repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 8px, transparent 8px 17px),
+    linear-gradient(160deg, #20262E 0%, #11151A 60%, #0B0E12 100%);
+    border:1px solid rgba(255,255,255,.08);}
+  .bl-cam .label{position:absolute;left:8px;top:7px;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(255,255,255,.82);z-index:2;}
+  .bl-cam .rec{position:absolute;right:8px;top:7px;display:flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,.7);z-index:2;}
+  .bl-cam .rec::before{content:"";width:5px;height:5px;border-radius:50%;background:#EF4444;animation:bl-blink 1.4s steps(1) infinite;}
+  .bl-cam .ts{position:absolute;left:8px;bottom:7px;font-family:'JetBrains Mono',monospace;font-size:8px;color:rgba(255,255,255,.6);z-index:2;}
+  .bl-cam .tagm{position:absolute;right:8px;bottom:7px;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--live);z-index:2;}
+  .bl-cam .scan{position:absolute;left:0;right:0;height:36%;top:-40%;background:linear-gradient(180deg, transparent, rgba(120,180,255,.10), transparent);animation:bl-scan 4.2s linear infinite;}
+  .bl-cam.c2 .scan{animation-delay:1s;} .bl-cam.c3 .scan{animation-delay:2s;} .bl-cam.c4 .scan{animation-delay:3s;}
+  .bl-cam img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.82) contrast(1.05) saturate(.92);transition:filter .3s ease;will-change:transform;animation:bl-kb-a 16s ease-in-out infinite alternate;}
+  .bl-cam.c2 img{animation:bl-kb-b 19s ease-in-out infinite alternate;}
+  .bl-cam.c3 img{animation:bl-kb-c 14s ease-in-out infinite alternate;}
+  .bl-cam.c4 img{animation:bl-kb-d 21s ease-in-out infinite alternate;}
+  /* CCTV noise + flicker for a live-footage feel */
+  .bl-cam::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 3px);animation:bl-flicker 5.5s steps(1) infinite;}
+  .bl-cam.c2::before{animation-delay:1.3s;} .bl-cam.c3::before{animation-delay:2.7s;} .bl-cam.c4::before{animation-delay:4.1s;}
+  .bl-cam::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(8,10,14,.32), rgba(8,10,14,0) 36%, rgba(8,10,14,.55));pointer-events:none;}
+  .bl-cam:hover img{filter:brightness(1.02) contrast(1.06) saturate(1.02);}
+  @keyframes bl-kb-a{from{transform:scale(1.07) translate(0,0);}to{transform:scale(1.16) translate(-2.4%,1.6%);}}
+  @keyframes bl-kb-b{from{transform:scale(1.12) translate(1.8%,-1.2%);}to{transform:scale(1.05) translate(-1.2%,1%);}}
+  @keyframes bl-kb-c{from{transform:scale(1.06) translate(-1.6%,1.2%);}to{transform:scale(1.15) translate(1.8%,-1.4%);}}
+  @keyframes bl-kb-d{from{transform:scale(1.14) translate(-2%,-1.4%);}to{transform:scale(1.06) translate(1.4%,1.2%);}}
+  @keyframes bl-flicker{0%,93%{opacity:.55;}94%,95%{opacity:1;}96%{opacity:.3;}97%,100%{opacity:.55;}}
+  @keyframes bl-blink{0%,60%{opacity:1;}61%,100%{opacity:.15;}}
+  @keyframes bl-scan{0%{top:-40%;}100%{top:110%;}}
+  @media (max-width:880px){.bl-grid{grid-template-columns:1fr;gap:40px;}}
+  @media (prefers-reduced-motion: reduce){.bl-cam .scan{animation:none;} .bl-wall-bar .live::before,.bl-cam .rec::before{animation:none;} .bl-cam img{animation:none;} .bl-cam::before{animation:none;opacity:.4;}}
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FFFFFF"/>
+    <g fill="#0A0A0A">
+      <rect x="380" y="500" width="140" height="140" rx="28"/>
+      <rect x="530" y="380" width="140" height="140" rx="28"/>
+      <rect x="680" y="260" width="140" height="140" rx="28"/>
+    </g>
+    <text x="600" y="730" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="500" fill="#0A0A0A" letter-spacing="-1">Brikito</text>
+  </svg>
+</template>
+
+<!-- =========================== NAV =========================== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#" aria-label="Brikito">
+      <span>Brikito</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="lnk" href="#intel">Platform</a>
+      <a class="lnk" href="#brikai">Brik AI</a>
+      <a class="lnk" href="#brikchat">BrikChat</a>
+      <a class="lnk" href="#brikvision">BrikVision</a>
+      <a class="lnk" href="#brikdocs">BrikDocs</a>
+      <a class="lnk" href="#roadmap">Roadmap</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm login" href="#">Sign in</a>
+      <a class="btn btn-solid btn-sm" href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- =========================== HERO =========================== -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="hero-pill">
+      <span class="dot" aria-hidden="true"></span>
+      Brik AI, now live on pilot sites
+      <span class="tag">v1.0 · LIVE</span>
+    </span>
+
+    <h1>
+      Intelligent construction,<br/>
+      <span class="grad-ink">without changing site habits.</span>
+    </h1>
+
+    <p class="deck">
+      One app for chat, attendance, drawings, meetings, mail and a live dashboard, with <strong style="color:var(--ink);font-weight:500">Brik AI</strong> built into every screen. Your team works the way they already do, and the developer's office stays in control of every project.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">
+        Book a walkthrough
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#how">
+        See how it works
+        <span class="kbd">↓</span>
+      </a>
+    </div>
+
+    <!-- ========== PRODUCT ARTIFACT ========== -->
+    <div class="artifact reveal">
+      <div class="artifact-frame">
+        <div class="artifact-bar">
+          <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="label">
+            <svg class="mini-mark" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="17" width="10" height="10" rx="2.2"/>
+              <rect x="9" y="9" width="10" height="10" rx="2.2"/>
+              <rect x="17" y="1" width="10" height="10" rx="2.2"/>
+            </svg>brikito · live
+          </div>
+          <div class="meta">Skyline Residency · Tower B</div>
+        </div>
+
+        <div class="artifact-grid">
+          <!-- Group chat panel -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="h">Skyline Tower B, Site Team</div>
+              <div class="t">10 · 9:18 AM</div>
+            </div>
+            <div class="wa-thread" style="text-align:left">
+              <div class="msg">
+                <span class="name">Rajesh Kumar · Site Engineer · update</span>
+                Slab casting for 7th floor done. 142 cum poured, cubes taken for testing.
+                <span class="time">8:42</span>
+              </div>
+              <div class="msg">
+                <span class="name">Anil Reddy · Supervisor · attendance</span>
+                Today's labour count: 48 present, 3 absent. Bar-bending crew at Tower B.
+                <span class="time">8:46</span>
+              </div>
+              <div class="msg voice">
+                <span class="play" aria-hidden="true">▶</span>
+                <div class="wave" aria-hidden="true">
+                  <i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:8px"></i><i style="height:12px"></i><i style="height:6px"></i><i style="height:11px"></i><i style="height:9px"></i><i style="height:13px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:5px"></i>
+                </div>
+                <span class="time" style="margin:0">0:34</span>
+              </div>
+              <div class="msg">
+                <span class="name">Suresh Patel · Contractor · ticket</span>
+                Need 50 bags cement (OPC 53) at Block B by tomorrow morning. Stock low for L8 columns.
+                <span class="time">9:18</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bridge -->
+          <div class="bridge" aria-hidden="true">
+            <div class="arrow-pill"><span class="live-dot"></span>tagged · structured · routed</div>
+          </div>
+
+          <!-- Brik AI indent panel -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="h">Brik AI · indent</div>
+              <div class="t">awaiting PM</div>
+            </div>
+            <div class="ticket" style="text-align:left">
+              <div class="ticket-head">
+                <div class="id">IND-2041 · Material indent</div>
+                <div class="status">Needs approval</div>
+              </div>
+              <div class="ticket-body">
+                <div class="ticket-title">OPC 53 Grade Cement, 50 bags</div>
+                <div class="ticket-row">
+                  <span>Location</span><b>Tower B · Block B, L8</b>
+                </div>
+                <div class="ticket-row">
+                  <span>Need by</span><b>Tomorrow, 8 AM</b>
+                </div>
+                <div class="ticket-row">
+                  <span>Raised by</span><b>Suresh Patel</b>
+                </div>
+                <div class="ticket-cite">
+                  store check: only 12 bags left at site, approving makes sense
+                </div>
+              </div>
+              <div class="ticket-actions">
+                <button>Reject</button>
+                <button>Edit</button>
+                <button class="primary">Approve →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== LOGOS =========================== -->
+<div class="logos">
+  <div class="wrap" style="text-align:center;">
+    <div class="logos-label" style="max-width:none;margin:0 auto;">Now in pilot on live construction sites across India</div>
+  </div>
+</div>
+
+<!-- =========================== STATEMENT BAND =========================== -->
+<section class="statement" id="why">
+  <div class="wrap">
+    <span class="eyebrow">The platform</span>
+    <h2>The operating system <span class="grad-ink">for your construction site.</span></h2>
+    <div class="tagline">
+      <span class="a">Plug the cost that leaks.</span>
+      <span class="b">Win back the time you lose chasing it.</span>
+    </div>
+    <p class="sub">The everyday work becomes a record, an approval, a report and a live view, without anyone on site learning a new way of working.</p>
+  </div>
+</section>
+
+<!-- =========================== LIQUID AI / MISSION =========================== -->
+<section class="liquid" id="brikai">
+  <div class="liquid-inner">
+    <span class="liquid-eyebrow">
+      <span style="font-size:11px;letter-spacing:.08em;color:var(--muted)">BRIK AI</span>
+      <span class="tag">v1.0</span>
+    </span>
+
+    <div class="liquid-stage" aria-hidden="true">
+      <div class="liquid-blob b1"></div>
+      <div class="liquid-blob b2"></div>
+      <div class="liquid-blob b3"></div>
+
+      <div class="liquid-mark">
+        <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <rect class="r-bot" x="1" y="17" width="10" height="10" rx="2.2"/>
+          <rect class="r-mid" x="9" y="9" width="10" height="10" rx="2.2"/>
+          <rect class="r-top" x="17" y="1" width="10" height="10" rx="2.2"/>
+        </svg>
+      </div>
+
+      <span class="orbit-chip o1">indent · 50 bags</span>
+      <span class="orbit-chip o2">attendance · 48</span>
+      <span class="orbit-chip o3">drawing · Rev 2</span>
+      <span class="orbit-chip o4">approval · pending</span>
+      <span class="orbit-chip o5">MoM · ready</span>
+      <span class="orbit-chip o6">progress · 62%</span>
+    </div>
+
+    <div class="liquid-copy">
+      <h2>Simplifying real estate developments <span class="ai-grad">with AI.</span></h2>
+      <p>Brik is the AI woven through every screen, reading each message and drafting every reply, so the office stays in control from foundation to handover.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== INTELLIGENT SITES =========================== -->
+<section class="intel" id="intel">
+  <div class="wrap">
+    <div class="intel-head">
+      <span class="eyebrow">One app, every surface</span>
+      <h2>Everything the site does, <span class="grad-ink">in one place.</span></h2>
+      <p>The whole site runs in one app, with Brik AI at the centre. Every message is read, tagged and turned into something your office can act on the same day.</p>
+    </div>
+
+    <div class="intel-visual">
+      <svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" class="intel-svg" preserveAspectRatio="xMidYMid meet" aria-label="Brik AI agent reading every signal from a construction site">
+        <defs>
+          <pattern id="dotgrid" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.6" fill="#D4D4D4"/>
+          </pattern>
+        </defs>
+
+        <!-- background dotted grid -->
+        <rect x="0" y="0" width="880" height="460" fill="url(#dotgrid)" opacity="0.5"/>
+
+        <!-- ground line -->
+        <line x1="0" y1="412" x2="880" y2="412" stroke="#0A0A0A" stroke-width="1.2"/>
+        <line x1="0" y1="416" x2="880" y2="416" stroke="#0A0A0A" stroke-width="0.6" opacity="0.3"/>
+
+        <!-- BUILDING ELEVATION (right side) -->
+        <g transform="translate(620,40)">
+          <!-- crane mast -->
+          <line x1="100" y1="14" x2="100" y2="-10" stroke="#0A0A0A" stroke-width="1"/>
+          <line x1="86" y1="-10" x2="160" y2="-10" stroke="#0A0A0A" stroke-width="1"/>
+          <line x1="100" y1="-10" x2="156" y2="-30" stroke="#0A0A0A" stroke-width="0.8" stroke-dasharray="2 3"/>
+          <line x1="100" y1="-10" x2="86" y2="-22" stroke="#0A0A0A" stroke-width="0.8"/>
+          <rect x="146" y="-12" width="14" height="6" fill="#0A0A0A"/>
+
+          <!-- antenna/site live -->
+          <circle cx="100" cy="-32" r="3" fill="#10B981" class="live-dot"/>
+
+          <!-- building body -->
+          <rect x="0" y="14" width="200" height="358" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1.4"/>
+
+          <!-- floor divisions -->
+          <g stroke="#0A0A0A" stroke-width="0.8" opacity="0.55">
+            <line x1="0" y1="44" x2="200" y2="44"/>
+            <line x1="0" y1="74" x2="200" y2="74"/>
+            <line x1="0" y1="104" x2="200" y2="104"/>
+            <line x1="0" y1="134" x2="200" y2="134"/>
+            <line x1="0" y1="164" x2="200" y2="164"/>
+            <line x1="0" y1="194" x2="200" y2="194"/>
+            <line x1="0" y1="224" x2="200" y2="224"/>
+            <line x1="0" y1="254" x2="200" y2="254"/>
+            <line x1="0" y1="284" x2="200" y2="284"/>
+            <line x1="0" y1="314" x2="200" y2="314"/>
+            <line x1="0" y1="344" x2="200" y2="344"/>
+          </g>
+
+          <!-- windows: 4 per floor x 11 floors -->
+          <g fill="#FAFAFA" stroke="#0A0A0A" stroke-width="0.6">
+            <!-- floor 1 (top) -->
+            <rect x="14" y="22" width="32" height="14"/>
+            <rect x="56" y="22" width="32" height="14" class="glow"/>
+            <rect x="98" y="22" width="32" height="14"/>
+            <rect x="140" y="22" width="32" height="14"/>
+            <!-- floor 2 -->
+            <rect x="14" y="52" width="32" height="14"/>
+            <rect x="56" y="52" width="32" height="14"/>
+            <rect x="98" y="52" width="32" height="14" class="glow g2"/>
+            <rect x="140" y="52" width="32" height="14"/>
+            <!-- floor 3 -->
+            <rect x="14" y="82" width="32" height="14"/>
+            <rect x="56" y="82" width="32" height="14"/>
+            <rect x="98" y="82" width="32" height="14"/>
+            <rect x="140" y="82" width="32" height="14"/>
+            <!-- floor 4 -->
+            <rect x="14" y="112" width="32" height="14" class="glow g3"/>
+            <rect x="56" y="112" width="32" height="14"/>
+            <rect x="98" y="112" width="32" height="14"/>
+            <rect x="140" y="112" width="32" height="14"/>
+            <!-- floor 5 -->
+            <rect x="14" y="142" width="32" height="14"/>
+            <rect x="56" y="142" width="32" height="14"/>
+            <rect x="98" y="142" width="32" height="14"/>
+            <rect x="140" y="142" width="32" height="14" class="glow g4"/>
+            <!-- floor 6 -->
+            <rect x="14" y="172" width="32" height="14"/>
+            <rect x="56" y="172" width="32" height="14"/>
+            <rect x="98" y="172" width="32" height="14"/>
+            <rect x="140" y="172" width="32" height="14"/>
+            <!-- floor 7 -->
+            <rect x="14" y="202" width="32" height="14"/>
+            <rect x="56" y="202" width="32" height="14"/>
+            <rect x="98" y="202" width="32" height="14"/>
+            <rect x="140" y="202" width="32" height="14"/>
+            <!-- floor 8 -->
+            <rect x="14" y="232" width="32" height="14"/>
+            <rect x="56" y="232" width="32" height="14"/>
+            <rect x="98" y="232" width="32" height="14"/>
+            <rect x="140" y="232" width="32" height="14"/>
+            <!-- floor 9 -->
+            <rect x="14" y="262" width="32" height="14"/>
+            <rect x="56" y="262" width="32" height="14"/>
+            <rect x="98" y="262" width="32" height="14"/>
+            <rect x="140" y="262" width="32" height="14"/>
+            <!-- floor 10 -->
+            <rect x="14" y="292" width="32" height="14"/>
+            <rect x="56" y="292" width="32" height="14"/>
+            <rect x="98" y="292" width="32" height="14"/>
+            <rect x="140" y="292" width="32" height="14"/>
+            <!-- floor 11 -->
+            <rect x="14" y="322" width="32" height="14"/>
+            <rect x="56" y="322" width="32" height="14"/>
+            <rect x="98" y="322" width="32" height="14"/>
+            <rect x="140" y="322" width="32" height="14"/>
+          </g>
+
+          <!-- entrance -->
+          <rect x="84" y="346" width="32" height="26" fill="#0A0A0A"/>
+          <line x1="100" y1="346" x2="100" y2="372" stroke="#FAFAFA" stroke-width="0.6"/>
+
+          <!-- floor labels (right edge) -->
+          <g font-family="JetBrains Mono,monospace" font-size="8" fill="#999" text-anchor="start">
+            <text x="208" y="32">L-11</text>
+            <text x="208" y="62">L-10</text>
+            <text x="208" y="92">L-09</text>
+            <text x="208" y="122">L-08</text>
+            <text x="208" y="152">L-07</text>
+            <text x="208" y="182">L-06</text>
+            <text x="208" y="212">L-05</text>
+            <text x="208" y="242">L-04</text>
+            <text x="208" y="272">L-03</text>
+            <text x="208" y="302">L-02</text>
+            <text x="208" y="332">L-01</text>
+            <text x="208" y="362">G</text>
+          </g>
+
+          <!-- scaffolding hint on left side -->
+          <g stroke="#0A0A0A" stroke-width="0.6" opacity="0.4">
+            <line x1="-12" y1="14" x2="-12" y2="372"/>
+            <line x1="-6" y1="14" x2="-6" y2="372"/>
+            <line x1="-12" y1="74" x2="-6" y2="74"/>
+            <line x1="-12" y1="164" x2="-6" y2="164"/>
+            <line x1="-12" y1="254" x2="-6" y2="254"/>
+            <line x1="-12" y1="344" x2="-6" y2="344"/>
+          </g>
+
+          <!-- project tag -->
+          <text x="0" y="392" font-family="JetBrains Mono,monospace" font-size="9" fill="#666">SKYLINE RESIDENCY · TOWER B · 142 / 224 UNITS</text>
+        </g>
+
+        <!-- BRIK CHIP (left side) -->
+        <g transform="translate(36,186)">
+          <rect width="148" height="92" rx="14" fill="#0A0A0A"/>
+          <text x="74" y="34" fill="#FAFAFA" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="15" font-weight="500" letter-spacing="0.5">BRIK AI</text>
+          <text x="74" y="50" fill="rgba(250,250,250,0.5)" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10">v1.0 · assistant</text>
+          <line x1="14" y1="62" x2="134" y2="62" stroke="rgba(250,250,250,0.15)" stroke-width="1"/>
+          <circle cx="20" cy="76" r="3" fill="#10B981" class="live-dot"/>
+          <text x="30" y="80" fill="#FAFAFA" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="0.5">LISTENING</text>
+          <text x="138" y="80" fill="rgba(250,250,250,0.5)" font-family="JetBrains Mono,monospace" font-size="9" text-anchor="end">7 langs</text>
+        </g>
+        <!-- 4-port connector from chip to flow -->
+        <g stroke="#0A0A0A" stroke-width="1" fill="none">
+          <line x1="184" y1="210" x2="200" y2="210"/>
+          <line x1="184" y1="232" x2="200" y2="232"/>
+          <line x1="184" y1="254" x2="200" y2="254"/>
+          <line x1="184" y1="276" x2="200" y2="276"/>
+        </g>
+
+        <!-- ANIMATED FLOW LINES (chip → events → building) -->
+        <g fill="none" stroke="#0A0A0A" stroke-width="1" opacity="0.55">
+          <path class="flow-line" d="M 200 210 C 280 210, 320 100, 460 100 L 620 100"/>
+          <path class="flow-line" d="M 200 232 C 290 232, 340 180, 470 180 L 620 180"/>
+          <path class="flow-line" d="M 200 254 C 280 254, 340 254, 470 254 L 620 254"/>
+          <path class="flow-line" d="M 200 276 C 290 276, 340 326, 470 326 L 620 326"/>
+          <path class="flow-line" d="M 200 232 C 320 232, 380 56, 540 56 L 620 56"/>
+        </g>
+
+        <!-- EVENT NODES (chips between BRIK and building) -->
+        <!-- Voice -->
+        <g transform="translate(270,42)">
+          <rect width="118" height="28" rx="14" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1"/>
+          <circle cx="14" cy="14" r="3" fill="#0A0A0A" class="pulse-node"/>
+          <text x="64" y="18" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="middle">CHAT · TAGGED</text>
+        </g>
+        <!-- RA Bill -->
+        <g transform="translate(330,86)">
+          <rect width="116" height="28" rx="14" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1"/>
+          <circle cx="14" cy="14" r="3" fill="#0A0A0A" class="pulse-node n2"/>
+          <text x="63" y="18" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="middle">ATTENDANCE · 48</text>
+        </g>
+        <!-- NCR -->
+        <g transform="translate(280,166)">
+          <rect width="120" height="28" rx="14" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1"/>
+          <circle cx="14" cy="14" r="3" fill="#0A0A0A" class="pulse-node n3"/>
+          <text x="65" y="18" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="middle">DRAWING · REV 2</text>
+        </g>
+        <!-- Indent -->
+        <g transform="translate(330,240)">
+          <rect width="118" height="28" rx="14" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1"/>
+          <circle cx="14" cy="14" r="3" fill="#0A0A0A" class="pulse-node n4"/>
+          <text x="64" y="18" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="middle">INDENT · 50 BAGS</text>
+        </g>
+        <!-- MoM -->
+        <g transform="translate(280,312)">
+          <rect width="124" height="28" rx="14" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1"/>
+          <circle cx="14" cy="14" r="3" fill="#0A0A0A" class="pulse-node n5"/>
+          <text x="67" y="18" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="middle">MoM · AUTO-DRAFT</text>
+        </g>
+
+        <!-- TARGET DOTS ON BUILDING -->
+        <g>
+          <circle cx="620" cy="56" r="4" fill="#0A0A0A"/>
+          <circle cx="620" cy="56" r="8" fill="none" stroke="#0A0A0A" stroke-width="0.8" opacity="0.4"/>
+          <circle cx="620" cy="100" r="4" fill="#0A0A0A"/>
+          <circle cx="620" cy="100" r="8" fill="none" stroke="#0A0A0A" stroke-width="0.8" opacity="0.4"/>
+          <circle cx="620" cy="180" r="4" fill="#0A0A0A"/>
+          <circle cx="620" cy="180" r="8" fill="none" stroke="#0A0A0A" stroke-width="0.8" opacity="0.4"/>
+          <circle cx="620" cy="254" r="4" fill="#0A0A0A"/>
+          <circle cx="620" cy="254" r="8" fill="none" stroke="#0A0A0A" stroke-width="0.8" opacity="0.4"/>
+          <circle cx="620" cy="326" r="4" fill="#0A0A0A"/>
+          <circle cx="620" cy="326" r="8" fill="none" stroke="#0A0A0A" stroke-width="0.8" opacity="0.4"/>
+        </g>
+
+        <!-- LEGEND -->
+        <g transform="translate(36,40)" font-family="JetBrains Mono,monospace" font-size="9" fill="#666">
+          <text x="0" y="0" font-weight="500" fill="#0A0A0A">// FIG. 01</text>
+          <text x="0" y="14">Brik reads every message,</text>
+          <text x="0" y="26">routes it to your office.</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="intel-strip">
+      <div><b>Chat</b><span>Groups, DMs &amp; Brik AI in one inbox</span></div>
+      <div><b>Attendance</b><span>Selfie check-in · live headcount</span></div>
+      <div><b>Drawings</b><span>Version-controlled · latest tagged</span></div>
+      <div><b>Indents</b><span>Request → structured → approved</span></div>
+      <div><b>Dashboard</b><span>Progress, manpower &amp; flags</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== BRIKCHAT 1.0 =========================== -->
+<section class="s brikchat" id="brikchat" style="padding-bottom:96px;">
+  <div class="wrap">
+    <div class="feature-tag-row">
+      <span class="feature-tag shipped">BRIKCHAT · IN DEVELOPMENT</span>
+      <span class="feature-version">v1.0 · the chat with Brik AI inside</span>
+    </div>
+    <div class="bc-intro">
+      <h2>BrikChat, <span class="grad-ink">your site chat with Brik built in.</span></h2>
+      <p>Brik reads every message, voice note, image and document your team posts and tags the intent: update, attendance, enquiry or ticket. Material requests become structured indents, progress feeds the dashboard, and every reply or order is drafted for your PM to approve before it sends. Anyone can also DM Brik privately and ask, in plain language, about stock, attendance, approvals or drawings.</p>
+    </div>
+
+    <div class="bc-modes">
+
+      <!-- MODE A: Inside the group -->
+      <div class="bc-mode">
+        <div class="bc-text">
+          <div class="bc-num"><b>A.</b>Inside your project chats</div>
+          <h3>Brik reads everything posted. <em>You see the structured version.</em></h3>
+          <p>Every voice note, image and document is captured with sender, time and type. Brik tags the intent, pulls out the figures, and turns it into something actionable, a material indent, an attendance count, a progress update, a flag, each one linked back to the original message. Replies and orders are drafted, never auto-sent.</p>
+
+          <div class="bc-bullets">
+            <div><b>Captures</b><span>Voice · Photo · Video · PDF · Drawing</span></div>
+            <div><b>Languages</b><span>EN · HI · MR · TA · TE · KN · BN</span></div>
+            <div><b>Tags</b><span>Update · Attendance · Enquiry · Ticket</span></div>
+            <div><b>Turns into</b><span>Indents · Approvals · Progress · Flags</span></div>
+            <div><b>Routes to</b><span>Dashboard · PM approval · Documents</span></div>
+          </div>
+        </div>
+
+        <div class="bc-visual">
+          <div class="bc-stream">
+            <div class="bc-stream-head">
+              <span>BRIK AI · capture stream</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span class="grow">Skyline Tower B, Site Team</span>
+              <span>this morning</span>
+            </div>
+            <div class="bc-stream-rows">
+              <div class="row">
+                <span class="t">8:42</span>
+                <span class="from">Rajesh · Engineer</span>
+                <span class="kind">TEXT</span>
+                <span class="intent progress">UPDATE</span>
+                <span class="extract">Slab L7 cast · 142 cum <em>· cubes taken for testing</em></span>
+              </div>
+              <div class="row">
+                <span class="t">8:46</span>
+                <span class="from">Anil · Supervisor</span>
+                <span class="kind">TEXT</span>
+                <span class="intent attendance">ATTENDANCE</span>
+                <span class="extract">48 present · 3 absent <em>· logged to dashboard</em></span>
+              </div>
+              <div class="row">
+                <span class="t">8:55</span>
+                <span class="from">Fatima · Architect</span>
+                <span class="kind">TEXT</span>
+                <span class="intent indent">ENQUIRY</span>
+                <span class="extract">L4 plumbing layout, reached site? <em>· Rev 2 linked</em></span>
+              </div>
+              <div class="row">
+                <span class="t">9:02</span>
+                <span class="from">Priya · PM</span>
+                <span class="kind">VOICE 0:34</span>
+                <span class="intent progress">UPDATE</span>
+                <span class="extract">Transcribed · “Rev 2 is on the Project tab, latest tagged”</span>
+              </div>
+              <div class="row">
+                <span class="t">9:18</span>
+                <span class="from">Suresh · Contractor</span>
+                <span class="kind">TEXT</span>
+                <span class="intent billing">TICKET</span>
+                <span class="extract">50 bags OPC 53 · Block B <em>· indent IND-2041 raised</em></span>
+              </div>
+              <div class="row">
+                <span class="t">9:18</span>
+                <span class="from">Brik AI</span>
+                <span class="kind">INDENT</span>
+                <span class="intent indent">ROUTED</span>
+                <span class="extract">Structured · sent to Priya (PM) <em>· awaiting approval</em></span>
+              </div>
+            </div>
+            <div class="bc-stream-foot">
+              <span>6 of 142 messages today</span>
+              <span>+ 3 approvals awaiting Priya (PM)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODE B: Private DM with Brik -->
+      <div class="bc-mode">
+        <div class="bc-text">
+          <div class="bc-num"><b>B.</b>Privately, with Brik</div>
+          <h3>Anyone on the project can DM Brik <em>like a person.</em></h3>
+          <p>The engineer checking cement stock. The contractor chasing an approval. The PM glancing at progress before a client call. Any team member opens a private chat with Brik and asks in plain language, and Brik answers from live project data, scoped to what their role is allowed to see, and can draft the order or message right there.</p>
+
+          <div class="bc-bullets">
+            <div><b>Ask</b><span><code>Show last week's progress</code></span></div>
+            <div><b>Ask</b><span><code>My attendance last month</code></span></div>
+            <div><b>Ask</b><span><code>Draft a material order</code></span></div>
+            <div><b>Ask</b><span><code>Pending approvals</code></span></div>
+            <div><b>Scope</b><span>Each person sees only what their role permits, across every project.</span></div>
+          </div>
+        </div>
+
+        <div class="bc-visual">
+          <div class="phone">
+            <div class="phone-bar">
+              <span class="pic">B</span>
+              <div class="who">
+                <b>Brik</b>
+                <span>online · always on</span>
+              </div>
+            </div>
+            <div class="phone-thread">
+              <div class="bubble in">
+                Cement stock in Tower B?
+                <span class="time">15:40</span>
+              </div>
+              <div class="bubble out">
+                <b>Tower B · OPC 53 Cement</b>
+                <span class="line">On hand <strong>· 12 bags</strong> at site store</span>
+                <span class="line">Open indent · <strong>IND-2041 · 50 bags</strong></span>
+                <span class="line">Below reorder level. Draft a PO to UltraTech?</span>
+                <span class="time">15:40</span>
+              </div>
+              <div class="bubble in">
+                Yes, draft it
+                <span class="time">15:41</span>
+              </div>
+              <div class="bubble out">
+                <b>PO-2291 · drafted</b>
+                <span class="line">50 bags OPC 53 · vendor UltraTech</span>
+                <span class="line">Sent to Priya (PM) for approval. I'll confirm here once signed.</span>
+                <span class="time">15:41</span>
+              </div>
+              <div class="bubble in">
+                My attendance last month?
+                <span class="time">15:42</span>
+              </div>
+              <div class="bubble out">
+                <b>Attendance · last month</b>
+                <span class="line">Days present <strong>· 22 / 24</strong></span>
+                <span class="line">Total hours <strong>· 198 h</strong> · on-site <strong>92%</strong></span>
+                <span class="time">15:42</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================== BRIKVISION =========================== -->
+<section class="briklive" id="brikvision">
+  <div class="wrap">
+    <div class="bl-grid">
+      <div class="bl-copy">
+        <span class="eyebrow"><span class="pulse" aria-hidden="true"></span>BRIKVISION · 24/7</span>
+        <h2>See the site <span class="grad-ink">without standing on it.</span></h2>
+        <p>BrikVision watches your site CCTV around the clock and understands what it sees, counting people, spotting deliveries, checking PPE and tracking progress. Look in any hour of the day, from anywhere, and cut site visits and follow-up calls in half.</p>
+
+        <div class="bl-watch">
+          <div class="w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>Live site progress</div>
+          <div class="w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Material movement</div>
+          <div class="w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>Labour presence</div>
+          <div class="w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>Work productivity</div>
+          <div class="w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Supervision &amp; safety</div>
+          <div class="w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Round-the-clock monitoring</div>
+        </div>
+
+        <div class="bl-stat">
+          <div class="big">50<small>%</small></div>
+          <div class="cap">fewer site visits and follow-up calls, on average.</div>
+        </div>
+      </div>
+
+      <div class="bl-watch-visual">
+        <div class="bl-wall">
+          <div class="bl-wall-bar">
+            <span class="live">LIVE</span>
+            <span>Skyline Tower B · 4 cameras</span>
+            <span class="grow"></span>
+            <span>09 Jun · 14:32</span>
+          </div>
+          <div class="bl-cams">
+            <div class="bl-cam c1">
+              <img src="images/cam-delivery.png" alt="Site camera detecting workers, helmets and a delivery" loading="lazy"/>
+              <span class="label">CAM 01 · GATE</span>
+              <span class="rec">REC</span>
+              <span class="ts">14:32:08</span>
+              <span class="tagm">delivery in</span>
+              <span class="scan" aria-hidden="true"></span>
+            </div>
+            <div class="bl-cam c2">
+              <img src="images/cam-occupancy.png" alt="Site camera counting people on site" loading="lazy"/>
+              <span class="label">CAM 02 · WORK ZONE</span>
+              <span class="rec">REC</span>
+              <span class="ts">14:32:08</span>
+              <span class="tagm">headcount · 16</span>
+              <span class="scan" aria-hidden="true"></span>
+            </div>
+            <div class="bl-cam c3">
+              <img src="images/cam-topdown.jpg" alt="Overhead site camera tracking workers" loading="lazy"/>
+              <span class="label">CAM 03 · TOWER B</span>
+              <span class="rec">REC</span>
+              <span class="ts">14:32:08</span>
+              <span class="tagm">crew active</span>
+              <span class="scan" aria-hidden="true"></span>
+            </div>
+            <div class="bl-cam c4">
+              <img src="images/cam-formwork.webp" alt="Site camera viewing formwork and slab work" loading="lazy"/>
+              <span class="label">CAM 04 · FORMWORK</span>
+              <span class="rec">REC</span>
+              <span class="ts">14:32:08</span>
+              <span class="tagm">pour ready</span>
+              <span class="scan" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FEATURES =========================== -->
+<section class="s" id="product">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">One app, six tabs</span>
+      <h2>Six tabs. <span class="quiet">One login.</span></h2>
+      <p>Brikito replaces the scatter of WhatsApp, attendance registers, drawing folders, email and spreadsheets with one app, and Brik AI runs through all of it.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="icon">01</div>
+        <h3>Chats</h3>
+        <p>Group chats, DMs and Brik AI in one inbox. Every message auto-tagged, update, attendance, enquiry or ticket, with voice notes and polls built in.</p>
+        <div class="feature-key">GROUPS · DMs · BRIK AI</div>
+      </div>
+      <div class="feature">
+        <div class="icon">02</div>
+        <h3>Brik AI</h3>
+        <p>Ask anything in plain language. Brik surfaces pending approvals, drafts replies and purchase orders, and answers from live project data.</p>
+        <div class="feature-key">ASK · DRAFT · APPROVE</div>
+      </div>
+      <div class="feature">
+        <div class="icon">03</div>
+        <h3>Attendance</h3>
+        <p>Selfie check-in and check-out at the site. Live on-site headcount, days present, hours and on-site percentage, no register, no proxy.</p>
+        <div class="feature-key">SELFIE · LIVE HEADCOUNT</div>
+      </div>
+      <div class="feature">
+        <div class="icon">04</div>
+        <h3>Dashboard</h3>
+        <p>Progress vs plan, days behind, open tickets, manpower trend, material status and safety &amp; quality flags, updated as the site chats.</p>
+        <div class="feature-key">PROGRESS · MANPOWER · FLAGS</div>
+      </div>
+      <div class="feature">
+        <div class="icon">05</div>
+        <h3>Documents</h3>
+        <p>Drawings, structural plans, BOQ, agreements and certificates, version controlled, with the latest revision always tagged on site.</p>
+        <div class="feature-key">VERSION-CONTROLLED · LATEST TAGGED</div>
+      </div>
+      <div class="feature">
+        <div class="icon">06</div>
+        <h3>Meet &amp; Mail</h3>
+        <p>Video calls with AI Minutes of Meeting auto-drafted, and a project mailbox where Brik writes replies and orders for you.</p>
+        <div class="feature-key">AI MINUTES · BRIK-DRAFTED MAIL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== BRIKDOCS =========================== -->
+<section class="reports" id="brikdocs">
+  <div class="wrap">
+    <div class="report-grid">
+      <div class="report-left">
+        <span class="eyebrow" style="display:inline-block;margin-bottom:18px;">BrikDocs</span>
+        <h2>Every report your project needs, <span class="grad-ink">generated in a tap.</span></h2>
+        <p>No more late nights in Excel. Brik builds the documents from the work your team already logged, ready to share or print.</p>
+        <div class="tap"><span class="pulse" aria-hidden="true"></span>One tap, ready in seconds</div>
+      </div>
+      <div class="report-chips">
+        <span class="report-chip">BBS</span>
+        <span class="report-chip">BOQ</span>
+        <span class="report-chip">Estimation</span>
+        <span class="report-chip">Schedule</span>
+        <span class="report-chip">Fabrication Drawing</span>
+        <span class="report-chip">DPR</span>
+        <span class="report-chip">DLR</span>
+        <span class="report-chip">GRN</span>
+        <span class="report-chip">Stock Statement</span>
+        <span class="report-chip">+ more</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== HOW IT WORKS (story video) =========================== -->
+<section class="s" id="how">
+  <style>
+    .bkv-frame{position:relative;max-width:1000px;margin:0 auto;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 50% 18%,#141B30 0%,#0A0E1A 72%);border:1px solid #1E2638;box-shadow:0 40px 90px -36px rgba(10,14,30,.45);}
+    .bkv-gridbg{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/100% 48px,linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/48px 100%;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);pointer-events:none;}
+    .bkv-label{position:absolute;left:18px;top:16px;z-index:5;display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.6);}
+    .bkv-label::before{content:"";width:6px;height:6px;border-radius:50%;background:oklch(0.65 0.17 262);}
+    .bkv-shot{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+    .bkv-frame[data-shot="0"] .bkv-sh0,.bkv-frame[data-shot="1"] .bkv-sh1,.bkv-frame[data-shot="2"] .bkv-sh2,.bkv-frame[data-shot="3"] .bkv-sh3{opacity:1;}
+    .bkv-cap{position:absolute;left:26px;bottom:64px;z-index:4;color:#fff;opacity:0;transform:translateY(10px);transition:.6s ease .25s;}
+    .bkv-frame[data-shot="0"] .bkv-cap0,.bkv-frame[data-shot="1"] .bkv-cap1,.bkv-frame[data-shot="2"] .bkv-cap2,.bkv-frame[data-shot="3"] .bkv-cap3{opacity:1;transform:none;}
+    .bkv-cap .t{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(255,255,255,.55);}
+    .bkv-cap .l{font-size:clamp(16px,2vw,21px);font-weight:500;letter-spacing:-.015em;margin-top:6px;}
+    /* shot 0 site svg */
+    .bkv-sh0 svg{width:100%;height:100%;}
+    .bkv-wk{transform:translateX(0);}
+    .bkv-frame.playing[data-shot="0"] .bkv-wkA{animation:bkvWalk 9s ease-in-out infinite alternate;}
+    .bkv-frame.playing[data-shot="0"] .bkv-wkB{animation:bkvWalk 11s ease-in-out infinite alternate;animation-delay:-5s;}
+    .bkv-frame.playing[data-shot="0"] .bkv-cage{animation:bkvCage 6s ease-in-out infinite alternate;}
+    @keyframes bkvWalk{from{transform:translateX(0);}to{transform:translateX(260px);}}
+    @keyframes bkvCage{from{transform:translateY(0);}to{transform:translateY(150px);}}
+    /* shot 1 phone */
+    .bkv-phone{width:250px;background:#10131D;border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);}
+    .bkv-phone .chr{display:flex;align-items:center;gap:8px;background:#15224A;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;padding:8px 13px;}
+    .bkv-phone .chr i{width:6px;height:6px;border-radius:50%;background:oklch(0.65 0.17 262);}
+    .bkv-phone .bd{padding:14px 12px 16px;display:flex;flex-direction:column;gap:9px;min-height:240px;}
+    .bkv-b{opacity:0;}
+    .bkv-frame[data-shot="1"] .bkv-b1{animation:bkvIn .55s ease .35s both;}
+    .bkv-frame[data-shot="1"] .bkv-b2{animation:bkvIn .5s ease 1.6s both;}
+    .bkv-frame[data-shot="1"] .bkv-b3{animation:bkvIn .6s ease 2.5s both;}
+    @keyframes bkvIn{from{opacity:0;transform:translateY(12px) scale(.95);}to{opacity:1;transform:none;}}
+    .bkv-msg{align-self:flex-end;max-width:90%;font-size:12px;line-height:1.4;color:#fff;background:linear-gradient(135deg,oklch(0.5 0.15 262),oklch(0.43 0.17 282));border:1px solid rgba(140,160,255,.3);border-radius:13px;padding:8px 11px;}
+    .bkv-chip{align-self:flex-end;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;color:#9FB1F5;border:1px solid rgba(120,140,235,.4);background:rgba(62,91,216,.14);border-radius:999px;padding:4px 10px;}
+    .bkv-chip::before{content:"\2726 ";}
+    .bkv-card{width:100%;background:#161B29;border:1px solid rgba(255,255,255,.1);border-radius:11px;overflow:hidden;font-size:11px;color:#E8EAF2;}
+    .bkv-card .hd{display:flex;justify-content:space-between;padding:8px 10px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;}
+    .bkv-card .hd em{font-style:normal;color:#9FB1F5;}
+    .bkv-card .rw{display:flex;justify-content:space-between;padding:6px 10px;border-bottom:1px dashed rgba(255,255,255,.08);color:rgba(232,234,242,.65);}
+    .bkv-card .rw:last-child{border-bottom:none;}
+    .bkv-card .rw b{color:#fff;font-weight:500;}
+    /* shot 2 approval */
+    .bkv-desk{width:min(400px,84%);background:#10131D;border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);}
+    .bkv-desk .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);}
+    .bkv-desk .bar i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18);}
+    .bkv-desk .bar span{margin-left:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.55);}
+    .bkv-desk .item{padding:13px 14px;color:#E8EAF2;font-size:12.5px;}
+    .bkv-desk .item .ln1{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+    .bkv-desk .item .ln1 b{font-weight:500;}
+    .bkv-st{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;padding:2px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);}
+    .bkv-desk .sub{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.4);margin:5px 0 11px;}
+    .bkv-appr{position:relative;overflow:hidden;display:inline-flex;font:inherit;font-size:12px;font-weight:500;color:#fff;border:1px solid rgba(255,255,255,.3);background:transparent;border-radius:8px;padding:7px 18px;cursor:default;}
+    .bkv-appr::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,oklch(0.52 0.16 262),oklch(0.45 0.18 282));transform:scaleX(0);transform-origin:left;}
+    .bkv-appr span{position:relative;z-index:1;}
+    .bkv-frame[data-shot="2"] .bkv-appr::before{animation:bkvSweep .6s ease 1.7s both;}
+    @keyframes bkvSweep{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+    .bkv-toast{margin:12px 14px 14px;background:rgba(62,91,216,.16);border:1px solid rgba(120,140,235,.4);color:#C9D3FB;font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:8px 11px;border-radius:9px;opacity:0;}
+    .bkv-toast::before{content:"\2713 ";color:#9FB1F5;}
+    .bkv-frame[data-shot="2"] .bkv-toast{animation:bkvIn .5s ease 2.7s both;}
+    /* shot 3 dashboard */
+    .bkv-dash{display:flex;align-items:center;gap:34px;}
+    .bkv-ringw{position:relative;width:110px;height:110px;flex:none;}
+    .bkv-ringw svg{width:110px;height:110px;transform:rotate(-90deg);}
+    .bkv-ringw .bg{fill:none;stroke:rgba(255,255,255,.12);stroke-width:9;}
+    .bkv-ringw .fg{fill:none;stroke:url(#bkvGrad);stroke-width:9;stroke-linecap:round;stroke-dasharray:289;stroke-dashoffset:289;}
+    .bkv-frame[data-shot="3"] .bkv-ringw .fg{animation:bkvRing 1.4s ease .4s both;}
+    @keyframes bkvRing{from{stroke-dashoffset:289;}to{stroke-dashoffset:110;}}
+    .bkv-ringw b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:23px;font-weight:600;letter-spacing:-.02em;}
+    .bkv-tag{color:#fff;}
+    .bkv-tag .big{font-size:clamp(22px,3vw,32px);font-weight:500;letter-spacing:-.025em;opacity:0;}
+    .bkv-frame[data-shot="3"] .bkv-tag .big{animation:bkvIn .7s ease 1.4s both;}
+    .bkv-tag .sm{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.5);opacity:0;}
+    .bkv-frame[data-shot="3"] .bkv-tag .sm{animation:bkvIn .6s ease 2s both;}
+    /* play + controls */
+    .bkv-play{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.94);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:7;transition:transform .25s ease,opacity .3s ease;box-shadow:0 18px 50px -12px rgba(0,0,0,.55);}
+    .bkv-play:hover{transform:scale(1.07);}
+    .bkv-play::before{content:"";position:absolute;inset:-13px;border-radius:50%;border:1px solid rgba(255,255,255,.4);animation:bkvPulse 2.2s ease-out infinite;}
+    @keyframes bkvPulse{0%{transform:scale(.92);opacity:1;}100%{transform:scale(1.25);opacity:0;}}
+    .bkv-frame.playing .bkv-play{opacity:0;pointer-events:none;}
+    .bkv-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(transparent,rgba(5,8,16,.75));z-index:6;}
+    .bkv-toggle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;}
+    .bkv-toggle svg{width:12px;height:12px;}
+    .bkv-toggle .ic-pause{display:none;}
+    .bkv-frame.playing .ic-play{display:none;}
+    .bkv-frame.playing .ic-pause{display:block;}
+    .bkv-track{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.18);cursor:pointer;}
+    .bkv-fill{height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,#fff,oklch(0.7 0.15 262));}
+    .bkv-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.55);flex:none;}
+    .bkv-cta{display:flex;gap:10px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+    @media (max-width:720px){.bkv-cap{bottom:56px;left:18px;} .bkv-phone{width:210px;} .bkv-dash{flex-direction:column;gap:18px;text-align:center;}}
+    @media (prefers-reduced-motion: reduce){#how .bkv-frame *,#how .bkv-frame *::before{animation:none !important;transition:none !important;} .bkv-b,.bkv-toast,.bkv-tag .big,.bkv-tag .sm{opacity:1 !important;} .bkv-ringw .fg{stroke-dashoffset:110 !important;}}
+  </style>
+
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Watch a site <span class="grad-ink">run itself.</span></h2>
+      <p>One short story, from the morning rush to an approved day. Prefer to drive it yourself? Open the interactive demo below.</p>
+    </div>
+
+    <div class="bkv-frame" id="bkvFrame" data-shot="0" data-screen-label="How it works · story video">
+      <div class="bkv-gridbg" aria-hidden="true"></div>
+      <div class="bkv-label">BRIKITO · STORY</div>
+
+      <!-- shot 0 · the site at work -->
+      <div class="bkv-shot bkv-sh0" aria-hidden="true">
+        <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice">
+          <line x1="0" y1="386" x2="800" y2="386" stroke="rgba(255,255,255,.22)" stroke-width="1.5"></line>
+          <line x1="108" y1="386" x2="108" y2="84" stroke="rgba(255,255,255,.5)" stroke-width="2"></line>
+          <line x1="126" y1="386" x2="126" y2="84" stroke="rgba(255,255,255,.5)" stroke-width="2"></line>
+          <line x1="108" y1="120" x2="126" y2="150" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <line x1="126" y1="120" x2="108" y2="150" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <line x1="108" y1="190" x2="126" y2="220" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <line x1="126" y1="190" x2="108" y2="220" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <line x1="108" y1="260" x2="126" y2="290" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <line x1="126" y1="260" x2="108" y2="290" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <line x1="60" y1="98" x2="440" y2="98" stroke="rgba(255,255,255,.55)" stroke-width="2"></line>
+          <line x1="117" y1="84" x2="240" y2="98" stroke="rgba(255,255,255,.3)" stroke-width="1"></line>
+          <line x1="117" y1="84" x2="360" y2="98" stroke="rgba(255,255,255,.25)" stroke-width="1"></line>
+          <rect x="96" y="92" width="40" height="22" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.4"></rect>
+          <line x1="356" y1="98" x2="356" y2="168" stroke="rgba(255,255,255,.4)" stroke-width="1"></line>
+          <rect x="338" y="168" width="36" height="12" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.4"></rect>
+          <g stroke="rgba(255,255,255,.42)" stroke-width="1.6" fill="none">
+            <line x1="520" y1="386" x2="520" y2="150"></line><line x1="590" y1="386" x2="590" y2="150"></line><line x1="660" y1="386" x2="660" y2="150"></line><line x1="730" y1="386" x2="730" y2="150"></line>
+            <line x1="500" y1="150" x2="750" y2="150"></line><line x1="500" y1="210" x2="750" y2="210"></line><line x1="500" y1="270" x2="750" y2="270"></line><line x1="500" y1="328" x2="750" y2="328"></line>
+          </g>
+          <g class="cage bkv-cage">
+            <rect x="455" y="160" width="34" height="34" fill="none" stroke="#5E7AEB" stroke-width="1.6"></rect>
+            <line x1="455" y1="177" x2="489" y2="177" stroke="#5E7AEB" stroke-width="1" opacity=".6"></line>
+          </g>
+          <line x1="470" y1="386" x2="470" y2="120" stroke="rgba(255,255,255,.35)" stroke-width="1.6"></line>
+          <g class="bkv-wk bkv-wkA" transform="translate(180,0)">
+            <circle cx="0" cy="338" r="7" fill="rgba(250,250,250,.9)"></circle>
+            <rect x="-6" y="347" width="13" height="25" rx="5" fill="rgba(250,250,250,.9)"></rect>
+            <line x1="-2" y1="372" x2="-8" y2="386" stroke="rgba(250,250,250,.9)" stroke-width="3.4"></line>
+            <line x1="4" y1="372" x2="10" y2="386" stroke="rgba(250,250,250,.9)" stroke-width="3.4"></line>
+          </g>
+          <g class="bkv-wk bkv-wkB" transform="translate(120,0)">
+            <circle cx="0" cy="342" r="6" fill="rgba(250,250,250,.6)"></circle>
+            <rect x="-5" y="350" width="11" height="22" rx="4.5" fill="rgba(250,250,250,.6)"></rect>
+            <line x1="-2" y1="372" x2="-7" y2="386" stroke="rgba(250,250,250,.6)" stroke-width="3"></line>
+            <line x1="3" y1="372" x2="8" y2="386" stroke="rgba(250,250,250,.6)" stroke-width="3"></line>
+          </g>
+        </svg>
+      </div>
+
+      <!-- shot 1 · chat -->
+      <div class="bkv-shot bkv-sh1" aria-hidden="true">
+        <div class="bkv-phone">
+          <div class="chr"><i></i>brikito · Tower B · Site Team</div>
+          <div class="bd">
+            <div class="bkv-b bkv-b1 bkv-msg">Need 50 bags of cement for Tower B slab by Friday.</div>
+            <div class="bkv-b bkv-b2 bkv-chip">Indent detected</div>
+            <div class="bkv-b bkv-b3 bkv-card">
+              <div class="hd"><span>INDENT #142</span><em>PENDING</em></div>
+              <div class="rw"><span>Material</span><b>OPC 53 · 50 bags</b></div>
+              <div class="rw"><span>Site</span><b>Tower B · slab</b></div>
+              <div class="rw"><span>Need by</span><b>Friday</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- shot 2 · approval -->
+      <div class="bkv-shot bkv-sh2" aria-hidden="true">
+        <div class="bkv-desk">
+          <div class="bar"><i></i><i></i><i></i><span>APPROVALS · PROJECT HEAD</span></div>
+          <div class="item">
+            <div class="ln1"><b>IND #142 · OPC 53 · 50 bags</b><span class="bkv-st">Pending</span></div>
+            <div class="sub">Tower B slab · need by Friday · raised by Suresh</div>
+            <button class="bkv-appr" type="button"><span>Approve</span></button>
+          </div>
+          <div class="bkv-toast">Indent #142 approved · PO drafted · site notified</div>
+        </div>
+      </div>
+
+      <!-- shot 3 · dashboard -->
+      <div class="bkv-shot bkv-sh3" aria-hidden="true">
+        <div class="bkv-dash">
+          <div class="bkv-ringw">
+            <svg viewBox="0 0 110 110">
+              <defs><linearGradient id="bkvGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#5E7AEB"></stop></linearGradient></defs>
+              <circle class="bg" cx="55" cy="55" r="46"></circle>
+              <circle class="fg" cx="55" cy="55" r="46"></circle>
+            </svg>
+            <b>62%</b>
+          </div>
+          <div class="bkv-tag">
+            <div class="big">The site that runs itself.</div>
+            <div class="sm">BRIKITO · THE AI OPERATING SYSTEM FOR CONSTRUCTION</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- captions -->
+      <div class="bkv-cap bkv-cap0"><div class="t">06:30 · ON SITE</div><div class="l">The site wakes up. Cranes, crews, a hundred moving parts.</div></div>
+      <div class="bkv-cap bkv-cap1"><div class="t">09:18 · IN THE GROUP CHAT</div><div class="l">A need, typed in plain chat. Brik turns it into an indent.</div></div>
+      <div class="bkv-cap bkv-cap2"><div class="t">09:21 · AT THE OFFICE</div><div class="l">One click to approve. The site is told the same second.</div></div>
+      <div class="bkv-cap bkv-cap3"><div class="t">18:00 · END OF DAY</div><div class="l">Progress, people and money, already on the dashboard.</div></div>
+
+      <button class="bkv-play" id="bkvPlay" type="button" aria-label="Play the Brikito story">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="#0A0A0A"></path></svg>
+      </button>
+
+      <div class="bkv-bar">
+        <button class="bkv-toggle" id="bkvToggle" type="button" aria-label="Play or pause">
+          <svg class="ic-play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"></path></svg>
+          <svg class="ic-pause" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"></path></svg>
+        </button>
+        <div class="bkv-track" id="bkvTrack"><div class="bkv-fill" id="bkvFill"></div></div>
+        <div class="bkv-time" id="bkvTime">0:00 / 0:19</div>
+      </div>
+    </div>
+
+    <div class="bkv-cta">
+      <a class="btn btn-solid" href="how-it-works.html">Explore the interactive demo
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+      <a class="btn btn-ghost" href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough</a>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+    var fr = document.getElementById('bkvFrame');
+    if (!fr) return;
+    var DUR = 19, CUTS = [0, 4.5, 9.5, 14];
+    var fill = document.getElementById('bkvFill');
+    var timeEl = document.getElementById('bkvTime');
+    var playBtn = document.getElementById('bkvPlay');
+    var toggle = document.getElementById('bkvToggle');
+    var track = document.getElementById('bkvTrack');
+    var t = 0, playing = false, timer = null;
+    try { t = parseFloat(localStorage.getItem('bkv-pos') || '0') || 0; } catch (e) {}
+    if (t >= DUR - 0.2) t = 0;
+    function shotFor(x) { var s = 0; for (var i = 0; i < CUTS.length; i++) if (x >= CUTS[i]) s = i; return s; }
+    function fmt(x) { var m = Math.floor(x / 60), s = Math.floor(x % 60); return m + ':' + (s < 10 ? '0' : '') + s; }
+    function render() {
+      fr.setAttribute('data-shot', String(shotFor(t)));
+      fill.style.width = (t / DUR * 100) + '%';
+      timeEl.textContent = fmt(t) + ' / ' + fmt(DUR);
+    }
+    function pause() { playing = false; fr.classList.remove('playing'); if (timer) { clearInterval(timer); timer = null; } }
+    function play() {
+      if (playing) return;
+      if (t >= DUR - 0.05) t = 0;
+      playing = true; fr.classList.add('playing');
+      timer = setInterval(function () {
+        t += 0.1;
+        if (t >= DUR) { t = DUR; pause(); }
+        render();
+        try { localStorage.setItem('bkv-pos', t.toFixed(1)); } catch (e) {}
+      }, 100);
+    }
+    playBtn.addEventListener('click', play);
+    toggle.addEventListener('click', function () { playing ? pause() : play(); });
+    track.addEventListener('click', function (e) {
+      var r = track.getBoundingClientRect();
+      t = Math.max(0, Math.min(DUR, DUR * (e.clientX - r.left) / r.width));
+      render();
+      try { localStorage.setItem('bkv-pos', t.toFixed(1)); } catch (e2) {}
+    });
+    render();
+  })();
+  </script>
+</section>
+
+<!-- =========================== USE CASES =========================== -->
+<section class="s" id="cases">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">What it does for the site</span>
+      <h2>The everyday jobs, <span class="quiet">done in the app.</span></h2>
+      <p>The scattered, lost, end-of-day work, now a tap, in the place the team already works.</p>
+    </div>
+
+    <div class="cases-table">
+      <div class="cases-row head">
+        <div class="id">TAB</div>
+        <div class="ttl">SCENARIO</div>
+        <div class="desc">OUTCOME</div>
+        <div class="tag" style="justify-self:end">SURFACE</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Chats</div>
+        <div class="ttl">Material request <em>· spoken in the group</em></div>
+        <div class="desc">“Need 50 bags cement at Block B” becomes a structured indent, routed to the PM to approve in a tap.</div>
+        <div class="tag">Indent</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Attendance</div>
+        <div class="ttl">Check-in <em>· a selfie at the gate</em></div>
+        <div class="desc">Live on-site headcount, days present and hours, no register, no proxy, no month-end reconciliation.</div>
+        <div class="tag">Headcount</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Documents</div>
+        <div class="ttl">Drawing on site <em>· always the right revision</em></div>
+        <div class="desc">L4 plumbing Rev 2 tagged as latest. The crew never chases walls off a superseded print again.</div>
+        <div class="tag">Version</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Dashboard</div>
+        <div class="ttl">Schedule slip <em>· caught at day one</em></div>
+        <div class="desc">62% actual against 68% planned, 9 days behind, surfaced live, not discovered at quarter-end.</div>
+        <div class="tag">Schedule</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Brik AI</div>
+        <div class="ttl">Pending approvals <em>· cleared from your pocket</em></div>
+        <div class="desc">Three approvals waiting, indent, overtime, drawing sign-off, approved or rejected inline in chat.</div>
+        <div class="tag">Approvals</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Meet</div>
+        <div class="ttl">Site review call <em>· minutes write themselves</em></div>
+        <div class="desc">AI Minutes of Meeting drafted the moment the call ends. No one scrambles to remember who owns what.</div>
+        <div class="tag">AI MoM</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Mail</div>
+        <div class="ttl">Vendor email <em>· Brik drafts the reply</em></div>
+        <div class="desc">Purchase orders and replies written from live project data, sitting in Drafts ready for one-tap review.</div>
+        <div class="tag">Drafted</div>
+      </div>
+      <div class="cases-row">
+        <div class="id">Dashboard</div>
+        <div class="ttl">Safety &amp; quality flags <em>· raised in chat</em></div>
+        <div class="desc">Edge protection missing at L7, honeycombing on L6, flagged from the group, surfaced on the dashboard.</div>
+        <div class="tag">Flags</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== STATS =========================== -->
+<section class="s" id="customers" style="padding-top:96px;padding-bottom:96px">
+  <div class="wrap">
+    <div class="s-head" style="margin-bottom:48px">
+      <span class="eyebrow">Pilot · 2026</span>
+      <h2>One app <span class="quiet">in place of six.</span></h2>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="n">6<small>→1</small></div>
+        <div class="l">WhatsApp, registers, drawings, email and spreadsheets, now one app.</div>
+      </div>
+      <div class="stat">
+        <div class="n">3</div>
+        <div class="l">Live projects run from one login, residential, metro and logistics.</div>
+      </div>
+      <div class="stat">
+        <div class="n">92<small>%</small></div>
+        <div class="l">On-site attendance, captured by selfie. No register, no proxy.</div>
+      </div>
+      <div class="stat">
+        <div class="n">9<small>d</small></div>
+        <div class="l">Schedule slip surfaced live on the dashboard, not at quarter-end.</div>
+      </div>
+    </div>
+
+    <div class="quote-wrap" style="margin-top:48px">
+      <blockquote>
+        "My whole site runs in one app now, and I approve the day's indents before I've finished my chai."
+      </blockquote>
+      <div class="attr">
+        <div>
+          <div class="who">SR Ilangovan, Director</div>
+          <div class="role">Gofar Group</div>
+        </div>
+        <div class="stamp">PILOT · 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PRINCIPLES =========================== -->
+<section class="s" id="principles">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Commitments</span>
+      <h2>Four non-negotiables, <span class="quiet">written before the code.</span></h2>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="pn">i. Authority</div>
+        <h3>Your PM is the checker. Always.</h3>
+        <p>Nothing is auto-sent. Every reply, indent and order is drafted by Brik and held until your project manager approves it. Authority preserved. Record intact.</p>
+      </div>
+      <div class="principle">
+        <div class="pn">ii. Grounding</div>
+        <h3>Answers from your project. Nothing else.</h3>
+        <p>Every figure Brik gives, stock, attendance, progress, drawings, comes from your live project data, not a generic template or an invented number.</p>
+      </div>
+      <div class="principle">
+        <div class="pn">iii. Adoption</div>
+        <h3>Built for the site, not the office.</h3>
+        <p>One app, in the languages the crew speaks, as simple as the chat they already use. The single largest reason construction software fails is that the site won't touch it, so Brikito is designed for the people on the ground first.</p>
+      </div>
+      <div class="principle">
+        <div class="pn">iv. Privacy</div>
+        <h3>Selfie is presence, not surveillance.</h3>
+        <p>Attendance confirms someone is on site, it doesn't track or identify beyond that. Each person sees only what their role permits, scoped per project. Data is hosted in India and exportable on demand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== ROADMAP =========================== -->
+<section class="roadmap" id="roadmap">
+  <div class="wrap">
+    <div class="roadmap-head">
+      <span class="eyebrow">What's next</span>
+      <h2>Brikito, building <span class="quiet">the AI Operating System for Real Estate Development.</span></h2>
+      <p style="margin-top:18px;font-size:16px;line-height:1.55;color:var(--muted);max-width:60ch;margin-left:auto;margin-right:auto;text-wrap:pretty;">BrikChat is in active development. BrikDocs, BrikMail and BrikVision follow, building toward one operating system that runs your project from foundation to handover.</p>
+    </div>
+    <div class="roadmap-track" style="grid-template-columns:repeat(4,1fr);">
+      <div class="rm-item shipped">
+        <div class="rm-num">01</div>
+        <div class="rm-status">IN DEVELOPMENT</div>
+        <h4>BrikChat</h4>
+        <p>The site chat with Brik AI inside, capture, tag, structure and approve, all in one place.</p>
+      </div>
+      <div class="rm-item pilot">
+        <div class="rm-num">02</div>
+        <div class="rm-status">NEXT</div>
+        <h4>BrikDocs</h4>
+        <p>Version-controlled drawings and one-tap reports, BBS, BOQ, DPR, GRN and more.</p>
+      </div>
+      <div class="rm-item">
+        <div class="rm-num">03</div>
+        <div class="rm-status">On the runway</div>
+        <h4>BrikMail</h4>
+        <p>A project mailbox where Brik drafts replies and purchase orders from live data.</p>
+      </div>
+      <div class="rm-item">
+        <div class="rm-num">04</div>
+        <div class="rm-status">On the runway</div>
+        <h4>BrikVision</h4>
+        <p>AI on the site CCTV, 24/7, headcount, deliveries, PPE and progress in one view.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CTA =========================== -->
+<section class="cta" id="cta">
+  <div class="wrap cta-inner">
+    <h2>Put your next project <span class="grad-ink">on Brikito.</span></h2>
+    <p>45 minutes. We'll set your team up on one live project and have it running the same day.</p>
+    <div class="cta-actions">
+      <a class="btn btn-solid" href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">
+        Book a walkthrough
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#brikchat">See the app</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FOOTER =========================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#" style="font-size:16px">
+          <span>Brikito</span>
+        </a>
+        <p class="tag">One app for the whole construction site, with Brik AI built in.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#intel">Platform</a></li>
+          <li><a href="#brikai">Brik AI</a></li>
+          <li><a href="#brikchat">BrikChat</a></li>
+          <li><a href="#brikvision">BrikVision</a></li>
+          <li><a href="#brikdocs">BrikDocs</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Spec deck</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li>
+          <li><a href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Brikito · Built in India</div>
+      <div class="badges">
+        <span class="badge">Data hosted in India</span>
+        <span class="badge">Multi-project</span>
+        <span class="badge">Role-scoped access</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){
+        const el=document.querySelector(id);
+        if(el){e.preventDefault();window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-72,behavior:'smooth'});}
+      }
+    });
+  });
+  // reveal, only opt-in if IntersectionObserver works AND we can mark in-viewport items immediately
+  (function(){
+    if(!('IntersectionObserver' in window)) return;
+    const targets=document.querySelectorAll('.reveal,.s-head,.features,.steps,.cases-table,.stats,.quote-wrap,.principles,.cta-inner');
+    document.documentElement.classList.add('js-reveal');
+    targets.forEach(el=>el.classList.add('reveal'));
+    const io=new IntersectionObserver(es=>{
+      es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.05,rootMargin:'0px 0px -5% 0px'});
+    // Reveal anything already in (or above) the viewport on first paint
+    const vh=window.innerHeight||document.documentElement.clientHeight;
+    targets.forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<vh*0.95) el.classList.add('in'); else io.observe(el);
+    });
+    // Safety net: if anything is still hidden after 1.5s, force it visible.
+    setTimeout(()=>{targets.forEach(el=>el.classList.add('in'));},1500);
+  })();
+</script>
+
+</body>
+</html>
