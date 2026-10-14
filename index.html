@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Brikito, One app for the whole construction site</title>
 <meta name="description" content="Brikito puts chat, attendance, drawings, meetings, mail and a live project dashboard into one app your site team actually uses, with Brik AI built into every screen." />
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -610,15 +609,18 @@
   .bl-cam .tagm{position:absolute;right:8px;bottom:7px;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--live);z-index:2;}
   .bl-cam .scan{position:absolute;left:0;right:0;height:36%;top:-40%;background:linear-gradient(180deg, transparent, rgba(120,180,255,.10), transparent);animation:bl-scan 4.2s linear infinite;}
   .bl-cam.c2 .scan{animation-delay:1s;} .bl-cam.c3 .scan{animation-delay:2s;} .bl-cam.c4 .scan{animation-delay:3s;}
-  .bl-cam img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.82) contrast(1.05) saturate(.92);transition:filter .3s ease;will-change:transform;animation:bl-kb-a 16s ease-in-out infinite alternate;}
-  .bl-cam.c2 img{animation:bl-kb-b 19s ease-in-out infinite alternate;}
-  .bl-cam.c3 img{animation:bl-kb-c 14s ease-in-out infinite alternate;}
-  .bl-cam.c4 img{animation:bl-kb-d 21s ease-in-out infinite alternate;}
+  .bl-cam .camera-art{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;filter:brightness(.72) contrast(1.08) saturate(.78);transform-origin:center;animation:bl-kb-a 16s ease-in-out infinite alternate;}
+  .bl-cam.c2 .camera-art{animation:bl-kb-b 19s ease-in-out infinite alternate;filter:brightness(.68) contrast(1.1) saturate(.75);}
+  .bl-cam.c3 .camera-art{animation:bl-kb-c 14s ease-in-out infinite alternate;filter:brightness(.68) contrast(1.1) saturate(.75);}
+  .bl-cam.c4 .camera-art{animation:bl-kb-d 21s ease-in-out infinite alternate;filter:brightness(.68) contrast(1.1) saturate(.75);}
+  
+  
+  
   /* CCTV noise + flicker for a live-footage feel */
   .bl-cam::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 3px);animation:bl-flicker 5.5s steps(1) infinite;}
   .bl-cam.c2::before{animation-delay:1.3s;} .bl-cam.c3::before{animation-delay:2.7s;} .bl-cam.c4::before{animation-delay:4.1s;}
   .bl-cam::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(8,10,14,.32), rgba(8,10,14,0) 36%, rgba(8,10,14,.55));pointer-events:none;}
-  .bl-cam:hover img{filter:brightness(1.02) contrast(1.06) saturate(1.02);}
+  .bl-cam:hover .camera-art{filter:brightness(1.02) contrast(1.06) saturate(1.02);}
   @keyframes bl-kb-a{from{transform:scale(1.07) translate(0,0);}to{transform:scale(1.16) translate(-2.4%,1.6%);}}
   @keyframes bl-kb-b{from{transform:scale(1.12) translate(1.8%,-1.2%);}to{transform:scale(1.05) translate(-1.2%,1%);}}
   @keyframes bl-kb-c{from{transform:scale(1.06) translate(-1.6%,1.2%);}to{transform:scale(1.15) translate(1.8%,-1.4%);}}
@@ -627,15 +629,13 @@
   @keyframes bl-blink{0%,60%{opacity:1;}61%,100%{opacity:.15;}}
   @keyframes bl-scan{0%{top:-40%;}100%{top:110%;}}
   @media (max-width:880px){.bl-grid{grid-template-columns:1fr;gap:40px;}}
-  @media (prefers-reduced-motion: reduce){.bl-cam .scan{animation:none;} .bl-wall-bar .live::before,.bl-cam .rec::before{animation:none;} .bl-cam img{animation:none;} .bl-cam::before{animation:none;opacity:.4;}}
-
-/* Brik AI heading sits above the animated orbit visual */
-.liquid-copy-heading{max-width:900px;margin:0 auto 10px;text-align:center;position:relative;z-index:2}
-.liquid-copy-heading h2{margin:0 auto;font-size:clamp(34px,4.2vw,58px);line-height:1.04;letter-spacing:-.055em;font-weight:500}
-.liquid-copy-description{max-width:820px;margin:18px auto 0;text-align:center}
-@media(max-width:640px){.liquid-copy-heading h2{font-size:clamp(30px,8vw,42px)}.liquid-copy-heading{margin-bottom:0}}
-
+  @media (prefers-reduced-motion: reduce){.bl-cam .scan{animation:none;} .bl-wall-bar .live::before,.bl-cam .rec::before{animation:none;} .bl-cam .camera-art{animation:none;} .bl-cam::before{animation:none;opacity:.4;}}
 </style>
+
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="256x256" href="/favicon.png?v=3">
+<link rel="apple-touch-icon" href="/favicon.png?v=3">
 </head>
 <body>
 
@@ -825,10 +825,6 @@
       <span class="tag">v1.0</span>
     </span>
 
-    <div class="liquid-copy liquid-copy-heading">
-      <h2>Simplifying real estate developments <span class="ai-grad">with AI.</span></h2>
-    </div>
-
     <div class="liquid-stage" aria-hidden="true">
       <div class="liquid-blob b1"></div>
       <div class="liquid-blob b2"></div>
@@ -850,7 +846,8 @@
       <span class="orbit-chip o6">progress · 62%</span>
     </div>
 
-    <div class="liquid-copy liquid-copy-description">
+    <div class="liquid-copy">
+      <h2>Simplifying real estate developments <span class="ai-grad">with AI.</span></h2>
       <p>Brik is the AI woven through every screen, reading each message and drafting every reply, so the office stays in control from foundation to handover.</p>
     </div>
   </div>
@@ -1285,35 +1282,35 @@
           </div>
           <div class="bl-cams">
             <div class="bl-cam c1">
-              <img src="images/cam-delivery.png" alt="Site camera detecting workers, helmets and a delivery" loading="lazy"/>
-              <span class="label">CAM 01 · GATE</span>
-              <span class="rec">REC</span>
-              <span class="ts">14:32:08</span>
-              <span class="tagm">delivery in</span>
-              <span class="scan" aria-hidden="true"></span>
-            </div>
-            <div class="bl-cam c2">
-              <img src="images/cam-occupancy.png" alt="Site camera counting people on site" loading="lazy"/>
-              <span class="label">CAM 02 · WORK ZONE</span>
-              <span class="rec">REC</span>
-              <span class="ts">14:32:08</span>
-              <span class="tagm">headcount · 16</span>
-              <span class="scan" aria-hidden="true"></span>
-            </div>
-            <div class="bl-cam c3">
-              <img src="images/cam-topdown.jpg" alt="Overhead site camera tracking workers" loading="lazy"/>
-              <span class="label">CAM 03 · TOWER B</span>
+              <img class="camera-art" src="images/cam-topdown.jpg" alt="CCTV view of active construction work and workers" loading="lazy"/>
+              <span class="label">CAM 01 · SITE ACTIVITY</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
               <span class="tagm">crew active</span>
               <span class="scan" aria-hidden="true"></span>
             </div>
-            <div class="bl-cam c4">
-              <img src="images/cam-formwork.webp" alt="Site camera viewing formwork and slab work" loading="lazy"/>
-              <span class="label">CAM 04 · FORMWORK</span>
+            <div class="bl-cam c2">
+              <img class="camera-art" src="images/cam-formwork.jpg" alt="CCTV view of the construction work zone and formwork" loading="lazy"/>
+              <span class="label">CAM 02 · WORK ZONE</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
-              <span class="tagm">pour ready</span>
+              <span class="tagm">formwork active</span>
+              <span class="scan" aria-hidden="true"></span>
+            </div>
+            <div class="bl-cam c3">
+              <img class="camera-art" src="images/cam-occupancy.jpg" alt="CCTV view detecting and counting construction workers" loading="lazy"/>
+              <span class="label">CAM 03 · OCCUPANCY</span>
+              <span class="rec">REC</span>
+              <span class="ts">14:32:08</span>
+              <span class="tagm">headcount · 16</span>
+              <span class="scan" aria-hidden="true"></span>
+            </div>
+            <div class="bl-cam c4">
+              <img class="camera-art" src="images/cam-delivery.jpg" alt="CCTV view detecting workers and safety helmets" loading="lazy"/>
+              <span class="label">CAM 04 · SAFETY / PPE</span>
+              <span class="rec">REC</span>
+              <span class="ts">14:32:08</span>
+              <span class="tagm">helmet detection</span>
               <span class="scan" aria-hidden="true"></span>
             </div>
           </div>
@@ -1500,11 +1497,44 @@
     </div>
 
     <div class="bkv-frame" aria-label="Brikito motion showreel video">
-      <video class="bkv-video" controls playsinline preload="metadata" aria-label="Brikito Motion Showreel">
-        <source src="Brikito_Motion_Showreel_4K_16x9.mp4" type="video/mp4">
+      <video
+        id="brikitoShowreel"
+        class="bkv-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster=""
+        aria-label="Brikito Motion Showreel">
+        <source src="./Brikito_Motion_Showreel_4K_16x9.mp4" type="video/mp4">
         Your browser does not support HTML video. Please use a modern browser to watch the Brikito showreel.
       </video>
+      <div id="brikitoVideoError" role="status" style="display:none;position:absolute;inset:0;z-index:7;align-items:center;justify-content:center;text-align:center;padding:24px;background:#080A10;color:#fff;">
+        <div>
+          <div style="font:11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#9FB1F5;margin-bottom:12px;">SHOWREEL NOT FOUND</div>
+          <p style="max-width:440px;margin:0 auto 10px;line-height:1.6;color:rgba(255,255,255,.8);">Upload <strong>Brikito_Motion_Showreel_4K_16x9.mp4</strong> to the same folder as <strong>index.html</strong>, then refresh this page.</p>
+          <p style="font-size:12px;color:rgba(255,255,255,.48);margin:0;">The video file must be deployed to your website hosting too.</p>
+        </div>
+      </div>
     </div>
+    <script>
+      (function () {
+        const video = document.getElementById('brikitoShowreel');
+        const error = document.getElementById('brikitoVideoError');
+        if (!video || !error) return;
+        video.addEventListener('error', function () {
+          error.style.display = 'flex';
+        });
+        video.addEventListener('loadedmetadata', function () {
+          error.style.display = 'none';
+        });
+        // Also catches a missing source that fails before a normal error event.
+        window.setTimeout(function () {
+          if (video.readyState === 0 && video.networkState === 3) {
+            error.style.display = 'flex';
+          }
+        }, 1800);
+      })();
+    </script>
 
     <div class="bkv-cta">
       <a class="btn btn-solid" href="how-it-works.html">Explore the interactive demo
