@@ -817,6 +817,157 @@
   </div>
 </section>
 
+<!-- =========================== HOW IT WORKS (story video) =========================== -->
+<section class="s" id="how">
+  <style>
+    .bkv-frame{position:relative;max-width:1000px;margin:0 auto;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 50% 18%,#141B30 0%,#0A0E1A 72%);border:1px solid #1E2638;box-shadow:0 40px 90px -36px rgba(10,14,30,.45);}
+    .bkv-video{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:contain;background:#080A10;border:0;}
+    .bkv-gridbg{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/100% 48px,linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/48px 100%;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);pointer-events:none;}
+    .bkv-label{position:absolute;left:18px;top:16px;z-index:5;display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.6);}
+    .bkv-label::before{content:"";width:6px;height:6px;border-radius:50%;background:oklch(0.65 0.17 262);}
+    .bkv-shot{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+    .bkv-frame[data-shot="0"] .bkv-sh0,.bkv-frame[data-shot="1"] .bkv-sh1,.bkv-frame[data-shot="2"] .bkv-sh2,.bkv-frame[data-shot="3"] .bkv-sh3{opacity:1;}
+    .bkv-cap{position:absolute;left:26px;bottom:64px;z-index:4;color:#fff;opacity:0;transform:translateY(10px);transition:.6s ease .25s;}
+    .bkv-frame[data-shot="0"] .bkv-cap0,.bkv-frame[data-shot="1"] .bkv-cap1,.bkv-frame[data-shot="2"] .bkv-cap2,.bkv-frame[data-shot="3"] .bkv-cap3{opacity:1;transform:none;}
+    .bkv-cap .t{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(255,255,255,.55);}
+    .bkv-cap .l{font-size:clamp(16px,2vw,21px);font-weight:500;letter-spacing:-.015em;margin-top:6px;}
+    /* shot 0 site svg */
+    .bkv-sh0 svg{width:100%;height:100%;}
+    .bkv-wk{transform:translateX(0);}
+    .bkv-frame.playing[data-shot="0"] .bkv-wkA{animation:bkvWalk 9s ease-in-out infinite alternate;}
+    .bkv-frame.playing[data-shot="0"] .bkv-wkB{animation:bkvWalk 11s ease-in-out infinite alternate;animation-delay:-5s;}
+    .bkv-frame.playing[data-shot="0"] .bkv-cage{animation:bkvCage 6s ease-in-out infinite alternate;}
+    @keyframes bkvWalk{from{transform:translateX(0);}to{transform:translateX(260px);}}
+    @keyframes bkvCage{from{transform:translateY(0);}to{transform:translateY(150px);}}
+    /* shot 1 phone */
+    .bkv-phone{width:250px;background:#10131D;border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);}
+    .bkv-phone .chr{display:flex;align-items:center;gap:8px;background:#15224A;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;padding:8px 13px;}
+    .bkv-phone .chr i{width:6px;height:6px;border-radius:50%;background:oklch(0.65 0.17 262);}
+    .bkv-phone .bd{padding:14px 12px 16px;display:flex;flex-direction:column;gap:9px;min-height:240px;}
+    .bkv-b{opacity:0;}
+    .bkv-frame[data-shot="1"] .bkv-b1{animation:bkvIn .55s ease .35s both;}
+    .bkv-frame[data-shot="1"] .bkv-b2{animation:bkvIn .5s ease 1.6s both;}
+    .bkv-frame[data-shot="1"] .bkv-b3{animation:bkvIn .6s ease 2.5s both;}
+    @keyframes bkvIn{from{opacity:0;transform:translateY(12px) scale(.95);}to{opacity:1;transform:none;}}
+    .bkv-msg{align-self:flex-end;max-width:90%;font-size:12px;line-height:1.4;color:#fff;background:linear-gradient(135deg,oklch(0.5 0.15 262),oklch(0.43 0.17 282));border:1px solid rgba(140,160,255,.3);border-radius:13px;padding:8px 11px;}
+    .bkv-chip{align-self:flex-end;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;color:#9FB1F5;border:1px solid rgba(120,140,235,.4);background:rgba(62,91,216,.14);border-radius:999px;padding:4px 10px;}
+    .bkv-chip::before{content:"\2726 ";}
+    .bkv-card{width:100%;background:#161B29;border:1px solid rgba(255,255,255,.1);border-radius:11px;overflow:hidden;font-size:11px;color:#E8EAF2;}
+    .bkv-card .hd{display:flex;justify-content:space-between;padding:8px 10px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;}
+    .bkv-card .hd em{font-style:normal;color:#9FB1F5;}
+    .bkv-card .rw{display:flex;justify-content:space-between;padding:6px 10px;border-bottom:1px dashed rgba(255,255,255,.08);color:rgba(232,234,242,.65);}
+    .bkv-card .rw:last-child{border-bottom:none;}
+    .bkv-card .rw b{color:#fff;font-weight:500;}
+    /* shot 2 approval */
+    .bkv-desk{width:min(400px,84%);background:#10131D;border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);}
+    .bkv-desk .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);}
+    .bkv-desk .bar i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18);}
+    .bkv-desk .bar span{margin-left:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.55);}
+    .bkv-desk .item{padding:13px 14px;color:#E8EAF2;font-size:12.5px;}
+    .bkv-desk .item .ln1{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+    .bkv-desk .item .ln1 b{font-weight:500;}
+    .bkv-st{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;padding:2px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);}
+    .bkv-desk .sub{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.4);margin:5px 0 11px;}
+    .bkv-appr{position:relative;overflow:hidden;display:inline-flex;font:inherit;font-size:12px;font-weight:500;color:#fff;border:1px solid rgba(255,255,255,.3);background:transparent;border-radius:8px;padding:7px 18px;cursor:default;}
+    .bkv-appr::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,oklch(0.52 0.16 262),oklch(0.45 0.18 282));transform:scaleX(0);transform-origin:left;}
+    .bkv-appr span{position:relative;z-index:1;}
+    .bkv-frame[data-shot="2"] .bkv-appr::before{animation:bkvSweep .6s ease 1.7s both;}
+    @keyframes bkvSweep{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+    .bkv-toast{margin:12px 14px 14px;background:rgba(62,91,216,.16);border:1px solid rgba(120,140,235,.4);color:#C9D3FB;font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:8px 11px;border-radius:9px;opacity:0;}
+    .bkv-toast::before{content:"\2713 ";color:#9FB1F5;}
+    .bkv-frame[data-shot="2"] .bkv-toast{animation:bkvIn .5s ease 2.7s both;}
+    /* shot 3 dashboard */
+    .bkv-dash{display:flex;align-items:center;gap:34px;}
+    .bkv-ringw{position:relative;width:110px;height:110px;flex:none;}
+    .bkv-ringw svg{width:110px;height:110px;transform:rotate(-90deg);}
+    .bkv-ringw .bg{fill:none;stroke:rgba(255,255,255,.12);stroke-width:9;}
+    .bkv-ringw .fg{fill:none;stroke:url(#bkvGrad);stroke-width:9;stroke-linecap:round;stroke-dasharray:289;stroke-dashoffset:289;}
+    .bkv-frame[data-shot="3"] .bkv-ringw .fg{animation:bkvRing 1.4s ease .4s both;}
+    @keyframes bkvRing{from{stroke-dashoffset:289;}to{stroke-dashoffset:110;}}
+    .bkv-ringw b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:23px;font-weight:600;letter-spacing:-.02em;}
+    .bkv-tag{color:#fff;}
+    .bkv-tag .big{font-size:clamp(22px,3vw,32px);font-weight:500;letter-spacing:-.025em;opacity:0;}
+    .bkv-frame[data-shot="3"] .bkv-tag .big{animation:bkvIn .7s ease 1.4s both;}
+    .bkv-tag .sm{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.5);opacity:0;}
+    .bkv-frame[data-shot="3"] .bkv-tag .sm{animation:bkvIn .6s ease 2s both;}
+    /* play + controls */
+    .bkv-play{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.94);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:7;transition:transform .25s ease,opacity .3s ease;box-shadow:0 18px 50px -12px rgba(0,0,0,.55);}
+    .bkv-play:hover{transform:scale(1.07);}
+    .bkv-play::before{content:"";position:absolute;inset:-13px;border-radius:50%;border:1px solid rgba(255,255,255,.4);animation:bkvPulse 2.2s ease-out infinite;}
+    @keyframes bkvPulse{0%{transform:scale(.92);opacity:1;}100%{transform:scale(1.25);opacity:0;}}
+    .bkv-frame.playing .bkv-play{opacity:0;pointer-events:none;}
+    .bkv-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(transparent,rgba(5,8,16,.75));z-index:6;}
+    .bkv-toggle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;}
+    .bkv-toggle svg{width:12px;height:12px;}
+    .bkv-toggle .ic-pause{display:none;}
+    .bkv-frame.playing .ic-play{display:none;}
+    .bkv-frame.playing .ic-pause{display:block;}
+    .bkv-track{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.18);cursor:pointer;}
+    .bkv-fill{height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,#fff,oklch(0.7 0.15 262));}
+    .bkv-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.55);flex:none;}
+    .bkv-cta{display:flex;gap:10px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+    @media (max-width:720px){.bkv-cap{bottom:56px;left:18px;} .bkv-phone{width:210px;} .bkv-dash{flex-direction:column;gap:18px;text-align:center;}}
+    @media (prefers-reduced-motion: reduce){#how .bkv-frame *,#how .bkv-frame *::before{animation:none !important;transition:none !important;} .bkv-b,.bkv-toast,.bkv-tag .big,.bkv-tag .sm{opacity:1 !important;} .bkv-ringw .fg{stroke-dashoffset:110 !important;}}
+  </style>
+
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Watch a site <span class="grad-ink">run itself.</span></h2>
+      <p>One short story, from the morning rush to an approved day. Prefer to drive it yourself? Open the interactive demo below.</p>
+    </div>
+
+    <div class="bkv-frame" aria-label="Brikito motion showreel video">
+      <video
+        id="brikitoShowreel"
+        class="bkv-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster=""
+        aria-label="Brikito Motion Showreel">
+        <source src="./Brikito_Motion_Showreel_4K_16x9.mp4" type="video/mp4">
+        Your browser does not support HTML video. Please use a modern browser to watch the Brikito showreel.
+      </video>
+      <div id="brikitoVideoError" role="status" style="display:none;position:absolute;inset:0;z-index:7;align-items:center;justify-content:center;text-align:center;padding:24px;background:#080A10;color:#fff;">
+        <div>
+          <div style="font:11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#9FB1F5;margin-bottom:12px;">SHOWREEL NOT FOUND</div>
+          <p style="max-width:440px;margin:0 auto 10px;line-height:1.6;color:rgba(255,255,255,.8);">Upload <strong>Brikito_Motion_Showreel_4K_16x9.mp4</strong> to the same folder as <strong>index.html</strong>, then refresh this page.</p>
+          <p style="font-size:12px;color:rgba(255,255,255,.48);margin:0;">The video file must be deployed to your website hosting too.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const video = document.getElementById('brikitoShowreel');
+        const error = document.getElementById('brikitoVideoError');
+        if (!video || !error) return;
+        video.addEventListener('error', function () {
+          error.style.display = 'flex';
+        });
+        video.addEventListener('loadedmetadata', function () {
+          error.style.display = 'none';
+        });
+        // Also catches a missing source that fails before a normal error event.
+        window.setTimeout(function () {
+          if (video.readyState === 0 && video.networkState === 3) {
+            error.style.display = 'flex';
+          }
+        }, 1800);
+      })();
+    </script>
+
+    <div class="bkv-cta">
+      <a class="btn btn-solid" href="how-it-works.html">Explore the interactive demo
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+      <a class="btn btn-ghost" href="book-a-demo.html">Book a demo</a>
+    </div>
+  </div>
+
+</section>
+
+
 <!-- =========================== LIQUID AI / MISSION =========================== -->
 <section class="liquid" id="brikai">
   <div class="liquid-inner">
@@ -824,6 +975,11 @@
       <span style="font-size:11px;letter-spacing:.08em;color:var(--muted)">BRIK AI</span>
       <span class="tag">v1.0</span>
     </span>
+
+    <div class="liquid-copy">
+      <h2>Simplifying real estate developments <span class="ai-grad">with AI.</span></h2>
+      <p>Brik is the AI woven through every screen, reading each message and drafting every reply, so the office stays in control from foundation to handover.</p>
+    </div>
 
     <div class="liquid-stage" aria-hidden="true">
       <div class="liquid-blob b1"></div>
@@ -846,10 +1002,7 @@
       <span class="orbit-chip o6">progress · 62%</span>
     </div>
 
-    <div class="liquid-copy">
-      <h2>Simplifying real estate developments <span class="ai-grad">with AI.</span></h2>
-      <p>Brik is the AI woven through every screen, reading each message and drafting every reply, so the office stays in control from foundation to handover.</p>
-    </div>
+
   </div>
 </section>
 
@@ -1396,155 +1549,7 @@
   </div>
 </section>
 
-<!-- =========================== HOW IT WORKS (story video) =========================== -->
-<section class="s" id="how">
-  <style>
-    .bkv-frame{position:relative;max-width:1000px;margin:0 auto;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 50% 18%,#141B30 0%,#0A0E1A 72%);border:1px solid #1E2638;box-shadow:0 40px 90px -36px rgba(10,14,30,.45);}
-    .bkv-video{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:contain;background:#080A10;border:0;}
-    .bkv-gridbg{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/100% 48px,linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/48px 100%;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);pointer-events:none;}
-    .bkv-label{position:absolute;left:18px;top:16px;z-index:5;display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.6);}
-    .bkv-label::before{content:"";width:6px;height:6px;border-radius:50%;background:oklch(0.65 0.17 262);}
-    .bkv-shot{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;pointer-events:none;}
-    .bkv-frame[data-shot="0"] .bkv-sh0,.bkv-frame[data-shot="1"] .bkv-sh1,.bkv-frame[data-shot="2"] .bkv-sh2,.bkv-frame[data-shot="3"] .bkv-sh3{opacity:1;}
-    .bkv-cap{position:absolute;left:26px;bottom:64px;z-index:4;color:#fff;opacity:0;transform:translateY(10px);transition:.6s ease .25s;}
-    .bkv-frame[data-shot="0"] .bkv-cap0,.bkv-frame[data-shot="1"] .bkv-cap1,.bkv-frame[data-shot="2"] .bkv-cap2,.bkv-frame[data-shot="3"] .bkv-cap3{opacity:1;transform:none;}
-    .bkv-cap .t{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(255,255,255,.55);}
-    .bkv-cap .l{font-size:clamp(16px,2vw,21px);font-weight:500;letter-spacing:-.015em;margin-top:6px;}
-    /* shot 0 site svg */
-    .bkv-sh0 svg{width:100%;height:100%;}
-    .bkv-wk{transform:translateX(0);}
-    .bkv-frame.playing[data-shot="0"] .bkv-wkA{animation:bkvWalk 9s ease-in-out infinite alternate;}
-    .bkv-frame.playing[data-shot="0"] .bkv-wkB{animation:bkvWalk 11s ease-in-out infinite alternate;animation-delay:-5s;}
-    .bkv-frame.playing[data-shot="0"] .bkv-cage{animation:bkvCage 6s ease-in-out infinite alternate;}
-    @keyframes bkvWalk{from{transform:translateX(0);}to{transform:translateX(260px);}}
-    @keyframes bkvCage{from{transform:translateY(0);}to{transform:translateY(150px);}}
-    /* shot 1 phone */
-    .bkv-phone{width:250px;background:#10131D;border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);}
-    .bkv-phone .chr{display:flex;align-items:center;gap:8px;background:#15224A;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;padding:8px 13px;}
-    .bkv-phone .chr i{width:6px;height:6px;border-radius:50%;background:oklch(0.65 0.17 262);}
-    .bkv-phone .bd{padding:14px 12px 16px;display:flex;flex-direction:column;gap:9px;min-height:240px;}
-    .bkv-b{opacity:0;}
-    .bkv-frame[data-shot="1"] .bkv-b1{animation:bkvIn .55s ease .35s both;}
-    .bkv-frame[data-shot="1"] .bkv-b2{animation:bkvIn .5s ease 1.6s both;}
-    .bkv-frame[data-shot="1"] .bkv-b3{animation:bkvIn .6s ease 2.5s both;}
-    @keyframes bkvIn{from{opacity:0;transform:translateY(12px) scale(.95);}to{opacity:1;transform:none;}}
-    .bkv-msg{align-self:flex-end;max-width:90%;font-size:12px;line-height:1.4;color:#fff;background:linear-gradient(135deg,oklch(0.5 0.15 262),oklch(0.43 0.17 282));border:1px solid rgba(140,160,255,.3);border-radius:13px;padding:8px 11px;}
-    .bkv-chip{align-self:flex-end;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;color:#9FB1F5;border:1px solid rgba(120,140,235,.4);background:rgba(62,91,216,.14);border-radius:999px;padding:4px 10px;}
-    .bkv-chip::before{content:"\2726 ";}
-    .bkv-card{width:100%;background:#161B29;border:1px solid rgba(255,255,255,.1);border-radius:11px;overflow:hidden;font-size:11px;color:#E8EAF2;}
-    .bkv-card .hd{display:flex;justify-content:space-between;padding:8px 10px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;}
-    .bkv-card .hd em{font-style:normal;color:#9FB1F5;}
-    .bkv-card .rw{display:flex;justify-content:space-between;padding:6px 10px;border-bottom:1px dashed rgba(255,255,255,.08);color:rgba(232,234,242,.65);}
-    .bkv-card .rw:last-child{border-bottom:none;}
-    .bkv-card .rw b{color:#fff;font-weight:500;}
-    /* shot 2 approval */
-    .bkv-desk{width:min(400px,84%);background:#10131D;border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);}
-    .bkv-desk .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08);}
-    .bkv-desk .bar i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18);}
-    .bkv-desk .bar span{margin-left:6px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.55);}
-    .bkv-desk .item{padding:13px 14px;color:#E8EAF2;font-size:12.5px;}
-    .bkv-desk .item .ln1{display:flex;justify-content:space-between;align-items:center;gap:10px;}
-    .bkv-desk .item .ln1 b{font-weight:500;}
-    .bkv-st{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;padding:2px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);}
-    .bkv-desk .sub{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.4);margin:5px 0 11px;}
-    .bkv-appr{position:relative;overflow:hidden;display:inline-flex;font:inherit;font-size:12px;font-weight:500;color:#fff;border:1px solid rgba(255,255,255,.3);background:transparent;border-radius:8px;padding:7px 18px;cursor:default;}
-    .bkv-appr::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,oklch(0.52 0.16 262),oklch(0.45 0.18 282));transform:scaleX(0);transform-origin:left;}
-    .bkv-appr span{position:relative;z-index:1;}
-    .bkv-frame[data-shot="2"] .bkv-appr::before{animation:bkvSweep .6s ease 1.7s both;}
-    @keyframes bkvSweep{from{transform:scaleX(0);}to{transform:scaleX(1);}}
-    .bkv-toast{margin:12px 14px 14px;background:rgba(62,91,216,.16);border:1px solid rgba(120,140,235,.4);color:#C9D3FB;font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:8px 11px;border-radius:9px;opacity:0;}
-    .bkv-toast::before{content:"\2713 ";color:#9FB1F5;}
-    .bkv-frame[data-shot="2"] .bkv-toast{animation:bkvIn .5s ease 2.7s both;}
-    /* shot 3 dashboard */
-    .bkv-dash{display:flex;align-items:center;gap:34px;}
-    .bkv-ringw{position:relative;width:110px;height:110px;flex:none;}
-    .bkv-ringw svg{width:110px;height:110px;transform:rotate(-90deg);}
-    .bkv-ringw .bg{fill:none;stroke:rgba(255,255,255,.12);stroke-width:9;}
-    .bkv-ringw .fg{fill:none;stroke:url(#bkvGrad);stroke-width:9;stroke-linecap:round;stroke-dasharray:289;stroke-dashoffset:289;}
-    .bkv-frame[data-shot="3"] .bkv-ringw .fg{animation:bkvRing 1.4s ease .4s both;}
-    @keyframes bkvRing{from{stroke-dashoffset:289;}to{stroke-dashoffset:110;}}
-    .bkv-ringw b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:23px;font-weight:600;letter-spacing:-.02em;}
-    .bkv-tag{color:#fff;}
-    .bkv-tag .big{font-size:clamp(22px,3vw,32px);font-weight:500;letter-spacing:-.025em;opacity:0;}
-    .bkv-frame[data-shot="3"] .bkv-tag .big{animation:bkvIn .7s ease 1.4s both;}
-    .bkv-tag .sm{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.5);opacity:0;}
-    .bkv-frame[data-shot="3"] .bkv-tag .sm{animation:bkvIn .6s ease 2s both;}
-    /* play + controls */
-    .bkv-play{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.94);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:7;transition:transform .25s ease,opacity .3s ease;box-shadow:0 18px 50px -12px rgba(0,0,0,.55);}
-    .bkv-play:hover{transform:scale(1.07);}
-    .bkv-play::before{content:"";position:absolute;inset:-13px;border-radius:50%;border:1px solid rgba(255,255,255,.4);animation:bkvPulse 2.2s ease-out infinite;}
-    @keyframes bkvPulse{0%{transform:scale(.92);opacity:1;}100%{transform:scale(1.25);opacity:0;}}
-    .bkv-frame.playing .bkv-play{opacity:0;pointer-events:none;}
-    .bkv-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(transparent,rgba(5,8,16,.75));z-index:6;}
-    .bkv-toggle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;}
-    .bkv-toggle svg{width:12px;height:12px;}
-    .bkv-toggle .ic-pause{display:none;}
-    .bkv-frame.playing .ic-play{display:none;}
-    .bkv-frame.playing .ic-pause{display:block;}
-    .bkv-track{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.18);cursor:pointer;}
-    .bkv-fill{height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,#fff,oklch(0.7 0.15 262));}
-    .bkv-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.55);flex:none;}
-    .bkv-cta{display:flex;gap:10px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
-    @media (max-width:720px){.bkv-cap{bottom:56px;left:18px;} .bkv-phone{width:210px;} .bkv-dash{flex-direction:column;gap:18px;text-align:center;}}
-    @media (prefers-reduced-motion: reduce){#how .bkv-frame *,#how .bkv-frame *::before{animation:none !important;transition:none !important;} .bkv-b,.bkv-toast,.bkv-tag .big,.bkv-tag .sm{opacity:1 !important;} .bkv-ringw .fg{stroke-dashoffset:110 !important;}}
-  </style>
 
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Watch a site <span class="grad-ink">run itself.</span></h2>
-      <p>One short story, from the morning rush to an approved day. Prefer to drive it yourself? Open the interactive demo below.</p>
-    </div>
-
-    <div class="bkv-frame" aria-label="Brikito motion showreel video">
-      <video
-        id="brikitoShowreel"
-        class="bkv-video"
-        controls
-        playsinline
-        preload="metadata"
-        poster=""
-        aria-label="Brikito Motion Showreel">
-        <source src="./Brikito_Motion_Showreel_4K_16x9.mp4" type="video/mp4">
-        Your browser does not support HTML video. Please use a modern browser to watch the Brikito showreel.
-      </video>
-      <div id="brikitoVideoError" role="status" style="display:none;position:absolute;inset:0;z-index:7;align-items:center;justify-content:center;text-align:center;padding:24px;background:#080A10;color:#fff;">
-        <div>
-          <div style="font:11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#9FB1F5;margin-bottom:12px;">SHOWREEL NOT FOUND</div>
-          <p style="max-width:440px;margin:0 auto 10px;line-height:1.6;color:rgba(255,255,255,.8);">Upload <strong>Brikito_Motion_Showreel_4K_16x9.mp4</strong> to the same folder as <strong>index.html</strong>, then refresh this page.</p>
-          <p style="font-size:12px;color:rgba(255,255,255,.48);margin:0;">The video file must be deployed to your website hosting too.</p>
-        </div>
-      </div>
-    </div>
-    <script>
-      (function () {
-        const video = document.getElementById('brikitoShowreel');
-        const error = document.getElementById('brikitoVideoError');
-        if (!video || !error) return;
-        video.addEventListener('error', function () {
-          error.style.display = 'flex';
-        });
-        video.addEventListener('loadedmetadata', function () {
-          error.style.display = 'none';
-        });
-        // Also catches a missing source that fails before a normal error event.
-        window.setTimeout(function () {
-          if (video.readyState === 0 && video.networkState === 3) {
-            error.style.display = 'flex';
-          }
-        }, 1800);
-      })();
-    </script>
-
-    <div class="bkv-cta">
-      <a class="btn btn-solid" href="how-it-works.html">Explore the interactive demo
-        <svg class="ico arrow" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </a>
-      <a class="btn btn-ghost" href="book-a-demo.html">Book a demo</a>
-    </div>
-  </div>
-
-</section>
 
 <!-- =========================== USE CASES =========================== -->
 <section class="s" id="cases">
