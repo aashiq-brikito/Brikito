@@ -610,15 +610,18 @@
   .bl-cam .tagm{position:absolute;right:8px;bottom:7px;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--live);z-index:2;}
   .bl-cam .scan{position:absolute;left:0;right:0;height:36%;top:-40%;background:linear-gradient(180deg, transparent, rgba(120,180,255,.10), transparent);animation:bl-scan 4.2s linear infinite;}
   .bl-cam.c2 .scan{animation-delay:1s;} .bl-cam.c3 .scan{animation-delay:2s;} .bl-cam.c4 .scan{animation-delay:3s;}
-  .bl-cam img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.82) contrast(1.05) saturate(.92);transition:filter .3s ease;will-change:transform;animation:bl-kb-a 16s ease-in-out infinite alternate;}
-  .bl-cam.c2 img{animation:bl-kb-b 19s ease-in-out infinite alternate;}
-  .bl-cam.c3 img{animation:bl-kb-c 14s ease-in-out infinite alternate;}
-  .bl-cam.c4 img{animation:bl-kb-d 21s ease-in-out infinite alternate;}
+  .bl-cam .camera-art{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;filter:brightness(.86) contrast(1.05) saturate(.82);transform-origin:center;animation:bl-kb-a 16s ease-in-out infinite alternate;}
+  .bl-cam.c2 .camera-art{animation:bl-kb-b 19s ease-in-out infinite alternate;}
+  .bl-cam.c3 .camera-art{animation:bl-kb-c 14s ease-in-out infinite alternate;}
+  .bl-cam.c4 .camera-art{animation:bl-kb-d 21s ease-in-out infinite alternate;}
+  
+  
+  
   /* CCTV noise + flicker for a live-footage feel */
   .bl-cam::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 3px);animation:bl-flicker 5.5s steps(1) infinite;}
   .bl-cam.c2::before{animation-delay:1.3s;} .bl-cam.c3::before{animation-delay:2.7s;} .bl-cam.c4::before{animation-delay:4.1s;}
   .bl-cam::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(8,10,14,.32), rgba(8,10,14,0) 36%, rgba(8,10,14,.55));pointer-events:none;}
-  .bl-cam:hover img{filter:brightness(1.02) contrast(1.06) saturate(1.02);}
+  .bl-cam:hover .camera-art{filter:brightness(1.02) contrast(1.06) saturate(1.02);}
   @keyframes bl-kb-a{from{transform:scale(1.07) translate(0,0);}to{transform:scale(1.16) translate(-2.4%,1.6%);}}
   @keyframes bl-kb-b{from{transform:scale(1.12) translate(1.8%,-1.2%);}to{transform:scale(1.05) translate(-1.2%,1%);}}
   @keyframes bl-kb-c{from{transform:scale(1.06) translate(-1.6%,1.2%);}to{transform:scale(1.15) translate(1.8%,-1.4%);}}
@@ -627,7 +630,7 @@
   @keyframes bl-blink{0%,60%{opacity:1;}61%,100%{opacity:.15;}}
   @keyframes bl-scan{0%{top:-40%;}100%{top:110%;}}
   @media (max-width:880px){.bl-grid{grid-template-columns:1fr;gap:40px;}}
-  @media (prefers-reduced-motion: reduce){.bl-cam .scan{animation:none;} .bl-wall-bar .live::before,.bl-cam .rec::before{animation:none;} .bl-cam img{animation:none;} .bl-cam::before{animation:none;opacity:.4;}}
+  @media (prefers-reduced-motion: reduce){.bl-cam .scan{animation:none;} .bl-wall-bar .live::before,.bl-cam .rec::before{animation:none;} .bl-cam .camera-art{animation:none;} .bl-cam::before{animation:none;opacity:.4;}}
 </style>
 </head>
 <body>
@@ -1275,7 +1278,15 @@
           </div>
           <div class="bl-cams">
             <div class="bl-cam c1">
-              <img src="images/cam-delivery.png" alt="Site camera detecting workers, helmets and a delivery" loading="lazy"/>
+              <svg class="camera-art" viewBox="0 0 640 400" role="img" aria-label="CCTV view of construction gate and delivery truck" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="sky1" x2="0" y2="1"><stop stop-color="#3b4a58"/><stop offset="1" stop-color="#151b21"/></linearGradient></defs>
+  <rect width="640" height="400" fill="url(#sky1)"/><path d="M0 245L150 175 270 230 420 150 640 225V400H0Z" fill="#303a43"/>
+  <path d="M0 310L640 265V400H0Z" fill="#171c20"/><path d="M0 352L640 322" stroke="#7d858b" stroke-width="3" stroke-dasharray="28 22" opacity=".6"/>
+  <g stroke="#9ba5ad" stroke-width="7" fill="#59636c"><path d="M54 72V310M95 72V307M42 95H112M42 135H112M42 175H112"/><path d="M18 310H140" stroke-width="10"/></g>
+  <g transform="translate(220 204)"><rect x="0" y="38" width="225" height="78" rx="5" fill="#6e7881"/><rect x="147" y="0" width="78" height="116" rx="4" fill="#89949c"/><rect x="161" y="13" width="48" height="34" fill="#273743"/><rect x="16" y="51" width="96" height="24" fill="#aeb7bd" opacity=".8"/><circle cx="45" cy="119" r="21" fill="#11161a" stroke="#6f7a82" stroke-width="8"/><circle cx="180" cy="119" r="21" fill="#11161a" stroke="#6f7a82" stroke-width="8"/><rect x="15" y="82" width="22" height="8" fill="#e9c46a"/><rect x="196" y="82" width="18" height="8" fill="#e76f51"/></g>
+  <g fill="#d5dce0"><circle cx="500" cy="226" r="12"/><path d="M488 240L512 240 523 292 477 292Z"/></g><path d="M500 291L486 326M500 291L515 326" stroke="#c8d0d5" stroke-width="10"/>
+  <rect x="370" y="195" width="245" height="150" fill="none" stroke="#00d3a0" stroke-width="3" stroke-dasharray="9 6"/><path d="M370 220V195H395M590 195H615V220M370 320V345H395M590 345H615V320" stroke="#00d3a0" stroke-width="5" fill="none"/>
+</svg>
               <span class="label">CAM 01 · GATE</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
@@ -1283,7 +1294,13 @@
               <span class="scan" aria-hidden="true"></span>
             </div>
             <div class="bl-cam c2">
-              <img src="images/cam-occupancy.png" alt="Site camera counting people on site" loading="lazy"/>
+              <svg class="camera-art" viewBox="0 0 640 400" role="img" aria-label="CCTV view counting workers in a construction zone" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="sky2" x2="0" y2="1"><stop stop-color="#3b4650"/><stop offset="1" stop-color="#171c22"/></linearGradient></defs><rect width="640" height="400" fill="url(#sky2)"/>
+  <path d="M0 0H640V105L0 155Z" fill="#66727b" opacity=".25"/><path d="M0 290L640 220V400H0Z" fill="#252d33"/><path d="M0 332L640 262" stroke="#929ba1" stroke-width="3" stroke-dasharray="20 18" opacity=".55"/>
+  <g stroke="#77848d" stroke-width="8" fill="none"><path d="M50 0V285M205 0V268M360 0V250M515 0V235M0 95L640 42M0 160L640 108"/></g>
+  <g fill="#d4dbe0" stroke="#b7c1c8" stroke-width="2"><g transform="translate(125 190)"><path d="M-20 16Q0 -2 20 16L15 27H-15Z" fill="#e8c86a"/><circle cy="32" r="10"/><path d="M-12 43H12L18 88H-18Z"/><path d="M-8 88L-14 121M8 88L14 121" stroke-width="8"/></g><g transform="translate(300 170)"><path d="M-20 16Q0 -2 20 16L15 27H-15Z" fill="#e8c86a"/><circle cy="32" r="10"/><path d="M-12 43H12L18 88H-18Z"/><path d="M-8 88L-14 121M8 88L14 121" stroke-width="8"/></g><g transform="translate(465 145)"><path d="M-20 16Q0 -2 20 16L15 27H-15Z" fill="#e8c86a"/><circle cy="32" r="10"/><path d="M-12 43H12L18 88H-18Z"/><path d="M-8 88L-14 121M8 88L14 121" stroke-width="8"/></g></g>
+  <g fill="none" stroke="#00d3a0" stroke-width="3"><rect x="92" y="200" width="66" height="130"/><rect x="267" y="180" width="66" height="130"/><rect x="432" y="155" width="66" height="130"/></g><g fill="#00d3a0" font-family="monospace" font-size="15"><text x="96" y="192">01</text><text x="271" y="172">02</text><text x="436" y="147">03</text></g>
+</svg>
               <span class="label">CAM 02 · WORK ZONE</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
@@ -1291,7 +1308,13 @@
               <span class="scan" aria-hidden="true"></span>
             </div>
             <div class="bl-cam c3">
-              <img src="images/cam-topdown.jpg" alt="Overhead site camera tracking workers" loading="lazy"/>
+              <svg class="camera-art" viewBox="0 0 640 400" role="img" aria-label="Overhead CCTV view of construction tower and active crew" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="400" fill="#1a2229"/><path d="M0 70L640 0V400H0Z" fill="#303a43"/><path d="M0 120L640 50M0 205L640 135M0 290L640 220M0 375L640 305" stroke="#7b878f" stroke-width="3" opacity=".55"/><path d="M100 0L180 400M260 0L340 400M420 0L500 400M580 0L640 300" stroke="#66737c" stroke-width="3" opacity=".5"/>
+  <g fill="#59656e" stroke="#9aa5ad" stroke-width="4"><path d="M100 55H480V320H100Z"/><path d="M100 55L480 320M480 55L100 320" opacity=".6"/><path d="M125 82H455V292H125Z" fill="#343f48"/></g>
+  <g fill="#d8dfe3"><circle cx="205" cy="145" r="10"/><path d="M193 157H217L225 194H185Z"/><circle cx="365" cy="220" r="10"/><path d="M353 232H377L385 269H345Z"/><circle cx="280" cy="265" r="10"/><path d="M268 277H292L300 314H260Z"/></g>
+  <g fill="none" stroke="#00d3a0" stroke-width="3"><rect x="177" y="128" width="55" height="74"/><rect x="337" y="203" width="55" height="74"/><rect x="252" y="248" width="55" height="74"/></g>
+  <path d="M0 30H640M0 370H640" stroke="#0b1116" stroke-width="12" opacity=".6"/>
+</svg>
               <span class="label">CAM 03 · TOWER B</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
@@ -1299,7 +1322,14 @@
               <span class="scan" aria-hidden="true"></span>
             </div>
             <div class="bl-cam c4">
-              <img src="images/cam-formwork.webp" alt="Site camera viewing formwork and slab work" loading="lazy"/>
+              <svg class="camera-art" viewBox="0 0 640 400" role="img" aria-label="CCTV view of concrete formwork and slab work" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="sky4" x2="0" y2="1"><stop stop-color="#3d4851"/><stop offset="1" stop-color="#171c21"/></linearGradient></defs><rect width="640" height="400" fill="url(#sky4)"/>
+  <path d="M0 70L640 15V190L0 250Z" fill="#66727b" opacity=".35"/><path d="M0 248L640 176V400H0Z" fill="#252d33"/><path d="M0 275L640 203M0 320L640 248M0 365L640 293" stroke="#8c969d" stroke-width="4" opacity=".7"/>
+  <g stroke="#aab4bb" stroke-width="7" fill="none"><path d="M60 110V370M150 100V360M240 90V350M330 80V340M420 70V330M510 60V320M600 50V310"/><path d="M35 155L625 90M25 210L615 145M15 265L605 200"/></g>
+  <path d="M65 150L565 95L610 230L105 300Z" fill="#8a949b" opacity=".5" stroke="#c1c9ce" stroke-width="5"/><path d="M95 173L550 123M108 207L563 157M120 241L575 191" stroke="#c4ccd1" stroke-width="5" opacity=".65"/>
+  <g fill="#d6dde1"><circle cx="300" cy="190" r="10"/><path d="M288 202H312L320 240H280Z"/><path d="M290 240L282 267M310 240L318 267" stroke="#d6dde1" stroke-width="8"/><circle cx="440" cy="165" r="10"/><path d="M428 177H452L460 215H420Z"/></g>
+  <rect x="260" y="155" width="75" height="120" fill="none" stroke="#00d3a0" stroke-width="3" stroke-dasharray="8 5"/><rect x="400" y="130" width="75" height="120" fill="none" stroke="#00d3a0" stroke-width="3" stroke-dasharray="8 5"/>
+</svg>
               <span class="label">CAM 04 · FORMWORK</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
