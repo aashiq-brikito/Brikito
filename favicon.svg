@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#5EA7FF"/>
-      <stop offset="1" stop-color="#870873"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="15" fill="#0A0A0A"/>
-  <path d="M17 13h17.5C45 13 51 18.5 51 27c0 4.1-1.8 7.2-5 9.2 4.1 1.8 6.5 5.1 6.5 10C52.5 55 44.9 59 34.5 59H17V13Z" fill="url(#g)"/>
-  <path d="M25 21h9.5c5 0 7.5 2 7.5 6s-2.5 6-7.5 6H25V21Zm0 19h10c5.3 0 8 1.9 8 5.8S40.3 52 35 52H25V40Z" fill="#fff"/>
-  <path d="M8 43h8v8H8z" fill="#5EA7FF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs><linearGradient id="brikitoViolet" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#394CFF"/><stop offset="0.55" stop-color="#6500D8"/><stop offset="1" stop-color="#870873"/>
+  </linearGradient></defs>
+  <g fill="url(#brikitoViolet)">
+    <path d="M42 28H105V119C105 142 91 158 73 158C55 158 42 143 42 121Z"/>
+    <path d="M117 28H155C183 28 204 48 204 76C204 103 183 121 155 121H117Z"/>
+    <path d="M42 192C42 169 56 153 74 153C92 153 105 169 105 192V228H42Z"/>
+    <path d="M117 133H159C196 133 224 153 224 181C224 209 197 228 159 228H117Z"/>
+  </g>
 </svg>
