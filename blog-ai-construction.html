@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI in Construction: Practical Ways AI Can Help Project Teams | Brikito</title>
+  <meta name="description" content="Explore practical uses of AI in construction, from finding project information and structuring updates to summarising records—with clear limits and human oversight.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.brikito.com/blog-ai-construction.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What If Your Construction Project Had a Brain?">
+  <meta property="og:description" content="Explore practical uses of AI in construction, from finding project information and structuring updates to summarising records—with clear limits and human oversight.">
+  <meta property="og:url" content="https://www.brikito.com/blog-ai-construction.html">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "What If Your Construction Project Had a Brain?",
+    "description": "Explore practical uses of AI in construction, from finding project information and structuring updates to summarising records—with clear limits and human oversight.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.brikito.com/blog-ai-construction.html"
+    },
+    "author": {"@type": "Organization", "name": "Brikito"},
+    "publisher": {"@type": "Organization", "name": "Brikito"},
+    "inLanguage": "en"
+  }
+  </script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html" aria-label="Brikito">
+      <span>Brikito</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="lnk" href="index.html#intel">Platform</a>
+      <a class="lnk" href="index.html#brikai">Brik AI</a>
+      <a class="lnk" href="index.html#brikchat">BrikChat</a>
+      <a class="lnk" href="index.html#brikvision">BrikVision</a>
+      <a class="lnk" href="index.html#brikdocs">BrikDocs</a>
+      <a class="lnk" href="index.html#roadmap">Roadmap</a>
+      <a class="lnk" href="blog.html">Blog</a>
+      <a class="lnk" href="pricing.html">Pricing</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm login" href="#">Sign in</a>
+      <a class="btn btn-solid btn-sm" href="book-a-demo.html">Book a demo
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Construction technology · Artificial intelligence</div>
+        <h1>What If Your Construction Project Had a Brain?</h1>
+        <p class="dek">AI is not a substitute for a project manager, site engineer, or professional judgement. Used carefully, it can help construction teams find information, organise updates, and spot what needs attention sooner.</p>
+        <div class="meta">
+          <span>Brikito Editorial</span>
+          <span>7 min read</span>
+          <span>Technology / AI</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <article>
+        <div class="answer">
+          <p><strong>The short answer:</strong> AI in construction can help teams search project information, summarise documents and conversations, structure site updates, draft routine communications, and highlight items that may need follow-up. Its usefulness depends on the quality of the available information, the system’s actual capabilities, and human review. AI should support decisions—not quietly make safety-critical, contractual, financial, or technical decisions on its own.</p>
+        </div>
+
+        <p>A project manager needs the latest status before a meeting. The answer may be somewhere in a site update, an email, a drawing note, a chat, or a spreadsheet. The information exists, but collecting it takes time.</p>
+        <p>Now imagine being able to ask a question in plain language, get a summary of the relevant records, and see where that answer came from. That is one practical way AI could help construction teams: reducing the effort involved in finding and organising information.</p>
+        <p>But construction is a real-world environment with changing conditions, complex responsibilities, and significant consequences when information is wrong. The question is not whether AI can do everything. It is <strong>which repetitive information tasks can AI help with—and where must a person remain in control?</strong></p>
+
+        <h2 id="meaning">What does AI in construction actually mean?</h2>
+        <p>Artificial intelligence in construction is a broad term for tools that perform tasks such as interpreting language, recognising patterns, analysing images, making predictions, or generating summaries and drafts. Different tools have different capabilities; an AI chatbot, a progress-monitoring system, and a predictive analytics model are not the same thing.</p>
+        <p>For project teams, useful applications often begin with information work: searching for a record, turning unstructured notes into a consistent update, summarising a meeting, or helping someone find the next action in a long conversation.</p>
+        <p>These uses do not require treating AI as an autonomous site manager. They require a well-defined task, relevant data, appropriate access controls, and a way for people to check the result.</p>
+
+        <h2 id="use-cases">Five practical ways AI can help construction teams</h2>
+        <h3>1. Find project information faster</h3>
+        <p>When a system can search the project records available to a user, a plain-language question may be easier than opening multiple folders and threads. For example, a team member might ask where a particular approval is recorded or which update mentions a blocker. The answer should make its source clear enough to verify.</p>
+
+        <h3>2. Turn raw updates into structured information</h3>
+        <p>Site updates can arrive as short messages, notes, or voice-to-text transcripts. AI may help organise them into fields such as activity, location, progress, blocker, and next action. A responsible workflow still lets the person who reported the work review the structured record, especially when details are ambiguous.</p>
+
+        <h3>3. Summarise meetings and conversations</h3>
+        <p>AI-generated meeting summaries can help teams review decisions, action items, and follow-ups without rereading every note. Names, dates, quantities, commitments, and technical terms should be checked against the original record before a summary is treated as authoritative.</p>
+
+        <h3>4. Draft routine communications</h3>
+        <p>AI can help prepare a first draft of a progress update, an email, or a request for missing information. The responsible person should review the wording, factual details, recipients, and any contractual implications before sending it. Drafting support is not the same as authorising a formal instruction.</p>
+
+        <h3>5. Help surface items that need attention</h3>
+        <p>When connected to reliable project data, software may help bring overdue actions, unresolved issues, or repeated blockers into view. Teams should understand what data the system uses, how alerts are generated, and what may be missed. A flag is a prompt to investigate—not proof that something is wrong.</p>
+
+        <div class="callout">
+          <span class="mono">A practical rule</span>
+          Use AI to reduce searching, sorting, and first-draft work. Keep people responsible for verification, approvals, technical judgement, safety, and consequential project decisions.
+        </div>
+
+        <h2 id="limits">What AI should not be trusted to do blindly</h2>
+        <p>AI systems can produce convincing answers that are incomplete, outdated, or incorrect. They may miss context, misunderstand an abbreviation, combine information from different revisions, or present an inference as if it were a confirmed fact.</p>
+        <ul>
+          <li><strong>Do not treat an AI answer as drawing approval.</strong> Check the authoritative document, revision, and approval status through the project’s formal process.</li>
+          <li><strong>Do not rely on generated calculations without checking them.</strong> Quantities, measurements, estimates, and financial figures should be verified using the approved method and source records.</li>
+          <li><strong>Do not delegate safety-critical decisions to a chatbot.</strong> Follow site safety procedures and involve the qualified people responsible for the work.</li>
+          <li><strong>Do not assume every answer is based on every project record.</strong> Understand the system’s data connections, permissions, and limitations.</li>
+          <li><strong>Do not upload sensitive information without checking the rules.</strong> Follow company policy, contractual obligations, and the tool’s data-handling terms.</li>
+        </ul>
+        <p>The right level of review depends on the task. A draft internal summary may need a quick check; a technical instruction or safety-related decision requires the project’s proper review and approval process.</p>
+
+        <h2 id="foundations">Four foundations to put in place before adopting AI</h2>
+        <h3>1. Improve the information it can use</h3>
+        <p>AI cannot reliably retrieve information that has never been recorded or is not connected to the system. Start by deciding where important records live, how they are labelled, and which version is authoritative.</p>
+
+        <h3>2. Define access and ownership</h3>
+        <p>People should only see information they are authorised to access. Set clear rules for permissions, data handling, and who owns the source records. Convenient search should not bypass project confidentiality or formal controls.</p>
+
+        <h3>3. Choose one narrow workflow</h3>
+        <p>Begin with a recurring task that consumes time but has a manageable risk, such as summarising routine meeting notes or organising daily updates. Define what a good result looks like, who checks it, and how errors are corrected.</p>
+
+        <h3>4. Measure whether it helps</h3>
+        <p>Evaluate the workflow using practical measures: time spent searching, completeness of records, number of corrections, follow-up clarity, or user adoption. Do not judge success by how impressive a demonstration looks; judge it by whether the team’s real process improves.</p>
+
+        <h2 id="software">AI and construction management software</h2>
+        <p>AI is most useful when it is connected to relevant workflows rather than added as an isolated chat window. A construction-focused system may bring conversations, documents, attendance, progress updates, and action records into a more connected environment. AI features can then help users work with the information that is actually available to them, depending on the product and its configuration.</p>
+        <p>When evaluating a platform, ask which sources the AI can access, whether answers can be checked against source records, how user permissions are applied, how information is stored, and what happens when the system does not know the answer.</p>
+        <p>Also check whether the product supports your required processes in practice. Product labels alone do not guarantee that every workflow is covered, and AI capabilities vary between systems.</p>
+
+        <h2 id="brikito">Where Brikito fits</h2>
+        <p>Brikito is designed around connected construction information, bringing project conversations, documents, attendance, and progress visibility into a construction-focused workspace. Brik AI is intended to help users ask questions in plain language about available project information.</p>
+        <p>The goal is to make it easier for a project team to find relevant context and follow up on information without relying entirely on scattered messages and disconnected records. The quality of the result still depends on the information available, the system’s configured capabilities, and the user’s access rights.</p>
+        <p>For formal decisions, teams should continue to verify answers against authoritative project records and follow their existing technical, contractual, and safety procedures.</p>
+
+        <h2 id="checklist">AI readiness checklist for construction teams</h2>
+        <ul>
+          <li>Have we identified a repetitive information task that is worth improving?</li>
+          <li>Is the source information reasonably accurate, current, and accessible?</li>
+          <li>Do we know which project records the AI tool can and cannot use?</li>
+          <li>Are permissions and sensitive-data rules clearly defined?</li>
+          <li>Is a named person responsible for checking the output?</li>
+          <li>Do we have a simple way to correct mistakes and measure the result?</li>
+        </ul>
+        <p>If several answers are “no,” begin with the information process before expanding the AI use case. Clear records and ownership create a stronger foundation than adding a new tool to a fragmented workflow.</p>
+
+        <h2 id="faqs">Frequently asked questions</h2>
+        <div class="faq">
+          <h3>How is AI used in construction?</h3>
+          <p>Depending on the system, AI can support tasks such as searching records, summarising meetings, structuring site updates, drafting routine communications, analysing data, or helping surface items for review. The available features differ between tools.</p>
+
+          <h3>Can AI replace a construction project manager?</h3>
+          <p>AI can assist with information-heavy and repetitive tasks, but it does not replace the accountability, experience, coordination, and professional judgement required of a project manager.</p>
+
+          <h3>Can AI give the correct answer about a project?</h3>
+          <p>It can provide useful answers when relevant, reliable information is available, but it can also make mistakes or miss context. Important answers should be checked against authoritative project records.</p>
+
+          <h3>Is AI in construction only for large companies?</h3>
+          <p>Not necessarily. The right starting point depends on the team’s workflow, data readiness, budget, and risk—not company size alone. A small, clearly defined use case may be more useful than a broad rollout.</p>
+
+          <h3>What should companies check before adopting AI construction software?</h3>
+          <p>Check data access and security, source traceability, user permissions, integration with existing workflows, output review, support, and how success will be measured. Confirm the specific features offered by the vendor.</p>
+        </div>
+
+        <h2 id="takeaway">The best construction AI starts with a clear job</h2>
+        <p>AI does not need to run the entire project to be useful. Helping a team find a record, organise an update, or prepare a clear summary can be valuable when it saves time without weakening control.</p>
+        <p>Start with a real problem. Give the system reliable information. Keep access and review responsibilities clear. Then measure whether the workflow has improved. That is a more practical path to AI in construction than expecting technology to fix every process at once.</p>
+      </article>
+
+      <aside class="toc" aria-label="Article contents">
+        <span class="mono">In this article</span>
+        <nav>
+          <a href="#meaning">What AI in construction means</a>
+          <a href="#use-cases">Five practical use cases</a>
+          <a href="#limits">Where human review matters</a>
+          <a href="#foundations">Four adoption foundations</a>
+          <a href="#software">AI and construction software</a>
+          <a href="#brikito">Where Brikito fits</a>
+          <a href="#checklist">AI readiness checklist</a>
+          <a href="#faqs">FAQs</a>
+        </nav>
+      </aside>
+    </div>
+
+    <section class="cta-band">
+      <div class="cta-inner">
+        <div>
+          <h2>Make project information easier to work with.</h2>
+          <p>See how Brikito is designed to connect construction conversations, documents, and project updates.</p>
+        </div>
+        <a class="button light" href="book-a-demo.html">Book a Demo&nbsp; ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="index.html" style="font-size:16px">
+          <span>Brikito</span>
+        </a>
+        <p class="tag">One app for the whole construction site, with Brik AI built in.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html#intel">Platform</a></li>
+          <li><a href="index.html#brikai">Brik AI</a></li>
+          <li><a href="index.html#brikchat">BrikChat</a></li>
+          <li><a href="index.html#brikvision">BrikVision</a></li>
+          <li><a href="index.html#brikdocs">BrikDocs</a></li>
+          <li><a href="index.html#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="index.html">Customers</a></li>
+          <li><a href="index.html">Careers</a></li>
+          <li><a href="index.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="index.html">Spec deck</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html">Terms</a></li>
+          <li><a href="index.html">Security</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li>
+          <li><a href="book-a-demo.html">Book a demo</a></li>
+          <li><a href="index.html">Partners</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Brikito · Built in India · <a href="privacy.html" style="text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></div>
+      <div class="badges">
+        <span class="badge">Data hosted in India</span>
+        <span class="badge">Multi-project</span>
+        <span class="badge">Role-scoped access</span>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

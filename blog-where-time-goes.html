@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Where Does a Construction Project Actually Lose Time? | Construction Project Delays | Brikito</title>
+<meta content="Construction delays often build up between activities, approvals, decisions, and team handoffs. Learn how to identify waiting time and improve construction project coordination." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://www.brikito.com/blog-where-time-goes.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Where Does a Construction Project Actually Lose Time?" property="og:title"/>
+<meta content="Construction delays often build up between activities, approvals, decisions, and team handoffs. Learn how to identify waiting time and improve construction project coordination." property="og:description"/>
+<meta content="https://www.brikito.com/blog-where-time-goes.html" property="og:url"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Where Does a Construction Project Actually Lose Time?",
+  "description": "Construction delays often build up between activities, approvals, decisions, and team handoffs. Learn how to identify waiting time and improve construction project coordination.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.brikito.com/blog-where-time-goes.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Brikito"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Brikito"
+  },
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<header class="nav">
+<div class="wrap nav-inner">
+<a aria-label="Brikito" class="logo" href="index.html">
+<span>Brikito</span>
+</a>
+<nav aria-label="Primary" class="nav-links">
+<a class="lnk" href="index.html#intel">Platform</a>
+<a class="lnk" href="index.html#brikai">Brik AI</a>
+<a class="lnk" href="index.html#brikchat">BrikChat</a>
+<a class="lnk" href="index.html#brikvision">BrikVision</a>
+<a class="lnk" href="index.html#brikdocs">BrikDocs</a>
+<a class="lnk" href="index.html#roadmap">Roadmap</a>
+<a class="lnk" href="blog.html">Blog</a>
+<a class="lnk" href="pricing.html">Pricing</a>
+</nav>
+<div class="nav-cta">
+<a class="btn btn-ghost btn-sm login" href="#">Sign in</a>
+<a class="btn btn-solid btn-sm" href="book-a-demo.html">Book a demo
+        <svg aria-hidden="true" class="ico arrow" fill="none" viewbox="0 0 14 14"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+</div>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">Construction operations · Planning and workflow</div>
+<h1>Where Does a Construction Project Actually Lose Time?</h1>
+<p class="dek">Project delays are not always caused by one major incident. Time can disappear in small waits between approvals, decisions, information handoffs, and teams—often before anyone labels the project delayed.</p>
+<div class="meta"><span>Brikito Editorial</span><span>5 min read</span><span>Planning / Time</span></div>
+</div>
+</section>
+<div class="layout">
+<article>
+<div class="answer"><p><strong>The short answer:</strong> Construction projects can lose time in the gaps between activities: waiting for approvals, clarifications, materials, access, inspections, or another team to finish a prerequisite. To understand where time is going, track not only work duration but also waiting time, dependencies, decision ownership, and the reason each activity is blocked.</p></div>
+<p>A crew is ready to start, but a clarification has not arrived. Another activity is finished, but the next trade has not been told. A material delivery is on site, yet the work area is not ready. None of these moments necessarily looks like a major delay on its own.</p>
+<p>But when these small waits happen repeatedly across a project, they can disrupt sequencing, create idle time, and push dependent activities later. The useful question is not simply “Why are we behind?” It is “Where did the next activity have to wait, and what was it waiting for?”</p>
+<h2 id="delay-vs-wait">A delay is often a chain of small waits</h2>
+<p>A project schedule shows planned activities and dependencies. The daily reality also includes decisions, coordination, access, approvals, inspections, and the movement of information between people. When one of these prerequisites is not ready, the next activity may be unable to proceed as planned.</p>
+<p>This does not mean every wait causes a critical delay. The effect depends on the schedule, available float, work sequence, resources, and whether other work can continue. The goal is to identify the cause and understand its effect—not assume every blocked task moves the completion date.</p>
+<h2 id="where-time-goes">Five places construction time can disappear</h2>
+<h3>1. Waiting for a decision or clarification</h3><p>A site team may discover a conflict or need a technical answer before continuing. If the question is not clearly recorded, assigned, and followed up, it can sit in a conversation while the crew waits. Capture the question, location, required response, owner, and date it is needed.</p>
+<h3>2. Approvals and inspections that are not ready</h3><p>Work may depend on a formal approval, inspection, or sign-off. When the request is raised late or the status is unclear, teams can lose time preparing, checking, and chasing. Plan required hold points in advance and make pending approvals visible to the people scheduling the next activity.</p>
+<h3>3. Handoffs between trades and teams</h3><p>One team may finish its task without the next team knowing the area is ready—or without the next team’s prerequisites being complete. A handoff should communicate what is finished, what remains open, any restrictions, and who confirms readiness.</p>
+<h3>4. Materials, equipment, or work areas not being ready</h3><p>A planned activity can be delayed if the required materials, tools, access, or work front are unavailable. Readiness checks should happen early enough to address issues before labour and equipment are committed.</p>
+<h3>5. Information that exists but cannot be found quickly</h3><p>Teams may spend time searching messages, checking which drawing is current, confirming an instruction, or asking several people for the same update. That time is difficult to see unless the project records the repeated searches and follow-ups that occur around blocked work.</p>
+<h2 id="why-chasing-fails">Why chasing updates is not the same as managing delays</h2>
+<p>Phone calls and messages can help unblock work, but constant chasing is usually a signal that status, ownership, or the next action is not visible enough. If a project manager must contact several people to learn whether an approval is complete, the process depends on manual reconstruction rather than a dependable status record.</p>
+<p>More reporting is not automatically the answer either. Updates are useful when they show what changed, what is blocked, why it is blocked, who owns the next action, and when a response is needed.</p>
+<h2 id="measure">How to identify where time is going</h2>
+<h3>1. Record the blocker, not just “delayed”</h3><p>Use a clear reason such as pending approval, missing information, material not available, access constraint, unresolved interface, or prerequisite work incomplete. Avoid labels so broad that they do not help anyone act.</p>
+<h3>2. Track when the wait starts and ends</h3><p>Record when the activity became blocked, when the required input arrived, and when work resumed. This gives the team a more useful picture than a status note with no timeline. Keep records proportionate to the project and its reporting requirements.</p>
+<h3>3. Assign one owner for the next action</h3><p>Every blocker should have a responsible person or role, a clear next step, and an appropriate due date. Multiple people may contribute, but accountability for moving the issue forward should be explicit.</p>
+<h3>4. Link the issue to the affected activity</h3><p>Connect the blocker to the relevant work package, location, drawing, approval, or schedule activity. That context helps the team understand what is affected and whether alternative work can continue.</p>
+<h3>5. Review recurring causes weekly</h3><p>Look for patterns: the same approval repeatedly arrives late, the same handoff is unclear, or information is frequently missing before work starts. Fixing the recurring process may prevent more waiting than escalating each individual incident.</p>
+<div class="callout"><span class="mono">A useful question</span> What is the next activity waiting for, who owns that input, and what evidence will tell us it is ready?</div>
+<h2 id="planning">Build readiness into the plan</h2>
+<p>Before an activity is scheduled to start, check that its prerequisites are understood: current instructions, required approvals, materials, access, equipment, labour, and preceding work. The exact checks depend on the activity and the project’s safety, quality, and contractual procedures.</p>
+<p>At coordination meetings, focus on the next sequence of work and the conditions needed to make it happen. A short list of blockers with owners and due dates is often more actionable than a long update that simply says the project is behind.</p>
+<h2 id="software">Where construction management software can help</h2>
+<p>Construction management software can support this process by bringing updates, documents, issues, and project status into a more connected workflow. Depending on the product and configuration, it may help teams see pending items, retain context, and make ownership clearer.</p>
+<p>Software alone does not remove schedule risk or guarantee that updates are accurate. The project still needs a realistic programme, sound sequencing, disciplined planning, timely decisions, and people responsible for maintaining reliable records.</p>
+<h2 id="brikito">Connecting updates with Brikito</h2>
+<p>Brikito is designed to help construction teams keep conversations, documents, and project updates in a more connected workspace. That can support day-to-day coordination by making relevant information easier to access and discuss.</p>
+<p>For schedule and blocker workflows, define how the team will record status, assign owners, and confirm readiness. Use Brikito alongside the project’s formal programme, approval processes, and safety and quality controls—not as a replacement for them.</p>
+<h2 id="checklist">Construction delay visibility checklist</h2>
+<ul><li>Are blockers recorded with a specific reason rather than only “delayed”?</li><li>Is the affected activity or work area identified?</li><li>Does each blocker have a named owner and next action?</li><li>Are required approvals and inspections planned before they become urgent?</li><li>Are materials, access, equipment, and preceding work checked for readiness?</li><li>Can teams see when a blocker started and when it was resolved?</li><li>Are recurring causes reviewed and corrected?</li></ul>
+<h2 id="faqs">Frequently asked questions</h2>
+<div class="faq"><h3>Where do construction projects commonly lose time?</h3><p>Common sources include waiting for approvals or clarifications, incomplete handoffs, unavailable materials or access, unresolved coordination issues, and difficulty finding current project information. The causes and schedule impact vary by project.</p>
+<h3>How can a project manager identify hidden delays?</h3><p>Track blockers with start and end times, reasons, affected activities, and owners. Review recurring patterns instead of relying only on high-level schedule status.</p>
+<h3>Does every blocked activity delay project completion?</h3><p>No. The effect depends on the schedule logic, float, dependencies, and whether other work can proceed. Assess the actual impact against the project programme.</p>
+<h3>How can construction teams reduce waiting time?</h3><p>Plan prerequisites early, clarify decision ownership, make approval status visible, coordinate handoffs, check work-front readiness, and review repeated blockers.</p>
+<h3>Can construction management software prevent delays?</h3><p>Software can support visibility and coordination, but it cannot guarantee that delays will be prevented. Results depend on planning quality, accurate information, adoption, decision-making, and project controls.</p></div>
+<h2 id="takeaway">Manage the waiting, not just the work</h2>
+<p>When a project falls behind, the visible activity is only part of the story. Time may also be lost while people wait for information, approvals, materials, access, or another team to be ready.</p>
+<p>Make those waits visible. Record the reason, connect it to the affected work, assign the next action, and review recurring causes. Better visibility will not eliminate every delay, but it gives the team a clearer basis for deciding what to do next.</p>
+</article>
+<aside aria-label="Article contents" class="toc"><span class="mono">In this article</span><nav><a href="#delay-vs-wait">Delays and waiting</a><a href="#where-time-goes">Five common time gaps</a><a href="#why-chasing-fails">Why chasing fails</a><a href="#measure">How to identify lost time</a><a href="#planning">Plan for readiness</a><a href="#software">Where software helps</a><a href="#brikito">Brikito and coordination</a><a href="#checklist">Delay visibility checklist</a><a href="#faqs">FAQs</a></nav></aside>
+</div>
+<section class="cta-band">
+<div class="cta-inner">
+<div>
+<h2>Make project blockers easier to see.</h2>
+<p>See how Brikito helps construction teams connect project conversations, documents, and updates.</p>
+</div>
+<a class="button light" href="book-a-demo.html">Book a Demo  ↗</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="foot-top">
+<div class="foot-brand">
+<a class="logo" href="index.html" style="font-size:16px">
+<span>Brikito</span>
+</a>
+<p class="tag">One app for the whole construction site, with Brik AI built in.</p>
+</div>
+<div class="foot-col">
+<h4>Product</h4>
+<ul>
+<li><a href="index.html#intel">Platform</a></li>
+<li><a href="index.html#brikai">Brik AI</a></li>
+<li><a href="index.html#brikchat">BrikChat</a></li>
+<li><a href="index.html#brikvision">BrikVision</a></li>
+<li><a href="index.html#brikdocs">BrikDocs</a></li>
+<li><a href="index.html#roadmap">Roadmap</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h4>Company</h4>
+<ul>
+<li><a href="index.html">About</a></li>
+<li><a href="index.html">Customers</a></li>
+<li><a href="index.html">Careers</a></li>
+<li><a href="index.html">Press</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h4>Resources</h4>
+<ul>
+<li><a href="index.html">Spec deck</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="index.html">Terms</a></li>
+<li><a href="index.html">Security</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li>
+<li><a href="book-a-demo.html">Book a demo</a></li>
+<li><a href="index.html">Partners</a></li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+<div>© 2026 Brikito · Built in India · <a href="privacy.html" style="text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></div>
+<div class="badges">
+<span class="badge">Data hosted in India</span>
+<span class="badge">Multi-project</span>
+<span class="badge">Role-scoped access</span>
+</div>
+</div>
+</div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

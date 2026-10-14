@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rework Isn’t Always a Labour Problem: The Information Gaps Behind Construction Rework | Brikito</title>
+<meta content="Construction rework can start with unclear instructions, outdated drawings, missed approvals, and poor handoffs. Learn how teams can reduce avoidable rework through better coordination and information management." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://www.brikito.com/blog-rework-coordination.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Rework Isn’t Always a Labour Problem" property="og:title"/>
+<meta content="Construction rework can start with unclear instructions, outdated drawings, missed approvals, and poor handoffs. Learn how teams can reduce avoidable rework through better coordination and information management." property="og:description"/>
+<meta content="https://www.brikito.com/blog-rework-coordination.html" property="og:url"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+</style>
+<script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Rework Isn’t Always a Labour Problem",
+  "description": "Construction rework can start with unclear instructions, outdated drawings, missed approvals, and poor handoffs. Learn how teams can reduce avoidable rework through better coordination and information management.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.brikito.com/blog-rework-coordination.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Brikito"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Brikito"
+  },
+  "inLanguage": "en"
+}
+  </script>
+<link href="https://www.brikito.com/blog-rework-coordination.html" rel="canonical"/></head>
+<body>
+<header class="nav">
+<div class="wrap nav-inner">
+<a aria-label="Brikito" class="logo" href="index.html">
+<span>Brikito</span>
+</a>
+<nav aria-label="Primary" class="nav-links">
+<a class="lnk" href="index.html#intel">Platform</a>
+<a class="lnk" href="index.html#brikai">Brik AI</a>
+<a class="lnk" href="index.html#brikchat">BrikChat</a>
+<a class="lnk" href="index.html#brikvision">BrikVision</a>
+<a class="lnk" href="index.html#brikdocs">BrikDocs</a>
+<a class="lnk" href="index.html#roadmap">Roadmap</a>
+<a class="lnk" href="blog.html">Blog</a>
+<a class="lnk" href="pricing.html">Pricing</a>
+</nav>
+<div class="nav-cta">
+<a class="btn btn-ghost btn-sm login" href="#">Sign in</a>
+<a class="btn btn-solid btn-sm" href="book-a-demo.html">Book a demo
+        <svg aria-hidden="true" class="ico arrow" fill="none" viewbox="0 0 14 14"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+</div>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">Construction operations · Quality and coordination</div>
+<h1>Rework Isn’t Always a Labour Problem</h1>
+<p class="dek">When completed work has to be removed, corrected, or repeated, the immediate cause may look like an execution mistake. But sometimes the conditions for that mistake were created earlier—by unclear instructions, missing context, outdated information, or a handoff that never reached the right person.</p>
+<div class="meta"><span>Brikito Editorial</span><span>4 min read</span><span>Quality / Delivery</span></div>
+</div>
+</section>
+<div class="layout">
+<article>
+<div class="answer"><p><strong>The short answer:</strong> Construction rework is not always caused by poor workmanship or low productivity. It can also happen when teams work from unclear instructions, miss a drawing revision, act before an approval is confirmed, or receive information too late. Reducing avoidable rework means checking the information and coordination around the work—not just the work itself.</p></div>
+<p>A wall is built according to the drawing available to the crew. Later, the team discovers that a newer revision changed an opening. The wall has to be cut, adjusted, inspected, and finished again.</p>
+<p>From the outside, it may look like a site execution problem. But the useful question is broader: did the people doing the work have the right approved information at the right time?</p>
+<p>That question matters because rework can have several causes. Some are technical or workmanship-related. Others start with planning, coordination, decisions, and information handoffs that happen before work begins.</p>
+<h2 id="rework-means">What construction rework really means</h2>
+<p>Construction rework is work that must be repeated, corrected, removed, or modified because the completed result does not meet the required design, specification, quality standard, or agreed scope.</p>
+<p>Not every instance of rework has the same cause. It may result from a workmanship defect, a design change, a coordination conflict, a misunderstood instruction, a missing approval, or a material that does not meet the specification. Finding the actual cause is more useful than assigning blame too early.</p>
+<h2 id="information-causes">How information gaps lead to rework</h2>
+<h3>1. The team works from an outdated drawing</h3><p>A superseded drawing may look professional and contain accurate details for an earlier design. If the latest approved revision is not clearly identified and communicated, teams can build work that no longer matches the current requirements.</p>
+<h3>2. An instruction loses its context</h3><p>A short message such as “move this point” may make sense to the person who sent it, but not to another crew reading it later. Without a clear location, reference, reason, and confirmation, people may interpret the same instruction differently.</p>
+<h3>3. Work starts before a decision is confirmed</h3><p>When an approval, inspection, or technical clarification is still pending, starting the next activity can create a risk that the work will need to be changed. Teams need a clear way to see what is approved, what remains open, and who owns the next action.</p>
+<h3>4. A handoff fails between teams</h3><p>Construction activities depend on one another. A change known to one discipline may affect another crew’s work. If the update does not reach everyone affected—or there is no confirmation that it was understood—teams can proceed using different assumptions.</p>
+<h3>5. Site feedback never reaches the decision-maker</h3><p>Site teams may spot a conflict or unexpected condition early. If that observation is buried in a chat, passed on verbally, or not assigned to an owner, the issue can remain unresolved until work has progressed further.</p>
+<h2 id="real-cost">What avoidable rework can affect</h2>
+<p>The impact is not limited to the labour needed to redo an activity. Depending on the situation, rework can also involve additional materials, equipment time, inspections, disposal, disrupted sequencing, and delays to dependent trades. It may create disagreement about responsibility or make it harder to understand the true status of a work package.</p>
+<p>The actual impact varies by project and incident. Rather than assuming every rework event has the same cost, record the cause, affected activity, corrective action, and consequence. That gives the team evidence to identify recurring patterns.</p>
+<h2 id="prevent">Six practical ways to reduce avoidable rework</h2>
+<h3>1. Confirm the current approved information before work starts</h3><p>Make the authoritative drawing, specification, or instruction easy to identify. Establish a clear process for checking revision and approval status before starting affected work.</p>
+<h3>2. Make instructions specific</h3><p>Include the location, relevant drawing or detail, required action, responsible person, and any deadline or dependency. Where a decision is technical or safety-critical, use the formal review and approval process rather than relying on an informal message alone.</p>
+<h3>3. Track open questions and approvals</h3><p>Record what is unresolved, who must respond, and whether the answer affects work already planned. Make it clear which activities must wait for confirmation under the project’s procedures.</p>
+<h3>4. Close the loop on changes</h3><p>When a revision or decision is issued, identify the teams and subcontractors affected. Communicate the change through the agreed channel and confirm that the relevant people have access to the current information.</p>
+<h3>5. Capture site issues while the context is fresh</h3><p>Use a consistent issue report with the location, description, supporting photo or document reference, date, owner, and next action. A report should help the right person understand and resolve the issue—not simply add another message to the conversation.</p>
+<h3>6. Review causes, not just counts</h3><p>During project reviews, look for repeated patterns: revision confusion, late approvals, coordination clashes, unclear responsibilities, or incomplete handoffs. Assign corrective actions to improve the process as well as addressing the immediate defect.</p>
+<div class="callout"><span class="mono">A useful question</span> Before asking “Who made the mistake?”, ask “What information did the team have, what should they have had, and where did the handoff break down?”</div>
+<h2 id="software">Where construction management software can help</h2>
+<p>Software can support rework prevention when it helps teams find relevant project records, share updates with context, track issues and owners, and understand which actions remain open. The benefit depends on the system’s capabilities and how consistently the project uses it.</p>
+<p>Software does not automatically prevent design errors, replace technical coordination, or guarantee that everyone has read an update. Teams still need controlled document processes, appropriate reviews, clear responsibilities, and competent professional judgement.</p>
+<h2 id="brikito">Connecting project information with Brikito</h2>
+<p>Brikito is designed to bring construction conversations, documents, and project updates into a more connected workspace. The goal is to make it easier for teams to access relevant information and maintain context around day-to-day project coordination.</p>
+<p>For rework prevention, teams should establish how they will use the platform alongside their formal drawing, approval, inspection, and quality procedures. Confirm the features enabled in your Brikito setup, and continue to follow the project’s authoritative document-control process before acting on technical information.</p>
+<h2 id="checklist">Rework-prevention checklist</h2>
+<ul><li>Can the team identify the current approved drawing before work starts?</li><li>Are instructions clear enough for another person to understand later?</li><li>Are pending approvals and technical questions visible with named owners?</li><li>Do changes reach all affected trades and subcontractors?</li><li>Can site teams report issues with location and supporting evidence?</li><li>Are recurring rework causes reviewed and assigned corrective actions?</li><li>Are formal quality, safety, and document-control processes followed?</li></ul>
+<h2 id="faqs">Frequently asked questions</h2>
+<div class="faq"><h3>Is construction rework always caused by labour mistakes?</h3><p>No. Workmanship can be a cause, but rework may also stem from design changes, outdated information, unclear instructions, missed approvals, coordination conflicts, or other project conditions. Each case should be investigated on its own evidence.</p>
+<h3>How can outdated drawings cause rework?</h3><p>If a team uses a superseded drawing, completed work may no longer match the current approved design. Revision control and clear communication of changes help reduce this risk.</p>
+<h3>What is the first step to reducing construction rework?</h3><p>Start by recording the reason for each rework event and checking what information, instruction, approval, or coordination step was involved. Use the findings to address recurring causes rather than relying on assumptions.</p>
+<h3>Can construction management software eliminate rework?</h3><p>No software can guarantee that rework will be eliminated. Suitable tools may improve access to information, issue tracking, and coordination, but results depend on project processes, accurate records, adoption, and technical oversight.</p>
+<h3>What should a rework report include?</h3><p>At minimum, record the location, description, date, relevant drawing or specification, observed cause where known, corrective action, responsible owner, and follow-up status. Use the project’s required quality procedures and forms.</p></div>
+<h2 id="takeaway">Better coordination starts before the work begins</h2>
+<p>When rework occurs, the immediate defect needs to be corrected. But teams can also learn from the sequence of information, instructions, approvals, and handoffs that led to it.</p>
+<p>Look beyond the final mistake. Make current information easier to identify, keep unresolved decisions visible, and give every issue a clear owner and next step. Those habits will not remove every construction risk, but they can help teams reduce avoidable rework and coordinate with greater confidence.</p>
+</article>
+<aside aria-label="Article contents" class="toc">
+<span class="mono">In this article</span>
+<nav><a href="#rework-means">What rework means</a><a href="#information-causes">How information gaps cause it</a><a href="#real-cost">The impact of rework</a><a href="#prevent">Six prevention steps</a><a href="#software">Where software helps</a><a href="#brikito">Brikito and coordination</a><a href="#checklist">Rework checklist</a><a href="#faqs">FAQs</a></nav>
+</aside>
+</div>
+<section class="cta-band">
+<div class="cta-inner">
+<div>
+<h2>Reduce the information gaps behind rework.</h2>
+<p>See how Brikito helps construction teams connect project conversations, documents, and updates.</p>
+</div>
+<a class="button light" href="book-a-demo.html">Book a Demo  ↗</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="foot-top">
+<div class="foot-brand">
+<a class="logo" href="index.html" style="font-size:16px">
+<span>Brikito</span>
+</a>
+<p class="tag">One app for the whole construction site, with Brik AI built in.</p>
+</div>
+<div class="foot-col">
+<h4>Product</h4>
+<ul>
+<li><a href="index.html#intel">Platform</a></li>
+<li><a href="index.html#brikai">Brik AI</a></li>
+<li><a href="index.html#brikchat">BrikChat</a></li>
+<li><a href="index.html#brikvision">BrikVision</a></li>
+<li><a href="index.html#brikdocs">BrikDocs</a></li>
+<li><a href="index.html#roadmap">Roadmap</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h4>Company</h4>
+<ul>
+<li><a href="index.html">About</a></li>
+<li><a href="index.html">Customers</a></li>
+<li><a href="index.html">Careers</a></li>
+<li><a href="index.html">Press</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h4>Resources</h4>
+<ul>
+<li><a href="index.html">Spec deck</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="index.html">Terms</a></li>
+<li><a href="index.html">Security</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li>
+<li><a href="book-a-demo.html">Book a demo</a></li>
+<li><a href="index.html">Partners</a></li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+<div>© 2026 Brikito · Built in India · <a href="privacy.html" style="text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></div>
+<div class="badges">
+<span class="badge">Data hosted in India</span>
+<span class="badge">Multi-project</span>
+<span class="badge">Role-scoped access</span>
+</div>
+</div>
+</div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOQ and Construction Cost Overruns: Why Accurate Estimates Still Lose Money | Brikito</title>
+  <meta name="description" content="An accurate bill of quantities does not guarantee cost control. Learn how scope changes, material usage, rework, delays, and weak site reporting affect construction project costs.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.brikito.com/blog-boq-cost-overruns.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Your BOQ Can Be 100% Correct and Your Project Can Still Lose Money">
+  <meta property="og:description" content="An accurate bill of quantities does not guarantee cost control. Learn how scope changes, material usage, rework, delays, and weak site reporting affect construction project costs.">
+  <meta property="og:url" content="https://www.brikito.com/blog-boq-cost-overruns.html">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Your Construction Project Doesn't Have a Communication Problem. It Has an Information Problem.",
+    "description": "An accurate bill of quantities does not guarantee cost control. Learn how scope changes, material usage, rework, delays, and weak site reporting affect construction project costs.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.brikito.com/blog-boq-cost-overruns.html"
+    },
+    "author": {"@type": "Organization", "name": "Brikito"},
+    "publisher": {"@type": "Organization", "name": "Brikito"},
+    "inLanguage": "en"
+  }
+  </script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html" aria-label="Brikito">
+      <span>Brikito</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="lnk" href="index.html#intel">Platform</a>
+      <a class="lnk" href="index.html#brikai">Brik AI</a>
+      <a class="lnk" href="index.html#brikchat">BrikChat</a>
+      <a class="lnk" href="index.html#brikvision">BrikVision</a>
+      <a class="lnk" href="index.html#brikdocs">BrikDocs</a>
+      <a class="lnk" href="index.html#roadmap">Roadmap</a>
+      <a class="lnk" href="blog.html">Blog</a>
+      <a class="lnk" href="pricing.html">Pricing</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm login" href="#">Sign in</a>
+      <a class="btn btn-solid btn-sm" href="book-a-demo.html">Book a demo
+        <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Construction operations · Cost control</div>
+        <h1>Your BOQ Can Be 100% Correct and Your Project Can Still Lose Money</h1>
+        <p class="dek">A well-prepared bill of quantities gives a project an important cost baseline. But the estimate alone cannot control what happens on site. The gap between planned quantities and actual execution is where costs can quietly move.</p>
+        <div class="meta">
+          <span>Brikito Editorial</span>
+          <span>7 min read</span>
+          <span>Cost control / Site execution</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <article>
+        <div class="answer">
+          <p><strong>The short answer:</strong> A bill of quantities (BOQ) can be accurate and a construction project can still exceed its budget. A BOQ describes measured work and quantities based on the project information and assumptions used to prepare it. Actual cost also depends on procurement, wastage, productivity, scope changes, rework, site conditions, approvals, and how quickly the team spots deviations. Cost control means comparing the plan with what is actually happening—and acting on the difference.</p>
+        </div>
+
+        <p>Imagine the BOQ has been checked, the rates have been reviewed, and the budget has been approved. On paper, the numbers look right.</p>
+        <p>Then the project moves into execution. A material delivery is delayed. A drawing changes after work has started. The site team orders extra material to avoid stopping the activity. A quantity update reaches the office late. By the time the cost report is reviewed, the team is explaining a variance that began weeks earlier.</p>
+        <p>None of these situations automatically means the BOQ was wrong. They show why <strong>estimating the work and controlling the cost of doing the work are two different jobs.</strong></p>
+
+        <h2 id="boq">What a BOQ can—and cannot—tell you</h2>
+        <p>A bill of quantities sets out measured items of work and their quantities, often alongside units, rates, and amounts depending on the project and contract format. It helps teams price, procure, plan, and measure work against an agreed basis.</p>
+        <p>But a BOQ is not a live record of every site event. It does not automatically show whether actual consumption is above the allowance, whether a scope change has been approved, whether completed work has been measured, or whether a delay is creating additional cost.</p>
+        <p>Those questions need current project information, clear responsibilities, and a consistent way to compare planned and actual performance.</p>
+
+        <h2 id="cost-drivers">Five ways costs can drift after the estimate</h2>
+        <h3>1. Material usage differs from the plan</h3>
+        <p>Actual consumption can differ from estimated quantities because of cutting losses, damage, handling, storage, installation methods, or changes in site conditions. The important step is to record issues early and compare actual usage with the relevant allowance—not wait until the final account to investigate.</p>
+
+        <h3>2. Scope or design changes are not reflected promptly</h3>
+        <p>A revised requirement may affect quantities, labour, procurement, or sequence. If the change is discussed informally but the impact is not assessed and recorded through the project’s agreed process, teams can keep working from an outdated cost assumption.</p>
+
+        <h3>3. Rework consumes resources twice</h3>
+        <p>When work must be removed, corrected, or repeated, the project may use additional labour, materials, equipment, and time. Rework can follow from many causes, including unclear instructions, coordination gaps, quality issues, or superseded information. Record the cause as well as the cost so the team can prevent repeat problems.</p>
+
+        <h3>4. Delays create knock-on costs</h3>
+        <p>Waiting for an approval, material, decision, or completed predecessor activity can disrupt planned work. Depending on the contract and circumstances, delays may affect labour utilisation, equipment time, site overheads, and sequencing. Track the blocker, its owner, and the next action while the issue is still manageable.</p>
+
+        <h3>5. Actuals and commitments arrive too late</h3>
+        <p>If purchase orders, delivery records, measured quantities, labour updates, and change information are reviewed in separate places or updated inconsistently, the cost picture may lag behind site reality. Late visibility reduces the time available to investigate and respond.</p>
+
+        <div class="callout">
+          <span class="mono">A useful distinction</span>
+          The BOQ is part of the cost baseline. Cost control is the ongoing process of understanding commitments, actual performance, changes, and forecast outcomes against that baseline.
+        </div>
+
+        <h2 id="visibility">Why cost visibility depends on site information</h2>
+        <p>Cost reports are only as useful as the records behind them. A monthly total may show that spending is above plan, but the team still needs to know what changed, where it happened, which activity is affected, and whether the variance is temporary or likely to continue.</p>
+        <p>For example, a material variance is easier to investigate when the project can connect the purchase and delivery records with the location, activity, quantity received, quantity used, and any approved change. The exact records depend on the type of work and the project’s control process.</p>
+        <p>Similarly, a labour cost increase is easier to understand when the team can review progress, attendance, delays, rework, and the work actually completed during the same period. A single dashboard cannot fix missing data, but a clear reporting process can make gaps visible sooner.</p>
+
+        <h2 id="improve">Six practical ways to strengthen construction cost control</h2>
+        <h3>1. Agree on the baseline</h3>
+        <p>Make sure the team understands which BOQ, budget, rates, scope, and assumptions are being used as the comparison point. Keep approved changes distinguishable from the original baseline.</p>
+
+        <h3>2. Track commitments as well as payments</h3>
+        <p>Depending on your project controls, review purchase orders and other commitments alongside invoices and actual costs. A payment-only view can miss obligations that have already been made but have not yet appeared in paid totals.</p>
+
+        <h3>3. Compare planned and actual quantities regularly</h3>
+        <p>For suitable work packages, review measured progress, material usage, and remaining quantities at an agreed frequency. Investigate significant variances while the relevant site conditions and records are still easy to verify.</p>
+
+        <h3>4. Record changes through an agreed workflow</h3>
+        <p>Capture what changed, why it changed, who is reviewing it, and its likely impact on quantities, cost, and time. Follow the project’s contract and approval requirements before treating a change as authorised.</p>
+
+        <h3>5. Connect cost variances to causes and actions</h3>
+        <p>A variance report should lead to questions: What caused the difference? Is it confirmed or still an estimate? Who will investigate it? What decision or action is needed, and by when? Keep the supporting records linked to the issue where practical.</p>
+
+        <h3>6. Set a consistent review rhythm</h3>
+        <p>Agree who updates quantities, procurement, progress, and forecast information—and how often the project reviews it. The frequency should fit the project’s scale, risk, and reporting obligations. Consistency matters more than producing a complicated report nobody can maintain.</p>
+
+        <h2 id="software">Where construction management software fits</h2>
+        <p>Construction management software can help teams keep site updates, documents, issues, and progress information easier to find. Depending on the product and configuration, connected records can make it simpler to investigate a cost variance without piecing together every detail from separate chats, spreadsheets, and email threads.</p>
+        <p>Before choosing a tool, ask whether it supports the workflows your team actually uses: capturing timely site updates, finding the relevant drawing or approval, assigning follow-up actions, and giving the right people a clear view of current project status.</p>
+        <p>Software does not replace quantity surveying, accounting, contractual controls, or professional review. It should support those processes by making information more accessible and responsibilities clearer.</p>
+
+        <h2 id="brikito">How connected project information can help</h2>
+        <p>Brikito is designed to bring construction conversations, documents, attendance, and project updates into a more connected workspace. When teams consistently capture the relevant information, this can help reduce the effort involved in locating an update or understanding the context behind a site issue.</p>
+        <p>For cost control, the principle is simple: make the operational information behind the numbers easier to find and follow up on. The project’s own cost records, approvals, and professional checks remain the authority for financial decisions.</p>
+
+        <h2 id="checklist">A quick cost-control self-check</h2>
+        <ul>
+          <li>Is the team clear about which BOQ and budget form the current baseline?</li>
+          <li>Are approved scope changes reflected in the right records?</li>
+          <li>Can the team compare actual quantities and material usage with the plan?</li>
+          <li>Are commitments, actual costs, and forecast costs reviewed appropriately?</li>
+          <li>Can a cost variance be traced to its cause, supporting records, owner, and next action?</li>
+          <li>Do project managers receive site information early enough to investigate issues?</li>
+        </ul>
+        <p>If several answers are “no” or “it depends who you ask,” start with one high-impact work package. Define the baseline, identify the records needed, agree who updates them, and review the variance regularly before expanding the process.</p>
+
+        <h2 id="faqs">Frequently asked questions</h2>
+        <div class="faq">
+          <h3>What is a BOQ in construction?</h3>
+          <p>A bill of quantities is a structured list of measured work items and quantities used to support pricing, procurement, measurement, and cost management, according to the project’s documents and contract arrangements.</p>
+
+          <h3>Can a correct BOQ still lead to a cost overrun?</h3>
+          <p>Yes. Actual costs can differ from the estimate because of changes in scope, material consumption, rework, productivity, delays, market conditions, or other project-specific factors. An accurate BOQ is a useful baseline, not a guarantee of the final cost.</p>
+
+          <h3>What is the difference between a BOQ and cost control?</h3>
+          <p>The BOQ helps define and price measured work. Cost control is the ongoing process of monitoring commitments and actual performance, assessing changes, forecasting outcomes, and responding to variances.</p>
+
+          <h3>How often should construction costs be reviewed?</h3>
+          <p>There is no single schedule for every project. Set a review frequency that matches the project’s size, risk, procurement cycle, contract, and reporting requirements. Important changes and unusual variances should be raised promptly rather than waiting for a routine report.</p>
+
+          <h3>Can construction software prevent cost overruns?</h3>
+          <p>No software can guarantee that a project will stay within budget. Suitable tools can support visibility and follow-up by connecting relevant project information, but results also depend on accurate records, disciplined processes, timely decisions, and professional cost management.</p>
+        </div>
+
+        <h2 id="takeaway">An accurate estimate is the start—not the finish—of cost control</h2>
+        <p>A BOQ gives a project a basis for planning and measuring work. Protecting the budget requires the team to keep comparing that plan with what is happening on site, understand the reasons for differences, and act before small issues become harder to manage.</p>
+        <p>Make the baseline clear. Keep changes visible. Review actuals and commitments. Connect site information to the decisions it supports. That is how a correct estimate becomes a more useful tool for managing cost through delivery.</p>
+      </article>
+
+      <aside class="toc" aria-label="Article contents">
+        <span class="mono">In this article</span>
+        <nav>
+          <a href="#boq">What a BOQ tells you</a>
+          <a href="#cost-drivers">Five cost drift factors</a>
+          <a href="#visibility">Why site information matters</a>
+          <a href="#improve">Six cost-control steps</a>
+          <a href="#software">Where software fits</a>
+          <a href="#brikito">Connected project information</a>
+          <a href="#checklist">Cost-control self-check</a>
+          <a href="#faqs">FAQs</a>
+        </nav>
+      </aside>
+    </div>
+
+    <section class="cta-band">
+      <div class="cta-inner">
+        <div>
+          <h2>Make project information easier to act on.</h2>
+          <p>See how Brikito can help construction teams connect project conversations, documents, and site updates.</p>
+        </div>
+        <a class="button light" href="book-a-demo.html">Book a Demo&nbsp; ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="index.html" style="font-size:16px">
+          <span>Brikito</span>
+        </a>
+        <p class="tag">One app for the whole construction site, with Brik AI built in.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html#intel">Platform</a></li>
+          <li><a href="index.html#brikai">Brik AI</a></li>
+          <li><a href="index.html#brikchat">BrikChat</a></li>
+          <li><a href="index.html#brikvision">BrikVision</a></li>
+          <li><a href="index.html#brikdocs">BrikDocs</a></li>
+          <li><a href="index.html#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="index.html">Customers</a></li>
+          <li><a href="index.html">Careers</a></li>
+          <li><a href="index.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="index.html">Spec deck</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html">Terms</a></li>
+          <li><a href="index.html">Security</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li>
+          <li><a href="book-a-demo.html">Book a demo</a></li>
+          <li><a href="index.html">Partners</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Brikito · Built in India · <a href="privacy.html" style="text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></div>
+      <div class="badges">
+        <span class="badge">Data hosted in India</span>
+        <span class="badge">Multi-project</span>
+        <span class="badge">Role-scoped access</span>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
