@@ -610,7 +610,7 @@
   .bl-cam .tagm{position:absolute;right:8px;bottom:7px;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--live);z-index:2;}
   .bl-cam .scan{position:absolute;left:0;right:0;height:36%;top:-40%;background:linear-gradient(180deg, transparent, rgba(120,180,255,.10), transparent);animation:bl-scan 4.2s linear infinite;}
   .bl-cam.c2 .scan{animation-delay:1s;} .bl-cam.c3 .scan{animation-delay:2s;} .bl-cam.c4 .scan{animation-delay:3s;}
-  .bl-cam img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.82) contrast(1.05) saturate(.92);transition:filter .3s ease;will-change:transform;animation:bl-kb-a 16s ease-in-out infinite alternate;}
+  .bl-cam img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.82) contrast(1.05) saturate(.92);transition:filter .3s ease;will-change:transform;animation:bl-kb-a 16s ease-in-out infinite alternate;}
   .bl-cam.c2 img{animation:bl-kb-b 19s ease-in-out infinite alternate;}
   .bl-cam.c3 img{animation:bl-kb-c 14s ease-in-out infinite alternate;}
   .bl-cam.c4 img{animation:bl-kb-d 21s ease-in-out infinite alternate;}
@@ -1275,7 +1275,7 @@
           </div>
           <div class="bl-cams">
             <div class="bl-cam c1">
-              <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20640%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23596775%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23151c24%22%2F%3E%3C%2FlinearGradient%3E%3Cpattern%20id%3D%22p%22%20width%3D%2242%22%20height%3D%2234%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Cpath%20d%3D%22M0%2034V0H42%22%20fill%3D%22none%22%20stroke%3D%22%23aab5bf%22%20stroke-opacity%3D%22.14%22%2F%3E%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M0%20220L110%20150%20200%20205%20310%20130%20420%20210%20530%20145%20640%20190V400H0Z%22%20fill%3D%22%23333f49%22%2F%3E%3Cpath%20d%3D%22M0%20280L640%20230V400H0Z%22%20fill%3D%22%23202a32%22%2F%3E%3Cpath%20d%3D%22M50%200V260M45%2035H270M250%2035V105M250%20105L170%20180M250%20105L320%20170%22%20stroke%3D%22%23c5d0d8%22%20stroke-width%3D%225%22%20stroke-opacity%3D%22.5%22%20fill%3D%22none%22%2F%3E%3Crect%20x%3D%22390%22%20y%3D%22240%22%20width%3D%22145%22%20height%3D%2275%22%20rx%3D%225%22%20fill%3D%22%23b17c3d%22%2F%3E%3Crect%20x%3D%22405%22%20y%3D%22253%22%20width%3D%22112%22%20height%3D%2242%22%20fill%3D%22%23e4bd7e%22%2F%3E%3Ccircle%20cx%3D%22420%22%20cy%3D%22320%22%20r%3D%2218%22%20fill%3D%22%230d1217%22%2F%3E%3Ccircle%20cx%3D%22510%22%20cy%3D%22320%22%20r%3D%2218%22%20fill%3D%22%230d1217%22%2F%3E%3Cg%20fill%3D%22%23f1b45c%22%3E%3Ccircle%20cx%3D%22265%22%20cy%3D%22250%22%20r%3D%2210%22%2F%3E%3Cpath%20d%3D%22M256%20263h18l9%2050h-34z%22%2F%3E%3Cpath%20d%3D%22M259%20310l-9%2037h9l12-31%209%2031h9l-10-37z%22%2F%3E%3C%2Fg%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23p%29%22%2F%3E%3C%2Fsvg%3E" alt="Site camera detecting workers, helmets and a delivery" loading="lazy"/>
+              <img src="images/cam-delivery.png" alt="Site camera detecting workers, helmets and a delivery" loading="lazy"/>
               <span class="label">CAM 01 · GATE</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
@@ -1283,7 +1283,7 @@
               <span class="scan" aria-hidden="true"></span>
             </div>
             <div class="bl-cam c2">
-              <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20640%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2352616e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23131a21%22%2F%3E%3C%2FlinearGradient%3E%3Cpattern%20id%3D%22p%22%20width%3D%2248%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Cpath%20d%3D%22M0%2040V0H48%22%20fill%3D%22none%22%20stroke%3D%22%23c0ccd5%22%20stroke-opacity%3D%22.15%22%2F%3E%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M60%200V330M210%200V330M365%200V330M520%200V330M0%2090H640M0%20190H640M0%20290H640%22%20stroke%3D%22%23bac5ce%22%20stroke-opacity%3D%22.25%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M0%20330L640%20290V400H0Z%22%20fill%3D%22%23202a32%22%2F%3E%3Cg%20fill%3D%22%23d8a45d%22%3E%3Cg%20transform%3D%22translate%28125%20175%29%22%3E%3Ccircle%20r%3D%2213%22%2F%3E%3Cpath%20d%3D%22M-12%2017H12L19%2075H-19Z%22%2F%3E%3Cpath%20d%3D%22M-12%2072L-22%20112H-10L0%2082%2010%20112H22L12%2072Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%28270%20210%29%22%3E%3Ccircle%20r%3D%2212%22%2F%3E%3Cpath%20d%3D%22M-11%2016H11L17%2068H-17Z%22%2F%3E%3Cpath%20d%3D%22M-10%2066L-19%20103H-8L0%2078%209%20103H20L11%2066Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%28430%20165%29%22%3E%3Ccircle%20r%3D%2213%22%2F%3E%3Cpath%20d%3D%22M-12%2017H12L19%2075H-19Z%22%2F%3E%3Cpath%20d%3D%22M-12%2072L-22%20112H-10L0%2082%2010%20112H22L12%2072Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%28530%20230%29%22%3E%3Ccircle%20r%3D%2211%22%2F%3E%3Cpath%20d%3D%22M-10%2015H10L16%2061H-16Z%22%2F%3E%3Cpath%20d%3D%22M-9%2060L-17%2095H-7L0%2072%208%2095H18L10%2060Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Crect%20x%3D%2290%22%20y%3D%22130%22%20width%3D%2270%22%20height%3D%22145%22%20fill%3D%22none%22%20stroke%3D%22%234de1b0%22%20stroke-width%3D%223%22%2F%3E%3Crect%20x%3D%22235%22%20y%3D%22165%22%20width%3D%2270%22%20height%3D%22130%22%20fill%3D%22none%22%20stroke%3D%22%234de1b0%22%20stroke-width%3D%223%22%2F%3E%3Crect%20x%3D%22390%22%20y%3D%22120%22%20width%3D%2280%22%20height%3D%22160%22%20fill%3D%22none%22%20stroke%3D%22%234de1b0%22%20stroke-width%3D%223%22%2F%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23p%29%22%2F%3E%3C%2Fsvg%3E" alt="Site camera counting people on site" loading="lazy"/>
+              <img src="images/cam-occupancy.png" alt="Site camera counting people on site" loading="lazy"/>
               <span class="label">CAM 02 · WORK ZONE</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
@@ -1291,7 +1291,7 @@
               <span class="scan" aria-hidden="true"></span>
             </div>
             <div class="bl-cam c3">
-              <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20640%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2366737b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23202930%22%2F%3E%3C%2FlinearGradient%3E%3Cpattern%20id%3D%22p%22%20width%3D%2240%22%20height%3D%2240%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Cpath%20d%3D%22M0%200H40V40%22%20fill%3D%22none%22%20stroke%3D%22%23d0d8df%22%20stroke-opacity%3D%22.18%22%2F%3E%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M0%2060H640M0%20135H640M0%20210H640M0%20285H640M0%20360H640M70%200V400M170%200V400M270%200V400M370%200V400M470%200V400M570%200V400%22%20stroke%3D%22%23d0d8df%22%20stroke-opacity%3D%22.2%22%20stroke-width%3D%223%22%2F%3E%3Crect%20x%3D%2270%22%20y%3D%2240%22%20width%3D%22220%22%20height%3D%22130%22%20fill%3D%22%2339444d%22%20stroke%3D%22%23b2bdc5%22%20stroke-width%3D%224%22%2F%3E%3Crect%20x%3D%22320%22%20y%3D%2280%22%20width%3D%22250%22%20height%3D%22190%22%20fill%3D%22%232b353d%22%20stroke%3D%22%23b2bdc5%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M70%20210L290%20180%20330%20320%20100%20360Z%22%20fill%3D%22%23b8a58a%22%2F%3E%3Cpath%20d%3D%22M350%20290L570%20280%20610%20370%20390%20390Z%22%20fill%3D%22%23b8a58a%22%2F%3E%3Cg%20fill%3D%22%23e4b36e%22%3E%3Ccircle%20cx%3D%22150%22%20cy%3D%22235%22%20r%3D%2210%22%2F%3E%3Ccircle%20cx%3D%22215%22%20cy%3D%22285%22%20r%3D%2210%22%2F%3E%3Ccircle%20cx%3D%22420%22%20cy%3D%22320%22%20r%3D%2210%22%2F%3E%3Ccircle%20cx%3D%22505%22%20cy%3D%22330%22%20r%3D%2210%22%2F%3E%3Ccircle%20cx%3D%22440%22%20cy%3D%22145%22%20r%3D%2210%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%234de1b0%22%20stroke-width%3D%223%22%20fill%3D%22none%22%3E%3Crect%20x%3D%22120%22%20y%3D%22205%22%20width%3D%2265%22%20height%3D%2265%22%2F%3E%3Crect%20x%3D%22385%22%20y%3D%22285%22%20width%3D%2275%22%20height%3D%2265%22%2F%3E%3Crect%20x%3D%22405%22%20y%3D%22110%22%20width%3D%2270%22%20height%3D%2270%22%2F%3E%3C%2Fg%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23p%29%22%2F%3E%3C%2Fsvg%3E" alt="Overhead site camera tracking workers" loading="lazy"/>
+              <img src="images/cam-topdown.jpg" alt="Overhead site camera tracking workers" loading="lazy"/>
               <span class="label">CAM 03 · TOWER B</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
@@ -1299,7 +1299,7 @@
               <span class="scan" aria-hidden="true"></span>
             </div>
             <div class="bl-cam c4">
-              <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20640%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23596775%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2311171d%22%2F%3E%3C%2FlinearGradient%3E%3Cpattern%20id%3D%22p%22%20width%3D%2238%22%20height%3D%2232%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Cpath%20d%3D%22M0%2032V0H38%22%20fill%3D%22none%22%20stroke%3D%22%23d0d8df%22%20stroke-opacity%3D%22.16%22%2F%3E%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M0%20105L640%2055V145L0%20195Z%22%20fill%3D%22%23a1adb6%22%2F%3E%3Cpath%20d%3D%22M0%20195L640%20145V175L0%20225Z%22%20fill%3D%22%234a5660%22%2F%3E%3Cg%20stroke%3D%22%23c5ced4%22%20stroke-width%3D%228%22%3E%3Cpath%20d%3D%22M65%20190V390M170%20180V390M275%20170V390M380%20160V390M485%20150V390M590%20140V390%22%2F%3E%3Cpath%20d%3D%22M0%20250L640%20205M0%20315L640%20270M0%20380L640%20335%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23d9a45d%22%3E%3Ccircle%20cx%3D%22225%22%20cy%3D%22220%22%20r%3D%2212%22%2F%3E%3Cpath%20d%3D%22M213%20235H237L245%20295H205Z%22%2F%3E%3Cpath%20d%3D%22M210%20292L200%20345H213L225%20307%20237%20345H250L240%20292Z%22%2F%3E%3Ccircle%20cx%3D%22420%22%20cy%3D%22205%22%20r%3D%2212%22%2F%3E%3Cpath%20d%3D%22M408%20220H432L440%20280H400Z%22%2F%3E%3Cpath%20d%3D%22M405%20277L395%20330H408L420%20292%20432%20330H445L435%20277Z%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M0%20390L640%20340V400H0Z%22%20fill%3D%22%23202930%22%2F%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22url%28%23p%29%22%2F%3E%3C%2Fsvg%3E" alt="Site camera viewing formwork and slab work" loading="lazy"/>
+              <img src="images/cam-formwork.webp" alt="Site camera viewing formwork and slab work" loading="lazy"/>
               <span class="label">CAM 04 · FORMWORK</span>
               <span class="rec">REC</span>
               <span class="ts">14:32:08</span>
@@ -1490,11 +1490,44 @@
     </div>
 
     <div class="bkv-frame" aria-label="Brikito motion showreel video">
-      <video class="bkv-video" controls playsinline preload="metadata" aria-label="Brikito Motion Showreel">
-        <source src="Brikito_Motion_Showreel_4K_16x9.mp4" type="video/mp4">
+      <video
+        id="brikitoShowreel"
+        class="bkv-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster=""
+        aria-label="Brikito Motion Showreel">
+        <source src="./Brikito_Motion_Showreel_4K_16x9.mp4" type="video/mp4">
         Your browser does not support HTML video. Please use a modern browser to watch the Brikito showreel.
       </video>
+      <div id="brikitoVideoError" role="status" style="display:none;position:absolute;inset:0;z-index:7;align-items:center;justify-content:center;text-align:center;padding:24px;background:#080A10;color:#fff;">
+        <div>
+          <div style="font:11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#9FB1F5;margin-bottom:12px;">SHOWREEL NOT FOUND</div>
+          <p style="max-width:440px;margin:0 auto 10px;line-height:1.6;color:rgba(255,255,255,.8);">Upload <strong>Brikito_Motion_Showreel_4K_16x9.mp4</strong> to the same folder as <strong>index.html</strong>, then refresh this page.</p>
+          <p style="font-size:12px;color:rgba(255,255,255,.48);margin:0;">The video file must be deployed to your website hosting too.</p>
+        </div>
+      </div>
     </div>
+    <script>
+      (function () {
+        const video = document.getElementById('brikitoShowreel');
+        const error = document.getElementById('brikitoVideoError');
+        if (!video || !error) return;
+        video.addEventListener('error', function () {
+          error.style.display = 'flex';
+        });
+        video.addEventListener('loadedmetadata', function () {
+          error.style.display = 'none';
+        });
+        // Also catches a missing source that fails before a normal error event.
+        window.setTimeout(function () {
+          if (video.readyState === 0 && video.networkState === 3) {
+            error.style.display = 'flex';
+          }
+        }, 1800);
+      })();
+    </script>
 
     <div class="bkv-cta">
       <a class="btn btn-solid" href="how-it-works.html">Explore the interactive demo
