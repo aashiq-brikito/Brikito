@@ -169,31 +169,10 @@ footer{padding:80px 0 36px}
     "inLanguage": "en"
   }
   </script>
+  <link rel="stylesheet" href="components/global.css">
 </head>
 <body>
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="logo" href="index.html" aria-label="Brikito">
-      <span>Brikito</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="lnk" href="index.html#intel">Platform</a>
-      <a class="lnk" href="index.html#brikai">Brik AI</a>
-      <a class="lnk" href="index.html#brikchat">BrikChat</a>
-      <a class="lnk" href="index.html#brikvision">BrikVision</a>
-      <a class="lnk" href="index.html#brikdocs">BrikDocs</a>
-      <a class="lnk" href="index.html#roadmap">Roadmap</a>
-      <a class="lnk" href="blog.html">Blog</a>
-      <a class="lnk" href="pricing.html">Pricing</a>
-    </nav>
-    <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm login" href="#">Sign in</a>
-      <a class="btn btn-solid btn-sm" href="book-a-demo.html">Book a demo
-        <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</header>
+<div data-global-header></div>
 
   <main>
     <section class="hero">
@@ -338,63 +317,8 @@ footer{padding:80px 0 36px}
     </section>
   </main>
 
-  <footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <a class="logo" href="index.html" style="font-size:16px">
-          <span>Brikito</span>
-        </a>
-        <p class="tag">One app for the whole construction site, with Brik AI built in.</p>
-      </div>
-      <div class="foot-col">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="index.html#intel">Platform</a></li>
-          <li><a href="index.html#brikai">Brik AI</a></li>
-          <li><a href="index.html#brikchat">BrikChat</a></li>
-          <li><a href="index.html#brikvision">BrikVision</a></li>
-          <li><a href="index.html#brikdocs">BrikDocs</a></li>
-          <li><a href="index.html#roadmap">Roadmap</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <li><a href="index.html">Customers</a></li>
-          <li><a href="index.html">Careers</a></li>
-          <li><a href="index.html">Press</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="index.html">Spec deck</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="index.html">Terms</a></li>
-          <li><a href="index.html">Security</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li>
-          <li><a href="book-a-demo.html">Book a demo</a></li>
-          <li><a href="index.html">Partners</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <div>© 2026 Brikito · Built in India · <a href="privacy.html" style="text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></div>
-      <div class="badges">
-        <span class="badge">Data hosted in India</span>
-        <span class="badge">Multi-project</span>
-        <span class="badge">Role-scoped access</span>
-      </div>
-    </div>
-  </div>
-</footer>
+  <div data-global-footer></div>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="components/global.js"></script>
 </body>
 </html>

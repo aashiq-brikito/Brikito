@@ -1,0 +1,19 @@
+/* Brikito shared header and footer */
+.global-header{position:sticky;top:0;z-index:9999;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(20,25,35,.10);color:#17191f;font-family:inherit}
+.global-header-inner{max-width:1200px;margin:0 auto;min-height:72px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.global-logo{font-size:22px;font-weight:800;letter-spacing:-.06em;color:inherit;text-decoration:none;white-space:nowrap}
+.global-nav{display:flex;align-items:center;gap:clamp(12px,1.7vw,25px)}
+.global-nav a{font-size:13px;font-weight:600;color:inherit;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.global-nav a:hover,.global-footer a:hover{opacity:.68}
+.global-nav .global-signin{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border:1px solid rgba(20,25,35,.22);border-radius:999px;color:#17191f}
+.global-menu-toggle{display:none;background:transparent;border:0;padding:10px;cursor:pointer}
+.global-menu-toggle span{display:block;width:22px;height:2px;margin:4px;background:#17191f}
+.global-footer{background:#111319;color:#f7f7f8;padding:54px 24px 22px;font-family:inherit}
+.global-footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding-bottom:42px}
+.global-footer-brand p{max-width:260px;color:#a9abb4;font-size:14px;line-height:1.7}
+.global-footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.global-footer-col h4{margin:0 0 5px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a9abb4}
+.global-footer a{color:#f7f7f8;text-decoration:none;font-size:13px}
+.global-footer-bottom{max-width:1200px;margin:0 auto;padding-top:18px;border-top:1px solid #34363e;display:flex;justify-content:space-between;gap:20px;color:#a9abb4;font-size:12px}
+@media(max-width:900px){.global-header-inner{min-height:66px}.global-menu-toggle{display:block;margin-left:auto}.global-nav{display:none;position:absolute;left:0;right:0;top:100%;padding:18px 24px 24px;background:#fff;border-bottom:1px solid rgba(20,25,35,.12);box-shadow:0 18px 28px rgba(0,0,0,.08);align-items:stretch;flex-direction:column;gap:0}.global-nav.is-open{display:flex}.global-nav a{padding:13px 2px}.global-nav .global-signin{align-self:flex-start;margin-top:8px;padding:11px 18px}.global-footer-inner{grid-template-columns:1fr 1fr;gap:30px}.global-footer-brand{grid-column:1/-1}}
+@media(max-width:520px){.global-footer-inner{grid-template-columns:1fr 1fr;gap:26px 18px}.global-footer-bottom{flex-direction:column;gap:10px}.global-header-inner{padding:0 18px}}
