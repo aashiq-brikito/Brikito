@@ -61,10 +61,12 @@
     .section-top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
     .section-top h2{font-size:15px;font-weight:600;letter-spacing:-.01em}
     .feature{display:grid;grid-template-columns:1.1fr 1fr;border:1px solid var(--hair);border-radius:14px;overflow:hidden;min-height:360px;background:var(--paper)}
-    .feature-art{position:relative;min-height:320px;background:var(--paper-2);border-right:1px solid var(--hair);overflow:hidden;display:block}
-    .feature-cover-link{cursor:pointer}
-    .feature-cover-image{display:block;width:100%;height:100%;min-height:320px;position:absolute;inset:0;object-fit:cover;object-position:center}
-    .feature-cover-link::before,.feature-cover-link::after{display:none}
+    .feature-art{position:relative;min-height:320px;background:var(--paper-2);border-right:1px solid var(--hair);overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .feature-art::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 42px,linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/42px 100%;opacity:.8}
+    .feature-art::after{content:"";position:absolute;width:52%;aspect-ratio:1;border:1px solid #CFCFCF;border-radius:50%;box-shadow:0 0 0 24px rgba(0,0,0,.018),0 0 0 54px rgba(0,0,0,.018)}
+    .art-mark{position:relative;z-index:1;width:min(42%,220px);aspect-ratio:1;border:1px solid #AFAFAF;border-radius:12px;transform:rotate(-8deg);display:grid;place-items:center;background:rgba(255,255,255,.72);box-shadow:0 20px 60px rgba(0,0,0,.06)}
+    .art-mark svg{width:58%;height:58%}
+    .art-label{position:absolute;z-index:2;left:22px;bottom:20px;font:10px 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
     .feature-copy{padding:clamp(26px,4vw,48px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
     .story-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font:10.5px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
     .story-meta .sep{width:3px;height:3px;border-radius:50%;background:var(--muted-2)}
@@ -92,6 +94,9 @@
     .card{display:flex;flex-direction:column;min-width:0}
     .card-art{position:relative;aspect-ratio:1.48;background:var(--paper-2);border:1px solid var(--hair);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
     .card-art::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 30px,linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/30px 100%;opacity:.72}
+    .card-art img{display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .35s ease}
+    .card-art:hover img{transform:scale(1.025)}
+    .feature-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
     .card-art .shape{position:relative;z-index:1;width:94px;height:94px;border:1px solid #BEBEBE;border-radius:14px;transform:rotate(-8deg);display:grid;place-items:center;background:rgba(255,255,255,.76)}
     .card-art .shape svg{width:48px;height:48px;stroke:#444;stroke-width:1.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
     .card-art .art-index{position:absolute;left:14px;top:14px;z-index:2;font:10px 'JetBrains Mono',monospace;color:var(--muted-2)}
@@ -123,10 +128,27 @@
     @media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
     @media(max-width:460px){.foot-top{grid-template-columns:1fr 1fr;gap:28px 20px}.foot-brand{grid-column:1/-1}}
   </style>
-  <link rel="stylesheet" href="components/global.css">
 </head>
 <body>
-  <div data-global-header></div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="index.html" aria-label="Brikito home"><span>Brikito</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="lnk" href="index.html#intel">Platform</a>
+        <a class="lnk" href="index.html#brikai">Brik AI</a>
+        <a class="lnk" href="index.html#brikchat">BrikChat</a>
+        <a class="lnk" href="index.html#brikvision">BrikVision</a>
+        <a class="lnk" href="index.html#brikdocs">BrikDocs</a>
+        <a class="lnk" href="how-it-works.html">How it works</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost btn-sm login" href="index.html">Back to site</a>
+        <a class="btn btn-solid btn-sm" href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough
+          <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
 
   <main>
     <section class="phead">
@@ -151,15 +173,15 @@
           <span class="eyebrow">01 / Editor's pick</span>
         </div>
         <article class="feature">
-          <a class="feature-art feature-cover-link" href="blog-construction-information-management.html" aria-label="Read: Your construction project doesn’t have a communication problem. It has an information problem.">
-            <img class="feature-cover-image" src="images/blog/construction-information-management.png" alt="Construction cost control field note: building site, plans, and BOQ cost estimates" loading="eager">
+          <a class="feature-art" href="blog-information-problem.html" aria-label="Read the story: Your construction project has an information problem">
+            <img src="images/blog/construction-information-management.png" alt="Construction managers reviewing project information on site" loading="eager">
           </a>
           <div class="feature-copy">
             <div class="story-meta"><span class="tag">Project management</span><span class="sep"></span><span>8 min read</span></div>
             <h2>Your construction project doesn’t have a communication problem. It has an information problem.</h2>
             <p>When updates live across chats, calls, spreadsheets, and drawings, teams lose the context they need to make good decisions. Here’s how to spot the gaps and bring project information together.</p>
             <div class="feature-actions">
-              <a class="btn btn-solid" href="blog-construction-information-management.html">Read the story <span class="arrow">↗</span></a>
+              <a class="btn btn-solid" href="blog-information-problem.html">Read the story <span class="arrow">↗</span></a>
               <span class="eyebrow">Coordination / Workflow</span>
             </div>
           </div>
@@ -190,19 +212,9 @@
         </div>
 
         <div class="grid" id="articleGrid">
-          <article class="card" data-category="site-management" data-search="construction project information management communication information gaps whatsapp calls spreadsheets coordination">
-            <a class="card-art" href="blog-construction-information-management.html" aria-label="Read: Your construction project has an information problem">
-              <span class="art-index">01 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="7" width="14" height="14"/><rect x="27" y="7" width="14" height="14"/><rect x="7" y="27" width="14" height="14"/><rect x="27" y="27" width="14" height="14"/><path d="M21 14h6M14 21v6M34 21v6M21 34h6"/></svg></div><span class="art-type">Information / Workflow</span>
-            </a>
-            <div class="story-meta"><span>Project management</span><span class="sep"></span><span>8 min read</span></div>
-            <h3><a href="blog-construction-information-management.html">Your construction project doesn’t have a communication problem. It has an information problem.</a></h3>
-            <p>When updates are scattered across chats, calls, spreadsheets, and drawings, teams lose the context they need to make good decisions.</p>
-            <a class="read" href="blog-construction-information-management.html">Read article <span>↗</span></a>
-          </article>
-
           <article class="card" data-category="cost-control" data-search="boq budget cost overruns project estimate construction money">
             <a class="card-art" href="blog-boq-cost-overruns.html" aria-label="Read: A correct BOQ can still lead to a loss">
-              <span class="art-index">02 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 38h32M12 34V10h24v24M18 16h12M18 22h12M18 28h7"/><path d="m29 29 5-5 4 3"/></svg></div><span class="art-type">Cost / Control</span>
+              <img src="images/blog/boq-cost-overruns.png" alt="Construction BOQ, estimates and cost control" loading="lazy">
             </a>
             <div class="story-meta"><span>Cost control</span><span class="sep"></span><span>6 min read</span></div>
             <h3><a href="blog-boq-cost-overruns.html">Your BOQ can be 100% correct and your project can still lose money.</a></h3>
@@ -212,7 +224,7 @@
 
           <article class="card" data-category="site-management" data-search="site engineer daily updates manpower materials progress construction reporting">
             <a class="card-art" href="blog-seven-site-updates.html" aria-label="Read: Seven site updates teams should not chase">
-              <span class="art-index">03 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="32" rx="2"/><path d="m16 17 2 2 4-5M25 17h7M16 26l2 2 4-5M25 26h7M16 34h16"/></svg></div><span class="art-type">Site / Updates</span>
+              <img src="images/blog/seven-site-updates.png" alt="Construction supervisor checking site updates on a phone" loading="lazy">
             </a>
             <div class="story-meta"><span>Site management</span><span class="sep"></span><span>5 min read</span></div>
             <h3><a href="blog-seven-site-updates.html">The 7 construction updates nobody should have to ask for.</a></h3>
@@ -222,7 +234,7 @@
 
           <article class="card" data-category="technology" data-search="AI construction artificial intelligence project manager automation brik ai">
             <a class="card-art" href="blog-ai-construction.html" aria-label="Read: What if your construction project had a brain">
-              <span class="art-index">04 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 7v6M24 35v6M7 24h6M35 24h6M12 12l4 4M32 32l4 4M36 12l-4 4M16 32l-4 4"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3"/></svg></div><span class="art-type">Technology / AI</span>
+              <img src="images/blog/ai-construction.png" alt="Construction engineer using AI tools on a tablet" loading="lazy">
             </a>
             <div class="story-meta"><span>Technology & AI</span><span class="sep"></span><span>7 min read</span></div>
             <h3><a href="blog-ai-construction.html">What if your construction project had a brain?</a></h3>
@@ -232,7 +244,7 @@
 
           <article class="card" data-category="planning" data-search="drawing revision control outdated drawings rework approvals document management">
             <a class="card-art" href="blog-drawing-revisions.html" aria-label="Read: The most dangerous drawing on a construction site">
-              <span class="art-index">05 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M13 7h16l7 7v27H13z"/><path d="M29 7v8h7M18 22h13M18 28h13M18 34h8"/><circle cx="34" cy="34" r="7" fill="#FAFAFA"/><path d="M34 30v5M34 38h.01"/></svg></div><span class="art-type">Drawings / Workflow</span>
+              <img src="images/blog/drawing-revisions.png" alt="Construction drawings marked with revision changes" loading="lazy">
             </a>
             <div class="story-meta"><span>Planning & workflow</span><span class="sep"></span><span>6 min read</span></div>
             <h3><a href="blog-drawing-revisions.html">The most dangerous drawing on a construction site.</a></h3>
@@ -242,7 +254,7 @@
 
           <article class="card" data-category="site-management" data-search="rework labour productivity site coordination construction mistakes">
             <a class="card-art" href="blog-rework-coordination.html" aria-label="Read: Rework is not always a labour problem">
-              <span class="art-index">06 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 13h18M10 20h12M10 27h18M10 34h11"/><path d="m29 26 8 8M37 26l-8 8"/><circle cx="33" cy="30" r="10"/></svg></div><span class="art-type">Quality / Delivery</span>
+              <img src="images/blog/rework-coordination.png" alt="Construction teams coordinating to prevent rework" loading="lazy">
             </a>
             <div class="story-meta"><span>Site management</span><span class="sep"></span><span>4 min read</span></div>
             <h3><a href="blog-rework-coordination.html">Rework isn’t always a labour problem.</a></h3>
@@ -252,7 +264,7 @@
 
           <article class="card" data-category="planning" data-search="construction delays project schedule handoffs approvals waiting time">
             <a class="card-art" href="blog-where-time-goes.html" aria-label="Read: Where construction projects actually lose time">
-              <span class="art-index">07 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M24 14v11l8 5"/><path d="M8 8l5 5M40 8l-5 5"/></svg></div><span class="art-type">Planning / Time</span>
+              <img src="images/blog/where-time-goes.png" alt="Construction project delays and lost time" loading="lazy">
             </a>
             <div class="story-meta"><span>Planning & workflow</span><span class="sep"></span><span>5 min read</span></div>
             <h3><a href="blog-where-time-goes.html">Where does a construction project actually lose time?</a></h3>
@@ -265,7 +277,32 @@
     </section>
   </main>
 
-  <div data-global-footer></div>
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="logo" href="index.html"><span>Brikito</span></a>
+          <p class="tagline">One app for the whole construction site, with Brik AI built in.</p>
+        </div>
+        <div class="foot-col"><h4>Product</h4><ul>
+          <li><a href="index.html#intel">Platform</a></li><li><a href="index.html#brikai">Brik AI</a></li><li><a href="index.html#brikchat">BrikChat</a></li><li><a href="index.html#brikvision">BrikVision</a></li><li><a href="index.html#brikdocs">BrikDocs</a></li><li><a href="index.html#roadmap">Roadmap</a></li>
+        </ul></div>
+        <div class="foot-col"><h4>Company</h4><ul>
+          <li><a href="index.html">About</a></li><li><a href="index.html">Customers</a></li><li><a href="index.html">Careers</a></li><li><a href="index.html">Press</a></li>
+        </ul></div>
+        <div class="foot-col"><h4>Resources</h4><ul>
+          <li><a href="how-it-works.html">How it works</a></li><li><a href="blog.html" aria-current="page">Journal</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="index.html">Terms</a></li>
+        </ul></div>
+        <div class="foot-col"><h4>Contact</h4><ul>
+          <li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li><li><a href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough</a></li><li><a href="index.html">Partners</a></li>
+        </ul></div>
+      </div>
+      <div class="foot-bottom">
+        <div>© 2026 Brikito · Built in India</div>
+        <div class="badges"><span class="badge">Construction intelligence</span><span class="badge">Multi-project</span><span class="badge">Role-scoped access</span></div>
+      </div>
+    </div>
+  </footer>
 
   <script>
     (function(){
@@ -303,6 +340,5 @@
       search.addEventListener('input', update);
     })();
   </script>
-  <script src="components/global.js"></script>
 </body>
 </html>
