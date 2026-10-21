@@ -1,12 +1,63 @@
+
 <footer class="global-footer">
   <div class="global-footer-inner">
+
+    <!-- Footer Brand -->
     <div class="global-footer-brand">
-      <a class="global-logo" href="index.html">Brikito</a>
-      <p>The operating system for your construction site.</p>
+      <a href="index.html" class="global-footer-logo">
+        Brikito
+      </a>
+
+      <p>
+        The operating system for your construction site.
+      </p>
     </div>
-    <div class="global-footer-col"><h4>Product</h4><a href="index.html#intel">Platform</a><a href="index.html#brikai">Brik AI</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
-    <div class="global-footer-col"><h4>Explore</h4><a href="blog.html">Blog</a><a href="book-a-demo.html">Book a demo</a><a href="privacy.html">Privacy policy</a></div>
-    <div class="global-footer-col"><h4>Get started</h4><a href="http://3.111.40.151:8083/signup">Sign in</a><a href="book-a-demo.html">Talk to our team</a></div>
+
+    <!-- Product Links -->
+    <div class="global-footer-col">
+      <h4>Product</h4>
+      <a href="index.html#intel">Platform</a>
+      <a href="index.html#brikai">Brik AI</a>
+      <a href="index.html#brikchat">BrikChat</a>
+      <a href="index.html#brikvision">BrikVision</a>
+      <a href="index.html#brikdocs">BrikDocs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+
+    <!-- Explore Links -->
+    <div class="global-footer-col">
+      <h4>Explore</h4>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="blog.html">Blog</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="book-a-demo.html">Book a demo</a>
+    </div>
+
+    <!-- Account Links -->
+    <div class="global-footer-col">
+      <h4>Get started</h4>
+      <a href="http://3.111.40.151:8083/signup">Sign in</a>
+      <a href="book-a-demo.html">Talk to our team</a>
+      <a href="privacy.html">Privacy policy</a>
+    </div>
+
   </div>
-  <div class="global-footer-bottom"><span>© <span id="global-year"></span> Brikito. All rights reserved.</span><a href="privacy.html">Privacy policy</a></div>
+
+  <!-- Footer Bottom -->
+  <div class="global-footer-bottom">
+    <span>
+      © <span id="global-footer-year"></span> Brikito. All rights reserved.
+    </span>
+
+    <a href="privacy.html">Privacy policy</a>
+  </div>
 </footer>
+
+<script>
+  (function () {
+    var year = document.getElementById("global-footer-year");
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  })();
+</script>
