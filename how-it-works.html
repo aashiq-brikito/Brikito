@@ -51,20 +51,11 @@
   .bkt-hiw .heat i{background:#E6E8F0;}
   @keyframes bktPulse{0%{box-shadow:0 0 0 0 rgba(62,91,216,.35);}100%{box-shadow:0 0 0 16px rgba(62,91,216,0);}}
 </style>
+  <link rel="stylesheet" href="components/global.css">
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="logo" href="index.html">Brikito</a>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <a class="btn btn-ghost btn-sm" href="index.html">Back to site</a>
-      <a class="btn btn-solid btn-sm" href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough
-        <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </a>
-    </div>
-  </div>
-</header>
+<div data-global-header></div>
 
 <!-- =========================== HOW IT WORKS (interactive scroll demo) =========================== -->
 <section class="s bkt-hiw" id="how">
@@ -428,13 +419,9 @@
   </div>
 </section>
 
-<footer class="mini">
-  <div class="wrap row">
-    <div>© 2026 Brikito · Built in India</div>
-    <div><a href="privacy.html" style="text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a> · <a href="index.html" style="text-decoration:underline;text-underline-offset:3px;">brikito.com</a></div>
-  </div>
-</footer>
+<div data-global-footer></div>
 
 <script src="bkt-hiw.js"></script>
+  <script src="components/global.js"></script>
 </body>
 </html>
