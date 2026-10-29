@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs><linearGradient id="brikitoViolet" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#394CFF"/><stop offset="0.55" stop-color="#6500D8"/><stop offset="1" stop-color="#870873"/>
-  </linearGradient></defs>
-  <g fill="url(#brikitoViolet)">
-    <path d="M42 28H105V119C105 142 91 158 73 158C55 158 42 143 42 121Z"/>
-    <path d="M117 28H155C183 28 204 48 204 76C204 103 183 121 155 121H117Z"/>
-    <path d="M42 192C42 169 56 153 74 153C92 153 105 169 105 192V228H42Z"/>
-    <path d="M117 133H159C196 133 224 153 224 181C224 209 197 228 159 228H117Z"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 112 112"><defs><linearGradient id="g" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset=".5" stop-color="#5462F0"/><stop offset="1" stop-color="#3A8EF6"/></linearGradient></defs><path fill-rule="evenodd" fill="url(#g)" d="M2.5 25H72.5A2.5 2.5 0 0 1 75 27.5V97.5A2.5 2.5 0 0 1 72.5 100H2.5A2.5 2.5 0 0 1 0 97.5V27.5A2.5 2.5 0 0 1 2.5 25ZM27.5 0H97.5A2.5 2.5 0 0 1 100 2.5V72.5A2.5 2.5 0 0 1 97.5 75H27.5A2.5 2.5 0 0 1 25 72.5V2.5A2.5 2.5 0 0 1 27.5 0Z"/></svg>
