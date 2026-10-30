@@ -3,7 +3,7 @@
    Google Analytics: paste the GA4 Measurement ID (G-XXXXXXX) below to switch it on. */
 (function () {
   var META_PIXEL_ID = '1852191499896647';
-  var GA_MEASUREMENT_ID = ''; // e.g. 'G-ABC123XYZ'
+  var GA_MEASUREMENT_ID = 'G-X2Z6QSSS5E';
 
   // Meta Pixel
   if (META_PIXEL_ID && !window.fbq) {
