@@ -182,7 +182,83 @@ footer{padding:80px 0 36px}
   <link rel="stylesheet" href="components/global.css">
 </head>
 <body>
-<div data-global-header></div>
+
+<header class="global-header">
+  <div class="global-header-inner">
+
+    <!-- Brikito Logo (black icon + Brikito text) -->
+    <a
+      class="global-logo"
+      href="index.html"
+      aria-label="Brikito home"
+      style="display:inline-flex;align-items:center;gap:9px;color:#0a0a0a;text-decoration:none"
+    >
+      <svg
+        class="global-logo-mark"
+        viewBox="0 0 4096 4096"
+        width="24"
+        height="24"
+        fill="currentColor"
+        aria-hidden="true"
+        focusable="false"
+        style="display:block;flex:none"
+      >
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+      </svg>
+      <span class="global-logo-text">Brikito</span>
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="global-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="global-nav"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Main Navigation -->
+    <nav
+      class="global-nav"
+      id="global-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html#intel">Platform</a>
+      <a href="index.html#brikai">Brik AI</a>
+      <a href="index.html#brikchat">BrikChat</a>
+      <a href="index.html#brikvision">BrikVision</a>
+      <a href="index.html#brikdocs">BrikDocs</a>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="blog.html">Blog</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+
+    <!-- Header Buttons -->
+    <div class="global-header-actions">
+
+      <a
+        class="global-trial"
+        href="https://app.brikito.com/signup"
+      >
+        Sign in
+      </a>
+
+      <a
+        class="global-demo"
+        href="book-a-demo.html"
+      >
+        Book a demo <span aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+
+  </div>
+</header>
 <main>
 <section class="hero">
 <div class="hero-inner">
@@ -249,7 +325,102 @@ footer{padding:80px 0 36px}
 </div>
 </section>
 </main>
-<div data-global-footer></div>
+
+<style>
+  .global-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
+  .global-footer-logo svg{display:block;flex:none;width:22px;height:22px}
+  .global-footer-bottom-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .global-footer-social{display:flex;align-items:center;gap:8px}
+  .global-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.72);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
+  .global-footer-social a:hover,.global-footer-social a:focus-visible{color:#fff;border-color:rgba(255,255,255,.45);background-color:rgba(255,255,255,.06)}
+  .global-footer-social svg{width:16px;height:16px;display:block}
+</style>
+
+<footer class="global-footer">
+  <div class="global-footer-inner">
+
+    <!-- Footer Brand -->
+    <div class="global-footer-brand">
+      <a href="index.html" class="global-footer-logo" aria-label="Brikito home">
+        <!-- Brikito icon (white) -->
+        <svg viewBox="0 0 4096 4096" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+        </svg>
+        <span>Brikito</span>
+      </a>
+
+      <p>
+        Construction made simple.
+      </p>
+    </div>
+
+    <!-- Product Links -->
+    <div class="global-footer-col">
+      <h4>Product</h4>
+      <a href="index.html#intel">Platform</a>
+      <a href="index.html#brikai">Brik AI</a>
+      <a href="index.html#brikchat">BrikChat</a>
+      <a href="index.html#brikvision">BrikVision</a>
+      <a href="index.html#brikdocs">BrikDocs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+
+    <!-- Explore Links -->
+    <div class="global-footer-col">
+      <h4>Explore</h4>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="blog.html">Blog</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="book-a-demo.html">Book a demo</a>
+    </div>
+
+    <!-- Account Links -->
+    <div class="global-footer-col">
+      <h4>Get started</h4>
+      <a href="https://app.brikito.com/signup">Sign in</a>
+      <a href="book-a-demo.html">Talk to our team</a>
+      <a href="privacy.html">Privacy policy</a>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="global-footer-bottom">
+    <span>
+      © <span id="global-footer-year">2026</span> Brikito. All rights reserved.
+    </span>
+
+    <div class="global-footer-bottom-right">
+      <a href="privacy.html">Privacy policy</a>
+
+      <!-- Social media links -->
+      <div class="global-footer-social" aria-label="Brikito on social media">
+        <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var year = document.getElementById("global-footer-year");
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  })();
+</script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="components/global.js"></script>
 </body>
