@@ -43,7 +43,7 @@ footer{padding:72px 0 36px;border-top:1px solid var(--hair)}.foot-top{display:gr
 <div class="hero-note"><span class="dot"></span><span>PERSONALIZED WALKTHROUGH · NO OBLIGATION</span></div>
 </div>
 <div class="form-card" id="demo-form"><div class="form-head"><span class="eyebrow">Book a demo</span><h2>Let's find the right fit.</h2><p>Tell us a little about yourself. Our team will follow up to arrange a time that works for you.</p></div>
-<form id="demoRequestForm"><div class="form-grid">
+<form id="demoRequestForm"><div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div><div class="form-grid">
 <div class="field"><label for="firstName">First name *</label><input id="firstName" name="firstName" autocomplete="given-name" placeholder="e.g. Alex" required></div>
 <div class="field"><label for="lastName">Last name *</label><input id="lastName" name="lastName" autocomplete="family-name" placeholder="e.g. Morgan" required></div>
 <div class="field full"><label for="workEmail">Work email *</label><input id="workEmail" name="workEmail" type="email" autocomplete="email" placeholder="you@company.com" required></div>
@@ -102,11 +102,32 @@ footer{padding:72px 0 36px;border-top:1px solid var(--hair)}.foot-top{display:gr
  regionSelect.addEventListener('change',syncOtherRegion);
  syncOtherRegion();
 
+ // Google Apps Script web app that saves each request to the "Brikito – Demo Requests" Google Sheet
+ const DEMO_FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbxxAiBit98TmUJIy03P_ACF01zgZFdtxMUm5bkmi3zpIEyyrWDuqpKLVZmYCkmEvUzf/exec';
+ const submitBtn=form.querySelector('button[type="submit"]');
+ const submitLabel=submitBtn.innerHTML;
+
  form.addEventListener('submit',function(event){
   event.preventDefault();
   if(!form.reportValidity())return;
-  message.textContent='Thanks for your interest! This form is currently a front-end demo. Connect it to your CRM or form service to receive submissions.';
-  message.classList.add('show');
+  const data=new URLSearchParams(new FormData(form));
+  data.append('page',location.href);
+  submitBtn.disabled=true;
+  submitBtn.textContent='Sending…';
+  message.classList.remove('show');
+  fetch(DEMO_FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:data})
+   .then(function(){
+    form.reset();syncOtherRole();syncOtherRegion();
+    message.textContent='Thanks! Your demo request has been received. Our team will contact you within one business day.';
+    message.classList.add('show');
+    if(window.gtag)gtag('event','generate_lead',{form:'book_a_demo'});
+    if(window.fbq)fbq('track','Lead');
+   })
+   .catch(function(){
+    message.textContent='Sorry, something went wrong. Please try again, or email us at marketing@brikito.com.';
+    message.classList.add('show');
+   })
+   .finally(function(){submitBtn.disabled=false;submitBtn.innerHTML=submitLabel;});
  });
 })();
 </script>
