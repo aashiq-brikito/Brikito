@@ -1,20 +1,26 @@
-BRIKITO GLOBAL HEADER + FOOTER SETUP
+BRIKITO GLOBAL HEADER + FOOTER
 
-What changed:
-- Added components/header.html as the single shared header source.
-- Added components/footer.html as the single shared footer source.
-- Added components/global.css for shared responsive styling.
-- Added components/global.js to load the shared components on each page.
-- Updated the main website HTML pages and all seven blog articles to load the shared components.
-- The header/footer Sign in links point to http://3.111.40.151:8083/signup.
+Every page on brikito.com uses ONE shared header and ONE shared footer:
+- components/header.html   menu: Platform · Features (dropdown) · Roadmap · Blog · Pricing
+- components/footer.html   footer links and social icons
+- components/global.css    header, footer and Features dropdown styling
+- components/global.js     loads the header/footer on each page, mobile menu, dropdown, tracking
 
-To update later:
-1. Edit components/header.html to change navigation, logo text, or Sign in link.
-2. Edit components/footer.html to change footer text and links.
-3. Edit components/global.css to change shared header/footer styling.
-4. Commit/push the updated files to your website repository.
+Pages using it (17): index, how-it-works, pricing, book-a-demo, privacy, blog,
+the 7 blog articles, and the 4 feature pages (brik-ai, brikchat, brikvision, brikdocs).
+"Brikito (standalone).html" is an old export and is intentionally left as is.
 
-Important:
-- Upload the whole updated folder contents, including the components/ folder, to the same published website root.
-- This uses fetch() to load shared HTML, so test through GitHub Pages/a web server; it will not load correctly by opening each HTML file directly via file://.
-- This updates the shared header/footer on the 13 main HTML pages and blog articles. Brikito (standalone).html is a separate standalone export and was intentionally left unchanged.
+To change the menu for the whole site:
+1. Edit components/header.html (e.g. add a page to the Features dropdown).
+2. If you change global.css or global.js, bump ?v=YYYYMMDD in every page's
+   <link>/<script> tag so browsers load the new version.
+3. Commit and push. GitHub Pages publishes to www.brikito.com in a minute or two.
+
+Every page needs these three lines:
+  <link rel="stylesheet" href="components/global.css?v=...">   (in <head>)
+  <div data-global-header></div>                             (top of <body>)
+  <div data-global-footer></div>                             (bottom of <body>)
+  <script src="components/global.js?v=..."></script>          (before </body>)
+
+Note: the header loads with fetch(), so test through a web server or the live
+site, not by double-clicking the HTML file.
