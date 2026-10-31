@@ -559,3 +559,4 @@ section.s.alt{background:var(--paper-2)}
 .ab-teamphoto figcaption .live{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
 .ab-teamphoto figcaption span:last-child{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
 @media(max-width:620px){.ab-teamphoto{border-radius:16px}.ab-teamphoto figcaption{position:static;border-radius:0;border:0;border-top:1px solid var(--hair);background:var(--paper)}}
+.ab-photo img{object-position:50% 20%}
