@@ -37,3 +37,13 @@ Clean URLs (no .html in the address)
   links still work, and global.js tidies the address bar to the clean form.
 - Canonical tags, og:url, structured data and sitemap.xml all use the clean
   URLs. vercel.json turns on the same behaviour for Vercel previews.
+
+SEO settings (titles, descriptions, sharing previews, structured data)
+- tools/seo.py holds every page's title, description, sharing image and
+  structured data in one list (PAGES), and writes them into each page.
+- It also regenerates sitemap.xml from that list.
+- When you add a page or blog post: add it to PAGES, then run
+       python3 tools/seo.py
+  (Ask Claude to do it if you don't use the command line.)
+- Titles: 30-60 characters. Descriptions: 110-160 characters.
+- 404.html is the "page not found" page; it is kept out of Google.
