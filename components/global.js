@@ -1,5 +1,13 @@
 (function(){
   const base = document.currentScript && document.currentScript.dataset.base ? document.currentScript.dataset.base : '';
+  // Clean URLs: show /about instead of /about.html in the address bar
+  try{
+    var p=location.pathname;
+    if(/\.html$/.test(p)){
+      var clean=p.replace(/\/index\.html$/,'/').replace(/\.html$/,'');
+      history.replaceState(null,'',clean+location.search+location.hash);
+    }
+  }catch(e){}
   // Site-wide tracking (Meta Pixel / Google Analytics)
   const tracking=document.createElement('script');tracking.src=base+'components/tracking.js';document.head.appendChild(tracking);
   function load(selector, url, position){

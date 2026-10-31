@@ -29,3 +29,11 @@ Adding a new page
 - Put <div data-global-header></div> and <div data-global-footer></div> where
   the header and footer go, link components/global.css and global.js, then
   run the sync script. It swaps the placeholders for the real header/footer.
+
+Clean URLs (no .html in the address)
+- Link to pages without .html, from the site root: /about, /pricing,
+  /brik-ai, /blog-ai-construction; the homepage is / (and /#section).
+- GitHub Pages serves /about from about.html automatically. Old .html
+  links still work, and global.js tidies the address bar to the clean form.
+- Canonical tags, og:url, structured data and sitemap.xml all use the clean
+  URLs. vercel.json turns on the same behaviour for Vercel previews.
