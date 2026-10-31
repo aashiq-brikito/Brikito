@@ -20,13 +20,15 @@
 <meta name="twitter:image" content="https://www.brikito.com/showreel-poster.jpg" />
 <meta name="theme-color" content="#ffffff" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="components/feature-page.css?v=20261031d" />
+<link rel="stylesheet" href="components/feature-page.css?v=20261031e" />
 <link rel="stylesheet" href="components/global.css?v=20261031" />
 <script type="application/ld+json">
 {
@@ -37,7 +39,7 @@
       "@id": "https://www.brikito.com/#organization",
       "name": "Brikito",
       "url": "https://www.brikito.com/",
-      "logo": "https://www.brikito.com/icons/favicon.svg",
+      "logo": "https://www.brikito.com/icons/icon-512.png",
       "description": "Brikito is construction management software that puts chat, attendance, drawings, reports and a live project dashboard into one app, with Brik AI built in.",
       "slogan": "Construction made simple.",
       "email": "hey@brikito.com",
@@ -311,16 +313,17 @@
       <h2>The people building <span class="quiet">Brikito.</span></h2>
       <p>The people behind the product, building the app we wished every construction site had.</p>
     </div>
-    <!-- TEAM MEMBERS: for each card, replace the name, role and placeholder.
-         Photo: <img src="images/team/first-last.jpg" alt="First Last, Role at Brikito"> -->
-    <div class="ab-team">
-      <article class="ab-member"><div class="ab-photo"><div class="ph" aria-hidden="true"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="36" r="18"/><path d="M14 92c3-20 18-32 36-32s33 12 36 32z"/></svg></div></div><div class="info"><b>Team member name</b><span>Role / title</span><small>Photo coming soon</small></div></article>
-      <article class="ab-member"><div class="ab-photo"><div class="ph" aria-hidden="true"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="36" r="18"/><path d="M14 92c3-20 18-32 36-32s33 12 36 32z"/></svg></div></div><div class="info"><b>Team member name</b><span>Role / title</span><small>Photo coming soon</small></div></article>
-      <article class="ab-member"><div class="ab-photo"><div class="ph" aria-hidden="true"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="36" r="18"/><path d="M14 92c3-20 18-32 36-32s33 12 36 32z"/></svg></div></div><div class="info"><b>Team member name</b><span>Role / title</span><small>Photo coming soon</small></div></article>
-      <article class="ab-member"><div class="ab-photo"><div class="ph" aria-hidden="true"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="36" r="18"/><path d="M14 92c3-20 18-32 36-32s33 12 36 32z"/></svg></div></div><div class="info"><b>Team member name</b><span>Role / title</span><small>Photo coming soon</small></div></article>
-      <article class="ab-member"><div class="ab-photo"><div class="ph" aria-hidden="true"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="36" r="18"/><path d="M14 92c3-20 18-32 36-32s33 12 36 32z"/></svg></div></div><div class="info"><b>Team member name</b><span>Role / title</span><small>Photo coming soon</small></div></article>
-      <article class="ab-member"><div class="ab-photo"><div class="ph" aria-hidden="true"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="36" r="18"/><path d="M14 92c3-20 18-32 36-32s33 12 36 32z"/></svg></div></div><div class="info"><b>Team member name</b><span>Role / title</span><small>Photo coming soon</small></div></article>
-    </div>
+    <!-- TEAM PHOTO: one image for the whole team. To use your real team photo, upload it
+         as images/team/brikito-team.jpg and change the src below to "/images/team/brikito-team.jpg". -->
+    <figure class="ab-teamphoto">
+      <img src="https://cdn.creativeclaw.co/u/856682c8/images/94b8ca79-1b26-44fb-8cf3-d8631bf41b10.jpg"
+           width="1376" height="768" loading="lazy" decoding="async"
+           alt="Brikito team members working together around a table with laptops, construction drawings and a safety helmet in a bright office">
+      <figcaption>
+        <span class="live"><span class="pulse" aria-hidden="true"></span>The Brikito team</span>
+        <span>Construction made simple</span>
+      </figcaption>
+    </figure>
     <div class="ab-join">
       <div><h3>Want to build the future of construction with us?</h3><p>We're always glad to hear from engineers, designers and construction people.</p></div>
       <a class="btn btn-solid" href="mailto:hey@brikito.com?subject=Working%20at%20Brikito">Get in touch <span class="arrow" aria-hidden="true">↗</span></a>
@@ -448,7 +451,7 @@
 <script>
 (function(){
   if(!('IntersectionObserver' in window)) return;
-  var t=document.querySelectorAll('.s-head,.ab-story-body,.ab-mv,.ab-values,.ab-numbers,.ab-quote,.ab-founder,.ab-team,.ab-join,.cta-inner');
+  var t=document.querySelectorAll('.s-head,.ab-story-body,.ab-mv,.ab-values,.ab-numbers,.ab-quote,.ab-founder,.ab-teamphoto,.ab-join,.cta-inner');
   document.documentElement.classList.add('js-reveal');
   t.forEach(function(e){e.classList.add('reveal');});
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.05,rootMargin:'0px 0px -5% 0px'});
