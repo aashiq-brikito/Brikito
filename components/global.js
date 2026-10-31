@@ -5,7 +5,7 @@
   function load(selector, url, position){
     const target=document.querySelector(selector);
     if(!target) return Promise.resolve();
-    return fetch(base + url).then(r=>{if(!r.ok) throw new Error('Could not load '+url);return r.text();}).then(html=>{target.insertAdjacentHTML(position,html);target.remove();}).catch(err=>console.error('[Brikito shared layout]',err));
+    return fetch(base + url, {cache:'no-cache'}).then(r=>{if(!r.ok) throw new Error('Could not load '+url);return r.text();}).then(html=>{target.insertAdjacentHTML(position,html);target.remove();}).catch(err=>console.error('[Brikito shared layout]',err));
   }
   Promise.all([
     load('[data-global-header]', 'components/header.html', 'beforebegin'),

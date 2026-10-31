@@ -172,7 +172,7 @@ footer{padding:80px 0 36px}
     "inLanguage": "en"
   }
   </script>
-  <link rel="stylesheet" href="components/global.css">
+  <link rel="stylesheet" href="components/global.css?v=20261031">
 </head>
 <body>
 
@@ -222,10 +222,33 @@ footer{padding:80px 0 36px}
       aria-label="Primary navigation"
     >
       <a href="index.html#intel">Platform</a>
-      <a href="index.html#brikai">Brik AI</a>
-      <a href="index.html#brikchat">BrikChat</a>
-      <a href="index.html#brikvision">BrikVision</a>
-      <a href="index.html#brikdocs">BrikDocs</a>
+
+      <!-- Features dropdown -->
+      <div class="global-dd">
+        <button class="global-dd-btn" type="button" aria-expanded="false" aria-controls="global-features">
+          Features
+          <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="global-dd-menu" id="global-features">
+          <a href="brik-ai.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+            <span class="global-dd-tx"><b>Brik AI</b><small>The AI assistant built for construction</small></span>
+          </a>
+          <a href="brikchat.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikChat</b><small>Site chat that turns messages into work</small></span>
+          </a>
+          <a href="brikvision.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <span class="global-dd-tx"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></span>
+          </a>
+          <a href="brikdocs.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></span>
+          </a>
+        </div>
+      </div>
+
       <a href="index.html#roadmap">Roadmap</a>
       <a href="blog.html">Blog</a>
       <a href="pricing.html">Pricing</a>
@@ -430,10 +453,10 @@ footer{padding:80px 0 36px}
     <div class="global-footer-col">
       <h4>Product</h4>
       <a href="index.html#intel">Platform</a>
-      <a href="index.html#brikai">Brik AI</a>
-      <a href="index.html#brikchat">BrikChat</a>
-      <a href="index.html#brikvision">BrikVision</a>
-      <a href="index.html#brikdocs">BrikDocs</a>
+      <a href="brik-ai.html">Brik AI</a>
+      <a href="brikchat.html">BrikChat</a>
+      <a href="brikvision.html">BrikVision</a>
+      <a href="brikdocs.html">BrikDocs</a>
       <a href="pricing.html">Pricing</a>
     </div>
 
@@ -492,7 +515,6 @@ footer{padding:80px 0 36px}
     }
   })();
 </script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script src="components/global.js"></script>
+  <script src="components/global.js?v=20261031"></script>
 </body>
 </html>

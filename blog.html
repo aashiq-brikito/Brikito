@@ -40,14 +40,6 @@
     .btn-sm{min-height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
     .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
     /* Navigation — aligned with the Privacy Policy page */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
-    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
-    .nav-links{display:flex;align-items:center;gap:22px}
-    .nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
-    .nav-links a.lnk:hover,.nav-links a.lnk[aria-current="page"]{color:var(--ink)}
-    .nav-cta{display:flex;align-items:center;gap:10px}
-    @media(max-width:960px){.nav-links{display:none}.nav-cta .login{display:none}}
     /* Page heading */
     .phead{padding:82px 0 52px;position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
     .phead::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 64px,linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/64px 100%;mask-image:radial-gradient(ellipse 70% 70% at 30% 20%,#000 25%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 30% 20%,#000 25%,transparent 75%);opacity:.55;pointer-events:none}
@@ -118,57 +110,107 @@
     @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:600px){.listing-head{align-items:stretch;flex-direction:column}.search{width:100%}.grid{grid-template-columns:1fr}.card-art{aspect-ratio:1.7}.phead{padding:62px 0 40px}.phead-bottom{align-items:flex-start;flex-direction:column}}
     /* Footer — aligned with the Privacy Policy page */
-    footer{padding:72px 0 36px;border-top:1px solid var(--hair);margin-top:0}
-    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
-    .foot-brand .tagline{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
-    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
-    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-    .foot-col a{font-size:13.5px;color:var(--ink)}
-    .foot-col a:hover{color:var(--muted)}
-    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
-    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
-    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
-    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
-    @media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
-    @media(max-width:460px){.foot-top{grid-template-columns:1fr 1fr;gap:28px 20px}.foot-brand{grid-column:1/-1}}
-    .bl-dd{position:relative}
-    .bl-dd-btn{display:inline-flex;align-items:center;gap:5px;background:none;border:0;padding:0;font:inherit;font-size:13.5px;color:var(--muted);cursor:pointer}
-    .bl-dd-btn:hover,.bl-dd.is-open .bl-dd-btn{color:var(--ink)}
-    .bl-dd-btn svg{width:11px;height:11px;transition:transform .2s}
-    .bl-dd.is-open .bl-dd-btn svg{transform:rotate(180deg)}
-    .bl-dd-menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);width:480px;display:none;grid-template-columns:1fr 1fr;gap:4px;padding:10px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 28px 60px -24px rgba(0,0,0,.22);z-index:60}
-    .bl-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px}
-    .bl-dd.is-open .bl-dd-menu{display:grid}
-    @media(hover:hover){.bl-dd:hover .bl-dd-menu{display:grid}}
-    .bl-dd-menu a{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border-radius:10px}
-    .bl-dd-menu a:hover{background:var(--paper-2)}
-    .bl-dd-menu b{font-size:14px;font-weight:500;color:var(--ink)}
-    .bl-dd-menu small{font-size:12px;line-height:1.4;color:var(--muted)}
   </style>
-  <script src="components/tracking.js" async></script>
+  <link rel="stylesheet" href="components/global.css?v=20261031">
 </head>
 <body>
-  <header class="nav">
-  <div class="wrap nav-inner">
-    <a class="logo" href="index.html" aria-label="Brikito">
-      <span>Brikito</span>
+<header class="global-header">
+  <div class="global-header-inner">
+
+    <!-- Brikito Logo (black icon + Brikito text) -->
+    <a
+      class="global-logo"
+      href="index.html"
+      aria-label="Brikito home"
+      style="display:inline-flex;align-items:center;gap:9px;color:#0a0a0a;text-decoration:none"
+    >
+      <svg
+        class="global-logo-mark"
+        viewBox="0 0 4096 4096"
+        width="24"
+        height="24"
+        fill="currentColor"
+        aria-hidden="true"
+        focusable="false"
+        style="display:block;flex:none"
+      >
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+      </svg>
+      <span class="global-logo-text">Brikito</span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="lnk" href="index.html#intel">Platform</a>
-      <div class="bl-dd">
-        <button class="lnk bl-dd-btn" type="button" aria-expanded="false">Features <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <div class="bl-dd-menu"><a href="brik-ai.html"><b>Brik AI</b><small>The AI assistant built for construction</small></a><a href="brikchat.html"><b>BrikChat</b><small>Site chat that turns messages into work</small></a><a href="brikvision.html"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></a><a href="brikdocs.html"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></a></div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="global-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="global-nav"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Main Navigation -->
+    <nav
+      class="global-nav"
+      id="global-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="index.html#intel">Platform</a>
+
+      <!-- Features dropdown -->
+      <div class="global-dd">
+        <button class="global-dd-btn" type="button" aria-expanded="false" aria-controls="global-features">
+          Features
+          <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="global-dd-menu" id="global-features">
+          <a href="brik-ai.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+            <span class="global-dd-tx"><b>Brik AI</b><small>The AI assistant built for construction</small></span>
+          </a>
+          <a href="brikchat.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikChat</b><small>Site chat that turns messages into work</small></span>
+          </a>
+          <a href="brikvision.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <span class="global-dd-tx"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></span>
+          </a>
+          <a href="brikdocs.html">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></span>
+          </a>
+        </div>
       </div>
-      <a class="lnk" href="index.html#roadmap">Roadmap</a>
-      <a class="lnk" href="blog.html">Blog</a>
-      <a class="lnk" href="pricing.html">Pricing</a>
+
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="blog.html">Blog</a>
+      <a href="pricing.html">Pricing</a>
     </nav>
-    <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm login" href="index.html">Sign in</a>
-      <a class="btn btn-solid btn-sm" href="book-a-demo.html">Book a demo
-        <svg class="ico arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4M11 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+    <!-- Header Buttons -->
+    <div class="global-header-actions">
+
+      <a
+        class="global-trial"
+        href="https://app.brikito.com/signup"
+      >
+        Sign in
       </a>
+
+      <a
+        class="global-demo"
+        href="book-a-demo.html"
+      >
+        Book a demo <span aria-hidden="true">↗</span>
+      </a>
+
     </div>
+
   </div>
 </header>
 
@@ -299,32 +341,101 @@
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <div class="foot-top">
-        <div class="foot-brand">
-          <a class="logo" href="index.html"><span>Brikito</span></a>
-          <p class="tagline">One app for the whole construction site, with Brik AI built in.</p>
-        </div>
-        <div class="foot-col"><h4>Product</h4><ul>
-          <li><a href="index.html#intel">Platform</a></li><li><a href="brik-ai.html">Brik AI</a></li><li><a href="brikchat.html">BrikChat</a></li><li><a href="brikvision.html">BrikVision</a></li><li><a href="brikdocs.html">BrikDocs</a></li><li><a href="index.html#roadmap">Roadmap</a></li>
-        </ul></div>
-        <div class="foot-col"><h4>Company</h4><ul>
-          <li><a href="index.html">About</a></li><li><a href="index.html">Customers</a></li><li><a href="index.html">Careers</a></li><li><a href="index.html">Press</a></li>
-        </ul></div>
-        <div class="foot-col"><h4>Resources</h4><ul>
-          <li><a href="how-it-works.html">How it works</a></li><li><a href="blog.html" aria-current="page">Journal</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="index.html">Terms</a></li>
-        </ul></div>
-        <div class="foot-col"><h4>Contact</h4><ul>
-          <li><a href="mailto:hey@brikito.com">hey@brikito.com</a></li><li><a href="mailto:hey@brikito.com?subject=Brikito%20walkthrough%20request">Book a walkthrough</a></li><li><a href="index.html">Partners</a></li>
-        </ul></div>
-      </div>
-      <div class="foot-bottom">
-        <div>© 2026 Brikito · Built in India</div>
-        <div class="badges"><span class="badge">Construction intelligence</span><span class="badge">Multi-project</span><span class="badge">Role-scoped access</span></div>
+  <style>
+  .global-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
+  .global-footer-logo svg{display:block;flex:none;width:22px;height:22px}
+  .global-footer-bottom-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .global-footer-social{display:flex;align-items:center;gap:8px}
+  .global-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.72);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
+  .global-footer-social a:hover,.global-footer-social a:focus-visible{color:#fff;border-color:rgba(255,255,255,.45);background-color:rgba(255,255,255,.06)}
+  .global-footer-social svg{width:16px;height:16px;display:block}
+</style>
+
+<footer class="global-footer">
+  <div class="global-footer-inner">
+
+    <!-- Footer Brand -->
+    <div class="global-footer-brand">
+      <a href="index.html" class="global-footer-logo" aria-label="Brikito home">
+        <!-- Brikito icon (white) -->
+        <svg viewBox="0 0 4096 4096" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+        </svg>
+        <span>Brikito</span>
+      </a>
+
+      <p>
+        Construction made simple.
+      </p>
+    </div>
+
+    <!-- Product Links -->
+    <div class="global-footer-col">
+      <h4>Product</h4>
+      <a href="index.html#intel">Platform</a>
+      <a href="brik-ai.html">Brik AI</a>
+      <a href="brikchat.html">BrikChat</a>
+      <a href="brikvision.html">BrikVision</a>
+      <a href="brikdocs.html">BrikDocs</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+
+    <!-- Explore Links -->
+    <div class="global-footer-col">
+      <h4>Explore</h4>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="blog.html">Blog</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="book-a-demo.html">Book a demo</a>
+    </div>
+
+    <!-- Account Links -->
+    <div class="global-footer-col">
+      <h4>Get started</h4>
+      <a href="https://app.brikito.com/signup">Sign in</a>
+      <a href="book-a-demo.html">Talk to our team</a>
+      <a href="privacy.html">Privacy policy</a>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="global-footer-bottom">
+    <span>
+      © <span id="global-footer-year">2026</span> Brikito. All rights reserved.
+    </span>
+
+    <div class="global-footer-bottom-right">
+      <a href="privacy.html">Privacy policy</a>
+
+      <!-- Social media links -->
+      <div class="global-footer-social" aria-label="Brikito on social media">
+        <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var year = document.getElementById("global-footer-year");
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  })();
+</script>
 
   <script>
     (function(){
@@ -362,12 +473,6 @@
       search.addEventListener('input', update);
     })();
   </script>
-<script>
-(function(){var dd=document.querySelector('.bl-dd');if(!dd)return;var b=dd.querySelector('.bl-dd-btn');
-function set(o){dd.classList.toggle('is-open',o);b.setAttribute('aria-expanded',String(o));}
-b.addEventListener('click',function(e){e.stopPropagation();set(!dd.classList.contains('is-open'));});
-document.addEventListener('click',function(e){if(!dd.contains(e.target))set(false);});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
-</script>
+<script src="components/global.js?v=20261031"></script>
 </body>
 </html>
