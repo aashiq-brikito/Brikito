@@ -5,5 +5,7 @@ Allow: /
 
 # Old duplicate export of the homepage – not meant for search results
 Disallow: /Brikito%20(standalone).html
+# Internal maintenance scripts
+Disallow: /tools/
 
 Sitemap: https://www.brikito.com/sitemap.xml

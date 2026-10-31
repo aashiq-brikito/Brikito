@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.brikito.com/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://www.brikito.com/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/about</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog-ai-construction</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog-boq-cost-overruns</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog-construction-information-management</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog-drawing-revisions</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog-rework-coordination</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog-seven-site-updates</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog-where-time-goes</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/blog</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/book-a-demo</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://www.brikito.com/brik-ai</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://www.brikito.com/brikchat</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://www.brikito.com/brikvision</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://www.brikito.com/brikdocs</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://www.brikito.com/about</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://www.brikito.com/how-it-works</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/pricing</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/book-a-demo</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://www.brikito.com/blog</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://www.brikito.com/blog-ai-construction</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/blog-boq-cost-overruns</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/blog-construction-information-management</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/blog-drawing-revisions</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/blog-rework-coordination</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/blog-seven-site-updates</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://www.brikito.com/blog-where-time-goes</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://www.brikito.com/brikvision</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/how-it-works</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/pricing</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://www.brikito.com/privacy</loc><lastmod>2026-10-31</lastmod></url>
 </urlset>
