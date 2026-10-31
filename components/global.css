@@ -24,3 +24,29 @@
 @media(max-width:1100px){.global-header-inner{gap:18px;padding:0 22px}.global-nav{gap:16px}.global-nav a{font-size:14px}.global-header-actions{gap:8px}}
 @media(max-width:900px){.global-header-inner{min-height:68px}.global-menu-toggle{display:block;margin-left:auto;order:3}.global-header-actions{margin-left:0;order:2}.global-nav{display:none;position:absolute;left:0;right:0;top:100%;padding:12px 24px 22px;background:#fff;border-bottom:1px solid rgba(20,25,35,.12);box-shadow:0 18px 28px rgba(0,0,0,.08);align-items:stretch;flex-direction:column;gap:0;margin:0}.global-nav.is-open{display:flex}.global-nav a{padding:12px 2px;font-size:15px}.global-header-actions a{font-size:13px}.global-footer-inner{grid-template-columns:1fr 1fr;gap:30px}.global-footer-brand{grid-column:1/-1}}
 @media(max-width:520px){.global-header-inner{padding:0 14px;gap:8px}.global-logo{font-size:19px}.global-header-actions{gap:6px}.global-trial{padding:0 10px;min-height:36px}.global-demo{padding:0 10px;min-height:36px;gap:5px}.global-header-actions a{font-size:12px}.global-demo span{font-size:17px}.global-footer-inner{grid-template-columns:1fr 1fr;gap:26px 18px}.global-footer-bottom{flex-direction:column;gap:10px}}
+
+/* ---------- Features dropdown in the shared header ---------- */
+.global-dd{position:relative}
+.global-dd-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;font:inherit;font-size:16px;font-weight:400;color:#666;cursor:pointer;white-space:nowrap;transition:color .2s}
+.global-dd-btn:hover,.global-dd.is-open .global-dd-btn{color:#111}
+.global-dd-btn svg{width:12px;height:12px;transition:transform .2s ease}
+.global-dd.is-open .global-dd-btn svg{transform:rotate(180deg)}
+.global-dd-menu{position:absolute;top:calc(100% + 22px);left:50%;width:540px;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:10px;background:#fff;border:1px solid #e7e7e7;border-radius:14px;box-shadow:0 28px 60px -24px rgba(0,0,0,.22),0 8px 20px -12px rgba(0,0,0,.08);opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:10000}
+.global-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
+.global-dd.is-open .global-dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(hover:hover) and (min-width:901px){.global-dd:hover .global-dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}.global-dd:hover .global-dd-btn{color:#111}.global-dd:hover .global-dd-btn svg{transform:rotate(180deg)}}
+.global-nav .global-dd-menu a{display:flex;align-items:flex-start;gap:12px;padding:12px;border-radius:10px;color:#111;font-size:14px;white-space:normal;transition:background .15s}
+.global-nav .global-dd-menu a:hover,.global-nav .global-dd-menu a:focus-visible{background:#f6f6f6;color:#111}
+.global-dd-ic{flex:none;width:34px;height:34px;border-radius:8px;border:1px solid #e7e7e7;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#111}
+.global-dd-ic svg{width:17px;height:17px}
+.global-dd-tx{display:flex;flex-direction:column;gap:3px;min-width:0}
+.global-dd-tx b{font-size:15px;font-weight:500;letter-spacing:-.01em;color:#111}
+.global-dd-tx small{font-size:12.5px;line-height:1.4;color:#777}
+@media(max-width:1100px){.global-dd-btn{font-size:14px}}
+@media(max-width:900px){
+  .global-dd-btn{width:100%;justify-content:space-between;padding:12px 2px;font-size:15px}
+  .global-dd-menu{position:static;width:auto;display:none;grid-template-columns:1fr;gap:2px;padding:0 0 10px;border:0;border-radius:0;box-shadow:none;opacity:1;visibility:visible;transform:none}
+  .global-dd-menu::before{display:none}
+  .global-dd.is-open .global-dd-menu{display:grid;transform:none}
+  .global-nav .global-dd-menu a{padding:10px 8px}
+}
