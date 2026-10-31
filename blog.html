@@ -131,6 +131,19 @@
     .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
     @media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
     @media(max-width:460px){.foot-top{grid-template-columns:1fr 1fr;gap:28px 20px}.foot-brand{grid-column:1/-1}}
+    .bl-dd{position:relative}
+    .bl-dd-btn{display:inline-flex;align-items:center;gap:5px;background:none;border:0;padding:0;font:inherit;font-size:13.5px;color:var(--muted);cursor:pointer}
+    .bl-dd-btn:hover,.bl-dd.is-open .bl-dd-btn{color:var(--ink)}
+    .bl-dd-btn svg{width:11px;height:11px;transition:transform .2s}
+    .bl-dd.is-open .bl-dd-btn svg{transform:rotate(180deg)}
+    .bl-dd-menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);width:480px;display:none;grid-template-columns:1fr 1fr;gap:4px;padding:10px;background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 28px 60px -24px rgba(0,0,0,.22);z-index:60}
+    .bl-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px}
+    .bl-dd.is-open .bl-dd-menu{display:grid}
+    @media(hover:hover){.bl-dd:hover .bl-dd-menu{display:grid}}
+    .bl-dd-menu a{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border-radius:10px}
+    .bl-dd-menu a:hover{background:var(--paper-2)}
+    .bl-dd-menu b{font-size:14px;font-weight:500;color:var(--ink)}
+    .bl-dd-menu small{font-size:12px;line-height:1.4;color:var(--muted)}
   </style>
   <script src="components/tracking.js" async></script>
 </head>
@@ -142,10 +155,10 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a class="lnk" href="index.html#intel">Platform</a>
-      <a class="lnk" href="brik-ai.html">Brik AI</a>
-      <a class="lnk" href="brikchat.html">BrikChat</a>
-      <a class="lnk" href="brikvision.html">BrikVision</a>
-      <a class="lnk" href="brikdocs.html">BrikDocs</a>
+      <div class="bl-dd">
+        <button class="lnk bl-dd-btn" type="button" aria-expanded="false">Features <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="bl-dd-menu"><a href="brik-ai.html"><b>Brik AI</b><small>The AI assistant built for construction</small></a><a href="brikchat.html"><b>BrikChat</b><small>Site chat that turns messages into work</small></a><a href="brikvision.html"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></a><a href="brikdocs.html"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></a></div>
+      </div>
       <a class="lnk" href="index.html#roadmap">Roadmap</a>
       <a class="lnk" href="blog.html">Blog</a>
       <a class="lnk" href="pricing.html">Pricing</a>
@@ -349,5 +362,12 @@
       search.addEventListener('input', update);
     })();
   </script>
+<script>
+(function(){var dd=document.querySelector('.bl-dd');if(!dd)return;var b=dd.querySelector('.bl-dd-btn');
+function set(o){dd.classList.toggle('is-open',o);b.setAttribute('aria-expanded',String(o));}
+b.addEventListener('click',function(e){e.stopPropagation();set(!dd.classList.contains('is-open'));});
+document.addEventListener('click',function(e){if(!dd.contains(e.target))set(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+</script>
 </body>
 </html>
