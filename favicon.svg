@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 112 112"><defs><linearGradient id="g" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset=".5" stop-color="#5462F0"/><stop offset="1" stop-color="#3A8EF6"/></linearGradient></defs><path fill-rule="evenodd" fill="url(#g)" d="M2.5 25H72.5A2.5 2.5 0 0 1 75 27.5V97.5A2.5 2.5 0 0 1 72.5 100H2.5A2.5 2.5 0 0 1 0 97.5V27.5A2.5 2.5 0 0 1 2.5 25ZM27.5 0H97.5A2.5 2.5 0 0 1 100 2.5V72.5A2.5 2.5 0 0 1 97.5 75H27.5A2.5 2.5 0 0 1 25 72.5V2.5A2.5 2.5 0 0 1 27.5 0Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Brikito favicon: white Brikito mark on a black rounded tile -->
+  <rect width="512" height="512" rx="112" fill="#0A0A0A"/>
+  <g transform="translate(108 108) scale(0.072265625)" fill="#FFFFFF">
+    <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+    <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+  </g>
+</svg>

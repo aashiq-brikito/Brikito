@@ -134,7 +134,7 @@ ORGANIZATION = {
     "@id": ORG_ID,
     "name": "Brikito",
     "url": SITE + "/",
-    "logo": SITE + "/apple-touch-icon.png",
+    "logo": SITE + "/icons/icon-512.png",
     "description": "Brikito is construction management software that puts site chat, attendance, drawings, reports and a live project dashboard into one app, with Brik AI built in.",
     "slogan": "Construction made simple.",
     "email": "hey@brikito.com",
@@ -243,7 +243,7 @@ def enrich_article(page, s):
         "mainEntityOfPage": {"@type": "WebPage", "@id": url(page["slug"])},
         "author": post.get("author") or {"@type": "Organization", "name": "Brikito", "url": SITE + "/"},
         "publisher": {"@type": "Organization", "@id": ORG_ID, "name": "Brikito",
-                      "logo": {"@type": "ImageObject", "url": SITE + "/apple-touch-icon.png"}},
+                      "logo": {"@type": "ImageObject", "url": SITE + "/icons/icon-512.png"}},
         "inLanguage": "en",
     })
     return [post, {"@type": "BreadcrumbList", "itemListElement": [
@@ -264,6 +264,8 @@ STRIP = [
     r'[ \t]*<meta\b[^>]*\bname="twitter:[^"]*"[^>]*>\s*\n?',
     r'[ \t]*<link\b[^>]*\brel="apple-touch-icon"[^>]*>\s*\n?',
     r'[ \t]*<meta\b[^>]*\bname="theme-color"[^>]*>\s*\n?',
+    r'[ \t]*<link\b[^>]*\brel="manifest"[^>]*>\s*\n?',
+    r'[ \t]*<link\b[^>]*\brel="icon"[^>]*href="/favicon\.ico"[^>]*>\s*\n?',
 ]
 
 def esc(v):
@@ -300,6 +302,8 @@ def head_block(page):
         f'<meta name="twitter:image" content="{img}" />',
         '<meta name="theme-color" content="#ffffff" />',
         '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />',
+        '<link rel="icon" href="/favicon.ico" sizes="48x48" />',
+        '<link rel="manifest" href="/site.webmanifest" />',
     ]
     return "\n".join(lines) + "\n"
 
