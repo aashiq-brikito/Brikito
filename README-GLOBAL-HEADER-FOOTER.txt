@@ -6,7 +6,7 @@ How it works (updated 31 Oct 2026)
   links without running any script.
 - components/header.html and components/footer.html are the MASTER COPIES.
   Menu: Features (dropdown: Brik AI, BrikChat, BrikVision, BrikDocs)
-  · Roadmap · Resources (blog.html) · About us (about.html) · Pricing
+  · Resources (blog.html) · About us (about.html) · Pricing
 - components/global.css styles the header, footer and Features dropdown.
 - components/global.js wires up the mobile menu and the Features dropdown and
   loads components/tracking.js (Meta Pixel + Google Analytics).
