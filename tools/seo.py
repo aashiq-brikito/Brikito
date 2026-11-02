@@ -122,6 +122,42 @@ PAGES = {
         title="Where Does a Construction Project Actually Lose Time?",
         description="Construction delays build up between activities, approvals, decisions and handoffs. Learn how to spot waiting time and improve project coordination.",
     ),
+    "blog-daily-progress-report-construction.html": dict(
+        slug="blog-daily-progress-report-construction", type="article", image="/images/blog/daily-progress-report-construction.jpg",
+        published="2026-11-02", modified="2026-11-02",
+        title="Daily Progress Report in Construction: Format & Template",
+        description="What a construction daily progress report (DPR) should include, a worked example, a format you can copy, mistakes to avoid and how to automate it.",
+    ),
+    "blog-building-construction-process.html": dict(
+        slug="blog-building-construction-process", type="article", image="/images/blog/building-construction-process.jpg",
+        published="2026-11-02", modified="2026-11-02",
+        title="Building Construction Process: A Step-by-Step Guide",
+        description="The building construction process step by step, from approvals and foundations to frame, services, finishes and handover, with hold points and checklists.",
+    ),
+    "blog-construction-material-management.html": dict(
+        slug="blog-construction-material-management", type="article", image="/images/blog/construction-material-management.jpg",
+        published="2026-11-02", modified="2026-11-02",
+        title="Construction Material Management: Indent to Consumption",
+        description="How construction material management works from indent to purchase order, GRN, storage, issue and reconciliation, with IS 4082 storage rules and a checklist.",
+    ),
+    "blog-construction-cost-control.html": dict(
+        slug="blog-construction-cost-control", type="article", image="/images/blog/construction-cost-control.jpg",
+        published="2026-11-02", modified="2026-11-02",
+        title="Construction Cost Control: A Practical Guide for Developers",
+        description="A practical guide to construction cost control for developers: baseline budgets, commitments, earned value, materials, labour, changes and cash flow.",
+    ),
+    "blog-construction-scheduling.html": dict(
+        slug="blog-construction-scheduling", type="article", image="/images/blog/construction-scheduling.jpg",
+        published="2026-11-02", modified="2026-11-02",
+        title="Construction Scheduling and Delay Management Guide",
+        description="How construction scheduling and delay management work: master programme, look-ahead plans, critical path, PPC, delay types and recovery, with a checklist.",
+    ),
+    "blog-construction-market-guide.html": dict(
+        slug="blog-construction-market-guide", type="article", image="/images/blog/construction-market-guide.jpg",
+        published="2026-11-02", modified="2026-11-02",
+        title="Construction in India, UAE, Singapore & Sri Lanka: Guide",
+        description="How construction is regulated in India, UAE, Singapore and Sri Lanka: RERA, Dubai escrow, BCA and CONQUAS, CIDA, and the site problems all four share.",
+    ),
     "404.html": dict(
         slug="404", noindex=True,
         title="Page Not Found | Brikito Construction Software",
@@ -225,6 +261,18 @@ BUILDERS = {
     "blog.html": ld_blog,
 }
 
+def article_faq(s):
+    """FAQPage schema from the article's <div class="faq"> section (h3 question + p answer)."""
+    m = re.search(r'<div class="faq">(.*?)</div>', s, re.S)
+    if not m:
+        return None
+    txt = lambda x: html.unescape(re.sub(r"<[^>]+>", "", x)).strip()
+    qa = re.findall(r"<h3[^>]*>(.*?)</h3>\s*<p[^>]*>(.*?)</p>", m.group(1), re.S)
+    if not qa:
+        return None
+    return {"@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": txt(q), "acceptedAnswer": {"@type": "Answer", "text": txt(a)}} for q, a in qa]}
+
 def enrich_article(page, s):
     """Keep each article's own BlogPosting data and add what Google needs."""
     m = re.search(r'<script type="application/ld\+json">(.*?)</script>', s, re.S)
@@ -246,7 +294,11 @@ def enrich_article(page, s):
                       "logo": {"@type": "ImageObject", "url": SITE + "/icons/icon-512.png"}},
         "inLanguage": "en",
     })
-    return [post, {"@type": "BreadcrumbList", "itemListElement": [
+    graph = [post]
+    faq = article_faq(s)
+    if faq:
+        graph.append(faq)
+    return graph + [{"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Brikito", "item": SITE + "/"},
         {"@type": "ListItem", "position": 2, "name": "Resources", "item": url("blog")},
         {"@type": "ListItem", "position": 3, "name": page["title"], "item": url(page["slug"])},
