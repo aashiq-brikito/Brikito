@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Construction Material Management: Indent to Consumption</title>
+<meta name="description" content="How construction material management works from indent to purchase order, GRN, storage, issue and reconciliation, with IS 4082 storage rules and a checklist." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/blog-construction-material-management" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Construction Material Management: Indent to Consumption" />
+<meta property="og:description" content="How construction material management works from indent to purchase order, GRN, storage, issue and reconciliation, with IS 4082 storage rules and a checklist." />
+<meta property="og:url" content="https://www.brikito.com/blog-construction-material-management" />
+<meta property="og:image" content="https://www.brikito.com/images/blog/construction-material-management.jpg" />
+<meta property="article:published_time" content="2026-11-02" />
+<meta property="article:modified_time" content="2026-11-02" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Construction Material Management: Indent to Consumption" />
+<meta name="twitter:description" content="How construction material management works from indent to purchase order, GRN, storage, issue and reconciliation, with IS 4082 storage rules and a checklist." />
+<meta name="twitter:image" content="https://www.brikito.com/images/blog/construction-material-management.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+    article .cover{margin:0 0 40px}article .cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#f2f3f5}
+    .related{margin-top:64px;padding-top:8px;border-top:1px solid var(--line)}.related h2{margin-top:40px}.related ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}.related li{padding:0;margin:0}.related a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}.related a:hover{border-color:var(--ink);transform:translateY(-1px)}.related .rt{display:block;font-weight:600;color:var(--ink);font-size:18px;line-height:1.35}.related .rd{display:block;font-size:15px;line-height:1.55;color:var(--muted);margin-top:6px}
+    article .table-wrap{overflow-x:auto;margin:0 0 30px}article table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.55}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--soft);color:var(--ink);font-weight:600}article td:first-child{font-weight:500;color:var(--ink)}
+</style>
+<link rel="stylesheet" href="components/global.css?v=20261031">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Construction Material Management: Indent to Consumption",
+      "description": "How construction material management works from indent to purchase order, GRN, storage, issue and reconciliation, with IS 4082 storage rules and a checklist.",
+      "image": [
+        "https://www.brikito.com/images/blog/construction-material-management.jpg"
+      ],
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "url": "https://www.brikito.com/blog-construction-material-management",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.brikito.com/blog-construction-material-management"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Brikito",
+        "url": "https://www.brikito.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.brikito.com/#organization",
+        "name": "Brikito",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.brikito.com/icons/icon-512.png"
+        }
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a material indent in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A material indent is the site's formal request for material, stating the item, specification, quantity, location, required-by date and current stock. Once approved, it becomes the basis for a purchase requisition and purchase order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a GRN in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A goods receipt note (GRN) records material received at site: what arrived, how much, its condition and quality checks, against which purchase order. It is the reference used to verify the supplier's invoice and update stock."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should cement be stored on a construction site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under IS 4082:1996, cement bags should be stored in a dry shed, off the floor on wooden planks, at least 600 mm from exterior walls, no more than 10 bags high, and used in the order received with each stack labelled by receipt date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you control material wastage on site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plan quantities by activity, issue material against slips that name the work and the contractor, store materials properly, and reconcile actual issues against theoretical consumption regularly so gaps can be investigated while the work is still in progress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is material reconciliation in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Material reconciliation compares the quantity of material that should have been used, based on work done and agreed wastage, with the quantity actually issued. Differences beyond the allowance are investigated and, where appropriate, recovered from contractors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools help with construction material management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Registers and spreadsheets work for small sites. Larger projects benefit from software that links indents, purchase orders, goods receipts, stock and issues in one record, so the site, procurement and accounts see the same figures."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resources",
+          "item": "https://www.brikito.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Construction Material Management: Indent to Consumption",
+          "item": "https://www.brikito.com/blog-construction-material-management"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="global-header">
+  <div class="global-header-inner">
+
+    <!-- Brikito Logo (black icon + Brikito text) -->
+    <a
+      class="global-logo"
+      href="/"
+      aria-label="Brikito home"
+      style="display:inline-flex;align-items:center;gap:9px;color:#0a0a0a;text-decoration:none"
+    >
+      <svg
+        class="global-logo-mark"
+        viewBox="0 0 4096 4096"
+        width="24"
+        height="24"
+        fill="currentColor"
+        aria-hidden="true"
+        focusable="false"
+        style="display:block;flex:none"
+      >
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+      </svg>
+      <span class="global-logo-text">Brikito</span>
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="global-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="global-nav"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Main Navigation -->
+    <nav
+      class="global-nav"
+      id="global-nav"
+      aria-label="Primary navigation"
+    >
+
+      <!-- Features dropdown -->
+      <div class="global-dd">
+        <button class="global-dd-btn" type="button" aria-expanded="false" aria-controls="global-features">
+          Features
+          <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="global-dd-menu" id="global-features">
+          <a href="/brik-ai">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+            <span class="global-dd-tx"><b>Brik AI</b><small>The AI assistant built for construction</small></span>
+          </a>
+          <a href="/brikchat">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikChat</b><small>Site chat that turns messages into work</small></span>
+          </a>
+          <a href="/brikvision">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <span class="global-dd-tx"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></span>
+          </a>
+          <a href="/brikdocs">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></span>
+          </a>
+        </div>
+      </div>
+
+      <a href="/blog">Resources</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+
+    <!-- Header Buttons -->
+    <div class="global-header-actions">
+
+      <a
+        class="global-trial"
+        href="https://app.brikito.com/signup"
+      >
+        Sign in
+      </a>
+
+      <a
+        class="global-demo"
+        href="/book-a-demo"
+      >
+        Book a demo <span aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+
+  </div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">Material management · Procurement</div>
+<h1>Construction Material Management: From Indent to Consumption</h1>
+<p class="dek">How materials should move through a construction project, from the site&#x27;s request to the purchase order, goods receipt, storage, issue and reconciliation, and where they usually leak.</p>
+<div class="meta"><span>Brikito Editorial</span><span><time datetime="2026-11-02">2 Nov 2026</time></span><span>11 min read</span><span>Materials / Procurement</span></div>
+</div>
+</section>
+<div class="layout">
+<article>
+<figure class="cover"><img src="/images/blog/construction-material-management.svg" alt="Illustration of a material delivery truck, cement bags and the indent to goods receipt flow" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+<div class="answer"><p><strong>The short answer:</strong> Construction material management is the process of planning, requesting, buying, receiving, storing, issuing and reconciling materials so the right quantity reaches the right location on time, at the agreed price, with minimum waste. It runs from the site indent to the purchase order, goods receipt, stock and actual consumption.</p></div>
+<p>A slab pour is planned for 8 am. The concrete pump is booked and the crew is on site. Then someone checks the store and finds 12 bags of cement against the 50 needed. The indent was "sent" two days ago, in a group chat, and nobody picked it up.</p>
+<p>Most material problems on site look like this. Not a dramatic theft or a supplier failure, but a request that fell between people, a delivery nobody checked, or stock that existed only on paper. This guide covers how construction material management works from indent to consumption, what goes wrong at each step, and how to set up a process the site will actually follow.</p>
+
+<h2 id="definition">What is construction material management?</h2>
+<p>Construction material management is the set of activities that control the flow of materials through a project: estimating requirements, raising indents, approving and purchasing, receiving and inspecting, storing, issuing to work fronts, and reconciling what was used against what should have been used.</p>
+<p>It sits between three teams who often see the same material differently. Site engineers think in terms of the work front ("I need cement for the 8th floor columns tomorrow"). Procurement thinks in terms of orders and vendors. Accounts thinks in terms of invoices and stock value. Good material management keeps all three looking at the same record.</p>
+
+<h2 id="why-it-matters">Why material management matters for developers and contractors</h2>
+<ul>
+<li><strong>Materials are one of the largest cost heads on a building project.</strong> Small leaks in quantity, price or wastage add up across thousands of transactions.</li>
+<li><strong>Shortages stop work.</strong> A missing material idles a crew, wastes equipment hire and pushes the schedule, which often costs more than the material itself.</li>
+<li><strong>Excess stock costs money too.</strong> Over-ordering ties up cash, takes up space and increases the risk of damage, especially for cement.</li>
+<li><strong>A correct BOQ does not protect you on its own.</strong> Costs leak during execution, through wastage, rework and untracked issues. We explain why in <a href="/blog-boq-cost-overruns">why accurate BOQs still lead to cost overruns</a>.</li>
+</ul>
+
+<h2 id="planning">Material planning and quantity take-off</h2>
+<p>Material management starts before the first indent. The quantities come from the bill of quantities (BOQ), the bar bending schedule (BBS) for reinforcement, and the drawings. The timing comes from the construction schedule.</p>
+<ul>
+<li>Break the BOQ quantities down by stage, floor and activity, so you know what is needed for each part of the work.</li>
+<li>Link major materials to the schedule. If the 8th floor slab is planned for a given week, the steel, cement, aggregates and shuttering for it must be planned backwards from that date.</li>
+<li>Account for supplier lead times. Ready-mix concrete may need a day's notice; special items such as imported fittings may need weeks.</li>
+<li>Set a reorder level for consumables like cement, so a fresh indent is raised before stock runs low, not after.</li>
+</ul>
+<p>Planning is where material management connects to the schedule. Our <a href="/blog-construction-scheduling">construction scheduling guide</a> covers the look-ahead planning that makes this possible.</p>
+
+<h2 id="indents">Material indents: the request from site</h2>
+<p>An indent (also called a material requisition) is the site's formal request for material. It is the first record in the chain, so it needs to be complete.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Field</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Material and specification</td><td>Cement, OPC 53 grade</td></tr>
+<tr><td>Quantity and unit</td><td>50 bags</td></tr>
+<tr><td>Location and purpose</td><td>Tower B, Block B, 8th floor columns</td></tr>
+<tr><td>Required by</td><td>Tomorrow, 8 am</td></tr>
+<tr><td>Current stock on site</td><td>12 bags</td></tr>
+<tr><td>Raised by / approved by</td><td>Site supervisor / project manager</td></tr>
+</tbody>
+</table></div>
+<p>The most common indent problem is not the content but the channel. When indents arrive as a voice note, a phone call or one message among hundreds in a group, they are easy to miss and impossible to track. Each indent should become a numbered record with a status: raised, approved, ordered, delivered.</p>
+
+<h2 id="procurement">Procurement: from indent to purchase order</h2>
+<p>Once approved, an indent becomes a purchase requisition and then a purchase order (PO).</p>
+<ol>
+<li><strong>Purchase requisition (PR):</strong> procurement groups approved indents and checks them against the budget and rate contracts.</li>
+<li><strong>Request for quotation (RFQ):</strong> for items without a rate contract, quotes are invited from approved vendors.</li>
+<li><strong>Quote comparison:</strong> compare price, delivery time, payment terms and past vendor performance, not just price.</li>
+<li><strong>Purchase order:</strong> the PO fixes the specification, quantity, rate, delivery date and location. It is the reference against which delivery and invoice are checked.</li>
+</ol>
+<p>Keep the chain linked: every PO should trace back to an indent, and every indent to an activity. That link is what lets you explain later why the material was bought.</p>
+
+<h2 id="receiving">Receiving materials: the goods receipt note</h2>
+<p>When material arrives, the storekeeper or engineer checks it and records a goods receipt note (GRN).</p>
+<ul>
+<li><strong>Quantity:</strong> count bags, weigh steel, and check concrete delivery tickets against the PO and the delivery challan.</li>
+<li><strong>Quality:</strong> check grade and brand against the specification, and collect test certificates, such as manufacturer's test certificates for cement and mill test certificates for reinforcement steel. Sample for testing where the specification requires it.</li>
+<li><strong>Condition:</strong> reject damaged, wet or set cement bags and rusted or bent steel.</li>
+<li><strong>Record:</strong> the GRN number, date, vehicle number and any shortage or rejection, with photos.</li>
+</ul>
+<p>Short or damaged deliveries should be noted on the GRN at the gate. Raising them a week later, when the invoice arrives, rarely works.</p>
+
+<h2 id="storage">Storing materials on site</h2>
+<p>Poor storage turns good material into waste. Cement is the classic example because moisture ruins it. IS 4082:1996, the Indian Standard on stacking and storage of construction materials, sets out practical rules for cement in bags (<a href="https://law.resource.org/pub/in/bis/S03/is.4082.1996.pdf" rel="noopener">IS 4082:1996</a>):</p>
+<ul>
+<li>Stack bags off the floor on wooden planks, in a dry, weatherproof shed.</li>
+<li>Keep stacks at least 600 mm away from the exterior walls.</li>
+<li>Do not stack more than 10 bags high, to prevent lumping under pressure.</li>
+<li>Stack so bags can be used in the order they were received (first in, first out), and label each stack with its date of receipt.</li>
+</ul>
+<p>The same thinking applies to other materials: reinforcement stored off the ground and covered, sorted by diameter; aggregates on hard, clean surfaces with separation between sizes; fittings and electrical items in locked, labelled storage.</p>
+
+<h2 id="issue">Issuing materials and tracking consumption</h2>
+<p>Material that leaves the store without a record is the biggest blind spot on most sites.</p>
+<ul>
+<li>Issue against an issue slip that names the material, quantity, activity, location and the contractor or crew receiving it.</li>
+<li>Where contractors supply labour only, record material issued to each contractor. This is the basis for recovering excess wastage.</li>
+<li>Record consumption against activities. Cement issued for the 8th floor columns should be traceable to that work in the <a href="/blog-daily-progress-report-construction">daily progress report</a>.</li>
+</ul>
+
+<h2 id="reconciliation">Wastage control and material reconciliation</h2>
+<p>Reconciliation compares what should have been used with what was actually used.</p>
+<ol>
+<li>Calculate theoretical consumption from the work done, using the design quantities and agreed wastage allowances.</li>
+<li>Compare with actual issues from the store for the same period and work.</li>
+<li>Investigate gaps beyond the allowance: wrong mix, over-ordering of ready-mix, poor storage, rework, pilferage, or simply unrecorded issues.</li>
+<li>Prepare a stock statement for key materials, at least monthly and more often for cement and steel.</li>
+</ol>
+<p>Reconciliation is where material management feeds <a href="/blog-construction-cost-control">construction cost control</a>. A variance that is traced to a specific floor, week and contractor can be corrected. A variance discovered at the end of the project cannot.</p>
+
+<h2 id="by-material">Key materials and what to watch for each</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Material</th><th>Plan from</th><th>Check on receipt</th><th>Watch for on site</th></tr></thead>
+<tbody>
+<tr><td>Cement</td><td>BOQ, mix designs, schedule</td><td>Grade, brand, manufacturing date, bag condition, test certificate</td><td>Moisture damage, ageing stock, issues without slips</td></tr>
+<tr><td>Reinforcement steel</td><td>Bar bending schedule (BBS)</td><td>Diameter, grade, weight, mill test certificate</td><td>Cutting waste, rusting, off-cuts not reused</td></tr>
+<tr><td>Ready-mix concrete</td><td>Pour plan, element volumes</td><td>Delivery ticket, grade, slump, time since batching</td><td>Over-ordering, returned concrete, cube sampling</td></tr>
+<tr><td>Aggregates and sand</td><td>BOQ, mix designs</td><td>Volume, grading, cleanliness</td><td>Mixing of sizes, losses on soft ground</td></tr>
+<tr><td>Blocks and bricks</td><td>Wall areas from drawings</td><td>Count, size, strength certificate where specified</td><td>Breakage in handling, over-stacking</td></tr>
+<tr><td>Shuttering and props</td><td>Floor cycle and formwork plan</td><td>Count and condition</td><td>Losses between floors, damage, removal before the permitted time</td></tr>
+<tr><td>MEP items and fittings</td><td>Services drawings and schedules</td><td>Make, model, specification, count</td><td>Loss and theft, wrong items issued</td></tr>
+</tbody>
+</table></div>
+<p>Reinforcement deserves a special mention. The bar bending schedule gives the exact cutting lengths and weights for each element, so steel consumption can be checked against it element by element, and off-cuts can be planned for reuse instead of being sold as scrap.</p>
+
+<h2 id="roles">Who owns each step</h2>
+<p>Material management fails when everyone assumes someone else is tracking it. A clear owner for each step avoids that.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Step</th><th>Owner</th><th>Approves or checks</th></tr></thead>
+<tbody>
+<tr><td>Quantity planning</td><td>Planning or QS engineer</td><td>Project manager</td></tr>
+<tr><td>Indent</td><td>Site engineer or supervisor</td><td>Project manager</td></tr>
+<tr><td>Purchase requisition and PO</td><td>Procurement</td><td>Project manager or head office, by value</td></tr>
+<tr><td>Receiving and GRN</td><td>Storekeeper</td><td>Site engineer for quality checks</td></tr>
+<tr><td>Storage</td><td>Storekeeper</td><td>Site engineer</td></tr>
+<tr><td>Issue</td><td>Storekeeper</td><td>Site engineer or foreman receiving</td></tr>
+<tr><td>Reconciliation</td><td>QS or accounts</td><td>Project manager</td></tr>
+</tbody>
+</table></div>
+
+<h2 id="kpis">Material management KPIs worth tracking</h2>
+<ul>
+<li><strong>Indent-to-delivery time:</strong> how long from the site's request to material on site, by material type.</li>
+<li><strong>Urgent purchases:</strong> how many orders were raised as emergencies, and at what premium.</li>
+<li><strong>Stock-outs:</strong> how many times work stopped or was resequenced because a material was not available.</li>
+<li><strong>Wastage against allowance:</strong> actual consumption compared with theoretical consumption plus the agreed wastage, for cement, steel and concrete.</li>
+<li><strong>Unreconciled stock:</strong> the gap between book stock and physical stock at each count.</li>
+</ul>
+<p>Pick three to start with. Indent-to-delivery time and wastage against allowance usually tell you the most about where the process is breaking down.</p>
+
+<h2 id="problems">The biggest material management problems on site</h2>
+<ul>
+<li>Indents lost in chats and calls, with no status anyone can check.</li>
+<li>Stock figures that exist on paper but not in the store, or the reverse.</li>
+<li>Deliveries accepted without counting, weighing or checking certificates.</li>
+<li>Cement stored badly and lost to moisture.</li>
+<li>Material issued without slips, so consumption cannot be linked to work.</li>
+<li>Reconciliation done once at the end of the project, too late to act.</li>
+<li>Urgent purchases at higher rates because a shortage was spotted late.</li>
+</ul>
+
+<h2 id="framework">How to improve material management step by step</h2>
+<ol>
+<li><strong>Break down quantities from the BOQ and BBS by floor and activity.</strong></li>
+<li><strong>Link major materials to the look-ahead schedule</strong> and work back from the date they are needed, including supplier lead times.</li>
+<li><strong>Make every indent a numbered record</strong> with quantity, location, required-by date, current stock and an approver.</li>
+<li><strong>Keep the chain linked:</strong> indent to purchase requisition to PO to GRN to issue slip.</li>
+<li><strong>Check every delivery at the gate</strong> for quantity, quality and condition, and record it on a GRN with photos.</li>
+<li><strong>Store to standard</strong>, starting with cement under IS 4082 and first-in, first-out use.</li>
+<li><strong>Issue against slips</strong> naming the activity and the contractor.</li>
+<li><strong>Reconcile key materials monthly</strong> and investigate gaps beyond the agreed wastage allowance.</li>
+</ol>
+
+<h2 id="checklist">Material management checklist</h2>
+<ul>
+<li>Are BOQ and BBS quantities broken down by floor and activity?</li>
+<li>Does every indent have a number, quantity, location, required-by date and approver?</li>
+<li>Can anyone see the status of an indent without calling someone?</li>
+<li>Does every PO trace back to an approved indent?</li>
+<li>Is every delivery recorded on a GRN with quantity, quality checks and photos?</li>
+<li>Is cement stacked off the floor, away from walls, no more than 10 bags high and used first in, first out?</li>
+<li>Is every issue recorded against an activity and a contractor?</li>
+<li>Is there a stock statement for cement and steel at least monthly?</li>
+</ul>
+
+<h2 id="software">Where software fits</h2>
+<p>Material management fails most often at the handoffs: from the supervisor's request to procurement, from the gate to the store record, from the store to the work front. Spreadsheets and registers can work, but only if every handoff is typed in by someone, and that is exactly the step that gets skipped on a busy day.</p>
+<p>Software helps when it captures the request where it is made and carries it through the chain. In Brikito, construction management software with Brik AI, a supervisor can simply post "need 50 bags cement for Block B, 8th floor, by tomorrow 8 am" in the site chat. Brik AI turns that message into a structured indent and routes it to the project manager for approval, checks the stock on site, and drafts the purchase order. The flow runs from indent to approval, issue, purchase requisition, PO and GRN in one record. Brik AI drafts; a person always approves.</p>
+
+<h2 id="faqs">Frequently asked questions</h2>
+<div class="faq"><h3>What is a material indent in construction?</h3><p>A material indent is the site's formal request for material, stating the item, specification, quantity, location, required-by date and current stock. Once approved, it becomes the basis for a purchase requisition and purchase order.</p>
+<h3>What is a GRN in construction?</h3><p>A goods receipt note (GRN) records material received at site: what arrived, how much, its condition and quality checks, against which purchase order. It is the reference used to verify the supplier's invoice and update stock.</p>
+<h3>How should cement be stored on a construction site?</h3><p>Under IS 4082:1996, cement bags should be stored in a dry shed, off the floor on wooden planks, at least 600 mm from exterior walls, no more than 10 bags high, and used in the order received with each stack labelled by receipt date.</p>
+<h3>How do you control material wastage on site?</h3><p>Plan quantities by activity, issue material against slips that name the work and the contractor, store materials properly, and reconcile actual issues against theoretical consumption regularly so gaps can be investigated while the work is still in progress.</p>
+<h3>What is material reconciliation in construction?</h3><p>Material reconciliation compares the quantity of material that should have been used, based on work done and agreed wastage, with the quantity actually issued. Differences beyond the allowance are investigated and, where appropriate, recovered from contractors.</p>
+<h3>What tools help with construction material management?</h3><p>Registers and spreadsheets work for small sites. Larger projects benefit from software that links indents, purchase orders, goods receipts, stock and issues in one record, so the site, procurement and accounts see the same figures.</p></div>
+
+<h2 id="takeaway">Follow the material, not just the money</h2>
+<p>Every bag of cement on a construction site should have a story you can read back: who asked for it, who approved it, which order it came on, when it arrived and which work it went into. When that story is complete, shortages are seen early, wastage is caught while it can still be fixed, and the cost report matches the site.</p>
+<p>Start with the indent. If every request becomes a tracked record, the rest of the chain becomes much easier to control.</p>
+<section class="related" aria-labelledby="related-reading"><h2 id="related-reading">Related reading</h2><ul><li><a href="/blog-construction-cost-control"><span class="rt">Construction Cost Control: A Practical Guide for Developers</span><span class="rd">A practical guide to construction cost control for developers: baseline budgets, commitments, earned value, materials, labour, changes and cash flow.</span></a></li><li><a href="/blog-boq-cost-overruns"><span class="rt">Why Accurate BOQs Still Lead to Construction Cost Overruns</span><span class="rd">Your BOQ can be correct and the project can still lose money. See where construction cost overruns really come from and how to catch them earlier.</span></a></li><li><a href="/blog-daily-progress-report-construction"><span class="rt">Daily Progress Report in Construction: Format &amp; Template</span><span class="rd">What a construction daily progress report (DPR) should include, a worked example, a format you can copy, mistakes to avoid and how to automate it.</span></a></li></ul></section>
+</article>
+<aside aria-label="Article contents" class="toc"><span class="mono">In this article</span><nav><a href="#definition">What is material management?</a><a href="#planning">Planning and take-off</a><a href="#indents">Material indents</a><a href="#procurement">Indent to purchase order</a><a href="#receiving">Goods receipt (GRN)</a><a href="#storage">Storing materials</a><a href="#issue">Issue and consumption</a><a href="#reconciliation">Wastage and reconciliation</a><a href="#framework">Step-by-step framework</a><a href="#faqs">FAQs</a></nav></aside>
+</div>
+<section class="cta-band">
+<div class="cta-inner">
+<div>
+<h2>Turn &quot;need 50 bags cement&quot; into a tracked indent.</h2>
+<p>See how Brikito routes material requests from the site chat to approval, purchase order and goods receipt.</p>
+</div>
+<a class="button light" href="/book-a-demo">Book a Demo  ↗</a>
+</div>
+</section>
+</main>
+
+<style>
+  .global-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
+  .global-footer-logo svg{display:block;flex:none;width:22px;height:22px}
+  .global-footer-bottom-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .global-footer-social{display:flex;align-items:center;gap:8px}
+  .global-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.72);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
+  .global-footer-social a:hover,.global-footer-social a:focus-visible{color:#fff;border-color:rgba(255,255,255,.45);background-color:rgba(255,255,255,.06)}
+  .global-footer-social svg{width:16px;height:16px;display:block}
+</style>
+
+<footer class="global-footer">
+  <div class="global-footer-inner">
+
+    <!-- Footer Brand -->
+    <div class="global-footer-brand">
+      <a href="/" class="global-footer-logo" aria-label="Brikito home">
+        <!-- Brikito icon (white) -->
+        <svg viewBox="0 0 4096 4096" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+        </svg>
+        <span>Brikito</span>
+      </a>
+
+      <p>
+        Construction made simple.
+      </p>
+    </div>
+
+    <!-- Product Links -->
+    <div class="global-footer-col">
+      <h4>Product</h4>
+      <a href="/#intel">Platform</a>
+      <a href="/brik-ai">Brik AI</a>
+      <a href="/brikchat">BrikChat</a>
+      <a href="/brikvision">BrikVision</a>
+      <a href="/brikdocs">BrikDocs</a>
+      <a href="/pricing">Pricing</a>
+    </div>
+
+    <!-- Explore Links -->
+    <div class="global-footer-col">
+      <h4>Explore</h4>
+      <a href="/#roadmap">Roadmap</a>
+      <a href="/blog">Resources</a>
+      <a href="/about">About us</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/book-a-demo">Book a demo</a>
+    </div>
+
+    <!-- Account Links -->
+    <div class="global-footer-col">
+      <h4>Get started</h4>
+      <a href="https://app.brikito.com/signup">Sign in</a>
+      <a href="/book-a-demo">Talk to our team</a>
+      <a href="/privacy">Privacy policy</a>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="global-footer-bottom">
+    <span>
+      © <span id="global-footer-year">2026</span> Brikito. All rights reserved.
+    </span>
+
+    <div class="global-footer-bottom-right">
+      <a href="/privacy">Privacy policy</a>
+
+      <!-- Social media links -->
+      <div class="global-footer-social" aria-label="Brikito on social media">
+        <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var year = document.getElementById("global-footer-year");
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  })();
+</script>
+  <script src="components/global.js?v=20261031b"></script>
+</body>
+</html>
