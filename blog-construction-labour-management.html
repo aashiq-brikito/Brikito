@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Construction Labour Management: Attendance to Payroll</title>
+<meta name="description" content="How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/blog-construction-labour-management" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Construction Labour Management: Attendance to Payroll" />
+<meta property="og:description" content="How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes." />
+<meta property="og:url" content="https://www.brikito.com/blog-construction-labour-management" />
+<meta property="og:image" content="https://www.brikito.com/images/blog/construction-labour-management.jpg" />
+<meta property="article:published_time" content="2026-11-05" />
+<meta property="article:modified_time" content="2026-11-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Construction Labour Management: Attendance to Payroll" />
+<meta name="twitter:description" content="How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes." />
+<meta name="twitter:image" content="https://www.brikito.com/images/blog/construction-labour-management.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+    article .cover{margin:0 0 40px}article .cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#f2f3f5}
+    .related{margin-top:64px;padding-top:8px;border-top:1px solid var(--line)}.related h2{margin-top:40px}.related ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}.related li{padding:0;margin:0}.related a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}.related a:hover{border-color:var(--ink);transform:translateY(-1px)}.related .rt{display:block;font-weight:600;color:var(--ink);font-size:18px;line-height:1.35}.related .rd{display:block;font-size:15px;line-height:1.55;color:var(--muted);margin-top:6px}
+    article .table-wrap{overflow-x:auto;margin:0 0 30px}article table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.55}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--soft);color:var(--ink);font-weight:600}article td:first-child{font-weight:500;color:var(--ink)}
+</style>
+<link rel="stylesheet" href="components/global.css?v=20261031">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Construction Labour Management: Attendance, Productivity and Payroll",
+      "description": "How to plan crews, record attendance without proxies, measure output per labour-day, check contractor bills and stay compliant with the new labour codes and site rules.",
+      "author": {
+        "@type": "Organization",
+        "name": "Brikito",
+        "url": "https://www.brikito.com/"
+      },
+      "about": [
+        "Construction labour management",
+        "Labour attendance",
+        "Labour productivity",
+        "Construction payroll"
+      ],
+      "image": [
+        "https://www.brikito.com/images/blog/construction-labour-management.jpg"
+      ],
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "url": "https://www.brikito.com/blog-construction-labour-management",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.brikito.com/blog-construction-labour-management"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.brikito.com/#organization",
+        "name": "Brikito",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.brikito.com/icons/icon-512.png"
+        }
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is labour management in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the planning, attendance tracking, productivity measurement, payment and compliance management of workers on a construction project, including workers supplied by labour contractors and subcontractors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you track labour attendance on a construction site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Record attendance at the point of entry using a method that ties each person to the site, such as biometric devices or selfie check-in in a mobile app. Record it by contractor and trade with in and out times, and close each day's record the same day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate labour productivity in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the quantity of work completed by the labour-days used on that activity. For example, 520 m² of plaster done with 40 labour-days is 13 m² per labour-day. Track it weekly by activity and investigate changes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you estimate manpower for a construction project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For each activity, divide the quantity of work by the expected output per worker per day multiplied by the working days available. Use your own historical output figures where possible, then combine activities into a weekly manpower histogram by trade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a muster roll in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A muster roll is a register of workers with their daily attendance, used to calculate wages. On many sites it is kept by the contractor or timekeeper and checked by the site engineer before wages or contractor bills are paid."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which labour laws apply to construction workers in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Since 21 November 2025, India's four labour codes apply, replacing laws such as the Building and Other Construction Workers Act, 1996 and the Contract Labour Act, 1970. Construction workers are covered mainly by the Occupational Safety, Health and Working Conditions Code and the Code on Social Security, along with state rules. Take legal advice for your specific obligations."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resources",
+          "item": "https://www.brikito.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Construction Labour Management: Attendance to Payroll",
+          "item": "https://www.brikito.com/blog-construction-labour-management"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="global-header">
+  <div class="global-header-inner">
+
+    <!-- Brikito Logo (black icon + Brikito text) -->
+    <a
+      class="global-logo"
+      href="/"
+      aria-label="Brikito home"
+      style="display:inline-flex;align-items:center;gap:9px;color:#0a0a0a;text-decoration:none"
+    >
+      <svg
+        class="global-logo-mark"
+        viewBox="0 0 4096 4096"
+        width="24"
+        height="24"
+        fill="currentColor"
+        aria-hidden="true"
+        focusable="false"
+        style="display:block;flex:none"
+      >
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+      </svg>
+      <span class="global-logo-text">Brikito</span>
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="global-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="global-nav"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Main Navigation -->
+    <nav
+      class="global-nav"
+      id="global-nav"
+      aria-label="Primary navigation"
+    >
+
+      <!-- Features dropdown -->
+      <div class="global-dd">
+        <button class="global-dd-btn" type="button" aria-expanded="false" aria-controls="global-features">
+          Features
+          <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="global-dd-menu" id="global-features">
+          <a href="/brik-ai">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+            <span class="global-dd-tx"><b>Brik AI</b><small>The AI assistant built for construction</small></span>
+          </a>
+          <a href="/brikchat">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikChat</b><small>Site chat that turns messages into work</small></span>
+          </a>
+          <a href="/brikvision">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <span class="global-dd-tx"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></span>
+          </a>
+          <a href="/brikdocs">
+            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+            <span class="global-dd-tx"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></span>
+          </a>
+        </div>
+      </div>
+
+      <a href="/blog">Resources</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+
+    <!-- Header Buttons -->
+    <div class="global-header-actions">
+
+      <a
+        class="global-trial"
+        href="https://app.brikito.com/signup"
+      >
+        Sign in
+      </a>
+
+      <a
+        class="global-demo"
+        href="/book-a-demo"
+      >
+        Book a demo <span aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+
+  </div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">Site management · Labour</div>
+<h1>Construction Labour Management: Attendance, Productivity and Payroll</h1>
+<p class="dek">How to plan crews, record attendance without proxies, measure output per labour-day, check contractor bills and stay compliant with the new labour codes and site rules.</p>
+<div class="meta"><span>Brikito Editorial</span><span><time datetime="2026-11-05">5 Nov 2026</time></span><span>10 min read</span><span>Labour / Workforce</span></div>
+</div>
+</section>
+<div class="layout">
+<article>
+<figure class="cover"><img src="/images/blog/construction-labour-management.svg" alt="Illustration of a live labour attendance list, construction workers in hard hats and a weekly manpower histogram" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+<div class="answer"><p><strong>The short answer:</strong> Construction labour management is planning how many workers each activity needs, recording who is actually on site, measuring what they produce, paying them and their contractors correctly, and meeting welfare and legal requirements. It connects four records that are often kept apart: the manpower plan, daily attendance, work done, and the labour bill.</p></div>
+<p>It is the last week of the month. The masonry contractor submits a bill for 1,240 man-days. The site's attendance register shows 1,090. The register has gaps on three Sundays, two pages in different handwriting, and no record of which workers were on the contractor's gang versus another. The project manager can't prove either number, so the bill is negotiated rather than checked.</p>
+<p>Labour problems on site rarely start with the workers. They start with records that can't answer simple questions: how many people were here, what did they produce, and what do we owe? This guide covers how to plan, track, measure and pay site labour, and how to stay compliant while doing it.</p>
+
+<h2 id="definition">What is construction labour management?</h2>
+<p>Labour management on a construction project covers five connected jobs:</p>
+<ol>
+<li><strong>Planning:</strong> deciding crew sizes and trades for each activity from the schedule and quantities.</li>
+<li><strong>Attendance:</strong> recording who is on site each day, for which contractor, and for how long.</li>
+<li><strong>Productivity:</strong> measuring output against labour used, and finding why it drops.</li>
+<li><strong>Payment:</strong> paying direct workers and checking labour contractors' bills against records.</li>
+<li><strong>Compliance and welfare:</strong> registration, wages, safety, facilities and records required by law.</li>
+</ol>
+<p>When these are run by different people in different registers, the gaps between them are where money and time leak.</p>
+
+<h2 id="why">Why labour management matters</h2>
+<ul>
+<li><strong>Cost:</strong> labour is one of the biggest variable costs on a building project, and the hardest to verify after the fact.</li>
+<li><strong>Schedule:</strong> too few workers on a critical activity delays everything behind it; too many on the wrong one wastes money.</li>
+<li><strong>Quality and safety:</strong> unplanned crews, constant churn and untrained workers drive rework and accidents.</li>
+<li><strong>Disputes:</strong> weak attendance records lead to arguments with contractors over bills and with workers over wages.</li>
+<li><strong>Compliance:</strong> labour laws carry registration, record-keeping and welfare duties for employers and principal employers.</li>
+</ul>
+
+<h2 id="models">How site labour is engaged: three common models</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Model</th><th>How it works</th><th>Pros</th><th>Watch out for</th></tr></thead>
+<tbody>
+<tr><td>Direct labour</td><td>Developer or contractor employs workers and pays wages directly</td><td>Full control of crew and quality</td><td>All payroll, welfare and compliance duties sit with you</td></tr>
+<tr><td>Labour-only contractor</td><td>Contractor supplies workers; you supply materials, usually paid per unit of work or per man-day</td><td>Flexible crew size, less admin</td><td>Bills must be checked against attendance and measured work</td></tr>
+<tr><td>Subcontractor (labour + material)</td><td>Subcontractor delivers a package of work at an agreed rate</td><td>Single point of responsibility for output</td><td>Less visibility of who is on site; quality and safety still affect you</td></tr>
+</tbody></table></div>
+<p>Most projects use a mix. Whatever the model, the principal employer usually still needs to know who is on site, for safety, compliance and billing.</p>
+
+<h2 id="planning">Manpower planning: from schedule to crew size</h2>
+<p>A manpower plan turns the schedule into numbers of workers by trade, week by week. The basic logic is simple:</p>
+<div class="callout"><span class="mono">The planning formula</span>Workers needed = quantity of work ÷ (output per worker per day × working days available)</div>
+<p>For example, if 900 m² of blockwork must be finished in 15 working days, and your own records show one mason with a helper completes about 10 m² a day on similar work, you need about 900 ÷ (10 × 15) = 6 mason-helper pairs. The output figure here is illustrative; use your own site's historical figures wherever you can, because output varies with block size, wall height, access, scaffolding and crew experience.</p>
+<p>Plot the result for every activity on a <strong>manpower histogram</strong> (workers per week by trade). Peaks that are too sharp signal a plan the labour market can't supply; long flat tails signal idle crews. Smooth the peaks by adjusting sequence where the schedule allows.</p>
+
+<h2 id="attendance">Labour attendance: methods compared</h2>
+<p>Attendance is the foundation of every other labour record. If it is wrong, productivity, payroll and contractor bills are wrong too.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Method</th><th>Strengths</th><th>Weaknesses</th></tr></thead>
+<tbody>
+<tr><td>Paper register / muster roll</td><td>Cheap, familiar, no technology needed</td><td>Easy to fill late or by proxy; hard to total and audit</td></tr>
+<tr><td>Biometric (fingerprint / face) device</td><td>Hard to fake; reliable timestamps</td><td>Fixed at one gate; device and power issues; queues at shift change</td></tr>
+<tr><td>Card or RFID tag</td><td>Fast at the gate</td><td>Cards can be swapped or carried for others</td></tr>
+<tr><td>Mobile app with location</td><td>Works across scattered work fronts; data reaches the office instantly</td><td>Needs phones; location alone can be spoofed</td></tr>
+<tr><td>Selfie check-in on site</td><td>Confirms the person and the place together; no hardware</td><td>Needs a clear privacy policy and consent</td></tr>
+<tr><td>CCTV headcount</td><td>Independent check of how many people are actually working</td><td>Counts people, doesn't identify contractor or trade on its own</td></tr>
+</tbody></table></div>
+<p>Whatever you use, record attendance <strong>by contractor and trade</strong>, capture <strong>in and out times</strong>, and close the day's record on the same day.</p>
+
+<h3>How to stop proxy attendance</h3>
+<ul>
+<li>Capture attendance at the point of entry, not later in the office.</li>
+<li>Use a method that ties the person to the place, such as a photo or biometric check at site.</li>
+<li>Compare totals with an independent count, such as a supervisor's headcount at the work front or CCTV.</li>
+<li>Reconcile weekly, not at month end, so anomalies are fresh and checkable.</li>
+</ul>
+
+<h2 id="productivity">Measuring labour productivity</h2>
+<p>Productivity links attendance to work done. The simplest measure is <strong>output per labour-day</strong>:</p>
+<div class="callout"><span class="mono">Productivity</span>Output per labour-day = quantity completed ÷ labour-days used on that activity</div>
+<p>If a plastering crew used 40 labour-days this week and completed 520 m², productivity was 13 m² per labour-day. Track it weekly by activity and crew. The trend matters more than the single number: a sudden drop is a question to investigate, not a verdict on the crew.</p>
+<p>When productivity falls, the cause is often outside the crew's control:</p>
+<ul>
+<li>Waiting for material, a drawing answer, an inspection or the crane.</li>
+<li>Rework from an unclear instruction or superseded drawing (see <a href="/blog-rework-coordination">rework isn't always a labour problem</a>).</li>
+<li>Crew moved between work fronts several times a day.</li>
+<li>Scaffolding, access or lighting not ready.</li>
+<li>Weather and heat.</li>
+</ul>
+<p>Recording these causes in the daily report, as described in our <a href="/blog-daily-progress-report-construction">DPR guide</a>, turns productivity data into something the project manager can fix. Our article on <a href="/blog-where-time-goes">where construction projects actually lose time</a> covers the waiting time in more depth.</p>
+
+<h2 id="payroll">Payroll and contractor bills</h2>
+<p>For direct workers, payroll is attendance × rate, plus approved overtime, minus deductions, paid on time and recorded. For labour contractors, the job is to check their bill against your own records before paying.</p>
+<ol>
+<li><strong>Agree the basis in the work order:</strong> per man-day, per unit of work, or a mix. State overtime rules and who approves them.</li>
+<li><strong>Approve overtime in advance,</strong> in writing, with names and hours.</li>
+<li><strong>Reconcile weekly:</strong> contractor's claimed man-days vs your attendance record; measured quantity vs claimed quantity.</li>
+<li><strong>Resolve differences while they are fresh,</strong> with the attendance record, photos and daily reports as evidence.</li>
+<li><strong>Check statutory payments:</strong> where the law makes the principal employer responsible if a contractor fails to pay wages or contributions, ask for proof of payment before releasing bills.</li>
+</ol>
+
+<h2 id="compliance">Compliance and worker welfare</h2>
+<p>Labour law depends on country and, in India, on state rules. Two current examples:</p>
+<ul>
+<li><strong>India:</strong> since 21 November 2025, four labour codes (Code on Wages, Industrial Relations Code, Code on Social Security, and Occupational Safety, Health and Working Conditions Code) have replaced 29 central laws. The Building and Other Construction Workers Act, 1996 and the Contract Labour Act, 1970 are now subsumed in the OSH Code, and the construction welfare cess falls under the Code on Social Security (<a href="https://www.azbpartners.com/bank/india-implements-new-labour-codes" rel="noopener" target="_blank">AZB &amp; Partners</a>). The codes also require appointment letters for employees and provide for consolidated registers. Check the state rules that apply to your site.</li>
+<li><strong>UAE:</strong> outdoor work under direct sun is banned between 12:30 pm and 3 pm from 15 June to 15 September each year under the Ministry of Human Resources and Emiratisation's midday break rule (<a href="https://gulfnews.com/uae/uae-announces-summer-midday-break-june-15-to-september-15-1230pm-to-3pm-1.88451178" rel="noopener" target="_blank">Gulf News</a>). Shift plans and productivity targets need to account for it.</li>
+</ul>
+<p>Across markets, sites are generally expected to provide drinking water, toilets, rest and shelter areas, first aid, safety equipment and training. Take local advice on the exact requirements for your project.</p>
+
+<h3>Attendance and privacy</h3>
+<p>Digital attendance should confirm presence, not track people. Tell workers what is recorded and why, collect only what is needed, limit who can see it, and agree how long it is kept. Workers are more likely to accept a system they understand, and trust makes the records better.</p>
+
+<h2 id="kpis">Labour KPIs worth tracking</h2>
+<ul>
+<li><strong>Planned vs actual headcount</strong> by trade and week.</li>
+<li><strong>Output per labour-day</strong> for key activities.</li>
+<li><strong>Idle time</strong> recorded in daily reports, with causes.</li>
+<li><strong>Absenteeism</strong> by contractor.</li>
+<li><strong>Overtime</strong> as a share of total hours.</li>
+<li><strong>Bill variance:</strong> difference between contractors' claimed man-days and recorded attendance.</li>
+<li><strong>Safety:</strong> incidents and near misses per labour-hours worked.</li>
+</ul>
+
+<h2 id="problems">The biggest labour management problems on site</h2>
+<ol>
+<li>Attendance written up late or by proxy.</li>
+<li>No split of headcount by contractor and trade.</li>
+<li>Productivity never measured, so slow activities are noticed only when the schedule slips.</li>
+<li>Overtime approved verbally and argued about at month end.</li>
+<li>Month-end reconciliation that turns into a negotiation.</li>
+<li>Labour shortages discovered on the day instead of planned for weeks ahead.</li>
+<li>Compliance records kept separately from operational records, so they don't match.</li>
+</ol>
+
+<h2 id="framework">How to improve labour management step by step</h2>
+<ol>
+<li><strong>Build a manpower plan</strong> from the schedule and quantities, and share it with each contractor.</li>
+<li><strong>Fix attendance first:</strong> one method, captured at site, by contractor and trade, closed daily.</li>
+<li><strong>Record output daily</strong> for the main activities in the DPR.</li>
+<li><strong>Calculate productivity weekly</strong> and investigate drops with the crew and supervisor.</li>
+<li><strong>Approve overtime in advance</strong> and in writing.</li>
+<li><strong>Reconcile contractor bills weekly</strong> against attendance and measurement.</li>
+<li><strong>Keep compliance records from the same data</strong> rather than a separate set of registers.</li>
+</ol>
+
+<h2 id="checklist">Labour management checklist</h2>
+<ul>
+<li>Is there a weekly manpower plan by trade for the next three to four weeks?</li>
+<li>Is attendance captured at site, by contractor and trade, every day?</li>
+<li>Can you compare recorded attendance with an independent headcount?</li>
+<li>Is output recorded against labour-days for key activities?</li>
+<li>Is overtime approved in writing before it is worked?</li>
+<li>Are contractor bills checked against your own attendance and measurements before payment?</li>
+<li>Are workers registered and paid as required by the applicable labour law?</li>
+<li>Do workers know what attendance data is collected and why?</li>
+</ul>
+
+<h2 id="software">Where software fits</h2>
+<p>Labour records fail when they are written far from where the work happens. Software helps when it captures attendance at the gate, links it to the work done that day, and gives the office the same view the site has.</p>
+<p>In Brikito, construction management software with Brik AI, workers check in and out with a selfie at site, giving a live on-site headcount, days present and hours without a register or proxy entries. Supervisors post progress in the site chat, which feeds the dashboard's manpower trend, and BrikDocs generates the daily labour report from the day's records. Overtime approvals can be cleared by the PM inline in chat. Attendance confirms presence, not surveillance: each person sees only what their role allows. Where site CCTV is connected, BrikVision adds an independent headcount from the cameras.</p>
+
+<h2 id="faqs">Frequently asked questions</h2>
+<div class="faq"><h3>What is labour management in construction?</h3><p>It is the planning, attendance tracking, productivity measurement, payment and compliance management of workers on a construction project, including workers supplied by labour contractors and subcontractors.</p>
+<h3>How do you track labour attendance on a construction site?</h3><p>Record attendance at the point of entry using a method that ties each person to the site, such as biometric devices or selfie check-in in a mobile app. Record it by contractor and trade with in and out times, and close each day's record the same day.</p>
+<h3>How do you calculate labour productivity in construction?</h3><p>Divide the quantity of work completed by the labour-days used on that activity. For example, 520 m² of plaster done with 40 labour-days is 13 m² per labour-day. Track it weekly by activity and investigate changes.</p>
+<h3>How do you estimate manpower for a construction project?</h3><p>For each activity, divide the quantity of work by the expected output per worker per day multiplied by the working days available. Use your own historical output figures where possible, then combine activities into a weekly manpower histogram by trade.</p>
+<h3>What is a muster roll in construction?</h3><p>A muster roll is a register of workers with their daily attendance, used to calculate wages. On many sites it is kept by the contractor or timekeeper and checked by the site engineer before wages or contractor bills are paid.</p>
+<h3>Which labour laws apply to construction workers in India?</h3><p>Since 21 November 2025, India's four labour codes apply, replacing laws such as the Building and Other Construction Workers Act, 1996 and the Contract Labour Act, 1970. Construction workers are covered mainly by the Occupational Safety, Health and Working Conditions Code and the Code on Social Security, along with state rules. Take legal advice for your specific obligations.</p></div>
+
+<h2 id="takeaway">Count people, measure output, close the day</h2>
+<p>Good labour management is not about watching workers more closely. It is about records that answer three questions on the same day: who was here, what did they build, and what do we owe? Get attendance right at the gate, link it to the day's output, and reconcile weekly. The month-end negotiation then becomes a check.</p>
+<section class="related" aria-labelledby="related-reading"><h2 id="related-reading">Related reading</h2><ul><li><a href="/blog-daily-progress-report-construction"><span class="rt">Daily Progress Report in Construction: Format &amp; Template</span><span class="rd">What a construction daily progress report (DPR) should include, a worked example, a format you can copy, mistakes to avoid and how to automate it.</span></a></li><li><a href="/blog-where-time-goes"><span class="rt">Where Does a Construction Project Actually Lose Time?</span><span class="rd">Construction delays build up between activities, approvals, decisions and handoffs. Learn how to spot waiting time and improve project coordination.</span></a></li><li><a href="/blog-seven-site-updates"><span class="rt">7 Construction Site Updates Your Team Should Track</span><span class="rd">The seven site updates every construction team should capture daily, from progress and manpower to blockers, materials, approvals and next steps.</span></a></li></ul></section>
+</article>
+<aside aria-label="Article contents" class="toc"><span class="mono">In this article</span><nav><a href="#definition">What is labour management?</a><a href="#models">Labour engagement models</a><a href="#planning">Manpower planning</a><a href="#attendance">Attendance methods</a><a href="#productivity">Measuring productivity</a><a href="#payroll">Payroll and contractor bills</a><a href="#compliance">Compliance and welfare</a><a href="#kpis">Labour KPIs</a><a href="#framework">Step-by-step framework</a><a href="#faqs">FAQs</a></nav></aside>
+</div>
+<section class="cta-band">
+<div class="cta-inner">
+<div>
+<h2>Attendance at the gate, not at month end.</h2>
+<p>See how Brikito&#x27;s selfie check-in, live headcount and daily labour report make contractor bills something you check, not negotiate.</p>
+</div>
+<a class="button light" href="/book-a-demo">Book a Demo  ↗</a>
+</div>
+</section>
+</main>
+
+<style>
+  .global-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
+  .global-footer-logo svg{display:block;flex:none;width:22px;height:22px}
+  .global-footer-bottom-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .global-footer-social{display:flex;align-items:center;gap:8px}
+  .global-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.72);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
+  .global-footer-social a:hover,.global-footer-social a:focus-visible{color:#fff;border-color:rgba(255,255,255,.45);background-color:rgba(255,255,255,.06)}
+  .global-footer-social svg{width:16px;height:16px;display:block}
+</style>
+
+<footer class="global-footer">
+  <div class="global-footer-inner">
+
+    <!-- Footer Brand -->
+    <div class="global-footer-brand">
+      <a href="/" class="global-footer-logo" aria-label="Brikito home">
+        <!-- Brikito icon (white) -->
+        <svg viewBox="0 0 4096 4096" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
+          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
+        </svg>
+        <span>Brikito</span>
+      </a>
+
+      <p>
+        Construction made simple.
+      </p>
+    </div>
+
+    <!-- Product Links -->
+    <div class="global-footer-col">
+      <h4>Product</h4>
+      <a href="/#intel">Platform</a>
+      <a href="/brik-ai">Brik AI</a>
+      <a href="/brikchat">BrikChat</a>
+      <a href="/brikvision">BrikVision</a>
+      <a href="/brikdocs">BrikDocs</a>
+      <a href="/pricing">Pricing</a>
+    </div>
+
+    <!-- Explore Links -->
+    <div class="global-footer-col">
+      <h4>Explore</h4>
+      <a href="/#roadmap">Roadmap</a>
+      <a href="/blog">Resources</a>
+      <a href="/about">About us</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/book-a-demo">Book a demo</a>
+    </div>
+
+    <!-- Account Links -->
+    <div class="global-footer-col">
+      <h4>Get started</h4>
+      <a href="https://app.brikito.com/signup">Sign in</a>
+      <a href="/book-a-demo">Talk to our team</a>
+      <a href="/privacy">Privacy policy</a>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="global-footer-bottom">
+    <span>
+      © <span id="global-footer-year">2026</span> Brikito. All rights reserved.
+    </span>
+
+    <div class="global-footer-bottom-right">
+      <a href="/privacy">Privacy policy</a>
+
+      <!-- Social media links -->
+      <div class="global-footer-social" aria-label="Brikito on social media">
+        <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var year = document.getElementById("global-footer-year");
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  })();
+</script>
+  <script src="components/global.js?v=20261031b"></script>
+</body>
+</html>

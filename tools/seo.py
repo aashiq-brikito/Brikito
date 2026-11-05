@@ -71,7 +71,7 @@ PAGES = {
         description="Book a 45-minute Brikito demo. We'll set your team up on one live project and show you site chat, Brik AI and reports running the same day.",
     ),
     "blog.html": dict(
-        slug="blog", modified="2026-11-02",
+        slug="blog", modified="2026-11-05",
         title="Brikito Resources: Construction, AI & Project Guides",
         description="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI.",
     ),
@@ -157,6 +157,24 @@ PAGES = {
         published="2026-11-02", modified="2026-11-02",
         title="Construction in India, UAE, Singapore & Sri Lanka: Guide",
         description="How construction is regulated in India, UAE, Singapore and Sri Lanka: RERA, Dubai escrow, BCA and CONQUAS, CIDA, and the site problems all four share.",
+    ),
+    "blog-construction-site-communication.html": dict(
+        slug="blog-construction-site-communication", type="article", image="/images/blog/construction-site-communication.jpg",
+        published="2026-11-05", modified="2026-11-05",
+        title="Construction Site Communication: A Complete Guide",
+        description="How to set up construction site communication that works: channels, a communication matrix, daily rhythm, RFIs, site instructions and a checklist.",
+    ),
+    "blog-construction-site-documentation.html": dict(
+        slug="blog-construction-site-documentation", type="article", image="/images/blog/construction-site-documentation.jpg",
+        published="2026-11-05", modified="2026-11-05",
+        title="Construction Site Documentation: Every Report You Need",
+        description="Every record a construction project should keep, from DPRs and cube registers to RFIs, site instructions and handover files, with owners and frequency.",
+    ),
+    "blog-construction-labour-management.html": dict(
+        slug="blog-construction-labour-management", type="article", image="/images/blog/construction-labour-management.jpg",
+        published="2026-11-05", modified="2026-11-05",
+        title="Construction Labour Management: Attendance to Payroll",
+        description="How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes.",
     ),
     "404.html": dict(
         slug="404", noindex=True,
