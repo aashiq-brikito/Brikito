@@ -71,7 +71,7 @@ PAGES = {
         description="Book a 45-minute Brikito demo. We'll set your team up on one live project and show you site chat, Brik AI and reports running the same day.",
     ),
     "blog.html": dict(
-        slug="blog", modified="2026-11-05",
+        slug="blog", modified="2026-11-06",
         title="Brikito Resources: Construction, AI & Project Guides",
         description="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI.",
     ),
@@ -175,6 +175,24 @@ PAGES = {
         published="2026-11-05", modified="2026-11-05",
         title="Construction Labour Management: Attendance to Payroll",
         description="How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes.",
+    ),
+    "blog-construction-document-control.html": dict(
+        slug="blog-construction-document-control", type="article", image="/images/blog/construction-document-control.jpg",
+        published="2026-11-06", modified="2026-11-06",
+        title="Construction Document Control: Drawings & Revisions",
+        description="How to control construction documents: drawing registers, numbering, revision and status codes, transmittals and keeping superseded drawings off site.",
+    ),
+    "blog-construction-site-safety-and-quality.html": dict(
+        slug="blog-construction-site-safety-and-quality", type="article", image="/images/blog/construction-site-safety-and-quality.jpg",
+        published="2026-11-06", modified="2026-11-06",
+        title="Construction Site Safety and Quality Management Guide",
+        description="A practical guide to construction site safety and quality: hazards and controls, permits, PPE, toolbox talks, ITPs, hold points, defects and NCRs.",
+    ),
+    "blog-construction-management-software.html": dict(
+        slug="blog-construction-management-software", type="article", image="/images/blog/construction-management-software.jpg",
+        published="2026-11-06", modified="2026-11-06",
+        title="Construction Management Software: Buyer's Guide",
+        description="How to choose construction management software: types, a feature checklist, pricing models, 15 demo questions and a 7-step selection process.",
     ),
     "404.html": dict(
         slug="404", noindex=True,
