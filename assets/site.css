@@ -583,3 +583,7 @@ html:not(.js) .rv,html:not(.js) .zoom{opacity:1;transform:none}
 .hero .split:has(>.zoom)>.zoom{margin-top:clamp(32px,5vh,56px)}
 /* BrikVision real site photos: show in true colour */
 .cam.real img{filter:none}
+/* About: founder photo matches the height of the text beside it */
+@media (min-width:981px){#founder .split{grid-template-columns:minmax(0,360px) 1fr;gap:72px;align-items:stretch;max-width:1060px;margin-inline:auto}#founder .split>div:last-child{align-self:center}#founder .founder-photo{aspect-ratio:auto;max-height:none;height:100%;min-height:380px}}
+@media (max-width:980px){#founder .founder-photo{max-width:420px;max-height:460px}}
+@media (min-width:981px){#founder .founder-photo{position:relative;min-height:340px}#founder .founder-photo img{position:absolute;inset:0}}
