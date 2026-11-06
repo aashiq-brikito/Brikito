@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/Brikito%20\\(standalone\\).html", "destination": "/", "permanent": true },
+    { "source": "/Brikito%20\\(standalone\\)", "destination": "/", "permanent": true }
+  ]
 }
