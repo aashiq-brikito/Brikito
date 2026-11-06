@@ -91,4 +91,6 @@
 .v2c .megacon b{display:block;font-size:17px!important}
 .v2c .megacon span span{font-size:14px;color:var(--muted)}
 @media (max-width:980px){.v2c .mega{display:none}}
+.v2c .hero .chip{margin-bottom:18px}
+.v2c .hero .rv[style] .chip{margin-bottom:0}
 .v2c .nav{z-index:1000}.v2c .sheet{z-index:999}.v2c .progress{z-index:1001}
