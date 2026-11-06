@@ -183,6 +183,11 @@ wire(document.getElementById('app') || document.body);
 '''
 s = s[:start] + BOOT + s[end + len("addEventListener('hashchange', navigate);\nnavigate();"):]
 
+# Sign in opens the Brikito app in a new tab
+n = s.count('href="https://app.brikito.com/signup"')
+s = s.replace('href="https://app.brikito.com/signup"', 'href="https://app.brikito.com/signup" target="_blank" rel="noopener"')
+print("app links opening in new tab:", n)
+
 out = os.path.join(ROOT, "assets", "site.js")
 open(out, "w", encoding="utf-8").write("/* Brikito website: design + interactions. Built by tools/patch-redesign.py */\n" + s)
 left = re.findall(r'href="#(?:\$\{|[a-z-]+")', s)
