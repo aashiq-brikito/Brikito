@@ -94,4 +94,7 @@
 .v2c .hero .chip{margin-bottom:18px}
 .v2c .hero .rv[style] .chip{margin-bottom:0}
 @media (min-width:981px){.v2c .hero:has(.split)>.wrap{width:100%}}
+.v2c .hero .split:has(>.zoom) .chip:has(.dot){background:#fff;border:1px solid rgba(11,11,15,.08);box-shadow:0 1px 2px rgba(11,11,15,.06),0 4px 14px -6px rgba(84,98,240,.25)}
+.v2c .hero .split:has(>.zoom) .rv[style] .chip{background:none;border:0;padding:0;font-size:14px;color:var(--muted,#6E6E73)}
+.v2c .hero .split:has(>.zoom) .rv[style] .chip::before{content:"✓";margin-right:6px;color:#5462F0;font-weight:600}
 .v2c .nav{z-index:1000}.v2c .sheet{z-index:999}.v2c .progress{z-index:1001}
