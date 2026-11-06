@@ -93,4 +93,5 @@
 @media (max-width:980px){.v2c .mega{display:none}}
 .v2c .hero .chip{margin-bottom:18px}
 .v2c .hero .rv[style] .chip{margin-bottom:0}
+@media (min-width:981px){.v2c .hero:has(.split)>.wrap{width:100%}}
 .v2c .nav{z-index:1000}.v2c .sheet{z-index:999}.v2c .progress{z-index:1001}
