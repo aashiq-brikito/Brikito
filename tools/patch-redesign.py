@@ -52,6 +52,9 @@ sub("img/${img}.jpg", "/img/${img}.webp", 2)
 sub("img/${f[0]}.jpg", "/img/${f[0]}.webp", 1)
 sub("img/cam-ppe.jpg", "/img/cam-ppe.webp", 1)
 sub("img/brik-o.png", "/img/brik-o.webp", 3)
+# Home page BrikVision card: real site photos too
+sub("${camTile('cam-gate', 'CAM 01 · GATE', [[13, 37, 6, 13, 'person .97'], [48, 62, 6, 14, 'person .95']], 'IN 42 · OUT 9')}${camTile('cam-crew', 'CAM 03 · OCCUPANCY', [[18, 36, 7, 17, 'person'], [46, 26, 7, 20, 'person']], 'HEADCOUNT 16')}",
+    "${realCam('cam-real-activity', 'CAM 01 · SITE ACTIVITY', 'AI CCTV view of active construction work and workers', 'CREW ACTIVE')}${realCam('cam-real-occupancy', 'CAM 03 · OCCUPANCY', 'AI CCTV counting construction workers on site', 'HEADCOUNT 16')}")
 # BrikVision: the four real site camera photos from the original page
 sub("const camGrid = () => `<div class=\"cams\">${camTile('cam-gate', 'CAM 01 · SITE ACTIVITY'",
     "const realCam = (img, label, alt, foot) => `<div class=\"cam real\"><img src=\"/img/${img}.webp\" alt=\"${alt}\" loading=\"lazy\"><span class=\"lbl\">${label}</span><span class=\"rec\">REC</span><span class=\"foot\">${foot}</span></div>`;\n"
