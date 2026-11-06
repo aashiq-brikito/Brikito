@@ -52,6 +52,13 @@ sub("img/${img}.jpg", "/img/${img}.webp", 2)
 sub("img/${f[0]}.jpg", "/img/${f[0]}.webp", 1)
 sub("img/cam-ppe.jpg", "/img/cam-ppe.webp", 1)
 sub("img/brik-o.png", "/img/brik-o.webp", 3)
+# BrikVision: the four real site camera photos from the original page
+sub("const camGrid = () => `<div class=\"cams\">${camTile('cam-gate', 'CAM 01 · SITE ACTIVITY'",
+    "const realCam = (img, label, alt, foot) => `<div class=\"cam real\"><img src=\"/img/${img}.webp\" alt=\"${alt}\" loading=\"lazy\"><span class=\"lbl\">${label}</span><span class=\"rec\">REC</span><span class=\"foot\">${foot}</span></div>`;\n"
+    "const camGrid = () => `<div class=\"cams\">${realCam('cam-real-activity', 'CAM 01 · SITE ACTIVITY', 'AI CCTV view of active construction work and workers', 'CREW ACTIVE')}"
+    "${realCam('cam-real-zone', 'CAM 02 · WORK ZONE', 'AI CCTV view of a formwork work zone', 'FORMWORK ACTIVE')}"
+    "${realCam('cam-real-occupancy', 'CAM 03 · OCCUPANCY', 'AI CCTV counting construction workers on site', 'HEADCOUNT 16')}"
+    "${realCam('cam-real-ppe', 'CAM 04 · SAFETY / PPE', 'AI CCTV detecting workers and safety helmets', 'HELMET DETECTION')}</div>`;\nconst camGridOld = () => `<div class=\"cams\">${camTile('cam-gate', 'CAM 01 · SITE ACTIVITY'")
 
 # ---- journal: real article links -----------------------------------------
 SLUGS = ["blog-construction-document-control", "blog-construction-site-safety-and-quality",

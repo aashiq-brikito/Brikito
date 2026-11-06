@@ -581,3 +581,5 @@ html:not(.js) .rv,html:not(.js) .zoom{opacity:1;transform:none}
 .hero .split:has(>.zoom) .lead{max-width:720px;text-wrap:pretty;margin-top:14px}
 .hero .split:has(>.zoom) .btns{margin-top:24px}
 .hero .split:has(>.zoom)>.zoom{margin-top:clamp(32px,5vh,56px)}
+/* BrikVision real site photos: show in true colour */
+.cam.real img{filter:none}
