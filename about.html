@@ -22,14 +22,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
 <link rel="manifest" href="/site.webmanifest" />
-<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="components/feature-page.css?v=20261031f" />
-<link rel="stylesheet" href="components/global.css?v=20261031" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
+<link rel="stylesheet" href="/assets/site.css?v=20261106" />
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,7 +43,11 @@
       "description": "Brikito is construction management software that puts chat, attendance, drawings, reports and a live project dashboard into one app, with Brik AI built in.",
       "slogan": "Construction made simple.",
       "email": "hey@brikito.com",
-      "founder": {"@type": "Person", "name": "Aashiq Ahamed", "jobTitle": "Founder"},
+      "founder": {
+        "@type": "Person",
+        "name": "Aashiq Ahamed",
+        "jobTitle": "Founder"
+      },
       "sameAs": [
         "https://www.linkedin.com/company/brikito",
         "https://www.instagram.com/brikitoai/",
@@ -55,13 +59,25 @@
       "@type": "AboutPage",
       "name": "About Brikito",
       "url": "https://www.brikito.com/about",
-      "about": {"@id": "https://www.brikito.com/#organization"}
+      "about": {
+        "@id": "https://www.brikito.com/#organization"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Brikito", "item": "https://www.brikito.com/"},
-        {"@type": "ListItem", "position": 2, "name": "About us", "item": "https://www.brikito.com/about"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About us",
+          "item": "https://www.brikito.com/about"
+        }
       ]
     }
   ]
@@ -69,392 +85,40 @@
 </script>
 </head>
 <body>
-<header class="global-header">
-  <div class="global-header-inner">
-
-    <!-- Brikito Logo (black icon + Brikito text) -->
-    <a
-      class="global-logo"
-      href="/"
-      aria-label="Brikito home"
-      style="display:inline-flex;align-items:center;gap:9px;color:#0a0a0a;text-decoration:none"
-    >
-      <svg
-        class="global-logo-mark"
-        viewBox="0 0 4096 4096"
-        width="24"
-        height="24"
-        fill="currentColor"
-        aria-hidden="true"
-        focusable="false"
-        style="display:block;flex:none"
-      >
-        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
-        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
-      </svg>
-      <span class="global-logo-text">Brikito</span>
-    </a>
-
-    <!-- Mobile Menu Button -->
-    <button
-      class="global-menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="global-nav"
-      aria-label="Open menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Main Navigation -->
-    <nav
-      class="global-nav"
-      id="global-nav"
-      aria-label="Primary navigation"
-    >
-
-      <!-- Features dropdown -->
-      <div class="global-dd">
-        <button class="global-dd-btn" type="button" aria-expanded="false" aria-controls="global-features">
-          Features
-          <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="global-dd-menu" id="global-features">
-          <a href="/brik-ai">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
-            <span class="global-dd-tx"><b>Brik AI</b><small>The AI assistant built for construction</small></span>
-          </a>
-          <a href="/brikchat">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
-            <span class="global-dd-tx"><b>BrikChat</b><small>Site chat that turns messages into work</small></span>
-          </a>
-          <a href="/brikvision">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
-            <span class="global-dd-tx"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></span>
-          </a>
-          <a href="/brikdocs">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
-            <span class="global-dd-tx"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></span>
-          </a>
-        </div>
-      </div>
-
-      <a href="/blog">Resources</a>
-      <a href="/pricing">Pricing</a>
-    </nav>
-
-    <!-- Header Buttons -->
-    <div class="global-header-actions">
-
-      <a
-        class="global-trial"
-        href="https://app.brikito.com/signup"
-      >
-        Sign in
-      </a>
-
-      <a
-        class="global-demo"
-        href="/book-a-demo"
-      >
-        Book a demo <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </div>
-</header>
-<main>
-
-<!-- =========================== HERO =========================== -->
-<section class="ab-hero">
-  <div class="wrap">
-    <div class="ab-hero-grid">
-      <div>
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Brikito</a><span>/</span><span>About us</span></nav>
-        <span class="hero-pill"><span class="dot" aria-hidden="true"></span>About Brikito <span class="tag">CONSTRUCTION MADE SIMPLE</span></span>
-        <h1>We're building the <span class="grad-ink">operating system</span> for construction.</h1>
-        <p class="deck">Brikito puts the whole site into one simple app, with Brik AI inside. Every message, photo and voice note becomes a record, an approval, a report and a live view of the project, without anyone on site learning a new way of working.</p>
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="/book-a-demo">Talk to our team <span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="btn btn-ghost" href="#team">Meet the team</a>
-        </div>
-      </div>
-      <aside class="ab-panel" aria-label="Brikito at a glance">
-        <span class="k">Brikito at a glance</span>
-        <ul>
-          <li><b>1 app</b><span>in place of WhatsApp, registers, drawings, email and Excel</span></li>
-          <li><b>4</b><span>products: Brik AI, BrikChat, BrikVision, BrikDocs</span></li>
-          <li><b>7</b><span>Indian languages your crew can speak or type in</span></li>
-          <li><b>2026</b><span>pilot running on live residential, metro and logistics sites</span></li>
-        </ul>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== STORY =========================== -->
-<section class="s" id="story">
-  <div class="wrap">
-    <div class="ab-story">
-      <div class="ab-story-head">
-        <span class="eyebrow">Our story</span>
-        <h2>Construction runs on chat. <span class="quiet">Its software never did.</span></h2>
-      </div>
-      <div class="ab-story-body">
-        <p>On most sites, the real work happens across <strong>WhatsApp groups, paper registers, drawing folders, email and spreadsheets</strong>. Cost leaks between them, and people lose hours chasing what was already said.</p>
-        <p>Construction software was supposed to fix that. But the single largest reason it fails is simple: <strong>the people on site won't use it</strong>. Forms and portals lose to a voice note every time.</p>
-        <p>So we started from the other end. Brikito is as simple as the chat your crew already uses, in their own language, and <strong>Brik AI does the structuring</strong> in the background, so the office gets the record without the site doing extra work.</p>
-        <div class="ab-timeline" aria-label="Brikito roadmap">
-          <div class="ab-tl now"><span class="when">2026 · Now</span><h3>Pilot on live sites</h3><p>Three live projects run from one login, with Brik AI built into every screen.</p></div>
-          <div class="ab-tl now"><span class="when">In development</span><h3>BrikChat</h3><p>The site chat with Brik inside: capture, tag, structure and approve in one place.</p></div>
-          <div class="ab-tl"><span class="when">Next</span><h3>BrikDocs</h3><p>Version-controlled drawings and one-tap reports: BBS, BOQ, DPR, GRN and more.</p></div>
-          <div class="ab-tl"><span class="when">On the runway</span><h3>BrikMail &amp; BrikVision</h3><p>A project mailbox Brik drafts from, and AI on your site cameras, 24/7.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== MISSION / VISION =========================== -->
-<section class="s alt" id="mission">
-  <div class="wrap">
-    <div class="ab-mv">
-      <div class="ab-card">
-        <span class="k">Our mission</span>
-        <h3>Make construction simple to run, for every site team.</h3>
-        <p>From the engineer on the slab to the developer running a portfolio, one app that everyone actually uses.</p>
-      </div>
-      <div class="ab-card dark">
-        <span class="k">Our vision</span>
-        <h3>The AI operating system for real estate development.</h3>
-        <p>One system that runs a project from foundation to handover, with AI that drafts and people who decide.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== VALUES =========================== -->
-<section class="s" id="values">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">What we stand for</span>
-      <h2>Four non-negotiables, <span class="quiet">written before the code.</span></h2>
-    </div>
-    <div class="ab-values">
-      <div class="ab-value"><span class="num">01 · Authority</span><h3>Your PM is the checker. Always.</h3><p>Nothing is auto-sent. Every reply, indent and order is drafted by Brik and held until your project manager approves it.</p></div>
-      <div class="ab-value"><span class="num">02 · Grounding</span><h3>Answers from your project. Nothing else.</h3><p>Every figure Brik gives comes from your live project data, not a generic template or an invented number.</p></div>
-      <div class="ab-value"><span class="num">03 · Adoption</span><h3>Built for the site, not the office.</h3><p>One app, in the languages the crew speaks, as simple as the chat they already use.</p></div>
-      <div class="ab-value"><span class="num">04 · Privacy</span><h3>Presence, not surveillance.</h3><p>Each person sees only what their role permits. Data is hosted in India and exportable on demand.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== NUMBERS (DARK) =========================== -->
-<section class="briklive" id="impact">
-  <div class="wrap" style="position:relative">
-    <div class="s-head" style="text-align:left;margin-left:0">
-      <span class="eyebrow"><span class="pulse" aria-hidden="true" style="display:inline-block;margin-right:8px"></span>Pilot · 2026</span>
-      <h2 style="color:var(--paper)">Already running <span class="grad-ink">on live sites.</span></h2>
-    </div>
-    <div class="ab-numbers">
-      <div class="ab-num"><div class="big">6→1</div><p>WhatsApp, registers, drawings, email and spreadsheets, now one app.</p></div>
-      <div class="ab-num"><div class="big">3</div><p>Live projects from one login: residential, metro and logistics.</p></div>
-      <div class="ab-num"><div class="big">92<small>%</small></div><p>On-site attendance captured by selfie. No register, no proxy.</p></div>
-      <div class="ab-num"><div class="big">9<small>d</small></div><p>Schedule slip surfaced live on the dashboard, not at quarter-end.</p></div>
-    </div>
-    <div class="ab-quote">
-      <span class="mark" aria-hidden="true">“</span>
-      <div>
-        <blockquote>My whole site runs in one app now, and I approve the day's indents before I've finished my chai.</blockquote>
-        <cite>SR Ilangovan · Director, Gofar Group</cite>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== FOUNDER =========================== -->
-<section class="s" id="founder">
-  <div class="wrap">
-    <div class="ab-founder">
-      <div class="ab-photo">
-        <img src="/images/team/aashiq-ahamed.jpg" width="880" height="1100" loading="lazy" decoding="async"
-             alt="Aashiq Ahamed, Founder of Brikito">
-        <div class="tagline"><b>Aashiq Ahamed</b><span>Founder · Brikito</span></div>
-      </div>
-      <div class="ab-founder-copy">
-        <span class="eyebrow">Meet the founder</span>
-        <h2>Aashiq Ahamed</h2>
-        <p class="title">Founder, Brikito · Construction Tech &amp; AI Entrepreneur</p>
-        <p class="bio">Aashiq founded Brikito to make AI-powered construction management simple enough for every site team to use, from the engineer on the slab to the developer running a portfolio.</p>
-        <p class="bio">Through Brikito, he is building the AI operating system for real estate development, starting with one app the whole site actually uses.</p>
-        <div class="ab-focus"><span>AI-powered construction management</span><span>Construction technology</span><span>Startup building</span></div>
-        <div class="ab-social">
-          <a href="https://www.instagram.com/aashiqahamedf/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/></svg>Instagram</a>
-          <a href="/book-a-demo">Talk to Aashiq's team <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== TEAM =========================== -->
-<section class="s alt" id="team">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Meet the team</span>
-      <h2>The people building <span class="quiet">Brikito.</span></h2>
-      <p>The people behind the product, building the app we wished every construction site had.</p>
-    </div>
-    <!-- TEAM PHOTO: one image for the whole team. To use your real team photo, upload it
-         as images/team/brikito-team.jpg and change the src below to "/images/team/brikito-team.jpg". -->
-    <figure class="ab-teamphoto">
-      <img src="https://cdn.creativeclaw.co/u/856682c8/images/94b8ca79-1b26-44fb-8cf3-d8631bf41b10.jpg"
-           width="1376" height="768" loading="lazy" decoding="async"
-           alt="Brikito team members working together around a table with laptops, construction drawings and a safety helmet in a bright office">
-      <figcaption>
-        <span class="live"><span class="pulse" aria-hidden="true"></span>The Brikito team</span>
-        <span>Construction made simple</span>
-      </figcaption>
-    </figure>
-    <div class="ab-join">
-      <div><h3>Want to build the future of construction with us?</h3><p>We're always glad to hear from engineers, designers and construction people.</p></div>
-      <a class="btn btn-solid" href="mailto:hey@brikito.com?subject=Working%20at%20Brikito">Get in touch <span class="arrow" aria-hidden="true">↗</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== CTA =========================== -->
-<section class="cta" id="cta">
-  <div class="wrap cta-inner">
-    <h2>Let's build <span class="grad-ink">your next project together.</span></h2>
-    <p>Tell us about your sites and team. We'll set you up on one live project and have it running the same day.</p>
-    <div class="cta-actions">
-      <a class="btn btn-solid" href="/book-a-demo">Book a demo <span class="arrow" aria-hidden="true">↗</span></a>
-      <a class="btn btn-ghost" href="mailto:hey@brikito.com">Email us</a>
-    </div>
-    <div class="contact-row">
-      <span>hey@brikito.com</span>
-      <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener">Facebook</a>
-    </div>
-  </div>
-</section>
-
-</main>
-<style>
-  .global-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
-  .global-footer-logo svg{display:block;flex:none;width:22px;height:22px}
-  .global-footer-bottom-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .global-footer-social{display:flex;align-items:center;gap:8px}
-  .global-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.72);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
-  .global-footer-social a:hover,.global-footer-social a:focus-visible{color:#fff;border-color:rgba(255,255,255,.45);background-color:rgba(255,255,255,.06)}
-  .global-footer-social svg{width:16px;height:16px;display:block}
-</style>
-
-<footer class="global-footer">
-  <div class="global-footer-inner">
-
-    <!-- Footer Brand -->
-    <div class="global-footer-brand">
-      <a href="/" class="global-footer-logo" aria-label="Brikito home">
-        <!-- Brikito icon (white) -->
-        <svg viewBox="0 0 4096 4096" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
-          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
-        </svg>
-        <span>Brikito</span>
-      </a>
-
-      <p>
-        Construction made simple.
-      </p>
-    </div>
-
-    <!-- Product Links -->
-    <div class="global-footer-col">
-      <h4>Product</h4>
-      <a href="/#intel">Platform</a>
-      <a href="/brik-ai">Brik AI</a>
-      <a href="/brikchat">BrikChat</a>
-      <a href="/brikvision">BrikVision</a>
-      <a href="/brikdocs">BrikDocs</a>
-      <a href="/pricing">Pricing</a>
-    </div>
-
-    <!-- Explore Links -->
-    <div class="global-footer-col">
-      <h4>Explore</h4>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/blog">Resources</a>
-      <a href="/about">About us</a>
-      <a href="/how-it-works">How it works</a>
-      <a href="/book-a-demo">Book a demo</a>
-    </div>
-
-    <!-- Account Links -->
-    <div class="global-footer-col">
-      <h4>Get started</h4>
-      <a href="https://app.brikito.com/signup">Sign in</a>
-      <a href="/book-a-demo">Talk to our team</a>
-      <a href="/privacy">Privacy policy</a>
-    </div>
-
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="global-footer-bottom">
-    <span>
-      © <span id="global-footer-year">2026</span> Brikito. All rights reserved.
-    </span>
-
-    <div class="global-footer-bottom-right">
-      <a href="/privacy">Privacy policy</a>
-
-      <!-- Social media links -->
-      <div class="global-footer-social" aria-label="Brikito on social media">
-        <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  (function () {
-    var year = document.getElementById("global-footer-year");
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
-  })();
-</script>
-
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)) return;
-  var t=document.querySelectorAll('.s-head,.ab-story-body,.ab-mv,.ab-values,.ab-numbers,.ab-quote,.ab-founder,.ab-teamphoto,.ab-join,.cta-inner');
-  document.documentElement.classList.add('js-reveal');
-  t.forEach(function(e){e.classList.add('reveal');});
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.05,rootMargin:'0px 0px -5% 0px'});
-  var vh=window.innerHeight||document.documentElement.clientHeight;
-  t.forEach(function(e){if(e.getBoundingClientRect().top<vh*.95)e.classList.add('in');else io.observe(e);});
-  setTimeout(function(){t.forEach(function(e){e.classList.add('in');});},1500);
-})();
-</script>
-<script src="components/global.js?v=20261031b"></script>
+<div class="progress" aria-hidden="true"></div>
+<div id="shell"><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about" class="on">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup">Sign in</a></div></div>
+<main id="app">
+<section class="hero" style="padding-bottom:40px"><div class="aurora" aria-hidden="true"></div><div class="wrap"><div class="copy"><p class="eyebrow rv">Construction made simple</p><h1 class="d1 rv dl1">We’re building the operating system for construction.</h1><div class="btns rv dl2" style="justify-content:center"><a class="btn btn-p" href="/book-a-demo">Talk to our team</a><a class="btn btn-s" href="#founder" data-scroll="founder">Meet the founder</a></div></div></div></section>
+<section class="sec-sm"><div class="wrap"><div class="stats"><div class="stat rv dl0"><b>1</b><span>app in place of WhatsApp, registers, drawings, email and Excel</span></div><div class="stat rv dl1"><b>4</b><span>products: Brik AI, BrikChat, BrikVision and BrikDocs</span></div><div class="stat rv dl2"><b>7</b><span>Indian languages crews can speak or type in</span></div><div class="stat rv dl3"><b>2026</b><span>pilot on live residential, metro and logistics sites</span></div></div></div></section>
+<section class="sec alt"><div class="wrap"><div class="split">
+<div><p class="eyebrow rv">Our story</p><h2 class="d2 rv">Construction runs on chat. Its software never did.</h2><p class="lead rv">Site work is spread across WhatsApp groups, paper registers, drawing folders, email and spreadsheets. Most construction software fails for one reason: the site never adopts it. Brikito is simple enough for the crew, and Brik AI structures everything for the office.</p></div>
+<div class="mascot zoom"><span class="mglow" aria-hidden="true"></span><img src="/img/brik-o.webp" alt="Brik, the Brikito mascot"><span class="mshadow" aria-hidden="true"></span></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="g2">
+<div class="box rv" style="background:var(--alt);border:0;padding:44px"><p class="eyebrow">Our mission</p><h3 class="d3" style="margin:0">Make construction simple to run, for every site team.</h3></div>
+<div class="box rv dl1" style="background:#0B0B0F;color:#fff;border:0;padding:44px"><p class="eyebrow" style="color:#8E8E95">Our vision</p><h3 class="d3" style="margin:0">The AI operating system for real estate development.</h3></div></div></div></section>
+<section class="sec dark"><div class="wrap"><div class="secthead rv"><p class="eyebrow">What we stand for</p><h2 class="d2">Four non-negotiables, written before the code.</h2></div>
+<div class="vals"><div class="val rv dl0"><small>01 · Authority</small><h4>Your PM is the checker. Always.</h4><p>Brik drafts. Nothing is sent, ordered or published until a person approves it.</p></div><div class="val rv dl1"><small>02 · Grounding</small><h4>Answers from your project. Nothing else.</h4><p>Every figure comes from live project data, linked to its source.</p></div><div class="val rv dl2"><small>03 · Adoption</small><h4>Built for the site, not the office.</h4><p>Made for site crews first, in the languages they speak.</p></div><div class="val rv dl3"><small>04 · Privacy</small><h4>Presence, not surveillance.</h4><p>Selfie check-in confirms presence only. Role-based access per project. Data hosted in India and exportable on demand.</p></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">Pilot · 2026</p><h2 class="d2">Already running on live sites.</h2></div>
+<div class="stats"><div class="stat rv dl0"><b>6→1</b><span>tools consolidated into one app</span></div><div class="stat rv dl1"><b>3</b><span>live projects from one login</span></div><div class="stat rv dl2"><b>92%</b><span>on-site attendance captured by selfie</span></div><div class="stat rv dl3"><b>9 days</b><span>schedule slip surfaced live</span></div></div>
+<p class="muted rv" style="margin-top:50px">Piloting with Gofar Group. SR Ilangovan, Director, approves the day’s indents from the Brikito app.</p>
+<div style="margin-top:80px"><div class="road"><div class="rv dl0"><span class="pin on">01</span><h4>Brik Agent</h4><p class="muted">Brik goes from answering to doing the work, with your approval</p></div><div class="rv dl1"><span class="pin ">02</span><h4>BrikChat</h4><p class="muted">In development</p></div><div class="rv dl2"><span class="pin ">03</span><h4>BrikDocs</h4><p class="muted">Next</p></div><div class="rv dl3"><span class="pin ">04</span><h4>BrikVision</h4><p class="muted">On the runway · pilots on request</p></div><div class="rv dl4"><span class="pin ">05</span><h4>Brikbots</h4><p class="muted">The long-term vision</p></div></div></div></div></section>
+<section class="sec alt" id="founder"><div class="wrap"><div class="split">
+<div class="rv founder-photo"><img src="/images/team/aashiq-ahamed.jpg" width="880" height="1100" alt="Aashiq Ahamed, Founder of Brikito" loading="lazy" decoding="async"></div>
+<div><p class="eyebrow rv">Meet the founder</p><h2 class="d2 rv">Aashiq Ahamed</h2><p class="lead rv">Founder, Brikito. Construction tech and AI entrepreneur.</p>
+<p class="rv" style="margin-top:20px;font-size:17px;color:#2B2B31;max-width:520px">Before Brikito, Aashiq ran a construction company for nine years, delivering residential, commercial and industrial projects and his own real estate developments. Brikito is the tool he wanted on his own sites.</p>
+<div class="btns rv"><a class="btn btn-p" href="/book-a-demo">Talk to Aashiq’s team</a><a class="btn btn-s" href="https://www.instagram.com/brikitoai/">Instagram</a></div></div></div></div></section>
+<section class="sec"><div class="wrap center"><div class="secthead center rv"><h2 class="d2">Want to build the future of construction with us?</h2><p class="lead">We’re hiring builders, engineers and designers who care about sites as much as software. Write to hey@brikito.com.</p></div><div class="btns rv"><a class="btn btn-p" href="mailto:hey@brikito.com">Get in touch</a></div></div></section>
+<section class="sec dark"><div class="wrap center"><div class="rv" style="display:flex;justify-content:center;margin-bottom:30px"><svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg2" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg2)"></path></svg></div><h2 class="d2 rv">Let’s build your next project together.</h2><p class="lead rv">hey@brikito.com</p><div class="btns rv"><a class="btn btn-p" href="/book-a-demo">Book a demo</a><a class="btn btn-s" href="/pricing">See pricing</a></div></div></section><footer><div class="wrap"><div class="cols">
+<div><a class="logo" href="/" aria-label="Brikito home"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a><p style="margin-top:14px">Construction made simple.</p><p style="margin-top:8px">hey@brikito.com</p></div>
+<div><h5>Product</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div>
+<div><h5>Explore</h5><a href="/how-it-works">How it works</a><a href="/blog">Journal</a><a href="/about">About us</a><a href="/book-a-demo">Book a demo</a></div>
+<div><h5>Get started</h5><a href="https://app.brikito.com/signup">Sign in</a><a href="/book-a-demo">Talk to our team</a><a href="/privacy">Privacy policy</a></div></div>
+<div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="soc"><a href="https://www.youtube.com/@Brikitoai">YouTube</a><a href="https://www.instagram.com/brikitoai/">Instagram</a><a href="https://www.linkedin.com/company/brikito">LinkedIn</a><a href="https://www.facebook.com/brikitoai">Facebook</a></span></div></div></footer></main>
+<script src="/assets/site.js?v=20261106" defer></script>
 </body>
 </html>

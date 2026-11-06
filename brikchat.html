@@ -22,14 +22,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
 <link rel="manifest" href="/site.webmanifest" />
-<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="components/feature-page.css?v=20261031f" />
-<link rel="stylesheet" href="components/global.css?v=20261031" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
+<link rel="stylesheet" href="/assets/site.css?v=20261106" />
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,30 +37,89 @@
     {
       "@type": "SoftwareApplication",
       "name": "BrikChat",
-      "alternateName": ["Brik Chat", "BrikiChat"],
+      "alternateName": [
+        "Brik Chat",
+        "BrikiChat"
+      ],
       "applicationCategory": "CommunicationApplication",
       "applicationSubCategory": "Construction site communication app",
       "operatingSystem": "Android, iOS, Web",
       "url": "https://www.brikito.com/brikchat",
       "description": "A construction site chat app with Brik AI built in. It tags every message, voice note, photo and document and turns them into indents, attendance, progress updates and approvals.",
-      "publisher": {"@type": "Organization", "name": "Brikito", "url": "https://www.brikito.com/"}
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brikito",
+        "url": "https://www.brikito.com/"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Brikito", "item": "https://www.brikito.com/"},
-        {"@type": "ListItem", "position": 2, "name": "BrikChat", "item": "https://www.brikito.com/brikchat"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "BrikChat",
+          "item": "https://www.brikito.com/brikchat"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Is BrikChat a WhatsApp alternative for construction teams?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. BrikChat feels as familiar as WhatsApp, with groups, DMs, voice notes and photos, but it belongs to the project instead of personal phones. Brik AI reads every message and turns it into structured work, so decisions, quantities and approvals do not get buried in a group thread."}},
-        {"@type": "Question", "name": "Why is WhatsApp not enough for construction site communication?", "acceptedAnswer": {"@type": "Answer", "text": "WhatsApp was built for personal messaging. On a construction project it scatters decisions across dozens of groups, makes voice notes impossible to search, leaves no structured record of indents or attendance, and keeps project history on personal phones that leave when people do."}},
-        {"@type": "Question", "name": "Does my site team need training to use BrikChat?", "acceptedAnswer": {"@type": "Answer", "text": "Very little. If your team can send a WhatsApp message or voice note, they can use BrikChat. They keep talking the way they do today; Brik AI does the structuring in the background."}},
-        {"@type": "Question", "name": "Can site teams send voice notes in regional languages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. BrikChat understands English, Hindi, Marathi, Tamil, Telugu, Kannada and Bengali. Voice notes are transcribed and tagged so the office can read and search them."}},
-        {"@type": "Question", "name": "Does Brik AI reply or place orders in the chat automatically?", "acceptedAnswer": {"@type": "Answer", "text": "No. Brik drafts replies, indents and orders, and the right person approves them before anything is sent."}},
-        {"@type": "Question", "name": "Is BrikChat available now?", "acceptedAnswer": {"@type": "Answer", "text": "BrikChat is in active development and is the first product on the Brikito roadmap. Book a demo to see it on one of your live projects and join early access."}}
+        {
+          "@type": "Question",
+          "name": "Is BrikChat a WhatsApp alternative for construction teams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It feels familiar, but the chat belongs to the project, and Brik turns messages into structured work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why isn’t WhatsApp enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It scatters decisions, voice notes can’t be searched, nothing becomes a record, and history stays on personal phones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the site team need training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Very little. If they can send a WhatsApp message or a voice note, they can use BrikChat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can teams send voice notes in regional languages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in all seven supported languages, with transcription and tagging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Brik reply or order automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Brik drafts replies, indents and orders. A person approves before anything is sent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it available now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BrikChat is in active development and is first on the roadmap. Book a demo to join early access."
+          }
+        }
       ]
     }
   ]
@@ -68,490 +127,40 @@
 </script>
 </head>
 <body>
-<header class="global-header">
-  <div class="global-header-inner">
-
-    <!-- Brikito Logo (black icon + Brikito text) -->
-    <a
-      class="global-logo"
-      href="/"
-      aria-label="Brikito home"
-      style="display:inline-flex;align-items:center;gap:9px;color:#0a0a0a;text-decoration:none"
-    >
-      <svg
-        class="global-logo-mark"
-        viewBox="0 0 4096 4096"
-        width="24"
-        height="24"
-        fill="currentColor"
-        aria-hidden="true"
-        focusable="false"
-        style="display:block;flex:none"
-      >
-        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
-        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
-      </svg>
-      <span class="global-logo-text">Brikito</span>
-    </a>
-
-    <!-- Mobile Menu Button -->
-    <button
-      class="global-menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="global-nav"
-      aria-label="Open menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Main Navigation -->
-    <nav
-      class="global-nav"
-      id="global-nav"
-      aria-label="Primary navigation"
-    >
-
-      <!-- Features dropdown -->
-      <div class="global-dd">
-        <button class="global-dd-btn" type="button" aria-expanded="false" aria-controls="global-features">
-          Features
-          <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="global-dd-menu" id="global-features">
-          <a href="/brik-ai">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
-            <span class="global-dd-tx"><b>Brik AI</b><small>The AI assistant built for construction</small></span>
-          </a>
-          <a href="/brikchat">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
-            <span class="global-dd-tx"><b>BrikChat</b><small>Site chat that turns messages into work</small></span>
-          </a>
-          <a href="/brikvision">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
-            <span class="global-dd-tx"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></span>
-          </a>
-          <a href="/brikdocs">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
-            <span class="global-dd-tx"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></span>
-          </a>
-        </div>
-      </div>
-
-      <a href="/blog">Resources</a>
-      <a href="/pricing">Pricing</a>
-    </nav>
-
-    <!-- Header Buttons -->
-    <div class="global-header-actions">
-
-      <a
-        class="global-trial"
-        href="https://app.brikito.com/signup"
-      >
-        Sign in
-      </a>
-
-      <a
-        class="global-demo"
-        href="/book-a-demo"
-      >
-        Book a demo <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </div>
-</header>
-<main>
-
-<!-- =========================== HERO =========================== -->
-<section class="fp-hero">
-  <div class="wrap">
-    <div class="fp-hero-inner">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Brikito</a><span>/</span><span>BrikChat</span></nav>
-      <span class="hero-pill"><span class="dot" aria-hidden="true"></span>BrikChat, the site chat with Brik AI inside <span class="tag">IN DEVELOPMENT</span></span>
-      <h1>The site chat that <span class="grad-ink">turns messages into work.</span></h1>
-      <p class="deck">BrikChat replaces scattered WhatsApp groups with one chat for the whole project. Brik AI reads every message, voice note, photo and PDF, tags it as an update, attendance, enquiry or ticket, and routes it to the dashboard or to your PM for approval.</p>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="/book-a-demo">Get early access <span class="arrow" aria-hidden="true">↗</span></a>
-        <a class="btn btn-ghost" href="#whatsapp">BrikChat vs WhatsApp</a>
-      </div>
-      <div class="hero-proof"><span>Groups · DMs · Voice notes</span><span>Auto-tagged messages</span><span>7 Indian languages</span></div>
-    </div>
-
-    <div class="fp-visual">
-      <div class="bc-stream">
-        <div class="bc-stream-head"><span>BRIK AI · capture stream</span><span class="dot" aria-hidden="true"></span><span class="grow">Skyline Tower B, Site Team</span><span>this morning</span></div>
-        <div class="bc-stream-rows">
-          <div class="row"><span class="t">8:42</span><span class="from">Rajesh · Engineer</span><span class="kind">TEXT</span><span class="intent progress">UPDATE</span><span class="extract">Slab L7 cast · 142 cum <em>· cubes taken for testing</em></span></div>
-          <div class="row"><span class="t">8:46</span><span class="from">Anil · Supervisor</span><span class="kind">VOICE 0:21</span><span class="intent attendance">ATTENDANCE</span><span class="extract">48 present · 3 absent <em>· logged to dashboard</em></span></div>
-          <div class="row"><span class="t">8:55</span><span class="from">Fatima · Architect</span><span class="kind">TEXT</span><span class="intent indent">ENQUIRY</span><span class="extract">L4 plumbing layout, reached site? <em>· Rev 2 linked</em></span></div>
-          <div class="row"><span class="t">9:07</span><span class="from">Kumar · Safety</span><span class="kind">PHOTO</span><span class="intent safety">TICKET</span><span class="extract">Open edge at L6 stairwell <em>· flagged to Priya</em></span></div>
-          <div class="row"><span class="t">9:18</span><span class="from">Suresh · Contractor</span><span class="kind">TEXT</span><span class="intent billing">TICKET</span><span class="extract">50 bags OPC 53 · Block B <em>· indent IND-2041 raised</em></span></div>
-          <div class="row"><span class="t">9:18</span><span class="from">Brik AI</span><span class="kind">INDENT</span><span class="intent indent">ROUTED</span><span class="extract">Structured · sent to Priya (PM) <em>· awaiting approval</em></span></div>
-        </div>
-        <div class="bc-stream-foot"><span>6 of 142 messages today</span><span>+ 3 approvals awaiting Priya (PM)</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== PROBLEM =========================== -->
-<section class="s alt" id="why">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">The problem with site chat today</span>
-      <h2>Your site already runs on chat. <span class="quiet">The chat just doesn't run anything.</span></h2>
-      <p>Every construction team coordinates over WhatsApp because it is fast and everyone has it. But a message is not a record, a voice note is not an indent, and a group thread is not an approval.</p>
-    </div>
-    <div class="pains">
-      <div class="pain">
-        <span class="before">Today</span>
-        <h3>Decisions get buried in group threads.</h3>
-        <p>The quantity, the drawing revision and the go-ahead were all said, somewhere, three hundred messages ago.</p>
-        <div class="after"><b>With BrikChat</b>Every message is tagged and searchable, and anything actionable is pulled out as a structured item linked to the original.</div>
-      </div>
-      <div class="pain">
-        <span class="before">Today</span>
-        <h3>Voice notes nobody can search.</h3>
-        <p>Supervisors speak faster than they type, so updates arrive as voice notes the office has to listen to one by one.</p>
-        <div class="after"><b>With BrikChat</b>Voice notes in seven Indian languages are transcribed, tagged and turned into the update or indent they describe.</div>
-      </div>
-      <div class="pain">
-        <span class="before">Today</span>
-        <h3>Project history lives on personal phones.</h3>
-        <p>When an engineer leaves the project, their chats, photos and context leave with them.</p>
-        <div class="after"><b>With BrikChat</b>Groups belong to the project. New team members join with the full history and the right access for their role.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== CAPABILITIES =========================== -->
-<section class="s" id="capabilities">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">What BrikChat does</span>
-      <h2>Familiar like WhatsApp. <span class="quiet">Built for a construction site.</span></h2>
-      <p>Your team keeps the habits they already have. BrikChat adds the structure the office needs, with Brik AI reading every message.</p>
-    </div>
-    <div class="features">
-      <div class="feature">
-        <div class="icon">01</div>
-        <h3>Project groups &amp; DMs</h3>
-        <p>Groups by project, block, trade or contractor, plus private DMs and a private chat with Brik, all in one inbox.</p>
-        <div class="feature-key">GROUPS · DMs · BRIK AI</div>
-      </div>
-      <div class="feature">
-        <div class="icon">02</div>
-        <h3>Every message auto-tagged</h3>
-        <p>Brik tags the intent of each message as an update, attendance, enquiry or ticket, so nothing actionable slips through.</p>
-        <div class="feature-key">UPDATE · ATTENDANCE · ENQUIRY · TICKET</div>
-      </div>
-      <div class="feature">
-        <div class="icon">03</div>
-        <h3>Voice notes, transcribed</h3>
-        <p>Speak in English, Hindi, Marathi, Tamil, Telugu, Kannada or Bengali. Brik writes it down and pulls out the numbers.</p>
-        <div class="feature-key">SPEAK · TRANSCRIBE · STRUCTURE</div>
-      </div>
-      <div class="feature">
-        <div class="icon">04</div>
-        <h3>Material indents from chat</h3>
-        <p>"Need 50 bags OPC 53 for Block B" becomes a structured indent with quantity, grade and location, routed for approval.</p>
-        <div class="feature-key">INDENT · APPROVAL · PO</div>
-      </div>
-      <div class="feature">
-        <div class="icon">05</div>
-        <h3>Progress to the dashboard</h3>
-        <p>Updates, attendance counts and flags posted in chat flow straight into the live project dashboard, no retyping.</p>
-        <div class="feature-key">PROGRESS · MANPOWER · FLAGS</div>
-      </div>
-      <div class="feature">
-        <div class="icon">06</div>
-        <h3>Drawings, linked in context</h3>
-        <p>Ask "has Rev 2 reached site?" and Brik links the latest tagged revision right in the thread.</p>
-        <div class="feature-key">LATEST REVISION · IN THREAD</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== DEEP DIVE =========================== -->
-<section class="s" id="modes">
-  <div class="wrap">
-    <div class="feature-tag-row">
-      <span class="feature-tag">BRIKCHAT · TWO WAYS TO WORK</span>
-      <span class="feature-version">v1.0 · the chat with Brik AI inside</span>
-    </div>
-    <div class="bc-modes">
-
-      <div class="bc-mode">
-        <div class="bc-text">
-          <div class="bc-num"><b>A.</b>Inside your project chats</div>
-          <h3>Brik reads everything posted. <em>You see the structured version.</em></h3>
-          <p>Every voice note, image and document is captured with sender, time and type. Brik tags the intent, pulls out the figures and turns it into something actionable: a material indent, an attendance count, a progress update or a flag, each one linked back to the original message.</p>
-          <div class="bc-bullets">
-            <div><b>Captures</b><span>Voice · Photo · Video · PDF · Drawing</span></div>
-            <div><b>Tags</b><span>Update · Attendance · Enquiry · Ticket</span></div>
-            <div><b>Turns into</b><span>Indents · Approvals · Progress · Flags</span></div>
-            <div><b>Routes to</b><span>Dashboard · PM approval · Documents</span></div>
-          </div>
-        </div>
-        <div class="bc-visual">
-          <div class="bc-stream">
-            <div class="bc-stream-head"><span>TAGGED TODAY</span><span class="dot" aria-hidden="true"></span><span class="grow">Skyline Tower B</span><span>142 msgs</span></div>
-            <div class="bc-stream-rows">
-              <div class="row"><span class="t">31</span><span class="from">Updates</span><span class="kind">TEXT+VOICE</span><span class="intent progress">UPDATE</span><span class="extract">Feeds progress vs plan <em>· dashboard</em></span></div>
-              <div class="row"><span class="t">6</span><span class="from">Attendance</span><span class="kind">VOICE</span><span class="intent attendance">ATTENDANCE</span><span class="extract">Gang counts by contractor <em>· DLR</em></span></div>
-              <div class="row"><span class="t">9</span><span class="from">Enquiries</span><span class="kind">TEXT</span><span class="intent indent">ENQUIRY</span><span class="extract">Answered or assigned <em>· 2 open</em></span></div>
-              <div class="row"><span class="t">4</span><span class="from">Tickets</span><span class="kind">PHOTO</span><span class="intent billing">TICKET</span><span class="extract">Indents and issues <em>· 3 awaiting PM</em></span></div>
-            </div>
-            <div class="bc-stream-foot"><span>92 chit-chat messages ignored</span><span>0 retyped by the office</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bc-mode">
-        <div class="bc-text">
-          <div class="bc-num"><b>B.</b>Privately, with Brik</div>
-          <h3>Anyone on the project can DM Brik <em>like a person.</em></h3>
-          <p>The engineer checking cement stock. The contractor chasing an approval. The PM glancing at progress before a client call. Any team member opens a private chat with Brik and asks in plain language. Brik answers from live project data, scoped to their role, and can draft the order or message right there.</p>
-          <div class="bc-bullets">
-            <div><b>Ask</b><span><code>Show last week's progress</code></span></div>
-            <div><b>Ask</b><span><code>Cement stock in Tower B?</code></span></div>
-            <div><b>Ask</b><span><code>Draft a material order</code></span></div>
-            <div><b>Ask</b><span><code>Pending approvals</code></span></div>
-            <div><b>Scope</b><span>Each person sees only what their role permits.</span></div>
-          </div>
-        </div>
-        <div class="bc-visual">
-          <div class="phone">
-            <div class="phone-bar"><span class="pic">B</span><div class="who"><b>Brik</b><span>online · always on</span></div></div>
-            <div class="phone-thread">
-              <div class="bubble in">Cement stock in Tower B?<span class="time">15:40</span></div>
-              <div class="bubble out"><b>Tower B · OPC 53 Cement</b><span class="line">On hand <strong>· 12 bags</strong> at site store</span><span class="line">Open indent · <strong>IND-2041 · 50 bags</strong></span><span class="line">Below reorder level. Draft a PO to UltraTech?</span><span class="time">15:40</span></div>
-              <div class="bubble in">Yes, draft it<span class="time">15:41</span></div>
-              <div class="bubble out"><b>PO-2291 · drafted</b><span class="line">50 bags OPC 53 · vendor UltraTech</span><span class="line">Sent to Priya (PM) for approval. I'll confirm here once signed.</span><span class="time">15:41</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================== VS WHATSAPP =========================== -->
-<section class="s alt" id="whatsapp">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">BrikChat vs WhatsApp</span>
-      <h2>Keep the speed of WhatsApp. <span class="quiet">Lose the chaos.</span></h2>
-      <p>WhatsApp is a great personal messenger. A construction project needs a chat that also keeps records, routes approvals and knows who is allowed to see what.</p>
-    </div>
-    <div class="compare" role="table" aria-label="BrikChat compared with WhatsApp for construction sites">
-      <div class="compare-row head" role="row"><div role="columnheader">On a construction site</div><div role="columnheader">WhatsApp groups</div><div role="columnheader">BrikChat</div></div>
-      <div class="compare-row" role="row"><div class="lbl" role="cell">Material requests</div><div role="cell">A message someone must notice and retype</div><div role="cell">A structured indent, routed for approval</div></div>
-      <div class="compare-row" role="row"><div class="lbl" role="cell">Voice notes</div><div role="cell">Listen one by one, not searchable</div><div role="cell">Transcribed in 7 languages and tagged</div></div>
-      <div class="compare-row" role="row"><div class="lbl" role="cell">Attendance &amp; progress</div><div role="cell">Copied into Excel by the office</div><div role="cell">Flows to the live dashboard automatically</div></div>
-      <div class="compare-row" role="row"><div class="lbl" role="cell">Drawings</div><div role="cell">Old revisions forwarded and re-forwarded</div><div role="cell">Latest tagged revision linked in thread</div></div>
-      <div class="compare-row" role="row"><div class="lbl" role="cell">Access</div><div role="cell">Anyone in the group sees everything</div><div role="cell">Role-based, per project</div></div>
-      <div class="compare-row" role="row"><div class="lbl" role="cell">When someone leaves</div><div role="cell">History leaves on their phone</div><div role="cell">History stays with the project</div></div>
-      <div class="compare-row" role="row"><div class="lbl" role="cell">Answers</div><div role="cell">Scroll up and hope</div><div role="cell">Ask Brik, get the source</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== HOW IT WORKS =========================== -->
-<section class="s" id="how">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">How it works</span>
-      <h2>From voice note to approved indent. <span class="quiet">Before lunch.</span></h2>
-    </div>
-    <div class="steps">
-      <div class="step"><span class="n">01</span><h3>Someone posts</h3><p>A contractor sends a voice note in Tamil: 50 bags of OPC 53 needed for Block B tomorrow.</p></div>
-      <div class="step"><span class="n">02</span><h3>Brik reads it</h3><p>The note is transcribed, tagged as a ticket, and quantity, grade and location are extracted.</p></div>
-      <div class="step"><span class="n">03</span><h3>Brik structures it</h3><p>An indent is raised, stock is checked and a PO is drafted to the usual vendor.</p></div>
-      <div class="step"><span class="n">04</span><h3>The PM approves</h3><p>Priya sees the indent with its source message and approves in one tap. The site gets confirmation in the chat.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== ROLES =========================== -->
-<section class="s alt" id="roles">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Who it's for</span>
-      <h2>One chat. <span class="quiet">Everyone on the project.</span></h2>
-    </div>
-    <div class="roles">
-      <div class="role"><span class="who">Site engineer &amp; supervisor</span><h3>Report the way you already talk.</h3><p>Send updates and voice notes. No forms, no registers, no end-of-day Excel.</p></div>
-      <div class="role"><span class="who">Project manager</span><h3>See the structured version of the day.</h3><p>Updates, indents and flags arrive tagged, with approvals waiting in one place.</p></div>
-      <div class="role"><span class="who">Contractors &amp; vendors</span><h3>Get answers without chasing.</h3><p>Ask Brik about your indents, approvals or the latest drawings, scoped to your work.</p></div>
-      <div class="role"><span class="who">Developer &amp; owner</span><h3>A record of every decision.</h3><p>Every instruction, approval and change sits with the project, searchable for years.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== FAQ =========================== -->
-<section class="s" id="faq">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Questions</span>
-      <h2>BrikChat, <span class="quiet">answered.</span></h2>
-    </div>
-    <div class="faq-list">
-      <details open><summary>Is BrikChat a WhatsApp alternative for construction teams?</summary><p>Yes. BrikChat feels as familiar as WhatsApp, with groups, DMs, voice notes and photos, but it belongs to the project instead of personal phones. Brik AI reads every message and turns it into structured work, so decisions, quantities and approvals do not get buried in a group thread.</p></details>
-      <details><summary>Why is WhatsApp not enough for construction site communication?</summary><p>WhatsApp was built for personal messaging. On a construction project it scatters decisions across dozens of groups, makes voice notes impossible to search, leaves no structured record of indents or attendance, and keeps project history on personal phones that leave when people do.</p></details>
-      <details><summary>Does my site team need training to use BrikChat?</summary><p>Very little. If your team can send a WhatsApp message or voice note, they can use BrikChat. They keep talking the way they do today; Brik AI does the structuring in the background.</p></details>
-      <details><summary>Can site teams send voice notes in regional languages?</summary><p>Yes. BrikChat understands English, Hindi, Marathi, Tamil, Telugu, Kannada and Bengali. Voice notes are transcribed and tagged so the office can read and search them.</p></details>
-      <details><summary>Does Brik AI reply or place orders in the chat automatically?</summary><p>No. Brik drafts replies, indents and orders, and the right person approves them before anything is sent.</p></details>
-      <details><summary>Is BrikChat available now?</summary><p>BrikChat is in active development and is the first product on the Brikito roadmap. <a href="/book-a-demo" style="text-decoration:underline">Book a demo</a> to see it on one of your live projects and join early access.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== MORE =========================== -->
-<section class="s alt" id="more">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Part of one app</span>
-      <h2>Explore the rest of <span class="quiet">Brikito.</span></h2>
-    </div>
-    <div class="xlink-grid">
-      <a class="xlink" href="/brik-ai"><span class="k">Brik AI</span><h3>The AI assistant built for construction.</h3><p>Ask anything about your project and let Brik draft the paperwork.</p><span class="go">Explore Brik AI <span aria-hidden="true">↗</span></span></a>
-      <a class="xlink" href="/brikvision"><span class="k">BrikVision</span><h3>AI on your site cameras, 24/7.</h3><p>Headcount, deliveries, PPE and progress, from anywhere.</p><span class="go">Explore BrikVision <span aria-hidden="true">↗</span></span></a>
-      <a class="xlink" href="/brikdocs"><span class="k">BrikDocs</span><h3>Every report, generated in a tap.</h3><p>DPR, BOQ, BBS, GRN and more, built from the work already logged.</p><span class="go">Explore BrikDocs <span aria-hidden="true">↗</span></span></a>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== CTA =========================== -->
-<section class="cta" id="cta">
-  <div class="wrap cta-inner">
-    <h2>Move your site chat <span class="grad-ink">onto Brikito.</span></h2>
-    <p>45 minutes. We'll set your team up on one live project and show you their messages turning into work the same day.</p>
-    <div class="cta-actions">
-      <a class="btn btn-solid" href="/book-a-demo">Book a demo <span class="arrow" aria-hidden="true">↗</span></a>
-      <a class="btn btn-ghost" href="/how-it-works">How it works</a>
-    </div>
-  </div>
-</section>
-
-</main>
-<style>
-  .global-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
-  .global-footer-logo svg{display:block;flex:none;width:22px;height:22px}
-  .global-footer-bottom-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .global-footer-social{display:flex;align-items:center;gap:8px}
-  .global-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.72);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
-  .global-footer-social a:hover,.global-footer-social a:focus-visible{color:#fff;border-color:rgba(255,255,255,.45);background-color:rgba(255,255,255,.06)}
-  .global-footer-social svg{width:16px;height:16px;display:block}
-</style>
-
-<footer class="global-footer">
-  <div class="global-footer-inner">
-
-    <!-- Footer Brand -->
-    <div class="global-footer-brand">
-      <a href="/" class="global-footer-logo" aria-label="Brikito home">
-        <!-- Brikito icon (white) -->
-        <svg viewBox="0 0 4096 4096" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
-          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
-        </svg>
-        <span>Brikito</span>
-      </a>
-
-      <p>
-        Construction made simple.
-      </p>
-    </div>
-
-    <!-- Product Links -->
-    <div class="global-footer-col">
-      <h4>Product</h4>
-      <a href="/#intel">Platform</a>
-      <a href="/brik-ai">Brik AI</a>
-      <a href="/brikchat">BrikChat</a>
-      <a href="/brikvision">BrikVision</a>
-      <a href="/brikdocs">BrikDocs</a>
-      <a href="/pricing">Pricing</a>
-    </div>
-
-    <!-- Explore Links -->
-    <div class="global-footer-col">
-      <h4>Explore</h4>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/blog">Resources</a>
-      <a href="/about">About us</a>
-      <a href="/how-it-works">How it works</a>
-      <a href="/book-a-demo">Book a demo</a>
-    </div>
-
-    <!-- Account Links -->
-    <div class="global-footer-col">
-      <h4>Get started</h4>
-      <a href="https://app.brikito.com/signup">Sign in</a>
-      <a href="/book-a-demo">Talk to our team</a>
-      <a href="/privacy">Privacy policy</a>
-    </div>
-
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="global-footer-bottom">
-    <span>
-      © <span id="global-footer-year">2026</span> Brikito. All rights reserved.
-    </span>
-
-    <div class="global-footer-bottom-right">
-      <a href="/privacy">Privacy policy</a>
-
-      <!-- Social media links -->
-      <div class="global-footer-social" aria-label="Brikito on social media">
-        <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  (function () {
-    var year = document.getElementById("global-footer-year");
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
-  })();
-</script>
-
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)) return;
-  var t=document.querySelectorAll('.s-head,.pains,.features,.steps,.roles,.trust,.faq-list,.xlink-grid,.bc-mode,.catalogue,.compare,.cta-inner');
-  document.documentElement.classList.add('js-reveal');
-  t.forEach(function(e){e.classList.add('reveal');});
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.05,rootMargin:'0px 0px -5% 0px'});
-  var vh=window.innerHeight||document.documentElement.clientHeight;
-  t.forEach(function(e){if(e.getBoundingClientRect().top<vh*.95)e.classList.add('in');else io.observe(e);});
-  setTimeout(function(){t.forEach(function(e){e.classList.add('in');});},1500);
-})();
-</script>
-<script src="components/global.js?v=20261031b"></script>
+<div class="progress" aria-hidden="true"></div>
+<div id="shell"><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup">Sign in</a></div></div>
+<main id="app">
+<section class="hero"><div class="aurora" aria-hidden="true"></div><div class="wrap"><div class="split">
+<div><div class="rv"><span class="chip"><span class="dot dev"></span>In development · early access</span></div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">The site chat that turns messages into work.</h1>
+<p class="lead rv dl2">One project chat in place of scattered WhatsApp groups. Brik reads messages, voice notes, photos and PDFs, tags each one, and routes it to the dashboard or to the PM for approval.</p>
+<div class="btns rv dl3"><a class="btn btn-p" href="/book-a-demo">Get early access</a><a class="btn btn-s" href="#vs" data-scroll="vs">BrikChat vs WhatsApp</a></div>
+<div class="rv" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:30px"><span class="chip">Groups · DMs · Voice notes</span><span class="chip">Auto-tagged messages</span><span class="chip">7 Indian languages</span></div></div>
+<div class="zoom" style="display:flex;justify-content:center"><div class="phone"><div class="island"></div><div class="scr"><div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
+<div class="apphead"><span class="av"><svg width="18" height="18" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></span><div><b>Skyline Tower B</b><small>Site Team · 6 of 142 messages</small></div></div><div class="chat"><div class="msg "><div class="who"><span>Rajesh · Engineer</span><span>8:42</span></div>Slab L7 cast, 142 cum. Cubes taken.<div><span class="tag t-up">UPDATE</span></div></div><div class="msg "><div class="who"><span>Anil · Supervisor</span><span>8:46</span></div>▶ 0:21 · 48 present, 3 absent<div><span class="tag t-at">ATTENDANCE</span></div></div><div class="msg "><div class="who"><span>Fatima · Architect</span><span>11:20</span></div>L4 plumbing layout? Rev 2 linked<div><span class="tag t-en">ENQUIRY</span></div></div><div class="msg "><div class="who"><span>Kumar · Safety</span><span>11:02</span></div>📷 Open edge, L6 stairwell<div><span class="tag t-tk">TICKET → Priya</span></div></div><div class="msg "><div class="who"><span>Suresh · Contractor</span><span>9:18</span></div>50 bags OPC 53, Block B<div><span class="tag t-tk">TICKET · IND-2041</span></div></div><div class="brikmsg"><span class="bav"><svg width="13" height="13" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#fff"></path></svg></span><div class="msg" style="max-width:88%">Indent routed to <b>Priya (PM)</b>. 3 approvals waiting.</div></div></div><div class="compose"><i>Message Site Team…</i><b><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></b></div></div></div></div></div></div></section>
+<section class="sec-sm" style="padding-top:0"><div class="wrap"><div class="flow sm rv"><div class="fnode "><span class="fi "><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>142 messages today</b><small>Tower B · Site Team</small></div><div class="fline"><i></i></div><div class="fnode brikn"><span class="fi "><svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#fff"></path></svg></span><b>Brik tags each one</b><small>update · attendance · enquiry · ticket</small></div><div class="fline"><i></i></div><div class="fnode "><span class="fi "><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span><b>Routed automatically</b><small>dashboard · PM · documents</small></div><div class="fline"><i></i></div><div class="fnode"><span class="fi ok"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg></span><b>0 retyped</b><small>by the office</small></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">The problem</p><h2 class="d2">Your site already runs on chat. The chat just doesn’t run anything.</h2><p class="lead">Teams use WhatsApp because it’s fast. But a message isn’t a record, a voice note isn’t an indent, and a group thread isn’t an approval.</p></div>
+<div class="pf rv"><div class="p"><small>The problem</small><h4>Decisions buried in group threads.</h4><p>Quantities, drawing revisions and go-aheads get lost in the scroll.</p></div><div class="f"><small>With Brikito</small><p style="color:#2B2B31">Every message is tagged and searchable. Actionable items are pulled out and linked.</p></div></div><div class="pf rv"><div class="p"><small>The problem</small><h4>Voice notes nobody can search.</h4><p>The office listens to them one by one.</p></div><div class="f"><small>With Brikito</small><p style="color:#2B2B31">Voice notes are transcribed, tagged and turned into updates or indents.</p></div></div><div class="pf rv"><div class="p"><small>The problem</small><h4>Project history on personal phones.</h4><p>When people leave, the context leaves with them.</p></div><div class="f"><small>With Brikito</small><p style="color:#2B2B31">Groups belong to the project. New members see history according to their role.</p></div></div></div></section>
+<section class="sec alt"><div class="wrap"><div class="secthead center rv"><p class="eyebrow">What BrikChat does</p><h2 class="d2">Familiar like WhatsApp. Built for a construction site.</h2></div>
+<div class="g3"><div class="box rv dl0"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><h3>Project groups &amp; DMs</h3><p>Groups by project, block, trade or contractor, plus private DMs and a private chat with Brik.</p><div class="chips"><span>GROUPS</span><span>DMs</span><span>BRIK AI</span></div></div><div class="box rv dl1"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4h11l-2 4 2 4H5"></path></svg></span><h3>Every message auto-tagged</h3><p>Update, attendance, enquiry or ticket, without anyone filling a form.</p><div class="chips"><span>UPDATE</span><span>ATTENDANCE</span><span>ENQUIRY</span><span>TICKET</span></div></div><div class="box rv dl2"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></span><h3>Voice notes, transcribed</h3><p>English, Hindi, Marathi, Tamil, Telugu, Kannada and Bengali.</p><div class="chips"><span>SPEAK</span><span>TRANSCRIBE</span><span>STRUCTURE</span></div></div><div class="box rv dl0"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10"></path></svg></span><h3>Material indents from chat</h3><p>“Need 50 bags OPC 53 for Block B” becomes an indent with quantity, grade and location.</p><div class="chips"><span>INDENT</span><span>APPROVAL</span><span>PO</span></div></div><div class="box rv dl1"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span><h3>Progress to the dashboard</h3><p>Updates, attendance counts and flags flow into the live dashboard.</p><div class="chips"><span>PROGRESS</span><span>MANPOWER</span><span>FLAGS</span></div></div><div class="box rv dl2"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h11l5 5v11H4zM15 4v5h5M8 13h8M8 17h5"></path></svg></span><h3>Drawings, linked in context</h3><p>“Has Rev 2 reached site?” returns the latest tagged revision, in the thread.</p><div class="chips"><span>LATEST REVISION</span><span>IN THREAD</span></div></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="split">
+<div><p class="eyebrow rv">Inside project chats</p><h2 class="d2 rv">142 messages in. Zero retyped.</h2><p class="lead rv">Brik captures voice, photos, video, PDFs and drawings, tags them, and turns them into indents, approvals, progress and flags.</p></div>
+<div class="zoom"><div class="win"><div class="bar"><i></i><i></i><i></i><span>Tagged today · Skyline Tower B</span></div><div style="padding:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px"><div style="background:var(--alt);border-radius:14px;padding:16px"><div style="font-family:var(--ui);font-size:34px;font-weight:600;letter-spacing:-.03em">31</div><span class="muted" style="font-size:13px">Updates</span></div><div style="background:var(--alt);border-radius:14px;padding:16px"><div style="font-family:var(--ui);font-size:34px;font-weight:600;letter-spacing:-.03em">6</div><span class="muted" style="font-size:13px">Attendance</span></div><div style="background:var(--alt);border-radius:14px;padding:16px"><div style="font-family:var(--ui);font-size:34px;font-weight:600;letter-spacing:-.03em">9</div><span class="muted" style="font-size:13px">Enquiries</span></div><div style="background:var(--alt);border-radius:14px;padding:16px"><div style="font-family:var(--ui);font-size:34px;font-weight:600;letter-spacing:-.03em">4</div><span class="muted" style="font-size:13px">Tickets</span></div><div style="background:var(--alt);border-radius:14px;padding:16px"><div style="font-family:var(--ui);font-size:34px;font-weight:600;letter-spacing:-.03em">92</div><span class="muted" style="font-size:13px">Chit-chat ignored</span></div><div style="background:var(--alt);border-radius:14px;padding:16px"><div style="font-family:var(--ui);font-size:34px;font-weight:600;letter-spacing:-.03em">0</div><span class="muted" style="font-size:13px">Retyped by the office</span></div></div></div></div></div></div></section>
+<section class="sec alt" id="vs"><div class="wrap narrow"><div class="secthead center rv"><p class="eyebrow">BrikChat vs WhatsApp</p><h2 class="d2">Keep the speed of WhatsApp. Lose the chaos.</h2></div>
+<div class="vs rv"><div class="h"></div><div class="h">WhatsApp groups</div><div class="h">BrikChat</div><div class="k">Material requests</div><div class="muted">Retyped by hand</div><div class="b">Structured indent, routed for approval</div><div class="k">Voice notes</div><div class="muted">Listened to one by one</div><div class="b">Transcribed in 7 languages and tagged</div><div class="k">Attendance &amp; progress</div><div class="muted">Copied into Excel</div><div class="b">Flows to the live dashboard</div><div class="k">Drawings</div><div class="muted">Old revisions re-forwarded</div><div class="b">Latest revision linked in thread</div><div class="k">Access</div><div class="muted">Everyone sees everything</div><div class="b">Role-based, per project</div><div class="k">When someone leaves</div><div class="muted">History leaves on their phone</div><div class="b">History stays with the project</div><div class="k">Answers</div><div class="muted">Scroll up and hope</div><div class="b">Ask Brik, get the source</div></div></div></section>
+<section class="sec"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">How it works</p><h2 class="d2">From voice note to approved indent. Before lunch.</h2></div><div class="steps"><div class="step rv dl0"><b>01</b><h4>Someone posts</h4><p>A contractor sends a Tamil voice note: 50 bags of OPC 53 for Block B, tomorrow.</p></div><div class="step rv dl1"><b>02</b><h4>Brik reads it</h4><p>Transcribes it, tags it as a ticket, and pulls out quantity, grade and location.</p></div><div class="step rv dl2"><b>03</b><h4>Brik structures it</h4><p>Raises the indent, checks stock, and drafts a PO to the usual vendor.</p></div><div class="step rv dl0"><b>04</b><h4>The PM approves</h4><p>Priya approves in one tap from the source message. The site gets confirmation in chat.</p></div></div></div></section>
+<section class="sec alt"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">Who it’s for</p><h2 class="d2">Everyone on the project, in one chat.</h2></div><div class="g4"><div class="box rv dl0"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M5 18v-3a7 7 0 0 1 14 0v3M10 8V5h4v3"></path></svg></span><h3>Site engineer &amp; supervisor</h3><p>Report the way you already talk. No forms, no end-of-day Excel.</p></div><div class="box rv dl1"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 20v-1a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path></svg></span><h3>Project manager</h3><p>See the day structured, with approvals in one place.</p></div><div class="box rv dl2"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h12v10H2zM14 10h4l4 3v3h-8M6 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4"></path></svg></span><h3>Contractors &amp; vendors</h3><p>Get answers on indents, approvals and drawings without chasing.</p></div><div class="box rv dl0"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><h3>Developer &amp; owner</h3><p>A searchable record of every decision, kept with the project.</p></div></div></div></section>
+<section class="sec"><div class="wrap narrow"><div class="secthead  rv"><h2 class="d2">BrikChat, answered.</h2></div><div class="faq rv"><details><summary>Is BrikChat a WhatsApp alternative for construction teams?</summary><div class="ans">Yes. It feels familiar, but the chat belongs to the project, and Brik turns messages into structured work.</div></details><details><summary>Why isn’t WhatsApp enough?</summary><div class="ans">It scatters decisions, voice notes can’t be searched, nothing becomes a record, and history stays on personal phones.</div></details><details><summary>Does the site team need training?</summary><div class="ans">Very little. If they can send a WhatsApp message or a voice note, they can use BrikChat.</div></details><details><summary>Can teams send voice notes in regional languages?</summary><div class="ans">Yes, in all seven supported languages, with transcription and tagging.</div></details><details><summary>Does Brik reply or order automatically?</summary><div class="ans">No. Brik drafts replies, indents and orders. A person approves before anything is sent.</div></details><details><summary>Is it available now?</summary><div class="ans">BrikChat is in active development and is first on the roadmap. Book a demo to join early access.</div></details></div></div></section>
+<section class="sec-sm alt"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">Part of one app</p><h2 class="d2">Explore the rest of Brikito.</h2></div><div class="g3"><a class="box rv dl0" href="/brik-ai" style="display:block"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><h3>Brik AI</h3><p>The AI assistant built for construction.</p><p style="margin-top:18px"><span class="link">Explore Brik AI <span class="ch" aria-hidden="true">›</span></span></p></a><a class="box rv dl1" href="/brikvision" style="display:block"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><h3>BrikVision</h3><p>AI on your site CCTV, around the clock.</p><p style="margin-top:18px"><span class="link">Explore BrikVision <span class="ch" aria-hidden="true">›</span></span></p></a><a class="box rv dl2" href="/brikdocs" style="display:block"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><h3>BrikDocs</h3><p>DPR, BOQ, BBS and more in one tap.</p><p style="margin-top:18px"><span class="link">Explore BrikDocs <span class="ch" aria-hidden="true">›</span></span></p></a></div></div></section><section class="sec dark"><div class="wrap center"><div class="rv" style="display:flex;justify-content:center;margin-bottom:30px"><svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg2" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg2)"></path></svg></div><h2 class="d2 rv">Move your site chat onto Brikito.</h2><p class="lead rv">A 45-minute session. Your team on one live project, with messages turning into work the same day.</p><div class="btns rv"><a class="btn btn-p" href="/book-a-demo">Book a demo</a><a class="btn btn-s" href="/how-it-works">How it works</a></div></div></section><footer><div class="wrap"><div class="cols">
+<div><a class="logo" href="/" aria-label="Brikito home"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a><p style="margin-top:14px">Construction made simple.</p><p style="margin-top:8px">hey@brikito.com</p></div>
+<div><h5>Product</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div>
+<div><h5>Explore</h5><a href="/how-it-works">How it works</a><a href="/blog">Journal</a><a href="/about">About us</a><a href="/book-a-demo">Book a demo</a></div>
+<div><h5>Get started</h5><a href="https://app.brikito.com/signup">Sign in</a><a href="/book-a-demo">Talk to our team</a><a href="/privacy">Privacy policy</a></div></div>
+<div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="soc"><a href="https://www.youtube.com/@Brikitoai">YouTube</a><a href="https://www.instagram.com/brikitoai/">Instagram</a><a href="https://www.linkedin.com/company/brikito">LinkedIn</a><a href="https://www.facebook.com/brikitoai">Facebook</a></span></div></div></footer></main>
+<script src="/assets/site.js?v=20261106" defer></script>
 </body>
 </html>

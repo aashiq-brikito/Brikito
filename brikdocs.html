@@ -22,14 +22,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
 <link rel="manifest" href="/site.webmanifest" />
-<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="components/feature-page.css?v=20261031f" />
-<link rel="stylesheet" href="components/global.css?v=20261031" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
+<link rel="stylesheet" href="/assets/site.css?v=20261106" />
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,30 +37,88 @@
     {
       "@type": "SoftwareApplication",
       "name": "BrikDocs",
-      "alternateName": ["Brik Docs"],
+      "alternateName": [
+        "Brik Docs"
+      ],
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Construction report and document management software",
       "operatingSystem": "Android, iOS, Web",
       "url": "https://www.brikito.com/brikdocs",
       "description": "Generates construction reports such as DPR, DLR, BOQ, BBS, GRN and stock statements from logged site work, with version-controlled drawings and AI search across project documents.",
-      "publisher": {"@type": "Organization", "name": "Brikito", "url": "https://www.brikito.com/"}
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brikito",
+        "url": "https://www.brikito.com/"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Brikito", "item": "https://www.brikito.com/"},
-        {"@type": "ListItem", "position": 2, "name": "BrikDocs", "item": "https://www.brikito.com/brikdocs"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "BrikDocs",
+          "item": "https://www.brikito.com/brikdocs"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "What is a DPR in construction?", "acceptedAnswer": {"@type": "Answer", "text": "A DPR, or Daily Progress Report, records what happened on a construction site in a day: work completed against plan, manpower, materials received and used, equipment, issues and photos. BrikDocs builds the DPR automatically from the updates, attendance and material entries your team already posted."}},
-        {"@type": "Question", "name": "What is a BBS in construction?", "acceptedAnswer": {"@type": "Answer", "text": "A BBS, or Bar Bending Schedule, lists every reinforcement bar in a structural member with its shape, diameter, cut length, number and weight. It is used to cut and bend steel correctly and to estimate steel quantities. BrikDocs is designed to generate the BBS alongside fabrication drawings."}},
-        {"@type": "Question", "name": "Which construction reports can BrikDocs generate?", "acceptedAnswer": {"@type": "Answer", "text": "BrikDocs covers DPR, DLR, BOQ, BBS, estimation, schedules, fabrication drawings, GRN and stock statements, along with client-ready PDFs for indents, purchase orders, measurement books, inspections, snags and expenses."}},
-        {"@type": "Question", "name": "Where does the data for each report come from?", "acceptedAnswer": {"@type": "Answer", "text": "From the work already logged in Brikito: progress updates and voice notes in BrikChat, selfie attendance, indents, POs and GRNs, and the drawings in your document library. Nobody has to fill a separate form at the end of the day."}},
-        {"@type": "Question", "name": "How does BrikDocs handle drawing revisions?", "acceptedAnswer": {"@type": "Answer", "text": "Every drawing, structural plan, BOQ, agreement and certificate is version controlled. The latest revision is always tagged, so the site works from the current drawing and older revisions stay available for reference."}},
-        {"@type": "Question", "name": "Is BrikDocs available now?", "acceptedAnswer": {"@type": "Answer", "text": "Standard DPR and DLR PDF reports are part of every Brikito plan today, with comprehensive reports and client-ready PDFs in Professional. The full BrikDocs suite, including AI document search and drawing revision control, is next on the roadmap and available to Enterprise customers as a pilot."}}
+        {
+          "@type": "Question",
+          "name": "What is a DPR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Daily Progress Report records the day’s work, manpower, materials, issues and next steps. BrikDocs builds it from what the team logged."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a BBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Bar Bending Schedule lists every reinforcement bar: mark, shape, diameter, cut length and weight, taken from the structural drawings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which reports can BrikDocs generate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DPR, DLR, BOQ, BBS, estimation, schedule, fabrication drawings, GRN and stock statements, plus indents, POs, measurement books, inspections, snag lists and expenses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does each report’s data come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From records already in Brikito: chat updates, attendance, indents, GRNs, drawings and plans. Each figure links to its source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are drawing revisions handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every upload is versioned. The latest revision is tagged, older ones are marked superseded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is BrikDocs available now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard DPR and DLR PDFs are in every plan. Comprehensive and client-ready reports are in Professional. The full suite, with AI document search and drawing revision control, is in Enterprise pilot. See pricing"
+          }
+        }
       ]
     }
   ]
@@ -68,464 +126,46 @@
 </script>
 </head>
 <body>
-<header class="global-header">
-  <div class="global-header-inner">
-
-    <!-- Brikito Logo (black icon + Brikito text) -->
-    <a
-      class="global-logo"
-      href="/"
-      aria-label="Brikito home"
-      style="display:inline-flex;align-items:center;gap:9px;color:#0a0a0a;text-decoration:none"
-    >
-      <svg
-        class="global-logo-mark"
-        viewBox="0 0 4096 4096"
-        width="24"
-        height="24"
-        fill="currentColor"
-        aria-hidden="true"
-        focusable="false"
-        style="display:block;flex:none"
-      >
-        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
-        <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
-      </svg>
-      <span class="global-logo-text">Brikito</span>
-    </a>
-
-    <!-- Mobile Menu Button -->
-    <button
-      class="global-menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="global-nav"
-      aria-label="Open menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Main Navigation -->
-    <nav
-      class="global-nav"
-      id="global-nav"
-      aria-label="Primary navigation"
-    >
-
-      <!-- Features dropdown -->
-      <div class="global-dd">
-        <button class="global-dd-btn" type="button" aria-expanded="false" aria-controls="global-features">
-          Features
-          <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="global-dd-menu" id="global-features">
-          <a href="/brik-ai">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
-            <span class="global-dd-tx"><b>Brik AI</b><small>The AI assistant built for construction</small></span>
-          </a>
-          <a href="/brikchat">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
-            <span class="global-dd-tx"><b>BrikChat</b><small>Site chat that turns messages into work</small></span>
-          </a>
-          <a href="/brikvision">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
-            <span class="global-dd-tx"><b>BrikVision</b><small>AI on your site CCTV, 24/7</small></span>
-          </a>
-          <a href="/brikdocs">
-            <span class="global-dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
-            <span class="global-dd-tx"><b>BrikDocs</b><small>DPR, BOQ, BBS and more in one tap</small></span>
-          </a>
-        </div>
-      </div>
-
-      <a href="/blog">Resources</a>
-      <a href="/pricing">Pricing</a>
-    </nav>
-
-    <!-- Header Buttons -->
-    <div class="global-header-actions">
-
-      <a
-        class="global-trial"
-        href="https://app.brikito.com/signup"
-      >
-        Sign in
-      </a>
-
-      <a
-        class="global-demo"
-        href="/book-a-demo"
-      >
-        Book a demo <span aria-hidden="true">↗</span>
-      </a>
-
-    </div>
-
-  </div>
-</header>
-<main>
-
-<!-- =========================== HERO =========================== -->
-<section class="fp-hero">
-  <div class="wrap">
-    <div class="fp-hero-inner">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Brikito</a><span>/</span><span>BrikDocs</span></nav>
-      <span class="hero-pill"><span class="dot amber" aria-hidden="true"></span>BrikDocs, construction reports &amp; documents <span class="tag">NEXT</span></span>
-      <h1>Every construction report, <span class="grad-ink">generated in a tap.</span></h1>
-      <p class="deck">No more late nights in Excel. BrikDocs builds your DPR, DLR, BOQ, BBS, GRN and stock statements from the work your team already logged in Brikito, and keeps every drawing version-controlled with the latest revision tagged on site.</p>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="/book-a-demo">Book a demo <span class="arrow" aria-hidden="true">↗</span></a>
-        <a class="btn btn-ghost" href="#reports">See every report</a>
-      </div>
-      <div class="hero-proof"><span>One tap, ready in seconds</span><span>Built from logged work</span><span>Share or print as PDF</span></div>
-    </div>
-
-    <div class="fp-visual">
-      <div class="doc-split">
-        <div class="doc-src">
-          <div class="doc-bar"><span class="dot" aria-hidden="true"></span><span class="grow">What the site logged today</span><span>Tower B</span></div>
-          <ul>
-            <li><span class="t">8:42</span><span>Slab L7 cast · 142 cum<em>Rajesh · text in Site Team</em></span></li>
-            <li><span class="t">8:46</span><span>48 present · 3 absent<em>Anil · voice note, Tamil</em></span></li>
-            <li><span class="t">9:18</span><span>50 bags OPC 53 requested<em>Suresh · indent IND-2041</em></span></li>
-            <li><span class="t">13:52</span><span>TMT 12 mm · 4.2 t received<em>Stores · GRN-0388</em></span></li>
-            <li><span class="t">16:10</span><span>L6 blockwork 70% · photos<em>Rajesh · 3 photos</em></span></li>
-          </ul>
-        </div>
-        <div class="doc-out">
-          <div class="doc-bar"><span class="dot" aria-hidden="true"></span><span class="grow">BrikDocs · generated</span><span>DPR · PDF</span></div>
-          <div class="doc-page">
-            <div class="doc-title"><b>Daily Progress Report</b><span>DPR-0612 · Skyline Tower B</span></div>
-            <div class="doc-meta">
-              <div><small>Manpower</small><b>48 / 51</b></div>
-              <div><small>Concrete</small><b>142 cum</b></div>
-              <div><small>Plan status</small><b>2 days behind</b></div>
-            </div>
-            <table class="doc-table">
-              <thead><tr><th>Activity</th><th>Location</th><th class="n">Today</th><th class="n">Cum.</th></tr></thead>
-              <tbody>
-                <tr><td>Slab casting</td><td>L7</td><td class="n">100%</td><td class="n">100%</td></tr>
-                <tr><td>Blockwork</td><td>L6</td><td class="n">+15%</td><td class="n">70%</td></tr>
-                <tr><td>Steel received</td><td>Store</td><td class="n">4.2 t</td><td class="n">38.6 t</td></tr>
-              </tbody>
-            </table>
-            <div class="doc-sign"><span>Prepared by Brik AI · 18:05</span><span class="ok">Approved · Priya (PM)</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== PROBLEM =========================== -->
-<section class="s alt" id="why">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Why reporting takes so long</span>
-      <h2>The site did the work once. <span class="quiet">The office types it up three times.</span></h2>
-      <p>The same quantities get keyed into the DPR, the stock register and the client update, by different people, in different spreadsheets. BrikDocs writes them once, from the source.</p>
-    </div>
-    <div class="pains">
-      <div class="pain">
-        <span class="before">Today</span>
-        <h3>Late nights in Excel.</h3>
-        <p>Engineers finish on site, then spend the evening compiling the DPR from chats, registers and memory.</p>
-        <div class="after"><b>With BrikDocs</b>The DPR is generated from the day's updates, attendance and material entries, ready to review and share.</div>
-      </div>
-      <div class="pain">
-        <span class="before">Today</span>
-        <h3>The wrong revision on site.</h3>
-        <p>An old drawing forwarded on WhatsApp gets built from, and the rework bill arrives weeks later.</p>
-        <div class="after"><b>With BrikDocs</b>Every drawing is version-controlled and the latest revision is tagged, so the site always works from the current one.</div>
-      </div>
-      <div class="pain">
-        <span class="before">Today</span>
-        <h3>Reports that don't agree.</h3>
-        <p>The DPR says 4 tonnes of steel came in, the stock statement says 3.6. Nobody knows which is right.</p>
-        <div class="after"><b>With BrikDocs</b>Every report draws on the same logged records, so DPR, GRN and stock statement match by design.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== REPORT CATALOGUE =========================== -->
-<section class="s" id="reports">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">The report library</span>
-      <h2>Every report your project needs. <span class="quiet">One tap each.</span></h2>
-      <p>Each report is built from records your team already keeps in Brikito, so there is nothing extra to fill in.</p>
-    </div>
-    <div class="catalogue">
-      <div class="cat"><span class="code">DPR</span><h3>Daily Progress Report</h3><p>Work done against plan, manpower, materials, issues and photos for the day.</p><div class="from">Built from · updates, attendance, GRN</div></div>
-      <div class="cat"><span class="code">DLR</span><h3>Daily Labour Report</h3><p>Team-wise and contractor-wise attendance, hours, OT and exceptions.</p><div class="from">Built from · selfie check-in, voice counts</div></div>
-      <div class="cat"><span class="code">BOQ</span><h3>Bill of Quantities</h3><p>Itemised quantities and rates for the scope, kept in step with measurements.</p><div class="from">Built from · drawings, measurements</div></div>
-      <div class="cat"><span class="code">BBS</span><h3>Bar Bending Schedule</h3><p>Bar marks, shapes, diameters, cut lengths and weights for every member.</p><div class="from">Built from · structural drawings</div></div>
-      <div class="cat"><span class="code">EST</span><h3>Estimation</h3><p>Material and cost estimates for an activity, floor or the whole project.</p><div class="from">Built from · BOQ, rates, consumption</div></div>
-      <div class="cat"><span class="code">SCH</span><h3>Schedule</h3><p>Activity schedule with plan vs actual and the slippage on each line.</p><div class="from">Built from · weekly plans, progress</div></div>
-      <div class="cat"><span class="code">FAB</span><h3>Fabrication Drawing</h3><p>Shop-ready fabrication details issued with the latest revision tagged.</p><div class="from">Built from · drawing library</div></div>
-      <div class="cat"><span class="code">GRN</span><h3>Goods Received Note</h3><p>What arrived, against which PO, in what quantity and condition.</p><div class="from">Built from · PO, gate and store entries</div></div>
-      <div class="cat"><span class="code">STK</span><h3>Stock Statement</h3><p>Opening, received, issued and closing stock for every material.</p><div class="from">Built from · GRN, issues, indents</div></div>
-    </div>
-    <div class="report-chips" style="justify-content:center;margin-top:28px">
-      <span class="report-chip">Indent</span><span class="report-chip">Purchase Order</span><span class="report-chip">Measurement Book</span><span class="report-chip">Inspection</span><span class="report-chip">Snag list</span><span class="report-chip">Expense</span><span class="report-chip">+ more</span>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== DEEP DIVE =========================== -->
-<section class="s alt" id="documents">
-  <div class="wrap">
-    <div class="feature-tag-row">
-      <span class="feature-tag">BRIKDOCS · BEYOND REPORTS</span>
-      <span class="feature-version">drawings · search · minutes</span>
-    </div>
-    <div class="bc-modes">
-
-      <div class="bc-mode">
-        <div class="bc-text">
-          <div class="bc-num"><b>A.</b>Drawings &amp; documents, version-controlled</div>
-          <h3>One library for the project. <em>The latest revision, always tagged.</em></h3>
-          <p>Drawings, structural plans, BOQs, agreements and certificates live in one place, with every revision kept. The current one is tagged for the site, and anyone asking in BrikChat gets the right version linked in the thread.</p>
-          <div class="bc-bullets">
-            <div><b>Stores</b><span>Drawings · Structural plans · BOQ · Agreements · Certificates</span></div>
-            <div><b>Tracks</b><span>Every revision, who issued it and when</span></div>
-            <div><b>Tags</b><span>The latest revision for the site, automatically</span></div>
-            <div><b>Links</b><span>Into BrikChat threads when someone asks</span></div>
-          </div>
-        </div>
-        <div class="bc-visual">
-          <div class="bc-stream">
-            <div class="bc-stream-head"><span>DOCUMENTS · Tower B</span><span class="dot" aria-hidden="true"></span><span class="grow">Plumbing · L4</span><span>4 files</span></div>
-            <div class="bc-stream-rows">
-              <div class="row"><span class="t">Rev 2</span><span class="from">L4 plumbing layout</span><span class="kind">PDF</span><span class="intent attendance">LATEST</span><span class="extract">Issued by Fatima <em>· tagged on site</em></span></div>
-              <div class="row"><span class="t">Rev 1</span><span class="from">L4 plumbing layout</span><span class="kind">PDF</span><span class="intent indent">SUPERSEDED</span><span class="extract">Kept for reference <em>· not for construction</em></span></div>
-              <div class="row"><span class="t">Rev 3</span><span class="from">L4 slab reinforcement</span><span class="kind">DWG</span><span class="intent attendance">LATEST</span><span class="extract">BBS generated <em>· 12.4 t steel</em></span></div>
-              <div class="row"><span class="t">v1</span><span class="from">Plumbing contract</span><span class="kind">PDF</span><span class="intent progress">AGREEMENT</span><span class="extract">Signed <em>· linked to vendor</em></span></div>
-            </div>
-            <div class="bc-stream-foot"><span>0 outdated drawings in circulation</span><span>History kept</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bc-mode">
-        <div class="bc-text">
-          <div class="bc-num"><b>B.</b>Ask your documents</div>
-          <h3>Search specs and approvals in plain language. <em>Get the page, not a guess.</em></h3>
-          <p>Brik searches across specifications, method statements and approvals and answers with the source document attached. Upload meeting minutes and Brik turns them into action items with owners, so nothing agreed in the meeting is lost.</p>
-          <div class="bc-bullets">
-            <div><b>Ask</b><span><code>Curing period for the L7 slab per spec?</code></span></div>
-            <div><b>Ask</b><span><code>Was the tile change approved?</code></span></div>
-            <div><b>Minutes</b><span>Turned into action items with owners and dates</span></div>
-            <div><b>Answers</b><span>Always with the source document and page</span></div>
-          </div>
-        </div>
-        <div class="bc-visual">
-          <div class="phone">
-            <div class="phone-bar"><span class="pic">B</span><div class="who"><b>Brik · BrikDocs</b><span>searching project documents</span></div></div>
-            <div class="phone-thread" style="min-height:360px">
-              <div class="bubble in">Curing period for the L7 slab per spec?<span class="time">10:04</span></div>
-              <div class="bubble out"><b>Spec · Concrete works</b><span class="line">Minimum <strong>7 days</strong> moist curing for OPC slabs</span><span class="line">Source · <strong>Spec-CW-03, p.14</strong></span><span class="time">10:04</span></div>
-              <div class="bubble in">Was the tile change for L3 approved?<span class="time">10:06</span></div>
-              <div class="bubble out"><b>Approvals</b><span class="line">Approved by the client on <strong>02 Jun</strong></span><span class="line">Source · <strong>APR-117</strong>, linked</span><span class="time">10:06</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================== HOW IT WORKS =========================== -->
-<section class="s" id="how">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Logged once. <span class="quiet">Reported everywhere.</span></h2>
-    </div>
-    <div class="steps">
-      <div class="step"><span class="n">01</span><h3>The site logs the work</h3><p>Updates, voice notes, attendance, indents and deliveries are captured in BrikChat and Brikito as they happen.</p></div>
-      <div class="step"><span class="n">02</span><h3>Brik structures it</h3><p>Quantities, locations and activities are extracted and linked to the plan, the PO and the drawing.</p></div>
-      <div class="step"><span class="n">03</span><h3>Tap to generate</h3><p>Pick the report and the period. BrikDocs assembles it in seconds from the same records.</p></div>
-      <div class="step"><span class="n">04</span><h3>Review and share</h3><p>The right person reviews and approves, then shares the PDF with the client, the office or the lender.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== ROLES =========================== -->
-<section class="s alt" id="roles">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Who it's for</span>
-      <h2>Less typing. <span class="quiet">More building.</span></h2>
-    </div>
-    <div class="roles">
-      <div class="role"><span class="who">Site engineer</span><h3>Your evening back.</h3><p>The DPR is drafted from what you already sent during the day. Review it, don't write it.</p></div>
-      <div class="role"><span class="who">Quantity surveyor</span><h3>Quantities that tie out.</h3><p>BOQ, BBS, GRN and stock statements draw on the same records, so the numbers reconcile.</p></div>
-      <div class="role"><span class="who">Project manager</span><h3>Client-ready on request.</h3><p>Branded progress reports and PDFs for any period, without chasing the site for inputs.</p></div>
-      <div class="role"><span class="who">Developer &amp; owner</span><h3>One version of the truth.</h3><p>Every drawing, approval and report for every project, searchable and current.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== FAQ =========================== -->
-<section class="s" id="faq">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Questions</span>
-      <h2>BrikDocs, <span class="quiet">answered.</span></h2>
-    </div>
-    <div class="faq-list">
-      <details open><summary>What is a DPR in construction?</summary><p>A DPR, or Daily Progress Report, records what happened on a construction site in a day: work completed against plan, manpower, materials received and used, equipment, issues and photos. BrikDocs builds the DPR automatically from the updates, attendance and material entries your team already posted.</p></details>
-      <details><summary>What is a BBS in construction?</summary><p>A BBS, or Bar Bending Schedule, lists every reinforcement bar in a structural member with its shape, diameter, cut length, number and weight. It is used to cut and bend steel correctly and to estimate steel quantities. BrikDocs is designed to generate the BBS alongside fabrication drawings.</p></details>
-      <details><summary>Which construction reports can BrikDocs generate?</summary><p>BrikDocs covers DPR, DLR, BOQ, BBS, estimation, schedules, fabrication drawings, GRN and stock statements, along with client-ready PDFs for indents, purchase orders, measurement books, inspections, snags and expenses.</p></details>
-      <details><summary>Where does the data for each report come from?</summary><p>From the work already logged in Brikito: progress updates and voice notes in BrikChat, selfie attendance, indents, POs and GRNs, and the drawings in your document library. Nobody has to fill a separate form at the end of the day.</p></details>
-      <details><summary>How does BrikDocs handle drawing revisions?</summary><p>Every drawing, structural plan, BOQ, agreement and certificate is version controlled. The latest revision is always tagged, so the site works from the current drawing and older revisions stay available for reference.</p></details>
-      <details><summary>Is BrikDocs available now?</summary><p>Standard DPR and DLR PDF reports are part of every Brikito plan today, with comprehensive reports and client-ready PDFs in Professional. The full BrikDocs suite, including AI document search and drawing revision control, is next on the roadmap and available to Enterprise customers as a pilot. See <a href="/pricing" style="text-decoration:underline">pricing</a>.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== MORE =========================== -->
-<section class="s alt" id="more">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="eyebrow">Part of one app</span>
-      <h2>Explore the rest of <span class="quiet">Brikito.</span></h2>
-    </div>
-    <div class="xlink-grid">
-      <a class="xlink" href="/brik-ai"><span class="k">Brik AI</span><h3>The AI assistant built for construction.</h3><p>Ask anything about your project and let Brik draft the paperwork.</p><span class="go">Explore Brik AI <span aria-hidden="true">↗</span></span></a>
-      <a class="xlink" href="/brikchat"><span class="k">BrikChat</span><h3>The site chat with Brik inside.</h3><p>Group chats, DMs and voice notes, each message tagged and turned into work.</p><span class="go">Explore BrikChat <span aria-hidden="true">↗</span></span></a>
-      <a class="xlink" href="/brikvision"><span class="k">BrikVision</span><h3>AI on your site cameras, 24/7.</h3><p>Headcount, deliveries, PPE and progress, from anywhere.</p><span class="go">Explore BrikVision <span aria-hidden="true">↗</span></span></a>
-    </div>
-  </div>
-</section>
-
-<!-- =========================== CTA =========================== -->
-<section class="cta" id="cta">
-  <div class="wrap cta-inner">
-    <h2>Close Excel. <span class="grad-ink">Tap for the report.</span></h2>
-    <p>45 minutes. We'll set your team up on one live project and generate your first DPR from their real messages.</p>
-    <div class="cta-actions">
-      <a class="btn btn-solid" href="/book-a-demo">Book a demo <span class="arrow" aria-hidden="true">↗</span></a>
-      <a class="btn btn-ghost" href="/pricing">See pricing</a>
-    </div>
-  </div>
-</section>
-
-</main>
-<style>
-  .global-footer-logo{display:inline-flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
-  .global-footer-logo svg{display:block;flex:none;width:22px;height:22px}
-  .global-footer-bottom-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .global-footer-social{display:flex;align-items:center;gap:8px}
-  .global-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.72);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
-  .global-footer-social a:hover,.global-footer-social a:focus-visible{color:#fff;border-color:rgba(255,255,255,.45);background-color:rgba(255,255,255,.06)}
-  .global-footer-social svg{width:16px;height:16px;display:block}
-</style>
-
-<footer class="global-footer">
-  <div class="global-footer-inner">
-
-    <!-- Footer Brand -->
-    <div class="global-footer-brand">
-      <a href="/" class="global-footer-logo" aria-label="Brikito home">
-        <!-- Brikito icon (white) -->
-        <svg viewBox="0 0 4096 4096" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z"/>
-          <path d="M1024 1024V100A100 100 0 0 1 1124 0H3996A100 100 0 0 1 4096 100V2972A100 100 0 0 1 3996 3072H3172A100 100 0 0 1 3072 2972V1124A100 100 0 0 0 2972 1024Z" transform="rotate(180 2048 2048)"/>
-        </svg>
-        <span>Brikito</span>
-      </a>
-
-      <p>
-        Construction made simple.
-      </p>
-    </div>
-
-    <!-- Product Links -->
-    <div class="global-footer-col">
-      <h4>Product</h4>
-      <a href="/#intel">Platform</a>
-      <a href="/brik-ai">Brik AI</a>
-      <a href="/brikchat">BrikChat</a>
-      <a href="/brikvision">BrikVision</a>
-      <a href="/brikdocs">BrikDocs</a>
-      <a href="/pricing">Pricing</a>
-    </div>
-
-    <!-- Explore Links -->
-    <div class="global-footer-col">
-      <h4>Explore</h4>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/blog">Resources</a>
-      <a href="/about">About us</a>
-      <a href="/how-it-works">How it works</a>
-      <a href="/book-a-demo">Book a demo</a>
-    </div>
-
-    <!-- Account Links -->
-    <div class="global-footer-col">
-      <h4>Get started</h4>
-      <a href="https://app.brikito.com/signup">Sign in</a>
-      <a href="/book-a-demo">Talk to our team</a>
-      <a href="/privacy">Privacy policy</a>
-    </div>
-
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="global-footer-bottom">
-    <span>
-      © <span id="global-footer-year">2026</span> Brikito. All rights reserved.
-    </span>
-
-    <div class="global-footer-bottom-right">
-      <a href="/privacy">Privacy policy</a>
-
-      <!-- Social media links -->
-      <div class="global-footer-social" aria-label="Brikito on social media">
-        <a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  (function () {
-    var year = document.getElementById("global-footer-year");
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
-  })();
-</script>
-
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)) return;
-  var t=document.querySelectorAll('.s-head,.pains,.features,.steps,.roles,.trust,.faq-list,.xlink-grid,.bc-mode,.catalogue,.compare,.cta-inner');
-  document.documentElement.classList.add('js-reveal');
-  t.forEach(function(e){e.classList.add('reveal');});
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.05,rootMargin:'0px 0px -5% 0px'});
-  var vh=window.innerHeight||document.documentElement.clientHeight;
-  t.forEach(function(e){if(e.getBoundingClientRect().top<vh*.95)e.classList.add('in');else io.observe(e);});
-  setTimeout(function(){t.forEach(function(e){e.classList.add('in');});},1500);
-})();
-</script>
-<script src="components/global.js?v=20261031b"></script>
+<div class="progress" aria-hidden="true"></div>
+<div id="shell"><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup">Sign in</a></div></div>
+<main id="app">
+<section class="hero"><div class="aurora" aria-hidden="true"></div><div class="wrap"><div class="split">
+<div><div class="rv"><span class="chip"><span class="dot"></span>DPR &amp; DLR available · full suite in pilot</span></div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">Every construction report, generated in a tap.</h1>
+<p class="lead rv dl2">Reports are built from work your team already logged in Brikito. No late nights in Excel. Drawings are version-controlled, with the latest revision tagged on site.</p>
+<div class="btns rv dl3"><a class="btn btn-p" href="/book-a-demo">Book a demo</a><a class="btn btn-s" href="#reports" data-scroll="reports">See every report</a></div>
+<div class="rv" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:30px"><span class="chip">Ready in seconds</span><span class="chip">Built from logged work</span><span class="chip">Share or print as PDF</span></div></div>
+<div class="zoom"><div class="win"><div class="bar"><i></i><i></i><i></i><span>DPR-0612 · Skyline Tower B</span></div><div style="padding:22px;font-size:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div style="display:flex;gap:10px;align-items:center"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg><b style="font-family:var(--ui);font-size:18px">Daily Progress Report</b></div><span class="pill p-fl">2 DAYS BEHIND</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px"><div style="background:var(--alt);border-radius:12px;padding:12px"><span class="muted" style="font-size:12px">Manpower</span><div style="font-family:var(--ui);font-size:22px;font-weight:600">48/51</div></div><div style="background:var(--alt);border-radius:12px;padding:12px"><span class="muted" style="font-size:12px">Concrete</span><div style="font-family:var(--ui);font-size:22px;font-weight:600">142 cum</div></div><div style="background:var(--alt);border-radius:12px;padding:12px"><span class="muted" style="font-size:12px">Steel received</span><div style="font-family:var(--ui);font-size:22px;font-weight:600">4.2 t</div></div></div>
+<div style="display:grid;grid-template-columns:1fr 70px 70px;padding:10px 0;border-bottom:1px solid var(--line)"><span>Slab casting L7</span><span class="muted">100%</span><b>100%</b></div><div style="display:grid;grid-template-columns:1fr 70px 70px;padding:10px 0;border-bottom:1px solid var(--line)"><span>Blockwork L6</span><span class="muted">+15%</span><b>70%</b></div><div style="display:grid;grid-template-columns:1fr 70px 70px;padding:10px 0;border-bottom:1px solid var(--line)"><span>Steel received</span><span class="muted">4.2 t</span><b>38.6 t</b></div>
+<p class="muted" style="margin-top:14px;font-size:12.5px">Prepared by Brik AI at 18:05 from 5 site messages · Approved by Priya (PM)</p></div></div></div></div></div></section>
+<section class="sec-sm" style="padding-top:0"><div class="wrap"><div class="flow sm rv"><div class="fnode "><span class="fi "><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>The site logs the work</b><small>chat · voice · photos</small></div><div class="fline"><i></i></div><div class="fnode brikn"><span class="fi "><svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#fff"></path></svg></span><b>Brik structures it</b><small>figures linked to source</small></div><div class="fline"><i></i></div><div class="fnode "><span class="fi "><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>Tap for the DPR</b><small>DPR-0612 · 18:05</small></div><div class="fline"><i></i></div><div class="fnode"><span class="fi ok"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg></span><b>Approved PDF</b><small>Priya (PM) · share or print</small></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">The problem</p><h2 class="d2">The site did the work once. The office types it up three times.</h2></div>
+<div class="pf rv"><div class="p"><small>The problem</small><h4>Late nights in Excel.</h4><p>The DPR is compiled from chats and memory.</p></div><div class="f"><small>With Brikito</small><p style="color:#2B2B31">The DPR is generated from the day’s updates, attendance and material entries.</p></div></div><div class="pf rv"><div class="p"><small>The problem</small><h4>The wrong revision on site.</h4><p>An outdated drawing gets forwarded on WhatsApp.</p></div><div class="f"><small>With Brikito</small><p style="color:#2B2B31">Every drawing is version-controlled, with the latest tagged.</p></div></div><div class="pf rv"><div class="p"><small>The problem</small><h4>Reports that don’t agree.</h4><p>The DPR says 4 t of steel. The stock statement says 3.6 t.</p></div><div class="f"><small>With Brikito</small><p style="color:#2B2B31">Every report draws on the same logged records.</p></div></div></div></section>
+<section class="sec alt" id="reports"><div class="wrap"><div class="secthead center rv"><p class="eyebrow">Report library</p><h2 class="d2">Every report your project needs. One tap each.</h2></div>
+<div class="reports"><div class="rep rv dl0"><span class="code">DPR</span><h4>Daily Progress Report</h4><p>Updates, attendance, GRN</p></div><div class="rep rv dl1"><span class="code">DLR</span><h4>Daily Labour Report</h4><p>Selfie check-in and voice counts: attendance, hours and OT by team and contractor</p></div><div class="rep rv dl2"><span class="code">BOQ</span><h4>Bill of Quantities</h4><p>Drawings and measurements</p></div><div class="rep rv dl0"><span class="code">BBS</span><h4>Bar Bending Schedule</h4><p>Structural drawings: bar marks, shapes, diameters, cut lengths, weights</p></div><div class="rep rv dl1"><span class="code">EST</span><h4>Estimation</h4><p>BOQ, rates and consumption</p></div><div class="rep rv dl2"><span class="code">SCH</span><h4>Schedule</h4><p>Weekly plans and progress: plan vs actual and slippage</p></div><div class="rep rv dl0"><span class="code">FAB</span><h4>Fabrication Drawing</h4><p>Drawing library, latest revision tagged</p></div><div class="rep rv dl1"><span class="code">GRN</span><h4>Goods Received Note</h4><p>POs, gate and store entries</p></div><div class="rep rv dl2"><span class="code">STK</span><h4>Stock Statement</h4><p>GRN, issues and indents: opening, received, issued, closing</p></div></div>
+<p class="center muted rv" style="margin-top:30px">Also: Indent · Purchase order · Measurement book · Inspection · Snag list · Expense · and more</p></div></section>
+<section class="sec"><div class="wrap"><div class="split">
+<div><p class="eyebrow rv">Drawings &amp; documents</p><h2 class="d2 rv">One library. The latest revision, always tagged.</h2><p class="lead rv">Drawings, structural plans, BOQs, agreements and certificates. Every revision tracked, the site’s latest tagged automatically, and linked into BrikChat threads.</p></div>
+<div class="zoom"><div class="win" style="width:100%;max-width:560px"><div class="bar"><i></i><i></i><i></i><span>Documents · Tower B</span></div><div style="padding:14px 18px"><div style="display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px"><b style="font-family:var(--ui)">Rev 2</b><span>L4 plumbing layout</span><span class="pill p-ok">LATEST</span></div><div style="display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px"><b style="font-family:var(--ui)">Rev 1</b><span>L4 plumbing layout</span><span class="pill p-lg">SUPERSEDED</span></div><div style="display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px"><b style="font-family:var(--ui)">Rev 3</b><span>L4 slab reinforcement · BBS 12.4 t</span><span class="pill p-ok">LATEST</span></div><div style="display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px"><b style="font-family:var(--ui)">v1</b><span>Plumbing contract</span><span class="pill p-lg">AGREEMENT</span></div></div></div></div></div></div></section>
+<section class="sec alt"><div class="wrap"><div class="split">
+<div class="zoom" style="display:flex;justify-content:center"><div class="phone"><div class="island"></div><div class="scr"><div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
+<div class="apphead"><span class="av"><svg width="18" height="18" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></span><div><b>Ask your documents</b><small>Specs · approvals · minutes</small></div></div><div class="chat"><div class="msg me"><div class="who"><span>You</span><span>10:12</span></div>Curing period for the L7 slab per spec?</div><div class="brikmsg"><span class="bav"><svg width="13" height="13" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#fff"></path></svg></span><div class="msg" style="max-width:88%"><b>7 days moist curing</b> for OPC slabs.<br><span style="color:var(--muted)">Spec-CW-03, p.14</span></div></div><div class="msg me"><div class="who"><span>You</span><span>10:13</span></div>Was the tile change approved?</div><div class="brikmsg"><span class="bav"><svg width="13" height="13" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#fff"></path></svg></span><div class="msg" style="max-width:88%"><b>Yes</b>, approved by the client on 02 Jun.<br><span style="color:var(--muted)">APR-117</span></div></div></div><div class="compose"><i>Ask about a spec…</i><b><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></b></div></div></div></div>
+<div><p class="eyebrow rv">Ask your documents</p><h2 class="d2 rv">Get the page, not a guess.</h2><p class="lead rv">Search specs, method statements and approvals in plain language. Meeting minutes become action items with owners and dates.</p></div></div></div></section>
+<section class="sec"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">How it works</p><h2 class="d2">Logged once. Reported everywhere.</h2></div><div class="steps"><div class="step rv dl0"><b>01</b><h4>The site logs the work</h4><p>Updates, attendance and material entries, as chat and voice.</p></div><div class="step rv dl1"><b>02</b><h4>Brik structures it</h4><p>Figures are extracted and linked to their source.</p></div><div class="step rv dl2"><b>03</b><h4>Tap to generate</h4><p>Pick the report and the period.</p></div><div class="step rv dl0"><b>04</b><h4>Review and share</h4><p>Approve, then share or print as PDF.</p></div></div></div></section>
+<section class="sec alt"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">Who it’s for</p><h2 class="d2">Less typing. More building.</h2></div><div class="g4"><div class="box rv dl0"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M5 18v-3a7 7 0 0 1 14 0v3M10 8V5h4v3"></path></svg></span><h3>Site engineer</h3><p>Your evening back. Review the DPR, don’t write it.</p></div><div class="box rv dl1"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h12M6 9h12M9 4c6 0 6 10 0 10H6l8 7"></path></svg></span><h3>Quantity surveyor</h3><p>Quantities that tie out across BOQ, BBS, GRN and stock.</p></div><div class="box rv dl2"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 20v-1a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path></svg></span><h3>Project manager</h3><p>Client-ready, branded PDFs for any period, on request.</p></div><div class="box rv dl0"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><h3>Developer &amp; owner</h3><p>One version of the truth: drawings, approvals and reports, current and searchable.</p></div></div></div></section>
+<section class="sec"><div class="wrap narrow"><div class="secthead  rv"><h2 class="d2">BrikDocs, answered.</h2></div><div class="faq rv"><details><summary>What is a DPR?</summary><div class="ans">A Daily Progress Report records the day’s work, manpower, materials, issues and next steps. BrikDocs builds it from what the team logged.</div></details><details><summary>What is a BBS?</summary><div class="ans">A Bar Bending Schedule lists every reinforcement bar: mark, shape, diameter, cut length and weight, taken from the structural drawings.</div></details><details><summary>Which reports can BrikDocs generate?</summary><div class="ans">DPR, DLR, BOQ, BBS, estimation, schedule, fabrication drawings, GRN and stock statements, plus indents, POs, measurement books, inspections, snag lists and expenses.</div></details><details><summary>Where does each report’s data come from?</summary><div class="ans">From records already in Brikito: chat updates, attendance, indents, GRNs, drawings and plans. Each figure links to its source.</div></details><details><summary>How are drawing revisions handled?</summary><div class="ans">Every upload is versioned. The latest revision is tagged, older ones are marked superseded.</div></details><details><summary>Is BrikDocs available now?</summary><div class="ans">Standard DPR and DLR PDFs are in every plan. Comprehensive and client-ready reports are in Professional. The full suite, with AI document search and drawing revision control, is in Enterprise pilot. <a class="link" href="/pricing">See pricing</a></div></details></div></div></section>
+<section class="sec-sm alt"><div class="wrap"><div class="secthead  rv"><p class="eyebrow">Part of one app</p><h2 class="d2">Explore the rest of Brikito.</h2></div><div class="g3"><a class="box rv dl0" href="/brik-ai" style="display:block"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><h3>Brik AI</h3><p>The AI assistant built for construction.</p><p style="margin-top:18px"><span class="link">Explore Brik AI <span class="ch" aria-hidden="true">›</span></span></p></a><a class="box rv dl1" href="/brikchat" style="display:block"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><h3>BrikChat</h3><p>Site chat that turns messages into work.</p><p style="margin-top:18px"><span class="link">Explore BrikChat <span class="ch" aria-hidden="true">›</span></span></p></a><a class="box rv dl2" href="/brikvision" style="display:block"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><h3>BrikVision</h3><p>AI on your site CCTV, around the clock.</p><p style="margin-top:18px"><span class="link">Explore BrikVision <span class="ch" aria-hidden="true">›</span></span></p></a></div></div></section><section class="sec dark"><div class="wrap center"><div class="rv" style="display:flex;justify-content:center;margin-bottom:30px"><svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg2" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg2)"></path></svg></div><h2 class="d2 rv">Close Excel. Tap for the report.</h2><p class="lead rv">In 45 minutes we set up one live project and generate your first DPR from your team’s real messages.</p><div class="btns rv"><a class="btn btn-p" href="/book-a-demo">Book a demo</a><a class="btn btn-s" href="/pricing">See pricing</a></div></div></section><footer><div class="wrap"><div class="cols">
+<div><a class="logo" href="/" aria-label="Brikito home"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a><p style="margin-top:14px">Construction made simple.</p><p style="margin-top:8px">hey@brikito.com</p></div>
+<div><h5>Product</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div>
+<div><h5>Explore</h5><a href="/how-it-works">How it works</a><a href="/blog">Journal</a><a href="/about">About us</a><a href="/book-a-demo">Book a demo</a></div>
+<div><h5>Get started</h5><a href="https://app.brikito.com/signup">Sign in</a><a href="/book-a-demo">Talk to our team</a><a href="/privacy">Privacy policy</a></div></div>
+<div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="soc"><a href="https://www.youtube.com/@Brikitoai">YouTube</a><a href="https://www.instagram.com/brikitoai/">Instagram</a><a href="https://www.linkedin.com/company/brikito">LinkedIn</a><a href="https://www.facebook.com/brikitoai">Facebook</a></span></div></div></footer></main>
+<script src="/assets/site.js?v=20261106" defer></script>
 </body>
 </html>
