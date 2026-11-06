@@ -1,0 +1,177 @@
+<section id="s1">
+        <h2>1. Who this policy covers, and an important note on how access is granted</h2>
+        <p>Brikito is a <strong>business/workplace application</strong>. You don't sign up for it on your own the way you would a consumer app — your organization (the construction company, or a project you're contracted to) invites you, sets up your account, and assigns you a role (Site Engineer, Project Manager, Inventory Manager, Purchase Manager, Finance Manager, or another role your organization defines). This matters for how your data is handled:</p>
+        <ul>
+          <li>Your organization's <strong>Super Admin/Org Admin</strong> is the primary controller of the data generated on their projects — they decide who's invited, what role they hold, and which projects they can see. Brikito operates the platform on the organization's behalf.</li>
+          <li>If you're an employee or site worker using Brikito <strong>as a condition of your role</strong> (e.g., your employer requires attendance check-in and daily reporting through the app), your use of certain features isn't a matter of individual opt-in the way a consumer app's would be — it's directed by your employer, similar to any other workplace system. Where a feature genuinely is optional (see <a class="inline" href="#s10">Section 10</a> on face capture, for example), that's called out specifically.</li>
+          <li><strong>Vendors and Contractors</strong> who are given limited, scoped access (to see only their own purchase orders, deliveries, or work orders) are covered by this policy for the data Brikito itself collects from them, but their own separate dealings with the organization (contracts, commercial terms) are governed by their agreement with that organization, not by Brikito.</li>
+          <li><strong>Clients/Customers</strong> given read access to summary project information are covered by this policy for their own account data; project data they view belongs to the organization that granted them access.</li>
+        </ul>
+      </section>
+
+      <section id="s2">
+        <h2>2. Information we collect</h2>
+
+        <h3>2.1 Account and identity information</h3>
+        <ul>
+          <li>Full name, mobile phone number (used for OTP-based login), and role/designation</li>
+          <li>Email address, where provided as a secondary contact</li>
+          <li>A profile photo, if you add one</li>
+          <li><strong>A face photo captured during onboarding</strong>, used for identity verification at signup — see <a class="inline" href="#s10">Section 10</a> for special handling of this, since it's treated as sensitive/biometric data</li>
+          <li>Which organization, project(s), and chat group(s) you're part of</li>
+        </ul>
+
+        <h3>2.2 Location data</h3>
+        <ul>
+          <li><strong>GPS location, collected specifically when you check in or out of attendance</strong>, to confirm you're within the configured radius of the project site (geofencing). Brikito is not designed to track your location continuously or outside of the attendance check-in moment — see <a class="inline" href="#s11">Section 11</a> for more detail on exactly when this is collected.</li>
+        </ul>
+
+        <h3>2.3 Photos and other media you submit</h3>
+        <ul>
+          <li>Photos attached to confirm receipt of materials or tools, to a Daily Progress Report (DPR), to a repair/fault report, or to any other record where a photo is requested</li>
+          <li>Documents and drawings you or your organization upload (architectural/structural drawings, contracts, BOQs, schedules)</li>
+        </ul>
+
+        <h3>2.4 Voice input</h3>
+        <ul>
+          <li>If you use a voice-input feature (to fill an indent, DPR/DLR, or weekly plan form, or to talk to Brik AI), your <strong>spoken audio is processed to extract text and structured data</strong>. In the current prototype this is simulated for demonstration purposes and no real audio is captured; in the production app, real speech will need to be processed (very possibly by a third-party speech-to-text service — see <a class="inline" href="#s6">Section 6</a>) to deliver this feature, and we'll update this section with the specifics once that's finalized.</li>
+        </ul>
+
+        <h3>2.5 Messages and work content</h3>
+        <ul>
+          <li>The content of messages, indents, purchase requests, inquiries, tasks, updates, and any other content you post inside your organization's project chat groups</li>
+          <li>Files, quotations, invoices, and payment proofs attached to purchase and payment records</li>
+        </ul>
+
+        <h3>2.6 Work and attendance records</h3>
+        <ul>
+          <li>Check-in/check-out timestamps, breaks, and attendance status</li>
+          <li>Task assignments, completions, and remarks</li>
+          <li>DPR/DLR entries (site progress, labour headcount, materials consumed)</li>
+        </ul>
+
+        <h3>2.7 Financial and commercial data</h3>
+        <ul>
+          <li>Purchase requests, vendor quotations, purchase orders, invoices, and payment records related to project procurement. Some of this data (vendor contact details, pricing) may itself be personal data about individuals at your vendor organizations, not just business data about your company.</li>
+        </ul>
+
+        <h3>2.8 Usage and device information</h3>
+        <ul>
+          <li>Standard technical information generated by using the app — device type, operating system, app version, and basic diagnostic/crash information, collected to keep the app working reliably. Brikito does not use this information for advertising, and does not run third-party advertising or ad-tracking code (see <a class="inline" href="#s6">Section 6</a>).</li>
+        </ul>
+      </section>
+
+      <section id="s3">
+        <h2>3. How we use your information</h2>
+        <ul>
+          <li>To operate the app's core functions — routing indents/PRs/inquiries/tasks to the right people, tracking approvals, generating status views, and keeping your organization's teams coordinated</li>
+          <li>To verify your identity at signup and login</li>
+          <li>To confirm attendance and location within the configured project geofence, at the moment of check-in/out only</li>
+          <li>To generate reports, summaries, and dashboards for your organization's managers and leadership (Project Manager, CXO/Management-level views), scoped to what their role is permitted to see (see <a class="inline" href="#s5">Section 5</a>)</li>
+          <li>To power Brikito's AI-assisted features — see <a class="inline" href="#s4">Section 4</a>, which explains this in more detail since it deserves a closer look</li>
+          <li>To maintain security, investigate misuse, and keep an audit trail of who did what (<a class="inline" href="#s8">Section 8</a>)</li>
+          <li>To communicate with you about your account, or about safety, schedule, or budget issues that Brikito or your organization's managers flag</li>
+        </ul>
+        <p>We do not use your personal data to serve you ads, and we do not sell your personal data to third parties.</p>
+      </section>
+
+      <section id="s4">
+        <h2>4. AI processing of your data — how it works and what it doesn't do</h2>
+        <p>Because Brikito is built around AI-assisted message understanding and a project-wide assistant ("Brik AI"), this deserves its own clear explanation rather than being folded into <a class="inline" href="#s3">Section 3</a>.</p>
+        <ul>
+          <li>When you type or speak a message, Brikito's AI reads that message to classify it (as an indent, inquiry, task, update, etc.) and extract structured details from it — item names, quantities, dates, and so on.</li>
+          <li><strong>The AI never commits an action on your behalf without you confirming it first.</strong> Every AI-drafted indent, task, or structured record is shown to you for review — with the option to edit any field — before it's actually created and sent to the rest of your team. This is a deliberate design principle, not an incidental one, carried through everything specified for this product.</li>
+          <li>Brik AI, the project-wide assistant, can answer questions using your organization's live project data (indent counts, approval status, attendance, and — once implemented — uploaded schedules, budgets, and drawings) when a member of your organization asks it something. It answers using data your organization already has and that your role permits you to see; it does not have access to other organizations' data.</li>
+          <li>AI processing described here happens as part of delivering the app's core functionality on behalf of your organization — it is not used to build an advertising profile about you, and outputs are not shared outside your organization.</li>
+        </ul>
+      </section>
+
+      <section id="s5">
+        <h2>5. Who can see your information</h2>
+        <p>Brikito is built around role-based access — what any given person can see depends on their role and which project(s) they're part of, not on a blanket "everyone sees everything" model. In broad terms:</p>
+        <ul>
+          <li><strong>Your immediate work</strong>: people in the same chat group/project as you can see the messages, indents, and records you post there, consistent with how a work chat normally functions.</li>
+          <li><strong>Your managers</strong>: your Project Manager (and above, if your organization has a management/CXO tier) can see records relevant to approvals, progress, and reporting across the project.</li>
+          <li><strong>Your organization's Admin</strong>: has broad administrative access needed to manage users, projects, and settings.</li>
+          <li><strong>People outside your organization</strong> (a different company's project, or the general public) never have access to your data through Brikito.</li>
+          <li><strong>Vendors and Contractors</strong> only see the specific purchase orders, deliveries, or work assigned to them — never your organization's internal chats, other vendors' pricing, or unrelated project data.</li>
+        </ul>
+        <p>The exact permission structure is detailed in Brikito's Roles &amp; Permissions specification, which this policy is consistent with; your organization's Admin can tell you specifically what your role can see.</p>
+      </section>
+
+      <section id="s6">
+        <h2>6. Sharing with third parties</h2>
+        <ul>
+          <li><strong>We do not sell your personal data.</strong></li>
+          <li><strong>Within your organization</strong>, data is shared according to the role-based access described in <a class="inline" href="#s5">Section 5</a> — this is normal operation of the app, not third-party sharing.</li>
+          <li><strong>Service providers</strong>: to actually run the app, a small number of infrastructure providers process data on our behalf under contract — for example, cloud hosting/storage, the SMS/OTP gateway used for phone verification, and (if the production voice feature described in <a class="inline" href="#s2">Section 2.4</a> is built as planned) a speech-to-text service. These providers are only permitted to use the data to provide their service to us, not for their own purposes. <span class="todo">list the actual providers once selected, since this section currently describes the category of provider rather than naming specific vendors.</span></li>
+          <li><strong>Legal disclosure</strong>: we may disclose information if required by law, legal process, or to protect the rights, property, or safety of Brikito, your organization, or others.</li>
+          <li><strong>Business transfers</strong>: if Brikito (the company) were involved in a merger, acquisition, or sale of assets, data may be transferred as part of that transaction, subject to the same protections described here.</li>
+        </ul>
+      </section>
+
+      <section id="s7">
+        <h2>7. Data retention</h2>
+        <ul>
+          <li>We retain your data for as long as your account is active and you're part of an organization using Brikito, plus a reasonable period afterward for legitimate business, audit, and legal purposes.</li>
+          <li>Some records — particularly attendance, payment, and procurement records — may be subject to statutory retention requirements under applicable Indian labour, tax, or company law, which can require retention for longer than the operational need alone would suggest. <span class="todo">with counsel: specific retention periods per record type, since these depend on which statutory requirements apply to your organization's operations.</span></li>
+          <li>If your account is deactivated (e.g., you leave the organization), your historical actions remain in the record for audit purposes (consistent with the audit-log approach in the Roles &amp; Permissions specification), but your account itself moves to an inactive state rather than being immediately deleted.</li>
+        </ul>
+      </section>
+
+      <section id="s8">
+        <h2>8. Data security</h2>
+        <ul>
+          <li>Access to data is controlled by the role-based permission model described in <a class="inline" href="#s5">Section 5</a> — enforced at the system level, not just hidden in the app's interface.</li>
+          <li>Actions that create, edit, approve, or reject records are logged with who performed them and when, consistent with the audit-log approach specified for Brikito.</li>
+          <li>Data in transit and at rest is protected using industry-standard encryption. <span class="todo">once the production backend/infrastructure is built: specifics of encryption standards, hosting region, and any relevant certifications.</span></li>
+          <li>No system is perfectly secure, and we can't guarantee absolute security — but security is treated as core infrastructure for this product, not an optional feature.</li>
+        </ul>
+      </section>
+
+      <section id="s9">
+        <h2>9. Your rights</h2>
+        <p>If you're in India, the Digital Personal Data Protection Act, 2023 gives you certain rights over your personal data, and we intend for Brikito to honor them:</p>
+        <ul>
+          <li><strong>Right to access information</strong> about what personal data of yours is being processed and how</li>
+          <li><strong>Right to correction and erasure</strong> — you can ask us to correct inaccurate data, or delete data that's no longer needed for the purpose it was collected for (subject to legitimate retention needs described in <a class="inline" href="#s7">Section 7</a>)</li>
+          <li><strong>Right to withdraw consent</strong>, where our processing relies on your consent, at any time — as easily as you gave it</li>
+          <li><strong>Right to grievance redressal</strong> — you can raise a complaint about how your data is handled</li>
+          <li><strong>Right to nominate</strong> someone else to exercise these rights on your behalf in the event of your death or incapacity</li>
+        </ul>
+        <p>To exercise any of these rights, contact <span class="todo">Grievance Officer name / email / phone — required under Indian law once these provisions are in force.</span></p>
+        <p>If you're using Brikito through your employer, some requests (like correcting your role or removing you from a project) may need to go through your organization's Admin, since they control that operational data — we'll route you appropriately.</p>
+        <p>If you're outside India, you may have similar rights under the law that applies to you; contact us and we'll do our best to honor them even where not strictly required.</p>
+      </section>
+
+      <section id="s10">
+        <h2>10. Special note on biometric data — face capture at onboarding</h2>
+        <p>The onboarding flow captures a photo of your face to verify your identity when your account is created. Because this is treated as sensitive biometric data:</p>
+        <ul>
+          <li>It is used only for identity verification at signup, not for ongoing facial recognition, surveillance, or tracking during your regular use of the app.</li>
+          <li><span class="todo ask">is face capture mandatory for every user today, or is there (or should there be) an alternative verification method for someone who doesn't want to provide it? This affects both the product and what this policy needs to say — please confirm before this section is finalized.</span></li>
+        </ul>
+      </section>
+
+      <section id="s11">
+        <h2>11. Special note on location data — attendance geofencing</h2>
+        <ul>
+          <li>Location is collected <strong>only at the moment you check in or check out</strong> of attendance, to confirm you're within your project's configured radius — Brikito is not designed to track your location continuously, log your movements throughout the day, or track you outside of work hours.</li>
+          <li>If your device's location services are off, you generally won't be able to check in until they're enabled, since the geofence check depends on it.</li>
+        </ul>
+      </section>
+
+      <section id="s12">
+        <h2>12. Children's data</h2>
+        <p>Brikito is a workplace tool intended for adult construction-industry professionals and is not directed at, or intended for use by, children. We do not knowingly collect personal data from anyone under 18. If you believe a minor has been given access to Brikito, please contact us so we can address it.</p>
+      </section>
+
+      <section id="s13">
+        <h2>13. International data transfer</h2>
+        <p><span class="todo">where is production data hosted, and does any processing happen outside India? If Brikito is built and hosted entirely within India for an India-based customer base, this section can say so plainly; if any third-party service provider (<a class="inline" href="#s6">Section 6</a>) processes data outside India, that needs to be disclosed here specifically.</span></p>
+      </section>
+
+      <section id="s14">
+        <h2>14. Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time as the product evolves — for example, as AI features move from the current prototype into real production capability, or as new modules are added. We'll update the "Last updated" date above, and where a change is significant, we'll make a reasonable effort to notify your organization's Admin and/or notify you directly within the app.</p>
+      </section>

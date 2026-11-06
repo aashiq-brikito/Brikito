@@ -1,67 +1,70 @@
 #!/usr/bin/env python3
-"""Copy the master header and footer into every page of the Brikito site.
+"""Put the current header and footer into every blog article.
 
-components/header.html and components/footer.html are the master copies.
-Each page carries its own copy written straight into the HTML, so Google and
-AI search tools can read the menu without running JavaScript.
+The main pages (home, products, pricing, about, journal...) are built by
+tools/build-pages.py and already contain the header and footer. Blog articles
+keep their own layout, so they get the header/footer from
+components/header.html and components/footer.html (made by
+tools/build-chrome.py), styled by the scoped assets/chrome.css.
 
-Run from the repo root after editing either master file:
-    python3 tools/sync-header-footer.py
+Run from the repo root:  python3 tools/sync-header-footer.py
 """
-import glob, os, re, sys
+import glob, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP = {"Brikito (standalone).html"}
-YEAR = "2026"
+V = "20261106"
+header = open(os.path.join(ROOT, "components/header.html"), encoding="utf-8").read().strip()
+footer = open(os.path.join(ROOT, "components/footer.html"), encoding="utf-8").read().strip()
 
-def read(p):
-    with open(os.path.join(ROOT, p), encoding="utf-8") as f:
-        return f.read()
-
-header = read("components/header.html").strip()
-footer = read("components/footer.html").strip()
-footer = footer.replace('<span id="global-footer-year"></span>', f'<span id="global-footer-year">{YEAR}</span>')
+HEAD_LINKS = (
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" />\n'
+    f'<link rel="stylesheet" href="/assets/chrome.css?v={V}" />\n'
+)
 
 def replace_header(s):
-    if '<div data-global-header></div>' in s:
-        return s.replace('<div data-global-header></div>', header, 1), "placeholder"
+    if "<!-- site-header" in s:
+        a = s.index("<!-- site-header"); b = s.index("<!-- /site-header -->") + len("<!-- /site-header -->")
+        return s[:a] + header + s[b:]
     a = s.find('<header class="global-header">')
     if a == -1:
-        return s, None
-    b = s.index('</header>', a) + len('</header>')
-    return s[:a] + header + s[b:], "static"
+        raise SystemExit("no header found")
+    b = s.index("</header>", a) + len("</header>")
+    return s[:a] + header + s[b:]
 
 def replace_footer(s):
-    if '<div data-global-footer></div>' in s:
-        return s.replace('<div data-global-footer></div>', footer, 1), "placeholder"
+    if "<!-- site-footer" in s:
+        a = s.index("<!-- site-footer"); b = s.index("<!-- /site-footer -->") + len("<!-- /site-footer -->")
+        return s[:a] + footer + s[b:]
     f = s.find('<footer class="global-footer">')
     if f == -1:
-        return s, None
-    # the footer copy starts at the <style> block that styles it
-    a = s.rfind('<style>', 0, f)
-    if a == -1 or '.global-footer-logo' not in s[a:f]:
+        raise SystemExit("no footer found")
+    a = s.rfind("<style>", 0, f)                       # old footer carried its own <style>
+    if a == -1 or ".global-footer-logo" not in s[a:f]:
         a = f
-    # and ends at the small script that fills in the year
-    end_footer = s.index('</footer>', f) + len('</footer>')
-    b = end_footer
-    m = re.compile(r'\s*<script>\s*\(function \(\) \{\s*var year = document\.getElementById\("global-footer-year"\);.*?</script>', re.S).match(s, end_footer)
+    b = s.index("</footer>", f) + len("</footer>")
+    m = re.compile(r'\s*<script>\s*\(function \(\) \{\s*var year = document\.getElementById\("global-footer-year"\);.*?</script>', re.S).match(s, b)
     if m:
         b = m.end()
-    return s[:a] + footer + s[b:], "static"
+    return s[:a] + footer + s[b:]
 
-changed = []
-for path in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
-    name = os.path.basename(path)
-    if name in SKIP:
-        continue
-    s = read(name)
-    if "global-" not in s and "data-global" not in s:
-        continue  # e.g. search-engine verification files
-    s2, h = replace_header(s)
-    s2, f = replace_footer(s2)
-    if s2 != s:
-        with open(path, "w", encoding="utf-8") as fh:
-            fh.write(s2)
-        changed.append(name)
-    print(f"{name:48} header:{h or '-':11} footer:{f or '-'}")
-print(f"\n{len(changed)} page(s) updated")
+def fix_head(s):
+    s = re.sub(r'[ \t]*<link rel="stylesheet" href="components/global\.css[^"]*">\s*\n?', "", s)
+    s = re.sub(r'[ \t]*<link[^>]*fonts\.googleapis\.com/css2\?family=Inter:wght[^>]*>\s*\n?', "", s)
+    s = re.sub(r'[ \t]*<link rel="stylesheet" href="/assets/chrome\.css[^"]*" />\s*\n?', "", s)
+    i = s.index("</head>")
+    return s[:i] + HEAD_LINKS + s[i:]
+
+def fix_scripts(s):
+    s = re.sub(r'<script src="(?:/)?components/global\.js[^"]*"[^>]*></script>', "", s)
+    s = re.sub(r'<script src="/assets/site\.js[^"]*"[^>]*></script>\n?', "", s)
+    i = s.rindex("</body>")
+    return s[:i] + f'<script src="/assets/site.js?v={V}" defer></script>\n' + s[i:]
+
+changed = 0
+for path in sorted(glob.glob(os.path.join(ROOT, "blog-*.html"))):
+    s0 = s = open(path, encoding="utf-8").read()
+    s = fix_scripts(fix_head(replace_footer(replace_header(s))))
+    if s != s0:
+        open(path, "w", encoding="utf-8").write(s); changed += 1
+    print(f"  {os.path.basename(path)}")
+print(f"{changed} article(s) updated")

@@ -35,6 +35,11 @@ PAGES = {
         title="About Brikito: The Team Building Construction's AI OS",
         description="Meet Brikito, the team building the AI operating system for real estate development. Our story, mission, values, pilot results and founder Aashiq Ahamed.",
     ),
+    "console.html": dict(
+        slug="console", image="/img/console-home.webp",
+        title="Brikito Console: One Place to Run Every Project",
+        description="Brikito Console is the base platform for every project: site chat, Brik AI, labour, store, documents, subcontractors and approvals in one login.",
+    ),
     "brik-ai.html": dict(
         slug="brik-ai",
         title="Brik AI: AI Assistant for Construction Teams | Brikito",
@@ -63,7 +68,7 @@ PAGES = {
     "pricing.html": dict(
         slug="pricing",
         title="Brikito Pricing: Construction Management Software Plans",
-        description="Brikito plans for construction teams: Standard from ₹12,999/month with a 14-day free trial, Professional for overseeing contractors, and Enterprise.",
+        description="Brikito plans for construction teams: Standard with a free trial, Professional for overseeing contractors, and Enterprise. Pricing on request.",
     ),
     "book-a-demo.html": dict(
         slug="book-a-demo",
@@ -72,7 +77,7 @@ PAGES = {
     ),
     "blog.html": dict(
         slug="blog", modified="2026-11-06",
-        title="Brikito Resources: Construction, AI & Project Guides",
+        title="Brikito Journal: Construction, AI & Project Guides",
         description="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI.",
     ),
     "privacy.html": dict(
@@ -243,30 +248,23 @@ def ld_index(page, s):
              "applicationSubCategory": "Construction management software",
              "operatingSystem": "Web, Android, iOS",
              "description": page["description"],
-             "publisher": {"@id": ORG_ID},
-             "offers": {"@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "12999",
-                        "highPrice": "19999", "offerCount": "2", "url": url("pricing")}}]
+             "publisher": {"@id": ORG_ID}}]
 
 def ld_pricing(page, s):
-    faqs = []
-    grid = s[s.find('class="faq-grid"'):] if 'class="faq-grid"' in s else ""
-    for q, a in re.findall(r'<(?:div|article) class="faq">\s*<h3>(.*?)</h3>\s*<p>(.*?)</p>', grid, re.S):
-        faqs.append({"@type": "Question", "name": squash(text(q)),
-                     "acceptedAnswer": {"@type": "Answer", "text": squash(text(a))}})
-    out = [{"@type": "SoftwareApplication", "name": "Brikito", "url": url("pricing"),
-            "applicationCategory": "BusinessApplication",
-            "applicationSubCategory": "Construction management software",
-            "operatingSystem": "Web, Android, iOS", "publisher": {"@id": ORG_ID},
-            "offers": [
-                {"@type": "Offer", "name": "Standard", "price": "12999", "priceCurrency": "INR",
-                 "url": url("pricing"), "description": "Up to 2 active projects and 25 users. 14-day free trial. Billed monthly; GST extra."},
-                {"@type": "Offer", "name": "Professional", "price": "19999", "priceCurrency": "INR",
-                 "url": url("pricing"), "description": "Up to 5 active projects and 75 users. Billed monthly; GST extra."},
-            ]},
-           crumbs("Pricing", "pricing")]
-    if faqs:
-        out.append({"@type": "FAQPage", "mainEntity": faqs})
-    return out
+    return [{"@type": "SoftwareApplication", "name": "Brikito", "url": url("pricing"),
+             "applicationCategory": "BusinessApplication",
+             "applicationSubCategory": "Construction management software",
+             "operatingSystem": "Web, Android, iOS", "publisher": {"@id": ORG_ID},
+             "description": page["description"]},
+            crumbs("Pricing", "pricing")]
+
+def ld_console(page, s):
+    return [{"@type": "SoftwareApplication", "name": "Brikito Console", "url": url("console"),
+             "applicationCategory": "BusinessApplication",
+             "applicationSubCategory": "Construction management software",
+             "operatingSystem": "Web, Android, iOS", "publisher": {"@id": ORG_ID},
+             "description": page["description"], "image": SITE + page["image"]},
+            crumbs("Brikito Console", "console")]
 
 def ld_simple(kind, name):
     def f(page, s):
@@ -283,10 +281,10 @@ def ld_blog(page, s):
             posts.append({"@type": "BlogPosting", "headline": p["title"], "url": url(p["slug"]),
                           "image": SITE + p["image"], "datePublished": p["published"],
                           "description": p["description"]})
-    return [{"@type": "Blog", "name": "Brikito Resources", "url": url("blog"),
+    return [{"@type": "Blog", "name": "Brikito Journal", "url": url("blog"),
              "description": page["description"], "publisher": {"@id": ORG_ID},
              "inLanguage": "en", "blogPost": posts},
-            crumbs("Resources", "blog")]
+            crumbs("Journal", "blog")]
 
 BUILDERS = {
     "index.html": ld_index,
@@ -295,7 +293,18 @@ BUILDERS = {
     "book-a-demo.html": ld_simple("ContactPage", "Book a demo"),
     "privacy.html": ld_simple("WebPage", "Privacy policy"),
     "blog.html": ld_blog,
+    "console.html": ld_console,
 }
+
+def page_faq(s):
+    """FAQPage schema from the page's visible FAQ (<details><summary>Q</summary><div class="ans">A</div>)."""
+    body = s[s.find("<body"):]
+    qa = re.findall(r'<details>\s*<summary>(.*?)</summary>\s*<div class="ans">(.*?)</div>\s*</details>', body, re.S)
+    if not qa:
+        return None
+    return {"@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": squash(text(q)), "acceptedAnswer": {"@type": "Answer", "text": squash(text(a))}}
+        for q, a in qa]}
 
 def article_faq(s):
     """FAQPage schema from the article's <div class="faq"> section (h3 question + p answer)."""
@@ -336,7 +345,7 @@ def enrich_article(page, s):
         graph.append(faq)
     return graph + [{"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Brikito", "item": SITE + "/"},
-        {"@type": "ListItem", "position": 2, "name": "Resources", "item": url("blog")},
+        {"@type": "ListItem", "position": 2, "name": "Journal", "item": url("blog")},
         {"@type": "ListItem", "position": 3, "name": page["title"], "item": url(page["slug"])},
     ]}]
 
@@ -414,6 +423,19 @@ def process(fname, page):
         graph = enrich_article(page, original)
     elif fname in BUILDERS:
         graph = BUILDERS[fname](page, original)
+    if page.get("type") != "article":
+        if graph is None:
+            m = re.search(r'<script type="application/ld\+json">(.*?)</script>', head, re.S)
+            if m:
+                old = json.loads(m.group(1))
+                graph = old.get("@graph", [old]) if isinstance(old, dict) else old
+                for g in graph:
+                    g.pop("@context", None)
+        if graph is not None or page_faq(original):
+            graph = [g for g in (graph or []) if g.get("@type") != "FAQPage"]
+            faq = page_faq(original)
+            if faq:
+                graph.append(faq)
     if graph is not None:
         head = re.sub(r'[ \t]*<script type="application/ld\+json">.*?</script>\s*\n?', "", head, flags=re.S)
         ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
