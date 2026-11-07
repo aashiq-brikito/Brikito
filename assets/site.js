@@ -345,6 +345,11 @@ P.about = () => `
 ${cta('Let’s build your next project together.', 'hey@brikito.com', ['book-a-demo', 'Book a demo'], ['pricing', 'See pricing'])}`;
 
 const POSTS = [
+  ['Best AI Construction Management Software in 2026: How to Choose', 'Technology & AI', 8, '7 Nov 2026', 'What AI construction software does, 8 criteria, the top AI construction tools by type, and how to choose one.'],
+  ['AI Construction Management Software in India: Chennai, Bengaluru and Coimbatore', 'Technology & AI', 7, '7 Nov 2026', 'How AI construction software works on Indian sites, with city guides for Chennai, Bengaluru and Coimbatore.'],
+  ['AI Construction Management Software in the UAE and Singapore', 'Technology & AI', 5, '7 Nov 2026', 'How AI helps contractors in Dubai, the UAE, Singapore and Sri Lanka with multilingual crews, safety and reporting.'],
+  ['AI Construction Site Chat: The WhatsApp Alternative That Turns Messages Into Work', 'Technology & AI', 5, '7 Nov 2026', 'How AI site chat tags messages and voice notes, and turns site requests into indents the PM approves in one tap.'],
+  ['AI CCTV for Construction Sites: Headcount, PPE and Progress Monitoring', 'Technology & AI', 6, '7 Nov 2026', 'How computer vision on your existing CCTV gives live headcount, delivery logs, PPE alerts and progress monitoring.'],
   ['Construction Document Control: Drawings, Revisions and Approvals', 'Site management', 8, '6 Nov 2026', 'Drawing registers, numbering, status codes, transmittals, and a workflow that keeps superseded drawings off site.'],
   ['Construction Site Safety and Quality Management: A Practical Guide', 'Site management', 8, '6 Nov 2026', 'Hazard controls, permits, PPE, toolbox talks, ITPs, hold points, defects and NCRs.'],
   ['Construction Management Software: The Complete Buyer’s Guide', 'Technology & AI', 9, '6 Nov 2026', 'Software types, a feature checklist, pricing models, demo questions and a seven-step selection process.'],
@@ -364,7 +369,7 @@ const POSTS = [
   ['Rework isn’t always a labour problem.', 'Site management', 4, '28 Oct 2026', 'Check instructions, revisions, approvals and handoffs before blaming the crew.'],
   ['Where does a construction project actually lose time?', 'Planning & workflow', 5, '27 Oct 2026', 'Delays often start as small waits between decisions, approvals and teams.'],
 ];
-const SLUGS = ['blog-construction-document-control', 'blog-construction-site-safety-and-quality', 'blog-construction-management-software', 'blog-construction-site-communication', 'blog-construction-site-documentation', 'blog-construction-labour-management', 'blog-daily-progress-report-construction', 'blog-building-construction-process', 'blog-construction-material-management', 'blog-construction-cost-control', 'blog-construction-scheduling', 'blog-construction-market-guide', 'blog-boq-cost-overruns', 'blog-seven-site-updates', 'blog-ai-construction', 'blog-drawing-revisions', 'blog-rework-coordination', 'blog-where-time-goes'];
+const SLUGS = ['blog-best-ai-construction-management-software', 'blog-ai-construction-software-india', 'blog-ai-construction-software-uae-singapore', 'blog-ai-construction-site-chat', 'blog-ai-cctv-construction-site-monitoring', 'blog-construction-document-control', 'blog-construction-site-safety-and-quality', 'blog-construction-management-software', 'blog-construction-site-communication', 'blog-construction-site-documentation', 'blog-construction-labour-management', 'blog-daily-progress-report-construction', 'blog-building-construction-process', 'blog-construction-material-management', 'blog-construction-cost-control', 'blog-construction-scheduling', 'blog-construction-market-guide', 'blog-boq-cost-overruns', 'blog-seven-site-updates', 'blog-ai-construction', 'blog-drawing-revisions', 'blog-rework-coordination', 'blog-where-time-goes'];
 const coverFor = (cat, i) => {
   const pat = { 'Site management': 'chat', 'Technology & AI': 'ai', 'Cost control': 'rupee', 'Planning & workflow': 'clock', 'Project management': 'layers' }[cat] || 'doc';
   const dk = i % 3 === 1;

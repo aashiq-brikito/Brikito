@@ -64,7 +64,8 @@ sub("const camGrid = () => `<div class=\"cams\">${camTile('cam-gate', 'CAM 01 ·
     "${realCam('cam-real-ppe', 'CAM 04 · SAFETY / PPE', 'AI CCTV detecting workers and safety helmets', 'HELMET DETECTION')}</div>`;\nconst camGridOld = () => `<div class=\"cams\">${camTile('cam-gate', 'CAM 01 · SITE ACTIVITY'")
 
 # ---- journal: real article links -----------------------------------------
-SLUGS = ["blog-construction-document-control", "blog-construction-site-safety-and-quality",
+SLUGS = ["blog-best-ai-construction-management-software", "blog-ai-construction-software-india", "blog-ai-construction-software-uae-singapore", "blog-ai-construction-site-chat", "blog-ai-cctv-construction-site-monitoring",
+         "blog-construction-document-control", "blog-construction-site-safety-and-quality",
          "blog-construction-management-software", "blog-construction-site-communication",
          "blog-construction-site-documentation", "blog-construction-labour-management",
          "blog-daily-progress-report-construction", "blog-building-construction-process",
