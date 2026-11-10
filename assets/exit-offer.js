@@ -46,7 +46,7 @@
     '.xo-back{position:fixed;inset:0;z-index:9995;background:rgba(11,11,15,.45);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:grid;place-items:center;padding:16px;animation:xoF .25s ease both}' +
     '@keyframes xoF{from{opacity:0}to{opacity:1}}@keyframes xoU{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}' +
     '.xo{position:relative;width:min(760px,100%);display:grid;grid-template-columns:260px 1fr;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 40px 100px -20px rgba(11,11,15,.5);font-family:Inter,system-ui,sans-serif;animation:xoU .35s cubic-bezier(.2,.8,.2,1) both}' +
-    '.xo-art{position:relative;background:linear-gradient(160deg,#7B2FE0,#5462F0 55%,#3A8EF6);display:flex;align-items:flex-end;justify-content:center;padding:28px 18px 0;overflow:hidden}' +
+    '.xo-art{position:relative;background:linear-gradient(160deg,#7B2FE0,#5462F0 55%,#3A8EF6);display:flex;align-items:flex-end;justify-content:center;padding:28px 18px 24px;overflow:hidden}' +
     '.xo-art:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:28px 28px}' +
     '.xo-art img{position:relative;width:190px;height:auto;filter:drop-shadow(0 20px 30px rgba(0,0,0,.3))}' +
     '.xo-tag{position:absolute;top:18px;left:18px;background:#fff;color:#3A3FC7;font-size:12.5px;font-weight:700;letter-spacing:.02em;padding:6px 11px;border-radius:999px}' +
@@ -60,7 +60,7 @@
     '.xo-no{display:inline-block;margin:22px 0 0 14px;background:none;border:0;font:inherit;font-size:14px;color:#8E8E93;cursor:pointer;text-decoration:underline;text-underline-offset:3px}' +
     '.xo-fine{margin-top:16px!important;font-size:12px!important;color:#9A9AA0!important}' +
     '.xo-x{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(11,11,15,.06);color:#1D1D1F;font-size:17px;cursor:pointer}.xo-x:hover{background:rgba(11,11,15,.12)}' +
-    '@media (max-width:640px){.xo{grid-template-columns:1fr}.xo-art{height:150px;padding:14px 0 0;align-items:flex-end}.xo-art img{width:78px}.xo-body{padding:24px 22px 22px}.xo-x{background:rgba(255,255,255,.85)}}';
+    '@media (max-width:640px){.xo{grid-template-columns:1fr}.xo-art{height:150px;padding:12px 0 10px;align-items:flex-end}.xo-art img{width:78px}.xo-body{padding:24px 22px 22px}.xo-x{background:rgba(255,255,255,.85)}}';
 
   function show(trigger) {
     if (shown || Date.now() - t0 < MIN_TIME) return;
