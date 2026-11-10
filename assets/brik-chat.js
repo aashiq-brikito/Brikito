@@ -243,7 +243,10 @@
       firstName: parts[0] || '', lastName: parts.slice(1).join(' '), workEmail: L.email || '', company: L.company || '',
       role: L.role || '', otherRole: '', teamSize: (L.projects || '') + ' active projects', region: L.region || '', otherRegion: '',
       challenge: '[Brik chat] ' + (GOAL[st.goal] || 'Lead') + ' · suggested plan: ' + (L.plan || '-') + (L.phone ? ' · phone: ' + L.phone : '') + '\n\n' + convo.slice(-3500),
-      website: '', page: location.href + ' (Brik chat)'
+      website: '', page: location.href + ' (Brik chat)',
+      // own columns in the "Website Chat Bot" tab of the Demo Requests sheet
+      source: 'brik-chat', request: GOAL[st.goal] || 'Lead', plan: L.plan || '', phone: L.phone || '',
+      projects: L.projects || '', conversation: convo.slice(-4500)
     });
     botSay(['Thanks, ' + esc(parts[0] || 'there') + '! Sending your details to the team…']).then(function () {
       return fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: data }).then(function () {
