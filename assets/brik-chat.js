@@ -8,7 +8,7 @@
   if (window.__brikChat) return; window.__brikChat = true;
 
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxxAiBit98TmUJIy03P_ACF01zgZFdtxMUm5bkmi3zpIEyyrWDuqpKLVZmYCkmEvUzf/exec';
-  var AVATAR = '/img/brik-head.webp';
+  var AVATAR = '/img/brik-head-v2.webp';
   var KEY = 'brikChat.v1';
 
   /* ---------- what Brik says ---------- */
@@ -110,6 +110,7 @@
     '.bc-form button{flex:none;width:42px;height:42px;border-radius:50%;border:0;background:#0B0B0F;color:#fff;cursor:pointer;display:grid;place-items:center}.bc-form button:disabled{opacity:.35;cursor:default}' +
     '.bc-foot{font-size:11px;color:#8E8E93;text-align:center;padding:0 0 10px;background:#fff}' +
     '@media (max-width:560px){.bc-panel{right:0;bottom:0;width:100%;height:100%;max-height:100dvh;border-radius:0}.bc-launch{right:14px;bottom:14px}.bc-launch .bc-pill{display:none}.bc-tease{right:14px;bottom:86px;max-width:calc(100% - 28px)}}' +
+    '.bc-panel[hidden],.bc-launch[hidden]{display:none!important}' +
     '@media print{.bc-launch,.bc-panel,.bc-tease{display:none}}';
   var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
 
