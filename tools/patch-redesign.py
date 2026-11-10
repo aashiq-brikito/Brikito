@@ -184,6 +184,11 @@ wire(document.getElementById('app') || document.body);
 '''
 s = s[:start] + BOOT + s[end + len("addEventListener('hashchange', navigate);\nnavigate();"):]
 
+# Brik chat assistant (assets/brik-chat.js) on every page
+TRK = "if (!document.querySelector('script[data-tracking]')) { const t = document.createElement('script'); t.src = '/components/tracking.js'; t.dataset.tracking = '1'; document.head.appendChild(t); }"
+assert TRK in s, "tracking loader not found"
+s = s.replace(TRK, TRK + "\nif (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261110a'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }", 1)
+
 # Sign in opens the Brikito app in a new tab
 n = s.count('href="https://app.brikito.com/signup"')
 s = s.replace('href="https://app.brikito.com/signup"', 'href="https://app.brikito.com/signup" target="_blank" rel="noopener"')
