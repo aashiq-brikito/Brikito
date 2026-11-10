@@ -187,7 +187,10 @@ s = s[:start] + BOOT + s[end + len("addEventListener('hashchange', navigate);\nn
 # Brik chat assistant (assets/brik-chat.js) on every page
 TRK = "if (!document.querySelector('script[data-tracking]')) { const t = document.createElement('script'); t.src = '/components/tracking.js'; t.dataset.tracking = '1'; document.head.appendChild(t); }"
 assert TRK in s, "tracking loader not found"
-s = s.replace(TRK, TRK + "\nif (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261110c'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }", 1)
+s = s.replace(TRK, TRK + "\nif (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261110c'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }\nif (!document.querySelector('script[data-exitoffer]')) { const x = document.createElement('script'); x.src = '/assets/exit-offer.js?v=20261110a'; x.defer = true; x.dataset.exitoffer = '1'; document.head.appendChild(x); }", 1)
+
+# Book a demo: round Brik head beside the "Brik will be in the demo" note
+s = s.replace('<img src="/img/brik-o.webp" alt="" style="width:64px;height:auto;flex:none">', '<img src="/img/brik-head-v2.webp" alt="" style="width:56px;height:56px;border-radius:50%;flex:none">')
 
 # Sign in opens the Brikito app in a new tab
 n = s.count('href="https://app.brikito.com/signup"')
