@@ -2,7 +2,7 @@
 // receives website leads. The live copy is edited at script.google.com; keep this in sync.
 /**
  * Brikito website leads → Google Sheet + email
- * 1. Book a demo form (brikito.com/book-a-demo) → "Leads" tab, email "New demo request".
+ * 1. Book a demo form (brikito.com/book-a-demo) → "Leads" tab (incl. WhatsApp number), email "New demo request".
  * 2. Brik chat assistant (on every page)        → "Website Chat Bot" tab, email "New enquiry on Brik chat bot website".
  */
 const SHEET_ID = '1bf6VNAK8MmIxPaBNhCkgaKU00nR-vhVIdVgyEv77m7s';
@@ -31,7 +31,7 @@ function doPost(e) {
     const region = p.region === 'Other' ? (p.otherRegion || 'Other') : (p.region || '');
     const row = [
       new Date(),
-      clean(p.firstName), clean(p.lastName), clean(p.workEmail), clean(p.company),
+      clean(p.firstName), clean(p.lastName), clean(p.workEmail), clean(p.whatsapp), clean(p.company),
       clean(role), clean(p.teamSize), clean(region), clean(p.challenge),
       clean(p.page), 'New'
     ];
@@ -46,6 +46,7 @@ function doPost(e) {
         body: [
           'Name: ' + p.firstName + ' ' + p.lastName,
           'Email: ' + p.workEmail,
+          'WhatsApp: ' + (p.whatsapp || '-') + (waLink(p.whatsapp) ? '  (chat: ' + waLink(p.whatsapp) + ')' : ''),
           'Company: ' + p.company,
           'Role: ' + role,
           'Team size: ' + (p.teamSize || '-'),
@@ -109,6 +110,12 @@ function saveChatLead(p) {
       ].join('\n')
     });
   }
+}
+
+// wa.me link so the team can open the chat in one tap
+function waLink(n) {
+  const d = String(n || '').replace(/[^0-9]/g, '');
+  return d.length >= 8 ? 'https://wa.me/' + d : '';
 }
 
 // Stops spreadsheet formulas being injected through the form

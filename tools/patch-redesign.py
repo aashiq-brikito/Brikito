@@ -192,6 +192,9 @@ s = s.replace(TRK, TRK + "\nif (!document.querySelector('script[data-brikchat]')
 # Book a demo: round Brik head beside the "Brik will be in the demo" note
 s = s.replace('<img src="/img/brik-o.webp" alt="" style="width:64px;height:auto;flex:none">', '<img src="/img/brik-head-v2.webp" alt="" style="width:56px;height:56px;border-radius:50%;flex:none">')
 
+# Book a demo form: WhatsApp number next to work email
+s = s.replace('<label class="full">Work email<input type="email" id="workEmail" name="workEmail" required autocomplete="email"></label>', '<label>Work email<input type="email" id="workEmail" name="workEmail" required autocomplete="email"></label><label>WhatsApp number<input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" pattern="[+]?[0-9][0-9 ]{6,18}" title="Number with country code, digits only, e.g. +91 98765 43210"></label>')
+
 # Sign in opens the Brikito app in a new tab
 n = s.count('href="https://app.brikito.com/signup"')
 s = s.replace('href="https://app.brikito.com/signup"', 'href="https://app.brikito.com/signup" target="_blank" rel="noopener"')

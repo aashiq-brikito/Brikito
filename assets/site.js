@@ -397,7 +397,7 @@ P['book-a-demo'] = () => `
 <h2 class="full h4" style="font-size:26px">Let’s find the right fit.</h2><p class="full muted" style="margin-top:-6px;font-size:15px">Share a few details. Our team will follow up to schedule.</p>
 <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
 <label>First name<input id="firstName" name="firstName" required autocomplete="given-name"></label><label>Last name<input id="lastName" name="lastName" required autocomplete="family-name"></label>
-<label class="full">Work email<input type="email" id="workEmail" name="workEmail" required autocomplete="email"></label>
+<label>Work email<input type="email" id="workEmail" name="workEmail" required autocomplete="email"></label><label>WhatsApp number<input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" pattern="[+]?[0-9][0-9 ]{6,18}" title="Number with country code, digits only, e.g. +91 98765 43210"></label>
 <label>Company<input id="company" name="company" required autocomplete="organization"></label>
 <label>Your role<select id="role" name="role" required><option value="">Select</option><option>Project Manager</option><option>Real Estate Owner</option><option>Contractor</option><option>Other</option></select></label>
 <label class="full" id="otherRoleField" hidden>Please specify your role<input id="otherRole" name="otherRole" autocomplete="organization-title"></label>
