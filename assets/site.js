@@ -392,7 +392,7 @@ P['book-a-demo'] = () => `
 <div style="position:sticky;top:110px"><p class="eyebrow rv">A closer look at Brikito</p><h1 class="d2 rv dl1">See what your team can do with everything connected.</h1>
 <p class="lead rv dl2">A 45-minute session. We set your team up on one live project, with site chat, Brik AI and reports running the same day.</p>
 <ul class="list rv dl3"><li>${ic('layers')}<span><b>Start with your workflow.</b> We tailor the walkthrough to how your sites run today.</span></li><li>${ic('bolt')}<span><b>See Brikito in action.</b> Messages turning into indents, reports and approvals.</span></li><li>${ic('chat')}<span><b>Get your questions answered.</b> No pressure, no obligation.</span></li></ul>
-<div class="rv" style="display:flex;gap:16px;align-items:center;margin-top:38px;padding-top:28px;border-top:1px solid var(--line)"><img src="/img/brik-o.webp" alt="" style="width:64px;height:auto;flex:none"><p class="muted" style="font-size:15px">Brik will be in the demo too. Ask it anything about the sample project.</p></div></div>
+<div class="rv" style="display:flex;gap:16px;align-items:center;margin-top:38px;padding-top:28px;border-top:1px solid var(--line)"><img src="/img/brik-head-v2.webp" alt="" style="width:56px;height:56px;border-radius:50%;flex:none"><p class="muted" style="font-size:15px">Brik will be in the demo too. Ask it anything about the sample project.</p></div></div>
 <form class="form rv dl2" id="demoRequestForm" data-form>
 <h2 class="full h4" style="font-size:26px">Let’s find the right fit.</h2><p class="full muted" style="margin-top:-6px;font-size:15px">Share a few details. Our team will follow up to schedule.</p>
 <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
@@ -595,6 +595,7 @@ if (BUILD) {
 try { const p = location.pathname; if (/\.html$/.test(p)) history.replaceState(null, '', p.replace(/\/index\.html$/, '/').replace(/\.html$/, '') + location.search + location.hash); } catch (e) {}
 if (!document.querySelector('script[data-tracking]')) { const t = document.createElement('script'); t.src = '/components/tracking.js'; t.dataset.tracking = '1'; document.head.appendChild(t); }
 if (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261110c'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }
+if (!document.querySelector('script[data-exitoffer]')) { const x = document.createElement('script'); x.src = '/assets/exit-offer.js?v=20261110a'; x.defer = true; x.dataset.exitoffer = '1'; document.head.appendChild(x); }
 
 document.addEventListener('click', e => {
   const m = e.target.closest('[data-mega]');
