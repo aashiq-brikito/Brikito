@@ -595,7 +595,7 @@ if (BUILD) {
 try { const p = location.pathname; if (/\.html$/.test(p)) history.replaceState(null, '', p.replace(/\/index\.html$/, '/').replace(/\.html$/, '') + location.search + location.hash); } catch (e) {}
 if (!document.querySelector('script[data-tracking]')) { const t = document.createElement('script'); t.src = '/components/tracking.js'; t.dataset.tracking = '1'; document.head.appendChild(t); }
 if (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261110c'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }
-if (!document.querySelector('script[data-exitoffer]')) { const x = document.createElement('script'); x.src = '/assets/exit-offer.js?v=20261110b'; x.defer = true; x.dataset.exitoffer = '1'; document.head.appendChild(x); }
+if (!document.querySelector('script[data-exitoffer]')) { const x = document.createElement('script'); x.src = '/assets/exit-offer.js?v=20261110c'; x.defer = true; x.dataset.exitoffer = '1'; document.head.appendChild(x); }
 
 document.addEventListener('click', e => {
   const m = e.target.closest('[data-mega]');

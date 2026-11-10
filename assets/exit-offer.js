@@ -9,13 +9,15 @@
   if (window.__exitOffer) return; window.__exitOffer = true;
   var ON = true;
   var OFFER = {
-    kicker: 'Before you go',
-    title: 'First 10 demos get <span>1 month free.</span>',
-    text: 'Book a demo of Brikito this month. If you’re one of the first 10 teams, your first month on a live project is on us.',
-    points: ['Set up on your own live project', 'Works in Tamil, Hindi, English and more', 'Brik drafts, your team approves'],
+    tag: '🎁 Only 10 spots',
+    kicker: 'Wait, before you go',
+    title: 'Run your next month on site <span>free.</span>',
+    text: 'Book a 45-minute demo and we’ll set your team up on one live project, with site chat, Brik AI and reports running the same day. The first 10 teams keep it <b>free for a full month</b>.',
+    points: ['No more chasing updates across WhatsApp groups', 'Daily reports drafted from what your crew already sends', 'Voice notes in Tamil, Hindi or English, turned into records'],
     cta: 'Claim my free month',
     href: '/book-a-demo?offer=free-month',
-    fine: 'Offer for the first 10 teams who book a demo. Our team confirms eligibility on the call.'
+    no: 'Maybe later',
+    fine: 'For the first 10 teams who book a demo. No pressure, no obligation. We confirm your spot on the call.'
   };
   var KEY = 'brikExitOffer.v1', WEEK = 7 * 864e5, MIN_TIME = 8000;
   var path = location.pathname.replace(/\.html$/, '');
@@ -55,7 +57,7 @@
     '.xo h2{margin:0;font-size:clamp(26px,3.4vw,34px);line-height:1.08;letter-spacing:-.025em;color:#0B0B0F;font-weight:700}' +
     '.xo h2 span{white-space:nowrap;background:linear-gradient(90deg,#7B2FE0,#3A8EF6);-webkit-background-clip:text;background-clip:text;color:transparent}' +
     '.xo p{margin:14px 0 0;font-size:15.5px;line-height:1.55;color:#55555C}' +
-    '.xo ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:7px}.xo li{font-size:14.5px;color:#1D1D1F;display:flex;gap:9px;align-items:baseline}.xo li:before{content:"✓";color:#5462F0;font-weight:700}' +
+    '.xo p b{color:#0B0B0F;font-weight:600}.xo ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:7px}.xo li{font-size:14.5px;color:#1D1D1F;display:flex;gap:9px;align-items:baseline}.xo li:before{content:"✓";color:#5462F0;font-weight:700}' +
     '.xo-cta{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:#0B0B0F;color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:14px 22px;border-radius:999px;transition:transform .15s}.xo-cta:hover{transform:translateY(-1px)}' +
     '.xo-no{display:inline-block;margin:22px 0 0 14px;background:none;border:0;font:inherit;font-size:14px;color:#8E8E93;cursor:pointer;text-decoration:underline;text-underline-offset:3px}' +
     '.xo-fine{margin-top:16px!important;font-size:12px!important;color:#9A9AA0!important}' +
@@ -71,11 +73,11 @@
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     var back = document.createElement('div'); back.className = 'xo-back';
     back.innerHTML = '<div class="xo" role="dialog" aria-modal="true" aria-labelledby="xo-h">' +
-      '<div class="xo-art"><span class="xo-tag">🎁 Limited offer</span><img src="/img/brik-o.webp" alt="Brik, the Brikito mascot"></div>' +
+      '<div class="xo-art"><span class="xo-tag">' + OFFER.tag + '</span><img src="/img/brik-o.webp" alt="Brik, the Brikito mascot"></div>' +
       '<div class="xo-body"><button class="xo-x" type="button" aria-label="Close">✕</button>' +
       '<p class="xo-k">' + OFFER.kicker + '</p><h2 id="xo-h">' + OFFER.title + '</h2><p>' + OFFER.text + '</p>' +
       '<ul>' + OFFER.points.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' +
-      '<a class="xo-cta" href="' + OFFER.href + '">' + OFFER.cta + ' <span aria-hidden="true">→</span></a><button class="xo-no" type="button">No thanks</button>' +
+      '<a class="xo-cta" href="' + OFFER.href + '">' + OFFER.cta + ' <span aria-hidden="true">→</span></a><button class="xo-no" type="button">' + OFFER.no + '</button>' +
       '<p class="xo-fine">' + OFFER.fine + '</p></div></div>';
     document.body.appendChild(back);
     var prev = document.activeElement;
