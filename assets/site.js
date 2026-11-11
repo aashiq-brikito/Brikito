@@ -597,6 +597,7 @@ if (!document.querySelector('script[data-tracking]')) { const t = document.creat
 if (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261110c'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }
 if (!document.querySelector('script[data-exitoffer]')) { const x = document.createElement('script'); x.src = '/assets/exit-offer.js?v=20261110c'; x.defer = true; x.dataset.exitoffer = '1'; document.head.appendChild(x); }
 if (!document.querySelector('script[data-newsletter]')) { const n = document.createElement('script'); n.src = '/assets/newsletter.js?v=20261111a'; n.defer = true; n.dataset.newsletter = '1'; document.head.appendChild(n); }
+if (!document.querySelector('script[data-enquire]')) { const q = document.createElement('script'); q.src = '/assets/enquire.js?v=20261111a'; q.defer = true; q.dataset.enquire = '1'; document.head.appendChild(q); }
 
 document.addEventListener('click', e => {
   const m = e.target.closest('[data-mega]');
