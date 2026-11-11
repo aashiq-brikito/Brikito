@@ -1,4 +1,4 @@
-/* Exit-intent offer popup: "First 10 demos get 1 month free".
+/* Exit-intent offer popup: "First 10 teams get a 7-day free trial".
  * Desktop: shows when the mouse leaves through the top of the window (going to close/change tab).
  * Mobile: shows when the visitor scrolls back up fast after reading for a while.
  * Shows at most once every 7 days per visitor, never on Book a demo / Privacy,
@@ -11,11 +11,11 @@
   var OFFER = {
     tag: '🎁 Only 10 spots',
     kicker: 'Wait, before you go',
-    title: 'Run your next month on site <span>free.</span>',
-    text: 'Book a 45-minute demo and we’ll set your team up on one live project, with site chat, Brik AI and reports running the same day. The first 10 teams keep it <b>free for a full month</b>.',
+    title: 'Try Brikito on your site <span>free for 7 days.</span>',
+    text: 'Book a 45-minute demo and we’ll set your team up on one live project, with site chat, Brik AI and reports running the same day. The first 10 teams get a <b>7-day free trial</b>.',
     points: ['No more chasing updates across WhatsApp groups', 'Daily reports drafted from what your crew already sends', 'Voice notes in Tamil, Hindi or English, turned into records'],
-    cta: 'Claim my free month',
-    href: '/book-a-demo?offer=free-month',
+    cta: 'Claim my free trial',
+    href: '/book-a-demo?offer=7-day-trial',
     no: 'Maybe later',
     fine: 'For the first 10 teams who book a demo. No pressure, no obligation. We confirm your spot on the call.'
   };
@@ -25,18 +25,17 @@
 
   function get() { try { return +localStorage.getItem(KEY) || 0; } catch (e) { return 0; } }
   function set() { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} }
-  function track(n) { try { if (window.gtag) gtag('event', n, { offer: 'free_month' }); } catch (e) {} }
+  function track(n) { try { if (window.gtag) gtag('event', n, { offer: '7_day_trial' }); } catch (e) {} }
 
   /* Book a demo page: confirm the offer above the form */
   if (/book-a-demo/.test(path)) {
-    var trial = /offer=7-day-trial/.test(location.search);
-    if (trial || /offer=free-month/.test(location.search)) {
+    if (/offer=(7-day-trial|free-month)/.test(location.search)) {
       var go = function () {
         var form = document.getElementById('demoRequestForm'); if (!form) return;
         var b = document.createElement('div');
         b.setAttribute('role', 'status');
         b.style.cssText = 'display:flex;gap:10px;align-items:center;margin:0 0 18px;padding:12px 16px;border-radius:14px;background:linear-gradient(135deg,rgba(123,47,224,.09),rgba(58,142,246,.09));border:1px solid rgba(84,98,240,.22);font-size:14.5px;line-height:1.45;color:#1D1D1F';
-        b.innerHTML = trial ? '<span style="font-size:20px">🎁</span><span><b>7-day free trial offer applied.</b> The first 10 teams to book a demo get a 7-day free trial of Brikito.</span>' : '<span style="font-size:20px">🎁</span><span><b>Free month offer applied.</b> The first 10 teams to book a demo get their first month free.</span>';
+        b.innerHTML = '<span style="font-size:20px">🎁</span><span><b>7-day free trial offer applied.</b> The first 10 teams to book a demo get a 7-day free trial of Brikito.</span>';
         form.parentNode.insertBefore(b, form);
       };
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
