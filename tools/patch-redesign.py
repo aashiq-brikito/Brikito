@@ -199,6 +199,9 @@ s = s.replace('<label class="full">Work email<input type="email" id="workEmail" 
 s = s.replace('<a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a>', '<a class="nav-offer" href="/book-a-demo?offer=free-month" title="Launch offer: first 10 teams get 1 month free"><span class="nav-offer-dot" aria-hidden="true"></span>Launch offer · 10 spots</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a>')
 s = s.replace('.map(r => `<a href="${U(r[0])}">${r[1]}</a>`).join(\'\')}<a href="https://ap', '.map(r => `<a href="${U(r[0])}">${r[1]}</a>`).join(\'\')}<a class="sheet-offer" href="/book-a-demo?offer=free-month">🎁 Launch offer · 10 spots</a><a href="https://ap')
 
+# Launch offer announcement bar under the top menu
+s = s.replace("</header>", '</header><div class="ann" role="region" aria-label="Launch offer"><script>try{if(localStorage.getItem("brikAnn1"))document.currentScript.parentNode.hidden=true}catch(e){}</script><div class="ann-in"><img class="ann-av" src="/img/brik-head-v2.webp" alt="" width="26" height="26"><p><b>Launch offer:</b> <span class="ann-long">the first 10 teams to book a demo get Brikito free for their first month.</span><span class="ann-short">first 10 teams get 1 month free.</span> <a href="/book-a-demo?offer=free-month">Claim your spot <span aria-hidden="true">→</span></a></p><button class="ann-x" type="button" aria-label="Dismiss offer banner" onclick="this.closest(\'.ann\').hidden=true;try{localStorage.setItem(\'brikAnn1\',\'1\')}catch(e){}">✕</button></div></div>', 1)
+
 # Sign in opens the Brikito app in a new tab
 n = s.count('href="https://app.brikito.com/signup"')
 s = s.replace('href="https://app.brikito.com/signup"', 'href="https://app.brikito.com/signup" target="_blank" rel="noopener"')
