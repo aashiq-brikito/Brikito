@@ -111,3 +111,5 @@
 .v2c .ann-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:13px;cursor:pointer}
 .v2c .ann-x:hover{background:rgba(255,255,255,.26)}
 @media (max-width:720px){.v2c .ann-long{display:none}.v2c .ann-short{display:inline}.v2c .ann-in{padding:9px 44px 9px 14px;justify-content:flex-start}.v2c .ann p{text-align:left;font-size:13.5px}}
+
+@media (max-width:720px){.v2c footer .cols a{padding:12px 0}.v2c footer .soc{flex-wrap:wrap;gap:0 22px}.v2c footer .soc a{display:inline-block;padding:12px 0}}

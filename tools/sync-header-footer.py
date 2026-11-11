@@ -12,7 +12,7 @@ Run from the repo root:  python3 tools/sync-header-footer.py
 import glob, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-V = "20261111b"
+V = "20261111e"
 header = open(os.path.join(ROOT, "components/header.html"), encoding="utf-8").read().strip()
 footer = open(os.path.join(ROOT, "components/footer.html"), encoding="utf-8").read().strip()
 
@@ -61,7 +61,7 @@ def fix_scripts(s):
     return s[:i] + f'<script src="/assets/site.js?v={V}" defer></script>\n' + s[i:]
 
 changed = 0
-for path in sorted(glob.glob(os.path.join(ROOT, "blog-*.html"))) + [os.path.join(ROOT, "delay-cost-calculator.html")]:
+for path in sorted(glob.glob(os.path.join(ROOT, "blog-*.html"))) + [os.path.join(ROOT, "delay-cost-calculator.html"), os.path.join(ROOT, "free-tools.html")]:
     s0 = s = open(path, encoding="utf-8").read()
     s = fix_scripts(fix_head(replace_footer(replace_header(s))))
     if s != s0:
