@@ -19,7 +19,7 @@
     no: 'Maybe later',
     fine: 'For the first 10 teams who book a demo. No pressure, no obligation. We confirm your spot on the call.'
   };
-  var KEY = 'brikExitOffer.v1', WEEK = 7 * 864e5, MIN_TIME = 8000;
+  var KEY = 'brikExitOffer.v1', WEEK = 7 * 864e5, MIN_TIME = 20000;
   var path = location.pathname.replace(/\.html$/, '');
   var t0 = Date.now(), shown = false;
 
@@ -68,6 +68,7 @@
     if (shown || Date.now() - t0 < MIN_TIME) return;
     var chat = document.querySelector('.bc-panel');
     if (chat && !chat.hidden) return;
+    var tz = document.querySelector('.bc-tease'); if (tz) tz.remove(); // one prompt at a time
     try { var c = JSON.parse(sessionStorage.getItem('brikChat.v1') || '{}'); if (c.done) return; } catch (e) {}
     shown = true; set(); track('exit_offer_shown');
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);

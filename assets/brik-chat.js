@@ -277,13 +277,25 @@
     if (st.open) return open();
     var seen; try { seen = sessionStorage.getItem(KEY + '.tease'); } catch (e) {}
     if (seen || st.greeted || /book-a-demo/.test(location.pathname)) return;
-    setTimeout(function () {
-      if (st.open || (panel && !panel.hidden)) return;
+    // Calm by default: greet only after real interest (half the page read, or 30 seconds),
+    // and never while another prompt (exit offer) is on screen.
+    var done = false, t0 = Date.now();
+    function check() {
+      if (done) return;
+      if (matchMedia('(max-width:720px)').matches) return; // phones already have the Book a demo bar
+      var h = document.documentElement.scrollHeight - innerHeight;
+      var read = h > 0 ? scrollY / h : 0;
+      if (read < 0.5 && Date.now() - t0 < 30000) return;
+      if (st.open || (panel && !panel.hidden) || document.querySelector('.xo-back')) return;
+      done = true; removeEventListener('scroll', onS); clearInterval(iv);
       tease = el('div', 'bc-tease', '<b>Hi, I’m Brik 👷</b>Want to see how Brikito runs your site from one app?<button class="bc-x" type="button" aria-label="Dismiss">✕</button>');
       tease.onclick = function (e) { if (e.target.closest('.bc-x')) { tease.remove(); tease = null; return; } open(); };
       document.body.appendChild(tease);
       try { sessionStorage.setItem(KEY + '.tease', '1'); } catch (e) {}
-    }, 7000);
+    }
+    function onS() { check(); }
+    addEventListener('scroll', onS, { passive: true });
+    var iv = setInterval(check, 2000);
   }
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
 })();
