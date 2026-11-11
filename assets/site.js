@@ -65,6 +65,35 @@ const stack = () => `<div class="stack rv"><div class="stop">${STACK.map(p => `<
 <div class="sbase"><span class="sb-l">${logo(30, 'grad')}<span><b>Brikito Console</b><small>The base platform · one login · every project</small></span></span><span class="sb-r">${['Projects', 'Teams & roles', 'Approvals', 'Records', 'Subcontractors', 'Client'].map(x => `<i>${x}</i>`).join('')}</span></div>
 <div class="sground"><span>Your projects</span><span>Your team</span><span>Your subcontractors</span><span>Your clients</span></div></div>`;
 
+
+// Pinned phone story (home): the phone stays put while the steps scroll past
+const STEPS = [
+  ['01 · 9:18 am', 'It starts with a voice note.', 'Suresh, the contractor, asks for cement in Tamil, straight from the slab. No forms, no training.'],
+  ['02 · 9:18 am', 'Brik understands it.', 'Brik transcribes it, picks out the material, quantity and location, and checks stock: 12 bags on hand.'],
+  ['03 · 9:19 am', 'The indent writes itself.', 'IND-2041 is drafted with everything filled in, and waits for the PM. Nothing is sent on its own.'],
+  ['04 · 9:21 am', 'Approved in one tap.', 'Priya, the PM, approves from her phone. The PO to the supplier is drafted for her to check.'],
+  ['05 · 9:21 am', 'Everyone sees it, live.', 'Stock, the dashboard and today’s report update by themselves. Nobody types it in again.'],
+];
+const voice = `<div class="msg"><div class="who"><span>Suresh · Contractor</span><span>9:18</span></div><div class="vn"><b>${ic('mic', 12, '#fff', 2.2)}</b><span class="wave">${'<i></i>'.repeat(18)}</span><small>0:21</small></div><div><span class="tag t-at">TAMIL VOICE NOTE</span></div></div>`;
+const SCREENS = [
+  m('Rajesh · Engineer', '8:42', 'Slab L7 cast, 142 cum. Cubes taken.', ['UPDATE', 't-up']) + voice,
+  voice + `<div class="tr">“Need 50 bags OPC 53 for Block B by Friday”<small>Transcribed from Tamil</small></div>` + brik('<b>Got it.</b> 50 bags OPC 53 · Block B slab · by Fri. Only 12 bags on hand, about 14 used a day.'),
+  brik('Indent drafted from Suresh’s message.') + indentCard,
+  brik('Indent drafted from Suresh’s message.') + indentCard.replace('<span class="tag t-en" style="margin:0">Awaiting PM</span>', '<span class="tag t-up" style="margin:0">Approved</span>').replace('<div class="acts"><i>Reject</i><i>Edit</i><i class="pr">Approve</i></div>', '<div class="okline">✓ Approved by Priya (PM) · 9:21</div>') + brik('PO-2291 to UltraTech drafted. Waiting in Drafts for Priya to send.'),
+  `<div class="dash"><div class="dh"><b>Tower B · today</b><small>Updated 9:21</small></div><div class="dc"><small>OPC 53 cement</small><b>12 → 62 bags</b><span class="up">50 arriving Friday</span></div><div class="dc"><small>Schedule</small><b>62% / 68%</b><span class="bad">9 days behind</span></div><div class="dc"><small>Today’s DPR</small><b>Indent IND-2041 approved</b><span>Added automatically</span></div></div>`,
+];
+const story = () => `<section class="story" data-story aria-label="How one voice note becomes an approved indent"><div class="wrap story-in">
+<div class="story-steps">${STEPS.map((t, i) => `<div class="sstep${i ? '' : ' on'}" data-s="${i}"><small>${t[0]}</small><h3>${t[1]}</h3><p>${t[2]}</p></div>`).join('')}</div>
+<div class="story-stage"><div class="phone story-phone"><div class="island"></div><div class="scr"><div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
+<div class="apphead"><span class="av">${logo(18, 'black')}</span><div><b>Skyline Residency · Tower B</b><small>Site Team · 24 members</small></div></div>
+<div class="sscreens">${SCREENS.map((h, i) => `<div class="sscreen chat${i ? '' : ' on'}" data-s="${i}">${h}</div>`).join('')}</div>
+<div class="compose"><i>Message Site Team…</i><b>${ic('mic', 16, '#fff', 2)}</b></div></div></div>
+<div class="sdots" aria-hidden="true">${STEPS.map((t, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div></div>
+</div></section>`;
+
+// Product pages: slim bar that stays under the menu (like Apple's product bars)
+const pbar = (name, r) => `<div class="pbar"><div class="wrap"><b>${name}</b><span class="pb-r"><a class="pb-l" href="/pricing">Pricing</a><a class="btn btn-p btn-sm" href="/book-a-demo?utm_source=product-bar&amp;utm_medium=${r}">Book a demo</a></span></div></div>`;
+
 // ---------------- pages ----------------
 const P = {};
 
@@ -84,15 +113,8 @@ P.home = () => `
 </div></div></section>
 
 <section class="sec"><div class="wrap"><p class="eyebrow rv">The platform</p><p class="statement" data-statement>The operating system for your construction site. Every message becomes a record, an approval, a report and a live view. Nobody on site has to change how they work.</p>
-<div class="flow rv" aria-label="How one voice note becomes an approved indent">
-<div class="fnode"><span class="fi">${ic('mic', 20)}</span><b>Tamil voice note</b><small>Suresh · 9:18</small></div>
-<div class="fline"><i></i></div>
-<div class="fnode brikn"><span class="fi">${logo(20, 'white')}</span><b>Brik understands</b><small>50 bags OPC 53 · Block B</small></div>
-<div class="fline"><i></i></div>
-<div class="fnode"><span class="fi">${ic('doc', 20)}</span><b>Indent IND-2041</b><small>Stock checked · PO drafted</small></div>
-<div class="fline"><i></i></div>
-<div class="fnode"><span class="fi ok">${ic('check', 20, '#fff', 2.4)}</span><b>Approved</b><small>Priya (PM) · one tap</small></div>
-</div></div></section>
+</div></section>
+${story()}
 
 <section class="sec dark"><div class="wrap">
 <div class="secthead rv"><p class="eyebrow">Pilot · 2026</p><h2 class="d2">One app in place of six.</h2><p class="lead">Running today on live residential, metro and logistics sites.</p></div>
@@ -107,13 +129,13 @@ P.home = () => `
 <div class="vals">${VALS.map((v, i) => `<div class="val rv dl${i}"><small>${['i', 'ii', 'iii', 'iv'][i]}. ${v[0]}</small><h4>${v[1]}</h4><p>${v[2]}</p></div>`).join('')}</div></div></section>
 
 <section class="sec alt consec"><div class="wrap">
-<div class="secthead center rv"><p class="eyebrow grad">Brikito Console</p><h2 class="d2">One platform.<br>Every product on top.</h2><p class="lead">Brikito Console is the base everyone signs in to. BrikChat, Brik AI, BrikDocs, BrikVision, BrikMail and the Brikbots to come all live inside it, on the same projects, people and records.</p><div class="btns" style="justify-content:center">${go('console', 'Explore the Console')}${go('book-a-demo', 'Book a demo', 'btn btn-s')}</div></div>
+<div class="secthead center rv"><p class="eyebrow grad">Brikito Console</p><h2 class="d2">One platform.<br>Every product on top.</h2><p class="lead">One login for every product, on the same projects, people and records.</p><div class="btns" style="justify-content:center">${go('console', 'Explore the Console')}${go('book-a-demo', 'Book a demo', 'btn btn-s')}</div></div>
 <div class="zoom" style="margin-top:20px">${laptop('console-home', 'Brikito Console home screen for Skyline Residency Tower B on day 258')}</div>
 <div style="margin-top:110px">${stack()}</div></div></section>
 <section class="sec-sm"><div class="wrap"><div class="split">
 <div class="mascot zoom"><span class="mglow" aria-hidden="true"></span><img src="/img/brik-o.webp" alt="Brik, the Brikito AI mascot, in his Brik hard hat"><span class="mshadow" aria-hidden="true"></span></div>
 <div><p class="eyebrow rv grad">Meet Brik</p><h2 class="d2 rv">The AI that knows your whole project.</h2>
-<p class="lead rv">Brik lives inside Brikito. It reads every message, voice note and drawing, answers from live project data, and drafts the paperwork. You stay the checker.</p>
+<p class="lead rv">It reads every message, answers from live project data and drafts the paperwork. You stay the checker.</p>
 <ul class="list rv">
 <li>${ic('chat')}<span><b>Reads everything.</b> Text, voice notes, photos and PDFs in 7 Indian languages.</span></li>
 <li>${ic('search')}<span><b>Answers with sources.</b> Progress, stock, attendance and approvals, linked to the record.</span></li>
@@ -121,7 +143,7 @@ P.home = () => `
 <div class="btns rv">${go('brik-ai', 'Explore Brik AI', 'btn btn-s')}</div></div></div></div></section>
 
 <section class="sec-sm"><div class="wrap">
-${head('', 'Four products. One login.', 'Each one is useful on its own. Together they replace WhatsApp groups, registers, drawing folders, email and spreadsheets.', 'center')}
+${head('', 'Four products. One login.', 'Useful on their own. Better together.', 'center')}
 <div class="tiles">
 <a class="tile dk rv" href="/brik-ai">${status('live')}<h3>Brik AI</h3><p class="muted">The assistant built for construction sites. Ask in plain language, get answers from live project data.</p><span class="link">Learn more ${chev}</span>
 <div class="vis"><div class="win" style="width:92%;max-width:440px;border-radius:18px 18px 0 0;background:#141417;border-color:#2A2A30"><div style="padding:18px;display:flex;flex-direction:column;gap:10px;font-size:13px">
@@ -138,8 +160,8 @@ ${m('Kumar · Safety', '11:02', 'Open edge at L6 stairwell, photo attached', ['T
 </div></div></section>
 
 <section class="sec"><div class="wrap">
-${head('What changes on site', 'The same day. Without the chasing.', 'Real moments from a working site, and what happens to them in Brikito.')}
-<div class="cases">${[
+${head('What changes on site', 'The same day. Without the chasing.', 'Real moments from a working site. Swipe through them.')}
+<div class="gal" data-gal><div class="cases gal-row" tabindex="0" aria-label="Moments from a working site">${[
   ['Chats', '<b>A spoken material request</b> becomes a structured indent, approved in one tap.'],
   ['Attendance', '<b>A gate selfie</b> gives live headcount and hours. No register, no month-end reconciliation.'],
   ['Documents', '<b>L4 plumbing Rev 2</b> is tagged as the latest, so crews stop building from superseded prints.'],
@@ -148,7 +170,7 @@ ${head('What changes on site', 'The same day. Without the chasing.', 'Real momen
   ['Meet', '<b>Minutes of the meeting</b> are drafted by Brik when the call ends, with owners and dates.'],
   ['Mail', '<b>Vendor replies and POs</b> are drafted from live data and wait in Drafts for approval.'],
   ['Safety', '<b>Missing edge protection at L7</b> and honeycombing at L6 are flagged straight from chat.'],
-].map((c, i) => `<div class="case rv dl${i % 2}" style="background:var(--alt)"><small>${c[0]}</small><p>${c[1]}</p></div>`).join('')}</div></div></section>
+].map((c, i) => `<div class="case" style="background:var(--alt)"><small>${c[0]}</small><p>${c[1]}</p></div>`).join('')}</div><div class="paddles"><button type="button" data-gp="-1" aria-label="Previous">‹</button><button type="button" data-gp="1" aria-label="Next">›</button></div></div></div></section>
 
 ${cta('Put your next project on Brikito.', 'A 45-minute session. Your team set up on one live project, the same day.', ['book-a-demo', 'Book a demo'], ['how-it-works', 'See how it works'])}`;
 
@@ -180,7 +202,7 @@ ${small ? '' : '<g stroke="#E5E5EA">' + [50, 100, 150, 200].map(y => `<line x1="
 
 // ---------------- product pages ----------------
 P['brik-ai'] = () => `
-<section class="hero"><div class="wrap"><div class="split">
+${pbar('Brik AI', 'brik-ai')}<section class="hero"><div class="wrap"><div class="split">
 <div><div class="rv">${status('live')}</div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">The AI assistant built for construction sites.</h1>
 <p class="lead rv dl2">Brik reads every message, voice note and document, answers from live project data, and drafts replies, orders and reports. Nothing goes out until a person approves it.</p>
 <div class="btns rv dl3">${go('book-a-demo', 'Book a demo')}<a class="btn btn-s" href="#ask" data-scroll="ask">See what you can ask</a></div>
@@ -209,7 +231,7 @@ ${boxes([['users', 'Project manager', 'Pending approvals, slipping activities an
 ${explore('brik-ai')}${cta('Give your site team an AI that gets construction.', 'A 45-minute demo. We set your team up on one live project and show what Brik can answer that same day.')}`;
 
 P.brikchat = () => `
-<section class="hero"><div class="wrap"><div class="split">
+${pbar('BrikChat', 'brikchat')}<section class="hero"><div class="wrap"><div class="split">
 <div><div class="rv">${status('dev')}</div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">The site chat that turns messages into work.</h1>
 <p class="lead rv dl2">One project chat in place of scattered WhatsApp groups. Brik reads messages, voice notes, photos and PDFs, tags each one, and routes it to the dashboard or to the PM for approval.</p>
 <div class="btns rv dl3">${go('book-a-demo', 'Get early access')}<a class="btn btn-s" href="#vs" data-scroll="vs">BrikChat vs WhatsApp</a></div>
@@ -234,7 +256,7 @@ const realCam = (img, label, alt, foot) => `<div class="cam real"><img src="/img
 const camGrid = () => `<div class="cams">${realCam('cam-real-activity', 'CAM 01 · SITE ACTIVITY', 'AI CCTV view of active construction work and workers', 'CREW ACTIVE')}${realCam('cam-real-zone', 'CAM 02 · WORK ZONE', 'AI CCTV view of a formwork work zone', 'FORMWORK ACTIVE')}${realCam('cam-real-occupancy', 'CAM 03 · OCCUPANCY', 'AI CCTV counting construction workers on site', 'HEADCOUNT 16')}${realCam('cam-real-ppe', 'CAM 04 · SAFETY / PPE', 'AI CCTV detecting workers and safety helmets', 'HELMET DETECTION')}</div>`;
 const camGridOld = () => `<div class="cams">${camTile('cam-gate', 'CAM 01 · SITE ACTIVITY', [[13, 37, 6, 13, 'person .97'], [48, 62, 6, 14, 'person .95'], [74, 56, 6, 13, 'person .94']], 'CREW ACTIVE')}${camTile('cam-zone', 'CAM 02 · WORK ZONE', [[55, 20, 33, 75, 'formwork active']], 'ZONE B · ACTIVE')}${camTile('cam-crew', 'CAM 03 · OCCUPANCY', [[18, 36, 7, 17, 'person'], [46, 26, 7, 20, 'person'], [37, 53, 9, 18, 'person'], [70, 41, 8, 17, 'person']], 'HEADCOUNT 16')}${camTile('cam-ppe', 'CAM 04 · SAFETY / PPE', [[44, 12, 10, 24, 'no helmet']], '1 FLAG · ZONE B', [0])}</div>`;
 P.brikvision = () => `
-<section class="hero" style="padding-bottom:40px"><div class="wrap"><div class="copy">
+${pbar('BrikVision', 'brikvision')}<section class="hero" style="padding-bottom:40px"><div class="wrap"><div class="copy">
 <div class="rv">${status('pilot')}</div><h1 class="d1 rv dl1">See your site<br>without standing on it.</h1>
 <p class="lead rv dl2">BrikVision adds AI to the CCTV you already have. It counts people, logs deliveries, checks helmets and vests, and tracks progress around the clock, on your phone.</p>
 <div class="btns rv dl3" style="justify-content:center">${go('book-a-demo', 'Request a pilot')}<a class="btn btn-s" href="#watch" data-scroll="watch">What it watches</a></div></div>
@@ -256,7 +278,7 @@ ${explore('brikvision')}${cta('Put AI on your site cameras.', 'Tell us about you
 
 const REPORTS = [['DPR', 'Daily Progress Report', 'Updates, attendance, GRN'], ['DLR', 'Daily Labour Report', 'Selfie check-in and voice counts: attendance, hours and OT by team and contractor'], ['BOQ', 'Bill of Quantities', 'Drawings and measurements'], ['BBS', 'Bar Bending Schedule', 'Structural drawings: bar marks, shapes, diameters, cut lengths, weights'], ['EST', 'Estimation', 'BOQ, rates and consumption'], ['SCH', 'Schedule', 'Weekly plans and progress: plan vs actual and slippage'], ['FAB', 'Fabrication Drawing', 'Drawing library, latest revision tagged'], ['GRN', 'Goods Received Note', 'POs, gate and store entries'], ['STK', 'Stock Statement', 'GRN, issues and indents: opening, received, issued, closing']];
 P.brikdocs = () => `
-<section class="hero"><div class="wrap"><div class="split">
+${pbar('BrikDocs', 'brikdocs')}<section class="hero"><div class="wrap"><div class="split">
 <div><div class="rv">${status('docs')}</div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">Every construction report, generated in a tap.</h1>
 <p class="lead rv dl2">Reports are built from work your team already logged in Brikito. No late nights in Excel. Drawings are version-controlled, with the latest revision tagged on site.</p>
 <div class="btns rv dl3">${go('book-a-demo', 'Book a demo')}<a class="btn btn-s" href="#reports" data-scroll="reports">See every report</a></div>
@@ -429,7 +451,7 @@ const MODS = [
   ['Team & Control', 'lock', 'People, roles, approval rules and project settings.'],
 ];
 P.console = () => `
-<section class="hero" style="padding-bottom:30px"><div class="wrap"><div class="copy">
+${pbar('Brikito Console', 'console')}<section class="hero" style="padding-bottom:30px"><div class="wrap"><div class="copy">
 <div class="rv">${status('live')}</div>
 <h1 class="d1 rv dl1">Brikito Console.</h1>
 <p class="lead rv dl2">One place to run every project. Chat, Brik AI, reports, cameras and mail all live here, on the same people, records and approvals.</p>
@@ -507,6 +529,13 @@ function wire(root) {
   root.querySelectorAll('.rv,.zoom').forEach(el => io.observe(el));
   // statement word reveal
   root.querySelectorAll('[data-statement]').forEach(el => { el.innerHTML = el.textContent.split(' ').map(w => `<span class="w">${w}</span>`).join(' '); });
+  // swipe galleries with arrow buttons
+  root.querySelectorAll('[data-gal]').forEach(g => {
+    const row = g.querySelector('.gal-row'), prev = g.querySelector('[data-gp="-1"]'), next = g.querySelector('[data-gp="1"]');
+    const upd = () => { const max = row.scrollWidth - row.clientWidth - 2; prev.disabled = row.scrollLeft <= 2; next.disabled = row.scrollLeft >= max; };
+    [prev, next].forEach(b => b.addEventListener('click', () => { const c = row.firstElementChild; const w = c ? c.getBoundingClientRect().width + 16 : 300; row.scrollBy({ left: +b.dataset.gp * w * (innerWidth > 720 ? 2 : 1), behavior: 'smooth' }); }));
+    row.addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+  });
   // tabs
   root.querySelectorAll('[data-tabs] button').forEach(b => b.addEventListener('click', () => {
     root.querySelectorAll('[data-tabs] button').forEach(x => x.classList.toggle('on', x === b));
@@ -581,6 +610,21 @@ function onScroll() {
     const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
     const n = Math.round(p * ws.length); ws.forEach((w, i) => w.classList.toggle('on', i < n));
   });
+  // pinned phone story: the step nearest the reading line drives the phone screen
+  const sto = document.querySelector('[data-story]');
+  if (sto) {
+    const steps = sto.querySelectorAll('.sstep'), line = vh * (innerWidth > 980 ? 0.55 : 0.82); let a = 0;
+    steps.forEach((s, i) => { if (s.getBoundingClientRect().top < line) a = i; });
+    if (sto.dataset.a !== String(a)) {
+      sto.dataset.a = a;
+      steps.forEach((s, i) => s.classList.toggle('on', i === a));
+      sto.querySelectorAll('.sscreen').forEach((s, i) => s.classList.toggle('on', i === a));
+      sto.querySelectorAll('.sdots i').forEach((s, i) => s.classList.toggle('on', i === a));
+    }
+  }
+  // phones: "Book a demo" bar after the first screen, hidden over the footer
+  const mb = document.querySelector('.mdemo');
+  if (mb) { const f = document.querySelector('footer'); const ft = f ? f.getBoundingClientRect().top : 1e9; mb.classList.toggle('show', y > vh * 0.9 && ft > vh); }
   const st = document.getElementById('stage');
   if (st) { const r = st.getBoundingClientRect(); const k = Math.max(-1, Math.min(1, (vh / 2 - (r.top + r.height / 2)) / vh)); st.querySelectorAll('[data-par]').forEach(el => { const f = +el.dataset.par; el.style.transform = (f === 0 ? 'translateX(-50%) ' : '') + `translateY(${(f * k).toFixed(1)}px)`; }); }
   document.querySelectorAll('[data-count]').forEach(el => {
@@ -608,8 +652,8 @@ if (BUILD) {
 // live pages: the HTML is already there; add tracking and interactions
 try { const p = location.pathname; if (/\.html$/.test(p)) history.replaceState(null, '', p.replace(/\/index\.html$/, '/').replace(/\.html$/, '') + location.search + location.hash); } catch (e) {}
 if (!document.querySelector('script[data-tracking]')) { const t = document.createElement('script'); t.src = '/components/tracking.js'; t.dataset.tracking = '1'; document.head.appendChild(t); }
-if (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261110c'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }
-if (!document.querySelector('script[data-exitoffer]')) { const x = document.createElement('script'); x.src = '/assets/exit-offer.js?v=20261111d'; x.defer = true; x.dataset.exitoffer = '1'; document.head.appendChild(x); }
+if (!document.querySelector('script[data-brikchat]')) { const c = document.createElement('script'); c.src = '/assets/brik-chat.js?v=20261111h'; c.defer = true; c.dataset.brikchat = '1'; document.head.appendChild(c); }
+if (!document.querySelector('script[data-exitoffer]')) { const x = document.createElement('script'); x.src = '/assets/exit-offer.js?v=20261111h'; x.defer = true; x.dataset.exitoffer = '1'; document.head.appendChild(x); }
 if (!document.querySelector('script[data-newsletter]')) { const n = document.createElement('script'); n.src = '/assets/newsletter.js?v=20261111e'; n.defer = true; n.dataset.newsletter = '1'; document.head.appendChild(n); }
 if (!document.querySelector('script[data-enquire]')) { const q = document.createElement('script'); q.src = '/assets/enquire.js?v=20261111b'; q.defer = true; q.dataset.enquire = '1'; document.head.appendChild(q); }
 if (document.querySelector('[data-dpr-kit],[data-material-kit]') && !document.querySelector('script[data-dprkit]')) { const k = document.createElement('script'); k.src = '/assets/dpr-kit.js?v=20261111e'; k.defer = true; k.dataset.dprkit = '1'; document.head.appendChild(k); }
@@ -627,6 +671,11 @@ document.addEventListener('click', e => {
   const bar = document.querySelector('.progress'); if (bar) { bar.style.opacity = 1; bar.style.width = '70%'; }
 });
 addEventListener('pageshow', () => { const bar = document.querySelector('.progress'); if (bar) { bar.style.opacity = 0; bar.style.width = 0; } });
+if (!/book-a-demo/.test(location.pathname) && !document.querySelector('.mdemo')) {
+  const mb = document.createElement('a'); mb.className = 'mdemo'; mb.href = '/book-a-demo?utm_source=mobile-bar&utm_medium=sticky';
+  mb.innerHTML = '<span><b>Book a demo</b><small>7-day free trial for the first 10 teams</small></span><i aria-hidden="true">→</i>';
+  document.body.appendChild(mb);
+}
 wire(document.getElementById('app') || document.body);
 
 })();
