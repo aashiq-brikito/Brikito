@@ -76,7 +76,7 @@ PAGES = {
         description="Book a 45-minute Brikito demo. We'll set your team up on one live project and show you site chat, Brik AI and reports running the same day.",
     ),
     "blog.html": dict(
-        slug="blog", modified="2026-11-07",
+        slug="blog", modified="2026-11-11",
         title="Brikito Journal: Construction, AI & Project Guides",
         description="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI.",
     ),
@@ -233,6 +233,24 @@ PAGES = {
         slug="delay-cost-calculator", image="/img/delay-calc-og.png",
         title="Construction Delay Cost Calculator (₹ per day) | Brikito",
         description="Free calculator: see what one day of construction delay costs your project in ₹, from overheads, idle labour, equipment hire, interest and LD.",
+    ),
+    "blog-real-estate-development-process.html": dict(
+        slug="blog-real-estate-development-process", type="article", image="/images/blog/real-estate-development-process.jpg",
+        published="2026-11-11", modified="2026-11-11",
+        title="Real Estate Development Process: Land to Handover",
+        description="The real estate development process in 8 stages: due diligence, feasibility, JDA, approvals, RERA, sales, construction and handover.",
+    ),
+    "blog-subcontractor-management.html": dict(
+        slug="blog-subcontractor-management", type="article", image="/images/blog/subcontractor-management.jpg",
+        published="2026-11-11", modified="2026-11-11",
+        title="Contractor and Subcontractor Management Guide",
+        description="How to manage contractors and subcontractors: prequalification, work orders, coordination, measurement, payment, back-charges and close-out.",
+    ),
+    "blog-stages-of-house-construction.html": dict(
+        slug="blog-stages-of-house-construction", type="article", image="/images/blog/stages-of-house-construction.jpg",
+        published="2026-11-11", modified="2026-11-11",
+        title="Stages of House Construction: Step-by-Step Guide",
+        description="Every stage of house construction from foundation to handover, with checks before each stage, IS 456 curing and formwork times, and tips.",
     ),
     "404.html": dict(
         slug="404", noindex=True,
