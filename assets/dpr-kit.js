@@ -9,7 +9,7 @@
     dpr: {
       sel: '[data-dpr-kit]', action: 'https://app.kit.com/forms/10174128/subscriptions', key: 'brikDprKit', name: 'DPR Kit', slug: 'dpr_kit',
       img: '/img/dpr-kit-preview.webp', alt: 'Brikito DPR template and 10-point DPR checklist',
-      title: 'Get the DPR Kit', text: 'The 10-section DPR format from this guide, ready to use on site tomorrow.',
+      title: 'Get the DPR Kit', text: 'A 10-section DPR format, ready to use on site tomorrow.',
       bullets: ['Excel DPR template that calculates cumulative %, attendance and stock', 'Red alerts for low stock and open hindrances', 'One-page 10-point checklist to print for engineers'],
       btn: 'Send me the kit', ready: 'Your DPR Kit is ready.',
       files: [['/downloads/Brikito-DPR-Template.xlsx', 'DPR template (Excel)', 'Works in Excel and Google Sheets', 'XLS'], ['/downloads/Brikito-DPR-Checklist.pdf', '10-point DPR checklist (PDF)', 'One page, print it for site', 'PDF']]

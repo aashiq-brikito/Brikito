@@ -23,10 +23,12 @@
     '.nl-note{margin:10px 4px 0;font-size:12.5px;color:rgba(255,255,255,.5)}' +
     '.nl-msg{margin:10px 4px 0;font-size:14px;line-height:1.5}.nl-msg.ok{color:#86EFAC}.nl-msg.bad{color:#FCA5A5}' +
     '.nl-msg:empty{display:none}' +
+    'body:has(#demoRequestForm) .nl{display:none}' +
     '@media (max-width:860px){.nl{grid-template-columns:1fr;padding:30px 24px;margin-bottom:44px}}' +
     '@media (max-width:480px){.nl form{flex-direction:column;border-radius:18px}.nl button{width:100%}}';
 
   function build() {
+    if (/book-a-demo/.test(location.pathname)) return; // keep the demo page focused on the form
     var wrap = document.querySelector('footer .wrap');
     if (!wrap || wrap.querySelector('.nl')) return;
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
