@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contractor and Subcontractor Management Guide</title>
+<meta name="description" content="How to manage contractors and subcontractors: prequalification, work orders, coordination, measurement, payment, back-charges and close-out." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/blog-subcontractor-management" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Contractor and Subcontractor Management Guide" />
+<meta property="og:description" content="How to manage contractors and subcontractors: prequalification, work orders, coordination, measurement, payment, back-charges and close-out." />
+<meta property="og:url" content="https://www.brikito.com/blog-subcontractor-management" />
+<meta property="og:image" content="https://www.brikito.com/images/blog/subcontractor-management.jpg" />
+<meta property="article:published_time" content="2026-11-11" />
+<meta property="article:modified_time" content="2026-11-11" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contractor and Subcontractor Management Guide" />
+<meta name="twitter:description" content="How to manage contractors and subcontractors: prequalification, work orders, coordination, measurement, payment, back-charges and close-out." />
+<meta name="twitter:image" content="https://www.brikito.com/images/blog/subcontractor-management.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+    article .cover{margin:0 0 40px}article .cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#f2f3f5}
+    .related{margin-top:64px;padding-top:8px;border-top:1px solid var(--line)}.related h2{margin-top:40px}.related ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}.related li{padding:0;margin:0}.related a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}.related a:hover{border-color:var(--ink);transform:translateY(-1px)}.related .rt{display:block;font-weight:600;color:var(--ink);font-size:18px;line-height:1.35}.related .rd{display:block;font-size:15px;line-height:1.55;color:var(--muted);margin-top:6px}
+    article .table-wrap{overflow-x:auto;margin:0 0 30px}article table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.55}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--soft);color:var(--ink);font-weight:600}article td:first-child{font-weight:500;color:var(--ink)}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" />
+<link rel="stylesheet" href="/assets/chrome.css?v=20261111a" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Contractor and Subcontractor Management: A Complete Guide",
+      "description": "How to choose, contract, coordinate, pay and close out contractors and subcontractors, with a work order checklist, a meeting agenda and the records that prevent disputes.",
+      "author": {
+        "@type": "Organization",
+        "name": "Brikito",
+        "url": "https://www.brikito.com/"
+      },
+      "about": [
+        "Subcontractor management",
+        "Contractor management",
+        "Construction work order",
+        "Site coordination"
+      ],
+      "image": [
+        "https://www.brikito.com/images/blog/subcontractor-management.jpg"
+      ],
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "url": "https://www.brikito.com/blog-subcontractor-management",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.brikito.com/blog-subcontractor-management"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.brikito.com/#organization",
+        "name": "Brikito",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.brikito.com/icons/icon-512.png"
+        }
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is subcontractor management in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the process of selecting, contracting, coordinating, paying and closing out the companies that carry out specific trades or packages on a construction project, and recording their performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a contractor and a subcontractor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A main contractor contracts with the owner or developer for the whole project or a major package. A subcontractor contracts with the main contractor (or sometimes the developer) for a specific trade or part of the work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are back-charges in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Back-charges are costs recovered from a subcontractor when their failure, such as damage, rework or delay, causes cost to the main contractor or others. They should be notified promptly with evidence and handled as the subcontract allows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is retention money in a subcontract?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Retention is a percentage of each payment held back as security for completion and defects. It is usually released in stages, for example part at completion and the rest after the defect liability period."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you coordinate multiple subcontractors on site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a shared 2–3 week look-ahead by area and trade, sign off area handovers between trades, hold short daily coordination huddles and weekly progress meetings with minutes, and make sure everyone works from the current drawings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI help manage subcontractors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. AI construction software can turn subcontractors' messages into tracked updates and requests, record attendance by contractor, draft meeting minutes and replies for approval, and keep the evidence needed to check bills and settle delays."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Journal",
+          "item": "https://www.brikito.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contractor and Subcontractor Management Guide",
+          "item": "https://www.brikito.com/blog-subcontractor-management"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- site-header (generated by tools/build-chrome.py; edit assets/site.js, rebuild) -->
+<div class="v2c v2c-head"><div class="progress" aria-hidden="true"></div><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header><div class="ann" role="region" aria-label="Launch offer"><script>try{if(localStorage.getItem("brikAnn1"))document.currentScript.parentNode.hidden=true}catch(e){}</script><div class="ann-in"><img class="ann-av" src="/img/brik-head-v2.webp" alt="" width="26" height="26"><p><b>Launch offer:</b> <span class="ann-long">the first 10 teams to book a demo get Brikito free for their first month.</span><span class="ann-short">first 10 teams get 1 month free.</span> <a href="/book-a-demo?offer=free-month">Claim your spot <span aria-hidden="true">→</span></a></p><button class="ann-x" type="button" aria-label="Dismiss offer banner" onclick="this.closest('.ann').hidden=true;try{localStorage.setItem('brikAnn1','1')}catch(e){}">✕</button></div></div>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a></div></div>
+<!-- /site-header -->
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">Site management · Contractors</div>
+<h1>Contractor and Subcontractor Management: A Complete Guide</h1>
+<p class="dek">How to choose, contract, coordinate, pay and close out contractors and subcontractors, with a work order checklist, a meeting agenda and the records that prevent disputes.</p>
+<div class="meta"><span>Brikito Editorial</span><span><time datetime="2026-11-11">11 Nov 2026</time></span><span>8 min read</span><span>Contractors</span></div>
+</div>
+</section>
+<div class="layout">
+<article>
+<figure class="cover"><img src="/images/blog/subcontractor-management.jpg" alt="Illustration of a three-week look-ahead by trade for masonry, electrical, plumbing and waterproofing, with a signed area handover, a bill check and drafted minutes of meeting" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+<div class="answer"><p><strong>The short answer:</strong> Contractor and subcontractor management is how a developer or main contractor selects, contracts, coordinates, pays and closes out the companies that build each part of a project. It rests on five things: prequalification, a clear work order or subcontract, coordination through a single plan and meeting rhythm, measurement-based payment with retention, and recorded performance. Most subcontractor problems come from unclear scope, poor coordination between trades and payment disputes, not from the trades themselves.</p></div>
+<p>The plumbing subcontractor says the bathrooms on L6 weren't ready because the masons were late. The masons say they waited two days for the electrician to finish conduits. The electrician says nobody told him the layout had changed. Meanwhile, all three have submitted bills, and the project manager has no record that settles who caused what.</p>
+<p>On most building projects, more than half the work on site is done by subcontractors. Managing them well is the core of managing the project. This guide covers the full cycle, from choosing contractors to closing out their packages.</p>
+
+<h2 id="definition">Contractor vs subcontractor: who is who?</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Role</th><th>Contract with</th><th>Typical scope</th></tr></thead>
+<tbody>
+<tr><td>Main (general) contractor</td><td>Developer / owner</td><td>Whole project or a major package; manages subcontractors</td></tr>
+<tr><td>Subcontractor</td><td>Main contractor (or developer directly)</td><td>A trade or package: MEP, waterproofing, façade, flooring, painting</td></tr>
+<tr><td>Labour contractor</td><td>Main contractor or developer</td><td>Supplies workers; materials provided by others</td></tr>
+<tr><td>Nominated subcontractor</td><td>Main contractor, chosen by the owner</td><td>Specialist package the owner selects; main contractor coordinates</td></tr>
+<tr><td>Supplier</td><td>Contractor or developer</td><td>Materials or equipment, sometimes with installation</td></tr>
+</tbody></table></div>
+<p>Many Indian developers act as their own main contractor and hire trade contractors directly. The principles below apply either way.</p>
+
+<h2 id="why">Why subcontractor management matters</h2>
+<ul>
+<li><strong>Schedule:</strong> one late trade holds up every trade that follows it.</li>
+<li><strong>Quality:</strong> defects often appear at interfaces between trades, such as waterproofing around plumbing penetrations.</li>
+<li><strong>Cost:</strong> unclear scope leads to variations, back-charges and disputes.</li>
+<li><strong>Safety and compliance:</strong> the principal employer can carry responsibilities for workers supplied by contractors under labour law.</li>
+<li><strong>Reputation:</strong> buyers judge the developer, not the subcontractor.</li>
+</ul>
+
+<h2 id="lifecycle">The subcontractor management lifecycle</h2>
+<ol>
+<li><strong>Plan packages:</strong> decide how work is split into packages and which interfaces sit between them.</li>
+<li><strong>Prequalify:</strong> check capability, capacity, finances, safety record and references.</li>
+<li><strong>Tender and award:</strong> issue drawings, specifications and BOQ; compare like for like.</li>
+<li><strong>Contract:</strong> sign a work order or subcontract with clear scope, rates, schedule and terms.</li>
+<li><strong>Onboard:</strong> brief the team on site rules, safety, communication and documentation.</li>
+<li><strong>Coordinate:</strong> plan, sequence and track work through look-aheads and meetings.</li>
+<li><strong>Measure and pay:</strong> measure work, verify bills, deduct retention and pay on time.</li>
+<li><strong>Manage changes and disputes:</strong> instructions, variations, back-charges and claims.</li>
+<li><strong>Close out:</strong> snags, as-builts, warranties, final account and retention release.</li>
+<li><strong>Evaluate:</strong> score performance for future projects.</li>
+</ol>
+
+<h2 id="prequal">How to choose the right contractor: prequalification checklist</h2>
+<ul>
+<li>Experience with similar work, size and building type, with references you actually call.</li>
+<li>Current workload and available crew and supervisors.</li>
+<li>Financial stability: can they fund labour and materials between bills?</li>
+<li>Statutory registrations and compliance with labour and tax requirements.</li>
+<li>Safety record and the safety practices they will bring to site.</li>
+<li>Quality: visit a site they are working on now.</li>
+<li>Willingness to work with your reporting and communication system.</li>
+</ul>
+<p>The lowest bid is not always the lowest cost. A price that leaves no margin often comes back as claims, slow progress or poor quality.</p>
+
+<h2 id="contract">What a work order or subcontract must include</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Clause</th><th>What to specify</th></tr></thead>
+<tbody>
+<tr><td>Scope</td><td>Exact work, drawings and specification references, and what is excluded</td></tr>
+<tr><td>Interfaces</td><td>What the previous trade must hand over and what this trade hands to the next</td></tr>
+<tr><td>Materials</td><td>Who supplies what, wastage allowances and responsibility for storage</td></tr>
+<tr><td>Rates and measurement</td><td>Item rates or lump sum, units and method of measurement</td></tr>
+<tr><td>Schedule</td><td>Start, milestones, completion and the look-ahead process</td></tr>
+<tr><td>Payment</td><td>Billing cycle, certification, payment period, advances and their recovery</td></tr>
+<tr><td>Retention</td><td>Percentage held back and when it is released</td></tr>
+<tr><td>Variations</td><td>Only on written instruction from a named person; how rates are agreed</td></tr>
+<tr><td>Back-charges</td><td>How costs caused by the subcontractor are recovered</td></tr>
+<tr><td>Quality and safety</td><td>Inspection plan, hold points, PPE, permits and penalties</td></tr>
+<tr><td>Labour compliance</td><td>Registrations, wage payment, records and proof of statutory payments</td></tr>
+<tr><td>Delays</td><td>Notice requirements, extensions of time and liquidated damages</td></tr>
+<tr><td>Termination and disputes</td><td>Grounds, notice and resolution process</td></tr>
+</tbody></table></div>
+
+<h2 id="coordination">Coordinating multiple subcontractors on site</h2>
+<p>Coordination is where most subcontractor problems start. Three tools prevent most of them:</p>
+<ul>
+<li><strong>A shared look-ahead.</strong> A 2–3 week plan by area and trade, agreed with every subcontractor and updated weekly, so each trade knows when its front will be ready.</li>
+<li><strong>Area handovers.</strong> A simple sign-off when one trade finishes an area and the next takes over, with photos, so incomplete work is caught at the handover, not later.</li>
+<li><strong>A meeting rhythm.</strong> A short daily coordination huddle and a weekly progress meeting with minutes and action owners.</li>
+</ul>
+<p>Most of all, every subcontractor must work from the same current drawings. See <a href="/blog-construction-document-control">construction document control</a> and <a href="/blog-rework-coordination">rework isn't always a labour problem</a>.</p>
+
+<h3>Running site meetings that get things done</h3>
+<ol>
+<li>Review actions from the last meeting: done, late or blocked.</li>
+<li>Progress by area against the look-ahead.</li>
+<li>Blockers: drawings, approvals, materials, access, fronts.</li>
+<li>Safety and quality issues.</li>
+<li>Next two weeks: who needs what, from whom, by when.</li>
+<li>Record decisions and actions with owners and dates, and share the minutes the same day.</li>
+</ol>
+
+<h2 id="payment">Measurement, billing and payment</h2>
+<p>Payment is the most common source of subcontractor disputes, and most of those disputes come from weak records. Keep the process simple and consistent:</p>
+<ol>
+<li><strong>Measure jointly</strong> with the subcontractor, by area, in the agreed units.</li>
+<li><strong>Verify the bill</strong> against measurements, approved variations and, for labour contracts, attendance records.</li>
+<li><strong>Apply deductions:</strong> retention, advance recovery, material issued and agreed back-charges.</li>
+<li><strong>Certify and pay on time.</strong> Late payment drives crews away and slows the site.</li>
+<li><strong>Keep the running account</strong> up to date so the final account has no surprises.</li>
+</ol>
+<p>For labour contractors, compare claimed man-days with your own attendance and, where available, camera headcount. Our <a href="/blog-construction-labour-management">labour management guide</a> explains how.</p>
+
+<h2 id="changes">Variations, back-charges and disputes</h2>
+<ul>
+<li><strong>Variations:</strong> no extra work without a written instruction from an authorised person. Agree the cost before the work where possible.</li>
+<li><strong>Back-charges:</strong> when a subcontractor's failure causes cost to others (damage, rework, delay), notify them promptly with evidence before deducting.</li>
+<li><strong>Delays:</strong> record causes of delay daily. Contemporaneous records are what settle "who delayed whom".</li>
+<li><strong>Disputes:</strong> resolve at site level quickly, escalate by an agreed path, and keep formal options (mediation, arbitration) as a last resort.</li>
+</ul>
+
+<h2 id="performance">Measuring subcontractor performance</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Measure</th><th>How to track it</th></tr></thead>
+<tbody>
+<tr><td>Schedule</td><td>Planned vs actual by area; look-ahead commitments kept</td></tr>
+<tr><td>Quality</td><td>First-time inspection pass rate; open NCRs and snags</td></tr>
+<tr><td>Safety</td><td>Incidents, near misses and safety observations</td></tr>
+<tr><td>Manpower</td><td>Committed vs actual crew size</td></tr>
+<tr><td>Responsiveness</td><td>Time to close actions and respond to issues</td></tr>
+<tr><td>Commercial</td><td>Accuracy of bills; number of disputed items</td></tr>
+</tbody></table></div>
+<p>Score each subcontractor at the end of each package and keep the scores. The best way to reduce subcontractor problems on the next project is to choose better on evidence.</p>
+
+<h2 id="closeout">Closing out a subcontract</h2>
+<ul>
+<li>All snags in the package closed and signed off.</li>
+<li>As-built drawings, test certificates, manuals and warranties received.</li>
+<li>Final measurement and final account agreed.</li>
+<li>Retention released as per the contract, after the defect liability period where applicable.</li>
+<li>Performance score recorded.</li>
+</ul>
+
+<h2 id="mistakes">Common subcontractor management mistakes</h2>
+<ol>
+<li>Vague scope and missing interfaces between packages.</li>
+<li>Awarding on lowest price alone.</li>
+<li>Verbal instructions that later become disputed variations.</li>
+<li>No shared look-ahead, so trades arrive before their front is ready.</li>
+<li>Bills checked against the subcontractor's numbers instead of your own measurements.</li>
+<li>Late payments that drive away good crews.</li>
+<li>Meeting decisions that are never minuted or followed up.</li>
+</ol>
+
+<h2 id="software">Where software and AI fit</h2>
+<p>Subcontractor management runs on information: who is on site, what is finished, what is blocked, what was agreed and what is owed. When that information lives in chat groups, notebooks and memory, every bill and every delay becomes a negotiation.</p>
+<p>Brikito, AI construction management software, keeps it in one place. Subcontractors post updates and requests in project chat, where Brik AI tags them and routes material indents and issues to the PM. Attendance is recorded on site by contractor, drawings are version-controlled, and Brik drafts minutes of meeting and vendor replies for approval. When a bill or a delay is questioned, the record is already there. See <a href="/blog-ai-construction-site-chat">AI construction site chat</a>.</p>
+
+<h2 id="checklist">Subcontractor management checklist</h2>
+<ul>
+<li>Is every package's scope and interfaces written down?</li>
+<li>Were subcontractors prequalified, not just priced?</li>
+<li>Does every subcontractor work from the current drawing revision?</li>
+<li>Is there a shared look-ahead updated weekly?</li>
+<li>Are area handovers signed off with photos?</li>
+<li>Are bills checked against your own measurements and attendance?</li>
+<li>Are variations approved in writing before the work?</li>
+<li>Is performance scored at the end of every package?</li>
+</ul>
+
+<h2 id="faqs">Frequently asked questions</h2>
+<div class="faq"><h3>What is subcontractor management in construction?</h3><p>It is the process of selecting, contracting, coordinating, paying and closing out the companies that carry out specific trades or packages on a construction project, and recording their performance.</p>
+<h3>What is the difference between a contractor and a subcontractor?</h3><p>A main contractor contracts with the owner or developer for the whole project or a major package. A subcontractor contracts with the main contractor (or sometimes the developer) for a specific trade or part of the work.</p>
+<h3>What are back-charges in construction?</h3><p>Back-charges are costs recovered from a subcontractor when their failure, such as damage, rework or delay, causes cost to the main contractor or others. They should be notified promptly with evidence and handled as the subcontract allows.</p>
+<h3>What is retention money in a subcontract?</h3><p>Retention is a percentage of each payment held back as security for completion and defects. It is usually released in stages, for example part at completion and the rest after the defect liability period.</p>
+<h3>How do you coordinate multiple subcontractors on site?</h3><p>Use a shared 2–3 week look-ahead by area and trade, sign off area handovers between trades, hold short daily coordination huddles and weekly progress meetings with minutes, and make sure everyone works from the current drawings.</p>
+<h3>Can AI help manage subcontractors?</h3><p>Yes. AI construction software can turn subcontractors' messages into tracked updates and requests, record attendance by contractor, draft meeting minutes and replies for approval, and keep the evidence needed to check bills and settle delays.</p></div>
+
+<h2 id="takeaway">Clear scope, shared plan, fair records</h2>
+<p>Subcontractors do most of the building. They do it best when the scope is clear, the next front is ready when they arrive, payment is on time and fair, and every agreement is written down. Get those four right and most "subcontractor problems" disappear.</p>
+<section class="related" aria-labelledby="related-reading"><h2 id="related-reading">Related reading</h2><ul><li><a href="/blog-rework-coordination"><span class="rt">Construction Rework: The Information Gaps Behind It</span><span class="rd">Construction rework often starts with unclear instructions, outdated drawings and missed approvals. Learn how better coordination reduces avoidable rework.</span></a></li><li><a href="/blog-construction-labour-management"><span class="rt">Construction Labour Management: Attendance to Payroll</span><span class="rd">How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes.</span></a></li><li><a href="/blog-construction-document-control"><span class="rt">Construction Document Control: Drawings &amp; Revisions</span><span class="rd">How to control construction documents: drawing registers, numbering, revision and status codes, transmittals and keeping superseded drawings off site.</span></a></li></ul></section>
+</article>
+<aside aria-label="Article contents" class="toc"><span class="mono">In this article</span><nav><a href="#definition">Contractor vs subcontractor</a><a href="#lifecycle">The management lifecycle</a><a href="#prequal">Choosing the right contractor</a><a href="#contract">What a work order must include</a><a href="#coordination">Coordinating subcontractors</a><a href="#payment">Measurement and payment</a><a href="#changes">Variations and disputes</a><a href="#performance">Measuring performance</a><a href="#closeout">Closing out</a><a href="#faqs">FAQs</a></nav></aside>
+</div>
+<section class="cta-band">
+<div class="cta-inner">
+<div>
+<h2>Records that settle bills and delays.</h2>
+<p>See how Brikito keeps subcontractor updates, attendance, drawings and meeting actions in one place, ready when a bill or delay is questioned.</p>
+</div>
+<a class="button light" href="/book-a-demo">Book a Demo  ↗</a>
+</div>
+</section>
+</main>
+
+<!-- site-footer (generated by tools/build-chrome.py) -->
+<div class="v2c"><footer><div class="wrap"><div class="cols">
+<div><a class="logo" href="/" aria-label="Brikito home"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a><p style="margin-top:14px">Construction made simple.</p><p style="margin-top:8px">hey@brikito.com</p></div>
+<div><h5>Product</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div>
+<div><h5>Explore</h5><a href="/how-it-works">How it works</a><a href="/blog">Journal</a><a href="/about">About us</a><a href="/book-a-demo">Book a demo</a></div>
+<div><h5>Get started</h5><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a href="/book-a-demo">Talk to our team</a><a href="/privacy">Privacy policy</a></div></div>
+<div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="soc"><a href="https://www.youtube.com/@Brikitoai">YouTube</a><a href="https://www.instagram.com/brikitoai/">Instagram</a><a href="https://www.linkedin.com/company/brikito">LinkedIn</a><a href="https://www.facebook.com/brikitoai">Facebook</a></span></div></div></footer></div>
+<!-- /site-footer -->
+  
+<script src="/assets/site.js?v=20261111a" defer></script>
+</body>
+</html>
