@@ -598,3 +598,17 @@ html:not(.js) .rv,html:not(.js) .zoom{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.nav-offer-dot{animation:none}}
 @media (max-width:1180px){.nav-offer{display:none}}
 .sheet .sheet-offer{color:#3A3FC7;font-weight:600}
+
+/* Launch offer announcement bar under the top menu */
+.ann{background:linear-gradient(90deg,#6A2BD6,#5462F0 50%,#3A8EF6);color:#fff;font-family:Inter,system-ui,sans-serif}
+.ann[hidden]{display:none}
+.ann-in{position:relative;max-width:1200px;margin:0 auto;padding:10px 52px;display:flex;align-items:center;justify-content:center;gap:10px}
+.ann-av{width:26px;height:26px;border-radius:50%;flex:none;box-shadow:0 0 0 2px rgba(255,255,255,.55)}
+.ann p{margin:0;font-size:14.5px;line-height:1.4;text-align:center;color:#fff}
+.ann p b{font-weight:700}
+.ann a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;margin-left:4px}
+.ann a:hover{text-decoration-thickness:2px}
+.ann-short{display:none}
+.ann-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:13px;cursor:pointer}
+.ann-x:hover{background:rgba(255,255,255,.26)}
+@media (max-width:720px){.ann-long{display:none}.ann-short{display:inline}.ann-in{padding:9px 44px 9px 14px;justify-content:flex-start}.ann p{text-align:left;font-size:13.5px}}
