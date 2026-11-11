@@ -4,10 +4,12 @@
  * Brikito website leads → Google Sheet + email
  * 1. Book a demo form (brikito.com/book-a-demo) → "Leads" tab (incl. WhatsApp number), email "New demo request".
  * 2. Brik chat assistant (on every page)        → "Website Chat Bot" tab, email "New enquiry on Brik chat bot website".
+ * 3. "Talk on WhatsApp" on the Pricing page     → "WhatsApp Enquiries" tab, email "New WhatsApp enquiry".
  */
 const SHEET_ID = '1bf6VNAK8MmIxPaBNhCkgaKU00nR-vhVIdVgyEv77m7s';
 const SHEET_NAME = 'Leads';
 const CHAT_SHEET_NAME = 'Website Chat Bot';
+const WA_SHEET_NAME = 'WhatsApp Enquiries';
 const NOTIFY_EMAIL = 'marketing@brikito.com'; // set to '' to turn off emails
 
 const CHAT_HEADERS = ['Timestamp', 'Name', 'Work email', 'Phone / WhatsApp', 'Company', 'Role', 'Active projects',
@@ -21,6 +23,11 @@ function doPost(e) {
 
     // Spam trap: real visitors never fill this hidden field
     if (p.website) return json({ ok: true });
+
+    if (p.source === 'whatsapp-click') {
+      saveWhatsAppClick(p);
+      return json({ ok: true });
+    }
 
     if (p.source === 'brik-chat' || String(p.challenge || '').indexOf('[Brik chat]') === 0) {
       saveChatLead(p);
@@ -62,6 +69,45 @@ function doPost(e) {
     return json({ ok: false, error: String(err) });
   } finally {
     lock.releaseLock();
+  }
+}
+
+// "Talk on WhatsApp" taps: own tab (created on first use) + "New WhatsApp enquiry" email.
+// The site only knows the tap; the visitor's actual messages arrive in WhatsApp itself.
+function saveWhatsAppClick(p) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sh = ss.getSheetByName(WA_SHEET_NAME);
+  if (!sh) {
+    sh = ss.insertSheet(WA_SHEET_NAME);
+    const h = ['Timestamp', 'Plan', 'Message ready to send', 'Page', 'Came from', 'UTM (source / medium / campaign)', 'Device', 'Status'];
+    sh.appendRow(h);
+    sh.getRange(1, 1, 1, h.length).setFontWeight('bold').setBackground('#E7F8EE');
+    sh.setFrozenRows(1);
+    sh.setColumnWidth(3, 380);
+  }
+  sh.appendRow([new Date(), clean(p.plan), clean(p.message), clean(p.page), clean(p.referrer), clean(p.utm), clean(p.device), 'New']);
+
+  if (NOTIFY_EMAIL) {
+    MailApp.sendEmail({
+      to: NOTIFY_EMAIL,
+      subject: 'New WhatsApp enquiry on brikito.com' + (p.plan ? ': ' + p.plan + ' plan' : ''),
+      body: [
+        'Someone tapped "Talk on WhatsApp" on brikito.com and was taken to WhatsApp to chat with +91 79048 89929.',
+        '',
+        'Plan: ' + (p.plan || '-'),
+        'Message ready for them to send:',
+        '"' + (p.message || '-') + '"',
+        '',
+        'Page: ' + (p.page || '-'),
+        'Came from: ' + (p.referrer || 'direct / unknown'),
+        'UTM: ' + (p.utm || '-'),
+        'Device: ' + (p.device || '-'),
+        '',
+        'Open WhatsApp on +91 79048 89929 to see their message and reply. (If no message arrives, they opened WhatsApp but did not press Send.)',
+        '',
+        'All WhatsApp enquiries: https://docs.google.com/spreadsheets/d/' + SHEET_ID + ' (tab "' + WA_SHEET_NAME + '")'
+      ].join('\n')
+    });
   }
 }
 
