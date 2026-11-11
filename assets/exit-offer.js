@@ -29,13 +29,14 @@
 
   /* Book a demo page: confirm the offer above the form */
   if (/book-a-demo/.test(path)) {
-    if (/offer=free-month/.test(location.search)) {
+    var trial = /offer=7-day-trial/.test(location.search);
+    if (trial || /offer=free-month/.test(location.search)) {
       var go = function () {
         var form = document.getElementById('demoRequestForm'); if (!form) return;
         var b = document.createElement('div');
         b.setAttribute('role', 'status');
         b.style.cssText = 'display:flex;gap:10px;align-items:center;margin:0 0 18px;padding:12px 16px;border-radius:14px;background:linear-gradient(135deg,rgba(123,47,224,.09),rgba(58,142,246,.09));border:1px solid rgba(84,98,240,.22);font-size:14.5px;line-height:1.45;color:#1D1D1F';
-        b.innerHTML = '<span style="font-size:20px">🎁</span><span><b>Free month offer applied.</b> The first 10 teams to book a demo get their first month free.</span>';
+        b.innerHTML = trial ? '<span style="font-size:20px">🎁</span><span><b>7-day free trial offer applied.</b> The first 10 teams to book a demo get a 7-day free trial of Brikito.</span>' : '<span style="font-size:20px">🎁</span><span><b>Free month offer applied.</b> The first 10 teams to book a demo get their first month free.</span>';
         form.parentNode.insertBefore(b, form);
       };
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
