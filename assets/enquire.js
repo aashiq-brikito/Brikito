@@ -6,8 +6,20 @@
  */
 (function () {
   if (window.__brikEnquire) return; window.__brikEnquire = true;
-  var WHATSAPP_NUMBER = '__WHATSAPP__'; // country code + number, digits only, e.g. 919876543210
+  var WHATSAPP_NUMBER = '917904889929'; // country code + number, digits only (not shown on the page)
+  var NOTIFY = 'https://script.google.com/macros/s/AKfycbxxAiBit98TmUJIy03P_ACF01zgZFdtxMUm5bkmi3zpIEyyrWDuqpKLVZmYCkmEvUzf/exec';
   var path = location.pathname.replace(/\.html$/, '');
+
+  // Tells the leads Apps Script someone opened WhatsApp from the site (sheet row + email to marketing)
+  function notifyWhatsApp(plan, text) {
+    try {
+      var q = new URLSearchParams(location.search);
+      var body = new URLSearchParams({ source: 'whatsapp-click', plan: plan || '', message: text, page: location.href,
+        referrer: document.referrer || '', utm: ['utm_source', 'utm_medium', 'utm_campaign'].map(function (k) { return q.get(k) || ''; }).join(' / '),
+        device: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop', website: '' });
+      fetch(NOTIFY, { method: 'POST', mode: 'no-cors', keepalive: true, body: body });
+    } catch (e) {}
+  }
 
   function track(name, p) { try { if (window.gtag) gtag('event', name, p || {}); } catch (e) {} }
 
@@ -72,7 +84,7 @@
     back.addEventListener('click', function (e) {
       var o = e.target.closest('.eq-o');
       if (o) {
-        if (o.dataset.k === 'whatsapp') { track('contact', { method: 'whatsapp', plan: plan || '' }); try { if (window.fbq) fbq('track', 'Contact'); } catch (x) {} }
+        if (o.dataset.k === 'whatsapp') { notifyWhatsApp(plan, text); track('contact', { method: 'whatsapp', plan: plan || '' }); try { if (window.fbq) fbq('track', 'Contact'); } catch (x) {} }
         else track('enquire_meeting_click', { plan: plan || '' });
         setTimeout(close, 50);
         return;
