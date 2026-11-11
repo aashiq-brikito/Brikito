@@ -98,3 +98,12 @@
 .v2c .hero .split:has(>.zoom) .rv[style] .chip{background:none;border:0;padding:0;font-size:14px;color:var(--muted,#6E6E73)}
 .v2c .hero .split:has(>.zoom) .rv[style] .chip::before{content:"✓";margin-right:6px;color:#5462F0;font-weight:600}
 .v2c .nav{z-index:1000}.v2c .sheet{z-index:999}.v2c .progress{z-index:1001}
+
+/* Top menu launch offer pill */
+.v2c .nav-offer{display:inline-flex;align-items:center;gap:7px;margin-right:6px;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#3A3FC7;background:#EEF0FF;border:1px solid rgba(84,98,240,.22);white-space:nowrap;text-decoration:none;transition:background .15s}
+.v2c .nav-offer:hover{background:#E2E5FF}
+.v2c .nav-offer-dot{width:7px;height:7px;border-radius:50%;background:#7B2FE0;box-shadow:0 0 0 0 rgba(123,47,224,.5);animation:navOfferPulse 2s infinite}
+@keyframes navOfferPulse{0%{box-shadow:0 0 0 0 rgba(123,47,224,.5)}70%{box-shadow:0 0 0 7px rgba(123,47,224,0)}100%{box-shadow:0 0 0 0 rgba(123,47,224,0)}}
+@media (prefers-reduced-motion:reduce){.v2c .nav-offer-dot{animation:none}}
+@media (max-width:1180px){.v2c .nav-offer{display:none}}
+.v2c .sheet .sheet-offer{color:#3A3FC7;font-weight:600}
