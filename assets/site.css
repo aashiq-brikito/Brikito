@@ -589,16 +589,6 @@ html:not(.js) .rv,html:not(.js) .zoom{opacity:1;transform:none}
 @media (min-width:981px){#founder .founder-photo{position:relative;min-height:340px}#founder .founder-photo img{position:absolute;inset:0}}
 /* Brik mascot (v1 character): slimmer render, keep the same height as before */
 .mascot img{width:min(100%,370px)}
-
-/* Top menu launch offer pill */
-.nav-offer{display:inline-flex;align-items:center;gap:7px;margin-right:6px;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#3A3FC7;background:#EEF0FF;border:1px solid rgba(84,98,240,.22);white-space:nowrap;text-decoration:none;transition:background .15s}
-.nav-offer:hover{background:#E2E5FF}
-.nav-offer-dot{width:7px;height:7px;border-radius:50%;background:#7B2FE0;box-shadow:0 0 0 0 rgba(123,47,224,.5);animation:navOfferPulse 2s infinite}
-@keyframes navOfferPulse{0%{box-shadow:0 0 0 0 rgba(123,47,224,.5)}70%{box-shadow:0 0 0 7px rgba(123,47,224,0)}100%{box-shadow:0 0 0 0 rgba(123,47,224,0)}}
-@media (prefers-reduced-motion:reduce){.nav-offer-dot{animation:none}}
-@media (max-width:1180px){.nav-offer{display:none}}
-.sheet .sheet-offer{color:#3A3FC7;font-weight:600}
-
 /* Launch offer announcement bar under the top menu */
 .ann{background:linear-gradient(90deg,#6A2BD6,#5462F0 50%,#3A8EF6);color:#fff;font-family:Inter,system-ui,sans-serif}
 .ann[hidden]{display:none}
