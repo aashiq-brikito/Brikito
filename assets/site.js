@@ -530,7 +530,7 @@ function wire(root) {
   const posts = root.querySelector('[data-posts]');
   if (posts) {
     let cat = 'All stories', q = '';
-    const PER = 7, pager = root.querySelector('[data-pager]');
+    const PER = 9, pager = root.querySelector('[data-pager]');
     let page = Math.max(1, parseInt(new URLSearchParams(location.search).get('page'), 10) || 1);
     const go = (n, scroll) => { page = n; apply(); if (scroll) { const t = root.querySelector('[data-filters]'); t && window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 90, behavior: 'smooth' }); } };
     const apply = () => {
