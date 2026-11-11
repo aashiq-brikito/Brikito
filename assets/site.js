@@ -94,6 +94,18 @@ P.home = () => `
 <div class="fnode"><span class="fi ok">${ic('check', 20, '#fff', 2.4)}</span><b>Approved</b><small>Priya (PM) · one tap</small></div>
 </div></div></section>
 
+<section class="sec dark"><div class="wrap">
+<div class="secthead rv"><p class="eyebrow">Pilot · 2026</p><h2 class="d2">One app in place of six.</h2><p class="lead">Running today on live residential, metro and logistics sites.</p></div>
+<div class="stats">${[['6→1', 'WhatsApp, registers, drawings, email and spreadsheets in one app'], ['3', 'live projects, residential, metro and logistics, on one login'], ['92%', 'on-site attendance captured by selfie check-in'], ['9 days', 'of schedule slip surfaced live, on day one']].map((s, i) => `<div class="stat rv dl${i}"><b data-count="${s[0]}">${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div>
+<div class="rv" style="margin-top:90px;display:flex;gap:22px;align-items:center;border-top:1px solid #2A2A30;padding-top:40px">
+<span style="width:56px;height:56px;border-radius:50%;background:#1D1D22;display:flex;align-items:center;justify-content:center;font-family:var(--ui);font-weight:600;flex:none">SR</span>
+<div><p style="font-family:var(--ui);font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em;line-height:1.3">At Gofar Group, the day’s indents are approved from the Brikito app.</p><p class="muted" style="margin-top:8px">SR Ilangovan · Director, Gofar Group</p></div></div>
+</div></section>
+
+<section class="sec dark" style="padding-top:0"><div class="wrap">
+<div class="secthead rv"><p class="eyebrow">Our commitments</p><h2 class="d2">Four non-negotiables, written before the code.</h2></div>
+<div class="vals">${VALS.map((v, i) => `<div class="val rv dl${i}"><small>${['i', 'ii', 'iii', 'iv'][i]}. ${v[0]}</small><h4>${v[1]}</h4><p>${v[2]}</p></div>`).join('')}</div></div></section>
+
 <section class="sec alt consec"><div class="wrap">
 <div class="secthead center rv"><p class="eyebrow grad">Brikito Console</p><h2 class="d2">One platform.<br>Every product on top.</h2><p class="lead">Brikito Console is the base everyone signs in to. BrikChat, Brik AI, BrikDocs, BrikVision, BrikMail and the Brikbots to come all live inside it, on the same projects, people and records.</p><div class="btns" style="justify-content:center">${go('console', 'Explore the Console')}${go('book-a-demo', 'Book a demo', 'btn btn-s')}</div></div>
 <div class="zoom" style="margin-top:20px">${laptop('console-home', 'Brikito Console home screen for Skyline Residency Tower B on day 258')}</div>
@@ -125,11 +137,6 @@ ${m('Kumar · Safety', '11:02', 'Open edge at L6 stairwell, photo attached', ['T
 <div class="vis"><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:440px;padding-bottom:40px">${['DPR', 'DLR', 'BOQ', 'BBS', 'EST', 'SCH', 'FAB', 'GRN', 'STK'].map(c => `<span style="width:76px;height:76px;border-radius:18px;background:#1D1D22;border:1px solid #2A2A30;display:flex;align-items:center;justify-content:center;font-family:var(--ui);font-weight:600;letter-spacing:.06em">${c}</span>`).join('')}</div></div></a>
 </div></div></section>
 
-<section class="sec alt"><div class="wrap">
-${head('One app, every surface', 'Six tabs. One login.', 'Everything the site does, in one place, from the first chat of the morning to the approved day.', 'center')}
-<div class="tabs rv" role="tablist" data-tabs>${TABS.map((t, i) => `<button role="tab" class="${i ? '' : 'on'}" data-i="${i}">${t[0]}</button>`).join('')}</div>
-<div id="tabpanel" class="rv">${tabPanel(0)}</div></div></section>
-
 <section class="sec"><div class="wrap">
 ${head('What changes on site', 'The same day. Without the chasing.', 'Real moments from a working site, and what happens to them in Brikito.')}
 <div class="cases">${[
@@ -143,21 +150,6 @@ ${head('What changes on site', 'The same day. Without the chasing.', 'Real momen
   ['Safety', '<b>Missing edge protection at L7</b> and honeycombing at L6 are flagged straight from chat.'],
 ].map((c, i) => `<div class="case rv dl${i % 2}" style="background:var(--alt)"><small>${c[0]}</small><p>${c[1]}</p></div>`).join('')}</div></div></section>
 
-<section class="sec dark"><div class="wrap">
-<div class="secthead rv"><p class="eyebrow">Pilot · 2026</p><h2 class="d2">One app in place of six.</h2><p class="lead">Running today on live residential, metro and logistics sites.</p></div>
-<div class="stats">${[['6→1', 'WhatsApp, registers, drawings, email and spreadsheets in one app'], ['3', 'live projects, residential, metro and logistics, on one login'], ['92%', 'on-site attendance captured by selfie check-in'], ['9 days', 'of schedule slip surfaced live, on day one']].map((s, i) => `<div class="stat rv dl${i}"><b data-count="${s[0]}">${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div>
-<div class="rv" style="margin-top:90px;display:flex;gap:22px;align-items:center;border-top:1px solid #2A2A30;padding-top:40px">
-<span style="width:56px;height:56px;border-radius:50%;background:#1D1D22;display:flex;align-items:center;justify-content:center;font-family:var(--ui);font-weight:600;flex:none">SR</span>
-<div><p style="font-family:var(--ui);font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em;line-height:1.3">At Gofar Group, the day’s indents are approved from the Brikito app.</p><p class="muted" style="margin-top:8px">SR Ilangovan · Director, Gofar Group</p></div></div>
-</div></section>
-
-<section class="sec dark" style="padding-top:0"><div class="wrap">
-<div class="secthead rv"><p class="eyebrow">Our commitments</p><h2 class="d2">Four non-negotiables, written before the code.</h2></div>
-<div class="vals">${VALS.map((v, i) => `<div class="val rv dl${i}"><small>${['i', 'ii', 'iii', 'iv'][i]}. ${v[0]}</small><h4>${v[1]}</h4><p>${v[2]}</p></div>`).join('')}</div></div></section>
-
-<section class="sec"><div class="wrap">
-${head('What’s next', 'Building the AI operating system for real estate development.', '')}
-${roadmap()}</div></section>
 ${cta('Put your next project on Brikito.', 'A 45-minute session. Your team set up on one live project, the same day.', ['book-a-demo', 'Book a demo'], ['how-it-works', 'See how it works'])}`;
 
 const TABS = [
