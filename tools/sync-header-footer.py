@@ -12,7 +12,7 @@ Run from the repo root:  python3 tools/sync-header-footer.py
 import glob, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-V = "20261111f"
+V = "20261111g"
 header = open(os.path.join(ROOT, "components/header.html"), encoding="utf-8").read().strip()
 footer = open(os.path.join(ROOT, "components/footer.html"), encoding="utf-8").read().strip()
 

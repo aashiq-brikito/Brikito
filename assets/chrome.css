@@ -135,7 +135,7 @@
 .v2c footer .ft-trust{display:flex;flex-wrap:wrap;gap:10px 28px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.09)}
 .v2c footer .ft-trust span{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,.72)}
 .v2c footer .ft-trust svg{color:#9EA6FF;flex:none}
-.v2c footer .bottom{display:flex;justify-content:space-between;align-items:center;gap:8px 24px;flex-wrap:wrap;padding-top:20px;font-size:13px;color:rgba(255,255,255,.45)}
+.v2c footer .bottom{display:flex;justify-content:flex-start;align-items:center;gap:8px 24px;flex-wrap:wrap;padding-top:20px;font-size:13px;color:rgba(255,255,255,.45)}
 .v2c footer .ft-legal{display:flex;gap:22px}
 .v2c footer .ft-legal a{color:rgba(255,255,255,.55);transition:color .15s}
 .v2c footer .ft-legal a:hover{color:#fff}
