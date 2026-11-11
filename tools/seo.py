@@ -229,6 +229,11 @@ PAGES = {
         title="AI CCTV for Construction Sites: PPE, Headcount, Progress",
         description="How AI CCTV and computer vision give construction sites live headcount, delivery logs, helmet and vest detection and progress monitoring.",
     ),
+    "delay-cost-calculator.html": dict(
+        slug="delay-cost-calculator", image="/img/delay-calc-og.png",
+        title="Construction Delay Cost Calculator (₹ per day) | Brikito",
+        description="Free calculator: see what one day of construction delay costs your project in ₹, from overheads, idle labour, equipment hire, interest and LD.",
+    ),
     "404.html": dict(
         slug="404", noindex=True,
         title="Page Not Found | Brikito Construction Software",
@@ -333,6 +338,7 @@ BUILDERS = {
     "privacy.html": ld_simple("WebPage", "Privacy policy"),
     "blog.html": ld_blog,
     "console.html": ld_console,
+    "delay-cost-calculator.html": ld_simple("WebPage", "Construction delay cost calculator"),
 }
 
 def page_faq(s):

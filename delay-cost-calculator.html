@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Construction Delay Cost Calculator (₹ per day) | Brikito</title>
+<meta name="description" content="Free calculator: see what one day of construction delay costs your project in ₹, from overheads, idle labour, equipment hire, interest and LD." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/delay-cost-calculator" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Construction Delay Cost Calculator (₹ per day)" />
+<meta property="og:description" content="Free calculator: see what one day of construction delay costs your project in ₹, from overheads, idle labour, equipment hire, interest and LD." />
+<meta property="og:url" content="https://www.brikito.com/delay-cost-calculator" />
+<meta property="og:image" content="https://www.brikito.com/img/delay-calc-og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Construction Delay Cost Calculator (₹ per day)" />
+<meta name="twitter:description" content="Free calculator: see what one day of construction delay costs your project in ₹, from overheads, idle labour, equipment hire, interest and LD." />
+<meta name="twitter:image" content="https://www.brikito.com/img/delay-calc-og.png" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<style>
+:root{--ink:#0B0B0F;--muted:#55555C;--line:rgba(11,11,15,.1);--p:#5B3FE0;--b:#3A8EF6;--soft:#F5F5F7}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+.dc-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.dc-hero{padding:64px 0 28px;text-align:center;background:radial-gradient(ellipse 70% 80% at 50% 0%,#F1EEFF,transparent 70%)}
+.dc-chip{display:inline-block;font-size:12.5px;font-weight:600;color:#3A3FC7;background:#fff;border:1px solid rgba(84,98,240,.22);padding:6px 12px;border-radius:999px}
+.dc-hero h1{margin:16px auto 0;max-width:17ch;font-size:clamp(34px,4.6vw,58px);line-height:1.04;letter-spacing:-.035em}
+.dc-hero h1 span{background:linear-gradient(90deg,#7B2FE0,#3A8EF6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dc-hero p{margin:14px auto 0;max-width:620px;font-size:18px;line-height:1.55;color:var(--muted)}
+.dc-app{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:start;margin:28px auto 64px}
+.dc-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 20px 50px -30px rgba(36,41,120,.35)}
+.dc-card h2{margin:0 0 4px;font-size:19px}
+.dc-sub{margin:0 0 18px;font-size:14px;color:var(--muted)}
+.dc-grp{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}
+.dc-grp:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.dc-gt{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--p);margin:0 0 10px}
+.dc-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.dc-f{display:block;margin-bottom:12px}
+.dc-f>span:first-child{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px}
+.dc-f small{display:block;font-size:12px;color:#8E8E93;font-weight:400;margin-top:5px;line-height:1.4}
+.dc-in{display:flex;align-items:center;border:1px solid rgba(11,11,15,.14);border-radius:12px;background:#fff;overflow:hidden}
+.dc-in:focus-within{border-color:#5462F0;box-shadow:0 0 0 3px rgba(84,98,240,.15)}
+.dc-in b{padding:0 0 0 12px;font-weight:500;color:#8E8E93;font-size:15px}
+.dc-in i{font-style:normal;padding:0 12px;color:#8E8E93;font-size:13px;white-space:nowrap}
+.dc-in input{flex:1;min-width:0;width:100%;border:0;outline:none;font:inherit;font-size:16px;padding:11px 10px;background:none}
+.dc-tog{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;cursor:pointer;margin:2px 0 12px}
+.dc-tog input{width:18px;height:18px;accent-color:#5B3FE0}
+.dc-res{position:sticky;top:84px}
+.dc-big{background:#0B0B0F;color:#fff;border-radius:22px;padding:28px;position:relative;overflow:hidden}
+.dc-big:before{content:"";position:absolute;right:-120px;top:-140px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(123,47,224,.6),rgba(58,142,246,.25) 45%,transparent 70%)}
+.dc-big>*{position:relative}
+.dc-l{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#B9BCFF;margin:0}
+.dc-num{font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin:8px 0 2px}
+.dc-num small{white-space:nowrap;font-size:20px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:0}
+.dc-line{margin:12px 0 0;font-size:15px;line-height:1.5;color:rgba(255,255,255,.8)}
+.dc-line b{color:#fff}
+.dc-gate{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;position:relative}
+.dc-blur{filter:blur(5px);pointer-events:none;user-select:none;opacity:.28;position:absolute;inset:22px;overflow:hidden}
+.dc-bars{display:grid;gap:10px}
+.dc-bar{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:14px}
+.dc-bar .t{height:8px;border-radius:99px;background:#EEF0FF;grid-column:1/-1;overflow:hidden}
+.dc-bar .t span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#7B2FE0,#3A8EF6)}
+.dc-bar b{font-weight:600}
+.dc-lock{position:relative;display:flex;flex-direction:column;justify-content:center}
+.dc-lock h3{margin:0;font-size:19px}
+.dc-lock p{margin:6px 0 12px;font-size:14px;color:var(--muted);line-height:1.5}
+.dc-form{display:grid;gap:8px}
+.dc-form input{font:inherit;font-size:15px;border:1px solid rgba(11,11,15,.14);border-radius:12px;padding:11px 13px;outline:none;min-width:0}
+.dc-form input:focus{border-color:#5462F0;box-shadow:0 0 0 3px rgba(84,98,240,.15)}
+.dc-form .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.dc-form button{border:0;border-radius:999px;background:#0B0B0F;color:#fff;font:inherit;font-weight:600;font-size:15px;padding:13px 18px;cursor:pointer}
+.dc-form button:disabled{opacity:.6}
+.dc-msg{font-size:13.5px;margin:4px 2px 0}.dc-msg.bad{color:#B91C1C}.dc-msg:empty{display:none}
+.dc-fine{font-size:11.5px;color:#8E8E93;margin:2px 2px 0}
+.dc-hp{position:absolute!important;left:-9999px!important}
+.dc-ok{margin-top:14px;padding:12px 14px;border-radius:14px;background:#ECFDF3;color:#166534;font-size:14px;line-height:1.5}
+.dc-tips{margin-top:14px;font-size:14px;line-height:1.55;color:#1D1D1F}
+.dc-tips b{display:block;margin-bottom:4px}
+.dc-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.dc-cta a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:14.5px;border-radius:999px;padding:11px 18px}
+.dc-cta a.p{background:#0B0B0F;color:#fff}.dc-cta a.s{border:1px solid var(--line);color:var(--ink)}
+.dc-sec{padding:56px 0;border-top:1px solid var(--line)}
+.dc-sec h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;margin:0 0 14px;max-width:24ch}
+.dc-sec p,.dc-sec li{font-size:16.5px;line-height:1.65;color:#2A2A30}
+.dc-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.dc-3 div{background:var(--soft);border-radius:18px;padding:20px}
+.dc-3 h3{margin:0 0 6px;font-size:17px}.dc-3 p{margin:0;font-size:15px;color:var(--muted)}
+.dc-sec table{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}
+.dc-sec th,.dc-sec td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.dc-sec th{background:var(--soft);font-weight:600}
+.dc-faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.dc-faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none}
+.dc-faq summary::-webkit-details-marker{display:none}
+.dc-faq summary:after{content:"+";float:right;color:#8E8E93;font-weight:400}
+.dc-faq details[open] summary:after{content:"–"}
+.dc-faq p{margin:10px 0 0}
+.dc-band{margin:0 0 64px;padding:36px;border-radius:24px;background:linear-gradient(135deg,#6A2BD6,#5462F0 55%,#3A8EF6);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.dc-band h2{margin:0;font-size:clamp(22px,2.6vw,30px);max-width:26ch;color:#fff}
+.dc-band p{margin:6px 0 0;color:rgba(255,255,255,.85);font-size:15.5px}
+.dc-band a{background:#fff;color:#0B0B0F;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:999px;white-space:nowrap}
+@media (max-width:900px){.dc-app{grid-template-columns:minmax(0,1fr)}.dc-res{position:static}.dc-3{grid-template-columns:1fr}}
+@media (max-width:520px){.dc-row,.dc-form .two{grid-template-columns:1fr}.dc-card,.dc-big{padding:20px}.dc-hero{padding-top:40px}.dc-band{padding:24px}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" />
+<link rel="stylesheet" href="/assets/chrome.css?v=20261111a" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Construction Delay Cost Calculator (₹ per day) | Brikito",
+      "url": "https://www.brikito.com/delay-cost-calculator",
+      "description": "Free calculator: see what one day of construction delay costs your project in ₹, from overheads, idle labour, equipment hire, interest and LD.",
+      "isPartOf": {
+        "@id": "https://www.brikito.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.brikito.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Construction delay cost calculator",
+          "item": "https://www.brikito.com/delay-cost-calculator"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- site-header (generated by tools/build-chrome.py; edit assets/site.js, rebuild) -->
+<div class="v2c v2c-head"><div class="progress" aria-hidden="true"></div><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header><div class="ann" role="region" aria-label="Launch offer"><script>try{if(localStorage.getItem("brikAnn1"))document.currentScript.parentNode.hidden=true}catch(e){}</script><div class="ann-in"><img class="ann-av" src="/img/brik-head-v2.webp" alt="" width="26" height="26"><p><b>Launch offer:</b> <span class="ann-long">the first 10 teams to book a demo get Brikito free for their first month.</span><span class="ann-short">first 10 teams get 1 month free.</span> <a href="/book-a-demo?offer=free-month">Claim your spot <span aria-hidden="true">→</span></a></p><button class="ann-x" type="button" aria-label="Dismiss offer banner" onclick="this.closest('.ann').hidden=true;try{localStorage.setItem('brikAnn1','1')}catch(e){}">✕</button></div></div>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a></div></div>
+<!-- /site-header -->
+<main>
+<section class="dc-hero"><div class="dc-wrap">
+<span class="dc-chip">Free tool · For builders, developers &amp; contractors</span>
+<h1>What does <span>one day of delay</span> cost your project?</h1>
+<p>Enter a few numbers from your site. See your daily cost of delay in seconds, then get the full breakdown and a PDF report by email.</p>
+</div></section>
+
+<div class="dc-wrap">
+<div class="dc-app" id="calculator">
+<form class="dc-card" id="dcInputs" onsubmit="return false" novalidate>
+<h2>Your project</h2><p class="dc-sub">Rough figures are fine. Everything updates as you type.</p>
+
+<div class="dc-grp"><p class="dc-gt">1 · Project</p>
+<div class="dc-row">
+<label class="dc-f"><span>Project value</span><span class="dc-in"><b>₹</b><input id="value" inputmode="decimal" value="50"><i>crore</i></span></label>
+<label class="dc-f"><span>Delay to cost</span><span class="dc-in"><input id="days" inputmode="numeric" value="30"><i>days</i></span></label>
+</div></div>
+
+<div class="dc-grp"><p class="dc-gt">2 · Site overheads</p>
+<label class="dc-f"><span>Site overheads per day</span><span class="dc-in"><b>₹</b><input id="overhead" inputmode="numeric" value="60000"><i>/ day</i></span>
+<small>Site staff salaries, site office, security, power, water, insurance. Costs that run every day whether work moves or not.</small></label>
+</div>
+
+<div class="dc-grp"><p class="dc-gt">3 · Idle labour</p>
+<div class="dc-row">
+<label class="dc-f"><span>Workers left idle</span><span class="dc-in"><input id="workers" inputmode="numeric" value="40"><i>workers</i></span></label>
+<label class="dc-f"><span>Average daily wage</span><span class="dc-in"><b>₹</b><input id="wage" inputmode="numeric" value="700"><i>/ day</i></span></label>
+</div></div>
+
+<div class="dc-grp"><p class="dc-gt">4 · Equipment &amp; finance</p>
+<label class="dc-f"><span>Equipment hire standing idle</span><span class="dc-in"><b>₹</b><input id="equip" inputmode="numeric" value="35000"><i>/ day</i></span>
+<small>Crane, concrete pump, hoist, scaffolding, shuttering hire you keep paying for.</small></label>
+<div class="dc-row">
+<label class="dc-f"><span>Loan / capital deployed</span><span class="dc-in"><b>₹</b><input id="capital" inputmode="decimal" value="20"><i>crore</i></span></label>
+<label class="dc-f"><span>Interest rate</span><span class="dc-in"><input id="rate" inputmode="decimal" value="11"><i>% / year</i></span></label>
+</div></div>
+
+<div class="dc-grp"><p class="dc-gt">5 · Optional</p>
+<label class="dc-f"><span>Rent or revenue deferred per day</span><span class="dc-in"><b>₹</b><input id="revenue" inputmode="numeric" value="0"><i>/ day</i></span>
+<small>For developers: rent, lease or sales receipts pushed back by a late handover.</small></label>
+<label class="dc-tog"><input type="checkbox" id="ldOn"> My contract has a liquidated damages (LD) clause</label>
+<label class="dc-f" id="ldField" hidden><span>LD rate</span><span class="dc-in"><input id="ld" inputmode="decimal" value="0.5"><i>% of project value / week</i></span>
+<small>A common clause is 0.5% per week, capped at 5–10% of contract value. The calculator does not apply a cap.</small></label>
+</div>
+</form>
+
+<div class="dc-res">
+<div class="dc-big" aria-live="polite">
+<p class="dc-l">One day of delay costs you</p>
+<div class="dc-num" id="perDay">₹1.8 lakh<small> / day</small></div>
+<p class="dc-line" id="summary"></p>
+</div>
+
+<div class="dc-gate" id="gate">
+<div class="dc-blur" id="breakdown" aria-hidden="true">
+<h3 style="margin:0 0 12px;font-size:17px">Where the money goes</h3>
+<div class="dc-bars" id="bars"></div>
+</div>
+<div class="dc-lock" id="lock">
+<h3>Get the full breakdown + PDF report</h3>
+<p>See exactly where your delay money goes, with ways to cut it. We’ll email you a PDF you can share with your team.</p>
+<form class="dc-form" id="dcLead" novalidate>
+<label class="dc-hp" aria-hidden="true">Leave empty<input name="website" tabindex="-1" autocomplete="off"></label>
+<div class="two"><input name="name" placeholder="Your name" autocomplete="name" aria-label="Your name" required><input name="company" placeholder="Company" autocomplete="organization" aria-label="Company"></div>
+<input type="email" name="email" placeholder="Work email" autocomplete="email" aria-label="Work email" required>
+<button type="submit">Email me the report</button>
+<p class="dc-msg" role="status" aria-live="polite"></p>
+<p class="dc-fine">Free. You’ll also get the Brikito newsletter; unsubscribe anytime. See our <a href="/privacy">privacy policy</a>.</p>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<section class="dc-sec">
+<h2>How the delay cost is calculated</h2>
+<p>A delayed site keeps spending even when work stops. The calculator adds up the costs that run every calendar day of delay.</p>
+<table>
+<thead><tr><th>Cost</th><th>How it is worked out</th></tr></thead>
+<tbody>
+<tr><td>Site overheads</td><td>The daily figure you enter: staff, site office, security, utilities and insurance.</td></tr>
+<tr><td>Idle labour</td><td>Workers left idle × average daily wage.</td></tr>
+<tr><td>Idle equipment</td><td>Daily hire you keep paying for machines standing idle.</td></tr>
+<tr><td>Finance cost</td><td>Loan or capital deployed × interest rate ÷ 365.</td></tr>
+<tr><td>Deferred revenue</td><td>Rent, lease or sales receipts pushed back each day (optional).</td></tr>
+<tr><td>Liquidated damages</td><td>Project value × LD % per week ÷ 7, if your contract has an LD clause (optional, uncapped).</td></tr>
+</tbody></table>
+<p style="font-size:14px;color:#6E6E73">This is an estimate to help you size the problem. It does not include escalation in material prices, extended supervision fees or claims, which usually make a real delay cost more.</p>
+</section>
+
+<section class="dc-sec">
+<h2>Three ways to stop paying for delays</h2>
+<div class="dc-3">
+<div><h3>See slippage on day one</h3><p>Compare planned vs actual every day, not at the monthly review. A 2-day slip is cheap to recover; a 3-week slip is not.</p></div>
+<div><h3>Turn hindrances into actions</h3><p>Every blocker needs an owner and a date: a drawing awaited, a delivery late, an inspection pending. Chase the owner, not the site.</p></div>
+<div><h3>Stop idle labour and machines</h3><p>Know tomorrow's inputs today. If cement or a drawing will not arrive, move the crew and the crane before they stand idle.</p></div>
+</div>
+<p style="margin-top:20px">Brikito tracks delay and lag automatically from your site's daily updates: slippage, PPC, hindrances with owners and a forecast finish date. <a href="/blog-construction-scheduling" style="color:#5B3FE0;font-weight:600">Read the scheduling and delay management guide</a>.</p>
+</section>
+
+<section class="dc-sec dc-faq">
+<h2>Frequently asked questions</h2>
+<details><summary>How do you calculate the cost of construction delay per day?</summary><p>Add the costs that keep running every day of delay: site overheads, idle labour (workers × daily wage), idle equipment hire, interest on the capital deployed (amount × annual rate ÷ 365), any rent or revenue deferred, and liquidated damages if your contract has them.</p></details>
+<details><summary>What is a typical cost of delay on an Indian building project?</summary><p>It depends on project size and financing. For a ₹50 crore residential project with ₹20 crore deployed at 11%, about 40 idle workers and ₹35,000 of daily hire, the daily cost comes to roughly ₹1.8 lakh, before any liquidated damages.</p></details>
+<details><summary>What are liquidated damages (LD) in construction?</summary><p>Liquidated damages are a pre-agreed amount a contractor pays the owner for each week of delay beyond the contract completion date, often 0.5% of contract value per week, capped at 5–10% of the contract value.</p></details>
+<details><summary>Is my data stored?</summary><p>Only if you ask for the report: we save your inputs and contact details to send the PDF and follow up. The calculator itself runs in your browser.</p></details>
+</section>
+
+<div class="dc-band"><div><h2>Catch delays before they cost you.</h2><p>See how Brikito flags slippage and hindrances from your site’s daily updates.</p></div><a href="/book-a-demo?utm_source=delay-calculator">Book a free demo →</a></div>
+</div>
+</main>
+<!-- site-footer (generated by tools/build-chrome.py) -->
+<div class="v2c"><footer><div class="wrap"><div class="cols">
+<div><a class="logo" href="/" aria-label="Brikito home"><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a><p style="margin-top:14px">Construction made simple.</p><p style="margin-top:8px">hey@brikito.com</p></div>
+<div><h5>Product</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div>
+<div><h5>Explore</h5><a href="/how-it-works">How it works</a><a href="/blog">Journal</a><a href="/about">About us</a><a href="/book-a-demo">Book a demo</a></div>
+<div><h5>Get started</h5><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a href="/book-a-demo">Talk to our team</a><a href="/privacy">Privacy policy</a></div></div>
+<div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="soc"><a href="https://www.youtube.com/@Brikitoai">YouTube</a><a href="https://www.instagram.com/brikitoai/">Instagram</a><a href="https://www.linkedin.com/company/brikito">LinkedIn</a><a href="https://www.facebook.com/brikitoai">Facebook</a></span></div></div></footer></div>
+<!-- /site-footer -->
+<script>
+(function () {
+  var NOTIFY = 'https://script.google.com/macros/s/AKfycbxxAiBit98TmUJIy03P_ACF01zgZFdtxMUm5bkmi3zpIEyyrWDuqpKLVZmYCkmEvUzf/exec';
+  var KIT = 'https://app.kit.com/forms/10173986/subscriptions';
+  var $ = function (id) { return document.getElementById(id); };
+  var ids = ['value', 'days', 'overhead', 'workers', 'wage', 'equip', 'capital', 'rate', 'revenue', 'ld'];
+  function num(id) { var v = parseFloat(String($(id).value).replace(/[^0-9.]/g, '')); return isFinite(v) && v > 0 ? v : 0; }
+  function inr(n) {
+    n = Math.round(n);
+    if (n >= 1e7) return '₹' + (n / 1e7).toFixed(n >= 1e8 ? 1 : 2).replace(/\.?0+$/, '') + ' crore';
+    if (n >= 1e5) return '₹' + (n / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh';
+    return '₹' + n.toLocaleString('en-IN');
+  }
+  var state = {};
+  function calc() {
+    var value = num('value') * 1e7, days = Math.max(1, Math.round(num('days')) || 1);
+    var parts = [
+      ['Site overheads', num('overhead')],
+      ['Idle labour', num('workers') * num('wage')],
+      ['Idle equipment hire', num('equip')],
+      ['Finance cost (interest)', num('capital') * 1e7 * num('rate') / 100 / 365],
+      ['Deferred rent / revenue', num('revenue')],
+      ['Liquidated damages', $('ldOn').checked ? value * num('ld') / 100 / 7 : 0]
+    ].filter(function (p) { return p[1] > 0; });
+    var perDay = parts.reduce(function (a, p) { return a + p[1]; }, 0);
+    var total = perDay * days, pct = value ? total / value * 100 : 0;
+    state = { perDay: perDay, total: total, days: days, pct: pct, parts: parts, value: value };
+    $('perDay').innerHTML = inr(perDay) + '<small> / day</small>';
+    $('summary').innerHTML = 'A <b>' + days + '-day</b> delay would cost about <b>' + inr(total) + '</b>' + (value ? ', or <b>' + pct.toFixed(1) + '%</b> of your project value.' : '.');
+    var max = Math.max.apply(null, parts.map(function (p) { return p[1]; }).concat(1));
+    $('bars').innerHTML = parts.sort(function (a, b) { return b[1] - a[1]; }).map(function (p) {
+      return '<div class="dc-bar"><span>' + p[0] + '</span><b>' + inr(p[1]) + ' / day · ' + (perDay ? Math.round(p[1] / perDay * 100) : 0) + '%</b><div class="t"><span style="width:' + (p[1] / max * 100).toFixed(1) + '%"></span></div></div>';
+    }).join('') || '<p style="margin:0;color:#6E6E73">Enter your figures to see the breakdown.</p>';
+  }
+  ids.forEach(function (id) { $(id).addEventListener('input', calc); });
+  $('ldOn').addEventListener('change', function () { $('ldField').hidden = !this.checked; calc(); });
+  calc();
+  var touched = false;
+  $('dcInputs').addEventListener('input', function () { if (!touched) { touched = true; try { if (window.gtag) gtag('event', 'calculator_use', { tool: 'delay_cost' }); } catch (e) {} } });
+
+  var form = $('dcLead'), btn = form.querySelector('button'), msg = form.querySelector('.dc-msg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.name.value.trim(), email = form.email.value.trim(), company = form.company.value.trim();
+    msg.className = 'dc-msg';
+    if (name.length < 2) { msg.className = 'dc-msg bad'; msg.textContent = 'Please enter your name.'; form.name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { msg.className = 'dc-msg bad'; msg.textContent = 'Please enter a valid email address.'; form.email.focus(); return; }
+    if (form.website.value) return;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var body = new URLSearchParams({ source: 'delay-calc', name: name, email: email, company: company, page: location.href, website: '',
+      value: num('value'), days: state.days, overhead: num('overhead'), workers: num('workers'), wage: num('wage'), equip: num('equip'),
+      capital: num('capital'), rate: num('rate'), revenue: num('revenue'), ld: $('ldOn').checked ? num('ld') : 0 });
+    Promise.all([
+      fetch(NOTIFY, { method: 'POST', mode: 'no-cors', body: body }),
+      fetch(KIT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ email_address: email, 'fields[first_name]': name.split(' ')[0] }) }).catch(function () {})
+    ]).then(function () {
+      $('breakdown').classList.remove('dc-blur'); $('breakdown').removeAttribute('aria-hidden'); $('lock').remove();
+      var top = state.parts.slice().sort(function (a, b) { return b[1] - a[1]; })[0];
+      var ok = document.createElement('div');
+      ok.innerHTML = '<div class="dc-ok"><b>Report on its way.</b> We’ve emailed the full breakdown and PDF to ' + email.replace(/[<>&"]/g, '') + '. Check your spam folder if it isn’t there in a few minutes.</div>' +
+        (top ? '<div class="dc-tips"><b>Your biggest leak: ' + top[0].toLowerCase() + '</b>It is ' + Math.round(top[1] / state.perDay * 100) + '% of your daily delay cost. Catching slippage a week earlier would save about ' + inr(state.perDay * 7) + '.</div>' : '') +
+        '<div class="dc-cta"><a class="p" href="/book-a-demo?utm_source=delay-calculator">See how Brikito catches delays →</a></div>';
+      $('gate').appendChild(ok);
+      try { if (window.gtag) gtag('event', 'generate_lead', { form: 'delay_calculator', value: Math.round(state.perDay) }); } catch (x) {}
+      try { if (window.fbq) fbq('track', 'Lead', { content_name: 'Delay cost calculator' }); } catch (x) {}
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Email me the report';
+      msg.className = 'dc-msg bad'; msg.textContent = 'Sorry, that didn’t go through. Please try again.';
+    });
+  });
+  $('gate').addEventListener('click', function () { var i = form.querySelector('input[name=name]'); if (document.activeElement.tagName !== 'INPUT') i && i.focus(); });
+})();
+</script>
+<script src="/assets/site.js?v=20261111a" defer></script>
+</body>
+</html>
