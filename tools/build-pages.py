@@ -17,7 +17,7 @@ import asyncio, functools, http.server, json, os, re, threading
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PORT = 8799
-V = "20261111a"                          # bump to make browsers load new CSS/JS
+V = "20261111b"                          # bump to make browsers load new CSS/JS
 
 # route -> output file
 PAGES = {
