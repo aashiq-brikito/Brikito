@@ -386,7 +386,7 @@ P.journal = () => `
 <div style="background:#141417;display:flex;align-items:center;justify-content:center;padding:40px">${logo(160, 'grad')}</div></a>
 <div style="margin-top:80px">${head('', 'Latest thinking.', 'Useful perspectives for people who plan, build and manage projects.')}</div>
 <div class="filters" data-filters>${['All stories', 'Site management', 'Cost control', 'Technology & AI', 'Planning & workflow'].map((f, i) => `<button class="${i ? '' : 'on'}" data-f="${f}">${f}</button>`).join('')}<input type="search" placeholder="Search articles" aria-label="Search articles" data-q></div>
-<div class="posts" data-posts>${POSTS.map((p, i) => `<a class="post rv dl${i % 3}" href="/${SLUGS[i]}" data-cat="${p[1]}" data-t="${p[0].toLowerCase()} ${p[4].toLowerCase()}">${coverFor(p[1], i)}<div class="bd"><small>${p[2]} min read · ${p[3]}</small><h3>${p[0]}</h3><p>${p[4]}</p><span class="link">Read article ${chev}</span></div></a>`).join('')}</div>
+<div class="posts" data-posts>${POSTS.map((p, i) => `<a class="post rv dl${i % 3}" href="/${SLUGS[i]}" data-cat="${p[1]}" data-t="${p[0].toLowerCase()} ${p[4].toLowerCase()}">${coverFor(p[1], i)}<div class="bd"><small>${p[2]} min read · ${p[3]}</small><h3>${p[0]}</h3><p>${p[4]}</p><span class="link">Read article ${chev}</span></div></a>`).join('')}</div><nav class="pager" data-pager aria-label="Journal pages"></nav>
 <p class="center muted" data-empty style="display:none;margin-top:30px">No articles match that search. Try a different keyword or category.</p></div></section>
 ${cta('Put better information to work.', 'See how Brikito turns site chat into records, reports and decisions.')}`;
 
@@ -530,9 +530,32 @@ function wire(root) {
   const posts = root.querySelector('[data-posts]');
   if (posts) {
     let cat = 'All stories', q = '';
-    const apply = () => { let n = 0; posts.querySelectorAll('.post').forEach(p => { const ok = (cat === 'All stories' || p.dataset.cat === cat) && (!q || p.dataset.t.includes(q)); p.style.display = ok ? '' : 'none'; if (ok) { n++; p.classList.add('in'); } }); root.querySelector('[data-empty]').style.display = n ? 'none' : 'block'; };
-    root.querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => { cat = b.dataset.f; root.querySelectorAll('[data-f]').forEach(x => x.classList.toggle('on', x === b)); apply(); }));
-    root.querySelector('[data-q]').addEventListener('input', e => { q = e.target.value.trim().toLowerCase(); apply(); });
+    const PER = 7, pager = root.querySelector('[data-pager]');
+    let page = Math.max(1, parseInt(new URLSearchParams(location.search).get('page'), 10) || 1);
+    const go = (n, scroll) => { page = n; apply(); if (scroll) { const t = root.querySelector('[data-filters]'); t && window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 90, behavior: 'smooth' }); } };
+    const apply = () => {
+      const all = [...posts.querySelectorAll('.post')];
+      const hits = all.filter(p => (cat === 'All stories' || p.dataset.cat === cat) && (!q || p.dataset.t.includes(q)));
+      const pages = Math.max(1, Math.ceil(hits.length / PER)); if (page > pages) page = pages;
+      const shown = new Set(hits.slice((page - 1) * PER, page * PER));
+      all.forEach(p => { const ok = shown.has(p); p.style.display = ok ? '' : 'none'; if (ok) p.classList.add('in'); });
+      root.querySelector('[data-empty]').style.display = hits.length ? 'none' : 'block';
+      if (pager) {
+        const btn = (n, label, extra) => `<button type="button" data-pg="${n}"${extra || ''}>${label}</button>`;
+        let h = '';
+        if (pages > 1) {
+          h += btn(page - 1, '‹ Prev', page === 1 ? ' disabled aria-disabled="true"' : '');
+          for (let i = 1; i <= pages; i++) h += btn(i, i, i === page ? ' class="on" aria-current="page"' : ' aria-label="Page ' + i + '"');
+          h += btn(page + 1, 'Next ›', page === pages ? ' disabled aria-disabled="true"' : '');
+        }
+        pager.innerHTML = h; pager.style.display = pages > 1 ? '' : 'none';
+      }
+      try { const u = new URL(location.href); if (page > 1) u.searchParams.set('page', page); else u.searchParams.delete('page'); history.replaceState(history.state, '', u); } catch (e) {}
+    };
+    pager && pager.addEventListener('click', e => { const b = e.target.closest('[data-pg]'); if (b && !b.disabled) go(+b.dataset.pg, true); });
+    apply();
+    root.querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => { cat = b.dataset.f; page = 1; root.querySelectorAll('[data-f]').forEach(x => x.classList.toggle('on', x === b)); apply(); }));
+    root.querySelector('[data-q]').addEventListener('input', e => { q = e.target.value.trim().toLowerCase(); page = 1; apply(); });
   }
   // form: the live demo-request form, saved to the "Brikito – Demo Requests" Google Sheet
   const form = root.querySelector('#demoRequestForm');
