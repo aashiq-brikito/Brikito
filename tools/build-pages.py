@@ -17,7 +17,7 @@ import asyncio, functools, http.server, json, os, re, threading
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PORT = 8799
-V = "20261111h"                          # bump to make browsers load new CSS/JS
+V = "20261112a"                          # bump to make browsers load new CSS/JS
 
 # route -> output file
 PAGES = {
@@ -25,6 +25,7 @@ PAGES = {
     "brikchat": "brikchat.html", "brikvision": "brikvision.html", "brikdocs": "brikdocs.html",
     "how-it-works": "how-it-works.html", "pricing": "pricing.html", "journal": "blog.html",
     "about": "about.html", "book-a-demo": "book-a-demo.html", "privacy": "privacy.html",
+    "brik-ai-policy": "brik-ai-policy.html",
     "notfound": "404.html",
 }
 
@@ -77,6 +78,7 @@ async def build():
     shell_path = os.path.join(ROOT, "_build-shell.html")
     open(shell_path, "w").write(SHELL)
     privacy = open(os.path.join(ROOT, "tools", "privacy-content.html"), encoding="utf-8").read()
+    ai_policy = open(os.path.join(ROOT, "tools", "brik-ai-policy-content.html"), encoding="utf-8").read()
     srv = http.server.ThreadingHTTPServer(("127.0.0.1", PORT), functools.partial(Quiet, directory=ROOT))
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     try:
@@ -88,7 +90,8 @@ async def build():
                 errs = []
                 pg.on("pageerror", lambda e: errs.append(str(e)))
                 await pg.add_init_script(f"window.__BUILD_ROUTE__={json.dumps(route)};"
-                                         f"window.__PRIVACY_HTML__={json.dumps(privacy)};")
+                                         f"window.__PRIVACY_HTML__={json.dumps(privacy)};"
+                                         f"window.__AI_POLICY_HTML__={json.dumps(ai_policy)};")
                 await pg.goto(f"http://127.0.0.1:{PORT}/_build-shell.html")
                 await pg.wait_for_function("window.__BUILT__ === true", timeout=15000)
                 shell = await pg.eval_on_selector("#shell", "e => e.innerHTML")
