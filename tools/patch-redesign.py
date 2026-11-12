@@ -146,7 +146,7 @@ ps = s.index("<section class=\"sec-sm\"><div class=\"wrap\"><div class=\"prose\"
 pe = s.index("</div></div></section>`;", ps) + len("</div></div></section>`;")
 s = s[:ps] + '<section class="sec-sm"><div class="wrap"><div class="prose" style="margin:0 auto">${window.__PRIVACY_HTML__ || \'\'}</div></div></section>`;' + s[pe:]
 sub('<p class="lead rv dl2">Last updated: <span class="ph">[date]</span></p>',
-    '<p class="lead rv dl2">Brikito is a site-management app for construction companies. This policy explains what we collect, why, and your rights under India’s DPDP Act, 2023.</p><p class="rv dl3" style="margin-top:14px"><span class="chip">Last updated: <span class="ph">[ date ]</span></span> <span class="chip">India · DPDP Act, 2023</span></p>')
+    '<p class="lead rv dl2">Brikito is a site-management app for construction companies. This policy explains what we collect, why, and your rights under India’s DPDP Act, 2023.</p><p class="rv dl3" style="margin-top:14px"><span class="chip">Last updated: 12 November 2026</span> <span class="chip">India · DPDP Act, 2023</span></p>')
 
 # ---- 404 page in the same design -----------------------------------------
 sub("const ROUTES = [", """P.notfound = () => `
