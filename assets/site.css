@@ -754,3 +754,12 @@ body:has(.sheet.open) .mdemo{display:none}
 .sheet.open a:nth-child(2){transition-delay:.03s}.sheet.open a:nth-child(3){transition-delay:.06s}.sheet.open a:nth-child(4){transition-delay:.09s}.sheet.open a:nth-child(5){transition-delay:.12s}.sheet.open a:nth-child(6){transition-delay:.15s}.sheet.open a:nth-child(7){transition-delay:.18s}.sheet.open a:nth-child(8){transition-delay:.21s}.sheet.open a:nth-child(9){transition-delay:.24s}.sheet.open a:nth-child(10){transition-delay:.27s}.sheet.open a:nth-child(n+11){transition-delay:.3s}
 @media (min-width:981px){.sheet{display:none}}
 @media (prefers-reduced-motion:reduce){.sscreen,.sstep,.sheet,.sheet a,.mdemo{transition:none!important}.sscreen.on .dc{animation:none}}
+
+/* legal pages: contents list */
+.prose .toc{background:var(--alt);border-radius:18px;padding:22px 26px;margin:0 0 12px}
+.prose .toc b{font-family:var(--head);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.prose .toc ol{margin:10px 0 0;padding-left:22px;columns:2;column-gap:36px}
+.prose .toc li{font-size:15.5px;line-height:1.5;padding:4px 0;break-inside:avoid}
+.prose .toc a:hover{color:var(--acc)}
+.prose .seealso{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
+@media (max-width:720px){.prose .toc ol{columns:1}.prose .toc li{padding:8px 0}}

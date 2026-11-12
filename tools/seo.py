@@ -80,6 +80,11 @@ PAGES = {
         title="Brikito Journal: Construction, AI & Project Guides",
         description="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI.",
     ),
+    "brik-ai-policy.html": dict(
+        slug="brik-ai-policy",
+        title="Generative AI (Brik AI) Policy | Brikito",
+        description="How Brik AI works, which AI models it runs on, how Brikito handles your project data, and how people stay in control of AI-assisted decisions.",
+    ),
     "privacy.html": dict(
         slug="privacy",
         title="Privacy Policy | Brikito Construction Software",
@@ -359,6 +364,7 @@ BUILDERS = {
     "how-it-works.html": ld_simple("WebPage", "How it works"),
     "book-a-demo.html": ld_simple("ContactPage", "Book a demo"),
     "privacy.html": ld_simple("WebPage", "Privacy policy"),
+    "brik-ai-policy.html": ld_simple("WebPage", "Generative AI (Brik AI)"),
     "blog.html": ld_blog,
     "console.html": ld_console,
     "delay-cost-calculator.html": ld_simple("WebPage", "Construction delay cost calculator"),
