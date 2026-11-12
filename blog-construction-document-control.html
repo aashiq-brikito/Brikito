@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Construction Document Control: Drawings &amp; Revisions</title>
+<meta name="description" content="How to control construction documents: drawing registers, numbering, revision and status codes, transmittals and keeping superseded drawings off site." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/blog-construction-document-control" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Construction Document Control: Drawings &amp; Revisions" />
+<meta property="og:description" content="How to control construction documents: drawing registers, numbering, revision and status codes, transmittals and keeping superseded drawings off site." />
+<meta property="og:url" content="https://www.brikito.com/blog-construction-document-control" />
+<meta property="og:image" content="https://www.brikito.com/images/blog/construction-document-control.jpg" />
+<meta property="article:published_time" content="2026-11-06" />
+<meta property="article:modified_time" content="2026-11-07" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Construction Document Control: Drawings &amp; Revisions" />
+<meta name="twitter:description" content="How to control construction documents: drawing registers, numbering, revision and status codes, transmittals and keeping superseded drawings off site." />
+<meta name="twitter:image" content="https://www.brikito.com/images/blog/construction-document-control.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+    article .cover{margin:0 0 40px}article .cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#f2f3f5}
+    .related{margin-top:64px;padding-top:8px;border-top:1px solid var(--line)}.related h2{margin-top:40px}.related ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}.related li{padding:0;margin:0}.related a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}.related a:hover{border-color:var(--ink);transform:translateY(-1px)}.related .rt{display:block;font-weight:600;color:var(--ink);font-size:18px;line-height:1.35}.related .rd{display:block;font-size:15px;line-height:1.55;color:var(--muted);margin-top:6px}
+    article .table-wrap{overflow-x:auto;margin:0 0 30px}article table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.55}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--soft);color:var(--ink);font-weight:600}article td:first-child{font-weight:500;color:var(--ink)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Construction Document Control: Drawings, Revisions and Approvals",
+      "description": "How to register, number, approve, issue and archive project documents so every person on site works from the current approved drawing, and every change leaves a record.",
+      "author": {
+        "@type": "Organization",
+        "name": "Brikito",
+        "url": "https://www.brikito.com/"
+      },
+      "about": [
+        "Construction document control",
+        "Drawing revision control",
+        "Drawing register"
+      ],
+      "image": [
+        "https://www.brikito.com/images/blog/construction-document-control.jpg"
+      ],
+      "datePublished": "2026-11-06",
+      "dateModified": "2026-11-07",
+      "url": "https://www.brikito.com/blog-construction-document-control",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.brikito.com/blog-construction-document-control"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.brikito.com/#organization",
+        "name": "Brikito",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.brikito.com/icons/icon-512.png"
+        }
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is document control in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the process of registering, numbering, reviewing, approving, distributing and archiving project documents, such as drawings, specifications and contracts, so that everyone works from the current approved version and there is a record of every change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a drawing register?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A drawing register is a list of every project drawing with its number, title, current revision, status, issue date, recipients and transmittal reference. It is the single source of truth for which drawing is current."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are GFC drawings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GFC (good for construction) drawings are drawings formally released for building. Drawings marked for information or for approval should not be used for construction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a transmittal in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A transmittal is a record that accompanies issued documents, listing what was sent, the revision, the recipients, the date and the purpose. It proves who received which version and when."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you make sure the site uses the latest drawing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep current drawings in one place, issue every revision with a transmittal, withdraw or stamp superseded prints the same day, include subcontractors and fabrication yards, and check the revision on the work front before critical activities such as pours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is responsible for document control on a construction project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A document controller usually maintains the register and distribution on larger projects; on smaller ones it is the project manager or an engineer. Authors are responsible for document content, and the PM is accountable for the system working on site."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI tell the site which drawing revision is current?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if drawings are version-controlled in one place. In Brikito, anyone on the project can ask Brik AI in chat whether a revision has reached site, and it returns the latest tagged revision with its source. AI does not replace the drawing register or approvals; it makes them easier to find and use. See AI construction site chat."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Journal",
+          "item": "https://www.brikito.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Construction Document Control: Drawings & Revisions",
+          "item": "https://www.brikito.com/blog-construction-document-control"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" />
+<link rel="stylesheet" href="/assets/chrome.css?v=20261111h" />
+</head>
+<body>
+
+<!-- site-header (generated by tools/build-chrome.py; edit assets/site.js, rebuild) -->
+<div class="v2c v2c-head"><div class="progress" aria-hidden="true"></div><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header><div class="ann" role="region" aria-label="Launch offer"><script>try{if(localStorage.getItem("brikAnn1"))document.currentScript.parentNode.hidden=true}catch(e){}</script><div class="ann-in"><img class="ann-av" src="/img/brik-head-v2.webp" alt="" width="26" height="26"><p><b>Launch offer:</b> <span class="ann-long">the first 10 teams to book a demo get a 7-day free trial of Brikito.</span><span class="ann-short">first 10 teams get a 7-day free trial.</span> <a href="/book-a-demo?offer=7-day-trial">Claim your spot <span aria-hidden="true">→</span></a></p><button class="ann-x" type="button" aria-label="Dismiss offer banner" onclick="this.closest('.ann').hidden=true;try{localStorage.setItem('brikAnn1','1')}catch(e){}">✕</button></div></div>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a></div></div>
+<!-- /site-header -->
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">Site management · Documents</div>
+<h1>Construction Document Control: Drawings, Revisions and Approvals</h1>
+<p class="dek">How to register, number, approve, issue and archive project documents so every person on site works from the current approved drawing, and every change leaves a record.</p>
+<div class="meta"><span>Brikito Editorial</span><span><time datetime="2026-11-06">6 Nov 2026</time></span><span>8 min read</span><span>Documents / Drawings</span></div>
+</div>
+</section>
+<div class="layout">
+<article>
+<figure class="cover"><img src="/images/blog/construction-document-control.svg" alt="Illustration of a structural drawing with a revision cloud marked Rev C beside a register showing Rev C as good for construction and older revisions superseded" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+<div class="answer"><p><strong>The short answer:</strong> Construction document control is the process of registering, numbering, reviewing, approving, issuing and archiving project documents so that everyone works from the current, approved version. It covers drawings, specifications, BOQs, contracts, method statements and correspondence, and it rests on four things: a register, a numbering and revision system, an approval workflow and a record of who received what.</p></div>
+<p>The structural consultant issues Revision C of the L5 slab drawing on Monday, moving two beams. The site office prints it. The bar-bending contractor is still cutting steel from Revision B, which is pinned to the wall of his yard, two kilometres away. Nobody did anything unusual. The new drawing simply never reached the person who needed it.</p>
+<p>Document control exists to prevent exactly this. It is not an admin job for a large company; on any project with more than one drawing revision, it is the difference between building what was designed and building what someone remembered. This guide covers how to set it up on a building project, step by step.</p>
+
+<h2 id="definition">What is document control in construction?</h2>
+<p>Document control is the system that answers four questions about any project document at any moment:</p>
+<ol>
+<li><strong>What is the current version?</strong></li>
+<li><strong>What status is it?</strong> For information, for approval, approved, or good for construction.</li>
+<li><strong>Who has it?</strong> Which people and contractors received it, and when.</li>
+<li><strong>What changed?</strong> And who approved the change.</li>
+</ol>
+<p>If your team can't answer all four in under a minute, the site is relying on memory, and memory is how old drawings get built.</p>
+
+<h2 id="why">Why document control matters</h2>
+<ul>
+<li><strong>Rework:</strong> work built to a superseded drawing has to be broken out and redone, often after other trades have built on top of it.</li>
+<li><strong>Cost and time claims:</strong> without a dated record of what was issued, it is hard to show whether a change came from the designer, the developer or the contractor.</li>
+<li><strong>Quality and safety:</strong> structural and MEP changes that don't reach site can create real risk, not just cosmetic defects.</li>
+<li><strong>Approvals and compliance:</strong> authorities and lenders expect approved plans and records that match what was built.</li>
+<li><strong>Handover:</strong> as-built drawings and O&amp;M documents are only as good as the revision history behind them.</li>
+</ul>
+<p>We covered the most common failure in <a href="/blog-drawing-revisions">the most dangerous drawing on a construction site</a>: the superseded one that nobody withdrew. This guide covers the whole system around it.</p>
+
+<h2 id="types">Which documents need control?</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Document type</th><th>Examples</th><th>Typical approver</th></tr></thead>
+<tbody>
+<tr><td>Design drawings</td><td>Architectural, structural, MEP, landscape</td><td>Design consultant, then PM / developer</td></tr>
+<tr><td>Good-for-construction (GFC) drawings</td><td>Drawings released for building</td><td>Consultant and developer</td></tr>
+<tr><td>Shop and fabrication drawings</td><td>Steel, façade, joinery, bar bending schedules</td><td>Contractor prepares; consultant approves</td></tr>
+<tr><td>Specifications and BOQ</td><td>Material specs, item descriptions, quantities</td><td>QS / consultant / developer</td></tr>
+<tr><td>Contracts and work orders</td><td>Main contract, subcontracts, amendments</td><td>Developer / legal</td></tr>
+<tr><td>Method statements and ITPs</td><td>How work is done and inspected</td><td>Consultant / QA</td></tr>
+<tr><td>Material submittals</td><td>Samples, data sheets, test certificates</td><td>Consultant</td></tr>
+<tr><td>Correspondence and instructions</td><td>Site instructions, RFIs, letters, minutes</td><td>PM</td></tr>
+<tr><td>As-built and handover documents</td><td>As-built drawings, manuals, warranties</td><td>Contractor prepares; PM / consultant accepts</td></tr>
+</tbody></table></div>
+
+<h2 id="register">The drawing register: the heart of document control</h2>
+<p>A drawing register (or document register) is a single list of every controlled document with its current revision and status. At minimum it should hold:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Field</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Document number</td><td>SKY-B-STR-L05-201</td></tr>
+<tr><td>Title</td><td>Tower B, Level 5 slab reinforcement</td></tr>
+<tr><td>Discipline</td><td>Structural</td></tr>
+<tr><td>Current revision</td><td>C</td></tr>
+<tr><td>Status</td><td>Good for construction</td></tr>
+<tr><td>Date issued</td><td>09 Nov 2026</td></tr>
+<tr><td>Issued to</td><td>Site engineer B, bar-bending contractor, formwork contractor</td></tr>
+<tr><td>Transmittal reference</td><td>TR-0143</td></tr>
+<tr><td>Superseded revision</td><td>B (withdrawn from site 09 Nov)</td></tr>
+<tr><td>Change summary</td><td>Beams B12 and B14 relocated; see revision cloud</td></tr>
+</tbody></table></div>
+<p>The register must be the single source of truth. If a drawing exists on the site office wall but not in the register, or the register says Rev C but the contractor has Rev B, the system has already failed.</p>
+
+<h2 id="numbering">Document numbering and revision conventions</h2>
+<p>A good numbering system tells you what a document is without opening it. A common structure is:</p>
+<div class="callout"><span class="mono">Example structure</span>Project code – Building/zone – Discipline – Level/area – Type – Sequence number<br>e.g. <strong>SKY-B-STR-L05-DR-201</strong></div>
+<p>Keep these rules simple and agree them before the first drawing is issued:</p>
+<ul>
+<li>Use the same codes for buildings, levels and disciplines as the schedule and BOQ.</li>
+<li>Never reuse a number for a different document.</li>
+<li>Separate revision from number: the number stays the same; only the revision changes.</li>
+<li>Use a clear revision sequence (for example, letters or numbers, with a different prefix for preliminary and construction issues), and stick to it.</li>
+<li>Mark every change on the drawing with a revision cloud and a revision note.</li>
+</ul>
+<p>Projects working to ISO 19650, the international standard for information management using BIM, use a structured naming convention and a <a href="https://www.thenbs.com/knowledge/common-data-environments" rel="noopener" target="_blank">common data environment</a> in which information moves through work-in-progress, shared, published and archived states, with an agreed approval step between each. You don't need full BIM to borrow the idea: draft, shared for review, approved for construction, superseded.</p>
+
+<h2 id="status">Document status codes</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Status</th><th>Meaning</th><th>Can site build from it?</th></tr></thead>
+<tbody>
+<tr><td>Draft / work in progress</td><td>Being prepared by the author</td><td>No</td></tr>
+<tr><td>For information</td><td>Shared so others can see the direction</td><td>No</td></tr>
+<tr><td>For review / approval</td><td>Submitted to the consultant or client for comment</td><td>No</td></tr>
+<tr><td>Approved with comments</td><td>Accepted subject to listed changes</td><td>Only if the contract allows, with comments incorporated</td></tr>
+<tr><td>Good for construction (GFC)</td><td>Released for building</td><td>Yes</td></tr>
+<tr><td>Superseded</td><td>Replaced by a newer revision</td><td>No; withdraw from site</td></tr>
+<tr><td>As-built</td><td>Records what was actually built</td><td>Record only</td></tr>
+</tbody></table></div>
+
+<h2 id="workflow">The document control workflow, step by step</h2>
+<ol>
+<li><strong>Receive and register.</strong> Every incoming document is logged with number, revision, date and status before it is used.</li>
+<li><strong>Check.</strong> Confirm the number, title block, revision cloud and status are correct and complete.</li>
+<li><strong>Review and approve.</strong> Route to the right reviewer with a deadline. Record comments and the response.</li>
+<li><strong>Issue with a transmittal.</strong> Send the approved document to everyone who works from it, with a transmittal listing what was sent, to whom and why.</li>
+<li><strong>Withdraw the old revision.</strong> Collect or stamp superseded prints "SUPERSEDED" and remove them from the work front and contractors' yards.</li>
+<li><strong>Confirm receipt.</strong> Get acknowledgement from each recipient, especially subcontractors.</li>
+<li><strong>Brief the site.</strong> Walk the affected supervisors and foremen through what changed.</li>
+<li><strong>Archive.</strong> Keep every revision and its approval record. Never delete history.</li>
+</ol>
+
+<h2 id="changes">How drawing changes turn into cost and time</h2>
+<p>Not every revision is a variation, but many are. When a revision changes scope, quantity or sequence, link it to the commercial process:</p>
+<ul>
+<li>Record the revision and its reason (design development, client change, error correction, site condition).</li>
+<li>Check the impact on BOQ quantities, materials already ordered and work already built.</li>
+<li>Raise a site instruction or variation where the contract requires one, before the work is done.</li>
+<li>Update the schedule if the change affects the critical path.</li>
+</ul>
+<p>Our guide to <a href="/blog-construction-cost-control">construction cost control</a> covers how variations are tracked against budget.</p>
+
+<h2 id="site">Making sure the site uses the latest drawing</h2>
+<p>The register can be perfect and the site can still build from the wrong drawing. Close the last metre:</p>
+<ul>
+<li><strong>One place for current drawings,</strong> on paper and on phones, and nothing else on the walls.</li>
+<li><strong>Stamp or collect superseded prints</strong> the same day the new revision arrives.</li>
+<li><strong>Include subcontractors' yards and fabrication shops</strong>, not just the site office.</li>
+<li><strong>Check before critical work.</strong> Before a pour or a fabrication run, the engineer confirms the revision on the work front against the register.</li>
+<li><strong>Put the revision in the daily report</strong> for key activities, so it is visible if something goes wrong.</li>
+</ul>
+
+<h2 id="mistakes">10 document control mistakes that cause rework</h2>
+<ol>
+<li>No single register, or several registers that disagree.</li>
+<li>Drawings shared by forwarding chat messages, with no record of who received them.</li>
+<li>Old prints left on site after a revision.</li>
+<li>Revision clouds missing, so nobody can see what changed.</li>
+<li>The same number used for different drawings.</li>
+<li>Building from "for approval" drawings because GFC drawings are late.</li>
+<li>Consultant comments not tracked to closure.</li>
+<li>Shop drawings approved but not linked to the design revision they were based on.</li>
+<li>Verbal changes on site that never reach the designer or the register.</li>
+<li>As-built drawings left until the end, when nobody remembers what changed.</li>
+</ol>
+
+<h2 id="roles">Who is responsible for document control?</h2>
+<p>On larger projects, a dedicated document controller maintains the register, transmittals and archive. On smaller projects the role usually falls to the project manager, a project engineer or the site engineer. Either way, responsibilities should be explicit:</p>
+<ul>
+<li><strong>Authors</strong> (consultants, contractors) are responsible for the content and correct revision of their documents.</li>
+<li><strong>The document controller</strong> is responsible for registering, distributing and archiving.</li>
+<li><strong>The project manager</strong> is accountable for the system working and for withdrawal of superseded documents from site.</li>
+<li><strong>Site engineers</strong> are responsible for confirming the current revision before work starts.</li>
+</ul>
+
+<h2 id="checklist">Document control checklist</h2>
+<ul>
+<li>Is there one register for all controlled documents, with current revision and status?</li>
+<li>Is the numbering convention agreed and written down?</li>
+<li>Does every issue go out with a transmittal?</li>
+<li>Are superseded prints withdrawn from site and contractors' yards the same day?</li>
+<li>Do subcontractors acknowledge receipt of new revisions?</li>
+<li>Are revisions with cost or time impact linked to a site instruction or variation?</li>
+<li>Can the site engineer confirm the current revision of any drawing on a phone in under a minute?</li>
+<li>Are as-built changes recorded as they happen?</li>
+</ul>
+
+<h2 id="software">Where software fits</h2>
+<p>Spreadsheets can hold a register, but they can't stop someone opening an old PDF from a chat. Document control software helps when it keeps one current version, shows status and history, and controls who can see what.</p>
+<p>In Brikito, construction management software with Brik AI, drawings, BOQs, agreements and contracts live in a version-controlled Documents tab, with the latest revision always tagged on site. Drawing sign-offs can be approved by the PM inline in chat, and anyone on the project can ask Brik which revision is current. Access is scoped by role, so contractors see what they need and not the rest.</p>
+
+<h2 id="faqs">Frequently asked questions</h2>
+<div class="faq"><h3>What is document control in construction?</h3><p>It is the process of registering, numbering, reviewing, approving, distributing and archiving project documents, such as drawings, specifications and contracts, so that everyone works from the current approved version and there is a record of every change.</p>
+<h3>What is a drawing register?</h3><p>A drawing register is a list of every project drawing with its number, title, current revision, status, issue date, recipients and transmittal reference. It is the single source of truth for which drawing is current.</p>
+<h3>What are GFC drawings?</h3><p>GFC (good for construction) drawings are drawings formally released for building. Drawings marked for information or for approval should not be used for construction.</p>
+<h3>What is a transmittal in construction?</h3><p>A transmittal is a record that accompanies issued documents, listing what was sent, the revision, the recipients, the date and the purpose. It proves who received which version and when.</p>
+<h3>How do you make sure the site uses the latest drawing?</h3><p>Keep current drawings in one place, issue every revision with a transmittal, withdraw or stamp superseded prints the same day, include subcontractors and fabrication yards, and check the revision on the work front before critical activities such as pours.</p>
+<h3>Who is responsible for document control on a construction project?</h3><p>A document controller usually maintains the register and distribution on larger projects; on smaller ones it is the project manager or an engineer. Authors are responsible for document content, and the PM is accountable for the system working on site.</p>
+<h3>Can AI tell the site which drawing revision is current?</h3><p>Yes, if drawings are version-controlled in one place. In Brikito, anyone on the project can ask Brik AI in chat whether a revision has reached site, and it returns the latest tagged revision with its source. AI does not replace the drawing register or approvals; it makes them easier to find and use. See <a href="/blog-ai-construction-site-chat">AI construction site chat</a>.</p></div>
+
+<h2 id="takeaway">One version, one place, one record</h2>
+<p>Document control is simple to describe and easy to let slip: one register, one numbering system, one approval path, and a record of who received every revision. Get those right, withdraw old drawings the day new ones arrive, and you remove one of the most common causes of rework on site.</p>
+<section class="related" aria-labelledby="related-reading"><h2 id="related-reading">Related reading</h2><ul><li><a href="/blog-drawing-revisions"><span class="rt">Drawing Revision Control: Avoid Outdated Drawings on Site</span><span class="rd">The most dangerous drawing on site is the one that is no longer current. How to control drawing revisions so crews always build from the latest one.</span></a></li><li><a href="/blog-construction-site-documentation"><span class="rt">Construction Site Documentation: Every Report You Need</span><span class="rd">Every record a construction project should keep, from DPRs and cube registers to RFIs, site instructions and handover files, with owners and frequency.</span></a></li><li><a href="/blog-rework-coordination"><span class="rt">Construction Rework: The Information Gaps Behind It</span><span class="rd">Construction rework often starts with unclear instructions, outdated drawings and missed approvals. Learn how better coordination reduces avoidable rework.</span></a></li></ul></section>
+</article>
+<aside aria-label="Article contents" class="toc"><span class="mono">In this article</span><nav><a href="#definition">What is document control?</a><a href="#types">Documents that need control</a><a href="#register">The drawing register</a><a href="#numbering">Numbering and revisions</a><a href="#status">Document status codes</a><a href="#workflow">Workflow step by step</a><a href="#changes">Changes, cost and time</a><a href="#site">Latest drawing on site</a><a href="#mistakes">10 common mistakes</a><a href="#faqs">FAQs</a></nav></aside>
+</div>
+<section class="cta-band">
+<div class="cta-inner">
+<div>
+<h2>One current drawing. Everywhere.</h2>
+<p>See how Brikito keeps drawings, BOQs and contracts version-controlled, with the latest revision tagged on site and sign-offs approved in chat.</p>
+</div>
+<a class="button light" href="/book-a-demo">Book a Demo  ↗</a>
+</div>
+</section>
+</main>
+
+<!-- site-footer (generated by tools/build-chrome.py) -->
+<div class="v2c"><footer><div class="wrap"><div class="ft-top"><div class="ft-brand"><a class="ft-logo" href="/" aria-label="Brikito home"><svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lgft" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset=".5" stop-color="#5462F0"/><stop offset="1" stop-color="#3A8EF6"/></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lgft)"/></svg><span>Brikito</span></a><p class="ft-tag">The AI operating system for construction sites. Site chat, daily reports, materials and approvals in one app, in your own native language.</p><div class="ft-cta"><a class="ft-btn" href="/book-a-demo">Book a demo <span aria-hidden="true">→</span></a><a class="ft-btn2" href="mailto:hey@brikito.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>hey@brikito.com</a></div><div class="ft-soc"><a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.1 24.1 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a><a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div class="cols"><div><h5>Products</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div><div><h5>Free tools</h5><a href="/delay-cost-calculator">Delay cost calculator</a><a href="/free-tools#dpr-kit">DPR template</a><a href="/free-tools#material-tracker">Material &amp; BOQ tracker</a><a href="/free-tools">All free tools</a></div><div><h5>Company</h5><a href="/about">About us</a><a href="/how-it-works">How it works</a><a href="/blog">Journal</a></div><div><h5>Get started</h5><a href="/book-a-demo">Talk to our team</a><a href="/book-a-demo?offer=7-day-trial">7-day free trial</a></div></div></div><div class="ft-trust"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Data hosted in India</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Nothing sent without your approval</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>Works in your own native language</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Serving India, UAE, Singapore and Sri Lanka</span></div><div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="ft-legal"><a href="/privacy">Privacy policy</a></span></div></div></footer></div>
+<!-- /site-footer -->
+  
+<script src="/assets/site.js?v=20261111h" defer></script>
+</body>
+</html>

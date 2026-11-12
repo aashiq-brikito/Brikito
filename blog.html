@@ -1,319 +1,307 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brikito Journal · Construction, AI & Project Management</title>
-  <meta name="description" content="Ideas and practical guides for construction teams: project coordination, site productivity, construction technology, and AI." />
-  <meta name="robots" content="noindex" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;
-      --hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brikito Journal: Construction, AI &amp; Project Guides</title>
+<meta name="description" content="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/blog" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Brikito Journal: Construction, AI &amp; Project Guides" />
+<meta property="og:description" content="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI." />
+<meta property="og:url" content="https://www.brikito.com/blog" />
+<meta property="og:image" content="https://www.brikito.com/showreel-poster.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Brikito Journal: Construction, AI &amp; Project Guides" />
+<meta name="twitter:description" content="Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI." />
+<meta name="twitter:image" content="https://www.brikito.com/showreel-poster.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
+<link rel="stylesheet" href="/assets/site.css?v=20261111h" />
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "name": "Brikito Journal",
+      "url": "https://www.brikito.com/blog",
+      "description": "Practical guides for construction teams on project coordination, site updates, drawing control, cost overruns, construction technology and AI.",
+      "publisher": {
+        "@id": "https://www.brikito.com/#organization"
+      },
+      "inLanguage": "en",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "AI in Construction: Practical Ways AI Helps Project Teams",
+          "url": "https://www.brikito.com/blog-ai-construction",
+          "image": "https://www.brikito.com/images/blog/ai-construction.png",
+          "datePublished": "2026-10-30",
+          "description": "Practical uses of AI in construction, from finding project information and structuring site updates to summarising records, with human oversight."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Why Accurate BOQs Still Lead to Construction Cost Overruns",
+          "url": "https://www.brikito.com/blog-boq-cost-overruns",
+          "image": "https://www.brikito.com/images/blog/boq-cost-overruns.png",
+          "datePublished": "2026-11-01",
+          "description": "Your BOQ can be correct and the project can still lose money. See where construction cost overruns really come from and how to catch them earlier."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Information Management: Fix the Info Gap",
+          "url": "https://www.brikito.com/blog-construction-information-management",
+          "image": "https://www.brikito.com/images/blog/construction-information-management.png",
+          "datePublished": "2026-11-02",
+          "description": "Most construction communication problems are information problems. Learn how to manage project information so the right people act on the right data."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Drawing Revision Control: Avoid Outdated Drawings on Site",
+          "url": "https://www.brikito.com/blog-drawing-revisions",
+          "image": "https://www.brikito.com/images/blog/drawing-revisions.png",
+          "datePublished": "2026-10-29",
+          "description": "The most dangerous drawing on site is the one that is no longer current. How to control drawing revisions so crews always build from the latest one."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Rework: The Information Gaps Behind It",
+          "url": "https://www.brikito.com/blog-rework-coordination",
+          "image": "https://www.brikito.com/images/blog/rework-coordination.png",
+          "datePublished": "2026-10-28",
+          "description": "Construction rework often starts with unclear instructions, outdated drawings and missed approvals. Learn how better coordination reduces avoidable rework."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "7 Construction Site Updates Your Team Should Track",
+          "url": "https://www.brikito.com/blog-seven-site-updates",
+          "image": "https://www.brikito.com/images/blog/seven-site-updates.png",
+          "datePublished": "2026-10-31",
+          "description": "The seven site updates every construction team should capture daily, from progress and manpower to blockers, materials, approvals and next steps."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Where Does a Construction Project Actually Lose Time?",
+          "url": "https://www.brikito.com/blog-where-time-goes",
+          "image": "https://www.brikito.com/images/blog/where-time-goes.png",
+          "datePublished": "2026-10-27",
+          "description": "Construction delays build up between activities, approvals, decisions and handoffs. Learn how to spot waiting time and improve project coordination."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Daily Progress Report in Construction: Format & Template",
+          "url": "https://www.brikito.com/blog-daily-progress-report-construction",
+          "image": "https://www.brikito.com/images/blog/daily-progress-report-construction.jpg",
+          "datePublished": "2026-11-02",
+          "description": "What a construction daily progress report (DPR) should include, a worked example, a format you can copy, mistakes to avoid and how to automate it."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Building Construction Process: A Step-by-Step Guide",
+          "url": "https://www.brikito.com/blog-building-construction-process",
+          "image": "https://www.brikito.com/images/blog/building-construction-process.jpg",
+          "datePublished": "2026-11-02",
+          "description": "The building construction process step by step, from approvals and foundations to frame, services, finishes and handover, with hold points and checklists."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Material Management: Indent to Consumption",
+          "url": "https://www.brikito.com/blog-construction-material-management",
+          "image": "https://www.brikito.com/images/blog/construction-material-management.jpg",
+          "datePublished": "2026-11-02",
+          "description": "How construction material management works from indent to purchase order, GRN, storage, issue and reconciliation, with IS 4082 storage rules and a checklist."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Cost Control: A Practical Guide for Developers",
+          "url": "https://www.brikito.com/blog-construction-cost-control",
+          "image": "https://www.brikito.com/images/blog/construction-cost-control.jpg",
+          "datePublished": "2026-11-02",
+          "description": "A practical guide to construction cost control for developers: baseline budgets, commitments, earned value, materials, labour, changes and cash flow."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Scheduling and Delay Management Guide",
+          "url": "https://www.brikito.com/blog-construction-scheduling",
+          "image": "https://www.brikito.com/images/blog/construction-scheduling.jpg",
+          "datePublished": "2026-11-02",
+          "description": "How construction scheduling and delay management work: master programme, look-ahead plans, critical path, PPC, delay types and recovery, with a checklist."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction in India, UAE, Singapore & Sri Lanka: Guide",
+          "url": "https://www.brikito.com/blog-construction-market-guide",
+          "image": "https://www.brikito.com/images/blog/construction-market-guide.jpg",
+          "datePublished": "2026-11-02",
+          "description": "How construction is regulated in India, UAE, Singapore and Sri Lanka: RERA, Dubai escrow, BCA and CONQUAS, CIDA, and the site problems all four share."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Site Communication: A Complete Guide",
+          "url": "https://www.brikito.com/blog-construction-site-communication",
+          "image": "https://www.brikito.com/images/blog/construction-site-communication.jpg",
+          "datePublished": "2026-11-05",
+          "description": "How to set up construction site communication that works: channels, a communication matrix, daily rhythm, RFIs, site instructions and a checklist."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Site Documentation: Every Report You Need",
+          "url": "https://www.brikito.com/blog-construction-site-documentation",
+          "image": "https://www.brikito.com/images/blog/construction-site-documentation.jpg",
+          "datePublished": "2026-11-05",
+          "description": "Every record a construction project should keep, from DPRs and cube registers to RFIs, site instructions and handover files, with owners and frequency."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Labour Management: Attendance to Payroll",
+          "url": "https://www.brikito.com/blog-construction-labour-management",
+          "image": "https://www.brikito.com/images/blog/construction-labour-management.jpg",
+          "datePublished": "2026-11-05",
+          "description": "How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Document Control: Drawings & Revisions",
+          "url": "https://www.brikito.com/blog-construction-document-control",
+          "image": "https://www.brikito.com/images/blog/construction-document-control.jpg",
+          "datePublished": "2026-11-06",
+          "description": "How to control construction documents: drawing registers, numbering, revision and status codes, transmittals and keeping superseded drawings off site."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Site Safety and Quality Management Guide",
+          "url": "https://www.brikito.com/blog-construction-site-safety-and-quality",
+          "image": "https://www.brikito.com/images/blog/construction-site-safety-and-quality.jpg",
+          "datePublished": "2026-11-06",
+          "description": "A practical guide to construction site safety and quality: hazards and controls, permits, PPE, toolbox talks, ITPs, hold points, defects and NCRs."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Construction Management Software: Buyer's Guide",
+          "url": "https://www.brikito.com/blog-construction-management-software",
+          "image": "https://www.brikito.com/images/blog/construction-management-software.jpg",
+          "datePublished": "2026-11-06",
+          "description": "How to choose construction management software: types, a feature checklist, pricing models, 15 demo questions and a 7-step selection process."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Best AI Construction Management Software (2026 Guide)",
+          "url": "https://www.brikito.com/blog-best-ai-construction-management-software",
+          "image": "https://www.brikito.com/images/blog/ai-construction-management-software.jpg",
+          "datePublished": "2026-11-07",
+          "description": "Compare AI construction management software: what AI does on site, 8 buying criteria, top AI construction tools and why builders choose Brikito."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "AI Construction Software in India: Chennai, Bengaluru",
+          "url": "https://www.brikito.com/blog-ai-construction-software-india",
+          "image": "https://www.brikito.com/images/blog/ai-construction-software-india.jpg",
+          "datePublished": "2026-11-07",
+          "description": "AI construction management software for Indian builders in Chennai, Bengaluru and Coimbatore: multilingual site chat, attendance, materials and reports."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "AI Construction Management Software: UAE & Singapore",
+          "url": "https://www.brikito.com/blog-ai-construction-software-uae-singapore",
+          "image": "https://www.brikito.com/images/blog/ai-construction-software-uae-singapore.jpg",
+          "datePublished": "2026-11-07",
+          "description": "How AI construction management software helps contractors in Dubai, the UAE, Singapore and Sri Lanka with multilingual crews, safety and reporting."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "AI Construction Site Chat: A WhatsApp Alternative",
+          "url": "https://www.brikito.com/blog-ai-construction-site-chat",
+          "image": "https://www.brikito.com/images/blog/ai-construction-site-chat.jpg",
+          "datePublished": "2026-11-07",
+          "description": "How AI site chat turns construction messages and voice notes into tagged updates, attendance and indents. A WhatsApp alternative for site teams."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "AI CCTV for Construction Sites: PPE, Headcount, Progress",
+          "url": "https://www.brikito.com/blog-ai-cctv-construction-site-monitoring",
+          "image": "https://www.brikito.com/images/blog/ai-cctv-construction-site-monitoring.jpg",
+          "datePublished": "2026-11-07",
+          "description": "How AI CCTV and computer vision give construction sites live headcount, delivery logs, helmet and vest detection and progress monitoring."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Real Estate Development Process: Land to Handover",
+          "url": "https://www.brikito.com/blog-real-estate-development-process",
+          "image": "https://www.brikito.com/images/blog/real-estate-development-process.jpg",
+          "datePublished": "2026-11-11",
+          "description": "The real estate development process in 8 stages: due diligence, feasibility, JDA, approvals, RERA, sales, construction and handover."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Contractor and Subcontractor Management Guide",
+          "url": "https://www.brikito.com/blog-subcontractor-management",
+          "image": "https://www.brikito.com/images/blog/subcontractor-management.jpg",
+          "datePublished": "2026-11-11",
+          "description": "How to manage contractors and subcontractors: prequalification, work orders, coordination, measurement, payment, back-charges and close-out."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Stages of House Construction: Step-by-Step Guide",
+          "url": "https://www.brikito.com/blog-stages-of-house-construction",
+          "image": "https://www.brikito.com/images/blog/stages-of-house-construction.jpg",
+          "datePublished": "2026-11-11",
+          "description": "Every stage of house construction from foundation to handover, with checks before each stage, IS 456 curing and formwork times, and tips."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Journal",
+          "item": "https://www.brikito.com/blog"
+        }
+      ]
     }
-    html{scroll-behavior:smooth;scroll-padding-top:88px}
-    html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03'}
-    ::selection{background:var(--ink);color:var(--paper)}
-    a{color:inherit;text-decoration:none}
-    button,input{font:inherit}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-    .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
-    .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
-    @media(max-width:720px){.wrap{padding:0 20px}}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;cursor:pointer}
-    .btn .arrow{display:inline-block;transition:transform .2s ease}
-    .btn:hover .arrow{transform:translate(2px,-2px)}
-    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-    .btn-solid:hover{background:#222}
-    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
-    .btn-ghost:hover{border-color:var(--ink)}
-    .btn-sm{min-height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
-    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
-    /* Navigation — aligned with the Privacy Policy page */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
-    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
-    .nav-links{display:flex;align-items:center;gap:22px}
-    .nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
-    .nav-links a.lnk:hover,.nav-links a.lnk[aria-current="page"]{color:var(--ink)}
-    .nav-cta{display:flex;align-items:center;gap:10px}
-    @media(max-width:960px){.nav-links{display:none}.nav-cta .login{display:none}}
-    /* Page heading */
-    .phead{padding:82px 0 52px;position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
-    .phead::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 64px,linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/64px 100%;mask-image:radial-gradient(ellipse 70% 70% at 30% 20%,#000 25%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 30% 20%,#000 25%,transparent 75%);opacity:.55;pointer-events:none}
-    .phead-inner{position:relative;max-width:900px}
-    .phead .eyebrow{display:inline-block;margin-bottom:18px}
-    .phead h1{font-size:clamp(42px,6vw,72px);line-height:1.01;letter-spacing:-.05em;font-weight:500;text-wrap:balance}
-    .phead h1 .quiet{color:var(--muted-2)}
-    .phead p.deck{margin-top:22px;font-size:17.5px;line-height:1.55;color:var(--muted);max-width:62ch;text-wrap:pretty}
-    .phead-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:32px}
-    .meta{display:flex;gap:10px;flex-wrap:wrap}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--hair);border-radius:999px;background:var(--paper-2);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;color:var(--muted)}
-    .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--live)}
-    /* Featured story */
-    .featured-wrap{padding:44px 0 30px}
-    .section-top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
-    .section-top h2{font-size:15px;font-weight:600;letter-spacing:-.01em}
-    .feature{display:grid;grid-template-columns:1.1fr 1fr;border:1px solid var(--hair);border-radius:14px;overflow:hidden;min-height:360px;background:var(--paper)}
-    .feature-art{position:relative;min-height:320px;background:var(--paper-2);border-right:1px solid var(--hair);overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .feature-art::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 42px,linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/42px 100%;opacity:.8}
-    .feature-art::after{content:"";position:absolute;width:52%;aspect-ratio:1;border:1px solid #CFCFCF;border-radius:50%;box-shadow:0 0 0 24px rgba(0,0,0,.018),0 0 0 54px rgba(0,0,0,.018)}
-    .art-mark{position:relative;z-index:1;width:min(42%,220px);aspect-ratio:1;border:1px solid #AFAFAF;border-radius:12px;transform:rotate(-8deg);display:grid;place-items:center;background:rgba(255,255,255,.72);box-shadow:0 20px 60px rgba(0,0,0,.06)}
-    .art-mark svg{width:58%;height:58%}
-    .art-label{position:absolute;z-index:2;left:22px;bottom:20px;font:10px 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-    .feature-copy{padding:clamp(26px,4vw,48px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-    .story-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font:10.5px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
-    .story-meta .sep{width:3px;height:3px;border-radius:50%;background:var(--muted-2)}
-    .tag{display:inline-flex;align-items:center;border:1px solid var(--hair-2);border-radius:999px;padding:5px 9px;font:10px 'JetBrains Mono',monospace;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
-    .feature h2{font-size:clamp(27px,3.1vw,42px);line-height:1.08;letter-spacing:-.04em;font-weight:500;margin:20px 0 14px;text-wrap:balance}
-    .feature p{font-size:15.5px;line-height:1.65;color:var(--muted);max-width:48ch}
-    .feature-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
-    .text-link{font-size:13px;font-weight:500;text-decoration:underline;text-decoration-color:var(--hair-2);text-underline-offset:4px}
-    .text-link:hover{text-decoration-color:var(--ink)}
-    @media(max-width:760px){.feature{grid-template-columns:1fr}.feature-art{min-height:230px;border-right:0;border-bottom:1px solid var(--hair)}.feature-copy{padding:26px}}
-    /* Search and categories */
-    .listing{padding:42px 0 84px}
-    .listing-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:24px}
-    .listing-head h2{font-size:clamp(25px,3vw,34px);font-weight:500;letter-spacing:-.035em}
-    .listing-head p{font-size:14px;color:var(--muted);margin-top:8px}
-    .search{position:relative;width:min(100%,280px)}
-    .search input{width:100%;height:42px;padding:0 14px 0 38px;border:1px solid var(--hair-2);border-radius:8px;background:var(--paper);color:var(--ink);outline:none;font-size:13px}
-    .search input:focus{border-color:var(--ink)}
-    .search svg{position:absolute;left:13px;top:14px;width:14px;height:14px;color:var(--muted)}
-    .filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--hair);margin-bottom:26px}
-    .filter{height:32px;padding:0 13px;border:1px solid var(--hair);border-radius:999px;background:transparent;color:var(--muted);font-size:12.5px;cursor:pointer;transition:all .15s ease}
-    .filter:hover{border-color:var(--hair-2);color:var(--ink)}
-    .filter.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 20px}
-    .card{display:flex;flex-direction:column;min-width:0}
-    .card-art{position:relative;aspect-ratio:1.48;background:var(--paper-2);border:1px solid var(--hair);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-    .card-art::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--hair) 1px,transparent 1px) 0 0/100% 30px,linear-gradient(90deg,var(--hair) 1px,transparent 1px) 0 0/30px 100%;opacity:.72}
-    .card-art .shape{position:relative;z-index:1;width:94px;height:94px;border:1px solid #BEBEBE;border-radius:14px;transform:rotate(-8deg);display:grid;place-items:center;background:rgba(255,255,255,.76)}
-    .card-art .shape svg{width:48px;height:48px;stroke:#444;stroke-width:1.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-    .card-art .art-index{position:absolute;left:14px;top:14px;z-index:2;font:10px 'JetBrains Mono',monospace;color:var(--muted-2)}
-    .card-art .art-type{position:absolute;right:14px;bottom:14px;z-index:2;font:9px 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-    .card .story-meta{margin-bottom:12px;font-size:10px}
-    .card h3{font-size:22px;line-height:1.14;letter-spacing:-.03em;font-weight:500;margin-bottom:10px;text-wrap:balance}
-    .card h3 a:hover{text-decoration:underline;text-decoration-color:var(--hair-2);text-underline-offset:4px}
-    .card p{font-size:14px;line-height:1.62;color:var(--muted);margin-bottom:17px}
-    .card .read{font-size:12.5px;font-weight:500;margin-top:auto;display:inline-flex;align-items:center;gap:7px}
-    .card .read span{transition:transform .2s ease}
-    .card .read:hover span{transform:translate(3px,-2px)}
-    .empty{display:none;padding:44px 18px;border:1px dashed var(--hair-2);border-radius:10px;text-align:center;color:var(--muted);font-size:14px}
-    .empty.show{display:block}
-    .no-results{grid-column:1/-1}
-    @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:600px){.listing-head{align-items:stretch;flex-direction:column}.search{width:100%}.grid{grid-template-columns:1fr}.card-art{aspect-ratio:1.7}.phead{padding:62px 0 40px}.phead-bottom{align-items:flex-start;flex-direction:column}}
-    /* Footer — aligned with the Privacy Policy page */
-    footer{padding:72px 0 36px;border-top:1px solid var(--hair);margin-top:0}
-    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
-    .foot-brand .tagline{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
-    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
-    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-    .foot-col a{font-size:13.5px;color:var(--ink)}
-    .foot-col a:hover{color:var(--muted)}
-    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
-    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
-    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
-    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
-    @media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
-    @media(max-width:460px){.foot-top{grid-template-columns:1fr 1fr;gap:28px 20px}.foot-brand{grid-column:1/-1}}
-  </style>
-  <link rel="stylesheet" href="components/global.css">
+  ]
+}
+</script>
 </head>
 <body>
-  <div data-global-header></div>
-
-  <main>
-    <section class="phead">
-      <div class="wrap phead-inner">
-        <span class="eyebrow">The Brikito Journal</span>
-        <h1>Better projects start with <span class="quiet">better information.</span></h1>
-        <p class="deck">Practical ideas for construction teams building smarter: from site coordination and cost control to construction technology and AI.</p>
-        <div class="phead-bottom">
-          <div class="meta">
-            <span class="chip"><span class="dot" aria-hidden="true"></span>Ideas for the built world</span>
-            <span class="chip">Construction · Technology · AI</span>
-          </div>
-          <a class="btn btn-ghost" href="#latest">Explore the journal <span class="arrow">↘</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="featured-wrap">
-      <div class="wrap">
-        <div class="section-top">
-          <h2>Featured story</h2>
-          <span class="eyebrow">01 / Editor's pick</span>
-        </div>
-        <article class="feature">
-          <div class="feature-art" aria-label="Abstract editorial illustration about construction information flow">
-            <div class="art-mark" aria-hidden="true">
-              <svg viewBox="0 0 100 100" fill="none">
-                <rect x="13" y="13" width="28" height="28" stroke="#777" stroke-width="1.4"/>
-                <rect x="59" y="13" width="28" height="28" stroke="#777" stroke-width="1.4"/>
-                <rect x="13" y="59" width="28" height="28" stroke="#777" stroke-width="1.4"/>
-                <rect x="59" y="59" width="28" height="28" stroke="#111" stroke-width="1.8"/>
-                <path d="M41 27H59M27 41V59M73 41V59M41 73H59" stroke="#777" stroke-width="1.4" stroke-dasharray="3 3"/>
-              </svg>
-            </div>
-            <span class="art-label">Field notes / 001</span>
-          </div>
-          <div class="feature-copy">
-            <div class="story-meta"><span class="tag">Project management</span><span class="sep"></span><span>8 min read</span></div>
-            <h2>Your construction project doesn’t have a communication problem. It has an information problem.</h2>
-            <p>When updates live across chats, calls, spreadsheets, and drawings, teams lose the context they need to make good decisions. Here’s how to spot the gaps and bring project information together.</p>
-            <div class="feature-actions">
-              <a class="btn btn-solid" href="blog-construction-information-management.html">Read the story <span class="arrow">↗</span></a>
-              <span class="eyebrow">Coordination / Workflow</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="listing" id="latest">
-      <div class="wrap">
-        <div class="listing-head">
-          <div>
-            <span class="eyebrow">From the field and beyond</span>
-            <h2>Latest thinking</h2>
-            <p>Useful perspectives for the people who plan, build, and manage projects.</p>
-          </div>
-          <label class="search">
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="6.8" cy="6.8" r="4.8" stroke="currentColor" stroke-width="1.3"/><path d="m10.4 10.4 3.2 3.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            <input id="searchInput" type="search" placeholder="Search articles..." aria-label="Search articles" />
-          </label>
-        </div>
-
-        <div class="filters" role="group" aria-label="Filter articles by category">
-          <button class="filter active" type="button" data-filter="all" aria-pressed="true">All stories</button>
-          <button class="filter" type="button" data-filter="site-management" aria-pressed="false">Site management</button>
-          <button class="filter" type="button" data-filter="cost-control" aria-pressed="false">Cost control</button>
-          <button class="filter" type="button" data-filter="technology" aria-pressed="false">Technology & AI</button>
-          <button class="filter" type="button" data-filter="planning" aria-pressed="false">Planning & workflow</button>
-        </div>
-
-        <div class="grid" id="articleGrid">
-          <article class="card" data-category="site-management" data-search="construction project information management communication information gaps whatsapp calls spreadsheets coordination">
-            <a class="card-art" href="blog-construction-information-management.html" aria-label="Read: Your construction project has an information problem">
-              <span class="art-index">01 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="7" width="14" height="14"/><rect x="27" y="7" width="14" height="14"/><rect x="7" y="27" width="14" height="14"/><rect x="27" y="27" width="14" height="14"/><path d="M21 14h6M14 21v6M34 21v6M21 34h6"/></svg></div><span class="art-type">Information / Workflow</span>
-            </a>
-            <div class="story-meta"><span>Project management</span><span class="sep"></span><span>8 min read</span></div>
-            <h3><a href="blog-construction-information-management.html">Your construction project doesn’t have a communication problem. It has an information problem.</a></h3>
-            <p>When updates are scattered across chats, calls, spreadsheets, and drawings, teams lose the context they need to make good decisions.</p>
-            <a class="read" href="blog-construction-information-management.html">Read article <span>↗</span></a>
-          </article>
-
-          <article class="card" data-category="cost-control" data-search="boq budget cost overruns project estimate construction money">
-            <a class="card-art" href="blog-boq-cost-overruns.html" aria-label="Read: A correct BOQ can still lead to a loss">
-              <span class="art-index">02 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 38h32M12 34V10h24v24M18 16h12M18 22h12M18 28h7"/><path d="m29 29 5-5 4 3"/></svg></div><span class="art-type">Cost / Control</span>
-            </a>
-            <div class="story-meta"><span>Cost control</span><span class="sep"></span><span>6 min read</span></div>
-            <h3><a href="blog-boq-cost-overruns.html">Your BOQ can be 100% correct and your project can still lose money.</a></h3>
-            <p>Why accurate estimates don’t guarantee cost control—and where execution gaps quietly eat into margins.</p>
-            <a class="read" href="blog-boq-cost-overruns.html">Read article <span>↗</span></a>
-          </article>
-
-          <article class="card" data-category="site-management" data-search="site engineer daily updates manpower materials progress construction reporting">
-            <a class="card-art" href="blog-seven-site-updates.html" aria-label="Read: Seven site updates teams should not chase">
-              <span class="art-index">03 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="32" rx="2"/><path d="m16 17 2 2 4-5M25 17h7M16 26l2 2 4-5M25 26h7M16 34h16"/></svg></div><span class="art-type">Site / Updates</span>
-            </a>
-            <div class="story-meta"><span>Site management</span><span class="sep"></span><span>5 min read</span></div>
-            <h3><a href="blog-seven-site-updates.html">The 7 construction updates nobody should have to ask for.</a></h3>
-            <p>Progress, manpower, materials, tasks, documents, delays, and budget status—without the daily follow-up chase.</p>
-            <a class="read" href="blog-seven-site-updates.html">Read article <span>↗</span></a>
-          </article>
-
-          <article class="card" data-category="technology" data-search="AI construction artificial intelligence project manager automation brik ai">
-            <a class="card-art" href="blog-ai-construction.html" aria-label="Read: What if your construction project had a brain">
-              <span class="art-index">04 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 7v6M24 35v6M7 24h6M35 24h6M12 12l4 4M32 32l4 4M36 12l-4 4M16 32l-4 4"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3"/></svg></div><span class="art-type">Technology / AI</span>
-            </a>
-            <div class="story-meta"><span>Technology & AI</span><span class="sep"></span><span>7 min read</span></div>
-            <h3><a href="blog-ai-construction.html">What if your construction project had a brain?</a></h3>
-            <p>A practical look at how AI can help teams find information, structure updates, and surface what needs attention.</p>
-            <a class="read" href="blog-ai-construction.html">Read article <span>↗</span></a>
-          </article>
-
-          <article class="card" data-category="planning" data-search="drawing revision control outdated drawings rework approvals document management">
-            <a class="card-art" href="blog-drawing-revisions.html" aria-label="Read: The most dangerous drawing on a construction site">
-              <span class="art-index">05 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M13 7h16l7 7v27H13z"/><path d="M29 7v8h7M18 22h13M18 28h13M18 34h8"/><circle cx="34" cy="34" r="7" fill="#FAFAFA"/><path d="M34 30v5M34 38h.01"/></svg></div><span class="art-type">Drawings / Workflow</span>
-            </a>
-            <div class="story-meta"><span>Planning & workflow</span><span class="sep"></span><span>6 min read</span></div>
-            <h3><a href="blog-drawing-revisions.html">The most dangerous drawing on a construction site.</a></h3>
-            <p>It might not be a bad drawing. It might be a perfectly good drawing that is no longer the latest revision.</p>
-            <a class="read" href="blog-drawing-revisions.html">Read article <span>↗</span></a>
-          </article>
-
-          <article class="card" data-category="site-management" data-search="rework labour productivity site coordination construction mistakes">
-            <a class="card-art" href="blog-rework-coordination.html" aria-label="Read: Rework is not always a labour problem">
-              <span class="art-index">06 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 13h18M10 20h12M10 27h18M10 34h11"/><path d="m29 26 8 8M37 26l-8 8"/><circle cx="33" cy="30" r="10"/></svg></div><span class="art-type">Quality / Delivery</span>
-            </a>
-            <div class="story-meta"><span>Site management</span><span class="sep"></span><span>4 min read</span></div>
-            <h3><a href="blog-rework-coordination.html">Rework isn’t always a labour problem.</a></h3>
-            <p>Before blaming execution, look at the instructions, revisions, approvals, and handoffs that came before the work.</p>
-            <a class="read" href="blog-rework-coordination.html">Read article <span>↗</span></a>
-          </article>
-
-          <article class="card" data-category="planning" data-search="construction delays project schedule handoffs approvals waiting time">
-            <a class="card-art" href="blog-where-time-goes.html" aria-label="Read: Where construction projects actually lose time">
-              <span class="art-index">07 — FIELD NOTE</span><div class="shape" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M24 14v11l8 5"/><path d="M8 8l5 5M40 8l-5 5"/></svg></div><span class="art-type">Planning / Time</span>
-            </a>
-            <div class="story-meta"><span>Planning & workflow</span><span class="sep"></span><span>5 min read</span></div>
-            <h3><a href="blog-where-time-goes.html">Where does a construction project actually lose time?</a></h3>
-            <p>Delays are not always dramatic. Many start as small waits between decisions, approvals, and teams.</p>
-            <a class="read" href="blog-where-time-goes.html">Read article <span>↗</span></a>
-          </article>
-        </div>
-        <div class="empty" id="emptyState">No articles match that search. Try a different keyword or category.</div>
-      </div>
-    </section>
-  </main>
-
-  <div data-global-footer></div>
-
-  <script>
-    (function(){
-      const search = document.getElementById('searchInput');
-      const filters = [...document.querySelectorAll('.filter')];
-      const cards = [...document.querySelectorAll('.card')];
-      const empty = document.getElementById('emptyState');
-      let activeFilter = 'all';
-
-      function update(){
-        const query = search.value.trim().toLowerCase();
-        let visible = 0;
-        cards.forEach(card => {
-          const categoryMatch = activeFilter === 'all' || card.dataset.category === activeFilter;
-          const searchable = (card.dataset.search + ' ' + card.innerText).toLowerCase();
-          const searchMatch = !query || searchable.includes(query);
-          const show = categoryMatch && searchMatch;
-          card.hidden = !show;
-          if(show) visible++;
-        });
-        empty.classList.toggle('show', visible === 0);
-      }
-
-      filters.forEach(button => {
-        button.addEventListener('click', () => {
-          activeFilter = button.dataset.filter;
-          filters.forEach(item => {
-            const selected = item === button;
-            item.classList.toggle('active', selected);
-            item.setAttribute('aria-pressed', String(selected));
-          });
-          update();
-        });
-      });
-      search.addEventListener('input', update);
-    })();
-  </script>
-  <script src="components/global.js"></script>
+<div class="progress" aria-hidden="true"></div>
+<div id="shell"><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog" class="on">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header><div class="ann" role="region" aria-label="Launch offer"><script>try{if(localStorage.getItem("brikAnn1"))document.currentScript.parentNode.hidden=true}catch(e){}</script><div class="ann-in"><img class="ann-av" src="/img/brik-head-v2.webp" alt="" width="26" height="26"><p><b>Launch offer:</b> <span class="ann-long">the first 10 teams to book a demo get a 7-day free trial of Brikito.</span><span class="ann-short">first 10 teams get a 7-day free trial.</span> <a href="/book-a-demo?offer=7-day-trial">Claim your spot <span aria-hidden="true">→</span></a></p><button class="ann-x" type="button" aria-label="Dismiss offer banner" onclick="this.closest('.ann').hidden=true;try{localStorage.setItem('brikAnn1','1')}catch(e){}">✕</button></div></div>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a></div></div>
+<main id="app">
+<section class="hero" style="padding-bottom:40px"><div class="aurora" aria-hidden="true"></div><div class="wrap"><div class="copy"><p class="eyebrow rv">The Brikito Journal</p><h1 class="d1 rv dl1">Better projects start with better information.</h1><p class="lead rv dl2">Practical ideas on site coordination, cost control, construction technology and AI.</p></div></div></section>
+<section class="sec-sm" style="padding-top:30px"><div class="wrap">
+<a class="rv feat-post" href="/blog-construction-information-management" style="display:grid;grid-template-columns:1.1fr 1fr;border-radius:var(--r-xl);overflow:hidden;background:#0B0B0F;color:#fff">
+<div style="padding:56px;display:flex;flex-direction:column;gap:18px"><span class="chip" style="background:#1D1D22;color:#D6D6DA;align-self:flex-start">Editor’s pick · Project management</span><h2 class="d3">Your construction project doesn’t have a communication problem. It has an information problem.</h2><p style="color:#A1A1A8">Updates scattered across chats, calls, spreadsheets and drawings cost teams their context. How to spot the gaps, and bring project information together.</p><span style="color:#8E8E95;font-size:14px">8 min read · 2 Nov 2026</span><span class="link" style="color:#9DB3FF">Read the story <span class="ch" aria-hidden="true">›</span></span></div>
+<div style="background:#141417;position:relative;min-height:340px"><img src="/images/blog/photo-construction-information-management.jpg" alt="Site engineers in hard hats checking a phone together, beside an engineer reviewing drawings in a site office" width="1200" height="675" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div></a>
+<div style="margin-top:80px"><div class="secthead  rv"><h2 class="d2">Latest thinking.</h2><p class="lead">Useful perspectives for people who plan, build and manage projects.</p></div></div>
+<div class="filters" data-filters=""><button class="on" data-f="All stories">All stories</button><button class="" data-f="Site management">Site management</button><button class="" data-f="Cost control">Cost control</button><button class="" data-f="Technology &amp; AI">Technology &amp; AI</button><button class="" data-f="Planning &amp; workflow">Planning &amp; workflow</button><input type="search" placeholder="Search articles" aria-label="Search articles" data-q=""></div>
+<div class="posts" data-posts=""><a class="post rv dl0" href="/blog-real-estate-development-process" data-cat="Planning &amp; workflow" data-t="real estate development process: from land to handover eight stages from land due diligence and feasibility to rera, construction and handover, with the gate at each one."><div class="cov"><img src="/images/blog/photo-real-estate-development-process.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Planning &amp; workflow</span></div><div class="bd"><small>8 min read · 11 Nov 2026</small><h3>Real Estate Development Process: From Land to Handover</h3><p>Eight stages from land due diligence and feasibility to RERA, construction and handover, with the gate at each one.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-subcontractor-management" data-cat="Site management" data-t="contractor and subcontractor management: a complete guide prequalification, work orders, look-aheads, area handovers, measurement-based payment, back-charges and close-out."><div class="cov"><img src="/images/blog/photo-subcontractor-management.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 8%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>8 min read · 11 Nov 2026</small><h3>Contractor and Subcontractor Management: A Complete Guide</h3><p>Prequalification, work orders, look-aheads, area handovers, measurement-based payment, back-charges and close-out.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-stages-of-house-construction" data-cat="Planning &amp; workflow" data-t="stages of house construction: a step-by-step guide with checks every stage of building an rcc house, from foundation to handover, and what to check before it&#x27;s covered up."><div class="cov"><img src="/images/blog/photo-stages-of-house-construction.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Planning &amp; workflow</span></div><div class="bd"><small>8 min read · 11 Nov 2026</small><h3>Stages of House Construction: A Step-by-Step Guide With Checks</h3><p>Every stage of building an RCC house, from foundation to handover, and what to check before it&#x27;s covered up.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-best-ai-construction-management-software" data-cat="Technology &amp; AI" data-t="best ai construction management software in 2026: how to choose what ai construction software does, 8 criteria, the top ai construction tools by type, and how to choose one."><div class="cov"><img src="/images/blog/photo-best-ai-construction-management-software.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Technology &amp; AI</span></div><div class="bd"><small>8 min read · 7 Nov 2026</small><h3>Best AI Construction Management Software in 2026: How to Choose</h3><p>What AI construction software does, 8 criteria, the top AI construction tools by type, and how to choose one.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-ai-construction-software-india" data-cat="Technology &amp; AI" data-t="ai construction management software in india: chennai, bengaluru and coimbatore how ai construction software works on indian sites, with city guides for chennai, bengaluru and coimbatore."><div class="cov"><img src="/images/blog/photo-ai-construction-software-india.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Technology &amp; AI</span></div><div class="bd"><small>7 min read · 7 Nov 2026</small><h3>AI Construction Management Software in India: Chennai, Bengaluru and Coimbatore</h3><p>How AI construction software works on Indian sites, with city guides for Chennai, Bengaluru and Coimbatore.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-ai-construction-software-uae-singapore" data-cat="Technology &amp; AI" data-t="ai construction management software in the uae and singapore how ai helps contractors in dubai, the uae, singapore and sri lanka with multilingual crews, safety and reporting."><div class="cov"><img src="/images/blog/photo-ai-construction-software-uae-singapore.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Technology &amp; AI</span></div><div class="bd"><small>5 min read · 7 Nov 2026</small><h3>AI Construction Management Software in the UAE and Singapore</h3><p>How AI helps contractors in Dubai, the UAE, Singapore and Sri Lanka with multilingual crews, safety and reporting.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-ai-construction-site-chat" data-cat="Technology &amp; AI" data-t="ai construction site chat: the whatsapp alternative that turns messages into work how ai site chat tags messages and voice notes, and turns site requests into indents the pm approves in one tap."><div class="cov"><img src="/images/blog/photo-ai-construction-site-chat.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Technology &amp; AI</span></div><div class="bd"><small>5 min read · 7 Nov 2026</small><h3>AI Construction Site Chat: The WhatsApp Alternative That Turns Messages Into Work</h3><p>How AI site chat tags messages and voice notes, and turns site requests into indents the PM approves in one tap.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-ai-cctv-construction-site-monitoring" data-cat="Technology &amp; AI" data-t="ai cctv for construction sites: headcount, ppe and progress monitoring how computer vision on your existing cctv gives live headcount, delivery logs, ppe alerts and progress monitoring."><div class="cov"><img src="/images/blog/photo-ai-cctv-construction-site-monitoring.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Technology &amp; AI</span></div><div class="bd"><small>6 min read · 7 Nov 2026</small><h3>AI CCTV for Construction Sites: Headcount, PPE and Progress Monitoring</h3><p>How computer vision on your existing CCTV gives live headcount, delivery logs, PPE alerts and progress monitoring.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-construction-document-control" data-cat="Site management" data-t="construction document control: drawings, revisions and approvals drawing registers, numbering, status codes, transmittals, and a workflow that keeps superseded drawings off site."><div class="cov"><img src="/images/blog/photo-construction-document-control.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>8 min read · 6 Nov 2026</small><h3>Construction Document Control: Drawings, Revisions and Approvals</h3><p>Drawing registers, numbering, status codes, transmittals, and a workflow that keeps superseded drawings off site.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-construction-site-safety-and-quality" data-cat="Site management" data-t="construction site safety and quality management: a practical guide hazard controls, permits, ppe, toolbox talks, itps, hold points, defects and ncrs."><div class="cov"><img src="/images/blog/photo-construction-site-safety-and-quality.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>8 min read · 6 Nov 2026</small><h3>Construction Site Safety and Quality Management: A Practical Guide</h3><p>Hazard controls, permits, PPE, toolbox talks, ITPs, hold points, defects and NCRs.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-construction-management-software" data-cat="Technology &amp; AI" data-t="construction management software: the complete buyer’s guide software types, a feature checklist, pricing models, demo questions and a seven-step selection process."><div class="cov"><img src="/images/blog/photo-construction-management-software.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Technology &amp; AI</span></div><div class="bd"><small>9 min read · 6 Nov 2026</small><h3>Construction Management Software: The Complete Buyer’s Guide</h3><p>Software types, a feature checklist, pricing models, demo questions and a seven-step selection process.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-construction-site-communication" data-cat="Site management" data-t="construction site communication: the complete guide for developers and contractors channels, a communication matrix, a daily rhythm, and how to write site messages people can act on."><div class="cov"><img src="/images/blog/photo-construction-site-communication.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>10 min read · 5 Nov 2026</small><h3>Construction Site Communication: The Complete Guide for Developers and Contractors</h3><p>Channels, a communication matrix, a daily rhythm, and how to write site messages people can act on.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-construction-site-documentation" data-cat="Site management" data-t="construction site documentation: every report a project needs required records, their owners and frequency, plus is 456 cube sampling and rera updates."><div class="cov"><img src="/images/blog/photo-construction-site-documentation.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>10 min read · 5 Nov 2026</small><h3>Construction Site Documentation: Every Report a Project Needs</h3><p>Required records, their owners and frequency, plus IS 456 cube sampling and RERA updates.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-construction-labour-management" data-cat="Site management" data-t="construction labour management: attendance, productivity and payroll manpower planning, attendance controls, output per labour-day, contractor bill checks and the new labour codes."><div class="cov"><img src="/images/blog/photo-construction-labour-management.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>10 min read · 5 Nov 2026</small><h3>Construction Labour Management: Attendance, Productivity and Payroll</h3><p>Manpower planning, attendance controls, output per labour-day, contractor bill checks and the new labour codes.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-daily-progress-report-construction" data-cat="Site management" data-t="daily progress report (dpr) in construction: format, template and how to automate it what goes in a dpr, a worked example and format, and how to automate it."><div class="cov"><img src="/images/blog/photo-daily-progress-report-construction.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>10 min read · 2 Nov 2026</small><h3>Daily Progress Report (DPR) in Construction: Format, Template and How to Automate It</h3><p>What goes in a DPR, a worked example and format, and how to automate it.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-building-construction-process" data-cat="Planning &amp; workflow" data-t="building construction process step by step eight stages from approvals to handover, the hold points between them, and where time is lost."><div class="cov"><img src="/images/blog/photo-building-construction-process.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Planning &amp; workflow</span></div><div class="bd"><small>13 min read · 2 Nov 2026</small><h3>Building Construction Process Step by Step</h3><p>Eight stages from approvals to handover, the hold points between them, and where time is lost.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-construction-material-management" data-cat="Cost control" data-t="construction material management: from indent to consumption indent, purchase order, goods receipt, storage, issue and reconciliation, step by step."><div class="cov"><img src="/images/blog/photo-construction-material-management.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Cost control</span></div><div class="bd"><small>11 min read · 2 Nov 2026</small><h3>Construction Material Management: From Indent to Consumption</h3><p>Indent, purchase order, goods receipt, storage, issue and reconciliation, step by step.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-construction-cost-control" data-cat="Cost control" data-t="construction cost control: a practical guide for developers budgets, commitments, earned value, and the site events that drive cost variances."><div class="cov"><img src="/images/blog/photo-construction-cost-control.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Cost control</span></div><div class="bd"><small>11 min read · 2 Nov 2026</small><h3>Construction Cost Control: A Practical Guide for Developers</h3><p>Budgets, commitments, earned value, and the site events that drive cost variances.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-construction-scheduling" data-cat="Planning &amp; workflow" data-t="construction scheduling and delay management guide master programmes, daily plans, the critical path, ppc, delay types and recovery."><div class="cov"><img src="/images/blog/photo-construction-scheduling.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Planning &amp; workflow</span></div><div class="bd"><small>11 min read · 2 Nov 2026</small><h3>Construction Scheduling and Delay Management Guide</h3><p>Master programmes, daily plans, the critical path, PPC, delay types and recovery.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-construction-market-guide" data-cat="Planning &amp; workflow" data-t="construction in india, uae, singapore and sri lanka: a market guide regulations and grading systems across four markets, and the site problems they share."><div class="cov"><img src="/images/blog/photo-construction-market-guide.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Planning &amp; workflow</span></div><div class="bd"><small>12 min read · 2 Nov 2026</small><h3>Construction in India, UAE, Singapore and Sri Lanka: A Market Guide</h3><p>Regulations and grading systems across four markets, and the site problems they share.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-boq-cost-overruns" data-cat="Cost control" data-t="your boq can be 100% correct and your project can still lose money. why accurate estimates don’t guarantee cost control, and the execution gaps that erode margin."><div class="cov"><img src="/images/blog/photo-boq-cost-overruns.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Cost control</span></div><div class="bd"><small>6 min read · 1 Nov 2026</small><h3>Your BOQ can be 100% correct and your project can still lose money.</h3><p>Why accurate estimates don’t guarantee cost control, and the execution gaps that erode margin.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-seven-site-updates" data-cat="Site management" data-t="the 7 construction updates nobody should have to ask for. progress, manpower, materials, tasks, documents, delays and budget. they should arrive on their own."><div class="cov"><img src="/images/blog/photo-seven-site-updates.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>5 min read · 31 Oct 2026</small><h3>The 7 construction updates nobody should have to ask for.</h3><p>Progress, manpower, materials, tasks, documents, delays and budget. They should arrive on their own.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-ai-construction" data-cat="Technology &amp; AI" data-t="what if your construction project had a brain? how ai helps teams find information, structure updates and flag what needs attention."><div class="cov"><img src="/images/blog/photo-ai-construction.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Technology &amp; AI</span></div><div class="bd"><small>7 min read · 30 Oct 2026</small><h3>What if your construction project had a brain?</h3><p>How AI helps teams find information, structure updates and flag what needs attention.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl2" href="/blog-drawing-revisions" data-cat="Planning &amp; workflow" data-t="the most dangerous drawing on a construction site. a good drawing that’s no longer the latest revision."><div class="cov"><img src="/images/blog/photo-drawing-revisions.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Planning &amp; workflow</span></div><div class="bd"><small>6 min read · 29 Oct 2026</small><h3>The most dangerous drawing on a construction site.</h3><p>A good drawing that’s no longer the latest revision.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl0" href="/blog-rework-coordination" data-cat="Site management" data-t="rework isn’t always a labour problem. check instructions, revisions, approvals and handoffs before blaming the crew."><div class="cov"><img src="/images/blog/photo-rework-coordination.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Site management</span></div><div class="bd"><small>4 min read · 28 Oct 2026</small><h3>Rework isn’t always a labour problem.</h3><p>Check instructions, revisions, approvals and handoffs before blaming the crew.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a><a class="post rv dl1" href="/blog-where-time-goes" data-cat="Planning &amp; workflow" data-t="where does a construction project actually lose time? delays often start as small waits between decisions, approvals and teams."><div class="cov"><img src="/images/blog/photo-where-time-goes.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;font-size:12px;font-weight:600;color:#fff;background:rgba(11,11,15,.62);padding:3px 9px;border-radius:999px">Planning &amp; workflow</span></div><div class="bd"><small>5 min read · 27 Oct 2026</small><h3>Where does a construction project actually lose time?</h3><p>Delays often start as small waits between decisions, approvals and teams.</p><span class="link">Read article <span class="ch" aria-hidden="true">›</span></span></div></a></div>
+<nav class="pager" data-pager="" aria-label="Journal pages"></nav><p class="center muted" data-empty="" style="display:none;margin-top:30px">No articles match that search. Try a different keyword or category.</p></div></section>
+<section class="sec dark"><div class="wrap center"><div class="rv" style="display:flex;justify-content:center;margin-bottom:30px"><svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg3" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg3)"></path></svg></div><h2 class="d2 rv">Put better information to work.</h2><p class="lead rv">See how Brikito turns site chat into records, reports and decisions.</p><div class="btns rv"><a class="btn btn-p" href="/book-a-demo">Book a demo</a><a class="btn btn-s" href="/pricing">See pricing</a></div></div></section><footer><div class="wrap"><div class="ft-top"><div class="ft-brand"><a class="ft-logo" href="/" aria-label="Brikito home"><svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lgft" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset=".5" stop-color="#5462F0"/><stop offset="1" stop-color="#3A8EF6"/></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lgft)"/></svg><span>Brikito</span></a><p class="ft-tag">The AI operating system for construction sites. Site chat, daily reports, materials and approvals in one app, in your own native language.</p><div class="ft-cta"><a class="ft-btn" href="/book-a-demo">Book a demo <span aria-hidden="true">→</span></a><a class="ft-btn2" href="mailto:hey@brikito.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>hey@brikito.com</a></div><div class="ft-soc"><a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.1 24.1 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a><a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div class="cols"><div><h5>Products</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div><div><h5>Free tools</h5><a href="/delay-cost-calculator">Delay cost calculator</a><a href="/free-tools#dpr-kit">DPR template</a><a href="/free-tools#material-tracker">Material &amp; BOQ tracker</a><a href="/free-tools">All free tools</a></div><div><h5>Company</h5><a href="/about">About us</a><a href="/how-it-works">How it works</a><a href="/blog">Journal</a></div><div><h5>Get started</h5><a href="/book-a-demo">Talk to our team</a><a href="/book-a-demo?offer=7-day-trial">7-day free trial</a></div></div></div><div class="ft-trust"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Data hosted in India</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Nothing sent without your approval</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>Works in your own native language</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Serving India, UAE, Singapore and Sri Lanka</span></div><div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="ft-legal"><a href="/privacy">Privacy policy</a></span></div></div></footer></main>
+<script src="/assets/site.js?v=20261111h" defer></script>
 </body>
 </html>

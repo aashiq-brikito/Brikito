@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Construction Scheduling and Delay Management Guide</title>
+<meta name="description" content="How construction scheduling and delay management work: master programme, look-ahead plans, critical path, PPC, delay types and recovery, with a checklist." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/blog-construction-scheduling" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Construction Scheduling and Delay Management Guide" />
+<meta property="og:description" content="How construction scheduling and delay management work: master programme, look-ahead plans, critical path, PPC, delay types and recovery, with a checklist." />
+<meta property="og:url" content="https://www.brikito.com/blog-construction-scheduling" />
+<meta property="og:image" content="https://www.brikito.com/images/blog/construction-scheduling.jpg" />
+<meta property="article:published_time" content="2026-11-02" />
+<meta property="article:modified_time" content="2026-11-07" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Construction Scheduling and Delay Management Guide" />
+<meta name="twitter:description" content="How construction scheduling and delay management work: master programme, look-ahead plans, critical path, PPC, delay types and recovery, with a checklist." />
+<meta name="twitter:image" content="https://www.brikito.com/images/blog/construction-scheduling.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--ink:#111214;--muted:#666a70;--line:#e6e7e9;--soft:#f7f7f8;--accent:#870873;--blue:#394c64;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#fff;font-family:"Inter Tight",Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{height:76px;border-bottom:1px solid rgba(20,20,20,.1);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:10}
+    .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;font-size:25px;letter-spacing:-1.2px;text-decoration:none}
+    .brand-dot{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover,.text-link:hover{color:var(--accent)}
+    .button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff!important;text-decoration:none;padding:11px 17px;border-radius:5px;font-size:14px;font-weight:600;border:1px solid var(--ink);transition:transform .2s,background .2s}
+    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:#fbfbfc;background-image:linear-gradient(rgba(20,20,20,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.035) 1px,transparent 1px);background-size:36px 36px}
+    .hero-inner{width:min(900px,calc(100% - 48px));margin:auto;padding:82px 0 76px}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--muted)}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.055em;margin:0 0 25px;max-width:900px;font-weight:700}
+    .dek{font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#4c5056;max-width:740px;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:13px}
+    .meta span+span:before{content:"·";margin-right:18px}
+    .layout{width:min(1160px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 230px;gap:74px;padding:64px 0 88px;align-items:start}
+    article{min-width:0;font-size:18px;line-height:1.8;color:#303238}
+    article p{margin:0 0 24px}
+    article h2{font-size:31px;line-height:1.2;letter-spacing:-.035em;color:var(--ink);margin:55px 0 18px}
+    article h3{font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:30px 0 12px}
+    article strong{color:var(--ink)}
+    article ul,article ol{padding-left:25px;margin:0 0 26px}
+    article li{padding-left:5px;margin:0 0 10px}
+    .answer{padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--accent);background:#fcfbfc;margin:0 0 34px}
+    .answer p:last-child{margin-bottom:0}
+    .callout{margin:34px 0;padding:24px;border:1px solid var(--line);background:var(--soft);font-size:16px}
+    .callout .mono{margin-bottom:10px;display:block;color:var(--accent)}
+    .toc{position:sticky;top:105px;border-top:1px solid var(--line);padding-top:17px}
+    .toc .mono{margin-bottom:14px;display:block}
+    .toc a{display:block;text-decoration:none;font-size:13px;line-height:1.45;color:var(--muted);padding:7px 0}
+    .toc a:hover{color:var(--accent)}
+    .faq{border-top:1px solid var(--line);padding-top:15px;margin-top:25px}
+    .faq h3{margin-top:24px}
+    .sources a{overflow-wrap:anywhere;color:var(--blue)}
+    .cta-band{background:#111214;color:#fff;padding:64px 24px}
+    .cta-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta-inner h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.04em;margin:0 0 12px}
+    .cta-inner p{margin:0;color:#c6c8cc;max-width:560px}
+    .button.light{background:#fff;color:#111214!important;border-color:#fff;white-space:nowrap}
+    .button.light:hover{background:#e9e9eb;border-color:#e9e9eb}
+    footer{border-top:1px solid var(--line);padding:30px 0}
+    .footer-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:0}.toc{position:static;grid-row:1;margin-bottom:38px}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hero-inner{padding:60px 0}.layout{padding-top:42px}}
+    @media(max-width:600px){.nav{height:64px}.nav-inner,.hero-inner,.layout,.footer-inner{width:calc(100% - 32px)}.nav-links{gap:12px}.nav-links>a:not(.nav-cta){display:none}.brand{font-size:23px}h1{font-size:40px}.hero-inner{padding:50px 0}.layout{padding-bottom:60px}article{font-size:17px}article h2{font-size:27px;margin-top:42px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta{gap:8px}.meta span+span:before{margin-right:8px}}
+  
+    /* Main-site header and footer styling, adapted from index.html */
+    :root{--hair:var(--line);--hair-2:#d8dade;--paper:#fff;--paper-2:#f7f7f8;--live:#870873;--muted:#666a70;--ink:#111214}
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair);height:auto;display:block}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:22px}
+    .lnk,.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap;text-decoration:none}
+    .lnk:hover,.nav-links a.lnk:hover{color:var(--ink)}
+    .nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap;text-decoration:none}
+    .btn .arrow{display:inline-block;transition:transform .2s ease}
+    .btn:hover .arrow{transform:translate(2px,-2px)}
+    .btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative;overflow:hidden}
+    .btn-solid:hover{background:#222;color:#fff}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+    .btn-ghost:hover{border-color:var(--ink)}
+    .btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+    .ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+    footer{padding:80px 0 36px;border-top:1px solid var(--hair);background:#fff;color:var(--ink);font-family:"Inter Tight",Arial,sans-serif;line-height:1.5}
+    .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch;text-transform:none;letter-spacing:normal;font-family:"Inter Tight",Arial,sans-serif}
+    .foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;font-weight:500;font-family:"JetBrains Mono",monospace}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+    .foot-col a{font-size:13.5px;color:var(--ink);text-decoration:none}
+    .foot-col a:hover{color:var(--muted)}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+    .foot-bottom a{color:inherit}
+    .foot-bottom .badges{display:flex;gap:14px;flex-wrap:wrap}
+    .foot-bottom .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:0;border:0;background:transparent;color:var(--muted)}
+    .foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+    @media(max-width:1100px){.nav-links{gap:12px}.nav-links a.lnk{font-size:12px}.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:760px){.nav-links{display:none}.nav-inner{height:60px}.nav-cta .login{display:none}.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{padding:0 16px}.foot-top{grid-template-columns:1fr 1fr;gap:24px}.foot-brand{grid-column:1/-1}.foot-bottom .badges{gap:10px;flex-direction:column}}
+
+  
+/* Prevent legacy article styles from painting the navigation action wrapper */
+header.nav .nav-cta{background:transparent!important;color:inherit!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
+header.nav .nav-cta:hover{background:transparent!important;border-color:transparent!important;transform:none!important}
+header.nav .nav-cta .btn{margin:0}
+
+/* MAIN SITE DESIGN SYSTEM — keep all Brikito blog pages aligned with index.html */
+:root{--ink:#0A0A0A;--ink-2:#1A1A1A;--paper:#FFFFFF;--paper-2:#FAFAFA;--hair:#EAEAEA;--hair-2:#D4D4D4;--muted:#666666;--muted-2:#999999;--live:#10B981;--tap:1px;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Inter Tight','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;font-feature-settings:'cv11','ss01','ss03';}
+::selection{background:var(--ink);color:var(--paper);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;transition:all .15s ease;border:1px solid transparent;white-space:nowrap}
+.btn .arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translate(2px,-2px)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover{background:#222}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{height:32px;padding:0 12px;font-size:12.5px;border-radius:7px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;font-size:16px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a.lnk{font-size:13.5px;color:var(--muted);transition:color .15s ease;white-space:nowrap}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;background:transparent;color:inherit;padding:0;border:0;border-radius:0;font-size:inherit;font-weight:inherit;box-shadow:none;transition:none}
+.nav-cta:hover{background:transparent;border-color:transparent;transform:none}
+.ico{width:14px;height:14px;display:inline-block;flex-shrink:0}
+footer{padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand .tag{margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.5;max-width:28ch}
+.foot-col h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:500;font-family:'JetBrains Mono',monospace}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--ink)}
+.foot-col a:hover{color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--hair);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.foot-bottom .badges{display:flex;gap:14px}
+.foot-bottom .badge{display:inline-flex;align-items:center;gap:6px}
+.foot-bottom .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--live)}
+@media(max-width:960px){.nav-links{display:none}.nav-cta .btn-ghost.login{display:none}}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
+    article .cover{margin:0 0 40px}article .cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#f2f3f5}
+    .related{margin-top:64px;padding-top:8px;border-top:1px solid var(--line)}.related h2{margin-top:40px}.related ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}.related li{padding:0;margin:0}.related a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}.related a:hover{border-color:var(--ink);transform:translateY(-1px)}.related .rt{display:block;font-weight:600;color:var(--ink);font-size:18px;line-height:1.35}.related .rd{display:block;font-size:15px;line-height:1.55;color:var(--muted);margin-top:6px}
+    article .table-wrap{overflow-x:auto;margin:0 0 30px}article table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.55}article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}article th{background:var(--soft);color:var(--ink);font-weight:600}article td:first-child{font-weight:500;color:var(--ink)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Construction Scheduling and Delay Management Guide",
+      "description": "How construction scheduling and delay management work: master programme, look-ahead plans, critical path, PPC, delay types and recovery, with a checklist.",
+      "image": [
+        "https://www.brikito.com/images/blog/construction-scheduling.jpg"
+      ],
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-07",
+      "url": "https://www.brikito.com/blog-construction-scheduling",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.brikito.com/blog-construction-scheduling"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Brikito",
+        "url": "https://www.brikito.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.brikito.com/#organization",
+        "name": "Brikito",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.brikito.com/icons/icon-512.png"
+        }
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the critical path in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The critical path is the longest chain of dependent activities from start to finish. It sets the shortest possible project duration, so any delay to a critical activity delays the whole project unless the plan or resources change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is float in a construction schedule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Float, or slack, is the amount of time a non-critical activity can be delayed without delaying the project finish. Once float is used up, the activity becomes critical."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a look-ahead schedule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A look-ahead schedule details the next three to six weeks of work, so the team can check drawings, materials, crews, equipment and approvals in advance and remove constraints before the work is due to start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is PPC in construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Percent plan complete (PPC) is the number of tasks completed as planned in a week divided by the number planned, expressed as a percentage. It measures how reliable weekly planning is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you recover a delayed construction project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common options are resequencing work, adding resources to critical activities, overlapping activities where it is safe to do so, and fixing the recurring causes of delay. The right mix depends on the critical path and the cause of the delay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should construction delays be documented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep a hindrance register recording the affected activity, the cause, who must resolve it, when it started and ended, its effect, and supporting evidence such as messages, photos and drawing revisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI help predict construction delays?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI can flag likely delays early by comparing plan with actual progress, and by spotting causes such as material shortages, missing approvals or low manpower in site updates. It does not replace a planner's judgement. Brikito's Brik AI answers questions such as \"which activities are behind plan?\" from live data. See AI construction management software."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Journal",
+          "item": "https://www.brikito.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Construction Scheduling and Delay Management Guide",
+          "item": "https://www.brikito.com/blog-construction-scheduling"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" />
+<link rel="stylesheet" href="/assets/chrome.css?v=20261111h" />
+</head>
+<body>
+
+<!-- site-header (generated by tools/build-chrome.py; edit assets/site.js, rebuild) -->
+<div class="v2c v2c-head"><div class="progress" aria-hidden="true"></div><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header><div class="ann" role="region" aria-label="Launch offer"><script>try{if(localStorage.getItem("brikAnn1"))document.currentScript.parentNode.hidden=true}catch(e){}</script><div class="ann-in"><img class="ann-av" src="/img/brik-head-v2.webp" alt="" width="26" height="26"><p><b>Launch offer:</b> <span class="ann-long">the first 10 teams to book a demo get a 7-day free trial of Brikito.</span><span class="ann-short">first 10 teams get a 7-day free trial.</span> <a href="/book-a-demo?offer=7-day-trial">Claim your spot <span aria-hidden="true">→</span></a></p><button class="ann-x" type="button" aria-label="Dismiss offer banner" onclick="this.closest('.ann').hidden=true;try{localStorage.setItem('brikAnn1','1')}catch(e){}">✕</button></div></div>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a></div></div>
+<!-- /site-header -->
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">Scheduling · Delays and progress</div>
+<h1>Construction Scheduling and Delay Management Guide</h1>
+<p class="dek">How construction schedules work from the master programme to tomorrow&#x27;s plan, which delays actually matter, and how to track, record and recover them.</p>
+<div class="meta"><span>Brikito Editorial</span><span><time datetime="2026-11-02">2 Nov 2026</time></span><span>11 min read</span><span>Scheduling / Delays</span></div>
+</div>
+</section>
+<div class="layout">
+<article>
+<figure class="cover"><img src="/images/blog/construction-scheduling.svg" alt="Illustration of a construction Gantt chart with progress bars, a today line and milestones" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+<div class="answer"><p><strong>The short answer:</strong> Construction scheduling is planning what work happens when, in what order and with what resources, so a project finishes on time. Delay management is tracking actual progress against that plan every day, recording what caused each slip, and acting on blockers early. The schedule only helps if the site updates it honestly.</p></div>
+<p>Almost every construction project starts with a schedule. Far fewer are still following it three months later. The bar chart on the office wall shows the slab cycle, the masonry, the finishes. Meanwhile the site has moved on, the plan has not, and the only person who knows how far behind the project really is happens to be the site engineer.</p>
+<p>This guide covers how construction scheduling works at each level, from the master programme to tomorrow's plan, how the critical path and float decide which delays matter, how to track planned versus actual progress, and how to record and manage delays so they can be recovered rather than argued about later.</p>
+
+<h2 id="definition">What is construction scheduling?</h2>
+<p>Construction scheduling is the process of breaking a project into activities, estimating how long each will take, defining the order and dependencies between them, assigning resources, and setting dates, so the team knows what must happen when for the project to finish on time.</p>
+<p>Delay management is the other half: monitoring progress against the schedule, identifying slippage early, understanding its cause, and deciding how to recover. A schedule without delay management is a forecast that nobody checks.</p>
+
+<h2 id="why-it-matters">Why scheduling matters for developers and contractors</h2>
+<ul>
+<li><strong>Time is money on both sides.</strong> Delays add site overheads, equipment hire, finance costs and escalation for the contractor, and can push back handover and buyer payments for the developer.</li>
+<li><strong>Handover dates are often commitments.</strong> In many markets, completion dates are stated in sale agreements and regulatory filings, so slippage has consequences beyond the site.</li>
+<li><strong>Most delay hides in waiting.</strong> Crews waiting for drawings, materials, approvals or the previous trade lose time that never appears as a single event. We explore this in <a href="/blog-where-time-goes">where a construction project actually loses time</a>.</li>
+<li><strong>Delay disputes are won with records.</strong> If you cannot show when a hindrance started, who it was waiting on and what it affected, it is difficult to claim or defend an extension of time.</li>
+</ul>
+
+<h2 id="levels">The four levels of a construction schedule</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Level</th><th>Horizon</th><th>Who uses it</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Master programme</td><td>Whole project</td><td>Developer, PMC, senior management</td><td>Milestones, critical path, overall duration</td></tr>
+<tr><td>Look-ahead schedule</td><td>Next 3–6 weeks</td><td>Project manager, site engineers</td><td>Detailed activities, readiness and constraints</td></tr>
+<tr><td>Weekly work plan</td><td>Next week</td><td>Site engineers, foremen, contractors</td><td>Commitments each crew will deliver</td></tr>
+<tr><td>Daily plan</td><td>Tomorrow</td><td>Supervisors and crews</td><td>Who works where, with what</td></tr>
+</tbody>
+</table></div>
+<p>Most scheduling failures happen between the master programme and the daily plan. The master programme says "Level 8 slab, week 23". Nobody translates that into the drawings, materials, crews and inspections needed, until the week arrives and something is missing.</p>
+
+<h2 id="critical-path">Critical path and float: which delays actually matter</h2>
+<p>The critical path method (CPM) links activities by their dependencies and finds the longest chain through the project. That chain is the critical path, and it sets the shortest possible project duration.</p>
+<ul>
+<li><strong>Critical activities</strong> have zero float. Any delay to them delays the project finish, unless the logic or resources change.</li>
+<li><strong>Float</strong> (or slack) is how long a non-critical activity can slip without delaying the finish.</li>
+<li><strong>The critical path moves.</strong> As activities slip and float is used up, activities that were not critical can become critical.</li>
+</ul>
+<p>In a building project the structural frame is usually on the critical path, because each floor depends on the one below. That is why the floor cycle deserves so much attention. Its duration includes fixed technical periods, such as the formwork and prop removal times in IS 456, which the schedule must respect. Our guide to the <a href="/blog-building-construction-process">building construction process</a> explains the cycle.</p>
+
+<h2 id="durations">Building realistic durations</h2>
+<ul>
+<li><strong>Base durations on quantities and productivity</strong>, not on what the deadline requires: quantity ÷ (crew output per day × number of crews).</li>
+<li><strong>Respect fixed technical durations</strong>: curing, formwork removal, testing and approval lead times.</li>
+<li><strong>Include procurement lead times</strong> for long-lead items like lifts, transformers, facade systems and imported finishes.</li>
+<li><strong>Allow for local working conditions</strong>: monsoon or extreme heat, festival periods when labour availability drops, and restrictions on working hours.</li>
+<li><strong>Get the people doing the work to check the durations.</strong> A foreman's estimate is often more realistic than a planner's.</li>
+</ul>
+
+<h2 id="look-ahead">Look-ahead planning and constraint removal</h2>
+<p>The look-ahead schedule is where most delays can be prevented. Each week, take the next three to six weeks of work and check every activity for constraints:</p>
+<ul>
+<li>Is the approved, current drawing available on site? See <a href="/blog-drawing-revisions">drawing revision control</a>.</li>
+<li>Are materials ordered, with delivery confirmed before the start date? See <a href="/blog-construction-material-management">construction material management</a>.</li>
+<li>Is the crew available, and is the equipment booked?</li>
+<li>Is the preceding work complete, and has the area been handed over?</li>
+<li>Are inspections and approvals booked?</li>
+</ul>
+<p>Activities with unresolved constraints should not go into next week's plan. Instead, each constraint gets an owner and a date to clear it. This idea comes from lean construction and the Last Planner System, which focuses on making only commitments that can actually be kept.</p>
+
+<h2 id="tracking">Tracking progress: planned versus actual</h2>
+<p>Progress tracking turns the schedule into a management tool. Three simple measures go a long way:</p>
+<ul>
+<li><strong>Planned versus actual percentage complete</strong> for key activities and for the project. For example, if the plan for today is 68% and the site is at 62%, the project is behind, and the gap should be explained.</li>
+<li><strong>Days behind or ahead</strong> on critical activities and milestones.</li>
+<li><strong>Percent plan complete (PPC):</strong> the number of tasks completed as planned in a week, divided by the number of tasks planned, as a percentage. If 18 of 24 planned tasks were completed, PPC is 75%. Tracking PPC weekly, with the reason each missed task failed, shows whether planning is getting more reliable.</li>
+</ul>
+<p>All of this depends on accurate daily data. The <a href="/blog-daily-progress-report-construction">daily progress report</a> is where planned versus actual should first appear.</p>
+<div class="callout"><span class="mono">A useful habit</span> For every task that missed its plan this week, write one reason: drawing, material, labour, equipment, preceding work, approval, weather or other. After a month, the pattern tells you exactly what to fix.</div>
+
+<h2 id="delay-types">Types of construction delay</h2>
+<p>Contracts treat delays differently depending on their cause. The exact terms depend on the contract, but the common categories are:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Type</th><th>Typical meaning</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Excusable, compensable</td><td>Caused by the employer or their team; time and often cost may be due</td><td>Late drawings or late site access</td></tr>
+<tr><td>Excusable, non-compensable</td><td>Caused by neither party; time may be due but not cost</td><td>Exceptional weather, if the contract allows</td></tr>
+<tr><td>Non-excusable</td><td>Caused by the contractor; no extension, possible damages</td><td>Insufficient labour or late material ordering</td></tr>
+<tr><td>Concurrent</td><td>Two or more delays overlapping, with different causes</td><td>Late drawings while the contractor was also under-manned</td></tr>
+</tbody>
+</table></div>
+<p>The treatment of each type, and especially concurrent delay, depends on the contract and the law that governs it. Take advice on specific claims; the practical point for the site is that every delay needs a clear record of its cause and timing.</p>
+
+<h2 id="recording">Recording delays and recovering time</h2>
+<p>A hindrance register is the simplest delay management tool. For each hindrance, record:</p>
+<ol>
+<li>The affected activity and location.</li>
+<li>The cause, and who is responsible for resolving it.</li>
+<li>When it started and when it ended.</li>
+<li>Its effect: work stopped, slowed, or resequenced.</li>
+<li>Supporting evidence: messages, photos, drawing revisions, letters.</li>
+</ol>
+<p>When the project is behind, the usual recovery options are:</p>
+<ul>
+<li><strong>Resequencing:</strong> changing the order of work so crews are not idle.</li>
+<li><strong>Crashing:</strong> adding resources, such as extra crews or shifts, to critical activities.</li>
+<li><strong>Fast-tracking:</strong> overlapping activities that were planned in sequence, where it is safe and technically allowed.</li>
+<li><strong>Removing recurring constraints:</strong> fixing the cause, such as slow drawing approvals or late material indents, rather than just pushing harder.</li>
+</ul>
+
+<h2 id="methods">Scheduling methods compared</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Method</th><th>Best for</th><th>Limitations</th></tr></thead>
+<tbody>
+<tr><td>Bar (Gantt) chart</td><td>Communicating the plan simply to everyone</td><td>Shows dates, but dependencies and float are not always visible</td></tr>
+<tr><td>Critical path method (CPM)</td><td>Finding which activities control the finish date</td><td>Only as good as the logic and durations entered</td></tr>
+<tr><td>Line of balance</td><td>Repetitive work, such as typical floors or units</td><td>Less familiar to many site teams</td></tr>
+<tr><td>Look-ahead and weekly work plans</td><td>Making near-term work reliable and removing constraints</td><td>Needs a weekly routine and honest reporting</td></tr>
+</tbody>
+</table></div>
+<p>Most projects use a combination: a CPM master programme presented as a bar chart for management, and look-ahead and weekly plans for the site. The tools matter less than keeping the levels connected.</p>
+
+<h2 id="weekly-meeting">Running the weekly planning meeting</h2>
+<p>The weekly planning meeting is where scheduling becomes a habit. Keep it short and focused on the next few weeks, not on the past.</p>
+<ol>
+<li><strong>Last week:</strong> which planned tasks were completed, PPC, and the reason for each miss.</li>
+<li><strong>Critical path:</strong> any slippage on critical activities and its effect on milestones.</li>
+<li><strong>Look-ahead:</strong> constraints for the next three to six weeks, each with an owner and a date.</li>
+<li><strong>Next week's plan:</strong> commitments from each crew and contractor, only for work that is ready.</li>
+<li><strong>Open hindrances:</strong> anything waiting on the developer, consultants or authorities, escalated by name.</li>
+</ol>
+<p>Record the outcome in the same place every week. Next week's meeting starts by checking whether this week's commitments were kept.</p>
+
+<h2 id="kpis">Schedule KPIs worth tracking</h2>
+<ul>
+<li><strong>Planned versus actual percentage complete</strong>, for the project and for each major package.</li>
+<li><strong>Days ahead or behind</strong> on each milestone and on the forecast finish.</li>
+<li><strong>PPC</strong> each week, with the trend over the last six to eight weeks.</li>
+<li><strong>Top reasons for missed tasks</strong>, counted by category.</li>
+<li><strong>Open constraints</strong> in the look-ahead, and how many were cleared on time.</li>
+<li><strong>Floor cycle time</strong> on the structure, compared with the planned cycle.</li>
+</ul>
+<p>These measures connect directly to cost: every week added to the forecast finish adds time-related overheads. Our guide to <a href="/blog-construction-cost-control">construction cost control</a> explains how to carry that into the forecast at completion.</p>
+
+<h2 id="problems">The biggest construction scheduling problems on site</h2>
+<ul>
+<li>A master programme that is never translated into look-ahead and weekly plans.</li>
+<li>Progress updated monthly, so slippage is visible weeks after it started.</li>
+<li>Percentage complete reported by feel, not by measured quantities.</li>
+<li>Hindrances discussed in calls and chats but never recorded with dates and owners.</li>
+<li>Durations set to match the deadline rather than real productivity.</li>
+<li>The critical path not reviewed, so the team works hard on activities that do not move the finish date.</li>
+</ul>
+
+<h2 id="framework">How to improve construction scheduling step by step</h2>
+<ol>
+<li><strong>Build the master programme from real quantities and productivity</strong>, including fixed technical durations and procurement lead times.</li>
+<li><strong>Identify the critical path</strong> and review it every time the schedule is updated.</li>
+<li><strong>Run a weekly look-ahead</strong> covering three to six weeks, and screen every activity for constraints.</li>
+<li><strong>Commit to a weekly work plan</strong> containing only activities whose constraints are cleared.</li>
+<li><strong>Record progress daily</strong> by quantity and location, and compare it with the plan.</li>
+<li><strong>Keep a hindrance register</strong> with cause, owner, start and end times, and evidence.</li>
+<li><strong>Track PPC and reasons for missed tasks</strong> every week, and fix the most common causes.</li>
+<li><strong>Update the forecast finish</strong> and act on slippage on critical activities immediately.</li>
+</ol>
+
+<h2 id="checklist">Construction scheduling checklist</h2>
+<ul>
+<li>Is the master programme based on quantities and realistic productivity?</li>
+<li>Is the critical path identified and reviewed with each update?</li>
+<li>Is there a look-ahead schedule for the next three to six weeks?</li>
+<li>Are drawings, materials, crews, equipment and approvals checked before work is planned?</li>
+<li>Is planned versus actual progress visible every day?</li>
+<li>Is every hindrance recorded with cause, owner and dates?</li>
+<li>Is PPC tracked weekly with reasons for misses?</li>
+<li>Is the forecast finish updated and shared with the developer?</li>
+</ul>
+
+<h2 id="software">Where software fits</h2>
+<p>Scheduling tools are good at building the master programme. The harder part is keeping it connected to what actually happens on site each day. If progress, blockers and resources are reported through calls and chats, the schedule falls out of date within weeks, and the only real view of progress is in people's heads.</p>
+<p>Software helps when the site's daily updates feed the plan directly. In Brikito, construction management software with Brik AI, the dashboard shows progress against plan and days behind, updated as the site team posts its updates in the chat. A gap such as 62% actual against 68% planned surfaces on the day it appears, not at the month-end review. On the Professional plan, teams can upload the schedule, record weekly plans by voice, and track day-by-day plan versus actual, delay and lag per activity, PPC and a forecast finish.</p>
+
+<h2 id="faqs">Frequently asked questions</h2>
+<div class="faq"><h3>What is the critical path in construction?</h3><p>The critical path is the longest chain of dependent activities from start to finish. It sets the shortest possible project duration, so any delay to a critical activity delays the whole project unless the plan or resources change.</p>
+<h3>What is float in a construction schedule?</h3><p>Float, or slack, is the amount of time a non-critical activity can be delayed without delaying the project finish. Once float is used up, the activity becomes critical.</p>
+<h3>What is a look-ahead schedule?</h3><p>A look-ahead schedule details the next three to six weeks of work, so the team can check drawings, materials, crews, equipment and approvals in advance and remove constraints before the work is due to start.</p>
+<h3>What is PPC in construction?</h3><p>Percent plan complete (PPC) is the number of tasks completed as planned in a week divided by the number planned, expressed as a percentage. It measures how reliable weekly planning is.</p>
+<h3>How do you recover a delayed construction project?</h3><p>Common options are resequencing work, adding resources to critical activities, overlapping activities where it is safe to do so, and fixing the recurring causes of delay. The right mix depends on the critical path and the cause of the delay.</p>
+<h3>How should construction delays be documented?</h3><p>Keep a hindrance register recording the affected activity, the cause, who must resolve it, when it started and ended, its effect, and supporting evidence such as messages, photos and drawing revisions.</p>
+<h3>Can AI help predict construction delays?</h3><p>AI can flag likely delays early by comparing plan with actual progress, and by spotting causes such as material shortages, missing approvals or low manpower in site updates. It does not replace a planner's judgement. Brikito's Brik AI answers questions such as "which activities are behind plan?" from live data. See <a href="/blog-best-ai-construction-management-software">AI construction management software</a>.</p></div>
+
+<h2 id="takeaway">A schedule is only as good as its last update</h2>
+<p>Construction scheduling is not a one-time document. It is a weekly routine: look ahead, clear constraints, commit to what can be done, measure what was done, and record why the rest was not.</p>
+<p>Projects that keep that routine see delays when they are small and fixable. Projects that do not find out at the monthly review, when the only options left are expensive ones.</p>
+<section class="related" aria-labelledby="related-reading"><h2 id="related-reading">Related reading</h2><ul><li><a href="/blog-where-time-goes"><span class="rt">Where Does a Construction Project Actually Lose Time?</span><span class="rd">Construction delays build up between activities, approvals, decisions and handoffs. Learn how to spot waiting time and improve project coordination.</span></a></li><li><a href="/blog-building-construction-process"><span class="rt">Building Construction Process: A Step-by-Step Guide</span><span class="rd">The building construction process step by step, from approvals and foundations to frame, services, finishes and handover, with hold points and checklists.</span></a></li><li><a href="/blog-construction-cost-control"><span class="rt">Construction Cost Control: A Practical Guide for Developers</span><span class="rd">A practical guide to construction cost control for developers: baseline budgets, commitments, earned value, materials, labour, changes and cash flow.</span></a></li></ul></section>
+</article>
+<aside aria-label="Article contents" class="toc"><span class="mono">In this article</span><nav><a href="#definition">What is scheduling?</a><a href="#levels">Four schedule levels</a><a href="#critical-path">Critical path and float</a><a href="#look-ahead">Look-ahead planning</a><a href="#tracking">Planned vs actual</a><a href="#delay-types">Types of delay</a><a href="#recording">Recording and recovery</a><a href="#framework">Step-by-step framework</a><a href="#checklist">Scheduling checklist</a><a href="#faqs">FAQs</a></nav></aside>
+</div>
+<aside style="margin:36px 0;padding:22px 24px;border-radius:18px;background:#0B0B0F;color:#fff;display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif"><div style="flex:1;min-width:240px"><div style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B9BCFF">Free tool</div><div style="font-size:20px;font-weight:700;margin-top:6px;color:#fff">What does one day of delay cost your project?</div><div style="font-size:14.5px;margin-top:6px;color:rgba(255,255,255,.75)">Work it out in ₹ per day from overheads, idle labour, equipment hire and interest.</div></div><a href="/delay-cost-calculator" style="background:#fff;color:#0B0B0F;text-decoration:none;font-weight:700;font-size:14.5px;padding:12px 18px;border-radius:999px;white-space:nowrap">Calculate my delay cost →</a></aside>
+<section class="cta-band">
+<div class="cta-inner">
+<div>
+<h2>See days behind on the day it happens.</h2>
+<p>See how Brikito tracks progress against plan as the site posts its daily updates.</p>
+</div>
+<a class="button light" href="/book-a-demo">Book a Demo  ↗</a>
+</div>
+</section>
+</main>
+
+<!-- site-footer (generated by tools/build-chrome.py) -->
+<div class="v2c"><footer><div class="wrap"><div class="ft-top"><div class="ft-brand"><a class="ft-logo" href="/" aria-label="Brikito home"><svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lgft" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset=".5" stop-color="#5462F0"/><stop offset="1" stop-color="#3A8EF6"/></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lgft)"/></svg><span>Brikito</span></a><p class="ft-tag">The AI operating system for construction sites. Site chat, daily reports, materials and approvals in one app, in your own native language.</p><div class="ft-cta"><a class="ft-btn" href="/book-a-demo">Book a demo <span aria-hidden="true">→</span></a><a class="ft-btn2" href="mailto:hey@brikito.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>hey@brikito.com</a></div><div class="ft-soc"><a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.1 24.1 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a><a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div class="cols"><div><h5>Products</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div><div><h5>Free tools</h5><a href="/delay-cost-calculator">Delay cost calculator</a><a href="/free-tools#dpr-kit">DPR template</a><a href="/free-tools#material-tracker">Material &amp; BOQ tracker</a><a href="/free-tools">All free tools</a></div><div><h5>Company</h5><a href="/about">About us</a><a href="/how-it-works">How it works</a><a href="/blog">Journal</a></div><div><h5>Get started</h5><a href="/book-a-demo">Talk to our team</a><a href="/book-a-demo?offer=7-day-trial">7-day free trial</a></div></div></div><div class="ft-trust"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Data hosted in India</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Nothing sent without your approval</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>Works in your own native language</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Serving India, UAE, Singapore and Sri Lanka</span></div><div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="ft-legal"><a href="/privacy">Privacy policy</a></span></div></div></footer></div>
+<!-- /site-footer -->
+  
+<script src="/assets/site.js?v=20261111h" defer></script>
+</body>
+</html>

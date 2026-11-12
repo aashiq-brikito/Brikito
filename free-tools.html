@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Free Construction Tools: DPR, Material Tracker | Brikito</title>
+<meta name="description" content="Free construction tools from Brikito: a site delay cost calculator, an Excel DPR template with checklist, and a material reconciliation and BOQ tracker." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://www.brikito.com/free-tools" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Brikito" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:title" content="Free Construction Tools: DPR, Material Tracker" />
+<meta property="og:description" content="Free construction tools from Brikito: a site delay cost calculator, an Excel DPR template with checklist, and a material reconciliation and BOQ tracker." />
+<meta property="og:url" content="https://www.brikito.com/free-tools" />
+<meta property="og:image" content="https://www.brikito.com/img/material-tracker-preview.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Construction Tools: DPR, Material Tracker" />
+<meta name="twitter:description" content="Free construction tools from Brikito: a site delay cost calculator, an Excel DPR template with checklist, and a material reconciliation and BOQ tracker." />
+<meta name="twitter:image" content="https://www.brikito.com/img/material-tracker-preview.webp" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<style>
+:root{--ink:#0B0B0F;--muted:#55555C;--line:rgba(11,11,15,.1);--p:#5B3FE0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+.ft-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.ft-hero{padding:64px 0 24px;text-align:center;background:radial-gradient(ellipse 70% 80% at 50% 0%,#F1EEFF,transparent 70%)}
+.ft-chip{display:inline-block;font-size:12.5px;font-weight:600;color:#3A3FC7;background:#fff;border:1px solid rgba(84,98,240,.22);padding:6px 12px;border-radius:999px}
+.ft-hero h1{margin:16px auto 0;max-width:16ch;font-size:clamp(34px,4.6vw,58px);line-height:1.04;letter-spacing:-.035em}
+.ft-hero h1 span{background:linear-gradient(90deg,#7B2FE0,#3A8EF6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ft-hero p{margin:14px auto 0;max-width:640px;font-size:18px;line-height:1.55;color:var(--muted)}
+.ft-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:32px 0 8px}
+.ft-index a{display:flex;flex-direction:column;gap:6px;padding:20px;border:1px solid var(--line);border-radius:18px;background:#fff;text-decoration:none;color:var(--ink);box-shadow:0 14px 40px -30px rgba(36,41,120,.4);transition:border-color .15s,transform .15s}
+.ft-index a:hover{border-color:#5462F0;transform:translateY(-2px)}
+.ft-index small{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--p)}
+.ft-index b{font-size:17px;line-height:1.3}
+.ft-index span{font-size:14px;line-height:1.5;color:var(--muted)}
+.ft-index i{font-style:normal;font-weight:600;font-size:14px;color:#3A3FC7;margin-top:auto;padding-top:6px}
+.ft-calc{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:center;margin:40px 0;padding:28px;border-radius:22px;background:#0B0B0F;color:#fff;position:relative;overflow:hidden;scroll-margin-top:90px}
+.ft-calc:before{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(123,47,224,.55),rgba(58,142,246,.25) 45%,transparent 70%)}
+.ft-calc>*{position:relative}
+.ft-calc img{width:100%;height:auto;border-radius:14px;display:block}
+.ft-k{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B9BCFF;margin:0 0 8px}
+.ft-calc h2{margin:0;font-size:24px;line-height:1.15;letter-spacing:-.015em}
+.ft-calc p{margin:8px 0 0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.72)}
+.ft-calc ul{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:5px}
+.ft-calc li{font-size:14px;display:flex;gap:8px;color:rgba(255,255,255,.9)}
+.ft-calc li:before{content:"✓";color:#9EA6FF;font-weight:700}
+.ft-btn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:#fff;color:#0B0B0F;text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:999px}
+.ft-anchor{scroll-margin-top:90px}
+.ft-band{margin:24px 0 64px;padding:36px;border-radius:24px;background:linear-gradient(135deg,#6A2BD6,#5462F0 55%,#3A8EF6);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ft-band h2{margin:0;font-size:clamp(22px,2.6vw,30px);max-width:26ch;color:#fff}
+.ft-band p{margin:6px 0 0;color:rgba(255,255,255,.85);font-size:15.5px}
+.ft-band a{background:#fff;color:#0B0B0F;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:999px;white-space:nowrap}
+@media (max-width:860px){.ft-index{grid-template-columns:1fr}.ft-calc{grid-template-columns:1fr;padding:22px}.ft-calc h2{font-size:21px}.ft-band{padding:24px}.ft-hero{padding-top:40px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Free Construction Tools: DPR, Material Tracker | Brikito",
+      "url": "https://www.brikito.com/free-tools",
+      "description": "Free construction tools from Brikito: a site delay cost calculator, an Excel DPR template with checklist, and a material reconciliation and BOQ tracker.",
+      "isPartOf": {
+        "@id": "https://www.brikito.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.brikito.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Brikito",
+          "item": "https://www.brikito.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free construction tools",
+          "item": "https://www.brikito.com/free-tools"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" />
+<link rel="stylesheet" href="/assets/chrome.css?v=20261111h" />
+</head>
+<body>
+<!-- site-header (generated by tools/build-chrome.py; edit assets/site.js, rebuild) -->
+<div class="v2c v2c-head"><div class="progress" aria-hidden="true"></div><header class="nav"><div class="wrap in">
+<a class="logo breathe" href="/" aria-label="Brikito home"><svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="#0B0B0F"></path></svg></a>
+<nav class="links" aria-label="Main"><a href="/console">Console</a><button type="button" data-mega="" aria-expanded="false">Products <span aria-hidden="true" style="font-size:10px">▾</span></button><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a></nav>
+<div class="right"><a class="signin" href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a><a class="btn btn-p btn-sm" href="/book-a-demo">Book a demo</a><button class="burger" type="button" aria-label="Menu" data-burger=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0F" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg></button></div></div>
+<div class="mega" data-megapanel=""><div class="wrap"><a class="megacon" href="/console"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"></stop><stop offset=".5" stop-color="#5462F0"></stop><stop offset="1" stop-color="#3A8EF6"></stop></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lg1)"></path></svg><span><b>Brikito Console</b><span>The base platform every product lives on</span></span><span class="link" style="margin-left:auto">Explore ›</span></a><div class="grid4"><a href="/brik-ai"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span><b>Brik AI</b><span>The AI assistant built for construction</span></a><a href="/brikchat"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg></span><b>BrikChat</b><span>Site chat that turns messages into work</span></a><a href="/brikvision"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path></svg></span><b>BrikVision</b><span>AI on your site CCTV, around the clock</span></a><a href="/brikdocs"><span class="ico" style="background:var(--alt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"></path></svg></span><b>BrikDocs</b><span>DPR, BOQ, BBS and more in one tap</span></a></div></div></div></header><div class="ann" role="region" aria-label="Launch offer"><script>try{if(localStorage.getItem("brikAnn1"))document.currentScript.parentNode.hidden=true}catch(e){}</script><div class="ann-in"><img class="ann-av" src="/img/brik-head-v2.webp" alt="" width="26" height="26"><p><b>Launch offer:</b> <span class="ann-long">the first 10 teams to book a demo get a 7-day free trial of Brikito.</span><span class="ann-short">first 10 teams get a 7-day free trial.</span> <a href="/book-a-demo?offer=7-day-trial">Claim your spot <span aria-hidden="true">→</span></a></p><button class="ann-x" type="button" aria-label="Dismiss offer banner" onclick="this.closest('.ann').hidden=true;try{localStorage.setItem('brikAnn1','1')}catch(e){}">✕</button></div></div>
+<div class="sheet" data-sheet=""><a href="/">Home</a><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/blog">Journal</a><a href="/about">About</a><a href="/book-a-demo">Book a demo</a><a href="https://app.brikito.com/signup" target="_blank" rel="noopener">Sign in</a></div></div>
+<!-- /site-header -->
+<main>
+<section class="ft-hero"><div class="ft-wrap">
+<span class="ft-chip">Free tools · For builders, developers &amp; contractors</span>
+<h1>Free tools for <span>construction sites</span></h1>
+<p>Templates and calculators from the Brikito team. Use them on your site tomorrow, in Excel, Google Sheets or your browser.</p>
+</div></section>
+
+<div class="ft-wrap">
+<nav class="ft-index" aria-label="Free tools">
+<a href="#delay-calculator"><small>Calculator</small><b>Site Delay Cost Calculator</b><span>What one day of delay costs your project in ₹, with a PDF report by email.</span><i>Work it out →</i></a>
+<a href="#dpr-kit"><small>Template + checklist</small><b>DPR Kit</b><span>An Excel daily progress report and a one-page 10-point checklist for engineers.</span><i>Get the kit →</i></a>
+<a href="#material-tracker"><small>Tracker</small><b>Material Reconciliation &amp; BOQ Tracker</b><span>Planned vs received vs used vs stock for every material, with a wastage flag.</span><i>Get the tracker →</i></a>
+</nav>
+
+<section class="ft-calc" id="delay-calculator" aria-labelledby="ft-calc-h">
+<img src="/img/delay-calc-og.png" alt="Brikito construction delay cost calculator" width="1200" height="630" loading="lazy">
+<div><span class="ft-k">Free calculator</span><h2 id="ft-calc-h">Site Delay Cost Calculator</h2>
+<p>Enter a few numbers from your site and see your daily cost of delay in seconds.</p>
+<ul><li>Overheads, idle labour, equipment hire and interest, per day</li><li>Liquidated damages, if your contract has them</li><li>Full breakdown and a PDF report sent to your email</li></ul>
+<a class="ft-btn" href="/delay-cost-calculator">Open the calculator →</a></div>
+</section>
+
+<div class="ft-anchor" id="dpr-kit"><div data-dpr-kit></div></div>
+<div class="ft-anchor" id="material-tracker"><div data-material-kit></div></div>
+
+<div class="ft-band"><div><h2>Want this done for you, every day?</h2><p>Brikito builds the DPR, tracks materials and flags delays from your site team’s chat and voice notes.</p></div><a href="/book-a-demo?utm_source=free-tools&amp;utm_medium=page&amp;utm_campaign=lead-magnet">Book a free demo</a></div>
+</div>
+</main>
+<!-- site-footer (generated by tools/build-chrome.py) -->
+<div class="v2c"><footer><div class="wrap"><div class="ft-top"><div class="ft-brand"><a class="ft-logo" href="/" aria-label="Brikito home"><svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="lgft" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset=".5" stop-color="#5462F0"/><stop offset="1" stop-color="#3A8EF6"/></linearGradient></defs><path d="M25 3.5Q25 0 28.5 0L96.5 0Q100 0 100 3.5L100 71.5Q100 75 96.5 75L75 75L75 28.5Q75 25 71.5 25L25 25Z M0 28.5Q0 25 3.5 25L25 25L25 71.5Q25 75 28.5 75L75 75L75 96.5Q75 100 71.5 100L3.5 100Q0 100 0 96.5Z" fill="url(#lgft)"/></svg><span>Brikito</span></a><p class="ft-tag">The AI operating system for construction sites. Site chat, daily reports, materials and approvals in one app, in your own native language.</p><div class="ft-cta"><a class="ft-btn" href="/book-a-demo">Book a demo <span aria-hidden="true">→</span></a><a class="ft-btn2" href="mailto:hey@brikito.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg>hey@brikito.com</a></div><div class="ft-soc"><a href="https://www.youtube.com/@Brikitoai" target="_blank" rel="noopener" aria-label="Brikito on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.1 24.1 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/brikitoai/" target="_blank" rel="noopener" aria-label="Brikito on Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.linkedin.com/company/brikito" target="_blank" rel="noopener" aria-label="Brikito on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a><a href="https://www.facebook.com/brikitoai" target="_blank" rel="noopener" aria-label="Brikito on Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div class="cols"><div><h5>Products</h5><a href="/console">Brikito Console</a><a href="/brik-ai">Brik AI</a><a href="/brikchat">BrikChat</a><a href="/brikvision">BrikVision</a><a href="/brikdocs">BrikDocs</a><a href="/pricing">Pricing</a></div><div><h5>Free tools</h5><a href="/delay-cost-calculator">Delay cost calculator</a><a href="/free-tools#dpr-kit">DPR template</a><a href="/free-tools#material-tracker">Material &amp; BOQ tracker</a><a href="/free-tools">All free tools</a></div><div><h5>Company</h5><a href="/about">About us</a><a href="/how-it-works">How it works</a><a href="/blog">Journal</a></div><div><h5>Get started</h5><a href="/book-a-demo">Talk to our team</a><a href="/book-a-demo?offer=7-day-trial">7-day free trial</a></div></div></div><div class="ft-trust"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Data hosted in India</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Nothing sent without your approval</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>Works in your own native language</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Serving India, UAE, Singapore and Sri Lanka</span></div><div class="bottom"><span>© 2026 Brikito. All rights reserved.</span><span class="ft-legal"><a href="/privacy">Privacy policy</a></span></div></div></footer></div>
+<!-- /site-footer -->
+<script src="/assets/site.js?v=20261111h" defer></script>
+</body>
+</html>
