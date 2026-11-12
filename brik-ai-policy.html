@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generative AI (Brik AI) | Brikito</title>
+  <meta name="description" content="Learn how Brik AI works, which AI models support it, how Brikito handles project data, and how people stay in control of AI-assisted decisions.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://www.brikito.com/brik-ai-policy">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brikito">
+  <meta property="og:title" content="Generative AI (Brik AI)">
+  <meta property="og:description" content="How Brik AI works and how Brikito protects customer project data.">
+  <meta property="og:url" content="https://www.brikito.com/brik-ai-policy">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="components/global.css?v=20261031">
+  <style>
+    :root{--ai-ink:#0a0a0a;--ai-muted:#666;--ai-line:#eaeaea;--ai-soft:#fafafa}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:#fff;color:var(--ai-ink);font-family:'Inter Tight','Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .ai-nav{height:68px;border-bottom:1px solid var(--ai-line);display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100% - 1180px)/2));background:rgba(255,255,255,.9)}
+    .ai-brand{font-size:19px;font-weight:600;letter-spacing:-.04em;text-decoration:none;display:flex;align-items:center;gap:10px}
+    .ai-mark{width:25px;height:25px;background:#0a0a0a;border-radius:5px;display:inline-block;position:relative}
+    .ai-mark:after{content:"";position:absolute;width:12px;height:12px;right:0;top:0;background:#fff;border-radius:0 0 0 3px}
+    .ai-navlinks{display:flex;align-items:center;gap:25px;font-size:13px}
+    .ai-navlinks a{text-decoration:none;color:#555}
+    .ai-navlinks a:hover{color:#000}
+    .ai-navcta{padding:10px 15px;border-radius:7px;background:#0a0a0a;color:#fff!important}
+    .ai-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--ai-line);padding:86px 24px 54px}
+    .ai-hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(var(--ai-line) 1px,transparent 1px) 0 0/100% 64px,linear-gradient(90deg,var(--ai-line) 1px,transparent 1px) 0 0/64px 100%;mask-image:radial-gradient(ellipse 70% 75% at 30% 25%,#000 20%,transparent 75%);opacity:.55}
+    .ai-hero-inner,.ai-layout{max-width:1180px;margin:auto;position:relative}
+    .ai-kicker{font:11px 'JetBrains Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--ai-muted);display:block;margin-bottom:18px}
+    .ai-hero h1{font-size:clamp(38px,6vw,68px);line-height:1.02;letter-spacing:-.045em;font-weight:500;margin:0;max-width:850px}
+    .ai-hero p{font-size:18px;line-height:1.6;color:var(--ai-muted);max-width:690px;margin:22px 0 0}
+    .ai-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}
+    .ai-chip{border:1px solid var(--ai-line);border-radius:999px;padding:6px 11px;background:var(--ai-soft);font:10.5px 'JetBrains Mono',monospace;color:var(--ai-muted)}
+    .ai-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:64px;padding:58px 24px 88px;align-items:start}
+    .ai-toc{position:sticky;top:30px}
+    .ai-toc h2{font:11px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ai-muted);margin:0 0 15px}
+    .ai-toc ol{list-style:none;padding:0;margin:0;display:grid;gap:3px}
+    .ai-toc a{display:flex;gap:10px;padding:7px 8px 7px 12px;border-left:1px solid var(--ai-line);color:var(--ai-muted);font-size:13px;line-height:1.35;text-decoration:none}
+    .ai-toc a:before{content:attr(data-n);font:10px 'JetBrains Mono',monospace;color:#aaa;flex:0 0 18px}
+    .ai-toc a:hover,.ai-toc a:focus{color:var(--ai-ink);border-color:var(--ai-ink)}
+    .ai-content{max-width:760px;min-width:0}
+    .ai-section{padding:0 0 36px;margin:0 0 38px;border-bottom:1px solid var(--ai-line);scroll-margin-top:30px}
+    .ai-section:last-child{border-bottom:0;margin-bottom:0}
+    .ai-section h2{font-size:clamp(23px,2.8vw,30px);line-height:1.15;letter-spacing:-.03em;font-weight:500;margin:0 0 18px;display:flex;gap:13px;align-items:baseline}
+    .ai-section h2 span{font:11px 'JetBrains Mono',monospace;color:#999;flex:0 0 auto}
+    .ai-section p,.ai-section li{font-size:15.5px;line-height:1.72;color:#242424}
+    .ai-section p{margin:0 0 14px}
+    .ai-section p:last-child{margin-bottom:0}
+    .ai-section ul{padding-left:21px;margin:8px 0 16px}
+    .ai-section li{padding-left:4px;margin:0 0 10px}
+    .ai-section li::marker{color:#aaa}
+    .ai-section strong{font-weight:600;color:#111}
+    .ai-section a{color:#111;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#bbb}
+    .ai-section a:hover{text-decoration-color:#111}
+    .ai-contact{border:1px solid var(--ai-line);border-radius:12px;padding:22px 24px;background:var(--ai-soft)}
+    .ai-footer{background:#0a0a0a;color:#fff;padding:48px 24px 28px;margin-top:30px}
+    .ai-footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}
+    .ai-footer-brand{font-size:18px;font-weight:600}
+    .ai-footer p{color:#aaa;font-size:13px;margin:10px 0 0}
+    .ai-footer-links{display:flex;gap:22px;flex-wrap:wrap}
+    .ai-footer a{color:#ddd;text-decoration:none;font-size:13px}
+    .ai-footer a:hover{color:#fff}
+    .ai-footer-bottom{max-width:1180px;margin:32px auto 0;padding-top:20px;border-top:1px solid #333;color:#888;font:11px 'JetBrains Mono',monospace}
+    @media(max-width:900px){.ai-layout{grid-template-columns:1fr;gap:0;padding-top:40px}.ai-toc{position:static;margin-bottom:42px}.ai-toc ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px}.ai-toc a{font-size:12px}}
+    @media(max-width:650px){.ai-nav{padding:0 20px}.ai-navlinks a:not(.ai-navcta){display:none}.ai-hero{padding:64px 20px 40px}.ai-layout{padding:34px 20px 64px}.ai-toc ol{grid-template-columns:1fr}.ai-section h2{font-size:24px}.ai-section p,.ai-section li{font-size:15px}.ai-footer-links{gap:14px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebPage","name":"Generative AI (Brik AI)","url":"https://www.brikito.com/brik-ai-policy","description":"How Brik AI works and how Brikito handles customer project data.","inLanguage":"en"},
+      {"@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Brikito","item":"https://www.brikito.com/"},
+        {"@type":"ListItem","position":2,"name":"Generative AI (Brik AI)","item":"https://www.brikito.com/brik-ai-policy"}
+      ]}
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="ai-nav">
+  <a class="ai-brand" href="/" aria-label="Brikito home"><span class="ai-mark" aria-hidden="true"></span>Brikito</a>
+  <nav class="ai-navlinks" aria-label="Main navigation">
+    <a href="/brik-ai">Brik AI</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/blog">Resources</a>
+    <a href="/about">About</a>
+    <a class="ai-navcta" href="/book-a-demo">Book a demo</a>
+  </nav>
+</header>
+
+<main>
+  <section class="ai-hero">
+    <div class="ai-hero-inner">
+      <span class="ai-kicker">AI transparency · Brikito Private Limited</span>
+      <h1>Generative AI (Brik AI)</h1>
+      <p>How Brik AI works, which AI models support it, how your project data is handled, and why people remain in control of every decision.</p>
+      <div class="ai-meta">
+        <span class="ai-chip">Responsible AI</span>
+        <span class="ai-chip">Customer data protection</span>
+        <span class="ai-chip">Human oversight</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ai-layout">
+    <nav class="ai-toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a data-n="01" href="#what-brik-ai-does">What Brik AI does</a></li>
+        <li><a data-n="02" href="#models">The AI models we use</a></li>
+        <li><a data-n="03" href="#training">Your data is never used to train AI</a></li>
+        <li><a data-n="04" href="#ownership">You own your data and outputs</a></li>
+        <li><a data-n="05" href="#data-handling">How your data is handled</a></li>
+        <li><a data-n="06" href="#people-in-photos">People in photos</a></li>
+        <li><a data-n="07" href="#intellectual-property">Intellectual property</a></li>
+        <li><a data-n="08" href="#safe-content">Safe and appropriate content</a></li>
+        <li><a data-n="09" href="#human-review">Human review</a></li>
+        <li><a data-n="10" href="#turning-ai-off">Turning AI off</a></li>
+        <li><a data-n="11" href="#responsibility">Our responsibility</a></li>
+        <li><a data-n="12" href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <article class="ai-content">
+      <section class="ai-section" id="what-brik-ai-does">
+        <h2><span>01</span>What Brik AI does</h2>
+        <p>Brikito includes AI features called <strong>Brik AI</strong>. They read the content you add to your projects, including site photos, videos, drawings, specifications, documents, reports and messages, and return text results such as quality and progress findings, summaries, answers to questions, and suggested entries for forms.</p>
+        <p>Brik AI does not create images, designs, logos, music or videos, and it does not produce pictures or likenesses of people.</p>
+      </section>
+
+      <section class="ai-section" id="models">
+        <h2><span>02</span>The AI models we use</h2>
+        <p>Brik AI combines two kinds of model:</p>
+        <ul>
+          <li><strong>Brik AI (Brik 0.0.1):</strong> Brikito’s own AI model, built and operated by Brikito Private Limited.</li>
+          <li><strong>Enterprise foundation models:</strong> used alongside Brik AI and accessed only through enterprise cloud platforms, namely Amazon Bedrock and Microsoft Azure OpenAI Service. We never use the free or consumer versions of any AI service.</li>
+        </ul>
+        <p>Details of the models and the regions where your data is processed are available to customers under a non-disclosure agreement on request.</p>
+      </section>
+
+      <section class="ai-section" id="training">
+        <h2><span>03</span>Your data is never used to train AI</h2>
+        <p>We do not use your inputs, including prompts, files, photos, drawings and other project data, or the outputs Brik AI produces to train or improve any AI model, including Brikito’s own model. Our enterprise AI providers are also contractually barred from training their models on your data.</p>
+        <p>If we ever wish to use your data to improve Brik AI, we will ask for your written consent first. You may refuse or withdraw that consent at any time.</p>
+      </section>
+
+      <section class="ai-section" id="ownership">
+        <h2><span>04</span>You own your data and the outputs</h2>
+        <p>All inputs and outputs belong exclusively to you. Neither Brikito nor our AI providers claim ownership of, or any licence to use, your data or outputs for any purpose other than providing the service to you.</p>
+      </section>
+
+      <section class="ai-section" id="data-handling">
+        <h2><span>05</span>How your data is handled</h2>
+        <p>Your data is sent to an AI model only when an AI feature is used. It is encrypted in transit and at rest, and our AI providers may process it only to deliver the service.</p>
+        <p>Where a provider keeps data briefly for abuse monitoring, we turn this off or ask for it to be turned off wherever the provider allows.</p>
+      </section>
+
+      <section class="ai-section" id="people-in-photos">
+        <h2><span>06</span>People in photos</h2>
+        <p>Brik AI does not identify, recognise or describe individuals. Where a person appears in a site photo, it reports only site safety observations, such as “worker without a safety harness”, and never a name, identity or facial details.</p>
+      </section>
+
+      <section class="ai-section" id="intellectual-property">
+        <h2><span>07</span>Intellectual property</h2>
+        <p>Brik AI analyses your own material and returns findings about it, so it does not generate content that reproduces other people’s copyrighted works, trademarks or likenesses.</p>
+        <p>Our enterprise AI providers give contractual protection against copyright claims arising from their models’ outputs, and we keep their content filters, including protected-material detection, switched on.</p>
+      </section>
+
+      <section class="ai-section" id="safe-content">
+        <h2><span>08</span>Safe and appropriate content</h2>
+        <p>Our enterprise AI providers publish their efforts to exclude harmful material, such as child sexual abuse material, hate speech and discriminatory content, from their training data and outputs.</p>
+        <p>Brik AI is developed and extensively trained using multiple construction-industry datasets, domain-specific knowledge, and insights from construction experts to ensure its capabilities are tailored to real-world construction workflows and project requirements.</p>
+        <p>Brik AI is built from screened data, and we apply our own controls so that Brik AI is used only for construction project work.</p>
+      </section>
+
+      <section class="ai-section" id="human-review">
+        <h2><span>09</span>Human review</h2>
+        <p><strong>Brik AI suggests; people decide.</strong> AI findings are reviewed and approved by an authorised person, such as a QC engineer or project manager, before they are acted on. No record is created or approved by AI alone.</p>
+      </section>
+
+      <section class="ai-section" id="turning-ai-off">
+        <h2><span>10</span>Turning AI off</h2>
+        <p>An organisation’s administrator can switch off Brik AI features for the whole organisation or for individual projects. When AI is switched off, no project data is sent to any AI model.</p>
+      </section>
+
+      <section class="ai-section" id="responsibility">
+        <h2><span>11</span>Our responsibility</h2>
+        <p>Brikito Private Limited is responsible to its customers for the AI features in its service, including Brikito’s own model, the third-party AI models it integrates, and their outputs. This responsibility is set out in our <a href="/terms">Terms of Service</a> and the customer agreement.</p>
+      </section>
+
+      <section class="ai-section" id="contact">
+        <h2><span>12</span>Contact</h2>
+        <div class="ai-contact">
+          <p>For questions about Brik AI or how your data is handled, contact <a href="mailto:privacy@brikito.com">privacy@brikito.com</a>.</p>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="ai-footer">
+  <div class="ai-footer-inner">
+    <div>
+      <div class="ai-footer-brand">Brikito</div>
+      <p>Construction made simple.</p>
+    </div>
+    <nav class="ai-footer-links" aria-label="Footer links">
+      <a href="/brik-ai">Brik AI</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="/brik-ai-policy">Generative AI (Brik AI)</a>
+      <a href="/book-a-demo">Book a demo</a>
+      <a href="mailto:privacy@brikito.com">Contact</a>
+    </nav>
+  </div>
+  <div class="ai-footer-bottom">© 2026 Brikito. All rights reserved.</div>
+</footer>
+</body>
+</html>
