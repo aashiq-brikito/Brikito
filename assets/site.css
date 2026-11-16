@@ -763,3 +763,18 @@ body:has(.sheet.open) .mdemo{display:none}
 .prose .toc a:hover{color:var(--acc)}
 .prose .seealso{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
 @media (max-width:720px){.prose .toc ol{columns:1}.prose .toc li{padding:8px 0}}
+
+/* demo form: short version */
+.form .opt{font-weight:400;color:var(--muted2)}
+.form .hint{margin:-6px 0 0;font-size:13px;color:var(--muted)}
+.form .hint.bad{color:#B4322A;font-weight:600}
+.form details.more{border-top:1px solid var(--line);padding-top:14px}
+.form details.more summary{cursor:pointer;font-size:14.5px;font-weight:600;color:var(--ink);list-style:none;display:flex;align-items:center;gap:8px;min-height:32px}
+.form details.more summary::-webkit-details-marker{display:none}
+.form details.more summary:before{content:"+";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--alt2);font-size:16px;line-height:1}
+.form details.more[open] summary:before{content:"–"}
+.form .more-in{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.form .more-in .full{grid-column:1/-1}
+.form .wa-alt{gap:8px;margin-top:-4px}
+.form .wa-alt svg{color:#25D366}
+@media (max-width:720px){.form .more-in{grid-template-columns:1fr}}

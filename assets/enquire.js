@@ -25,6 +25,16 @@
 
   /* Book a demo page: pre-fill the plan they enquired about */
   if (/book-a-demo/.test(path)) {
+    // "Prefer WhatsApp? Chat with us" under the form (the number is never shown on the page)
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('[data-wa-direct]');
+      if (!b) return;
+      var t = 'Hi Brikito, I’d like a demo of Brikito for my projects.';
+      notifyWhatsApp('Book a demo page', t);
+      track('contact', { method: 'whatsapp', from: 'book_a_demo' });
+      try { if (window.fbq) fbq('track', 'Contact'); } catch (x) {}
+      window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+    });
     var plan = new URLSearchParams(location.search).get('plan');
     if (plan) {
       var fill = function () {
