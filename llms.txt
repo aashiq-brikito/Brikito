@@ -1,0 +1,56 @@
+# Brikito
+
+> Brikito is AI construction management software for builders, developers, contractors and PMCs. One app for site chat, daily progress reports (DPR), indents and purchases, materials and inventory, attendance, drawings, meetings and a live project dashboard, with Brik AI on every screen. Site teams work in their own language (including voice notes), and nothing is sent or approved without a person confirming it. Data is hosted in India. Serving India, the UAE, Singapore and Sri Lanka.
+
+Key facts:
+- Company: Brikito Private Limited, India
+- Website: https://www.brikito.com
+- Contact: hey@brikito.com
+- Demo: https://www.brikito.com/book-a-demo
+
+## Product
+- [Brikito: AI Construction Management Software & App](https://www.brikito.com): AI construction management software for builders and developers in India, UAE and Singapore: site chat, attendance, AI CCTV, reports and live dashboards.
+- [Brikito Console: One Place to Run Every Project](https://www.brikito.com/console): Brikito Console is the base platform for every project: site chat, Brik AI, labour, store, documents, subcontractors and approvals in one login.
+- [Brik AI: AI Assistant for Construction Teams | Brikito](https://www.brikito.com/brik-ai): Ask about progress, stock, attendance or approvals in plain language. Brik AI answers from live site data and drafts replies, POs and reports for approval.
+- [BrikChat: Construction Site Chat App with AI | Brikito](https://www.brikito.com/brikchat): Replace scattered WhatsApp groups with one project chat. BrikChat turns site messages and voice notes into indents, attendance and progress updates.
+- [BrikVision: AI CCTV for Construction Sites | Brikito](https://www.brikito.com/brikvision): Add AI to your site CCTV: live headcount, delivery logs, PPE and safety checks, and progress monitoring, 24/7 from anywhere. Fewer site visits.
+- [BrikDocs: DPR, BOQ & BBS Report Generator | Brikito](https://www.brikito.com/brikdocs): Generate DPR, DLR, BOQ, BBS, GRN and stock statements in one tap from work your team already logged, with version-controlled construction drawings.
+- [How Brikito Works: Site Chat to Live Dashboard](https://www.brikito.com/how-it-works): See five real Brikito workflows: chat to approval, asking Brik AI, CCTV intelligence, drawing takeoff and the recovery dashboard, played out in the app.
+- [Brikito Pricing: Construction Management Software Plans](https://www.brikito.com/pricing): Brikito plans for construction teams: Standard with a free trial, Professional for overseeing contractors, and Enterprise. Pricing on request.
+- [About Brikito: The Team Building Construction's AI OS](https://www.brikito.com/about): Meet Brikito, the team building the AI operating system for real estate development. Our story, mission, values, pilot results and founder Aashiq Ahamed.
+- [Book a Demo of Brikito Construction Software](https://www.brikito.com/book-a-demo): Book a 45-minute Brikito demo. We'll set your team up on one live project and show you site chat, Brik AI and reports running the same day.
+- [Free Construction Tools: DPR, Material Tracker | Brikito](https://www.brikito.com/free-tools): Free construction tools from Brikito: a site delay cost calculator, an Excel DPR template with checklist, and a material reconciliation and BOQ tracker.
+- [Construction Delay Cost Calculator (₹ per day) | Brikito](https://www.brikito.com/delay-cost-calculator): Free calculator: see what one day of construction delay costs your project in ₹, from overheads, idle labour, equipment hire, interest and LD.
+
+## Journal (guides)
+- [AI CCTV for Construction Sites: PPE, Headcount, Progress](https://www.brikito.com/blog-ai-cctv-construction-site-monitoring): How AI CCTV and computer vision give construction sites live headcount, delivery logs, helmet and vest detection and progress monitoring.
+- [AI Construction Site Chat: A WhatsApp Alternative](https://www.brikito.com/blog-ai-construction-site-chat): How AI site chat turns construction messages and voice notes into tagged updates, attendance and indents. A WhatsApp alternative for site teams.
+- [AI Construction Software in India: Chennai, Bengaluru](https://www.brikito.com/blog-ai-construction-software-india): AI construction management software for Indian builders in Chennai, Bengaluru and Coimbatore: multilingual site chat, attendance, materials and reports.
+- [AI Construction Management Software: UAE & Singapore](https://www.brikito.com/blog-ai-construction-software-uae-singapore): How AI construction management software helps contractors in Dubai, the UAE, Singapore and Sri Lanka with multilingual crews, safety and reporting.
+- [AI in Construction: Practical Ways AI Helps Project Teams](https://www.brikito.com/blog-ai-construction): Practical uses of AI in construction, from finding project information and structuring site updates to summarising records, with human oversight.
+- [Best AI Construction Management Software (2026 Guide)](https://www.brikito.com/blog-best-ai-construction-management-software): Compare AI construction management software: what AI does on site, 8 buying criteria, top AI construction tools and why builders choose Brikito.
+- [Why Accurate BOQs Still Lead to Construction Cost Overruns](https://www.brikito.com/blog-boq-cost-overruns): Your BOQ can be correct and the project can still lose money. See where construction cost overruns really come from and how to catch them earlier.
+- [Building Construction Process: A Step-by-Step Guide](https://www.brikito.com/blog-building-construction-process): The building construction process step by step, from approvals and foundations to frame, services, finishes and handover, with hold points and checklists.
+- [Construction Cost Control: A Practical Guide for Developers](https://www.brikito.com/blog-construction-cost-control): A practical guide to construction cost control for developers: baseline budgets, commitments, earned value, materials, labour, changes and cash flow.
+- [Construction Document Control: Drawings & Revisions](https://www.brikito.com/blog-construction-document-control): How to control construction documents: drawing registers, numbering, revision and status codes, transmittals and keeping superseded drawings off site.
+- [Construction Information Management: Fix the Info Gap](https://www.brikito.com/blog-construction-information-management): Most construction communication problems are information problems. Learn how to manage project information so the right people act on the right data.
+- [Construction Labour Management: Attendance to Payroll](https://www.brikito.com/blog-construction-labour-management): How to manage construction labour: manpower planning, proxy-proof attendance, productivity per labour-day, contractor bill checks and labour codes.
+- [Construction Management Software: Buyer's Guide](https://www.brikito.com/blog-construction-management-software): How to choose construction management software: types, a feature checklist, pricing models, 15 demo questions and a 7-step selection process.
+- [Construction in India, UAE, Singapore & Sri Lanka: Guide](https://www.brikito.com/blog-construction-market-guide): How construction is regulated in India, UAE, Singapore and Sri Lanka: RERA, Dubai escrow, BCA and CONQUAS, CIDA, and the site problems all four share.
+- [Construction Material Management: Indent to Consumption](https://www.brikito.com/blog-construction-material-management): How construction material management works from indent to purchase order, GRN, storage, issue and reconciliation, with IS 4082 storage rules and a checklist.
+- [Construction Scheduling and Delay Management Guide](https://www.brikito.com/blog-construction-scheduling): How construction scheduling and delay management work: master programme, look-ahead plans, critical path, PPC, delay types and recovery, with a checklist.
+- [Construction Site Communication: A Complete Guide](https://www.brikito.com/blog-construction-site-communication): How to set up construction site communication that works: channels, a communication matrix, daily rhythm, RFIs, site instructions and a checklist.
+- [Construction Site Documentation: Every Report You Need](https://www.brikito.com/blog-construction-site-documentation): Every record a construction project should keep, from DPRs and cube registers to RFIs, site instructions and handover files, with owners and frequency.
+- [Construction Site Safety and Quality Management Guide](https://www.brikito.com/blog-construction-site-safety-and-quality): A practical guide to construction site safety and quality: hazards and controls, permits, PPE, toolbox talks, ITPs, hold points, defects and NCRs.
+- [Daily Progress Report in Construction: Format & Template](https://www.brikito.com/blog-daily-progress-report-construction): What a construction daily progress report (DPR) should include, a worked example, a format you can copy, mistakes to avoid and how to automate it.
+- [Drawing Revision Control: Avoid Outdated Drawings on Site](https://www.brikito.com/blog-drawing-revisions): The most dangerous drawing on site is the one that is no longer current. How to control drawing revisions so crews always build from the latest one.
+- [Real Estate Development Process: Land to Handover](https://www.brikito.com/blog-real-estate-development-process): The real estate development process in 8 stages: due diligence, feasibility, JDA, approvals, RERA, sales, construction and handover.
+- [Construction Rework: The Information Gaps Behind It](https://www.brikito.com/blog-rework-coordination): Construction rework often starts with unclear instructions, outdated drawings and missed approvals. Learn how better coordination reduces avoidable rework.
+- [7 Construction Site Updates Your Team Should Track](https://www.brikito.com/blog-seven-site-updates): The seven site updates every construction team should capture daily, from progress and manpower to blockers, materials, approvals and next steps.
+- [Stages of House Construction: Step-by-Step Guide](https://www.brikito.com/blog-stages-of-house-construction): Every stage of house construction from foundation to handover, with checks before each stage, IS 456 curing and formwork times, and tips.
+- [Contractor and Subcontractor Management Guide](https://www.brikito.com/blog-subcontractor-management): How to manage contractors and subcontractors: prequalification, work orders, coordination, measurement, payment, back-charges and close-out.
+- [Where Does a Construction Project Actually Lose Time?](https://www.brikito.com/blog-where-time-goes): Construction delays build up between activities, approvals, decisions and handoffs. Learn how to spot waiting time and improve project coordination.
+
+## Policies
+- [Privacy policy](https://www.brikito.com/privacy)
+- [Generative AI (Brik AI)](https://www.brikito.com/brik-ai-policy)

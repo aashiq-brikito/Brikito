@@ -2,7 +2,26 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/Brikito%20\\(standalone\\).html", "destination": "/", "permanent": true },
-    { "source": "/Brikito%20\\(standalone\\)", "destination": "/", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "brikito.com"
+        }
+      ],
+      "destination": "https://www.brikito.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/Brikito%20\\(standalone\\).html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Brikito%20\\(standalone\\)",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }
