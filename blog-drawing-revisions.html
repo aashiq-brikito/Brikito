@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drawing Revision Control: Avoid Outdated Drawings on Site</title>
+<title>Drawing Revision Control &amp; Superseded Drawings Explained</title>
 <meta name="description" content="The most dangerous drawing on site is the one that is no longer current. How to control drawing revisions so crews always build from the latest one." />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <link rel="canonical" href="https://www.brikito.com/blog-drawing-revisions" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Brikito" />
 <meta property="og:locale" content="en_IN" />
-<meta property="og:title" content="Drawing Revision Control: Avoid Outdated Drawings on Site" />
+<meta property="og:title" content="Drawing Revision Control &amp; Superseded Drawings Explained" />
 <meta property="og:description" content="The most dangerous drawing on site is the one that is no longer current. How to control drawing revisions so crews always build from the latest one." />
 <meta property="og:url" content="https://www.brikito.com/blog-drawing-revisions" />
 <meta property="og:image" content="https://www.brikito.com/images/blog/drawing-revisions.png" />
 <meta property="article:published_time" content="2026-10-29" />
-<meta property="article:modified_time" content="2026-10-29" />
+<meta property="article:modified_time" content="2026-11-16" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Drawing Revision Control: Avoid Outdated Drawings on Site" />
+<meta name="twitter:title" content="Drawing Revision Control &amp; Superseded Drawings Explained" />
 <meta name="twitter:description" content="The most dangerous drawing on site is the one that is no longer current. How to control drawing revisions so crews always build from the latest one." />
 <meta name="twitter:image" content="https://www.brikito.com/images/blog/drawing-revisions.png" />
 <meta name="theme-color" content="#ffffff" />
@@ -170,6 +170,12 @@ footer{padding:80px 0 36px}
 @media(max-width:720px){.wrap{padding:0 20px}}
     article .cover{margin:0 0 40px}article .cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#f2f3f5}
     .related{margin-top:64px;padding-top:8px;border-top:1px solid var(--line)}.related h2{margin-top:40px}.related ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}.related li{padding:0;margin:0}.related a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}.related a:hover{border-color:var(--ink);transform:translateY(-1px)}.related .rt{display:block;font-weight:600;color:var(--ink);font-size:18px;line-height:1.35}.related .rd{display:block;font-size:15px;line-height:1.55;color:var(--muted);margin-top:6px}
+
+article .table-wrap{overflow-x:auto;margin:0 0 30px}
+article table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.55}
+article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+article th{background:var(--soft);color:var(--ink);font-weight:600}
+article td:first-child{font-weight:500;color:var(--ink)}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" />
 <link rel="stylesheet" href="/assets/chrome.css?v=20261116a" />
@@ -203,7 +209,7 @@ footer{padding:80px 0 36px}
         "https://www.brikito.com/images/blog/drawing-revisions.png"
       ],
       "datePublished": "2026-10-29",
-      "dateModified": "2026-10-29",
+      "dateModified": "2026-11-16",
       "url": "https://www.brikito.com/blog-drawing-revisions"
     },
     {
@@ -223,6 +229,14 @@ footer{padding:80px 0 36px}
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "An outdated drawing may not reflect the latest coordinated design or approved change. If work proceeds using it, the project may face rework, clashes, waste, delays, or confusion over what was authorised."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does superseded mean on a construction drawing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A superseded drawing is an older revision that has been replaced by a newer approved revision of the same drawing. It must not be used for construction. It is usually kept in the project record, clearly marked as superseded."
           }
         },
         {
@@ -277,7 +291,7 @@ footer{padding:80px 0 36px}
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Drawing Revision Control: Avoid Outdated Drawings on Site",
+          "name": "Drawing Revision Control & Superseded Drawings Explained",
           "item": "https://www.brikito.com/blog-drawing-revisions"
         }
       ]
@@ -348,7 +362,23 @@ footer{padding:80px 0 36px}
         </ul>
         <p>The exact labels and approval steps vary by project, contract, and document-control procedure. Follow the project’s own requirements rather than assuming one status label is suitable for every job.</p>
 
-        <h2 id="common-failures">Where drawing revisions get lost</h2>
+        <h2 id="superseded">What does “superseded” mean on a drawing?</h2>
+  <p>A <strong>superseded drawing</strong> is an earlier revision that has been replaced by a newer, approved revision of the same drawing. It is no longer valid for construction, even if nothing looks wrong with it. The drawing number stays the same; the revision letter or number changes.</p>
+  <p><strong>Example:</strong> drawing A-201 (Ground floor layout) was issued as Rev B. After a coordination meeting moved a column, the architect issues Rev C. From the moment Rev C is approved and issued, Rev B is <em>superseded</em>. Site teams should stop using Rev B, mark any printed copies “SUPERSEDED” (or remove them), and build only from Rev C.</p>
+  <p>Superseded drawings are usually kept in the project record rather than deleted, so the team can show what was issued at each stage and why a change was made.</p>
+  <h3>A simple drawing revision register you can copy</h3>
+  <p>Even a basic register in a shared sheet makes the current revision obvious. Keep one row per drawing revision:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Drawing no.</th><th>Title</th><th>Rev</th><th>Status</th><th>Date issued</th><th>Issued by</th><th>Change summary</th><th>Sent to</th></tr></thead>
+    <tbody>
+      <tr><td>A-201</td><td>Ground floor layout</td><td>B</td><td>Superseded</td><td>02 Oct</td><td>Architect</td><td>Door D4 widened</td><td>Site, MEP</td></tr>
+      <tr><td>A-201</td><td>Ground floor layout</td><td>C</td><td>Issued for construction</td><td>19 Oct</td><td>Architect</td><td>Column C7 moved 300 mm</td><td>Site, structure, MEP</td></tr>
+      <tr><td>S-105</td><td>Slab L1 reinforcement</td><td>A</td><td>Under review</td><td>21 Oct</td><td>Structural consultant</td><td>First issue</td><td>PM only</td></tr>
+    </tbody>
+  </table></div>
+  <p>The rule that makes it work: when a new revision is issued, the previous row is changed to “Superseded” on the same day, and the people in “Sent to” are told.</p>
+
+  <h2 id="common-failures">Where drawing revisions get lost</h2>
         <h3>1. The update is shared, but the old copy stays in circulation</h3>
         <p>A revised file may be emailed or posted to a group, while printed copies, downloaded PDFs, and locally saved files remain in use. Sending the new version does not automatically remove the old one from the workflow.</p>
 
@@ -422,6 +452,8 @@ footer{padding:80px 0 36px}
           <p>Drawing revision control is the process of tracking drawing versions, statuses, approvals, and distribution so teams can identify the current authorised information for their work.</p>
           <h3>Why are outdated construction drawings a problem?</h3>
           <p>An outdated drawing may not reflect the latest coordinated design or approved change. If work proceeds using it, the project may face rework, clashes, waste, delays, or confusion over what was authorised.</p>
+          <h3>What does superseded mean on a construction drawing?</h3>
+          <p>A superseded drawing is an older revision that has been replaced by a newer approved revision of the same drawing. It must not be used for construction. It is usually kept in the project record, clearly marked as superseded.</p>
           <h3>Does the newest drawing always mean it is approved for construction?</h3>
           <p>No. The newest uploaded file may be a draft or under review. Teams should check the project’s defined status and approval process rather than assuming the most recent file is ready to use.</p>
           <h3>Who is responsible for drawing revision control?</h3>
@@ -442,7 +474,7 @@ footer{padding:80px 0 36px}
         <span class="mono">In this article</span>
         <nav>
           <a href="#why-it-matters">Why outdated drawings matter</a>
-          <a href="#revision-basics">Revision control basics</a>
+          <a href="#revision-basics">Revision control basics</a><a href="#superseded">Superseded drawings & register</a>
           <a href="#common-failures">Where revisions get lost</a>
           <a href="#process">A practical process</a>
           <a href="#software">Software and document control</a>

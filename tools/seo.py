@@ -104,14 +104,14 @@ PAGES = {
     ),
     "blog-construction-information-management.html": dict(
         slug="blog-construction-information-management", type="article", image="/images/blog/construction-information-management.png",
-        published="2026-11-02", modified="2026-11-02",
-        title="Construction Information Management: Fix the Info Gap",
+        published="2026-11-02", modified="2026-11-16",
+        title="What Is Construction Information Management? A Practical Guide",
         description="Most construction communication problems are information problems. Learn how to manage project information so the right people act on the right data.",
     ),
     "blog-drawing-revisions.html": dict(
         slug="blog-drawing-revisions", type="article", image="/images/blog/drawing-revisions.png",
-        published="2026-10-29", modified="2026-10-29",
-        title="Drawing Revision Control: Avoid Outdated Drawings on Site",
+        published="2026-10-29", modified="2026-11-16",
+        title="Drawing Revision Control & Superseded Drawings Explained",
         description="The most dangerous drawing on site is the one that is no longer current. How to control drawing revisions so crews always build from the latest one.",
     ),
     "blog-rework-coordination.html": dict(
