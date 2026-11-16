@@ -262,6 +262,24 @@ PAGES = {
         title="Stages of House Construction: Step-by-Step Guide",
         description="Every stage of house construction from foundation to handover, with checks before each stage, IS 456 curing and formwork times, and tips.",
     ),
+    "blog-material-indent-construction.html": dict(
+        slug="blog-material-indent-construction", type="article", image="/images/blog/material-indent-construction.jpg",
+        published="2026-11-16", modified="2026-11-16",
+        title="What Is a Material Indent in Construction?",
+        description="What a material indent is in construction, the fields it needs, who raises and approves it, an example from site and how it becomes a PO and GRN.",
+    ),
+    "blog-how-to-prepare-boq.html": dict(
+        slug="blog-how-to-prepare-boq", type="article", image="/images/blog/how-to-prepare-boq.jpg",
+        published="2026-11-16", modified="2026-11-16",
+        title="How to Prepare a BOQ: Step-by-Step Guide",
+        description="How to prepare a BOQ in 9 steps: drawings, take-off, IS 1200 measurement, item descriptions, rate analysis and checks, with a worked example.",
+    ),
+    "blog-causes-of-delays-in-construction.html": dict(
+        slug="blog-causes-of-delays-in-construction", type="article", image="/images/blog/causes-of-delays-in-construction.jpg",
+        published="2026-11-16", modified="2026-11-16",
+        title="Causes of Delays in Construction: 15 Reasons",
+        description="The 15 most common causes of delays in construction, from late drawings and approvals to materials, labour and weather, and how to track each one.",
+    ),
     "404.html": dict(
         slug="404", noindex=True,
         title="Page Not Found | Brikito Construction Software",

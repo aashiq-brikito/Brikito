@@ -50,6 +50,9 @@ Key facts:
 - [Stages of House Construction: Step-by-Step Guide](https://www.brikito.com/blog-stages-of-house-construction): Every stage of house construction from foundation to handover, with checks before each stage, IS 456 curing and formwork times, and tips.
 - [Contractor and Subcontractor Management Guide](https://www.brikito.com/blog-subcontractor-management): How to manage contractors and subcontractors: prequalification, work orders, coordination, measurement, payment, back-charges and close-out.
 - [Where Does a Construction Project Actually Lose Time?](https://www.brikito.com/blog-where-time-goes): Construction delays build up between activities, approvals, decisions and handoffs. Learn how to spot waiting time and improve project coordination.
+- [What Is a Material Indent in Construction?](https://www.brikito.com/blog-material-indent-construction): What a material indent is in construction, the fields it needs, who raises and approves it, an example from site and how it becomes a PO and GRN.
+- [How to Prepare a BOQ: Step-by-Step Guide](https://www.brikito.com/blog-how-to-prepare-boq): How to prepare a BOQ in 9 steps: drawings, take-off, IS 1200 measurement, item descriptions, rate analysis and checks, with a worked example.
+- [Causes of Delays in Construction: 15 Reasons](https://www.brikito.com/blog-causes-of-delays-in-construction): The 15 most common causes of delays in construction, from late drawings and approvals to materials, labour and weather, and how to track each one.
 
 ## Policies
 - [Privacy policy](https://www.brikito.com/privacy)
