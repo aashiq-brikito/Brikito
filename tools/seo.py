@@ -456,6 +456,7 @@ STRIP = [
     r'[ \t]*<meta\b[^>]*\bname="theme-color"[^>]*>\s*\n?',
     r'[ \t]*<link\b[^>]*\brel="manifest"[^>]*>\s*\n?',
     r'[ \t]*<link\b[^>]*\brel="icon"[^>]*href="/favicon\.ico"[^>]*>\s*\n?',
+    r'[ \t]*<script\b[^>]*src="https://t\.contentsquare\.net/[^"]*"[^>]*></script>\s*\n?',
 ]
 
 def esc(v):
@@ -494,6 +495,8 @@ def head_block(page):
         '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />',
         '<link rel="icon" href="/favicon.ico" sizes="48x48" />',
         '<link rel="manifest" href="/site.webmanifest" />',
+        # Contentsquare (heatmaps and session insights)
+        '<script defer src="https://t.contentsquare.net/uxa/8a5aab0e04b3e.js"></script>',
     ]
     return "\n".join(lines) + "\n"
 
