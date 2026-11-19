@@ -520,10 +520,10 @@ function wire(root) {
   root.querySelectorAll('[data-rotate]').forEach(h => {
     const lines = [
       ['AI construction management', 'software for site teams.'],
-      ['Intelligent construction,', 'same site habits.'],
-      ['Building the world’s simplest', 'construction software.'],
+      ['Intelligent construction,', 'without changing the site habits.'],
+      ['Building the world’s simplest', 'construction management tool.'],
       ['Run every construction project', 'professionally.'],
-      ['The all-in-one', 'construction software app.'],
+      ['The all-in-one construction', 'management app.'],
     ];
     const inner = h.querySelector('.hr-in'); if (!inner || h.dataset.rot) return; h.dataset.rot = '1';
     const html = l => l[0] + '<br><span class="gt">' + l[1] + '</span>';
