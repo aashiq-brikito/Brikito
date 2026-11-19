@@ -53,6 +53,9 @@ Key facts:
 - [What Is a Material Indent in Construction?](https://www.brikito.com/blog-material-indent-construction): What a material indent is in construction, the fields it needs, who raises and approves it, an example from site and how it becomes a PO and GRN.
 - [How to Prepare a BOQ: Step-by-Step Guide](https://www.brikito.com/blog-how-to-prepare-boq): How to prepare a BOQ in 9 steps: drawings, take-off, IS 1200 measurement, item descriptions, rate analysis and checks, with a worked example.
 - [Causes of Delays in Construction: 15 Reasons](https://www.brikito.com/blog-causes-of-delays-in-construction): The 15 most common causes of delays in construction, from late drawings and approvals to materials, labour and weather, and how to track each one.
+- [Construction Cost Per Sq Ft in India (2026 Rates)](https://www.brikito.com/blog-construction-cost-per-sq-ft-india): Construction cost per sq ft in India in 2026 by quality and city, including Chennai, Bengaluru and Coimbatore, with a worked example and exclusions.
+- [Daily Labour Report Format for Construction (Free)](https://www.brikito.com/blog-daily-labour-report-construction): Daily labour report (DLR) format for construction sites: fields, a filled sample, who fills it, common mistakes and a free Excel template.
+- [What Is an AI Operating System for Construction?](https://www.brikito.com/blog-ai-operating-system-for-construction): What an AI operating system for construction is, what it includes, a site example and how it differs from construction software and AI chatbots.
 
 ## Policies
 - [Privacy policy](https://www.brikito.com/privacy)
