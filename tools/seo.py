@@ -280,6 +280,24 @@ PAGES = {
         title="Causes of Delays in Construction: 15 Reasons",
         description="The 15 most common causes of delays in construction, from late drawings and approvals to materials, labour and weather, and how to track each one.",
     ),
+    "blog-construction-cost-per-sq-ft-india.html": dict(
+        slug="blog-construction-cost-per-sq-ft-india", type="article", image="/images/blog/construction-cost-per-sq-ft-india.jpg",
+        published="2026-11-19", modified="2026-11-19",
+        title="Construction Cost Per Sq Ft in India (2026 Rates)",
+        description="Construction cost per sq ft in India in 2026 by quality and city, including Chennai, Bengaluru and Coimbatore, with a worked example and exclusions.",
+    ),
+    "blog-daily-labour-report-construction.html": dict(
+        slug="blog-daily-labour-report-construction", type="article", image="/images/blog/daily-labour-report-construction.jpg",
+        published="2026-11-19", modified="2026-11-19",
+        title="Daily Labour Report Format for Construction (Free)",
+        description="Daily labour report (DLR) format for construction sites: fields, a filled sample, who fills it, common mistakes and a free Excel template.",
+    ),
+    "blog-ai-operating-system-for-construction.html": dict(
+        slug="blog-ai-operating-system-for-construction", type="article", image="/images/blog/ai-operating-system-for-construction.jpg",
+        published="2026-11-19", modified="2026-11-19",
+        title="What Is an AI Operating System for Construction?",
+        description="What an AI operating system for construction is, what it includes, a site example and how it differs from construction software and AI chatbots.",
+    ),
     "404.html": dict(
         slug="404", noindex=True,
         title="Page Not Found | Brikito Construction Software",
