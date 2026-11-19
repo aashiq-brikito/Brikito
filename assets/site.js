@@ -536,12 +536,30 @@ function wire(root) {
     };
     fit(); addEventListener('resize', fit);
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    let i = 0;
-    setInterval(() => {
-      if (document.hidden) return;
-      inner.classList.add('out');
-      setTimeout(() => { i = (i + 1) % lines.length; inner.innerHTML = html(lines[i]); inner.classList.remove('out'); }, 450);
-    }, 3000);
+    // typewriter: hold the line, delete it, type the next one with a blinking cursor
+    const caret = '<i class="hr-caret" aria-hidden="true"></i>';
+    const show = (l, k) => {
+      const a = l[0], b = l[1];
+      if (k <= a.length) return a.slice(0, k) + caret + '<br><span class="gt">&nbsp;</span>';
+      return a + '<br><span class="gt">' + b.slice(0, k - a.length) + '</span>' + caret;
+    };
+    let i = 0, k = lines[0][0].length + lines[0][1].length, mode = 'hold', wait = 2200;
+    h.setAttribute('aria-label', lines.map(l => l[0] + ' ' + l[1]).join(' · '));
+    inner.innerHTML = show(lines[0], k);
+    const tick = () => {
+      if (document.hidden) return setTimeout(tick, 500);
+      const l = lines[i], total = l[0].length + l[1].length;
+      if (mode === 'hold') { mode = 'del'; return setTimeout(tick, wait); }
+      if (mode === 'del') {
+        k = Math.max(0, k - 2); inner.innerHTML = show(l, k);
+        if (k === 0) { i = (i + 1) % lines.length; mode = 'type'; return setTimeout(tick, 250); }
+        return setTimeout(tick, 18);
+      }
+      k++; inner.innerHTML = show(lines[i], k);
+      if (k >= total) { mode = 'hold'; wait = 2000; return setTimeout(tick, 60); }
+      return setTimeout(tick, 38 + Math.random() * 30);
+    };
+    setTimeout(tick, 400);
   });
   io && io.disconnect();
   io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });

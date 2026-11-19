@@ -780,5 +780,6 @@ body:has(.sheet.open) .mdemo{display:none}
 @media (max-width:720px){.form .more-in{grid-template-columns:1fr}}
 
 /* rotating homepage headline */
-.hero-h[data-rotate] .hr-in{display:inline-block;transition:opacity .45s var(--ease),transform .45s var(--ease),filter .45s var(--ease)}
-.hero-h[data-rotate] .hr-in.out{opacity:0;transform:translateY(12px);filter:blur(6px)}
+.hero-h[data-rotate] .hr-in{display:inline-block}
+.hr-caret{display:inline-block;width:.06em;min-width:3px;height:.82em;margin-left:.06em;vertical-align:-.04em;border-radius:2px;background:linear-gradient(180deg,#7B2FE0,#3A8EF6);animation:hrblink 1s steps(1) infinite}
+@keyframes hrblink{50%{opacity:0}}
