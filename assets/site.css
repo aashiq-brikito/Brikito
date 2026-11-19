@@ -778,3 +778,7 @@ body:has(.sheet.open) .mdemo{display:none}
 .form .wa-alt{gap:8px;margin-top:-4px}
 .form .wa-alt svg{color:#25D366}
 @media (max-width:720px){.form .more-in{grid-template-columns:1fr}}
+
+/* rotating homepage headline */
+.hero-h[data-rotate] .hr-in{display:inline-block;transition:opacity .45s var(--ease),transform .45s var(--ease),filter .45s var(--ease)}
+.hero-h[data-rotate] .hr-in.out{opacity:0;transform:translateY(12px);filter:blur(6px)}

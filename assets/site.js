@@ -100,8 +100,8 @@ const P = {};
 P.home = () => `
 <section class="hero home-hero"><div class="aurora" aria-hidden="true"></div><div class="gridbg" aria-hidden="true"></div><div class="wrap"><div class="copy">
 <div class="rv">${status('live')}</div>
-<h1 class="d1 rv dl1 hero-h">AI construction management<br><span class="gt">software for site teams.</span></h1>
-<p class="lead rv dl2"><b style="color:var(--ink);font-weight:600">Intelligent construction, same site habits.</b> One app for chat, attendance, drawings, meetings, mail and a live dashboard, with Brik AI on every screen. Your crews keep working the way they do. Your office stays in control.</p>
+<h1 class="d1 rv dl1 hero-h" data-rotate><span class="hr-in">AI construction management<br><span class="gt">software for site teams.</span></span></h1>
+<p class="lead rv dl2">One app for chat, attendance, drawings, meetings, mail and a live dashboard, with Brik AI on every screen. Your crews keep working the way they do. Your office stays in control.</p>
 <div class="btns rv dl3" style="justify-content:center">${go('book-a-demo', 'Book a demo')}${go('how-it-works', 'See how it works', 'btn btn-s')}</div></div>
 <div class="stage zoom" id="stage">
 <div class="glow" aria-hidden="true"></div>
@@ -516,6 +516,33 @@ function closeMenus() {
 // ---------------- interactions ----------------
 let io;
 function wire(root) {
+  // homepage headline: a new line every 3 seconds (first line stays in the page for Google)
+  root.querySelectorAll('[data-rotate]').forEach(h => {
+    const lines = [
+      ['AI construction management', 'software for site teams.'],
+      ['Intelligent construction,', 'same site habits.'],
+      ['Building the world’s simplest', 'construction software.'],
+      ['Run every construction project', 'professionally.'],
+      ['The all-in-one', 'construction software app.'],
+    ];
+    const inner = h.querySelector('.hr-in'); if (!inner || h.dataset.rot) return; h.dataset.rot = '1';
+    const html = l => l[0] + '<br><span class="gt">' + l[1] + '</span>';
+    const fit = () => { // reserve the tallest line's height so the page never jumps
+      const probe = h.cloneNode(false); probe.removeAttribute('data-rotate');
+      probe.style.cssText = 'position:absolute;visibility:hidden;left:0;right:0;min-height:0';
+      h.parentNode.appendChild(probe); probe.style.width = h.offsetWidth + 'px';
+      let max = 0; lines.forEach(l => { probe.innerHTML = '<span class="hr-in">' + html(l) + '</span>'; max = Math.max(max, probe.offsetHeight); });
+      probe.remove(); h.style.minHeight = max + 'px';
+    };
+    fit(); addEventListener('resize', fit);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let i = 0;
+    setInterval(() => {
+      if (document.hidden) return;
+      inner.classList.add('out');
+      setTimeout(() => { i = (i + 1) % lines.length; inner.innerHTML = html(lines[i]); inner.classList.remove('out'); }, 450);
+    }, 3000);
+  });
   io && io.disconnect();
   io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   root.querySelectorAll('.rv,.zoom').forEach(el => io.observe(el));
