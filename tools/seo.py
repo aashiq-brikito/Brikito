@@ -319,11 +319,14 @@ ORGANIZATION = {
                    "Daily progress reports", "Construction labour attendance", "Construction material management"],
     "slogan": "Construction made simple.",
     "email": "hey@brikito.com",
-    "founder": {"@type": "Person", "name": "Aashiq Ahamed", "jobTitle": "Founder"},
+    "founder": {"@type": "Person", "name": "Aashiq Ahamed", "jobTitle": "Founder",
+                "sameAs": ["https://www.linkedin.com/in/aashiqahamed"]},
     "sameAs": [
         "https://www.linkedin.com/company/brikito",
         "https://www.instagram.com/brikitoai/",
         "https://www.youtube.com/@Brikitoai",
+        "https://www.crunchbase.com/organization/brikito",
+        "https://www.producthunt.com/products/brikito",
         "https://www.facebook.com/brikitoai",
     ],
 }
