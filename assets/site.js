@@ -202,7 +202,7 @@ ${small ? '' : '<g stroke="#E5E5EA">' + [50, 100, 150, 200].map(y => `<line x1="
 
 // ---------------- product pages ----------------
 P['brik-ai'] = () => `
-${pbar('Brik AI', 'brik-ai')}<section class="hero"><div class="wrap"><div class="split">
+<section class="hero"><div class="wrap"><div class="split">
 <div><div class="rv">${status('live')}</div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">The AI assistant built for construction sites.</h1>
 <p class="lead rv dl2">Brik AI is the AI assistant built into Brikito’s construction management software. It reads every message, voice note and document, answers from live project data, and drafts replies, orders and reports. Nothing goes out until a person approves it.</p>
 <div class="btns rv dl3">${go('book-a-demo', 'Book a demo')}<a class="btn btn-s" href="#ask" data-scroll="ask">See what you can ask</a></div>
@@ -231,7 +231,7 @@ ${boxes([['users', 'Project manager', 'Pending approvals, slipping activities an
 ${explore('brik-ai')}${cta('Give your site team an AI that gets construction.', 'A 45-minute demo. We set your team up on one live project and show what Brik can answer that same day.')}`;
 
 P.brikchat = () => `
-${pbar('BrikChat', 'brikchat')}<section class="hero"><div class="wrap"><div class="split">
+<section class="hero"><div class="wrap"><div class="split">
 <div><div class="rv">${status('dev')}</div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">The site chat that turns messages into work.</h1>
 <p class="lead rv dl2">One project chat in place of scattered WhatsApp groups. Brik reads messages, voice notes, photos and PDFs, tags each one, and routes it to the dashboard or to the PM for approval.</p>
 <div class="btns rv dl3">${go('book-a-demo', 'Get early access')}<a class="btn btn-s" href="#vs" data-scroll="vs">BrikChat vs WhatsApp</a></div>
@@ -256,7 +256,7 @@ const realCam = (img, label, alt, foot) => `<div class="cam real"><img src="/img
 const camGrid = () => `<div class="cams">${realCam('cam-real-activity', 'CAM 01 · SITE ACTIVITY', 'AI CCTV view of active construction work and workers', 'CREW ACTIVE')}${realCam('cam-real-zone', 'CAM 02 · WORK ZONE', 'AI CCTV view of a formwork work zone', 'FORMWORK ACTIVE')}${realCam('cam-real-occupancy', 'CAM 03 · OCCUPANCY', 'AI CCTV counting construction workers on site', 'HEADCOUNT 16')}${realCam('cam-real-ppe', 'CAM 04 · SAFETY / PPE', 'AI CCTV detecting workers and safety helmets', 'HELMET DETECTION')}</div>`;
 const camGridOld = () => `<div class="cams">${camTile('cam-gate', 'CAM 01 · SITE ACTIVITY', [[13, 37, 6, 13, 'person .97'], [48, 62, 6, 14, 'person .95'], [74, 56, 6, 13, 'person .94']], 'CREW ACTIVE')}${camTile('cam-zone', 'CAM 02 · WORK ZONE', [[55, 20, 33, 75, 'formwork active']], 'ZONE B · ACTIVE')}${camTile('cam-crew', 'CAM 03 · OCCUPANCY', [[18, 36, 7, 17, 'person'], [46, 26, 7, 20, 'person'], [37, 53, 9, 18, 'person'], [70, 41, 8, 17, 'person']], 'HEADCOUNT 16')}${camTile('cam-ppe', 'CAM 04 · SAFETY / PPE', [[44, 12, 10, 24, 'no helmet']], '1 FLAG · ZONE B', [0])}</div>`;
 P.brikvision = () => `
-${pbar('BrikVision', 'brikvision')}<section class="hero" style="padding-bottom:40px"><div class="wrap"><div class="copy">
+<section class="hero" style="padding-bottom:40px"><div class="wrap"><div class="copy">
 <div class="rv">${status('pilot')}</div><h1 class="d1 rv dl1">See your site<br>without standing on it.</h1>
 <p class="lead rv dl2">BrikVision adds AI to the CCTV you already have. It counts people, logs deliveries, checks helmets and vests, and tracks progress around the clock, on your phone.</p>
 <div class="btns rv dl3" style="justify-content:center">${go('book-a-demo', 'Request a pilot')}<a class="btn btn-s" href="#watch" data-scroll="watch">What it watches</a></div></div>
@@ -278,7 +278,7 @@ ${explore('brikvision')}${cta('Put AI on your site cameras.', 'Tell us about you
 
 const REPORTS = [['DPR', 'Daily Progress Report', 'Updates, attendance, GRN'], ['DLR', 'Daily Labour Report', 'Selfie check-in and voice counts: attendance, hours and OT by team and contractor'], ['BOQ', 'Bill of Quantities', 'Drawings and measurements'], ['BBS', 'Bar Bending Schedule', 'Structural drawings: bar marks, shapes, diameters, cut lengths, weights'], ['EST', 'Estimation', 'BOQ, rates and consumption'], ['SCH', 'Schedule', 'Weekly plans and progress: plan vs actual and slippage'], ['FAB', 'Fabrication Drawing', 'Drawing library, latest revision tagged'], ['GRN', 'Goods Received Note', 'POs, gate and store entries'], ['STK', 'Stock Statement', 'GRN, issues and indents: opening, received, issued, closing']];
 P.brikdocs = () => `
-${pbar('BrikDocs', 'brikdocs')}<section class="hero"><div class="wrap"><div class="split">
+<section class="hero"><div class="wrap"><div class="split">
 <div><div class="rv">${status('docs')}</div><h1 class="d1 rv dl1" style="font-size:clamp(44px,6vw,80px)">Every construction report, generated in a tap.</h1>
 <p class="lead rv dl2">Reports are built from work your team already logged in Brikito. No late nights in Excel. Drawings are version-controlled, with the latest revision tagged on site.</p>
 <div class="btns rv dl3">${go('book-a-demo', 'Book a demo')}<a class="btn btn-s" href="#reports" data-scroll="reports">See every report</a></div>
@@ -446,7 +446,7 @@ const MODS = [
   ['Team & Control', 'lock', 'People, roles, approval rules and project settings.'],
 ];
 P.console = () => `
-${pbar('Brikito Console', 'console')}<section class="hero" style="padding-bottom:30px"><div class="wrap"><div class="copy">
+<section class="hero" style="padding-bottom:30px"><div class="wrap"><div class="copy">
 <div class="rv">${status('live')}</div>
 <h1 class="d1 rv dl1">Brikito Console.</h1>
 <p class="lead rv dl2">One place to run every project. Chat, Brik AI, reports, cameras and mail all live here, on the same people, records and approvals.</p>
