@@ -1,0 +1,24 @@
+name: IndexNow ping
+
+# After every push to main that changes a page, tell Bing (and other IndexNow
+# engines) which pages are new or updated. "Run workflow" by hand submits every
+# URL in sitemap.xml.
+on:
+  push:
+    branches: [main]
+    paths: ["*.html", "sitemap.xml"]
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Wait for the Vercel deploy to go live
+        run: sleep 120
+
+      - name: Submit changed pages to IndexNow
+        run: python3 tools/indexnow.py "${{ github.event.before }}" "${{ github.sha }}"
