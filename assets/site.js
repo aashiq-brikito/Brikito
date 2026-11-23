@@ -622,6 +622,8 @@ function wire(root) {
     const syncRole = sync('role', 'otherRoleField', 'otherRole'), syncRegion = sync('region', 'otherRegionField', 'otherRegion');
     $('role').addEventListener('change', syncRole); $('region').addEventListener('change', syncRegion); syncRole(); syncRegion();
     const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxxAiBit98TmUJIy03P_ACF01zgZFdtxMUm5bkmi3zpIEyyrWDuqpKLVZmYCkmEvUzf/exec';
+    // Make.com webhook: emails the lead (from marketing@brikito.com) a link to book a demo slot with the founder
+    const EMAIL_HOOK = 'https://hook.eu1.make.com/5ufcglvwejagmc155utbvwlkfb7u2dc6';
     const btn = form.querySelector('button[type="submit"]'), label = btn.innerHTML;
     let started = false;
     form.addEventListener('focusin', () => { if (started) return; started = true; try { if (window.gtag) gtag('event', 'form_start', { form: 'book_a_demo' }); } catch (x) {} });
@@ -639,10 +641,12 @@ function wire(root) {
       if (!form.reportValidity()) return;
       const data = new URLSearchParams(new FormData(form)); data.append('page', location.href);
       btn.disabled = true; btn.textContent = 'Sending…'; msg.className = 'full form-msg';
+      const sendMail = !!ev && !data.get('website');
+      if (sendMail) fetch(EMAIL_HOOK, { method: 'POST', mode: 'no-cors', keepalive: true, body: new URLSearchParams(data) }).catch(() => {});
       fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
         .then(() => {
           form.reset(); syncRole(); syncRegion(); started = false;
-          msg.textContent = 'Thanks! Your demo request has been received. Our team will contact you within one working day.'; msg.className = 'full form-msg ok';
+          msg.textContent = sendMail ? 'Thanks! Check your inbox: we have emailed you a link to book a demo slot with our founder.' : 'Thanks! Your demo request has been received. Our team will contact you within one working day.'; msg.className = 'full form-msg ok';
           if (window.gtag) gtag('event', 'generate_lead', { form: 'book_a_demo' });
           if (window.fbq) fbq('track', 'Lead');
         })
