@@ -59,6 +59,9 @@ Key facts:
 - [How to Track Labour Attendance on a Construction Site](https://www.brikito.com/blog-labour-attendance-construction-site): How to track labour attendance on a construction site in 8 steps, with check-in methods compared, a worked example and mistakes to avoid.
 - [PPE List for Construction Sites: Practical Checklist](https://www.brikito.com/blog-ppe-for-construction): PPE list for construction sites: core and task-specific PPE, standards, daily checks, when to replace PPE and how to record compliance.
 - [Types of Foundation in Building Construction](https://www.brikito.com/blog-types-of-foundation): Types of foundation in building construction: isolated, combined, strip and raft footings, piles and caissons, how to choose and a sizing example.
+- [Material Indent Format and Approval Process (Free)](https://www.brikito.com/blog-material-indent-format): Material indent format for construction sites: fields, approval process, approval matrix, indent register and a free Excel template.
+- [BOQ Format in Excel (Free Template)](https://www.brikito.com/blog-boq-format-excel): BOQ format in Excel: preamble, measurement sheet, BOQ, rate analysis and summary, with a sample, Excel tips and a free linked template.
+- [How to Recover a Delayed Construction Project](https://www.brikito.com/blog-recover-delayed-construction-project): How to recover a delayed construction project in 8 steps: remove blockers, re-sequence, fast-track and crash the critical path, with an example.
 
 ## Policies
 - [Privacy policy](https://www.brikito.com/privacy)
