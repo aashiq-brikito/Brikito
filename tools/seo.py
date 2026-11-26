@@ -316,6 +316,24 @@ PAGES = {
         title="Types of Foundation in Building Construction",
         description="Types of foundation in building construction: isolated, combined, strip and raft footings, piles and caissons, how to choose and a sizing example.",
     ),
+    "blog-material-indent-format.html": dict(
+        slug="blog-material-indent-format", type="article", image="/images/blog/material-indent-format.jpg",
+        published="2026-11-26", modified="2026-11-26",
+        title="Material Indent Format and Approval Process (Free)",
+        description="Material indent format for construction sites: fields, approval process, approval matrix, indent register and a free Excel template.",
+    ),
+    "blog-boq-format-excel.html": dict(
+        slug="blog-boq-format-excel", type="article", image="/images/blog/boq-format-excel.jpg",
+        published="2026-11-26", modified="2026-11-26",
+        title="BOQ Format in Excel (Free Template)",
+        description="BOQ format in Excel: preamble, measurement sheet, BOQ, rate analysis and summary, with a sample, Excel tips and a free linked template.",
+    ),
+    "blog-recover-delayed-construction-project.html": dict(
+        slug="blog-recover-delayed-construction-project", type="article", image="/images/blog/recover-delayed-construction-project.jpg",
+        published="2026-11-26", modified="2026-11-26",
+        title="How to Recover a Delayed Construction Project",
+        description="How to recover a delayed construction project in 8 steps: remove blockers, re-sequence, fast-track and crash the critical path, with an example.",
+    ),
     "404.html": dict(
         slug="404", noindex=True,
         title="Page Not Found | Brikito Construction Software",
