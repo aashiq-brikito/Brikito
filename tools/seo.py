@@ -298,6 +298,24 @@ PAGES = {
         title="What Is an AI Operating System for Construction?",
         description="What an AI operating system for construction is, what it includes, a site example and how it differs from construction software and AI chatbots.",
     ),
+    "blog-labour-attendance-construction-site.html": dict(
+        slug="blog-labour-attendance-construction-site", type="article", image="/images/blog/labour-attendance-construction-site.jpg",
+        published="2026-11-24", modified="2026-11-24",
+        title="How to Track Labour Attendance on a Construction Site",
+        description="How to track labour attendance on a construction site in 8 steps, with check-in methods compared, a worked example and mistakes to avoid.",
+    ),
+    "blog-ppe-for-construction.html": dict(
+        slug="blog-ppe-for-construction", type="article", image="/images/blog/ppe-for-construction.jpg",
+        published="2026-11-24", modified="2026-11-24",
+        title="PPE List for Construction Sites: Practical Checklist",
+        description="PPE list for construction sites: core and task-specific PPE, standards, daily checks, when to replace PPE and how to record compliance.",
+    ),
+    "blog-types-of-foundation.html": dict(
+        slug="blog-types-of-foundation", type="article", image="/images/blog/types-of-foundation.jpg",
+        published="2026-11-24", modified="2026-11-24",
+        title="Types of Foundation in Building Construction",
+        description="Types of foundation in building construction: isolated, combined, strip and raft footings, piles and caissons, how to choose and a sizing example.",
+    ),
     "404.html": dict(
         slug="404", noindex=True,
         title="Page Not Found | Brikito Construction Software",

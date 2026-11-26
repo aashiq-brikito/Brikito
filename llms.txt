@@ -56,6 +56,9 @@ Key facts:
 - [Construction Cost Per Sq Ft in India (2026 Rates)](https://www.brikito.com/blog-construction-cost-per-sq-ft-india): Construction cost per sq ft in India in 2026 by quality and city, including Chennai, Bengaluru and Coimbatore, with a worked example and exclusions.
 - [Daily Labour Report Format for Construction (Free)](https://www.brikito.com/blog-daily-labour-report-construction): Daily labour report (DLR) format for construction sites: fields, a filled sample, who fills it, common mistakes and a free Excel template.
 - [What Is an AI Operating System for Construction?](https://www.brikito.com/blog-ai-operating-system-for-construction): What an AI operating system for construction is, what it includes, a site example and how it differs from construction software and AI chatbots.
+- [How to Track Labour Attendance on a Construction Site](https://www.brikito.com/blog-labour-attendance-construction-site): How to track labour attendance on a construction site in 8 steps, with check-in methods compared, a worked example and mistakes to avoid.
+- [PPE List for Construction Sites: Practical Checklist](https://www.brikito.com/blog-ppe-for-construction): PPE list for construction sites: core and task-specific PPE, standards, daily checks, when to replace PPE and how to record compliance.
+- [Types of Foundation in Building Construction](https://www.brikito.com/blog-types-of-foundation): Types of foundation in building construction: isolated, combined, strip and raft footings, piles and caissons, how to choose and a sizing example.
 
 ## Policies
 - [Privacy policy](https://www.brikito.com/privacy)
