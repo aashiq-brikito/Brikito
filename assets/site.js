@@ -103,7 +103,7 @@ const saIc = {
 };
 const saChip = (x, y, dl, tone, icon, t, s) => `<div class="sa-cw" style="left:${x}px;top:${y}px"><div class="sa-chip" style="--dl:${dl}s"><span class="sa-ic sa-${tone}">${saIc[icon]}</span><span><b>${t}</b><small>${s}</small></span></div></div>`;
 const saWorker = (x, y, sc, dl, hat, inner) => `<g transform="translate(${x} ${y}) scale(${sc})"><g class="pop" style="--dl:${dl}s" stroke-width="2.2"><path d="M-6 0L-4 -24M6 0L4 -24"/><path d="M-9 -24L-10 -46Q0 -51 10 -46L9 -24Z" fill="#fff"/><path d="M-9.5 -35H9.5" stroke="${hat}" stroke-width="3"/>${inner}<circle cx="0" cy="-56" r="7" fill="#fff"/><path d="M-8.5 -58Q-8 -69 0 -69Q8 -69 8.5 -58Z" fill="${hat}"/><path d="M-11 -58H11"/></g></g>`;
-const saBrik = (cls) => `<div class="sa-chip sa-dark${cls}" style="--dl:${cls ? 8.6 : 9.9}s"><img src="/favicon.svg" alt="" width="36" height="36"><span><b>Everything in Brikito</b><small>4 updates · 1 site · no calls</small></span></div>`;
+const saBrik = (cls) => `<div class="sa-chip sa-dark${cls}" style="--dl:${cls ? 8.6 : 9.9}s"><img src="/favicon.svg" alt="" width="36" height="36"><span><b>Everything in Brikito</b><small>All updates in one app</small></span></div>`;
 const saAi = (cls) => `<div class="sa-chip sa-pill${cls}" style="--dl:${cls ? 9.2 : 10.5}s"><img src="/img/brik-head-v2.webp" alt="" width="34" height="34"><span><b>Today’s site report is ready</b><small>Brik AI · 6:00 PM</small></span></div>`;
 const siteAnim = `<div class="sa sa-wait" data-site-anim><noscript><style>.sa-wait .sa-box,.sa-wait+.sa-m{visibility:visible!important}</style></noscript><div class="sa-box">
 <svg class="sa-art" width="1200" height="420" viewBox="0 0 1200 420" fill="none" stroke="#0A0B10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="A construction site drawn in line art: the building rises floor by floor, a crane appears, and four site workers each send an update into Brikito">
@@ -140,14 +140,7 @@ P.home = () => `
 <p class="lead rv dl2">One app for chat, attendance, drawings, meetings, mail and a live dashboard, with Brik AI on every screen. Your crews keep working the way they do. Your office stays in control.</p>
 <div class="btns rv dl3" style="justify-content:center">${go('book-a-demo', 'Book a demo')}${go('how-it-works', 'See how it works', 'btn btn-s')}</div></div>
 ${siteAnim}
-<div class="stage zoom" id="stage">
-<div class="glow" aria-hidden="true"></div>
-<div style="position:absolute;left:50%;top:0;transform:translateX(-50%)" data-par="0">${heroPhone}</div>
-<div class="float" style="left:4%;top:90px" data-par="-40"><span class="muted">On site now</span><b>48 / 51</b><span class="muted">selfie check-in</span></div>
-<div class="float" style="left:9%;top:360px" data-par="30"><span class="muted">L4 plumbing layout</span><b>Rev 2</b><span style="color:var(--ok);font-weight:600">● Latest on site</span></div>
-<div class="float" style="right:5%;top:120px" data-par="-25"><span class="muted">Schedule</span><b>62% / 68%</b><span style="color:var(--bad);font-weight:600">9 days behind · caught day one</span></div>
-<div class="float" style="right:8%;top:400px" data-par="45"><span class="muted">Drafts today</span><b>4 drafted · 0 auto-sent</b><span class="muted">every action approved by a person</span></div>
-</div></div></section>
+</div></section>
 
 <section class="sec"><div class="wrap"><p class="eyebrow rv">The platform</p><p class="statement" data-statement>The operating system for your construction site. Every message becomes a record, an approval, a report and a live view. Nobody on site has to change how they work.</p>
 </div></section>
