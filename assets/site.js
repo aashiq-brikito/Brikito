@@ -97,18 +97,18 @@ const pbar = (name, r) => `<div class="pbar"><div class="wrap"><b>${name}</b><sp
 // ---------------- homepage hero: site under construction (front view, full width) ----------------
 const S3_QA = [
   ['Which drawing is the latest?', 'Rev C · on everyone’s phone'],
-  ['Has the cement arrived?', '50 bags received · 9:18 AM'],
+  ['Has the cement arrived?', '50 bags received at Gate 1'],
   ['Who is on site today?', '48 of 51 checked in'],
-  ['Can we pour the top slab?', 'Approved by PM · 11:02 AM'],
+  ['Can we pour the top slab?', 'Approved by the PM'],
   ['Where is the steel for Block B?', 'Delivered · unloading at Gate 2'],
   ['Are we behind schedule?', '3 days behind · plan updated'],
-  ['Who approved this change?', 'Ravi (PM) · 10:40 AM'],
+  ['Who approved this change?', 'Ravi (PM) approved it'],
   ['How much sand is left?', '2 loads left · indent raised'],
-  ['Has the client seen today’s progress?', 'Daily report sent · 6:00 PM'],
+  ['Has the client seen today’s progress?', 'Progress report sent to client'],
   ['When is the next concrete pour?', 'Thursday 7 AM · crew booked'],
   ['Is the contractor’s bill checked?', 'Matched with BOQ · approved'],
   ['Where is yesterday’s site photo?', 'Floor 5 thread · BrikChat'],
-  ['Was the safety check done?', 'Done 8:05 AM · all clear'],
+  ['Was the safety check done?', 'Done · all clear'],
   ['Who has the shuttering crew today?', 'Suresh · 12 workers'],
   ['How many cement bags this week?', '312 used · within BOQ'],
   ['Is the plumbing layout final?', 'L4 layout Rev 2 · latest'],
@@ -127,6 +127,15 @@ const S3_WK = [
   [640, 760, 700, 320, 11, -1, '#f28c28', '#ffd23f'],
   [708, 708, 708, 208, 30, 0, '#e9e046', '#ffffff']
 ];
+const ic3 = {
+  call: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/><path d="M16 3l5 5M21 3l-5 5"/></svg>',
+  chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>',
+  file: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13l6 6M15 13l-6 6"/></svg>',
+  pause: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>',
+  play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>'
+};
+const S3_ROLE =['Site Engineer', 'Mason', 'Storekeeper', 'Supervisor', 'Helper', 'Scaffolder', 'Bar bender', 'Mason', 'Welder'];
 function site3d() {
   const n = v => Math.round(v * 10) / 10;
   const P = (d, f, s, w, o) => `<path d="${d}" fill="${f}"${s ? ` stroke="${s}" stroke-width="${w}"` : ''}${o != null && o !== 1 ? ` opacity="${o}"` : ''}/>`;
@@ -238,13 +247,14 @@ function site3d() {
   for (let r = 0; r < 4; r++) for (let c = 0; c < 3 - (r % 2); c++) m.push(R(1150 + c * 14 + (r % 2) * 7, 592 - r * 8, 13, 8, '#ece5d4', '#cbbfa6', 0.8));
   add(1.6, m, 'k3f');
 
-  const fig = (w, i) => `<div class="k3w" style="left:${w[0] + 300}px;top:${w[3]}px;--bx:${w[1] - w[0]}px;--cx:${w[2] - w[0]}px;--dur:${w[4]}s;animation-delay:${w[5]}s" data-w="${i}"><div class="k3wi" style="--dl:${(3.2 + i * 0.1).toFixed(1)}s"><svg class="k3fig" width="17" height="31" viewBox="0 0 14 26" aria-hidden="true"><ellipse cx="7" cy="25" rx="5.5" ry="1.2" fill="rgba(10,11,16,.22)"/><path d="M5.3 24.4L5.6 16.6M8.7 24.4L8.4 16.6" stroke="#30343f" stroke-width="2.2" stroke-linecap="round"/><path d="M3.2 10.6L2.4 15.6M10.8 10.6L11.6 15.6" stroke="#c68a60" stroke-width="1.5" stroke-linecap="round"/><rect x="3.3" y="9" width="7.4" height="8.4" rx="2" fill="${w[6]}"/><rect x="3.3" y="12.5" width="7.4" height="1.1" fill="#fff6d6"/><rect x="3.3" y="14.9" width="7.4" height="1" fill="#fff6d6"/><circle cx="7" cy="6.5" r="2.6" fill="#c68a60"/><path d="M4 6.1Q4 2.5 7 2.5Q10 2.5 10 6.1Z" fill="${w[7]}"/><path d="M3.3 6.1H10.7" stroke="${w[7]}" stroke-width="1.1" stroke-linecap="round"/></svg></div><div class="k3slot"></div></div>`;
+  const fig = (w, i) => `<div class="k3w" style="left:${w[0] + 300}px;top:${w[3]}px;--bx:${w[1] - w[0]}px;--cx:${w[2] - w[0]}px;--dur:${w[4]}s;animation-delay:${w[5]}s" data-w="${i}"><button type="button" class="k3hit" aria-label="${S3_ROLE[i]}: see their site question"></button><div class="k3wi" style="--dl:${(3.2 + i * 0.1).toFixed(1)}s"><svg class="k3fig" width="17" height="31" viewBox="0 0 14 26" aria-hidden="true"><ellipse cx="7" cy="25" rx="5.5" ry="1.2" fill="rgba(10,11,16,.22)"/><path d="M5.3 24.4L5.6 16.6M8.7 24.4L8.4 16.6" stroke="#30343f" stroke-width="2.2" stroke-linecap="round"/><path d="M3.2 10.6L2.4 15.6M10.8 10.6L11.6 15.6" stroke="#c68a60" stroke-width="1.5" stroke-linecap="round"/><rect x="3.3" y="9" width="7.4" height="8.4" rx="2" fill="${w[6]}"/><rect x="3.3" y="12.5" width="7.4" height="1.1" fill="#fff6d6"/><rect x="3.3" y="14.9" width="7.4" height="1" fill="#fff6d6"/><circle cx="7" cy="6.5" r="2.6" fill="#c68a60"/><path d="M4 6.1Q4 2.5 7 2.5Q10 2.5 10 6.1Z" fill="${w[7]}"/><path d="M3.3 6.1H10.7" stroke="${w[7]}" stroke-width="1.1" stroke-linecap="round"/></svg></div><div class="k3slot"></div></div>`;
 
   return `<div class="k3 k3-wait" data-site3d><noscript><style>.k3-wait .k3-box{visibility:visible!important}</style></noscript><div class="k3-box">
 <svg class="k3-art" width="1800" height="660" viewBox="0 0 1800 660" role="img" aria-label="Front view of a construction site: a main building half built with scaffolding, safety net, formwork and rebar, smaller buildings at earlier stages on each side, a tower crane lifting steel, and site workers asking questions that Brikito answers">
-<defs><linearGradient id="k3sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f9fd"/><stop offset=".5" stop-color="#e7eef9"/><stop offset="1" stop-color="#dce6f3"/></linearGradient><linearGradient id="k3edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".3" stop-color="#fff"/></linearGradient><mask id="k3mask"><rect width="1800" height="660" fill="url(#k3edge)"/></mask><clipPath id="k3clip"><rect width="1800" height="660"/></clipPath><linearGradient id="k3col" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e2e4e8"/><stop offset=".55" stop-color="#cfd2d8"/><stop offset="1" stop-color="#b3b8c1"/></linearGradient><linearGradient id="k3slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e8ec"/><stop offset="1" stop-color="#b9bec6"/></linearGradient><linearGradient id="k3in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".35" stop-color="#b7bcc5"/><stop offset="1" stop-color="#c9cdd4"/></linearGradient><linearGradient id="k3hole" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2d35"/><stop offset="1" stop-color="#4a4f5a"/></linearGradient><linearGradient id="k3ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6c7ab"/><stop offset="1" stop-color="#c2b08f"/></linearGradient><linearGradient id="k3sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3cb93"/><stop offset="1" stop-color="#c9a865"/></linearGradient><linearGradient id="k3crane" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7c955"/><stop offset="1" stop-color="#d99a24"/></linearGradient><linearGradient id="k3cont" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a86cc"/><stop offset="1" stop-color="#3c64a3"/></linearGradient><pattern id="k3brk" width="18" height="9" patternUnits="userSpaceOnUse"><rect width="18" height="9" fill="#b8603f"/><rect width="18" height="4.5" fill="#c06a48"/><path d="M0 .3H18M0 4.8H18M9 .3V4.8M0 4.8V9M18 4.8V9" stroke="#e2c6b4" stroke-width=".9"/></pattern><pattern id="k3net" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="rgba(38,142,78,.30)"/><path d="M0 0L6 6M6 0L0 6" stroke="rgba(30,120,64,.45)" stroke-width=".6"/></pattern><pattern id="k3grav" width="14" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".9" fill="rgba(110,90,60,.35)"/><circle cx="10" cy="7" r=".7" fill="rgba(110,90,60,.3)"/></pattern><pattern id="k3lat" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 0L14 14M14 0L0 14" stroke="#b8801c" stroke-width="1.2"/></pattern><pattern id="k3latH" width="14" height="10" patternUnits="userSpaceOnUse"><path d="M0 10L7 0L14 10" stroke="#b8801c" stroke-width="1.1" fill="none"/></pattern></defs>
+<defs><linearGradient id="k3sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f9fd"/><stop offset=".5" stop-color="#e7eef9"/><stop offset="1" stop-color="#dce6f3"/></linearGradient><linearGradient id="k3duskG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd7ad"/><stop offset=".6" stop-color="#f6b48c"/><stop offset="1" stop-color="#e9a07f"/></linearGradient><linearGradient id="k3edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".3" stop-color="#fff"/></linearGradient><mask id="k3mask"><rect width="1800" height="660" fill="url(#k3edge)"/></mask><clipPath id="k3clip"><rect width="1800" height="660"/></clipPath><linearGradient id="k3col" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e2e4e8"/><stop offset=".55" stop-color="#cfd2d8"/><stop offset="1" stop-color="#b3b8c1"/></linearGradient><linearGradient id="k3slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e8ec"/><stop offset="1" stop-color="#b9bec6"/></linearGradient><linearGradient id="k3in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".35" stop-color="#b7bcc5"/><stop offset="1" stop-color="#c9cdd4"/></linearGradient><linearGradient id="k3hole" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2d35"/><stop offset="1" stop-color="#4a4f5a"/></linearGradient><linearGradient id="k3ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6c7ab"/><stop offset="1" stop-color="#c2b08f"/></linearGradient><linearGradient id="k3sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3cb93"/><stop offset="1" stop-color="#c9a865"/></linearGradient><linearGradient id="k3crane" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7c955"/><stop offset="1" stop-color="#d99a24"/></linearGradient><linearGradient id="k3cont" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a86cc"/><stop offset="1" stop-color="#3c64a3"/></linearGradient><pattern id="k3brk" width="18" height="9" patternUnits="userSpaceOnUse"><rect width="18" height="9" fill="#b8603f"/><rect width="18" height="4.5" fill="#c06a48"/><path d="M0 .3H18M0 4.8H18M9 .3V4.8M0 4.8V9M18 4.8V9" stroke="#e2c6b4" stroke-width=".9"/></pattern><pattern id="k3net" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="rgba(38,142,78,.30)"/><path d="M0 0L6 6M6 0L0 6" stroke="rgba(30,120,64,.45)" stroke-width=".6"/></pattern><pattern id="k3grav" width="14" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".9" fill="rgba(110,90,60,.35)"/><circle cx="10" cy="7" r=".7" fill="rgba(110,90,60,.3)"/></pattern><pattern id="k3lat" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 0L14 14M14 0L0 14" stroke="#b8801c" stroke-width="1.2"/></pattern><pattern id="k3latH" width="14" height="10" patternUnits="userSpaceOnUse"><path d="M0 10L7 0L14 10" stroke="#b8801c" stroke-width="1.1" fill="none"/></pattern></defs>
 <rect class="k3f" style="--dl:0s" width="1800" height="600" fill="url(#k3sky)" mask="url(#k3mask)"/>
 <g class="k3f" style="--dl:.2s"><g class="k3cloud"><ellipse cx="250" cy="262" rx="72" ry="15" fill="#fff" opacity=".85"/><ellipse cx="290" cy="250" rx="40" ry="15" fill="#fff" opacity=".85"/><ellipse cx="1285" cy="226" rx="84" ry="15" fill="#fff" opacity=".85"/><ellipse cx="1325" cy="214" rx="44" ry="15" fill="#fff" opacity=".85"/><ellipse cx="940" cy="40" rx="60" ry="11" fill="#fff" opacity=".7"/><ellipse cx="1600" cy="150" rx="70" ry="13" fill="#fff" opacity=".8"/></g></g>
+<rect class="k3dusk" width="1800" height="600" fill="url(#k3duskG)" mask="url(#k3mask)"/>
 <g transform="translate(300 0)">${out.join('')}
 <g class="k3f" style="--dl:2.3s"><g class="k3trol"><rect x="632" y="88" width="18" height="6" rx="1" fill="#4a4e5a"/><g class="k3sway"><path d="M641 94L641 128M641 128L612 140M641 128L670 140" stroke="#30343f" stroke-width="1.1" fill="none"/><path d="M638 128h6v5h-6Z" fill="#e8862a"/><rect x="604" y="140" width="74" height="9" fill="#8f96a3" stroke="#727884"/><rect x="604" y="140" width="74" height="3" fill="#aab0bb"/></g></g></g>
 <g class="k3f" style="--dl:3.8s"><g class="k3spark"><circle cx="692" cy="188" r="7" fill="rgba(255,196,70,.35)"/><path d="M692 188l-8 -5M692 188l6 -8M692 188l9 2M692 188l-6 7M692 188l2 -10M692 188l-9 3" stroke="#ffcf4d" stroke-width="1.2" stroke-linecap="round"/></g><circle class="k3spark k3spk2" cx="692" cy="188" r="2.2" fill="#fff8d2"/></g>
@@ -252,8 +262,13 @@ function site3d() {
 <g clip-path="url(#k3clip)"><g class="k3truck"><g transform="translate(1860 0)"><path d="M2 620h78l6 26H2Z" fill="#e8862a" stroke="#b8661a"/><path d="M6 620Q42 604 76 620Z" fill="url(#k3sand)"/><path d="M14 626h56M14 634h58" stroke="#b8661a"/><rect x="-30" y="624" width="30" height="24" rx="3" fill="#f3f4f6" stroke="#aab0bb"/><rect x="-26" y="628" width="15" height="9" rx="1.5" fill="#9fc0e6"/><rect x="-34" y="645" width="122" height="5" fill="#30343f"/><circle cx="-16" cy="652" r="7" fill="#25282f"/><circle cx="-16" cy="652" r="2.6" fill="#9aa0ab"/><circle cx="40" cy="652" r="7" fill="#25282f"/><circle cx="40" cy="652" r="2.6" fill="#9aa0ab"/><circle cx="68" cy="652" r="7" fill="#25282f"/><circle cx="68" cy="652" r="2.6" fill="#9aa0ab"/></g></g></g>
 </svg>
 ${S3_WK.map(fig).join('')}
-<div class="k3card"><img src="/img/brik-head-v2.webp" alt="" width="40" height="40"><span><b>Every site question, answered</b><small><span data-k3count>126</span> questions answered today · Brik AI</small></span></div>
-</div></div><div class="k3m" aria-live="polite"><div class="k3m-slot"></div><p><span data-k3count>126</span> site questions answered today in Brikito</p></div>`;
+<div class="k3ping" style="left:560px;top:228px;--pd:.2s"><span class="k3pi">${ic3.call}</span><span><b>3 missed calls</b><small>Site Engineer · urgent</small></span></div>
+<div class="k3ping" style="left:1190px;top:300px;--pd:.9s"><span class="k3pi">${ic3.chat}</span><span><b>47 unread</b><small>Site WhatsApp group</small></span></div>
+<div class="k3ping" style="left:1215px;top:470px;--pd:1.6s"><span class="k3pi">${ic3.file}</span><span><b>BOQ_final_v12.xlsx</b><small>Which one is latest?</small></span></div>
+<div class="k3card"><img src="/img/brik-head-v2.webp" alt="" width="40" height="40"><span><b data-k3title>Brikito is on</b><small><span data-k3count>0</span> site questions answered today</small></span></div>
+<div class="k3panel" aria-hidden="true"><div class="k3ph"><img src="/favicon.svg" alt="" width="26" height="26"><span><b>Brikito</b><small>Skyline Site · Site Team</small></span><em data-k3clock>8:00 AM</em></div><ul data-k3list></ul></div>
+</div><button type="button" class="k3pause" aria-pressed="false" aria-label="Pause the site animation">${ic3.pause}<span>Pause</span></button></div><div class="k3m" aria-live="polite"><div class="k3m-slot"></div><p><span data-k3count>0</span> site questions answered today in Brikito</p></div>
+<div class="k3cta"><button type="button" class="btn btn-s k3ask">Got a site question? Ask Brik <span aria-hidden="true">→</span></button><p class="k3proof">Live on 3 pilot projects: residential, metro and logistics. At <b>Gofar Group</b>, the day’s indents are approved in Brikito.</p></div>`;
 }
 
 // ---------------- pages ----------------
@@ -681,46 +696,119 @@ function closeMenus() {
 // ---------------- interactions ----------------
 let io;
 function wire(root) {
-  // homepage hero: full-width site scene; questions keep coming from the workers, Brikito answers
+  // homepage hero: full-width site scene. Questions pile up (chaos), Brikito switches on and answers them,
+  // then workers keep asking through a working day that ends with the 6 PM site report.
   root.querySelectorAll('[data-site3d]').forEach(el => {
     const box = el.querySelector('.k3-box');
-    const mob = el.nextElementSibling && el.nextElementSibling.classList.contains('k3m') ? el.nextElementSibling : null;
+    const wrapEl = el.parentNode;
+    const mob = wrapEl.querySelector('.k3m');
     const fit = () => {
       const W = el.clientWidth, small = W < 760;
-      const s = Math.max(W / 1800, small ? 0.5 : 0);
+      const s = small ? Math.max(W / 1800, 0.5) : Math.max(W / 1800, Math.min(W / 1500, 1));
       box.style.transform = `translateX(${(W - 1800 * s) / 2}px) scale(${s})`;
-      box.style.setProperty('--inv', Math.min(1.6, Math.max(1, 0.85 / s)).toFixed(3));
+      box.style.setProperty('--inv', Math.min(1.5, Math.max(1, 0.9 / s)).toFixed(3));
       el.style.height = Math.round(660 * s) + 'px';
       el.classList.toggle('k3-small', small);
     };
     fit();
     if ('ResizeObserver' in window) new ResizeObserver(fit).observe(el); else addEventListener('resize', fit);
-    const esc = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-    const qHtml = q => `<div class="k3b k3q"><span class="k3qi">?</span><b>${esc(q)}</b></div>`;
+
+    const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const qHtml = (q, wait) => `<div class="k3b k3q${wait ? ' k3wait' : ''}"><span class="k3qi">?</span><b>${esc(q)}</b></div>`;
     const aHtml = a => `<div class="k3b k3a"><img src="/favicon.svg" alt="" width="22" height="22"><span><b>${esc(a)}</b><small>Answered in Brikito</small></span></div>`;
     const slots = [...el.querySelectorAll('.k3slot')];
-    const counts = [el, mob].filter(Boolean).flatMap(x => [...x.querySelectorAll('[data-k3count]')]);
+    const counts = [...wrapEl.querySelectorAll('[data-k3count]')];
+    const title = el.querySelector('[data-k3title]');
+    const clockEl = el.querySelector('[data-k3clock]');
+    const list = el.querySelector('[data-k3list]');
+    const dusk = el.querySelector('.k3dusk');
     const mslot = mob && mob.querySelector('.k3m-slot');
     const order = [0, 3, 2, 1, 6, 8, 4, 7, 5];
-    let oi = 0, qi = 0, cnt = 126, seen = false;
+    const DAY = 45000;
+    let oi = 0, qi = 0, cnt = 0, seen = false, paused = false, phase = 'idle', dayMs = 0, dayNo = 0;
+
+    const clock = () => { const m = 480 + Math.min(600, Math.floor(dayMs / DAY * 600)); const h = Math.floor(m / 60), mm = m % 60; return `${h > 12 ? h - 12 : h}:${String(mm).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`; };
+    const setCount = v => { cnt = v; counts.forEach(c => { c.textContent = cnt; }); };
+    const push = (text, sub, special) => {
+      if (!list) return;
+      const li = document.createElement('li');
+      if (special) li.className = 'k3rep';
+      li.innerHTML = special ? `<img src="/img/brik-head-v2.webp" alt="" width="28" height="28"><span><b>${esc(text)}</b><small>${esc(sub)}</small></span>` : `<span class="k3li">${ic3.check}</span><span><b>${esc(text)}</b><small>${esc(sub)}</small></span>`;
+      list.prepend(li);
+      while (list.children.length > 4) list.lastChild.remove();
+    };
+    const nextPair = () => S3_QA[qi++ % S3_QA.length];
+    const ask = (w, pair, wait) => {
+      const slot = slots[w]; if (!slot) return null;
+      const id = String(++oi); slot.dataset.id = id; slot.innerHTML = qHtml(pair[0], wait);
+      if (mslot) mslot.innerHTML = qHtml(pair[0], wait);
+      return id;
+    };
+    const answer = (w, pair, id) => {
+      const slot = slots[w]; if (!slot || slot.dataset.id !== id) return;
+      slot.innerHTML = aHtml(pair[1]);
+      if (mslot) mslot.innerHTML = aHtml(pair[1]);
+      setCount(cnt + 1);
+      push(pair[1], `${S3_ROLE[w]} asked · ${clock()}`);
+      setTimeout(() => { if (slot.dataset.id === id && slot.firstChild) slot.firstChild.classList.add('k3out'); }, 3000);
+      setTimeout(() => { if (slot.dataset.id === id) slot.innerHTML = ''; }, 3450);
+    };
+    const askAnswer = w => { const pair = nextPair(); const id = ask(w, pair); if (id) setTimeout(() => answer(w, pair, id), 1800); };
     const next = () => {
-      if (!seen || document.hidden) return;
-      const w = order[oi++ % order.length], pair = S3_QA[qi++ % S3_QA.length], slot = slots[w], id = oi;
-      if (!slot) return;
-      slot.dataset.id = id; slot.innerHTML = qHtml(pair[0]);
-      if (mslot) mslot.innerHTML = qHtml(pair[0]);
+      if (paused || !seen || document.hidden || phase !== 'on') return;
+      for (let k = 0; k < order.length; k++) { const w = order[oi % order.length]; if (!slots[w].innerHTML) { askAnswer(w); return; } oi++; }
+    };
+    // tap or hover a worker to hear their question
+    el.querySelectorAll('.k3w').forEach(wk => {
+      const w = +wk.dataset.w, hit = wk.querySelector('.k3hit');
+      const go = () => { if (phase === 'on' && !slots[w].innerHTML) askAnswer(w); };
+      hit.addEventListener('click', go);
+      hit.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') go(); });
+    });
+    // working day clock, 6 PM site report
+    setInterval(() => {
+      if (paused || !seen || phase === 'idle' || phase === 'chaos') return;
+      dayMs += 500;
+      if (dayMs >= DAY) {
+        dayMs = 0; dayNo++;
+        push('Today’s site report is ready', 'Brik AI · sent to the office at 6:00 PM', true);
+        if (title) { title.textContent = 'Daily report sent at 6 PM'; setTimeout(() => { title.textContent = 'Every site question, answered'; }, 4000); }
+        setTimeout(() => setCount(0), 4000);
+      }
+      if (clockEl) clockEl.textContent = clock();
+      if (dusk) { const f = dayMs / DAY; dusk.style.opacity = f > 0.55 ? ((f - 0.55) / 0.45 * 0.6).toFixed(3) : '0'; }
+    }, 500);
+
+    const chaos = () => {
+      phase = 'chaos';
+      el.classList.add('k3-chaos');
+      const pend = [];
+      [0, 3, 2, 1, 6].forEach((w, i) => setTimeout(() => {
+        const pair = nextPair(); const id = ask(w, pair, true); pend.push([w, pair, id]);
+        if (mslot) mslot.innerHTML = qHtml(`${i + 1} question${i ? 's' : ''} waiting: ${pair[0]}`, true);
+      }, i * 650));
       setTimeout(() => {
-        if (slot.dataset.id == id) slot.innerHTML = aHtml(pair[1]);
-        if (mslot) mslot.innerHTML = aHtml(pair[1]);
-        cnt++; counts.forEach(c => { c.textContent = cnt; });
-      }, 2000);
-      setTimeout(() => { if (slot.dataset.id == id && slot.firstChild) slot.firstChild.classList.add('k3out'); }, 5000);
-      setTimeout(() => { if (slot.dataset.id == id) slot.innerHTML = ''; }, 5450);
+        el.classList.remove('k3-chaos'); el.classList.add('k3-on', 'k3-day');
+        if (title) title.textContent = 'Brikito is on. Answering…';
+        pend.forEach((p, j) => setTimeout(() => answer(p[0], p[1], p[2]), 500 + j * 550));
+        setTimeout(() => { if (title) title.textContent = 'Every site question, answered'; phase = 'on'; next(); setInterval(next, 3200); }, 500 + pend.length * 550 + 2400);
+      }, 4600);
     };
     const begin = () => {
       el.classList.remove('k3-wait'); el.classList.add('play');
-      setTimeout(() => { next(); setInterval(next, 2300); }, 3600);
+      setTimeout(chaos, 3400);
     };
+    const pb = el.querySelector('.k3pause');
+    if (pb) pb.addEventListener('click', () => {
+      paused = !paused;
+      el.classList.toggle('k3-paused', paused);
+      pb.setAttribute('aria-pressed', paused);
+      pb.setAttribute('aria-label', paused ? 'Play the site animation' : 'Pause the site animation');
+      pb.innerHTML = (paused ? ic3.play : ic3.pause) + `<span>${paused ? 'Play' : 'Pause'}</span>`;
+    });
+    const ab = wrapEl.querySelector('.k3ask');
+    if (ab) ab.addEventListener('click', () => { const l = document.querySelector('.bc-launch'); if (l) l.click(); else location.href = '/brik-ai'; });
+
     if (!('IntersectionObserver' in window)) { seen = true; begin(); return; }
     let started = false;
     new IntersectionObserver(es => {
