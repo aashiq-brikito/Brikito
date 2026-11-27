@@ -94,6 +94,42 @@ const story = () => `<section class="story" data-story aria-label="How one voice
 // Product pages: slim bar that stays under the menu (like Apple's product bars)
 const pbar = (name, r) => `<div class="pbar"><div class="wrap"><b>${name}</b><span class="pb-r"><a class="pb-l" href="/pricing">Pricing</a><a class="btn btn-p btn-sm" href="/book-a-demo?utm_source=product-bar&amp;utm_medium=${r}">Book a demo</a></span></div></div>`;
 
+// ---------------- homepage hero: line-art site animation ----------------
+const saIc = {
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>',
+  cam: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',
+  up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
+  doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h4"/></svg>'
+};
+const saChip = (x, y, dl, tone, icon, t, s) => `<div class="sa-cw" style="left:${x}px;top:${y}px"><div class="sa-chip" style="--dl:${dl}s"><span class="sa-ic sa-${tone}">${saIc[icon]}</span><span><b>${t}</b><small>${s}</small></span></div></div>`;
+const saWorker = (x, y, sc, dl, hat, inner) => `<g transform="translate(${x} ${y}) scale(${sc})"><g class="pop" style="--dl:${dl}s" stroke-width="2.2"><path d="M-6 0L-4 -24M6 0L4 -24"/><path d="M-9 -24L-10 -46Q0 -51 10 -46L9 -24Z" fill="#fff"/><path d="M-9.5 -35H9.5" stroke="${hat}" stroke-width="3"/>${inner}<circle cx="0" cy="-56" r="7" fill="#fff"/><path d="M-8.5 -58Q-8 -69 0 -69Q8 -69 8.5 -58Z" fill="${hat}"/><path d="M-11 -58H11"/></g></g>`;
+const saBrik = (cls) => `<div class="sa-chip sa-dark${cls}" style="--dl:${cls ? 8.6 : 9.9}s"><img src="/favicon.svg" alt="" width="36" height="36"><span><b>Everything in Brikito</b><small>4 updates · 1 site · no calls</small></span></div>`;
+const saAi = (cls) => `<div class="sa-chip sa-pill${cls}" style="--dl:${cls ? 9.2 : 10.5}s"><img src="/img/brik-head-v2.webp" alt="" width="34" height="34"><span><b>Today’s site report is ready</b><small>Brik AI · 6:00 PM</small></span></div>`;
+const siteAnim = `<div class="sa sa-wait" data-site-anim><noscript><style>.sa-wait .sa-box,.sa-wait+.sa-m{visibility:visible!important}</style></noscript><div class="sa-box">
+<svg class="sa-art" width="1200" height="420" viewBox="0 0 1200 420" fill="none" stroke="#0A0B10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="A construction site drawn in line art: the building rises floor by floor, a crane appears, and four site workers each send an update into Brikito">
+<defs><pattern id="saGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#E6E8EE" stroke-width="1"/></pattern><radialGradient id="saFadeG" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient><mask id="saMask"><rect width="1200" height="420" fill="url(#saFadeG)"/></mask><linearGradient id="saFlowG" x1="0" y1="420" x2="1200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset="1" stop-color="#3A8EF5"/></linearGradient></defs>
+<rect class="fade" style="--dl:0s" width="1200" height="380" fill="url(#saGrid)" stroke="none" mask="url(#saMask)"/>
+<line class="d" style="--dl:.2s;--t:1.1s" pathLength="1" x1="40" y1="380" x2="1160" y2="380" stroke-width="2"/>
+<g stroke-width="1.4"><path class="d" style="--dl:.7s" pathLength="1" d="M140 380V336H244V380"/><line class="d" style="--dl:.9s;--t:.5s" pathLength="1" x1="132" y1="336" x2="252" y2="336" stroke-width="2.4"/><rect class="fade" style="--dl:1.1s" x="154" y="350" width="28" height="14" rx="1.5"/><rect class="fade" style="--dl:1.2s" x="204" y="352" width="18" height="28" rx="1.5"/></g>
+<g class="pop" style="--dl:1.3s" stroke-width="1.3" fill="#fff"><rect x="350" y="372" width="16" height="8" rx="1"/><rect x="366" y="372" width="16" height="8" rx="1"/><rect x="382" y="372" width="16" height="8" rx="1"/><rect x="358" y="364" width="16" height="8" rx="1"/><rect x="374" y="364" width="16" height="8" rx="1"/><rect x="366" y="356" width="16" height="8" rx="1"/></g>
+<g stroke-width="2">${[470, 557, 643, 730].map((x, i) => `<line class="d" style="--dl:${(1 + i * .1).toFixed(1)}s;--t:.9s" pathLength="1" x1="${x}" y1="380" x2="${x}" y2="100"/>`).join('')}</g>
+<g stroke-width="3.2">${[310, 240, 170, 100].map((y, i) => `<line class="d" style="--dl:${(1.9 + i * .3).toFixed(1)}s;--t:.5s" pathLength="1" x1="460" y1="${y}" x2="740" y2="${y}"/>`).join('')}</g>
+<g stroke="#9AA0B0" stroke-width="1.2"><g class="fade" style="--dl:3s"><rect x="488" y="326" width="50" height="34" rx="1"/><rect x="661" y="326" width="50" height="34" rx="1"/><path d="M585 380V330H615V380"/></g><g class="fade" style="--dl:3.2s"><rect x="488" y="256" width="50" height="34" rx="1"/><rect x="575" y="256" width="50" height="34" rx="1"/><rect x="661" y="256" width="50" height="34" rx="1"/></g><g class="fade" style="--dl:3.4s"><rect x="488" y="186" width="50" height="34" rx="1"/><rect x="575" y="186" width="50" height="34" rx="1"/><rect x="661" y="186" width="50" height="34" rx="1"/></g><path class="d" style="--dl:3.4s;--t:.7s" pathLength="1" d="M470 170L557 100M557 170L643 100M643 170L730 100"/></g>
+<g stroke-width="1.6"><line class="d" style="--dl:2.7s;--t:.9s" pathLength="1" x1="892" y1="380" x2="892" y2="92"/><line class="d" style="--dl:2.75s;--t:.9s" pathLength="1" x1="908" y1="380" x2="908" y2="92"/><path class="d" style="--dl:3s;--t:.9s" pathLength="1" stroke-width="1" d="M892 380L908 356L892 332L908 308L892 284L908 260L892 236L908 212L892 188L908 164L892 140L908 116L892 92"/><rect class="pop" style="--dl:3.6s" x="880" y="70" width="32" height="22" rx="2" fill="#fff"/><line class="d" style="--dl:3.6s;--t:.4s" pathLength="1" x1="900" y1="70" x2="900" y2="26"/><line class="d" style="--dl:3.7s;--t:.7s" pathLength="1" x1="790" y1="66" x2="1160" y2="66"/><line class="d" style="--dl:3.75s;--t:.7s" pathLength="1" x1="790" y1="56" x2="1160" y2="56"/><path class="d" style="--dl:3.9s;--t:.7s" pathLength="1" stroke-width="1" d="M910 66L930 56L950 66L970 56L990 66L1010 56L1030 66L1050 56L1070 66L1090 56L1110 66L1130 56L1150 66"/><path class="d" style="--dl:4s;--t:.6s" pathLength="1" stroke-width="1.2" d="M900 26L1160 56M900 26L790 56"/><rect class="pop" style="--dl:4.1s" x="796" y="66" width="30" height="16" rx="1.5" fill="#2A2C36"/><rect class="pop" style="--dl:4.1s" x="1112" y="66" width="16" height="6" rx="1" fill="#fff"/><line class="d" style="--dl:4.2s;--t:.5s" pathLength="1" x1="1120" y1="72" x2="1120" y2="196"/><rect class="pop" style="--dl:4.5s" x="1086" y="196" width="68" height="9" rx="1.5" fill="#ECEEFE"/></g>
+${saWorker(300, 380, .82, 4.7, '#7B2FE0', '<path d="M-10 -44L-13 -28M10 -44L15 -34L6 -32"/><rect x="2" y="-41" width="14" height="10" rx="1.5" fill="#ECEEFE"/>')}
+${saWorker(520, 310, .82, 5.7, '#3A8EF5', '<path d="M-10 -44L-14 -30M10 -44L19 -53"/><path d="M19 -53L28 -55L24 -48Z" fill="#0A0B10"/><rect x="16" y="-9" width="18" height="9" rx="1" fill="#fff" stroke-width="1.6"/><rect x="34" y="-9" width="18" height="9" rx="1" fill="#fff" stroke-width="1.6"/><rect x="25" y="-18" width="18" height="9" rx="1" fill="#fff" stroke-width="1.6"/>')}
+<g transform="translate(896 91) scale(.7)"><g class="pop" style="--dl:6.7s" stroke-width="2.2"><path d="M-12 0Q0 -8 12 0"/><circle cx="0" cy="-15" r="7" fill="#fff"/><path d="M-8.5 -17Q-8 -28 0 -28Q8 -28 8.5 -17Z" fill="#0062B6"/><path d="M-11 -17H11"/></g></g>
+${saWorker(1040, 380, .82, 7.7, '#513BB2', '<path d="M-10 -44L-16 -34L-8 -31M10 -44L25 -53"/><rect x="-15" y="-42" width="11" height="14" rx="1.5" fill="#fff"/>')}
+<g class="sa-flow" stroke="url(#saFlowG)" stroke-width="1.8" opacity=".75"><path class="d" style="--dl:8.9s;--t:.9s" pathLength="1" d="M300 272C300 170 470 120 530 60"/><path class="d" style="--dl:9s;--t:.9s" pathLength="1" d="M520 204C520 140 570 100 585 60"/><path class="d" style="--dl:9.1s;--t:.9s" pathLength="1" d="M1010 94C900 108 760 104 680 60"/><path class="d" style="--dl:9.2s;--t:.9s" pathLength="1" d="M1040 272C1020 180 780 150 650 60"/></g>
+</svg>
+${saChip(300, 318, 5, 'v', 'check', 'Rajesh checked in', 'Attendance · 8:42 AM')}
+${saChip(520, 250, 6, 'b', 'cam', 'Floor 2 blockwork 80% done', 'Photo update · Site Team')}
+${saChip(1010, 140, 7, 'b', 'up', 'Steel lifted to Floor 4', 'Crane log · 10:15 AM')}
+${saChip(1040, 318, 8, 'v', 'doc', 'Drawing Rev C approved', 'Shared with 24 members')}
+<div class="sa-cw sa-c" style="left:600px;top:32px">${saBrik('')}</div>
+<div class="sa-cw sa-l" style="left:452px;top:32px">${saAi('')}</div>
+</div></div><div class="sa-m" aria-hidden="true">${saBrik(' sa-mc')}${saAi(' sa-mc')}</div>`;
+
 // ---------------- pages ----------------
 const P = {};
 
@@ -103,6 +139,7 @@ P.home = () => `
 <h1 class="d1 rv dl1 hero-h" data-rotate><span class="hr-in">AI construction management<br><span class="gt">software for site teams.</span></span></h1>
 <p class="lead rv dl2">One app for chat, attendance, drawings, meetings, mail and a live dashboard, with Brik AI on every screen. Your crews keep working the way they do. Your office stays in control.</p>
 <div class="btns rv dl3" style="justify-content:center">${go('book-a-demo', 'Book a demo')}${go('how-it-works', 'See how it works', 'btn btn-s')}</div></div>
+${siteAnim}
 <div class="stage zoom" id="stage">
 <div class="glow" aria-hidden="true"></div>
 <div style="position:absolute;left:50%;top:0;transform:translateX(-50%)" data-par="0">${heroPhone}</div>
@@ -525,6 +562,17 @@ function closeMenus() {
 // ---------------- interactions ----------------
 let io;
 function wire(root) {
+  // homepage hero: line-art site animation, scaled to fit, plays once when it comes into view
+  root.querySelectorAll('[data-site-anim]').forEach(el => {
+    const box = el.querySelector('.sa-box');
+    const fit = () => { box.style.transform = 'scale(' + (el.clientWidth / 1200) + ')'; };
+    fit();
+    if ('ResizeObserver' in window) new ResizeObserver(fit).observe(el); else addEventListener('resize', fit);
+    const go = () => { el.classList.remove('sa-wait'); el.classList.add('play'); };
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) { el.classList.remove('sa-wait'); return; }
+    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); go(); } }, { threshold: .25 });
+    io.observe(el);
+  });
   // homepage headline: a new line every 3 seconds (first line stays in the page for Google)
   root.querySelectorAll('[data-rotate]').forEach(h => {
     const lines = [
