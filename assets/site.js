@@ -94,41 +94,167 @@ const story = () => `<section class="story" data-story aria-label="How one voice
 // Product pages: slim bar that stays under the menu (like Apple's product bars)
 const pbar = (name, r) => `<div class="pbar"><div class="wrap"><b>${name}</b><span class="pb-r"><a class="pb-l" href="/pricing">Pricing</a><a class="btn btn-p btn-sm" href="/book-a-demo?utm_source=product-bar&amp;utm_medium=${r}">Book a demo</a></span></div></div>`;
 
-// ---------------- homepage hero: line-art site animation ----------------
-const saIc = {
-  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>',
-  cam: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',
-  up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
-  doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h4"/></svg>'
-};
-const saChip = (x, y, dl, tone, icon, t, s) => `<div class="sa-cw" style="left:${x}px;top:${y}px"><div class="sa-chip" style="--dl:${dl}s"><span class="sa-ic sa-${tone}">${saIc[icon]}</span><span><b>${t}</b><small>${s}</small></span></div></div>`;
-const saWorker = (x, y, sc, dl, hat, inner) => `<g transform="translate(${x} ${y}) scale(${sc})"><g class="pop" style="--dl:${dl}s" stroke-width="2.2"><path d="M-6 0L-4 -24M6 0L4 -24"/><path d="M-9 -24L-10 -46Q0 -51 10 -46L9 -24Z" fill="#fff"/><path d="M-9.5 -35H9.5" stroke="${hat}" stroke-width="3"/>${inner}<circle cx="0" cy="-56" r="7" fill="#fff"/><path d="M-8.5 -58Q-8 -69 0 -69Q8 -69 8.5 -58Z" fill="${hat}"/><path d="M-11 -58H11"/></g></g>`;
-const saBrik = (cls) => `<div class="sa-chip sa-dark${cls}" style="--dl:${cls ? 8.6 : 9.9}s"><img src="/favicon.svg" alt="" width="36" height="36"><span><b>Everything in Brikito</b><small>All updates in one app</small></span></div>`;
-const saAi = (cls) => `<div class="sa-chip sa-pill${cls}" style="--dl:${cls ? 9.2 : 10.5}s"><img src="/img/brik-head-v2.webp" alt="" width="34" height="34"><span><b>Today’s site report is ready</b><small>Brik AI · 6:00 PM</small></span></div>`;
-const siteAnim = `<div class="sa sa-wait" data-site-anim><noscript><style>.sa-wait .sa-box,.sa-wait+.sa-m{visibility:visible!important}</style></noscript><div class="sa-box">
-<svg class="sa-art" width="1200" height="420" viewBox="0 0 1200 420" fill="none" stroke="#0A0B10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="A construction site drawn in line art: the building rises floor by floor, a crane appears, and four site workers each send an update into Brikito">
-<defs><pattern id="saGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#E6E8EE" stroke-width="1"/></pattern><radialGradient id="saFadeG" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient><mask id="saMask"><rect width="1200" height="420" fill="url(#saFadeG)"/></mask><linearGradient id="saFlowG" x1="0" y1="420" x2="1200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7B2FE0"/><stop offset="1" stop-color="#3A8EF5"/></linearGradient></defs>
-<rect class="fade" style="--dl:0s" width="1200" height="380" fill="url(#saGrid)" stroke="none" mask="url(#saMask)"/>
-<line class="d" style="--dl:.2s;--t:1.1s" pathLength="1" x1="40" y1="380" x2="1160" y2="380" stroke-width="2"/>
-<g stroke-width="1.4"><path class="d" style="--dl:.7s" pathLength="1" d="M140 380V336H244V380"/><line class="d" style="--dl:.9s;--t:.5s" pathLength="1" x1="132" y1="336" x2="252" y2="336" stroke-width="2.4"/><rect class="fade" style="--dl:1.1s" x="154" y="350" width="28" height="14" rx="1.5"/><rect class="fade" style="--dl:1.2s" x="204" y="352" width="18" height="28" rx="1.5"/></g>
-<g class="pop" style="--dl:1.3s" stroke-width="1.3" fill="#fff"><rect x="350" y="372" width="16" height="8" rx="1"/><rect x="366" y="372" width="16" height="8" rx="1"/><rect x="382" y="372" width="16" height="8" rx="1"/><rect x="358" y="364" width="16" height="8" rx="1"/><rect x="374" y="364" width="16" height="8" rx="1"/><rect x="366" y="356" width="16" height="8" rx="1"/></g>
-<g stroke-width="2">${[470, 557, 643, 730].map((x, i) => `<line class="d" style="--dl:${(1 + i * .1).toFixed(1)}s;--t:.9s" pathLength="1" x1="${x}" y1="380" x2="${x}" y2="100"/>`).join('')}</g>
-<g stroke-width="3.2">${[310, 240, 170, 100].map((y, i) => `<line class="d" style="--dl:${(1.9 + i * .3).toFixed(1)}s;--t:.5s" pathLength="1" x1="460" y1="${y}" x2="740" y2="${y}"/>`).join('')}</g>
-<g stroke="#9AA0B0" stroke-width="1.2"><g class="fade" style="--dl:3s"><rect x="488" y="326" width="50" height="34" rx="1"/><rect x="661" y="326" width="50" height="34" rx="1"/><path d="M585 380V330H615V380"/></g><g class="fade" style="--dl:3.2s"><rect x="488" y="256" width="50" height="34" rx="1"/><rect x="575" y="256" width="50" height="34" rx="1"/><rect x="661" y="256" width="50" height="34" rx="1"/></g><g class="fade" style="--dl:3.4s"><rect x="488" y="186" width="50" height="34" rx="1"/><rect x="575" y="186" width="50" height="34" rx="1"/><rect x="661" y="186" width="50" height="34" rx="1"/></g><path class="d" style="--dl:3.4s;--t:.7s" pathLength="1" d="M470 170L557 100M557 170L643 100M643 170L730 100"/></g>
-<g stroke-width="1.6"><line class="d" style="--dl:2.7s;--t:.9s" pathLength="1" x1="892" y1="380" x2="892" y2="92"/><line class="d" style="--dl:2.75s;--t:.9s" pathLength="1" x1="908" y1="380" x2="908" y2="92"/><path class="d" style="--dl:3s;--t:.9s" pathLength="1" stroke-width="1" d="M892 380L908 356L892 332L908 308L892 284L908 260L892 236L908 212L892 188L908 164L892 140L908 116L892 92"/><rect class="pop" style="--dl:3.6s" x="880" y="70" width="32" height="22" rx="2" fill="#fff"/><line class="d" style="--dl:3.6s;--t:.4s" pathLength="1" x1="900" y1="70" x2="900" y2="26"/><line class="d" style="--dl:3.7s;--t:.7s" pathLength="1" x1="790" y1="66" x2="1160" y2="66"/><line class="d" style="--dl:3.75s;--t:.7s" pathLength="1" x1="790" y1="56" x2="1160" y2="56"/><path class="d" style="--dl:3.9s;--t:.7s" pathLength="1" stroke-width="1" d="M910 66L930 56L950 66L970 56L990 66L1010 56L1030 66L1050 56L1070 66L1090 56L1110 66L1130 56L1150 66"/><path class="d" style="--dl:4s;--t:.6s" pathLength="1" stroke-width="1.2" d="M900 26L1160 56M900 26L790 56"/><rect class="pop" style="--dl:4.1s" x="796" y="66" width="30" height="16" rx="1.5" fill="#2A2C36"/><rect class="pop" style="--dl:4.1s" x="1112" y="66" width="16" height="6" rx="1" fill="#fff"/><line class="d" style="--dl:4.2s;--t:.5s" pathLength="1" x1="1120" y1="72" x2="1120" y2="196"/><rect class="pop" style="--dl:4.5s" x="1086" y="196" width="68" height="9" rx="1.5" fill="#ECEEFE"/></g>
-${saWorker(300, 380, .82, 4.7, '#7B2FE0', '<path d="M-10 -44L-13 -28M10 -44L15 -34L6 -32"/><rect x="2" y="-41" width="14" height="10" rx="1.5" fill="#ECEEFE"/>')}
-${saWorker(520, 310, .82, 5.7, '#3A8EF5', '<path d="M-10 -44L-14 -30M10 -44L19 -53"/><path d="M19 -53L28 -55L24 -48Z" fill="#0A0B10"/><rect x="16" y="-9" width="18" height="9" rx="1" fill="#fff" stroke-width="1.6"/><rect x="34" y="-9" width="18" height="9" rx="1" fill="#fff" stroke-width="1.6"/><rect x="25" y="-18" width="18" height="9" rx="1" fill="#fff" stroke-width="1.6"/>')}
-<g transform="translate(896 91) scale(.7)"><g class="pop" style="--dl:6.7s" stroke-width="2.2"><path d="M-12 0Q0 -8 12 0"/><circle cx="0" cy="-15" r="7" fill="#fff"/><path d="M-8.5 -17Q-8 -28 0 -28Q8 -28 8.5 -17Z" fill="#0062B6"/><path d="M-11 -17H11"/></g></g>
-${saWorker(1040, 380, .82, 7.7, '#513BB2', '<path d="M-10 -44L-16 -34L-8 -31M10 -44L25 -53"/><rect x="-15" y="-42" width="11" height="14" rx="1.5" fill="#fff"/>')}
-<g class="sa-flow" stroke="url(#saFlowG)" stroke-width="1.8" opacity=".75"><path class="d" style="--dl:8.9s;--t:.9s" pathLength="1" d="M300 272C300 170 470 120 530 60"/><path class="d" style="--dl:9s;--t:.9s" pathLength="1" d="M520 204C520 140 570 100 585 60"/><path class="d" style="--dl:9.1s;--t:.9s" pathLength="1" d="M1010 94C900 108 760 104 680 60"/><path class="d" style="--dl:9.2s;--t:.9s" pathLength="1" d="M1040 272C1020 180 780 150 650 60"/></g>
+// ---------------- homepage hero: site under construction (front view, full width) ----------------
+const S3_QA = [
+  ['Which drawing is the latest?', 'Rev C · on everyone’s phone'],
+  ['Has the cement arrived?', '50 bags received · 9:18 AM'],
+  ['Who is on site today?', '48 of 51 checked in'],
+  ['Can we pour the top slab?', 'Approved by PM · 11:02 AM'],
+  ['Where is the steel for Block B?', 'Delivered · unloading at Gate 2'],
+  ['Are we behind schedule?', '3 days behind · plan updated'],
+  ['Who approved this change?', 'Ravi (PM) · 10:40 AM'],
+  ['How much sand is left?', '2 loads left · indent raised'],
+  ['Has the client seen today’s progress?', 'Daily report sent · 6:00 PM'],
+  ['When is the next concrete pour?', 'Thursday 7 AM · crew booked'],
+  ['Is the contractor’s bill checked?', 'Matched with BOQ · approved'],
+  ['Where is yesterday’s site photo?', 'Floor 5 thread · BrikChat'],
+  ['Was the safety check done?', 'Done 8:05 AM · all clear'],
+  ['Who has the shuttering crew today?', 'Suresh · 12 workers'],
+  ['How many cement bags this week?', '312 used · within BOQ'],
+  ['Is the plumbing layout final?', 'L4 layout Rev 2 · latest'],
+  ['Has the RMC truck left the plant?', 'On the way · ETA 25 min'],
+  ['Did the cube test pass?', '28-day result · passed']
+];
+// workers: start x, two turn points, ground/floor y, walk time, delay, vest, helmet (inner scene coords, +300 when placed)
+const S3_WK = [
+  [170, 300, 230, 612, 15, 0, '#f28c28', '#ffffff'],
+  [450, 585, 520, 264, 12, -3, '#f28c28', '#ffd23f'],
+  [910, 1070, 990, 614, 16, -5, '#e9e046', '#ffd23f'],
+  [440, 590, 500, 152, 14, -7, '#f28c28', '#ffffff'],
+  [460, 740, 600, 616, 18, -6, '#e9e046', '#ffd23f'],
+  [418, 506, 460, 376, 10, -2, '#f28c28', '#ffd23f'],
+  [165, 310, 240, 488, 13, -4, '#e9e046', '#ffffff'],
+  [640, 760, 700, 320, 11, -1, '#f28c28', '#ffd23f'],
+  [708, 708, 708, 208, 30, 0, '#e9e046', '#ffffff']
+];
+function site3d() {
+  const n = v => Math.round(v * 10) / 10;
+  const P = (d, f, s, w, o) => `<path d="${d}" fill="${f}"${s ? ` stroke="${s}" stroke-width="${w}"` : ''}${o != null && o !== 1 ? ` opacity="${o}"` : ''}/>`;
+  const R = (x, y, w, h, f, s, sw, o) => P(`M${n(x)} ${n(y)}h${n(w)}v${n(h)}h${n(-w)}Z`, f, s, sw, o);
+  const L = (pts, s, sw, o) => P('M' + pts.map(p => n(p[0]) + ' ' + n(p[1])).join('L'), 'none', s, sw || 1, o);
+  const D = (d, f, s, sw, o) => P(d, f, s, sw, o);
+  const out = [];
+  const add = (dl, arr, cls) => out.push(`<g class="${cls || 'k3r'}" style="--dl:${dl}s">${arr.join('')}</g>`);
+  const GY = 600, FH = 56, yk = k => GY - k * FH;
+  const rebar = (x, top, len) => [L([[x - 3, top], [x - 3, top - len]], '#6e4a36', 1.3), L([[x + 3, top], [x + 3, top - len + 3]], '#6e4a36', 1.3), L([[x, top], [x, top - len - 2]], '#6e4a36', 1.3)];
+
+  const city = [];
+  [[-290, 80, 120], [-200, 60, 190], [-130, 90, 100], [0, 70, 110], [70, 60, 160], [135, 90, 90], [395, 40, 130], [700, 70, 150], [775, 50, 120], [1030, 80, 170], [1115, 85, 100], [1210, 70, 150], [1290, 90, 110], [1390, 70, 180]].forEach(b => {
+    city.push(R(b[0], GY - b[2], b[1], b[2], '#dfe5ee'));
+    for (let yy = GY - b[2] + 12; yy < GY - 16; yy += 16) for (let xx = b[0] + 8; xx < b[0] + b[1] - 10; xx += 14) city.push(R(xx, yy, 6, 7, '#d3dae5'));
+  });
+  add(0.1, city, 'k3f');
+
+  // finished neighbours on the far sides
+  const nb = [];
+  [[-250, 150, 280], [1300, 140, 250]].forEach(b => {
+    nb.push(R(b[0], GY - b[2], b[1], b[2], '#f1f3f6', '#d5d9e0', 1));
+    for (let yy = GY - b[2] + 16; yy < GY - 20; yy += 28) for (let xx = b[0] + 12; xx < b[0] + b[1] - 20; xx += 26) nb.push(R(xx, yy, 16, 14, '#cbd8ea'));
+  });
+  add(0.3, nb, 'k3f');
+
+  add(0.15, [R(-300, GY, 1800, 60, 'url(#k3ground)'), R(-300, GY, 1800, 60, 'url(#k3grav)'), R(-300, GY, 1800, 2, '#b29f7e'), R(404, GY, 392, 7, 'rgba(40,32,20,.16)'), R(134, GY, 206, 5, 'rgba(40,32,20,.14)'), R(866, GY, 238, 4, 'rgba(40,32,20,.12)'), R(8, GY, 114, 4, 'rgba(40,32,20,.14)'), R(-300, 640, 1800, 20, 'rgba(90,80,64,.10)')], 'k3f');
+
+  const trees = [];
+  [[-60, 600], [-30, 600], [1230, 600], [1262, 600]].forEach(t => { trees.push(R(t[0] - 2, t[1] - 22, 4, 22, '#8a6a4f')); trees.push(D(`M${t[0] - 14} ${t[1] - 26}a14 14 0 1 0 28 0a14 14 0 1 0 -28 0Z`, '#7fbf8e')); trees.push(D(`M${t[0] - 6} ${t[1] - 34}a8 8 0 1 0 16 0a8 8 0 1 0 -16 0Z`, '#9fd3ab')); });
+  add(0.4, trees, 'k3f');
+
+  const cr = [];
+  cr.push(R(822, 78, 16, GY - 78, 'url(#k3crane)'), R(822, 78, 16, GY - 78, 'url(#k3lat)', '#b8801c', 1));
+  cr.push(R(806, 588, 48, 12, '#a9aeb7'));
+  cr.push(R(372, 78, 650, 10, 'url(#k3crane)'), R(372, 78, 650, 10, 'url(#k3latH)', '#b8801c', 0.8));
+  cr.push(L([[830, 40], [372, 79]], '#b8801c', 1.4), L([[830, 40], [1022, 79]], '#b8801c', 1.4), L([[824, 78], [830, 40], [836, 78]], '#d99a24', 3));
+  cr.push(R(960, 88, 50, 26, '#8e939c', '#767b84', 1), R(962, 100, 46, 1.2, '#767b84'));
+  cr.push(R(838, 88, 26, 22, '#ffffff', '#aab0bb', 1), R(842, 92, 18, 9, '#9fc0e6'));
+  add(2.3, cr, 'k3f');
+
+  const lb = [];
+  lb.push(R(144, yk(1) + 10, 182, FH - 10, 'url(#k3in)'));
+  [[156, 229], [241, 314]].forEach(b => { lb.push(R(b[0], yk(1) + 10, b[1] - b[0], FH - 10, 'url(#k3brk)')); lb.push(R((b[0] + b[1]) / 2 - 15, yk(1) + 20, 30, 24, 'url(#k3hole)')); });
+  lb.push(R(144, yk(2) + 10, 182, FH - 10, 'url(#k3in)'));
+  lb.push(R(156, yk(2) + 30, 73, FH - 30, 'url(#k3brk)'));
+  lb.push(R(140, yk(1), 190, 10, 'url(#k3slab)'), R(140, yk(1) + 10, 190, 4, 'rgba(20,24,33,.18)'));
+  lb.push(R(140, yk(2), 190, 10, 'url(#k3slab)'), R(140, yk(2) + 10, 190, 4, 'rgba(20,24,33,.18)'));
+  [150, 235, 320].forEach(x => { lb.push(R(x - 6, yk(2), 12, GY - yk(2), 'url(#k3col)')); lb.push(R(x - 6, yk(2) - 34, 12, 34, 'url(#k3col)')); lb.push(...rebar(x, yk(2) - 34, 18)); });
+  lb.push(L([[342, GY], [322, yk(1) - 6]], '#8a6a4f', 2), L([[352, GY], [332, yk(1) - 6]], '#8a6a4f', 2));
+  for (let i = 1; i < 7; i++) { const t = i / 7; lb.push(L([[342 - 20 * t, GY - (GY - yk(1) + 6) * t], [352 - 20 * t, GY - (GY - yk(1) + 6) * t]], '#8a6a4f', 1.6)); }
+  add(0.5, lb);
+
+  const rb = [];
+  rb.push(R(872, 588, 226, 12, 'url(#k3slab)'));
+  [890, 985, 1080].forEach((x, i) => {
+    if (i < 2) { rb.push(R(x - 6, yk(1), 12, GY - 12 - yk(1), 'url(#k3col)')); rb.push(...rebar(x, yk(1), 20)); }
+    else { rb.push(R(x - 9, yk(1) + 4, 18, GY - 12 - yk(1) - 4, '#c8945a', '#9c6c3a', 1)); rb.push(L([[x - 9, yk(1) + 20], [x + 9, yk(1) + 20]], '#9c6c3a', 1), L([[x - 9, yk(1) + 36], [x + 9, yk(1) + 36]], '#9c6c3a', 1)); rb.push(...rebar(x, yk(1) + 4, 22)); }
+  });
+  rb.push(R(896, yk(1) + 2, 84, 6, '#c8945a', '#9c6c3a', 1));
+  [906, 930, 954, 974].forEach(x => rb.push(L([[x, yk(1) + 8], [x, 588]], '#9c6c3a', 1.4)));
+  add(0.7, rb);
+
+  const cx = [430, 515, 600, 685, 770];
+  const bays = [[437, 508], [522, 593], [607, 678], [692, 763]];
+  const fill = [['door', 'full', 'full', 'full'], ['full', 'full', 'full', 'full'], ['full', 'full', 'full', 'full'], ['full', 'full', 'full', 'full'], ['full', 'full', 'half', 'none'], ['half', 'none', 'none', 'none'], ['none', 'none', 'none', 'none']];
+  for (let k = 0; k < 7; k++) {
+    const st = [];
+    const top = yk(k + 1) + 10, bot = yk(k), h = bot - top;
+    st.push(R(424, top, 352, h, 'url(#k3in)'));
+    if (fill[k].indexOf('none') >= 0 || fill[k].indexOf('half') >= 0) [472, 557, 642, 727].forEach(x => st.push(R(x - 4, top, 8, h, '#a3a9b3', null, 0, 0.55)));
+    bays.forEach((b, i) => {
+      const t = fill[k][i], w = b[1] - b[0], mid = (b[0] + b[1]) / 2;
+      if (t === 'full' || t === 'door') {
+        st.push(R(b[0], top, w, h, 'url(#k3brk)'));
+        if (t === 'door') st.push(R(mid - 16, top + 10, 32, h - 10, 'url(#k3hole)'));
+        else { st.push(R(mid - 18, top + 9, 36, 25, 'url(#k3hole)')); st.push(R(mid - 21, top + 5, 42, 4, '#c9ccd2')); }
+      } else if (t === 'half') { st.push(R(b[0], top + h / 2, w, h / 2, 'url(#k3brk)')); st.push(R(b[0] + 6, top + h / 2 - 9, 24, 9, 'url(#k3brk)')); }
+    });
+    cx.forEach(x => st.push(R(x - 7, top, 14, h, 'url(#k3col)')));
+    st.push(R(418, yk(k + 1), 364, 10, 'url(#k3slab)'), R(418, yk(k + 1) + 10, 364, 5, 'rgba(20,24,33,.16)'));
+    add((0.8 + k * 0.22).toFixed(2), st);
+  }
+  const tp = [];
+  const t7 = yk(8) + 10;
+  tp.push(R(424, t7, 352, yk(7) - t7, 'rgba(160,166,176,.18)'));
+  [430, 515, 600].forEach(x => tp.push(R(x - 7, t7, 14, yk(7) - t7, 'url(#k3col)')));
+  [685, 770].forEach(x => { tp.push(R(x - 7, yk(7) - 26, 14, 26, 'url(#k3col)')); tp.push(...rebar(x, yk(7) - 26, 18)); });
+  tp.push(R(418, yk(8), 196, 10, '#c8945a', '#9c6c3a', 1), R(418, yk(8) + 10, 196, 3, 'rgba(20,24,33,.18)'));
+  for (let x = 446; x < 600; x += 22) tp.push(L([[x, yk(8) + 10], [x, yk(7)]], '#9c6c3a', 1.4));
+  [430, 515, 600].forEach(x => tp.push(...rebar(x, yk(8), 10)));
+  tp.push(L([[618, yk(8) + 2], [700, yk(8) + 2]], '#6e4a36', 1), L([[618, yk(8) + 6], [700, yk(8) + 6]], '#6e4a36', 1));
+  add(2.4, tp);
+
+  const sc = [];
+  [408, 462, 516].forEach(x => sc.push(L([[x, GY], [x, yk(7) - 4]], '#7e8794', 2.2)));
+  for (let k = 1; k <= 7; k++) { sc.push(L([[404, yk(k)], [520, yk(k)]], '#7e8794', 1.8)); sc.push(R(404, yk(k) - 4, 116, 4, '#a8743f', '#7f5427', 0.6)); }
+  for (let k = 0; k < 7; k += 2) sc.push(L([[408, yk(k)], [462, yk(k + 1)]], '#7e8794', 1.2), L([[462, yk(k + 1)], [516, yk(k)]], '#7e8794', 1.2));
+  add(2.8, sc, 'k3f');
+  add(3.0, [R(600, yk(5) + 10, 182, yk(1) - yk(5) - 10, 'url(#k3net)', '#2e8f55', 0.8)], 'k3f');
+
+  const m = [];
+  m.push(R(12, 552, 106, 48, 'url(#k3cont)', '#33568c', 1), R(12, 552, 106, 5, '#2f5590'), R(28, 566, 26, 14, '#dfe8f7'), R(78, 566, 18, 34, '#2f5590'));
+  for (let x = 16; x < 118; x += 6) m.push(L([[x, 558], [x, 598]], 'rgba(255,255,255,.10)', 1));
+  m.push(D('M340 600Q362 566 378 562Q396 566 414 600Z', 'url(#k3sand)'));
+  m.push(L([[548, 594], [574, 594], [582, 584]], '#4a4e5a', 2), D('M552 586h26l-4 9h-18Z', '#4f7cc4'), D('M556 600a4 4 0 1 0 8 0a4 4 0 1 0 -8 0Z', '#30343f'));
+  for (let i = 0; i < 6; i++) m.push(L([[880, 596 - i * 1.4], [1060, 596 - i * 1.4]], i % 2 ? '#7e8590' : '#6a717c', 1.4));
+  m.push(R(1100, 596, 40, 4, '#5b6070'), D('M1104 594L1112 566L1134 562L1142 586Z', '#e8862a', '#b8661a', 1), L([[1106, 584], [1138, 576]], '#b8661a', 1.2), D('M1107 600a5 5 0 1 0 10 0a5 5 0 1 0 -10 0Z', '#30343f'), D('M1129 600a5 5 0 1 0 10 0a5 5 0 1 0 -10 0Z', '#30343f'));
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 3 - (r % 2); c++) m.push(R(1150 + c * 14 + (r % 2) * 7, 592 - r * 8, 13, 8, '#ece5d4', '#cbbfa6', 0.8));
+  add(1.6, m, 'k3f');
+
+  const fig = (w, i) => `<div class="k3w" style="left:${w[0] + 300}px;top:${w[3]}px;--bx:${w[1] - w[0]}px;--cx:${w[2] - w[0]}px;--dur:${w[4]}s;animation-delay:${w[5]}s" data-w="${i}"><div class="k3wi" style="--dl:${(3.2 + i * 0.1).toFixed(1)}s"><svg class="k3fig" width="17" height="31" viewBox="0 0 14 26" aria-hidden="true"><ellipse cx="7" cy="25" rx="5.5" ry="1.2" fill="rgba(10,11,16,.22)"/><path d="M5.3 24.4L5.6 16.6M8.7 24.4L8.4 16.6" stroke="#30343f" stroke-width="2.2" stroke-linecap="round"/><path d="M3.2 10.6L2.4 15.6M10.8 10.6L11.6 15.6" stroke="#c68a60" stroke-width="1.5" stroke-linecap="round"/><rect x="3.3" y="9" width="7.4" height="8.4" rx="2" fill="${w[6]}"/><rect x="3.3" y="12.5" width="7.4" height="1.1" fill="#fff6d6"/><rect x="3.3" y="14.9" width="7.4" height="1" fill="#fff6d6"/><circle cx="7" cy="6.5" r="2.6" fill="#c68a60"/><path d="M4 6.1Q4 2.5 7 2.5Q10 2.5 10 6.1Z" fill="${w[7]}"/><path d="M3.3 6.1H10.7" stroke="${w[7]}" stroke-width="1.1" stroke-linecap="round"/></svg></div><div class="k3slot"></div></div>`;
+
+  return `<div class="k3 k3-wait" data-site3d><noscript><style>.k3-wait .k3-box{visibility:visible!important}</style></noscript><div class="k3-box">
+<svg class="k3-art" width="1800" height="660" viewBox="0 0 1800 660" role="img" aria-label="Front view of a construction site: a main building half built with scaffolding, safety net, formwork and rebar, smaller buildings at earlier stages on each side, a tower crane lifting steel, and site workers asking questions that Brikito answers">
+<defs><linearGradient id="k3sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f9fd"/><stop offset=".5" stop-color="#e7eef9"/><stop offset="1" stop-color="#dce6f3"/></linearGradient><linearGradient id="k3edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".3" stop-color="#fff"/></linearGradient><mask id="k3mask"><rect width="1800" height="660" fill="url(#k3edge)"/></mask><clipPath id="k3clip"><rect width="1800" height="660"/></clipPath><linearGradient id="k3col" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e2e4e8"/><stop offset=".55" stop-color="#cfd2d8"/><stop offset="1" stop-color="#b3b8c1"/></linearGradient><linearGradient id="k3slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e8ec"/><stop offset="1" stop-color="#b9bec6"/></linearGradient><linearGradient id="k3in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8d939e"/><stop offset=".35" stop-color="#b7bcc5"/><stop offset="1" stop-color="#c9cdd4"/></linearGradient><linearGradient id="k3hole" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2d35"/><stop offset="1" stop-color="#4a4f5a"/></linearGradient><linearGradient id="k3ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6c7ab"/><stop offset="1" stop-color="#c2b08f"/></linearGradient><linearGradient id="k3sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3cb93"/><stop offset="1" stop-color="#c9a865"/></linearGradient><linearGradient id="k3crane" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7c955"/><stop offset="1" stop-color="#d99a24"/></linearGradient><linearGradient id="k3cont" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a86cc"/><stop offset="1" stop-color="#3c64a3"/></linearGradient><pattern id="k3brk" width="18" height="9" patternUnits="userSpaceOnUse"><rect width="18" height="9" fill="#b8603f"/><rect width="18" height="4.5" fill="#c06a48"/><path d="M0 .3H18M0 4.8H18M9 .3V4.8M0 4.8V9M18 4.8V9" stroke="#e2c6b4" stroke-width=".9"/></pattern><pattern id="k3net" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="rgba(38,142,78,.30)"/><path d="M0 0L6 6M6 0L0 6" stroke="rgba(30,120,64,.45)" stroke-width=".6"/></pattern><pattern id="k3grav" width="14" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".9" fill="rgba(110,90,60,.35)"/><circle cx="10" cy="7" r=".7" fill="rgba(110,90,60,.3)"/></pattern><pattern id="k3lat" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 0L14 14M14 0L0 14" stroke="#b8801c" stroke-width="1.2"/></pattern><pattern id="k3latH" width="14" height="10" patternUnits="userSpaceOnUse"><path d="M0 10L7 0L14 10" stroke="#b8801c" stroke-width="1.1" fill="none"/></pattern></defs>
+<rect class="k3f" style="--dl:0s" width="1800" height="600" fill="url(#k3sky)" mask="url(#k3mask)"/>
+<g class="k3f" style="--dl:.2s"><g class="k3cloud"><ellipse cx="250" cy="262" rx="72" ry="15" fill="#fff" opacity=".85"/><ellipse cx="290" cy="250" rx="40" ry="15" fill="#fff" opacity=".85"/><ellipse cx="1285" cy="226" rx="84" ry="15" fill="#fff" opacity=".85"/><ellipse cx="1325" cy="214" rx="44" ry="15" fill="#fff" opacity=".85"/><ellipse cx="940" cy="40" rx="60" ry="11" fill="#fff" opacity=".7"/><ellipse cx="1600" cy="150" rx="70" ry="13" fill="#fff" opacity=".8"/></g></g>
+<g transform="translate(300 0)">${out.join('')}
+<g class="k3f" style="--dl:2.3s"><g class="k3trol"><rect x="632" y="88" width="18" height="6" rx="1" fill="#4a4e5a"/><g class="k3sway"><path d="M641 94L641 128M641 128L612 140M641 128L670 140" stroke="#30343f" stroke-width="1.1" fill="none"/><path d="M638 128h6v5h-6Z" fill="#e8862a"/><rect x="604" y="140" width="74" height="9" fill="#8f96a3" stroke="#727884"/><rect x="604" y="140" width="74" height="3" fill="#aab0bb"/></g></g></g>
+<g class="k3f" style="--dl:3.8s"><g class="k3spark"><circle cx="692" cy="188" r="7" fill="rgba(255,196,70,.35)"/><path d="M692 188l-8 -5M692 188l6 -8M692 188l9 2M692 188l-6 7M692 188l2 -10M692 188l-9 3" stroke="#ffcf4d" stroke-width="1.2" stroke-linecap="round"/></g><circle class="k3spark k3spk2" cx="692" cy="188" r="2.2" fill="#fff8d2"/></g>
+</g>
+<g clip-path="url(#k3clip)"><g class="k3truck"><g transform="translate(1860 0)"><path d="M2 620h78l6 26H2Z" fill="#e8862a" stroke="#b8661a"/><path d="M6 620Q42 604 76 620Z" fill="url(#k3sand)"/><path d="M14 626h56M14 634h58" stroke="#b8661a"/><rect x="-30" y="624" width="30" height="24" rx="3" fill="#f3f4f6" stroke="#aab0bb"/><rect x="-26" y="628" width="15" height="9" rx="1.5" fill="#9fc0e6"/><rect x="-34" y="645" width="122" height="5" fill="#30343f"/><circle cx="-16" cy="652" r="7" fill="#25282f"/><circle cx="-16" cy="652" r="2.6" fill="#9aa0ab"/><circle cx="40" cy="652" r="7" fill="#25282f"/><circle cx="40" cy="652" r="2.6" fill="#9aa0ab"/><circle cx="68" cy="652" r="7" fill="#25282f"/><circle cx="68" cy="652" r="2.6" fill="#9aa0ab"/></g></g></g>
 </svg>
-${saChip(300, 318, 5, 'v', 'check', 'Rajesh checked in', 'Attendance · 8:42 AM')}
-${saChip(520, 250, 6, 'b', 'cam', 'Floor 2 blockwork 80% done', 'Photo update · Site Team')}
-${saChip(1010, 140, 7, 'b', 'up', 'Steel lifted to Floor 4', 'Crane log · 10:15 AM')}
-${saChip(1040, 318, 8, 'v', 'doc', 'Drawing Rev C approved', 'Shared with 24 members')}
-<div class="sa-cw sa-c" style="left:600px;top:32px">${saBrik('')}</div>
-<div class="sa-cw sa-l" style="left:452px;top:32px">${saAi('')}</div>
-</div></div><div class="sa-m" aria-hidden="true">${saBrik(' sa-mc')}${saAi(' sa-mc')}</div>`;
+${S3_WK.map(fig).join('')}
+<div class="k3card"><img src="/img/brik-head-v2.webp" alt="" width="40" height="40"><span><b>Every site question, answered</b><small><span data-k3count>126</span> questions answered today · Brik AI</small></span></div>
+</div></div><div class="k3m" aria-live="polite"><div class="k3m-slot"></div><p><span data-k3count>126</span> site questions answered today in Brikito</p></div>`;
+}
 
 // ---------------- pages ----------------
 const P = {};
@@ -139,7 +265,7 @@ P.home = () => `
 <h1 class="d1 rv dl1 hero-h" data-rotate><span class="hr-in">AI construction management<br><span class="gt">software for site teams.</span></span></h1>
 <p class="lead rv dl2">One app for chat, attendance, drawings, meetings, mail and a live dashboard, with Brik AI on every screen. Your crews keep working the way they do. Your office stays in control.</p>
 <div class="btns rv dl3" style="justify-content:center">${go('book-a-demo', 'Book a demo')}${go('how-it-works', 'See how it works', 'btn btn-s')}</div></div>
-${siteAnim}
+${site3d()}
 </div></section>
 
 <section class="sec"><div class="wrap"><p class="eyebrow rv">The platform</p><p class="statement" data-statement>The operating system for your construction site. Every message becomes a record, an approval, a report and a live view. Nobody on site has to change how they work.</p>
@@ -555,16 +681,52 @@ function closeMenus() {
 // ---------------- interactions ----------------
 let io;
 function wire(root) {
-  // homepage hero: line-art site animation, scaled to fit, plays once when it comes into view
-  root.querySelectorAll('[data-site-anim]').forEach(el => {
-    const box = el.querySelector('.sa-box');
-    const fit = () => { box.style.transform = 'scale(' + (el.clientWidth / 1200) + ')'; };
+  // homepage hero: full-width site scene; questions keep coming from the workers, Brikito answers
+  root.querySelectorAll('[data-site3d]').forEach(el => {
+    const box = el.querySelector('.k3-box');
+    const mob = el.nextElementSibling && el.nextElementSibling.classList.contains('k3m') ? el.nextElementSibling : null;
+    const fit = () => {
+      const W = el.clientWidth, small = W < 760;
+      const s = Math.max(W / 1800, small ? 0.5 : 0);
+      box.style.transform = `translateX(${(W - 1800 * s) / 2}px) scale(${s})`;
+      box.style.setProperty('--inv', Math.min(1.6, Math.max(1, 0.85 / s)).toFixed(3));
+      el.style.height = Math.round(660 * s) + 'px';
+      el.classList.toggle('k3-small', small);
+    };
     fit();
     if ('ResizeObserver' in window) new ResizeObserver(fit).observe(el); else addEventListener('resize', fit);
-    const go = () => { el.classList.remove('sa-wait'); el.classList.add('play'); };
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) { el.classList.remove('sa-wait'); return; }
-    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); go(); } }, { threshold: .25 });
-    io.observe(el);
+    const esc = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const qHtml = q => `<div class="k3b k3q"><span class="k3qi">?</span><b>${esc(q)}</b></div>`;
+    const aHtml = a => `<div class="k3b k3a"><img src="/favicon.svg" alt="" width="22" height="22"><span><b>${esc(a)}</b><small>Answered in Brikito</small></span></div>`;
+    const slots = [...el.querySelectorAll('.k3slot')];
+    const counts = [el, mob].filter(Boolean).flatMap(x => [...x.querySelectorAll('[data-k3count]')]);
+    const mslot = mob && mob.querySelector('.k3m-slot');
+    const order = [0, 3, 2, 1, 6, 8, 4, 7, 5];
+    let oi = 0, qi = 0, cnt = 126, seen = false;
+    const next = () => {
+      if (!seen || document.hidden) return;
+      const w = order[oi++ % order.length], pair = S3_QA[qi++ % S3_QA.length], slot = slots[w], id = oi;
+      if (!slot) return;
+      slot.dataset.id = id; slot.innerHTML = qHtml(pair[0]);
+      if (mslot) mslot.innerHTML = qHtml(pair[0]);
+      setTimeout(() => {
+        if (slot.dataset.id == id) slot.innerHTML = aHtml(pair[1]);
+        if (mslot) mslot.innerHTML = aHtml(pair[1]);
+        cnt++; counts.forEach(c => { c.textContent = cnt; });
+      }, 2000);
+      setTimeout(() => { if (slot.dataset.id == id && slot.firstChild) slot.firstChild.classList.add('k3out'); }, 5000);
+      setTimeout(() => { if (slot.dataset.id == id) slot.innerHTML = ''; }, 5450);
+    };
+    const begin = () => {
+      el.classList.remove('k3-wait'); el.classList.add('play');
+      setTimeout(() => { next(); setInterval(next, 2300); }, 3600);
+    };
+    if (!('IntersectionObserver' in window)) { seen = true; begin(); return; }
+    let started = false;
+    new IntersectionObserver(es => {
+      seen = es.some(e => e.isIntersecting);
+      if (seen && !started) { started = true; begin(); }
+    }, { threshold: .2 }).observe(el);
   });
   // homepage headline: a new line every 3 seconds (first line stays in the page for Google)
   root.querySelectorAll('[data-rotate]').forEach(h => {
